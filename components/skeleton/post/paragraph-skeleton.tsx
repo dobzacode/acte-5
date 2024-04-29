@@ -1,0 +1,13 @@
+import { cn } from '@/lib/utils';
+import { Skeleton } from '@nextui-org/react';
+
+export default function ParagraphSkeleton({ length }: { length: number }) {
+  // w-90% w-80% w-70% w-60% w-50% w-40% w-30% w-20% w-10%
+  return (
+    <div className="flex flex-col gap-xs">
+      {Array.from({ length }).map((_, index) => {
+        return <Skeleton className={cn('h-3 ', `w-[${100 - index * 10}%] `)} />;
+      })}
+    </div>
+  );
+}
