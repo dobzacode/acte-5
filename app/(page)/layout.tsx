@@ -1,3 +1,4 @@
+import Footer from '@/components/ui/footer/footer';
 import Header from '@/components/ui/header/header';
 import type { Metadata } from 'next';
 
@@ -15,6 +16,7 @@ export default function RootLayout({
     <>
       <Header></Header>
       <>{children}</>
+      <Footer></Footer>
     </>
   );
 }

@@ -34,7 +34,7 @@ export default function Header({ className }: { className?: string }) {
 
   return (
     <header>
-      <section className="relative z-50 flex items-center justify-between  bg-transparent px-2xl py-xl">
+      <section className="sticky top-0 z-50 flex items-center justify-between  bg-transparent px-2xl py-xl">
         <div className="flex gap-md">
           <Logo
             className={cn(

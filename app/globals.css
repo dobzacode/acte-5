@@ -22,7 +22,11 @@
   }
 
   .heading {
-    @apply text-lg font-medium leading-lg;
+    @apply text-lg font-normal leading-lg;
+  }
+
+  .main {
+    @apply flex w-full flex-col items-center justify-center laptop:px-2xl  laptop-large:px-4xl;
   }
 
   .sub-heading {
