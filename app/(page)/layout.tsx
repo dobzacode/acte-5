@@ -1,5 +1,7 @@
 import Footer from '@/components/ui/footer/footer';
+import FooterContent from '@/components/ui/footer/footer-content';
 import Header from '@/components/ui/header/header';
+import HeaderWrapper from '@/components/ui/header/header-wrapper';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -14,9 +16,13 @@ export default function RootLayout({
 }>) {
   return (
     <>
-      <Header></Header>
+      <HeaderWrapper>
+        <Header></Header>
+      </HeaderWrapper>
       <>{children}</>
-      <Footer></Footer>
+      <Footer>
+        <FooterContent></FooterContent>
+      </Footer>
     </>
   );
 }

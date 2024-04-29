@@ -1,9 +1,8 @@
 'use client';
 import { cn } from '@/lib/utils';
 import { usePathname } from 'next/navigation';
-import FooterContent from './footer-content';
 
-export default function Footer() {
+export default function Footer({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
 
   return (
@@ -13,7 +12,7 @@ export default function Footer() {
         pathname.includes('evenemement') ? 'text-white' : 'text-black'
       )}
     >
-      <FooterContent></FooterContent>
+      {children}
     </div>
   );
 }
