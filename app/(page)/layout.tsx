@@ -1,5 +1,4 @@
 import Header from '@/components/ui/header/header';
-import FramerMotionWrapper from '@/components/wrapper/framer-motion-wrapper';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -15,7 +14,7 @@ export default function RootLayout({
   return (
     <>
       <Header></Header>
-      <FramerMotionWrapper>{children}</FramerMotionWrapper>
+      <>{children}</>
     </>
   );
 }
