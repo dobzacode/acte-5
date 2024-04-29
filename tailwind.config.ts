@@ -28,6 +28,10 @@ const config = {
         sans: ['var(--font-geist-sans)']
       },
       borderRadius: {
+        '9xl': '20rem',
+        '8xl': '16rem',
+        '7xl': '12rem',
+        '6xl': '10rem',
         '5xl': '8rem',
         '4xl': '6rem',
         '3xl': '4rem',
@@ -39,6 +43,8 @@ const config = {
         xs: '0.25rem'
       },
       fontSize: {
+        '6xl': '14rem',
+        '5xl': '11.25rem',
         '4xl': '8rem',
         '3xl': '6rem',
         '2xl': '4rem',
@@ -49,6 +55,8 @@ const config = {
         xs: '0.75rem'
       },
       lineHeight: {
+        '6xl': '13.5rem',
+        '5xl': '9.375rem',
         '4xl': '7.2rem',
         '3xl': '5.6rem',
         '2xl': '4.5rem',

@@ -1,3 +1,5 @@
+import { ComingFromTopVariant } from '@/components/framer-motion/div-variants';
+import DivWrapper from '@/components/framer-motion/div-wrapper';
 import Footer from '@/components/ui/footer/footer';
 import FooterContent from '@/components/ui/footer/footer-content';
 import Header from '@/components/ui/header/header';
@@ -16,10 +18,13 @@ export default function RootLayout({
 }>) {
   return (
     <>
-      <HeaderWrapper>
-        <Header></Header>
-      </HeaderWrapper>
+      <DivWrapper variant={ComingFromTopVariant}>
+        <HeaderWrapper>
+          <Header></Header>
+        </HeaderWrapper>{' '}
+      </DivWrapper>
       <>{children}</>
+
       <Footer>
         <FooterContent></FooterContent>
       </Footer>

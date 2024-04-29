@@ -7,7 +7,7 @@ export default function Providers({ children }: { children: React.ReactNode }) {
   const router = useRouter();
 
   return (
-    <NextUIProvider navigate={router.push} className="h-full  w-full bg-background">
+    <NextUIProvider navigate={router.push} className="h-full  w-full ">
       {children}
     </NextUIProvider>
   );

@@ -5,6 +5,14 @@
 @tailwind components;
 
 @layer components {
+  .heading--mega-extra-large {
+    @apply laptop:leading-6xl text-2xl font-bold mobile-large:text-2xl mobile-large:leading-2xl tablet:text-3xl tablet:leading-3xl laptop:text-6xl;
+  }
+
+  .heading--mega-large {
+    @apply laptop:leading-6xl text-2xl font-bold mobile-large:text-2xl mobile-large:leading-2xl tablet:text-3xl tablet:leading-3xl laptop:text-5xl;
+  }
+
   .heading--extra-large {
     @apply text-2xl font-bold mobile-large:text-2xl mobile-large:leading-2xl tablet:text-3xl tablet:leading-3xl laptop:text-4xl laptop:leading-4xl;
   }

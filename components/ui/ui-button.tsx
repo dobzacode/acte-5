@@ -6,12 +6,13 @@ import { Button, extendVariants } from '@nextui-org/react';
 export const UiButton = extendVariants(Button, {
   variants: {
     color: {
-      success: 'bg-success text-white'
+      success: 'bg-success text-white',
+      pastelPrimary: 'bg-primary-50 text-primary-400'
     },
 
     size: {
       md: 'h-unit-xl min-w-unit-3xl',
-      lg: 'px-6 py-3'
+      lg: 'px-[48px] py-xl text-md font-normal '
     },
 
     variant: {}
