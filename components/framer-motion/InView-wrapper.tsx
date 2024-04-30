@@ -8,7 +8,8 @@ export default function InviewWrapper({
   children,
   className,
   viewport,
-  inverseOnExit
+  inverseOnExit,
+  id
 }: {
   style?: MotionStyle | undefined;
   variant: Variants;
@@ -16,10 +17,12 @@ export default function InviewWrapper({
   className?: string;
   viewport?: any;
   inverseOnExit?: boolean;
+  id?: string;
 }) {
   return (
     <motion.div
-    style={style}
+      id={id}
+      style={style}
       initial="hidden"
       exit={inverseOnExit ? 'exit' : 'hidden'}
       transition={{ duration: 1, ease: 'easeInOut' }}

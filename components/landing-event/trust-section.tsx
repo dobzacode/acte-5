@@ -2,28 +2,33 @@ import UiButton from '../ui/ui-button';
 
 export default function TrustSection() {
   return (
-    <section className="flex w-full flex-col gap-6xl px-4xl">
-      <h1 className="heading--extra-large w-1/2">agence en communication évenementielle</h1>
-      <div className="flex w-full flex-col gap-xl">
-        <p className="heading">ILS NOUS ONT FAIT CONFIANCE</p>
-        <div className="relative flex w-full gap-lg">
-          <p className="aspect-square w-7xl rounded-sm bg-gray-200"></p>
-          <p className="aspect-square w-7xl rounded-sm bg-gray-200"></p>
-          <p className="aspect-square w-7xl rounded-sm bg-gray-200"></p>
-          <p className="aspect-square w-7xl rounded-sm bg-gray-200"></p>
-          <p className="aspect-square w-7xl rounded-sm bg-gray-200"></p>
-          <p className="aspect-square w-7xl rounded-sm bg-gray-200"></p>
-          <p className="aspect-square w-7xl rounded-sm bg-gray-200"></p>
-          <p className="aspect-square w-7xl rounded-sm bg-gray-200"> </p>
+    <section className="section-px flex h-fit w-full flex-col  gap-2xl overflow-x-hidden mobile-large:gap-4xl laptop:gap-5xl laptop-large:gap-6xl">
+      <h1 className="heading--extra-large w-fit min-[1600px]:w-1/2">
+        agence en communication évenementielle
+      </h1>
+      <div className="relative z-20 flex w-full flex-col gap-md mobile-large:gap-xl">
+        <p className="heading whitespace-nowrap">Ils nous ont fait confiance</p>
+        <div className="relative flex w-full gap-lg [&>*]:shrink-0">
+          <p className="aspect-square w-5xl rounded-sm bg-gray-200 laptop:w-7xl"></p>
+          <p className="aspect-square w-5xl rounded-sm bg-gray-200 laptop:w-7xl"></p>
+          <p className="aspect-square  w-5xl rounded-sm bg-gray-200 laptop:w-7xl"></p>
+          <p className="aspect-square  w-5xl rounded-sm bg-gray-200 laptop:w-7xl"></p>
+          <p className="aspect-square  w-5xl rounded-sm bg-gray-200 laptop:w-7xl"></p>
+          <p className="aspect-square  w-5xl rounded-sm bg-gray-200 laptop:w-7xl"></p>
+          <p className="aspect-square  w-5xl rounded-sm bg-gray-200 laptop:w-7xl"></p>
+          <p className="aspect-square w-5xl rounded-sm bg-gray-200 laptop:w-7xl"> </p>
           <UiButton
             size="lg"
-            className="absolute -bottom-xl -right-md w-fit "
+            className="absolute bottom-10 right-0 w-fit max-laptop:hidden "
             variant="solid"
             color="pastelPrimary"
           >
-            EXPLOREZ LES REUSSITES DE NOS CLIENTS
+            Explorez les réussites de nos clients
           </UiButton>
         </div>
+        <UiButton size="lg" className="w-fit laptop:hidden " variant="solid" color="pastelPrimary">
+          Voir les témoignages
+        </UiButton>
       </div>
     </section>
   );

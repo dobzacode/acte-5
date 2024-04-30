@@ -59,7 +59,7 @@ const config = {
         '5xl': '9.375rem',
         '4xl': '7.2rem',
         '3xl': '5.6rem',
-        '2xl': '4.5rem',
+        '2xl': '4rem',
         xl: '3rem',
         lg: '2.25rem',
         md: '1.5rem',

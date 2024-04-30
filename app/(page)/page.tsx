@@ -11,7 +11,7 @@ import Link from 'next/link';
 export default function Home() {
   return (
     <>
-      <main className="main flex h-full  flex-col justify-between gap-3xl overflow-x-hidden pb-5xl pt-6xl">
+      <main className="main flex h-full  flex-col justify-between gap-3xl  pb-5xl pt-6xl">
         <DivWrapper
           className="flex w-2/3  flex-col items-center gap-md"
           variant={ComingFromTopVariant}

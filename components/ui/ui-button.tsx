@@ -12,7 +12,7 @@ export const UiButton = extendVariants(Button, {
 
     size: {
       md: 'h-unit-xl min-w-unit-3xl',
-      lg: 'px-[48px] py-xl text-md font-normal '
+      lg: 'mobile-large:px-[2rem] mobile-large:py-lg max-mobile-large:h-fit max-mobile-large:py-sm max-mobile-large:px-sm text-sm mobile-large:text-md leading-sm  mobile-large:leading-md font-normal '
     },
 
     variant: {}

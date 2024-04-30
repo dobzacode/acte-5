@@ -47,7 +47,7 @@ export default function Header({ className }: { className?: string }) {
         <Logo className={cn('w-xl duration-medium ')}></Logo>
         <p className="heading n  font-bold max-laptop:hidden">ACTE 5</p>
       </div>
-      {isTablet && (
+      {isTablet && pathname !== '/' ? (
         <>
           {pathname.includes('evenement') ? (
             <NavLinks pathname={pathname} isEvent={true} />
@@ -55,7 +55,7 @@ export default function Header({ className }: { className?: string }) {
             <NavLinks pathname={pathname} isEvent={false} />
           )}
         </>
-      )}
+      ) : null}
       <nav
         onClick={() => {
           setShowMenu(false);

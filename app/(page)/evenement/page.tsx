@@ -1,11 +1,11 @@
-import AproposSection from '@/components/landing-event/apropos-section';
+import AproposSection from '@/components/landing-event/apropos-section/apropos-section';
 import HeroSection from '@/components/landing-event/hero-section';
 import ServiceSection from '@/components/landing-event/service-section';
 import TrustSection from '@/components/landing-event/trust-section';
 
 export default function Home() {
   return (
-    <main className="main relative gap-8xl overflow-x-hidden px-0">
+    <main className="main relative gap-xl px-0 mobile-small:gap-3xl mobile-medium:gap-2xl mobile-large:gap-4xl tablet:gap-5xl laptop:gap-6xl laptop-large:gap-8xl">
       <HeroSection></HeroSection>
       <TrustSection></TrustSection>
       <ServiceSection></ServiceSection>

@@ -7,19 +7,19 @@
 
 @layer components {
   .heading--mega-extra-large {
-    @apply text-2xl font-bold mobile-large:text-2xl mobile-large:leading-2xl tablet:text-3xl tablet:leading-3xl laptop:text-6xl laptop:leading-6xl;
+    @apply text-xl font-bold leading-xl mobile-medium:text-2xl mobile-medium:leading-2xl tablet:text-4xl tablet:leading-4xl laptop:text-4xl laptop:leading-4xl laptop-large:text-6xl laptop-large:leading-6xl;
   }
 
   .heading--mega-large {
-    @apply text-2xl font-bold mobile-large:text-2xl mobile-large:leading-2xl tablet:text-3xl tablet:leading-3xl laptop:text-5xl laptop:leading-6xl;
+    @apply text-2xl font-bold mobile-large:text-2xl mobile-large:leading-2xl tablet:text-3xl tablet:leading-3xl laptop:text-5xl laptop:leading-5xl;
   }
 
   .heading--extra-large {
-    @apply text-2xl font-bold mobile-large:text-2xl mobile-large:leading-2xl tablet:text-3xl tablet:leading-3xl laptop:text-4xl laptop:leading-4xl;
+    @apply text-xl font-bold leading-xl mobile-large:text-2xl mobile-large:leading-2xl tablet:text-3xl tablet:leading-3xl laptop:text-3xl laptop:leading-3xl laptop-large:text-4xl laptop-large:leading-4xl;
   }
 
   .heading--sub-extra-large {
-    @apply text-xl font-bold mobile-large:text-xl mobile-large:leading-xl tablet:text-2xl tablet:leading-2xl laptop:text-3xl laptop:leading-3xl;
+    @apply text-xl font-bold leading-xl mobile-large:text-xl mobile-large:leading-xl tablet:text-2xl tablet:leading-2xl laptop:text-3xl laptop:leading-3xl;
   }
 
   .heading--large {
@@ -39,7 +39,7 @@
   }
 
   .sub-heading {
-    @apply text-md font-light leading-md;
+    @apply text-sm font-light leading-sm laptop:text-md laptop:leading-md;
   }
 
   .body {
@@ -56,6 +56,10 @@
 
   .menu-item {
     @apply heading  relative  tracking-wide text-default-50;
+  }
+
+  .section-px {
+    @apply px-md mobile-medium:px-md mobile-large:px-lg tablet:px-xl laptop:px-3xl laptop-large:px-4xl;
   }
 }
 

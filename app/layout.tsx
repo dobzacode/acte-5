@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="light">
-      <body className=" min-h-screen  overflow-x-hidden brand-theme">
+      <body className=" min-h-screen  brand-theme">
         {draftMode().isEnabled && <AlertBanner />}
         <Providers>{children}</Providers>
 
