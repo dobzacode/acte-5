@@ -6,7 +6,7 @@ export default function SectionLinks({ pathname }: { pathname: string }) {
     <ul className="flex h-full ">
       <li
         className={cn(
-          'relative flex w-[120px] origin-center justify-center overflow-hidden rounded-l-xs  text-default-400 duration-medium before:absolute before:-z-10 before:h-full before:w-full before:translate-x-full before:rounded-xs before:bg-gradient-to-t before:from-primary-200  before:to-primary-50  ',
+          'relative flex w-[100px] origin-center justify-center overflow-hidden rounded-l-xs  text-default-400 duration-medium before:absolute before:-z-10 before:h-full before:w-full before:translate-x-full before:rounded-xs before:bg-gradient-to-t before:from-primary-200 before:to-primary-50 mobile-large:w-[120px]  ',
           pathname.includes('evenement') && 'text-black before:translate-x-0',
           pathname.includes('spectacle') || pathname.includes('evenement')
             ? 'before:duration-medium'
@@ -17,7 +17,7 @@ export default function SectionLinks({ pathname }: { pathname: string }) {
       </li>
       <li
         className={cn(
-          'relative flex w-[90px] origin-center justify-center overflow-hidden rounded-r-xs text-default-400 duration-medium before:absolute before:-z-10 before:h-full before:w-full before:-translate-x-full before:rounded-xs before:bg-gradient-to-t before:from-primary-200 before:to-primary-50  hover:text-black',
+          'relative flex w-[80px] origin-center justify-center overflow-hidden rounded-r-xs text-default-400 duration-medium before:absolute before:-z-10 before:h-full before:w-full before:-translate-x-full before:rounded-xs before:bg-gradient-to-t before:from-primary-200 before:to-primary-50 hover:text-black  mobile-large:w-[90px]',
           pathname.includes('spectacle') && 'text-black before:translate-x-0',
           pathname.includes('spectacle') || pathname.includes('evenement')
             ? 'before:duration-medium'

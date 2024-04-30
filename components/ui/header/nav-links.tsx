@@ -10,7 +10,7 @@ interface Links {
   href: string;
 }
 
-const EVENTLINKS: Links[] = [
+export const EVENTLINKS: Links[] = [
   { name: 'Services', href: 'services' },
   { name: 'Témoignages', href: 'temoignages' },
   { name: 'A propos', href: 'a-propos' },
@@ -18,7 +18,7 @@ const EVENTLINKS: Links[] = [
   { name: 'Contact', href: 'contact' }
 ];
 
-const SPECTACLELINKS: Links[] = [
+export const SPECTACLELINKS: Links[] = [
   { name: 'Revue scoute', href: 'revue-scoute' },
   { name: "A l'affiche", href: 'a-laffiche' },
   { name: 'Portofolio', href: 'portfolio' },
@@ -31,7 +31,7 @@ export default function NavLinks({ isEvent, pathname }: { isEvent: boolean; path
 
   return (
     <nav className="">
-      <ul className="flex gap-xl">
+      <ul className="flex justify-between gap-md tablet:gap-lg laptop:gap-xl ">
         {links.map((link, index) => (
           <motion.li
             initial={{ y: -200 }}
@@ -46,7 +46,8 @@ export default function NavLinks({ isEvent, pathname }: { isEvent: boolean; path
             key={uuidv4()}
             className={cn(
               pathname.includes(link.href) && 'font-semibold',
-              'body font-normal hover:font-semibold'
+              'body w-fit text-center font-normal hover:font-semibold',
+              link.name.includes(' ') && 'shrink-0'
             )}
           >
             <Link href={link.href}>{link.name}</Link>

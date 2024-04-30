@@ -7,11 +7,11 @@
 
 @layer components {
   .heading--mega-extra-large {
-    @apply laptop:leading-6xl text-2xl font-bold mobile-large:text-2xl mobile-large:leading-2xl tablet:text-3xl tablet:leading-3xl laptop:text-6xl;
+    @apply text-2xl font-bold mobile-large:text-2xl mobile-large:leading-2xl tablet:text-3xl tablet:leading-3xl laptop:text-6xl laptop:leading-6xl;
   }
 
   .heading--mega-large {
-    @apply laptop:leading-6xl text-2xl font-bold mobile-large:text-2xl mobile-large:leading-2xl tablet:text-3xl tablet:leading-3xl laptop:text-5xl;
+    @apply text-2xl font-bold mobile-large:text-2xl mobile-large:leading-2xl tablet:text-3xl tablet:leading-3xl laptop:text-5xl laptop:leading-6xl;
   }
 
   .heading--extra-large {
@@ -55,7 +55,7 @@
   }
 
   .menu-item {
-    @apply heading--large  relative font-bold tracking-wide text-default-50;
+    @apply heading  relative  tracking-wide text-default-50;
   }
 }
 
@@ -114,60 +114,6 @@ html {
 
 div:has(.grecaptcha-badge) {
   display: none;
-}
-
-.hvr-grow-rotate {
-  display: inline-block;
-  vertical-align: middle;
-  -webkit-transform: perspective(1px) translateZ(0);
-  transform: perspective(1px) translateZ(0);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-transition-property: transform;
-  transition-property: transform;
-}
-.hvr-grow-rotate:hover,
-.hvr-grow-rotate:focus,
-.hvr-grow-rotate:active {
-  -webkit-transform: scale(1.1) rotate(4deg);
-  transform: scale(1.1) rotate(4deg);
-}
-
-.hvr-grow-rotate {
-  display: inline-block;
-  vertical-align: middle;
-  -webkit-transform: perspective(1px) translateZ(0);
-  transform: perspective(1px) translateZ(0);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-transition-property: all;
-  transition-property: all;
-}
-.hvr-grow-rotate:hover,
-.hvr-grow-rotate:focus,
-.hvr-grow-rotate:active {
-  -webkit-transform: scale(1.1) rotate(4deg);
-  transform: scale(1.1) rotate(4deg);
-}
-
-.hvr-grow-rotate-reverse {
-  display: inline-block;
-  vertical-align: middle;
-  -webkit-transform: perspective(1px) translateZ(0);
-  transform: perspective(1px) translateZ(0);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-transition-property: all;
-  transition-property: all;
-}
-.hvr-grow-rotate-reverse:hover,
-.hvr-grow-rotate-reverse:focus,
-.hvr-grow-rotate-reverse:active {
-  -webkit-transform: scale(1.1) rotate(-4deg);
-  transform: scale(1.1) rotate(-4deg);
 }
 
 .fadeIn {
