@@ -1,7 +1,5 @@
 import { ComingFromTopVariant } from '@/components/framer-motion/div-variants';
 import DivWrapper from '@/components/framer-motion/div-wrapper';
-import Footer from '@/components/ui/footer/footer';
-import FooterContent from '@/components/ui/footer/footer-content';
 import Header from '@/components/ui/header/header';
 import HeaderWrapper from '@/components/ui/header/header-wrapper';
 import type { Metadata } from 'next';
@@ -24,10 +22,6 @@ export default function RootLayout({
         </HeaderWrapper>{' '}
       </DivWrapper>
       <>{children}</>
-
-      <Footer>
-        <FooterContent></FooterContent>
-      </Footer>
     </>
   );
 }

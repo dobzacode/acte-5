@@ -1,14 +1,16 @@
 'use client';
 
-import { Variants, motion } from 'framer-motion';
+import { MotionStyle, Variants, motion } from 'framer-motion';
 
-export default function InViewWrapper({
+export default function InviewWrapper({
+  style,
   variant,
   children,
   className,
   viewport,
   inverseOnExit
 }: {
+  style?: MotionStyle | undefined;
   variant: Variants;
   children: React.ReactNode;
   className?: string;
@@ -17,6 +19,7 @@ export default function InViewWrapper({
 }) {
   return (
     <motion.div
+    style={style}
       initial="hidden"
       exit={inverseOnExit ? 'exit' : 'hidden'}
       transition={{ duration: 1, ease: 'easeInOut' }}

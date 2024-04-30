@@ -1,12 +1,12 @@
 // ./app/page.tsx
 
-import InViewWrapper from '@/components/framer-motion/InView-wrapper';
 import {
   ComingFromLeftVariant,
   ComingFromRightVariant,
   ComingFromTopVariant
 } from '@/components/framer-motion/div-variants';
 import DivWrapper from '@/components/framer-motion/div-wrapper';
+import InViewWrapper from '@/components/framer-motion/inview-wrapper';
 import PostSnippet from '@/components/post/post-snippet';
 import UiBreadcrumbs from '@/components/ui/ui-breadcrumbs';
 import { sanityFetch } from '@/sanity/lib/fetch';

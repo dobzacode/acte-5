@@ -33,17 +33,17 @@ export default function Header({ className }: { className?: string }) {
   }, [pathname]);
 
   return (
-    <section className="  z-50 flex w-full items-center justify-between  bg-transparent px-2xl py-xl">
-      <div className="flex gap-md">
+    <section className=" z-50 flex  w-full items-center justify-between border-b border-black border-opacity-10 bg-transparent bg-white bg-opacity-75 px-2xl py-md    ">
+      <div className="flex gap-md ">
         <Logo
           className={cn(
             'w-xl duration-medium ',
-            showMenu ? 'fill-white duration-medium ' : 'delay-300'
+            showMenu ? 'fill-white  duration-medium ' : 'delay-300'
           )}
         ></Logo>
-        <p className="heading  font-bold">ACTE 5</p>
+        <p className="heading n  font-bold">ACTE 5</p>
       </div>
-      <nav className="body flex  rounded-sm border p-sm font-normal shadow-sm">
+      <nav className="body relative flex overflow-hidden rounded-sm border p-sm font-normal shadow-md before:absolute before:right-0 before:top-0 before:-z-10 before:h-full before:w-full before:bg-white">
         <SectionLinks></SectionLinks>
       </nav>
       <div className="mobile-large:hidden">
