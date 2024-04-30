@@ -7,6 +7,7 @@ import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import Hamburger from './hamburger';
 import Logo from './logo';
+import NavLinks from './nav-links';
 import SectionLinks from './section-links';
 
 export default function Header({ className }: { className?: string }) {
@@ -32,9 +33,15 @@ export default function Header({ className }: { className?: string }) {
     }
   }, [pathname]);
 
+  console.log(pathname.includes('evenement'));
+
   return (
-    <section className=" z-50 flex  w-full items-center justify-between border-b border-black border-opacity-10 bg-transparent bg-white bg-opacity-75 px-2xl py-md    ">
-      <div className="flex gap-md ">
+    <section
+      className={cn(
+        ` z-50 flex  w-full items-center justify-between gap-3xl border-b border-black border-opacity-10 bg-transparent bg-white bg-opacity-75 px-2xl   py-md `
+      )}
+    >
+      <div className="flex  shrink-0 gap-md">
         <Logo
           className={cn(
             'w-xl duration-medium ',
@@ -43,9 +50,15 @@ export default function Header({ className }: { className?: string }) {
         ></Logo>
         <p className="heading n  font-bold">ACTE 5</p>
       </div>
-      <nav className="body relative flex overflow-hidden rounded-sm border p-sm font-normal shadow-md before:absolute before:right-0 before:top-0 before:-z-10 before:h-full before:w-full before:bg-white">
-        <SectionLinks></SectionLinks>
+      {pathname.includes('evenement') ? (
+        <NavLinks pathname={pathname} isEvent={true} />
+      ) : (
+        <NavLinks pathname={pathname} isEvent={false} />
+      )}
+      <nav className="body relative flex shrink-0 self-center overflow-hidden rounded-sm border p-sm font-normal shadow-md before:absolute before:right-0 before:top-0 before:-z-10 before:h-full before:w-full before:bg-white">
+        <SectionLinks pathname={pathname}></SectionLinks>
       </nav>
+
       <div className="mobile-large:hidden">
         <Hamburger
           className={cn(

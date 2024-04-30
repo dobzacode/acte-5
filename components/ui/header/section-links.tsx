@@ -1,12 +1,9 @@
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 
-export default function SectionLinks() {
-  const pathname = usePathname();
-
+export default function SectionLinks({ pathname }: { pathname: string }) {
   return (
-    <ul className="flex h-full w-full">
+    <ul className="flex h-full ">
       <li
         className={cn(
           'relative flex w-[120px] origin-center justify-center overflow-hidden rounded-l-xs  text-default-400 duration-medium before:absolute before:-z-10 before:h-full before:w-full before:translate-x-full before:rounded-xs before:bg-gradient-to-t before:from-primary-200  before:to-primary-50  ',
