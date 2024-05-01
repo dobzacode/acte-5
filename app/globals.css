@@ -65,6 +65,10 @@
   .boosted-section-px {
     @apply px-md mobile-medium:px-md mobile-large:px-lg tablet:px-xl laptop:px-3xl laptop-large:px-6xl;
   }
+
+  .before-bg {
+    @apply before:absolute before:-z-10 before:h-full before:w-full before:max-w-0 before:duration-medium;
+  }
 }
 
 @tailwind utilities;

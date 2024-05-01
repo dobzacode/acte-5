@@ -64,7 +64,7 @@ export default function ServiceGalerie({}) {
           {SERVICES.map((service, index) => {
             return (
               <motion.li
-                className="relative"
+                className="group relative overflow-hidden  rounded-b-sm rounded-t-sm duration-fast before:absolute before:left-0 before:top-0 before:h-full before:max-h-0 before:w-full before:bg-primary-50 before:duration-medium hover:rounded-t-sm hover:before:max-h-full "
                 initial={{ opacity: 0, y: -300 }}
                 animate={{
                   opacity: 1,
@@ -77,9 +77,9 @@ export default function ServiceGalerie({}) {
                 exit={{ opacity: 0, y: -300 }}
                 style={{ zIndex: 30 - index }}
               >
-                <Link className="flex flex-col-reverse gap-md" href={service.href}>
+                <Link className=" flex flex-col-reverse gap-sm" href={service.href}>
                   <motion.h3
-                    className={`sub-heading relative `}
+                    className={`sub-heading before-bg  relative py-2 duration-medium  group-hover:-mt-1 group-hover:ml-2 group-hover:text-primary-400 `}
                     initial={{ opacity: 0, y: -300 }}
                     animate={{
                       opacity: 1,
@@ -94,7 +94,7 @@ export default function ServiceGalerie({}) {
                     {service.text}
                   </motion.h3>
                   <Image
-                    className={`relative `}
+                    className={`relative rounded-sm duration-medium group-hover:rounded-b-none`}
                     src={service.src}
                     alt={`${service}`}
                     width={400}
