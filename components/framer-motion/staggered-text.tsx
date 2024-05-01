@@ -7,7 +7,7 @@ interface StaggeredTextProps {
   children: string;
   className: string;
   variant: Variants;
-  staggerValue: number;
+  staggerValue?: number;
   once?: boolean;
   margin?: string;
   delay?: number;
@@ -17,7 +17,7 @@ export default function StaggeredText({
   children,
   className,
   variant,
-  staggerValue,
+  staggerValue = 0.05,
   once = true,
   margin,
   delay = 0
