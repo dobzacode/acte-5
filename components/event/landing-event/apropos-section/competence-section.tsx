@@ -43,7 +43,7 @@ export default function CompetenceSection() {
         return (
           <InviewWrapper
             viewport={{ once: true, margin: '-300px 0px -300px 0px' }}
-            className=" sticky top-0 "
+            className=" sticky top-0 cursor-pointer"
             variant={index % 2 === 0 ? variantLeft : variantRight}
           >
             {isLaptop ? (

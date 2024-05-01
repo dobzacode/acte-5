@@ -19,7 +19,7 @@ export default function RootLayout({
       <DivWrapper variant={ComingFromTopVariant}>
         <HeaderWrapper>
           <Header></Header>
-        </HeaderWrapper>{' '}
+        </HeaderWrapper>
       </DivWrapper>
       <>{children}</>
     </>

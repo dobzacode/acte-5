@@ -1,6 +1,6 @@
-import InviewWrapper from '../framer-motion/inview-wrapper';
-import Marquee from '../framer-motion/marquee';
-import UiButton from '../ui/ui-button';
+import InviewWrapper from '@/components/framer-motion/inview-wrapper';
+import Marquee from '@/components/framer-motion/marquee';
+import UiButton from '@/components/ui/ui-button';
 
 const ONGLETS =
   'CONVENTION D’ENTREPRISE - ANNIVERSAIRE - INAUGURATION D’ENTREPRISE - CÉRÉMONIE DES MÉDAILLES - CÉRÉMONIE DES VŒUX - PORTES OUVERTES - SOIRÉE DE GALA - SPECTACLE D’ENTREPRISE - TEAM BUILDING - CONVENTION D’ENTREPRISE - ANNIVERSAIRE';

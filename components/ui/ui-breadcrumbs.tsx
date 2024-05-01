@@ -12,7 +12,7 @@ interface UiBreadcrumbsProps {
 
 export default function UiBreadcrumbs({ element, className }: UiBreadcrumbsProps) {
   return (
-    <Breadcrumbs className={className} radius="md" variant="bordered">
+    <Breadcrumbs className={className}>
       {element instanceof Array ? (
         element.map((child, index) => (
           <BreadcrumbItem href={child.href} key={index}>

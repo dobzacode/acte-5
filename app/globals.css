@@ -23,7 +23,7 @@
   }
 
   .heading--large {
-    @apply text-xl font-bold mobile-large:text-xl mobile-large:leading-xl tablet:text-xl tablet:leading-xl laptop:text-2xl laptop:leading-2xl;
+    @apply text-lg font-bold leading-lg  tablet:text-xl tablet:leading-xl laptop:text-2xl laptop:leading-2xl;
   }
 
   .heading--sub-large {
@@ -60,6 +60,10 @@
 
   .section-px {
     @apply px-md mobile-medium:px-md mobile-large:px-lg tablet:px-xl laptop:px-3xl laptop-large:px-4xl;
+  }
+
+  .boosted-section-px {
+    @apply px-md mobile-medium:px-md mobile-large:px-lg tablet:px-xl laptop:px-3xl laptop-large:px-6xl;
   }
 }
 

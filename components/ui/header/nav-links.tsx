@@ -3,7 +3,6 @@
 import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { v4 as uuidv4 } from 'uuid';
 
 interface Links {
   name: string;
@@ -11,23 +10,25 @@ interface Links {
 }
 
 export const EVENTLINKS: Links[] = [
-  { name: 'Services', href: 'services' },
-  { name: 'Témoignages', href: 'temoignages' },
-  { name: 'A propos', href: 'a-propos' },
-  { name: 'Blog', href: 'blog' },
-  { name: 'Contact', href: 'contact' }
+  { name: 'Services', href: '/evenement/services' },
+  { name: 'Témoignages', href: '/evenement/temoignages' },
+  { name: 'A propos', href: '/evenement/a-propos' },
+  { name: 'Blog', href: '/evenement/blog' },
+  { name: 'Contact', href: '/evenement/contact' }
 ];
 
 export const SPECTACLELINKS: Links[] = [
-  { name: 'Revue scoute', href: 'revue-scoute' },
-  { name: "A l'affiche", href: 'a-laffiche' },
-  { name: 'Portofolio', href: 'portfolio' },
-  { name: 'A propos', href: 'a-propos' },
-  { name: 'Contact', href: 'contact' }
+  { name: 'Revue scoute', href: '/spectacle/revue-scoute' },
+  { name: "A l'affiche", href: '/spectacle/a-laffiche' },
+  { name: 'Portofolio', href: '/spectacle/portfolio' },
+  { name: 'A propos', href: '/spectacle/a-propos' },
+  { name: 'Contact', href: '/spectacle/contact' }
 ];
 
 export default function NavLinks({ isEvent, pathname }: { isEvent: boolean; pathname: string }) {
   const links = isEvent ? EVENTLINKS : SPECTACLELINKS;
+
+  console.log('rerender');
 
   return (
     <nav className="">
@@ -43,7 +44,7 @@ export default function NavLinks({ isEvent, pathname }: { isEvent: boolean; path
               y: -200,
               transition: { ease: 'easeInOut', duration: 0.9, delay: index * 0.15 }
             }}
-            key={uuidv4()}
+            key={link.name}
             className={cn(
               pathname.includes(link.href) && 'font-semibold',
               'body w-fit text-center font-normal hover:font-semibold',

@@ -1,4 +1,4 @@
-import UiButton from '../ui/ui-button';
+import UiButton from '@/components/ui/ui-button';
 
 export default function TrustSection() {
   return (

@@ -9,7 +9,8 @@ export default function InviewWrapper({
   className,
   viewport,
   inverseOnExit,
-  id
+  id,
+  tag = 'div'
 }: {
   style?: MotionStyle | undefined;
   variant: Variants;
@@ -18,9 +19,13 @@ export default function InviewWrapper({
   viewport?: any;
   inverseOnExit?: boolean;
   id?: string;
+  tag?: string;
 }) {
+  //@ts-expect-error tag is a string
+  const MotionComponent = motion[tag];
+
   return (
-    <motion.div
+    <MotionComponent
       id={id}
       style={style}
       initial="hidden"
@@ -32,6 +37,6 @@ export default function InviewWrapper({
       whileInView="enter"
     >
       {children}
-    </motion.div>
+    </MotionComponent>
   );
 }

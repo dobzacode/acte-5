@@ -1,4 +1,4 @@
-import UiButton from '../../ui/ui-button';
+import UiButton from '@/components/ui/ui-button';
 import CompetenceSection from './competence-section';
 
 export default function AproposSection() {

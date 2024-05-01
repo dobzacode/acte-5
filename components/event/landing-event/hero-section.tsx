@@ -1,5 +1,5 @@
-import { ComingFromLeftVariant } from '../framer-motion/div-variants';
-import DivWrapper from '../framer-motion/div-wrapper';
+import { ComingFromLeftVariant } from '@/components/framer-motion/div-variants';
+import DivWrapper from '@/components/framer-motion/div-wrapper';
 
 export default function HeroSection() {
   return (

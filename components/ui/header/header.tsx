@@ -36,6 +36,10 @@ export default function Header({ className }: { className?: string }) {
     }
   }, [pathname]);
 
+  useEffect(() => {
+    console.log(pathname, showMenu);
+  });
+
   return (
     <section
       className={cn(
@@ -47,15 +51,17 @@ export default function Header({ className }: { className?: string }) {
         <Logo className={cn('w-xl duration-medium ')}></Logo>
         <p className="heading n  font-bold max-laptop:hidden">ACTE 5</p>
       </div>
-      {isTablet && pathname !== '/' ? (
-        <>
-          {pathname.includes('evenement') ? (
-            <NavLinks pathname={pathname} isEvent={true} />
-          ) : (
-            <NavLinks pathname={pathname} isEvent={false} />
-          )}
-        </>
-      ) : null}
+      <AnimatePresence mode="wait">
+        {isTablet && pathname !== '/' ? (
+          <>
+            {pathname.includes('evenement') ? (
+              <NavLinks key="menuEvent" pathname={pathname} isEvent={true} />
+            ) : (
+              <NavLinks key="menuSpectacle" pathname={pathname} isEvent={false} />
+            )}
+          </>
+        ) : null}
+      </AnimatePresence>
       <nav
         onClick={() => {
           setShowMenu(false);
