@@ -1,3 +1,5 @@
+'use client';
+
 import { Variants } from 'framer-motion';
 
 export const ComingFromTopVariant: Variants = {
@@ -57,5 +59,20 @@ export const ComingFromRightVariant: Variants = {
   exit: {
     opacity: 0,
     x: -100
+  }
+};
+
+export const FromTopStaggerVariant: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 4
+  },
+  enter: (i) => ({
+    opacity: 1,
+    y: 0
+  }),
+  exit: {
+    opacity: 0,
+    y: -100
   }
 };

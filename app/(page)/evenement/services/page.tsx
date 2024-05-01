@@ -1,4 +1,6 @@
 import ServiceGalerie from '@/components/event/nos-services/service-galerie';
+import { FromTopStaggerVariant } from '@/components/framer-motion/div-variants';
+import StaggeredText from '@/components/framer-motion/staggered-text';
 import TitleSection from '@/components/ui/title-section';
 
 export default function Home() {
@@ -12,10 +14,15 @@ export default function Home() {
         ]}
       ></TitleSection>
       <div className="section-px container mx-auto flex  flex-col gap-3xl">
-        <p className="heading--large">
+        <StaggeredText
+          delay={1}
+          staggerValue={0.05}
+          variant={FromTopStaggerVariant}
+          className="heading--large"
+        >
           L&apos;agence événementielle Acte 5 s&apos;appuie depuis près de 30 ans sur les arts de la
           scène et la pratique théâtrale pour faire passer les messages.
-        </p>
+        </StaggeredText>
         <p className="sub-heading ">
           Inauguration, convention et séminaire d&apos;entreprise, portes ouvertes, fête du
           personnel, lancement de produit, intervention théâtrale en entreprise, écriture
