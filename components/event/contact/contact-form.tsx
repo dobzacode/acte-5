@@ -6,14 +6,20 @@ import { z } from 'zod';
 
 import { verifyCaptchaAction } from '@/app/_actions';
 import { Form, FormControl, FormField, FormItem, FormMessage } from '@/components/ui/shadcn/form';
+import { Input } from '@/components/ui/shadcn/input';
+import { Textarea } from '@/components/ui/shadcn/textarea';
 import { cn } from '@/lib/utils';
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 import BarLoader from 'react-spinners/BarLoader';
-import UiButton from '../ui-button';
-import UiInput from './ui-input';
-import UiTextarea from './ui-textarea';
+import UiButton from '../../ui/ui-button';
 
 const formSchema = z.object({
+  type: z.string().min(2, {
+    message: 'Le type de projet doit comporter au moins deux caractères.'
+  }),
+  societé: z.string().min(2, {
+    message: 'La société doit comporter au moins deux caractères.'
+  }),
   nom: z.string().min(2, {
     message: 'Le nom doit comporter au moins deux caractères.'
   }),
@@ -23,6 +29,10 @@ const formSchema = z.object({
   email: z.string().email({
     message: 'Veuillez saisir une adresse e-mail valide.'
   }),
+  téléphone: z.coerce
+    .number()
+    .min(10, { message: 'Le numéro de téléphone doit comporter au moins 10 caractères.' })
+    .optional(),
   message: z
     .string()
     .min(10, {
@@ -39,6 +49,8 @@ export default function ContactForm() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
+      type: '',
+      societé: '',
       nom: '',
       prénom: '',
       email: '',
@@ -68,11 +80,49 @@ export default function ContactForm() {
       <form
         onSubmit={form.handleSubmit(onSubmit)}
         aria-disabled={form.formState.isSubmitting}
-        className="card flex w-fit flex-col gap-lg"
+        className="card container mx-auto flex max-w-[40rem] flex-col gap-lg"
       >
         <div
           className={cn('grid grid-cols-2 gap-md', form.formState.isSubmitting && 'animate-pulse')}
         >
+          <FormField
+            control={form.control}
+            name="type"
+            disabled={form.formState.isSubmitting}
+            render={({ field }) => (
+              <FormItem className="col-span-1">
+                <FormControl>
+                  <Input
+                    className="body rounded-xs  border-x-0  border-t-0  shadow-inner ring-primary-400"
+                    required
+                    color="primary"
+                    placeholder="Type de projet *"
+                    {...field}
+                  />
+                </FormControl>
+                <FormMessage className="text-sm font-normal text-danger-400" />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="societé"
+            disabled={form.formState.isSubmitting}
+            render={({ field }) => (
+              <FormItem className="col-span-1">
+                <FormControl>
+                  <Input
+                    className="body rounded-xs  border-x-0  border-t-0  shadow-inner ring-primary-400"
+                    required
+                    color="primary"
+                    placeholder="Societé *"
+                    {...field}
+                  />
+                </FormControl>
+                <FormMessage className="text-sm font-normal text-danger-400" />
+              </FormItem>
+            )}
+          />
           <FormField
             control={form.control}
             name="nom"
@@ -80,16 +130,15 @@ export default function ContactForm() {
             render={({ field }) => (
               <FormItem className="col-span-1">
                 <FormControl>
-                  <UiInput
-                    classNames={{ inputWrapper: 'py-2' }}
-                    variant="underlined"
-                    isRequired
+                  <Input
+                    className="body rounded-xs  border-x-0  border-t-0  shadow-inner ring-primary-400"
+                    required
                     color="primary"
-                    placeholder="Nom"
+                    placeholder="Nom *"
                     {...field}
                   />
                 </FormControl>
-                <FormMessage className="text-sm text-danger-400" />
+                <FormMessage className="text-sm font-normal text-danger-400" />
               </FormItem>
             )}
           />
@@ -100,16 +149,15 @@ export default function ContactForm() {
             render={({ field }) => (
               <FormItem className="col-span-1">
                 <FormControl>
-                  <UiInput
-                    classNames={{ inputWrapper: 'py-2' }}
-                    variant="underlined"
-                    isRequired
+                  <Input
+                    className="body rounded-xs  border-x-0  border-t-0  shadow-inner ring-primary-400"
+                    required
                     color="primary"
-                    placeholder="Prénom"
+                    placeholder="Prénom *"
                     {...field}
                   />
                 </FormControl>
-                <FormMessage className="text-sm text-danger-400" />
+                <FormMessage className="text-sm font-normal text-danger-400" />
               </FormItem>
             )}
           />
@@ -118,17 +166,36 @@ export default function ContactForm() {
             disabled={form.formState.isSubmitting}
             name="email"
             render={({ field }) => (
-              <FormItem className="col-span-2">
+              <FormItem className="col-span-1">
                 <FormControl>
-                  <UiInput
-                    variant="underlined"
+                  <Input
+                    className="body rounded-xs  border-x-0  border-t-0  shadow-inner ring-primary-400"
                     color="primary"
-                    placeholder="Email"
-                    classNames={{ inputWrapper: 'py-2' }}
+                    placeholder="Email *"
+                    required
                     {...field}
                   />
                 </FormControl>
-                <FormMessage className="text-sm text-danger-400" />
+                <FormMessage className="text-sm font-normal text-danger-400" />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            disabled={form.formState.isSubmitting}
+            name="téléphone"
+            render={({ field }) => (
+              <FormItem className="col-span-1">
+                <FormControl>
+                  <Input
+                    className="body rounded-xs  border-x-0  border-t-0  shadow-inner ring-primary-400"
+                    type="number"
+                    color="primary"
+                    placeholder="Téléphone"
+                    {...field}
+                  />
+                </FormControl>
+                <FormMessage className="text-sm font-normal text-danger-400" />
               </FormItem>
             )}
           />
@@ -139,24 +206,24 @@ export default function ContactForm() {
             render={({ field }) => (
               <FormItem className="col-span-2">
                 <FormControl>
-                  <UiTextarea
-                    classNames={{ inputWrapper: 'py-2' }}
-                    variant="underlined"
+                  <Textarea
+                    className="body rounded-xs  border-x-0  border-t-0  shadow-inner ring-primary-400"
+                    required
                     color="primary"
                     {...field}
-                    placeholder="Message"
+                    placeholder="Message *"
                   />
                 </FormControl>
-                <FormMessage className="text-sm text-danger-400" />
+                <FormMessage className="text-sm font-normal text-danger-400" />
               </FormItem>
             )}
           />
-          {form.formState.isSubmitSuccessful ? (
-            <FormMessage className="text-sm text-success-400">
-              Votre demande de contact a bien été envoyée !
-            </FormMessage>
-          ) : null}
         </div>
+        {form.formState.isSubmitSuccessful ? (
+          <FormMessage className="text-sm text-success-400">
+            Votre demande de contact a bien été envoyée !
+          </FormMessage>
+        ) : null}
         <UiButton
           spinner={
             <BarLoader
@@ -168,7 +235,7 @@ export default function ContactForm() {
           type="submit"
           color="primary"
         >
-          Envoyer
+          Envoyer ma demande
         </UiButton>
         <p className={`caption  text-center`}>
           Ce site est protégé par reCAPTCHA, les

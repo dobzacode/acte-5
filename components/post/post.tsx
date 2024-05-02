@@ -23,7 +23,7 @@ export default async function Post({ post }: { post: PostQueryResponse }) {
 
   return (
     <section className="flex w-full flex-col  gap-lg">
-      {post.titre ? <h1 className="heading--extra-large text-primary-500">{post.titre}</h1> : null}
+      {post.titre ? <h1 className="heading--extra-large text-primary-400">{post.titre}</h1> : null}
       {post.mainImage ? (
         <Image
           className=""

@@ -1,5 +1,5 @@
 import RecaptchaProvider from '@/components/wrapper/recaptcha-provider';
-import ContactForm from './contact-form';
+import ContactForm from '../../event/contact/contact-form';
 
 export default function FormWrapped({}) {
   return (

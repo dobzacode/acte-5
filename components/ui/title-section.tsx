@@ -6,7 +6,9 @@ import UiBreadcrumbs from './ui-breadcrumbs';
 export default function TitleSection({
   title,
   element,
-  className
+  className,
+  description,
+  h1Css
 }: {
   element: {
     text: string;
@@ -14,15 +16,18 @@ export default function TitleSection({
   }[];
   title: string;
   className?: string;
+  description?: string;
+  h1Css?: string;
 }) {
   return (
     <DivWrapper
-      className={cn('section-px container mx-auto flex flex-col gap-5 self-start', className)}
+      className={cn('section-px container mx-auto flex  flex-col gap-5 self-start', className)}
       tag="section"
       variant={ComingFromLeftVariant}
     >
-      <h1 className="heading--extra-large text-primary-400">{title}</h1>
+      <h1 className={cn('heading--extra-large  text-primary-400', h1Css)}>{title}</h1>
       <UiBreadcrumbs element={element}></UiBreadcrumbs>
+      {description && <p className="sub-heading max-w-[60ch] pt-lg">{description}</p>}
     </DivWrapper>
   );
 }

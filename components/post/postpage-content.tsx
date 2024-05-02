@@ -22,12 +22,12 @@ export default async function PostpageContent({ params }: { params: { slug: stri
   return (
     <>
       <main>
-        <section className="container  mx-auto flex flex-col gap-lg  pb-lg laptop:max-w-[50rem]">
+        <section className="section-px container  mx-auto flex flex-col gap-lg  pb-lg laptop:max-w-[50rem]">
           <DivWrapper variant={ComingFromTopVariant} inverseOnExit={false}>
             <UiBreadcrumbs
               element={[
-                { text: 'Accueil', href: '/' },
-                { text: 'Publication', href: '/publication' },
+                { text: 'Evenement', href: '/agence-evenementielle-strasbourg' },
+                { text: 'Blog', href: '/blog' },
                 { text: post.titre, href: post.slug.current }
               ]}
             ></UiBreadcrumbs>
