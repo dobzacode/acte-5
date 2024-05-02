@@ -13,7 +13,7 @@ export default function SectionLinks({ pathname }: { pathname: string }) {
             : ''
         )}
       >
-        <Link href="/evenement">Evenementiel</Link>
+        <Link href="/agence-evenementiel-strasbourg">Evenementiel</Link>
       </li>
       <li
         className={cn(

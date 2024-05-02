@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export default function CompetenceSection() {
   return (
-    <ul className="relative flex w-full flex-col gap-[30rem] overflow-x-clip pt-8xl">
+    <ul className="relative flex w-full flex-col gap-7xl overflow-x-clip pt-8xl">
       <ScrollWrapper tag="li" className=" flex  w-full items-center justify-center  ">
         <Image
           src="/placeholder-image.png"

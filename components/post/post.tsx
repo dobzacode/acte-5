@@ -3,7 +3,7 @@ import { urlForImage } from '@/sanity/lib/utils';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import CustomPortableText from '../sanity/portable-text';
-import EmblaCarousel from '../ui/image-carousel/carousel/embla-carousel';
+import EmblaCarousel from '../ui/image-carousel/carousel/embla-post-carousel';
 
 export default async function Post({ post }: { post: PostQueryResponse }) {
   if (!post) {

@@ -16,7 +16,7 @@ export default function Home() {
         variant={ComingFromRightVariant}
         viewport={{ once: true, margin: '-200px 0px -200px 0px' }}
       >
-        <div className="section-px container relative mx-auto flex gap-lg overflow-clip before:absolute before:right-0 before:z-20 before:h-full before:w-[10rem] before:bg-gradient-to-l before:from-white before:to-transparent after:absolute after:left-0 after:z-20 after:h-full after:w-[10rem] after:bg-gradient-to-r after:from-white after:to-transparent [&>*]:shrink-0">
+        <div className="section-px fade-x container relative mx-auto flex gap-lg  overflow-clip [&>*]:shrink-0">
           <p className="aspect-square w-5xl rounded-sm bg-gray-200 laptop:w-7xl"></p>
           <p className="aspect-square w-5xl rounded-sm bg-gray-200 laptop:w-7xl"></p>
           <p className="aspect-square  w-5xl rounded-sm bg-gray-200 laptop:w-7xl"></p>

@@ -7,7 +7,7 @@ export default function InviewWrapper({
   variant,
   children,
   className,
-  viewport,
+  viewport = { once: true, margin: '-200px 0px -200px 0px' },
   inverseOnExit,
   id,
   tag = 'div'

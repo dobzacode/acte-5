@@ -1,4 +1,5 @@
 import CompetenceSection from '@/components/event/a-propos/competence-section';
+import TeamSection from '@/components/event/a-propos/team-section';
 import { FromTopStaggerVariant } from '@/components/framer-motion/div-variants';
 import StaggeredText from '@/components/framer-motion/staggered-text';
 import TitleSection from '@/components/ui/title-section';
@@ -23,6 +24,7 @@ export default function Home() {
         labore et dolore magna
       </StaggeredText>
       <CompetenceSection></CompetenceSection>
+      <TeamSection></TeamSection>
     </main>
   );
 }

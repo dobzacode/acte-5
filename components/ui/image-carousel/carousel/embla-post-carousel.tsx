@@ -15,7 +15,7 @@ import NextJsImage from './nextjs-image';
 
 type PropType = {
   options?: EmblaOptionsType;
-  imageArr: ImageSanity[];
+  imageArr: Omit<ImageSanity, 'asset' | '_type'>[];
 };
 
 const EmblaCarousel: React.FC<PropType> = (props) => {
