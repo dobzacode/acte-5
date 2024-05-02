@@ -1,3 +1,4 @@
+import CompetenceSection from '@/components/event/a-propos/competence-section';
 import { FromTopStaggerVariant } from '@/components/framer-motion/div-variants';
 import StaggeredText from '@/components/framer-motion/staggered-text';
 import TitleSection from '@/components/ui/title-section';
@@ -16,11 +17,12 @@ export default function Home() {
         variant={FromTopStaggerVariant}
         staggerValue={0.05}
         delay={1}
-        className="heading--sub-large section-px container mx-auto text-center"
+        className="heading--sub-large section-px container mx-auto text-pretty text-center"
       >
         Lorem ipsum dolor sit amet, consectetur adipiscing eli, sed do eiusmod tempor incididunt ut
         labore et dolore magna
       </StaggeredText>
+      <CompetenceSection></CompetenceSection>
     </main>
   );
 }

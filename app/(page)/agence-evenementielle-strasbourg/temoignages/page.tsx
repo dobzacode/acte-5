@@ -8,8 +8,8 @@ export default function Home() {
       <TitleSection
         title={'NOS PROJETS'}
         element={[
-          { href: '/evenement', text: 'Évenement' },
-          { href: '/evenement/temoignages', text: 'Nos projets' }
+          { href: '/agence-evenementielle-strasbourg', text: 'Évenement' },
+          { href: '/agence-evenementielle-strasbourg/temoignages', text: 'Nos projets' }
         ]}
       ></TitleSection>
       <InviewWrapper

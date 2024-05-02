@@ -7,47 +7,47 @@ import { useRef } from 'react';
 
 const SERVICES = [
   {
-    href: '/evenement/nos-services/inauguration',
+    href: '/agence-evenementielle-strasbourg/services/inauguration-entreprise',
     text: 'Inauguration',
     src: '/placeholder-image.png'
   },
   {
-    href: '/evenement/nos-services/convention',
+    href: '/agence-evenementielle-strasbourg/services/convention-entreprise-strasbourg',
     text: 'Convention',
     src: '/placeholder-image.png'
   },
   {
-    href: '/evenement/nos-services/anniversaire',
+    href: '/agence-evenementielle-strasbourg/services/organisateur-anniversaire',
     text: 'Anniversaire',
     src: '/placeholder-image.png'
   },
   {
-    href: '/evenement/nos-services/ceremonie-des-medailles',
+    href: '/agence-evenementielle-strasbourg/services/ceremonie-remise-medailles',
     text: 'Cérémonie des médailles',
     src: '/placeholder-image.png'
   },
   {
-    href: '/evenement/nos-services/ceremonie-des-voeux',
+    href: '/agence-evenementielle-strasbourg/services/ceremonie-voeux',
     text: 'Cérémonie des vœux',
     src: '/placeholder-image.png'
   },
   {
-    href: '/evenement/nos-services/portes-ouvertes',
+    href: '/agence-evenementielle-strasbourg/services/portes-ouvertes',
     text: 'Portes ouvertes',
     src: '/placeholder-image.png'
   },
   {
-    href: '/evenement/nos-services/soiree-de-gala',
+    href: '/agence-evenementielle-strasbourg/services/soiree-gala',
     text: 'Soirée de Gala',
     src: '/placeholder-image.png'
   },
   {
-    href: '/evenement/nos-services/spectacle-d-entreprise',
+    href: '/agence-evenementielle-strasbourg/services/spectacle-entreprise',
     text: "Spectacle d'entreprise",
     src: '/placeholder-image.png'
   },
   {
-    href: '/evenement/nos-services/team-building',
+    href: '/agence-evenementielle-strasbourg/services/team-building',
     text: 'Team building',
     src: '/placeholder-image.png'
   }
@@ -64,7 +64,7 @@ export default function ServiceGalerie({}) {
           {SERVICES.map((service, index) => {
             return (
               <motion.li
-                className="group relative overflow-hidden  rounded-b-sm rounded-t-sm duration-fast before:absolute before:left-0 before:top-0 before:h-full before:max-h-0 before:w-full before:bg-primary-50 before:duration-medium hover:rounded-t-sm hover:before:max-h-full "
+                className=" group relative overflow-hidden  rounded-b-sm rounded-t-sm duration-fast before:absolute before:left-0 before:top-0 before:h-full before:max-h-0 before:w-full before:bg-primary-400 before:duration-medium hover:rounded-t-sm hover:before:max-h-full "
                 initial={{ opacity: 0, y: -300 }}
                 animate={{
                   opacity: 1,
@@ -79,7 +79,7 @@ export default function ServiceGalerie({}) {
               >
                 <Link className=" flex flex-col-reverse gap-sm" href={service.href}>
                   <motion.h3
-                    className={`sub-heading before-bg  relative py-2 duration-medium  group-hover:-mt-1 group-hover:ml-2 group-hover:text-primary-400 `}
+                    className={`sub-heading before-bg  relative py-2 duration-medium  group-hover:-mt-1 group-hover:ml-2 group-hover:text-white `}
                     initial={{ opacity: 0, y: -300 }}
                     animate={{
                       opacity: 1,

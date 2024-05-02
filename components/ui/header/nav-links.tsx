@@ -10,11 +10,11 @@ interface Links {
 }
 
 export const EVENTLINKS: Links[] = [
-  { name: 'Services', href: '/evenement/services' },
-  { name: 'Témoignages', href: '/evenement/temoignages' },
-  { name: 'A propos', href: '/evenement/a-propos' },
-  { name: 'Blog', href: '/evenement/blog' },
-  { name: 'Contact', href: '/evenement/contact' }
+  { name: 'Services', href: '/agence-evenementielle-strasbourg/services' },
+  { name: 'Témoignages', href: '/agence-evenementielle-strasbourg/temoignages' },
+  { name: 'A propos', href: '/agence-evenementielle-strasbourg/a-propos' },
+  { name: 'Blog', href: '/agence-evenementielle-strasbourg/blog' },
+  { name: 'Contact', href: '/agence-evenementielle-strasbourg/contact' }
 ];
 
 export const SPECTACLELINKS: Links[] = [

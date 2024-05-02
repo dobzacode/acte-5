@@ -27,7 +27,7 @@
   }
 
   .heading--sub-large {
-    @apply text-xl font-medium leading-xl;
+    @apply text-lg font-medium leading-lg laptop:text-xl laptop:leading-xl;
   }
 
   .heading {
@@ -83,6 +83,12 @@
 
 html {
   font-family: roboto;
+}
+
+.primary-glow {
+  -webkit-box-shadow: 0px 0px 27px 1px rgba(247, 144, 84, 0.57);
+  -moz-box-shadow: 0px 0px 27px 1px rgba(247, 144, 84, 0.57);
+  box-shadow: 0px 0px 27px 1px rgba(247, 144, 84, 0.57);
 }
 
 .hamburger .line {

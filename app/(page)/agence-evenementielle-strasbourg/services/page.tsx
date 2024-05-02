@@ -9,8 +9,8 @@ export default function Home() {
       <TitleSection
         title={'NOS SERVICES'}
         element={[
-          { href: '/evenement', text: 'Évenement' },
-          { href: '/evenement/nos-services', text: 'Nos services' }
+          { href: '/agence-evenementielle-strasbourg', text: 'Évenement' },
+          { href: '/agence-evenementielle-strasbourg/services', text: 'Nos services' }
         ]}
       ></TitleSection>
       <div className="section-px container mx-auto flex  flex-col gap-3xl">

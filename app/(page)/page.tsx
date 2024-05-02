@@ -23,7 +23,7 @@ export default function Home() {
           </p>
         </DivWrapper>
         <section className="container flex justify-between gap-2xl max-tablet:flex-col tablet:gap-xl  laptop:justify-center laptop:gap-3xl  laptop-large:max-w-[1200px] laptop-large:gap-5xl">
-          <Link href="evenement">
+          <Link href="agence-evenementielle-strasbourg">
             <DivWrapper
               className="heading--sub-large flex w-fit flex-col items-center gap-md rounded-md bg-default-200 px-2xl py-5xl"
               variant={ComingFromLeftVariant}
