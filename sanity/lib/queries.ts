@@ -1,6 +1,21 @@
 import { PortableTextBlock } from '@portabletext/react';
 import { groq } from 'next-sanity';
 
+interface Event {
+  _id: string;
+  _type: string;
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  categorie: string;
+  date: string;
+  titre: string;
+  description: string;
+  client: string;
+  metadescription: string;
+  metatitre: string;
+  imageGallery: Image[];
+}
 export interface Author {
   _type: string;
   _ref: string;
@@ -54,3 +69,7 @@ export type PostQueryResponse =
       body?: PortableTextBlock[] | null;
     })
   | null;
+
+export const EVENTS_QUERY = groq`*[_type == "evenement"]`;
+
+export type EventsQueryResponse = Event[] | null;

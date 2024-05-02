@@ -11,15 +11,15 @@ export default defineType({
       type: 'string',
       options: {
         list: [
-          { title: 'Convention', value: 'convention' },
-          { title: 'Anniversaire', value: 'anniversaire' },
-          { title: 'Inauguration', value: 'inauguration' },
-          { title: 'Cérémonie des médailles', value: 'ceremonieDesMedailles' },
-          { title: 'Cérémonie des voeux', value: 'ceremonieDesVoeux' },
-          { title: 'Portes ouvertes', value: 'portesOuvertes' },
-          { title: 'Soirée de gala', value: 'soireeDeGala' },
-          { title: "Spectacle d'entreprise", value: 'spectacleDentreprise' },
-          { title: 'Team building', value: 'teamBuilding' }
+          { title: 'Convention', value: 'Convention' },
+          { title: 'Anniversaire', value: 'Anniversaire' },
+          { title: 'Inauguration', value: 'Inauguration' },
+          { title: 'Cérémonie des médailles', value: 'Cérémonie des médailles' },
+          { title: 'Cérémonie des voeux', value: 'Cérémonie des voeux' },
+          { title: 'Portes ouvertes', value: 'Portes ouvertes' },
+          { title: 'Soirée de gala', value: 'Soirée de gala' },
+          { title: "Spectacle d'entreprise", value: "Spectacle d'entreprise" },
+          { title: 'Team building', value: 'Team Building' }
         ]
       },
       validation: (Rule) => Rule.required()

@@ -1,13 +1,23 @@
 import { ComingFromRightVariant } from '@/components/framer-motion/div-variants';
 import DivWrapper from '@/components/framer-motion/div-wrapper';
 import TitleSection from '@/components/ui/title-section';
+import { sanityFetch } from '@/sanity/lib/fetch';
+import { EVENTS_QUERY, EventsQueryResponse } from '@/sanity/lib/queries';
 import Image from 'next/image';
 
-export default function Home() {
+export default async function Page() {
+  const events = await sanityFetch<EventsQueryResponse>({
+    query: EVENTS_QUERY,
+    perspective: 'published',
+    stega: false
+  });
+
+  console.log(events);
+
   return (
     <main className="main relative mx-auto gap-2xl px-0 pt-5xl max-laptop:container max-laptop:gap-3xl mobile-small:gap-3xl mobile-medium:gap-2xl  mobile-large:gap-4xl tablet:pt-7xl laptop:max-w-[50rem]">
       <TitleSection
-        className="px-0"
+        className="px-0 "
         title={'CÉRÉMONIE DES MÉDAILLES'}
         element={[
           { href: '/agence-evenementielle-strasbourg', text: 'Évenement' },
@@ -23,7 +33,7 @@ export default function Home() {
         className="flex flex-col gap-2xl mobile-large:gap-3xl"
         tag="section"
       >
-        <h2 className="sub-heading font-normal">
+        <h2 className="sub-heading text-pretty font-normal ">
           Une cérémonie de médailles pour une entreprise en réussite, fière de son succès
         </h2>
         <Image
