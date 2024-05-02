@@ -88,7 +88,7 @@ export default async function TeamSection() {
       tag="section"
       viewport={{ once: true, margin: '-200px 0px -200px 0px' }}
       variant={ComingFromLeftVariant}
-      className=" flex w-full flex-col gap-2xl overflow-x-hidden pt-5xl"
+      className=" flex w-full flex-col items-center gap-2xl overflow-x-hidden pt-5xl"
     >
       <div className="section-px container mx-auto flex flex-col items-center gap-xl text-center">
         <h2 className="heading--large text-primary-400">Une agence pluri-indisciplinée...</h2>

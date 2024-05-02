@@ -1,13 +1,22 @@
 import { PortableTextBlock } from '@portabletext/react';
 import { groq } from 'next-sanity';
 
-interface Event {
+export interface Event {
   _id: string;
   _type: string;
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
-  categorie: string;
+  categorie:
+    | 'Convention'
+    | 'Anniversaire'
+    | 'Inauguration'
+    | 'Cérémonie des médailles'
+    | 'Cérémonie des voeux'
+    | 'Portes ouvertes'
+    | 'Soirée de gala'
+    | "Spectacle d'entreprise"
+    | 'Team Building';
   date: string;
   titre: string;
   description: string;

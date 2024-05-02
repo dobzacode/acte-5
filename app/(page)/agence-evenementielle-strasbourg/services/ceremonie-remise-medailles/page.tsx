@@ -2,17 +2,16 @@ import { ComingFromRightVariant } from '@/components/framer-motion/div-variants'
 import DivWrapper from '@/components/framer-motion/div-wrapper';
 import TitleSection from '@/components/ui/title-section';
 import { sanityFetch } from '@/sanity/lib/fetch';
-import { EVENTS_QUERY, EventsQueryResponse } from '@/sanity/lib/queries';
+import { EventsQueryResponse } from '@/sanity/lib/queries';
+import { groq } from 'next-sanity';
 import Image from 'next/image';
 
 export default async function Page() {
   const events = await sanityFetch<EventsQueryResponse>({
-    query: EVENTS_QUERY,
+    query: groq`*[_type == "evenement" && categorie == "Cérémonie des médailles"]`,
     perspective: 'published',
     stega: false
   });
-
-  console.log(events);
 
   return (
     <main className="main relative mx-auto gap-2xl px-0 pt-5xl max-laptop:container max-laptop:gap-3xl mobile-small:gap-3xl mobile-medium:gap-2xl  mobile-large:gap-4xl tablet:pt-7xl laptop:max-w-[50rem]">
