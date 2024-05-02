@@ -13,6 +13,7 @@ export default function Home() {
         ]}
       ></TitleSection>
       <InviewWrapper
+        className=""
         variant={ComingFromRightVariant}
         viewport={{ once: true, margin: '-200px 0px -200px 0px' }}
       >

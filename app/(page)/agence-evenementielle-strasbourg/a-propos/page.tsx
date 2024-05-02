@@ -6,7 +6,7 @@ import TitleSection from '@/components/ui/title-section';
 
 export default function Home() {
   return (
-    <main className="main relative gap-xl px-0 pt-5xl mobile-small:gap-3xl mobile-medium:gap-2xl mobile-large:gap-4xl tablet:gap-5xl tablet:pt-7xl laptop:gap-6xl laptop-large:gap-6xl">
+    <main className="relative flex flex-col items-center justify-center gap-xl px-0 pt-5xl mobile-small:gap-3xl mobile-medium:gap-2xl mobile-large:gap-4xl tablet:gap-5xl tablet:pt-7xl laptop:gap-6xl laptop-large:gap-6xl">
       <TitleSection
         title={'A PROPOS'}
         element={[
@@ -18,7 +18,7 @@ export default function Home() {
         variant={FromTopStaggerVariant}
         staggerValue={0.05}
         delay={1}
-        className="heading--sub-large section-px container mx-auto text-pretty text-center"
+        className="heading--sub-large section-px text-pretty text-center laptop:container laptop:mx-auto"
       >
         Lorem ipsum dolor sit amet, consectetur adipiscing eli, sed do eiusmod tempor incididunt ut
         labore et dolore magna

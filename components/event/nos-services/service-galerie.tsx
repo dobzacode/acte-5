@@ -58,13 +58,13 @@ export default function ServiceGalerie({}) {
   const isInView = useInView(ref, { margin: '-200px 0px -200px 0px', once: true });
 
   return (
-    <section ref={ref} className="min-h-screen">
+    <section ref={ref} className=" section-px min-h-screen w-full laptop:container laptop:mx-auto">
       {isInView && (
-        <ul className="section-px container mx-auto flex flex-wrap justify-center gap-lg">
+        <ul className=" grid grid-cols-2  justify-center gap-x-sm gap-y-md mobile-large:grid-cols-3 mobile-large:gap-x-lg mobile-large:gap-y-xl tablet:gap-y-2xl ">
           {SERVICES.map((service, index) => {
             return (
               <motion.li
-                className=" group relative overflow-hidden  rounded-b-sm rounded-t-sm duration-fast before:absolute before:left-0 before:top-0 before:h-full before:max-h-0 before:w-full before:bg-primary-400 before:duration-medium hover:rounded-t-sm hover:before:max-h-full "
+                className=" group relative  h-fit w-full overflow-hidden rounded-b-sm rounded-t-sm duration-fast before:absolute before:left-0 before:top-0 before:h-full before:max-h-0 before:w-full before:bg-primary-400 before:duration-medium hover:rounded-t-sm hover:before:max-h-full "
                 initial={{ opacity: 0, y: -300 }}
                 animate={{
                   opacity: 1,
@@ -79,7 +79,7 @@ export default function ServiceGalerie({}) {
               >
                 <Link className=" flex flex-col-reverse gap-sm" href={service.href}>
                   <motion.h3
-                    className={`sub-heading before-bg  relative py-2 duration-medium  group-hover:-mt-1 group-hover:ml-2 group-hover:text-white `}
+                    className={`sub-heading before-bg relative text-pretty  py-2 duration-medium  group-hover:-mt-1 group-hover:ml-2 group-hover:text-white `}
                     initial={{ opacity: 0, y: -300 }}
                     animate={{
                       opacity: 1,
@@ -93,13 +93,14 @@ export default function ServiceGalerie({}) {
                   >
                     {service.text}
                   </motion.h3>
-                  <Image
-                    className={`relative rounded-sm duration-medium group-hover:rounded-b-none`}
-                    src={service.src}
-                    alt={`${service}`}
-                    width={400}
-                    height={300}
-                  ></Image>
+                  <div className="relative aspect-square  overflow-hidden rounded-sm group-hover:rounded-b-none">
+                    <Image
+                      fill
+                      className={` object-cover duration-medium`}
+                      src={service.src}
+                      alt={`${service}`}
+                    ></Image>
+                  </div>
                 </Link>
               </motion.li>
             );

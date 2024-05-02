@@ -90,7 +90,7 @@ export default async function TeamSection() {
       variant={ComingFromLeftVariant}
       className=" flex w-full flex-col items-center gap-2xl overflow-x-hidden pt-5xl"
     >
-      <div className="section-px container mx-auto flex flex-col items-center gap-xl text-center">
+      <div className="section-px flex flex-col items-center gap-xl text-center laptop:container laptop:mx-auto">
         <h2 className="heading--large text-primary-400">Une agence pluri-indisciplinée...</h2>
         <p className="sub-heading max-w-[80ch] text-pretty">
           Ne demandez pas une présentation académique de l&apos;équipe ! On s&apos;y ennuierait bien

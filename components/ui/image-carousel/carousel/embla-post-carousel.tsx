@@ -83,8 +83,8 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
 
   return (
     <>
-      <div className="embla container  relative">
-        <div className="relative overflow-hidden rounded-sm" ref={emblaRef}>
+      <div className="embla  container relative overflow-hidden ">
+        <div className="relative rounded-sm" ref={emblaRef}>
           <div className="embla__container ">
             {props.imageArr.map((image, index) => (
               <div

@@ -7,7 +7,7 @@ import Image from 'next/image';
 export default function Home() {
   return (
     <main className="main relative mx-auto gap-2xl px-0 pt-5xl laptop:pt-7xl">
-      <section className="max-laptop:section-px relative mx-auto flex flex-col items-center justify-center gap-2xl max-laptop:container max-laptop:gap-3xl mobile-small:gap-3xl mobile-medium:gap-2xl  mobile-large:gap-4xl  laptop:max-w-[50rem]">
+      <section className="max-laptop:section-px relative mx-auto flex flex-col items-center justify-center gap-2xl  max-laptop:gap-3xl mobile-small:gap-3xl mobile-medium:gap-2xl  mobile-large:gap-4xl  laptop:max-w-[50rem]">
         <TitleSection
           className="px-0"
           title={"INAUGURATION D'ENTREPRISE"}

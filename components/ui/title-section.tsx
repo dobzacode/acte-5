@@ -21,7 +21,10 @@ export default function TitleSection({
 }) {
   return (
     <DivWrapper
-      className={cn('section-px container mx-auto flex  flex-col gap-5 self-start', className)}
+      className={cn(
+        'section-px  flex flex-col  gap-5 self-start laptop:container laptop:mx-auto',
+        className
+      )}
       tag="section"
       variant={ComingFromLeftVariant}
     >
