@@ -8,10 +8,12 @@ import { EVENTLINKS, SPECTACLELINKS } from './nav-links';
 
 export default function MobileNavLinks({
   isEvent,
-  pathname
+  pathname,
+  setShowMenu
 }: {
   isEvent: boolean;
   pathname: string;
+  setShowMenu: (showMenu: boolean) => void;
 }) {
   const links = isEvent ? EVENTLINKS : SPECTACLELINKS;
 
@@ -20,6 +22,7 @@ export default function MobileNavLinks({
       {links.map((link, index) => (
         <motion.li
           key={uuidv4()}
+          onClick={() => setShowMenu(false)}
           initial={{ x: -300 }}
           animate={{
             x: 0,
@@ -35,10 +38,12 @@ export default function MobileNavLinks({
         >
           <Link
             className={cn(
-              'menu-item  w-fit  px-sm text-black hover:bg-primary-500 hover:text-white',
-              `${pathname === link.href && 'pointer-events-none'}`,
+              ' sub-heading w-fit px-sm text-black hover:bg-primary-500 hover:text-white',
+              `${pathname.includes(link.href) && 'pointer-events-none'}`,
               index % 2 === 0 ? 'hvr-grow-rotate' : 'hvr-grow-rotate-reverse',
-              pathname === link.href ? '  bg-white text-black before:max-w-full' : 'before:max-w-0'
+              pathname.includes(link.href)
+                ? '  rounded-xs bg-primary-400 text-white before:max-w-full'
+                : 'before:max-w-0'
             )}
             href={link.href}
           >
