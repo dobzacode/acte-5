@@ -24,8 +24,8 @@
   },
   "include": [
     "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
+    "**/**/*.ts",
+    "**/**/*.tsx",
     ".next/types/**/*.ts",
     "svgr.d.ts",
     "app/(page)/publication/[slug]/loading.js"
