@@ -6,16 +6,22 @@ import { urlForImage } from '@/sanity/lib/utils';
 import { groq } from 'next-sanity';
 import ServiceCarousel from './service-carousel';
 
-export interface Member {
-  url: string;
-  alt: string;
-  name: string;
-  work: string;
-  description: string;
-  blurSrc?: string;
-}
-
-export default async function LastEvent() {
+export default async function LastEvent({
+  h2,
+  categorie
+}: {
+  h2: string;
+  categorie:
+    | 'Convention'
+    | 'Anniversaire'
+    | 'Inauguration'
+    | 'Cérémonie des médailles'
+    | 'Cérémonie des voeux'
+    | 'Portes ouvertes'
+    | 'Soirée de gala'
+    | "Spectacle d'entreprise"
+    | 'Team Building';
+}) {
   const events = await sanityFetch<EventsQueryResponse>({
     query: groq`*[_type == "evenement" && categorie == "Convention"]`,
     perspective: 'published',
@@ -45,13 +51,7 @@ export default async function LastEvent() {
       className=" flex w-full flex-col items-center gap-2xl overflow-x-hidden pt-5xl"
     >
       <div className="section-px container mx-auto flex flex-col items-center gap-xl text-center">
-        <h2 className="heading--large text-primary-400">Une agence pluri-indisciplinée...</h2>
-        <p className="sub-heading max-w-[80ch] text-pretty">
-          Ne demandez pas une présentation académique de l&apos;équipe ! On s&apos;y ennuierait bien
-          vite. Sachez simplement qu&apos;à eux 6, ils représentent 25 diplômes dont 2 de
-          secouriste, 12 flocons, 10 étoiles, 1 flèche d&apos;argent, 1 de bronze, 4 permis B et 13
-          galops. Mais voyons plutôt !
-        </p>
+        <h2 className="heading--large text-primary-400">{h2}</h2>
       </div>
       <ServiceCarousel options={{ loop: true }} events={eventsWithImg}></ServiceCarousel>
     </InviewWrapper>

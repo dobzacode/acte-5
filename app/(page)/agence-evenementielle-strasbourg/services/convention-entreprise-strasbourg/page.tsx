@@ -6,8 +6,8 @@ import Image from 'next/image';
 
 export default async function Home() {
   return (
-    <main className="main relative mx-auto gap-2xl px-0 pt-5xl ">
-      <section className="main relative mx-auto gap-2xl px-0  max-laptop:container max-laptop:gap-3xl mobile-small:gap-3xl mobile-medium:gap-2xl  mobile-large:gap-4xl tablet:pt-7xl laptop:max-w-[50rem]">
+    <main className="main relative mx-auto gap-2xl px-0 pt-5xl laptop:pt-7xl">
+      <section className="max-laptop:section-px relative mx-auto flex flex-col items-center justify-center gap-2xl max-laptop:container max-laptop:gap-3xl mobile-small:gap-3xl mobile-medium:gap-2xl  mobile-large:gap-4xl  laptop:max-w-[50rem]">
         <TitleSection
           className="px-0"
           title={"CONVENTION D'ENTREPRISE"}
@@ -70,7 +70,10 @@ export default async function Home() {
           </div>
         </DivWrapper>
       </section>
-      <LastEvent></LastEvent>
+      <LastEvent
+        h2="Nos précédentes conventions organisées à Strasbourg et en Alsace"
+        categorie="Convention"
+      ></LastEvent>
     </main>
   );
 }
