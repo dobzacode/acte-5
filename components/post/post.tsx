@@ -22,15 +22,14 @@ export default async function Post({ post }: { post: PostQueryResponse }) {
     : null;
 
   return (
-    <section className="flex w-full flex-col  gap-lg">
-      {post.titre ? <h1 className="heading--extra-large text-primary-400">{post.titre}</h1> : null}
+    <>
       {post.mainImage ? (
         <Image
-          className=""
+          className="shrink-0 rounded-sm"
           src={urlForImage(post.mainImage).width(800).height(400).dpr(2).quality(80).url()}
           alt="My Image"
           width={800}
-          height={400}
+          height={800}
           sizes="(max-width: 600px) 90vw, (max-width: 1200px) 60vw, 500px"
           placeholder="blur"
           blurDataURL={urlForImage(post.mainImage).width(20).quality(20).url()}
@@ -42,6 +41,6 @@ export default async function Post({ post }: { post: PostQueryResponse }) {
       {imagesWithUrl ? (
         <EmblaCarousel imageArr={imagesWithUrl} options={{ loop: true, active: true }} />
       ) : null}
-    </section>
+    </>
   );
 }

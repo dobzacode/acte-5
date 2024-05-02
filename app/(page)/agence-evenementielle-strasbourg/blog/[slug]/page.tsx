@@ -3,11 +3,9 @@ import { groq } from 'next-sanity';
 import { POSTS_QUERY, POST_QUERY, PostQueryResponse } from '@/sanity/lib/queries';
 
 import PostpageContent from '@/components/post/postpage-content';
-import PostpageSkeleton from '@/components/skeleton/postpage-skeleton';
 import { sanityFetch } from '@/sanity/lib/fetch';
 import { resolveOpenGraphImage } from '@/sanity/lib/utils';
 import { Metadata, ResolvingMetadata } from 'next';
-import { Suspense } from 'react';
 
 type Props = {
   params: { slug: string };
@@ -43,9 +41,5 @@ export async function generateMetadata(
 }
 
 export default function Page({ params }: Props) {
-  return (
-    <Suspense fallback={<PostpageSkeleton />}>
-      <PostpageContent params={params}></PostpageContent>
-    </Suspense>
-  );
+  return <PostpageContent params={params}></PostpageContent>;
 }

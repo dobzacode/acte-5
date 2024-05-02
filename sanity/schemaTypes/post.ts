@@ -6,18 +6,6 @@ export default defineType({
   type: 'document',
   fields: [
     defineField({
-      name: 'metatitre',
-      title: 'Métatitre',
-      type: 'string',
-      validation: (Rule) => Rule.required()
-    }),
-    defineField({
-      name: 'metadescription',
-      title: 'Métadescription',
-      type: 'string',
-      validation: (Rule) => Rule.required()
-    }),
-    defineField({
       name: 'titre',
       title: 'Titre',
       type: 'string',
@@ -63,6 +51,15 @@ export default defineType({
       of: [{ type: 'reference', to: { type: 'category' } }]
     }),
     defineField({
+      name: 'description',
+      title: 'Description',
+      type: 'text',
+      validation: (Rule) =>
+        Rule.max(200)
+          .required()
+          .warning(`La description de l'événément ne doit pas dépasser 200 caractères`)
+    }),
+    defineField({
       name: 'publishedAt',
       title: 'Publié le',
       type: 'datetime'
@@ -91,6 +88,18 @@ export default defineType({
           ]
         }
       ]
+    }),
+    defineField({
+      name: 'metatitre',
+      title: 'Métatitre',
+      type: 'string',
+      validation: (Rule) => Rule.required()
+    }),
+    defineField({
+      name: 'metadescription',
+      title: 'Métadescription',
+      type: 'string',
+      validation: (Rule) => Rule.required()
     })
   ],
 

@@ -61,6 +61,7 @@ export interface Post {
   auteur?: Author;
   mainImage: Image;
   imageGallery?: Image[];
+  description: string;
 }
 
 export const POSTS_QUERY = groq`*[_type == "publication" && defined(slug)]`;

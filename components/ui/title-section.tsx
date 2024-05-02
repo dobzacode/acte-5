@@ -25,7 +25,7 @@ export default function TitleSection({
       tag="section"
       variant={ComingFromLeftVariant}
     >
-      <h1 className={cn('heading--extra-large  text-primary-400', h1Css)}>{title}</h1>
+      <h1 className={cn('heading--extra-large text-pretty text-primary-400', h1Css)}>{title}</h1>
       <UiBreadcrumbs element={element}></UiBreadcrumbs>
       {description && <p className="sub-heading max-w-[60ch] pt-lg">{description}</p>}
     </DivWrapper>
