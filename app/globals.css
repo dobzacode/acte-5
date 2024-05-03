@@ -34,10 +34,6 @@
     @apply text-lg font-normal leading-lg;
   }
 
-  .main {
-    @apply flex w-full flex-col items-center justify-center laptop:px-2xl  laptop-large:px-4xl;
-  }
-
   .sub-heading {
     @apply text-sm font-light leading-sm laptop:text-md laptop:leading-md;
   }
@@ -48,6 +44,18 @@
 
   .caption {
     @apply text-xs font-light leading-xs;
+  }
+
+  .main {
+    @apply flex w-full flex-col items-center justify-center laptop:px-2xl  laptop-large:px-4xl;
+  }
+
+  .main-gap {
+    @apply gap-xl mobile-small:gap-3xl mobile-medium:gap-2xl mobile-large:gap-4xl tablet:gap-5xl laptop:gap-6xl laptop-large:gap-8xl;
+  }
+
+  .inner-section-py {
+    @apply py-xl mobile-small:py-3xl mobile-medium:py-2xl mobile-large:py-4xl tablet:py-5xl laptop:py-6xl laptop-large:py-8xl;
   }
 
   .card {

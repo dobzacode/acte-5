@@ -13,7 +13,7 @@ export default function SpectacleSection() {
       <InviewWrapper
         variant={ComingFromTopVariant}
         tag="h1"
-        className="heading--extra-large max-w-[30ch]"
+        className="heading--extra-large max-w-[30ch] text-center"
       >
         Spectacle d'entreprise
       </InviewWrapper>
