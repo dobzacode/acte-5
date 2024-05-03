@@ -10,7 +10,7 @@ import GalleryScrollAnimation from './gallery-scroll-animation';
 
 export default function ScouteSection() {
   return (
-    <section className="inner-section-py flex w-full flex-col gap-9xl rounded-br-4xl rounded-tl-4xl bg-white">
+    <section className="inner-section-py relative z-20 flex w-full flex-col gap-9xl rounded-br-4xl rounded-tl-4xl bg-white">
       <div className="flex flex-col items-center gap-xl">
         <InviewWrapper
           variant={ComingFromLeftVariant}
