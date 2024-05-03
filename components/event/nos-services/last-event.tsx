@@ -1,10 +1,15 @@
 import { ComingFromLeftVariant } from '@/components/framer-motion/div-variants';
 import InviewWrapper from '@/components/framer-motion/inview-wrapper';
 import { sanityFetch } from '@/sanity/lib/fetch';
-import { EventsQueryResponse } from '@/sanity/lib/queries';
+import { Event, EventsQueryResponse } from '@/sanity/lib/queries';
 import { urlForImage } from '@/sanity/lib/utils';
 import { groq } from 'next-sanity';
 import ServiceCarousel from './service-carousel';
+
+export interface EventWithImg extends Event {
+  src: string;
+  blurSrc: string;
+}
 
 export default async function LastEvent({
   h2,

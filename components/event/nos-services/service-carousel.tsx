@@ -8,10 +8,11 @@ import 'yet-another-react-lightbox/styles.css';
 
 import { EmblaOptionsType } from 'embla-carousel';
 import Image from 'next/image';
+import { EventWithImg } from './last-event';
 
 type PropType = {
   options?: EmblaOptionsType;
-  events: any[];
+  events: EventWithImg[];
 };
 
 const ServiceCarousel: React.FC<PropType> = (props) => {
