@@ -28,7 +28,7 @@ export default function ProjectSection({ events }: { events: EventWithImgAndInde
             className="flex w-1/2 flex-col gap-xl"
           >
             <>
-              <h2 className="heading--sub-extra-large text-pretty text-primary-400">
+              <h2 className="heading--large text-pretty text-primary-400">
                 {selectedEvent.client}
               </h2>
               <p className="sub-heading">{selectedEvent.description}</p>

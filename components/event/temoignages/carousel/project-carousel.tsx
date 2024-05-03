@@ -27,7 +27,13 @@ type PropType = {
 
 const ProjectCarousel: React.FC<PropType> = (props) => {
   const { options, className, events, setSelectedIndex } = props;
-  const [emblaRef, emblaApi] = useEmblaCarousel(options);
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    loop: true,
+    watchDrag: (obj) => {
+      obj.on('select', () => setSelectedIndex(obj.selectedScrollSnap()));
+      return true;
+    }
+  });
   const tweenFactor = useRef(0);
   const tweenNodes = useRef<HTMLElement[]>([]);
 
