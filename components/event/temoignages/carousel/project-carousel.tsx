@@ -12,7 +12,7 @@ import { EmblaCarouselType, EmblaEventType, EmblaOptionsType } from 'embla-carou
 import Image from 'next/image';
 import { NextButton, PrevButton, usePrevNextButtons } from './arrow-buttons';
 
-const TWEEN_FACTOR_BASE = 0.52;
+const TWEEN_FACTOR_BASE = 0.2;
 
 const numberWithinRange = (number: number, min: number, max: number): number =>
   Math.min(Math.max(number, min), max);
@@ -98,15 +98,15 @@ const ProjectCarousel: React.FC<PropType> = (props) => {
 
   return (
     <>
-      <div className={cn('project_embla  container relative ', className)}>
+      <div className={cn('project_embla container relative pb-sm ', className)}>
         <div className=" relative rounded-sm" ref={emblaRef}>
           <div className="project_embla__container ">
             {events.map((event, index) => (
               <div
-                className="project_embla__slide relative aspect-square h-[20rem]  cursor-pointer   rounded-sm mobile-large:h-[40rem]"
+                className="project_embla__slide relative   aspect-square h-[20rem] cursor-pointer  rounded-sm    mobile-large:h-[30rem]"
                 key={index}
               >
-                <div className="project_embla__slide__number relative h-full w-full">
+                <div className="project_embla__slide__number relative h-full w-full overflow-hidden rounded-sm shadow-medium ">
                   <Image
                     fill
                     className="object-cover"
@@ -120,8 +120,8 @@ const ProjectCarousel: React.FC<PropType> = (props) => {
             ))}
           </div>
         </div>
-        <div className="project_embla__controls">
-          <div className="project_embla__buttons">
+        <div className="flex w-full justify-center pt-sm">
+          <div className="flex h-fit w-fit  rounded-sm shadow-medium [&>button]:active:scale-110">
             <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
             <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
           </div>

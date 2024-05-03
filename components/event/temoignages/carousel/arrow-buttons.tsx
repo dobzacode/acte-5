@@ -1,3 +1,4 @@
+import { EventWithImgAndIndex } from '@/app/(page)/agence-evenementielle-strasbourg/temoignages/page';
 import { EmblaCarouselType } from 'embla-carousel';
 import React, { PropsWithChildren, useCallback, useEffect, useState } from 'react';
 
@@ -10,7 +11,8 @@ type UsePrevNextButtonsType = {
 
 export const usePrevNextButtons = (
   emblaApi: EmblaCarouselType | undefined,
-  setSelectedIndex: (index: number) => void
+  setSelectedIndex: (index: number) => void,
+  events: EventWithImgAndIndex[]
 ): UsePrevNextButtonsType => {
   const [prevBtnDisabled, setPrevBtnDisabled] = useState(true);
   const [nextBtnDisabled, setNextBtnDisabled] = useState(true);
@@ -60,7 +62,11 @@ export const PrevButton: React.FC<PropType> = (props) => {
   const { children, ...restProps } = props;
 
   return (
-    <button className="project_embla__button embla__button--prev" type="button" {...restProps}>
+    <button
+      className="project_embla__button embla__button--prev origin-right rounded-l-sm rounded-r-none border-1  border-solid border-gray-400 duration-fast hover:border-primary-300 hover:bg-primary-300  [&>svg>path]:hover:fill-white"
+      type="button"
+      {...restProps}
+    >
       <svg className="project_embla__button__svg" viewBox="0 0 532 532">
         <path
           fill="currentColor"
@@ -76,7 +82,11 @@ export const NextButton: React.FC<PropType> = (props) => {
   const { children, ...restProps } = props;
 
   return (
-    <button className="project_embla__button embla__button--next" type="button" {...restProps}>
+    <button
+      className="project_embla__button embla__button--next origin-left rounded-l-none rounded-r-sm border-1  border-solid border-gray-400 duration-fast hover:border-primary-300 hover:bg-primary-300 active:border-primary-300 [&>svg>path]:hover:fill-white"
+      type="button"
+      {...restProps}
+    >
       <svg className="project_embla__button__svg" viewBox="0 0 532 532">
         <path
           fill="currentColor"

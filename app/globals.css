@@ -67,7 +67,7 @@
   }
 
   .fade-x {
-    @apply before:absolute before:right-0 before:z-20 before:h-full before:w-[10rem] before:bg-gradient-to-l before:from-white before:to-transparent after:absolute after:left-0 after:z-20 after:h-full after:w-[10rem] after:bg-gradient-to-r after:from-white after:to-transparent;
+    @apply before:absolute before:right-0 before:z-20 before:h-full before:w-1/6 before:bg-gradient-to-l before:from-white before:to-transparent after:absolute after:left-0 after:top-0 after:z-20 after:h-full after:w-1/6 after:bg-gradient-to-r after:from-white after:to-transparent;
   }
 }
 

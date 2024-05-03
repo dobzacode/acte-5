@@ -47,6 +47,27 @@ export const ComingFromLeftVariant: Variants = {
   }
 };
 
+export const TextSliderVariant: Variants = {
+  hidden: {
+    opacity: 0,
+    x: -100
+  },
+  enter: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      type: 'spring'
+    }
+  },
+  exit: {
+    opacity: 0,
+    x: 100,
+    transition: {
+      duration: 0.2
+    }
+  }
+};
+
 export const ComingFromRightVariant: Variants = {
   hidden: {
     opacity: 0,

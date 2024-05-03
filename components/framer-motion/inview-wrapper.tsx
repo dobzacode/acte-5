@@ -28,13 +28,13 @@ export default function InviewWrapper({
     <MotionComponent
       id={id}
       style={style}
-      initial="hidden"
-      exit={inverseOnExit ? 'exit' : 'hidden'}
       transition={{ duration: 1, ease: 'easeInOut' }}
       className={className}
       variants={variant}
       viewport={viewport}
       whileInView="enter"
+      initial="hidden"
+      exit={inverseOnExit ? 'exit' : 'hidden'}
     >
       {children}
     </MotionComponent>
