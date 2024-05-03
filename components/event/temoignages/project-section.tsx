@@ -41,7 +41,6 @@ export default function ProjectSection({ events }: { events: EventWithImgAndInde
         variant={ComingFromRightVariant}
       >
         <ProjectCarousel
-          options={{ loop: true }}
           selectedIndex={selectedIndex}
           setSelectedIndex={setSelectedIndex}
           events={events}

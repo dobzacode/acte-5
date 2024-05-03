@@ -1,6 +1,7 @@
 import { FromTopStaggerVariant } from '@/components/framer-motion/div-variants';
 import InviewWrapper from '@/components/framer-motion/inview-wrapper';
 import StaggeredText from '@/components/framer-motion/staggered-text';
+import Section2024 from '@/components/spectacle/revue-scoute/section-2024';
 import TitleSection from '@/components/ui/title-section';
 import Image from 'next/image';
 
@@ -78,6 +79,7 @@ export default async function Home() {
           </InviewWrapper>
         </div>
       </div>
+      <Section2024></Section2024>
     </main>
   );
 }

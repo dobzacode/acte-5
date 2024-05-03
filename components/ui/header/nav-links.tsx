@@ -18,11 +18,11 @@ export const EVENTLINKS: Links[] = [
 ];
 
 export const SPECTACLELINKS: Links[] = [
-  { name: 'Revue scoute', href: '/spectacle/revue-scoute' },
-  { name: "A l'affiche", href: '/spectacle/a-laffiche' },
-  { name: 'Portofolio', href: '/spectacle/portfolio' },
-  { name: 'A propos', href: '/spectacle/a-propos' },
-  { name: 'Contact', href: '/spectacle/contact' }
+  { name: 'Revue scoute', href: '/spectacles-strasbourg/revue-scoute' },
+  { name: "A l'affiche", href: '/spectacles-strasbourg/a-laffiche' },
+  { name: 'Portofolio', href: '/spectacles-strasbourg/portfolio' },
+  { name: 'A propos', href: '/spectacles-strasbourg/a-propos' },
+  { name: 'Contact', href: '/spectacles-strasbourg/contact' }
 ];
 
 export default function NavLinks({ isEvent, pathname }: { isEvent: boolean; pathname: string }) {
