@@ -1,6 +1,7 @@
 import { FromTopStaggerVariant } from '@/components/framer-motion/div-variants';
 import InviewWrapper from '@/components/framer-motion/inview-wrapper';
 import StaggeredText from '@/components/framer-motion/staggered-text';
+import PastSection from '@/components/spectacle/revue-scoute/past-section';
 import Section2024 from '@/components/spectacle/revue-scoute/section-2024';
 import TitleSection from '@/components/ui/title-section';
 import Image from 'next/image';
@@ -46,7 +47,13 @@ export default async function Home() {
               }
             }}
           >
-            <Image src="/placeholder-image.png" alt="Image" width={800} height={800}></Image>
+            <Image
+              className="rounded-xs"
+              src="/placeholder-image.png"
+              alt="Image"
+              width={800}
+              height={800}
+            ></Image>
           </InviewWrapper>
           <InviewWrapper
             variant={{
@@ -70,7 +77,7 @@ export default async function Home() {
             }}
           >
             <Image
-              className="-ml-7xl -mt-5xl"
+              className="-ml-7xl -mt-5xl rounded-xs"
               src="/placeholder-image.png"
               alt="Image"
               width={400}
@@ -80,6 +87,7 @@ export default async function Home() {
         </div>
       </div>
       <Section2024></Section2024>
+      <PastSection></PastSection>
     </main>
   );
 }

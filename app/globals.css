@@ -59,7 +59,7 @@
   }
 
   .card {
-    @apply rounded-md border border-default-50 bg-white p-md shadow-md;
+    @apply rounded-sm border border-default-50 bg-white p-md shadow-md;
   }
 
   .menu-item {

@@ -8,6 +8,7 @@ export interface DateProps {
   information: string;
   lien: string;
   index: string;
+  date: string;
 }
 
 const TEMPARR = [
@@ -16,56 +17,64 @@ const TEMPARR = [
     information:
       'Du 12 janvier au 25 février 2024 à la Briqueterie, rue de la 2e Division Blindée à Schiltigheim. À 20h30, dimanche à 17h',
     lien: 'https://www.larevuescoute.fr/strasbourg',
-    index: '0'
+    index: '0',
+    date: '2024-01-12'
   },
   {
     ville: 'Strasbourg',
     information:
       'Du 12 janvier au 25 février 2024 à la Briqueterie, rue de la 2e Division Blindée à Schiltigheim. À 20h30, dimanche à 17h',
     lien: 'https://www.larevuescoute.fr/strasbourg',
-    index: '1'
+    index: '1',
+    date: '2024-01-12'
   },
   {
     ville: 'Strasbourg',
     information:
       'Du 12 janvier au 25 février 2024 à la Briqueterie, rue de la 2e Division Blindée à Schiltigheim. À 20h30, dimanche à 17h',
     lien: 'https://www.larevuescoute.fr/strasbourg',
-    index: '2'
+    index: '2',
+    date: '2024-01-12'
   },
   {
     ville: 'Strasbourg',
     information:
       'Du 12 janvier au 25 février 2024 à la Briqueterie, rue de la 2e Division Blindée à Schiltigheim. À 20h30, dimanche à 17h',
     lien: 'https://www.larevuescoute.fr/strasbourg',
-    index: '3'
+    index: '3',
+    date: '2024-01-12'
   },
   {
     ville: 'Strasbourg',
     information:
       'Du 12 janvier au 25 février 2024 à la Briqueterie, rue de la 2e Division Blindée à Schiltigheim. À 20h30, dimanche à 17h',
     lien: 'https://www.larevuescoute.fr/strasbourg',
-    index: '4'
+    index: '4',
+    date: '2024-01-12'
   },
   {
     ville: 'Strasbourg',
     information:
       'Du 12 janvier au 25 février 2024 à la Briqueterie, rue de la 2e Division Blindée à Schiltigheim. À 20h30, dimanche à 17h',
     lien: 'https://www.larevuescoute.fr/strasbourg',
-    index: '5'
+    index: '5',
+    date: '2025-01-12'
   },
   {
     ville: 'Strasbourg',
     information:
       'Du 12 janvier au 25 février 2024 à la Briqueterie, rue de la 2e Division Blindée à Schiltigheim. À 20h30, dimanche à 17h',
     lien: 'https://www.larevuescoute.fr/strasbourg',
-    index: '6'
+    index: '6',
+    date: '2025-01-12'
   },
   {
     ville: 'Strasbourg',
     information:
       'Du 12 janvier au 25 février 2024 à la Briqueterie, rue de la 2e Division Blindée à Schiltigheim. À 20h30, dimanche à 17h',
     lien: 'https://www.larevuescoute.fr/strasbourg',
-    index: '7'
+    index: '7',
+    date: '2025-01-12'
   }
 ];
 
@@ -73,9 +82,14 @@ export default function DateTable() {
   const [actualDate, setActualDate] = useState<string | null>(null);
 
   return (
-    <ul className="flex w-full flex-col divide-y-1 rounded-md  px-0 shadow-inner">
+    <ul className="flex w-full flex-col gap-sm  px-0 ">
       {TEMPARR.map((item, index) => (
-        <DateRow setActualDate={setActualDate} actualDate={actualDate} date={item}></DateRow>
+        <DateRow
+          index={index}
+          setActualDate={setActualDate}
+          actualDate={actualDate}
+          date={item}
+        ></DateRow>
       ))}
     </ul>
   );

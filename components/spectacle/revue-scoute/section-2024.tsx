@@ -5,7 +5,7 @@ import DateTable from '../landing/scoute-section/date-table';
 
 export default function Section2024() {
   return (
-    <section className="section-px flex flex-col gap-6xl laptop:container laptop:mx-auto">
+    <section className="section-px flex flex-col gap-6xl ">
       <section className="section-px flex flex-col gap-xl laptop:container laptop:mx-auto">
         <InviewWrapper
           className="heading--sub-extra-large text-primary-400"
@@ -14,7 +14,7 @@ export default function Section2024() {
         >
           Edition 2024
         </InviewWrapper>
-        <div className="relative h-[30rem] w-full">
+        <div className="relative h-[30rem] w-full overflow-hidden rounded-sm">
           <Image src="/placeholder-image.png" fill alt="image" className="object-cover"></Image>
         </div>
         <p className="sub-heading text-pretty">
@@ -39,6 +39,46 @@ export default function Section2024() {
           Les dates
         </InviewWrapper>
         <DateTable></DateTable>
+      </section>
+      <section className="section-px flex w-full flex-col gap-xl laptop:container laptop:mx-auto">
+        <InviewWrapper
+          className="heading--sub-extra-large  text-primary-400 "
+          tag="h2"
+          variant={ComingFromLeftVariant}
+        >
+          Distribution
+        </InviewWrapper>
+        <ul className="flex w-full flex-wrap items-center  gap-md">
+          {Array.from({ length: 12 }).map((_, index) => {
+            return (
+              <InviewWrapper
+                style={{ zIndex: 20 - index }}
+                variant={{
+                  hidden: {
+                    opacity: 0,
+                    y: -200
+                  },
+                  enter: {
+                    opacity: 1,
+                    y: 0,
+                    transition: {
+                      y: { delay: 0.5 + index * 0.1, type: 'spring', damping: 20 },
+                      opacity: { duration: 0.2, delay: 0.5 + index * 0.1 }
+                    }
+                  },
+                  exit: {
+                    opacity: 0,
+                    y: -200
+                  }
+                }}
+                className="card relative flex flex-col  gap-md overflow-hidden px-0 pt-0"
+              >
+                <Image src="/placeholder-image.png" alt="image" width={200} height={400}></Image>
+                <p className="sub-heading px-sm text-center">Lorem Ipsum</p>
+              </InviewWrapper>
+            );
+          })}
+        </ul>
       </section>
     </section>
   );
