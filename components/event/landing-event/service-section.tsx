@@ -5,6 +5,9 @@ import UiButton from '@/components/ui/ui-button';
 const ONGLETS =
   'CONVENTION D’ENTREPRISE - ANNIVERSAIRE - INAUGURATION D’ENTREPRISE - CÉRÉMONIE DES MÉDAILLES - CÉRÉMONIE DES VŒUX - PORTES OUVERTES - SOIRÉE DE GALA - SPECTACLE D’ENTREPRISE - TEAM BUILDING - CONVENTION D’ENTREPRISE - ANNIVERSAIRE';
 
+const ONGLETSBIS =
+  'TEAM BUILDING - SOIRÉE DE GALA - INAUGURATION D’ENTREPRISE - ANNIVERSAIRE - CONVENTION D’ENTREPRISE - CÉRÉMONIE DES MÉDAILLES - PORTES OUVERTES - CÉRÉMONIE DES VŒUX - SPECTACLE D’ENTREPRISE - ANNIVERSAIRE - CONVENTION D’ENTREPRISE';
+
 export default function ServiceSection() {
   const GRID_CHILDREN = () => {
     return [
@@ -53,7 +56,7 @@ export default function ServiceSection() {
   };
 
   return (
-    <section className="flex w-full flex-col gap-2xl overflow-x-clip bg-black mobile-large:gap-5xl  laptop:gap-5xl laptop-large:gap-7xl">
+    <section className="flex w-full flex-col gap-2xl overflow-x-clip bg-black ">
       <Marquee>
         <p className="heading--extra-large text-white">{ONGLETS}</p>
       </Marquee>
@@ -100,8 +103,8 @@ export default function ServiceSection() {
         </div>
       </div>
 
-      <Marquee>
-        <p className="heading--extra-large text-white">{ONGLETS}</p>
+      <Marquee inverted>
+        <p className="heading--extra-large text-white">{ONGLETSBIS}</p>
       </Marquee>
     </section>
   );
