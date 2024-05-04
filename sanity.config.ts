@@ -7,7 +7,6 @@ import { dataset, projectId, studioUrl } from './sanity/lib/api';
 import { schema } from './sanity/schema';
 
 const singletonActions = new Set(['publish', 'discardChanges', 'restore']);
-
 const singletonTypes = new Set(['']);
 
 export default defineConfig({
@@ -20,7 +19,7 @@ export default defineConfig({
       //@ts-expect-error - TS doesn't know about the `structure` method
       structure: (S) =>
         S.list()
-          .title('Content')
+          .title('Contenu')
           .items([
             // Our singleton type has a list item with a custom child
             S.listItem().title("Tournée de l'année").id('revueScouteActuelle').child(
@@ -31,7 +30,7 @@ export default defineConfig({
             ),
 
             // Regular document types
-            S.documentTypeListItem('event').title('Evenement'),
+            S.documentTypeListItem('evenement').title('Evenement'),
             S.documentTypeListItem('post').title('Publication'),
             S.documentTypeListItem('spectacle').title('Spectacle')
           ])
