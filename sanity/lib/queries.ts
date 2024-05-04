@@ -70,7 +70,7 @@ export interface Affiche {
   _rev: string;
   _createdAt: string;
   _updatedAt: string;
-  imageGallery?: Image[];
+  imageGallery: Image[];
 }
 
 export const POSTS_QUERY = groq`*[_type == "publication" && defined(slug)]`;
@@ -93,6 +93,6 @@ export const EVENTS_QUERY = groq`*[_type == "evenement"]`;
 
 export const AFFICHES_QUERY = groq`*[_type == "revueScouteAffiche"]`;
 
-export type AffichesQueryResponse = Affiche | null;
+export type AffichesQueryResponse = Affiche[] | null;
 
 export type EventsQueryResponse = Event[] | null;
