@@ -9,6 +9,7 @@ export default defineType({
       name: 'seo',
       title: 'SEO'
     },
+    { name: 'contenu', title: 'Contenu', default: true },
     { name: 'media', title: 'Media' },
     { name: 'production', title: 'Production' }
   ],
@@ -17,6 +18,7 @@ export default defineType({
       name: 'titre',
       title: 'Titre',
       type: 'string',
+      group: 'contenu',
       validation: (Rule) =>
         Rule.max(100)
           .required()
@@ -26,11 +28,13 @@ export default defineType({
       name: 'date',
       title: 'Date',
       type: 'datetime',
+      group: 'contenu',
       validation: (Rule) => Rule.required()
     }),
     defineField({
       name: 'body',
       title: 'Description',
+      group: 'contenu',
       type: 'blockContent'
     }),
     defineField({

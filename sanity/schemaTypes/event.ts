@@ -6,13 +6,15 @@ export default defineType({
   type: 'document',
   groups: [
     { name: 'seo', title: 'SEO' },
-    { name: 'media', title: 'Media' }
+    { name: 'media', title: 'Media' },
+    { name: 'contenu', title: 'Contenu', default: true }
   ],
   fields: [
     defineField({
       name: 'categorie',
       title: 'Catégorie',
       type: 'string',
+      group: 'contenu',
       options: {
         list: [
           { title: 'Convention', value: 'Convention' },
@@ -32,6 +34,7 @@ export default defineType({
       name: 'titre',
       title: 'Titre',
       type: 'string',
+      group: 'contenu',
       validation: (Rule) =>
         Rule.max(100)
           .required()
@@ -42,6 +45,7 @@ export default defineType({
       name: 'client',
       title: 'Client',
       type: 'string',
+      group: 'contenu',
       validation: (Rule) =>
         Rule.required().warning(`Le nom du client ne doit pas dépasser 60 caractères`)
     }),
@@ -49,6 +53,7 @@ export default defineType({
       name: 'date',
       title: 'Date',
       type: 'datetime',
+      group: 'contenu',
       validation: (Rule) => Rule.required()
     }),
 
@@ -56,6 +61,7 @@ export default defineType({
       name: 'description',
       title: 'Description',
       type: 'text',
+      group: 'contenu',
       validation: (Rule) =>
         Rule.max(200)
           .required()

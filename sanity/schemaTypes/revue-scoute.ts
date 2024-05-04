@@ -5,6 +5,8 @@ export default defineType({
   title: 'La Revue Scoute',
   type: 'document',
   groups: [
+    { name: 'contenu', title: 'Contenu', default: true },
+    { name: 'media', title: 'Media' },
     {
       name: 'seo',
       title: 'SEO'
@@ -16,6 +18,7 @@ export default defineType({
       name: 'titre',
       title: 'Titre',
       type: 'string',
+      group: 'contenu',
       validation: (Rule) =>
         Rule.max(100)
           .required()
@@ -25,12 +28,14 @@ export default defineType({
       name: 'date',
       title: 'Date',
       type: 'datetime',
+      group: 'contenu',
       validation: (Rule) => Rule.required()
     }),
     defineField({
       name: 'body',
       title: 'Description',
-      type: 'blockContent'
+      type: 'blockContent',
+      group: 'contenu'
     }),
     defineField({
       name: 'ecritureEtJeu',
@@ -86,6 +91,7 @@ export default defineType({
       name: 'imageGallery',
       title: "Galerie d'image",
       type: 'array',
+      group: 'media',
       of: [
         {
           type: 'image',

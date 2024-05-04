@@ -9,6 +9,7 @@ export default defineType({
       name: 'seo',
       title: 'SEO'
     },
+    { name: 'contenu', title: 'Contenu', default: true },
     { name: 'media', title: 'Media' }
   ],
   fields: [
@@ -16,6 +17,7 @@ export default defineType({
       name: 'titre',
       title: 'Titre',
       type: 'string',
+      group: 'contenu',
       validation: (Rule) => Rule.required()
     }),
 
@@ -23,6 +25,7 @@ export default defineType({
       name: 'slug',
       title: 'Slug',
       type: 'slug',
+      group: 'seo',
       validation: (Rule) => Rule.required(),
       options: {
         source: 'title',
@@ -33,6 +36,7 @@ export default defineType({
       name: 'auteur',
       title: 'Auteur',
       type: 'reference',
+      group: 'contenu',
       to: { type: 'author' }
     }),
     defineField({
@@ -56,12 +60,14 @@ export default defineType({
       name: 'categories',
       title: 'Catégories',
       type: 'array',
+      group: 'contenu',
       of: [{ type: 'reference', to: { type: 'category' } }]
     }),
     defineField({
       name: 'description',
       title: 'Description',
       type: 'text',
+      group: 'contenu',
       validation: (Rule) =>
         Rule.max(200)
           .required()
@@ -70,11 +76,13 @@ export default defineType({
     defineField({
       name: 'publishedAt',
       title: 'Publié le',
+      group: 'contenu',
       type: 'datetime'
     }),
     defineField({
       name: 'body',
       title: 'Corps de texte',
+      group: 'contenu',
       type: 'blockContent'
     }),
     defineField({
