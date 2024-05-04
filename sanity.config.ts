@@ -21,19 +21,22 @@ export default defineConfig({
         S.list()
           .title('Contenu')
           .items([
-            // Our singleton type has a list item with a custom child
-            S.listItem().title("Tournée de l'année").id('revueScouteActuelle').child(
-              // Instead of rendering a list of documents, we render a single
-              // document, specifying the `documentId` manually to ensure
-              // that we're editing the single instance of the document
-              S.document().schemaType('revueScouteActuelle').documentId('revueScouteActuelle')
-            ),
+            S.listItem()
+              .title("Tournée de l'année")
+              .id('revueScouteActuelle')
+              .child(
+                S.document().schemaType('revueScouteActuelle').documentId('revueScouteActuelle')
+              ),
+            S.listItem()
+              .title('Affiches de la Revue Scoute')
+              .id('revueScouteAffiche')
+              .child(
+                S.document().schemaType('revueScouteAffiche').documentId('revueScouteAffiche')
+              ),
 
-            // Regular document types
             S.documentTypeListItem('evenement').title('Evenement'),
             S.documentTypeListItem('publication').title('Publication'),
-            S.documentTypeListItem('spectacle').title('Spectacle'),
-            S.documentTypeListItem('revueScouteAffiche').id('Affiches de la Revue Scoute')
+            S.documentTypeListItem('spectacle').title('Spectacle')
           ])
     }),
     frFRLocale(),
