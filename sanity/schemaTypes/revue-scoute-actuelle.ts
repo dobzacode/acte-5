@@ -38,7 +38,8 @@ export default defineType({
       of: [
         {
           type: 'object',
-          name: 'inline',
+          name: 'stop',
+          title: 'Stop',
           fields: [
             {
               type: 'string',
