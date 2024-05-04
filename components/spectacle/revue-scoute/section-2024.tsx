@@ -21,8 +21,11 @@ export default async function Section2024() {
   }
 
   return (
-    <section className="section-px flex flex-col gap-6xl ">
-      <section className="section-px flex flex-col gap-xl laptop:container laptop:mx-auto">
+    <section
+      className="section-px flex flex-col
+    gap-6xl laptop:container laptop:mx-auto "
+    >
+      <section className=" flex flex-col gap-xl ">
         <InviewWrapper
           className="heading--sub-extra-large text-primary-400"
           tag="h2"
@@ -37,7 +40,7 @@ export default async function Section2024() {
           {<CustomPortableText value={revueScouteActuelle[0].description}></CustomPortableText>}
         </p>
       </section>
-      <section className="section-px flex flex-col gap-xl laptop:container laptop:mx-auto">
+      <section className=" flex flex-col gap-xl ">
         <InviewWrapper
           className="heading--sub-extra-large text-primary-400"
           tag="h2"
@@ -47,7 +50,7 @@ export default async function Section2024() {
         </InviewWrapper>
         <DateTable stops={revueScouteActuelle[0].date}></DateTable>
       </section>
-      <section className="section-px flex w-full flex-col gap-xl laptop:container laptop:mx-auto">
+      <section className=" flex w-full flex-col gap-xl ">
         <InviewWrapper
           className="heading--sub-extra-large  text-primary-400 "
           tag="h2"

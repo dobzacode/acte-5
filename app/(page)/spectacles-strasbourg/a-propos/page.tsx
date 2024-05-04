@@ -11,8 +11,8 @@ export default function Home() {
       <TitleSection
         title={'A PROPOS'}
         element={[
-          { href: '/evenement', text: 'Évenement' },
-          { href: '/evenement/a-propos', text: 'A propos' }
+          { href: '/spectacles-strasbourg', text: 'Spectacle' },
+          { href: '/spectacles-strasbourg/a-propos', text: 'A propos' }
         ]}
       ></TitleSection>
       <div className="flex w-full max-w-[90rem] flex-col items-center gap-lg">

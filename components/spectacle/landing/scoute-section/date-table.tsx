@@ -8,7 +8,7 @@ const comparerDates = (a: DateItem, b: DateItem) => {
   const dateA = new Date(a.dates[0]);
   const dateB = new Date(b.dates[0]);
 
-  return dateB.getTime() - dateA.getTime();
+  return dateA.getTime() - dateB.getTime();
 };
 
 export default function DateTable({ stops }: { stops: DateItem[] }) {

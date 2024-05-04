@@ -32,6 +32,23 @@ export default defineType({
       validation: (Rule) => Rule.required()
     }),
     defineField({
+      name: 'mainImage',
+      title: 'Image principal',
+      type: 'image',
+      group: 'media',
+      options: {
+        hotspot: true
+      },
+      fields: [
+        {
+          name: 'alt',
+          type: 'string',
+          title: 'Texte alternatif'
+        }
+      ],
+      validation: (Rule) => Rule.required()
+    }),
+    defineField({
       name: 'body',
       title: 'Description',
       group: 'contenu',
@@ -52,6 +69,7 @@ export default defineType({
       group: 'production',
       of: [{ type: 'string' }]
     }),
+
     defineField({
       name: 'costumes',
       title: 'Costumes',
@@ -80,9 +98,10 @@ export default defineType({
       group: 'production',
       of: [{ type: 'string' }]
     }),
+
     defineField({
       name: 'photos',
-      title: 'photos',
+      title: 'Photos',
       type: 'array',
       group: 'production',
       of: [{ type: 'string' }]
@@ -107,6 +126,17 @@ export default defineType({
           ]
         }
       ]
+    }),
+    defineField({
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      group: 'seo',
+      validation: (Rule) => Rule.required(),
+      options: {
+        source: 'title',
+        maxLength: 96
+      }
     }),
     defineField({
       name: 'metatitre',
