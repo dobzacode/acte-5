@@ -7,7 +7,7 @@ import { dataset, projectId, studioUrl } from './sanity/lib/api';
 import { schema } from './sanity/schema';
 
 const singletonActions = new Set(['publish', 'discardChanges', 'restore']);
-const singletonTypes = new Set(['']);
+const singletonTypes = new Set(['revueScouteActuelle']);
 
 export default defineConfig({
   basePath: studioUrl,

@@ -10,7 +10,6 @@ export default defineType({
       name: 'imageGallery',
       title: "Galerie d'image",
       type: 'array',
-      group: 'media',
       of: [
         {
           type: 'image',
