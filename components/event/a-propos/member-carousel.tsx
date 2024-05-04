@@ -57,7 +57,7 @@ const MemberCarousel: React.FC<PropType> = (props) => {
     <>
       <div className="member_embla   py-xl">
         <div className="emba__viewport" ref={emblaRef}>
-          <div className="member_embla__container justify-center gap-sm tablet:gap-md">
+          <div className="member_embla__container mx-auto w-fit gap-sm tablet:gap-md">
             {props.imageArr.map((image, index) => (
               <div
                 className={cn(

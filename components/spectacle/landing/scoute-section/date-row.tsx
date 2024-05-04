@@ -38,7 +38,7 @@ export default function DateRow({
 }: {
   date: DateItem;
   actualDate: string | null;
-  setActualDate: (date: string) => void;
+  setActualDate: (date: string | null) => void;
   key: string;
   index: number;
 }) {
@@ -72,7 +72,7 @@ export default function DateRow({
     >
       <span
         className={'relative z-20 flex w-full cursor-pointer justify-between'}
-        onClick={() => setActualDate(date._key)}
+        onClick={() => (actualDate === date._key ? setActualDate(null) : setActualDate(date._key))}
       >
         <h3 className="heading--sub-large  font-bold">{date.ville}</h3>
         <LuChevronRight
@@ -86,7 +86,7 @@ export default function DateRow({
       <span
         className={cn(
           'flex  h-fit flex-col items-start gap-sm overflow-hidden duration-slow',
-          actualDate === date._key ? 'max-h-[40rem]' : 'max-h-0'
+          actualDate === date._key ? 'max-h-[30rem]' : 'max-h-0'
         )}
       >
         <CustomPortableText value={date.description}></CustomPortableText>
