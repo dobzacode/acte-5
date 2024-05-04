@@ -109,11 +109,7 @@ export default defineType({
           ]
         }
       ],
-      group: 'contenu',
-      validation: (Rule) =>
-        Rule.max(200)
-          .required()
-          .warning(`La description de l'événément ne doit pas dépasser 200 caractères`)
+      group: 'contenu'
     }),
     defineField({
       name: 'metatitre',
