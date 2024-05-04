@@ -4,6 +4,13 @@ export default defineType({
   name: 'publication',
   title: 'Publication',
   type: 'document',
+  groups: [
+    {
+      name: 'seo',
+      title: 'SEO'
+    },
+    { name: 'media', title: 'Media' }
+  ],
   fields: [
     defineField({
       name: 'titre',
@@ -32,6 +39,7 @@ export default defineType({
       name: 'mainImage',
       title: 'Image principal',
       type: 'image',
+      group: 'media',
       options: {
         hotspot: true
       },
@@ -73,6 +81,7 @@ export default defineType({
       name: 'imageGallery',
       title: "Galerie d'image",
       type: 'array',
+      group: 'media',
       of: [
         {
           type: 'image',
@@ -93,12 +102,14 @@ export default defineType({
       name: 'metatitre',
       title: 'Métatitre',
       type: 'string',
+      group: 'seo',
       validation: (Rule) => Rule.required()
     }),
     defineField({
       name: 'metadescription',
       title: 'Métadescription',
       type: 'string',
+      group: 'seo',
       validation: (Rule) => Rule.required()
     })
   ],

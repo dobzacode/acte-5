@@ -1,15 +1,14 @@
 import { defineField, defineType } from 'sanity';
 
 export default defineType({
-  name: 'spectacle',
-  title: 'Spectacle',
+  name: 'revueScoute',
+  title: 'La Revue Scoute',
   type: 'document',
   groups: [
     {
       name: 'seo',
       title: 'SEO'
     },
-    { name: 'media', title: 'Media' },
     { name: 'production', title: 'Production' }
   ],
   fields: [
@@ -87,7 +86,6 @@ export default defineType({
       name: 'imageGallery',
       title: "Galerie d'image",
       type: 'array',
-      group: 'media',
       of: [
         {
           type: 'image',
