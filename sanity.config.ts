@@ -31,7 +31,7 @@ export default defineConfig({
 
             // Regular document types
             S.documentTypeListItem('evenement').title('Evenement'),
-            S.documentTypeListItem('post').title('Publication'),
+            S.documentTypeListItem('publication').title('Publication'),
             S.documentTypeListItem('spectacle').title('Spectacle')
           ])
     }),
