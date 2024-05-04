@@ -6,13 +6,36 @@ import { presentationTool } from 'sanity/presentation';
 import { dataset, projectId, studioUrl } from './sanity/lib/api';
 import { schema } from './sanity/schema';
 
+const singletonActions = new Set(['publish', 'discardChanges', 'restore']);
+
+const singletonTypes = new Set(['']);
+
 export default defineConfig({
   basePath: studioUrl,
   projectId,
   dataset,
 
   plugins: [
-    structureTool(),
+    structureTool({
+      //@ts-expect-error - TS doesn't know about the `structure` method
+      structure: (S) =>
+        S.list()
+          .title('Content')
+          .items([
+            // Our singleton type has a list item with a custom child
+            S.listItem().title("Tournée de l'année").id('revueScouteActuelle').child(
+              // Instead of rendering a list of documents, we render a single
+              // document, specifying the `documentId` manually to ensure
+              // that we're editing the single instance of the document
+              S.document().schemaType('revueScouteActuelle').documentId('revueScouteActuelle')
+            ),
+
+            // Regular document types
+            S.documentTypeListItem('event').title('Evenement'),
+            S.documentTypeListItem('post').title('Publication'),
+            S.documentTypeListItem('spectacle').title('Spectacle')
+          ])
+    }),
     frFRLocale(),
     presentationTool({
       previewUrl: {
@@ -24,6 +47,14 @@ export default defineConfig({
     })
   ],
   schema: {
-    types: schema.types
+    types: schema.types,
+    templates: (templates) => templates.filter(({ schemaType }) => !singletonTypes.has(schemaType))
+  },
+
+  document: {
+    actions: (input, context) =>
+      singletonTypes.has(context.schemaType)
+        ? input.filter(({ action }) => action && singletonActions.has(action))
+        : input
   }
 });
