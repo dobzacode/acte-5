@@ -32,7 +32,8 @@ export default defineConfig({
             // Regular document types
             S.documentTypeListItem('evenement').title('Evenement'),
             S.documentTypeListItem('publication').title('Publication'),
-            S.documentTypeListItem('spectacle').title('Spectacle')
+            S.documentTypeListItem('spectacle').title('Spectacle'),
+            S.documentTypeListItem('revueScouteAffiche').id('Affiches de la Revue Scoute')
           ])
     }),
     frFRLocale(),
