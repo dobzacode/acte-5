@@ -12,7 +12,7 @@ import { Member } from './team-section';
 
 type PropType = {
   options?: EmblaOptionsType;
-  imageArr: Member[];
+  imageArr: Member[] | { url: string; alt?: string; blurSrc: string }[];
 };
 
 const MemberCarousel: React.FC<PropType> = (props) => {
@@ -38,12 +38,15 @@ const MemberCarousel: React.FC<PropType> = (props) => {
                   blurDataURL={image.blurSrc}
                   alt={image.alt ? image.alt : `Image ${index + 1}`}
                 ></Image>
-                <div className="flex max-w-[20ch] flex-col items-center gap-md text-pretty text-center">
-                  <p className="sub-heading   whitespace-nowrap">
-                    <strong>{image.name}</strong>
-                  </p>
-                  <p className="body">{image.work}</p>
-                </div>
+
+                {'name' in image && (
+                  <div className="flex max-w-[20ch] flex-col items-center gap-md text-pretty text-center">
+                    <p className="sub-heading   whitespace-nowrap">
+                      <strong>{(image as Member).name}</strong>
+                    </p>
+                    <p className="body">{(image as Member).work}</p>
+                  </div>
+                )}
               </div>
             ))}
           </div>

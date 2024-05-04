@@ -64,6 +64,15 @@ export interface Post {
   description: string;
 }
 
+export interface Affiche {
+  _id: string;
+  _type: string;
+  _rev: string;
+  _createdAt: string;
+  _updatedAt: string;
+  imageGallery?: Image[];
+}
+
 export const POSTS_QUERY = groq`*[_type == "publication" && defined(slug)]`;
 
 export type PostsQueryResponse =
@@ -81,5 +90,9 @@ export type PostQueryResponse =
   | null;
 
 export const EVENTS_QUERY = groq`*[_type == "evenement"]`;
+
+export const AFFICHES_QUERY = groq`*[_type == "revueScouteAffiche"]`;
+
+export type AffichesQueryResponse = Affiche | null;
 
 export type EventsQueryResponse = Event[] | null;
