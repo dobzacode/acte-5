@@ -1,5 +1,6 @@
 'use client';
 
+import { motion } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
 
 export default function HeaderWrapper({ children }: { children: React.ReactNode }) {
@@ -9,7 +10,7 @@ export default function HeaderWrapper({ children }: { children: React.ReactNode 
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollPos = window.pageYOffset;
+      const currentScrollPos = window.scrollY;
       const visible = prevScrollPos > currentScrollPos || currentScrollPos < 10;
 
       setPrevScrollPos(currentScrollPos);
@@ -24,18 +25,20 @@ export default function HeaderWrapper({ children }: { children: React.ReactNode 
   }, [prevScrollPos]);
 
   return (
-    <header
+    <motion.header
+      initial={{ y: -100 }}
+      animate={{ y: visible ? 0 : -100 }}
       ref={headerRef}
       className=" shadow-sm backdrop-blur-md duration-700 ease-in-out"
       style={{
         position: 'fixed',
-        top: visible ? '0' : '-100px',
+
         width: '100%',
         zIndex: 1000
         // You can add more styles here
       }}
     >
       {children}
-    </header>
+    </motion.header>
   );
 }

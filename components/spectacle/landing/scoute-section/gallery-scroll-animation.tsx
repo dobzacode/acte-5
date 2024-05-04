@@ -35,6 +35,7 @@ export default function GalleryScrollAnimation({}) {
         >
           <Image className="object-cover" src="/placeholder-image.png" fill alt=""></Image>
         </motion.div>
+
         <motion.div
           style={{ scale: scale, y: positiveYTranslation, opacity }}
           className=" absolute mx-auto aspect-square h-[20rem] origin-center overflow-hidden rounded-sm  "

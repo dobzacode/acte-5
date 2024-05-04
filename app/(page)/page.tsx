@@ -35,7 +35,7 @@ export default function Home() {
               </p>
             </DivWrapper>
           </Link>
-          <Link href="spectacle">
+          <Link href="spectacles-strasbourg">
             <DivWrapper
               className="heading--sub-large flex w-fit flex-col items-center gap-md rounded-md bg-default-200 px-2xl py-5xl"
               variant={ComingFromRightVariant}

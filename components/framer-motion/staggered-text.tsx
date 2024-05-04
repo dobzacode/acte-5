@@ -5,7 +5,7 @@ import { Variants, motion } from 'framer-motion';
 
 interface StaggeredTextProps {
   children: string;
-  className: string;
+  className?: string;
   variant: Variants;
   staggerValue?: number;
   once?: boolean;
