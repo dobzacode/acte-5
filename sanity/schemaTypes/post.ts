@@ -32,13 +32,7 @@ export default defineType({
         maxLength: 96
       }
     }),
-    defineField({
-      name: 'auteur',
-      title: 'Auteur',
-      type: 'reference',
-      group: 'contenu',
-      to: { type: 'author' }
-    }),
+
     defineField({
       name: 'mainImage',
       title: 'Image principal',
@@ -56,13 +50,7 @@ export default defineType({
       ],
       validation: (Rule) => Rule.required()
     }),
-    defineField({
-      name: 'categories',
-      title: 'Catégories',
-      type: 'array',
-      group: 'contenu',
-      of: [{ type: 'reference', to: { type: 'category' } }]
-    }),
+
     defineField({
       name: 'description',
       title: 'Description',
@@ -125,12 +113,12 @@ export default defineType({
   preview: {
     select: {
       title: 'titre',
-      author: 'author.name',
+
       media: 'mainImage'
     },
     prepare(selection) {
-      const { author } = selection;
-      return { ...selection, subtitle: author && `by ${author}` };
+      const { title } = selection;
+      return { ...selection, subtitle: title };
     }
   }
 });
