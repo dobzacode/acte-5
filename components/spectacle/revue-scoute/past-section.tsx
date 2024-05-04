@@ -21,8 +21,6 @@ export default async function PastSection() {
     return notFound();
   }
 
-  console.log(affiches[0]);
-
   const imagesWithUrl = affiches[0]
     ? await Promise.all(
         affiches[0].imageGallery.map(async (image: Image) => {
@@ -33,8 +31,6 @@ export default async function PastSection() {
         })
       )
     : null;
-
-  console.log(imagesWithUrl);
 
   if (!imagesWithUrl) {
     return notFound();

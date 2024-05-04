@@ -73,6 +73,37 @@ export interface Affiche {
   imageGallery: Image[];
 }
 
+interface DistributionItem {
+  _key: string;
+  nom: string;
+  picture: Image;
+}
+
+interface RevueScoute {
+  _updatedAt: string;
+  titre: string;
+  _createdAt: string;
+  _type: string;
+  metatitre: string;
+  distribution: DistributionItem[];
+  _id: string;
+  date: DateItem[];
+  mainImage: Image;
+  metadescription: string;
+  _rev: string;
+  description: PortableTextBlock[];
+}
+
+export interface DateItem {
+  ville: string;
+  lien: string;
+  _type: string;
+  description: PortableTextBlock[];
+  dates: string[];
+  _key: string;
+  emplacement: string;
+}
+
 export const POSTS_QUERY = groq`*[_type == "publication" && defined(slug)]`;
 
 export type PostsQueryResponse =
@@ -92,6 +123,10 @@ export type PostQueryResponse =
 export const EVENTS_QUERY = groq`*[_type == "evenement"]`;
 
 export const AFFICHES_QUERY = groq`*[_type == "revueScouteAffiche"]`;
+
+export const REVUESCOUTEACTUELLE_QUERY = groq`*[_type == "revueScouteActuelle"]`;
+
+export type RevueScouteActuelleQueryResponse = RevueScoute[] | null;
 
 export type AffichesQueryResponse = Affiche[] | null;
 

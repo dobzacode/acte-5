@@ -1,9 +1,25 @@
 import { ComingFromLeftVariant } from '@/components/framer-motion/div-variants';
 import InviewWrapper from '@/components/framer-motion/inview-wrapper';
+import CustomPortableText from '@/components/sanity/portable-text';
+import { sanityFetch } from '@/sanity/lib/fetch';
+import { REVUESCOUTEACTUELLE_QUERY, RevueScouteActuelleQueryResponse } from '@/sanity/lib/queries';
+import { urlForImage } from '@/sanity/lib/utils';
+import { draftMode } from 'next/headers';
 import Image from 'next/image';
+import { notFound } from 'next/navigation';
 import DateTable from '../landing/scoute-section/date-table';
 
-export default function Section2024() {
+export default async function Section2024() {
+  const revueScouteActuelle = await sanityFetch<RevueScouteActuelleQueryResponse>({
+    query: REVUESCOUTEACTUELLE_QUERY,
+    stega: draftMode().isEnabled,
+    perspective: draftMode().isEnabled ? 'previewDrafts' : 'published'
+  });
+
+  if (!revueScouteActuelle) {
+    return notFound();
+  }
+
   return (
     <section className="section-px flex flex-col gap-6xl ">
       <section className="section-px flex flex-col gap-xl laptop:container laptop:mx-auto">
@@ -12,22 +28,13 @@ export default function Section2024() {
           tag="h2"
           variant={ComingFromLeftVariant}
         >
-          Edition 2024
+          {revueScouteActuelle[0].titre}
         </InviewWrapper>
         <div className="relative h-[30rem] w-full overflow-hidden rounded-sm">
           <Image src="/placeholder-image.png" fill alt="image" className="object-cover"></Image>
         </div>
         <p className="sub-heading text-pretty">
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-          laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
-          architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
-          aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
-          voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit
-          amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut
-          labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum
-          exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi
-          consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam
-          nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+          {<CustomPortableText value={revueScouteActuelle[0].description}></CustomPortableText>}
         </p>
       </section>
       <section className="section-px flex flex-col gap-xl laptop:container laptop:mx-auto">
@@ -38,7 +45,7 @@ export default function Section2024() {
         >
           Les dates
         </InviewWrapper>
-        <DateTable></DateTable>
+        <DateTable stops={revueScouteActuelle[0].date}></DateTable>
       </section>
       <section className="section-px flex w-full flex-col gap-xl laptop:container laptop:mx-auto">
         <InviewWrapper
@@ -49,9 +56,18 @@ export default function Section2024() {
           Distribution
         </InviewWrapper>
         <ul className="flex w-full flex-wrap items-center  gap-md">
-          {Array.from({ length: 12 }).map((_, index) => {
+          {revueScouteActuelle[0].distribution.map(async (people, index) => {
+            const url = await urlForImage(people.picture)
+              .width(1920)
+              .height(1080)
+              .dpr(2)
+              .quality(80)
+              .url();
+            const blurSrc = urlForImage(people.picture).width(20).quality(20).url();
             return (
               <InviewWrapper
+                key={index}
+                tag="li"
                 style={{ zIndex: 20 - index }}
                 variant={{
                   hidden: {
@@ -71,10 +87,19 @@ export default function Section2024() {
                     y: -200
                   }
                 }}
-                className="card relative flex flex-col  gap-md overflow-hidden px-0 pt-0"
+                className="card relative flex max-w-[13rem]  flex-col gap-md overflow-hidden px-0 pt-0"
               >
-                <Image src="/placeholder-image.png" alt="image" width={200} height={400}></Image>
-                <p className="sub-heading px-sm text-center">Lorem Ipsum</p>
+                <div className="relative h-[15rem] w-[13rem]">
+                  <Image
+                    blurDataURL={blurSrc}
+                    placeholder="blur"
+                    src={url}
+                    alt="image"
+                    fill
+                    className="object-cover"
+                  ></Image>
+                </div>
+                <p className="sub-heading px-sm text-center">{people.nom}</p>
               </InviewWrapper>
             );
           })}

@@ -1,6 +1,5 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
 
 export default function HeaderWrapper({ children }: { children: React.ReactNode }) {
@@ -25,20 +24,18 @@ export default function HeaderWrapper({ children }: { children: React.ReactNode 
   }, [prevScrollPos]);
 
   return (
-    <motion.header
-      initial={{ y: -100 }}
-      animate={{ y: visible ? 0 : -100 }}
+    <header
       ref={headerRef}
       className=" shadow-sm backdrop-blur-md duration-700 ease-in-out"
       style={{
         position: 'fixed',
-
+        top: visible ? 0 : -100,
         width: '100%',
         zIndex: 1000
         // You can add more styles here
       }}
     >
       {children}
-    </motion.header>
+    </header>
   );
 }

@@ -1,26 +1,45 @@
 import { LuChevronRight } from 'react-icons/lu';
-import { DateProps } from './date-table';
 
 import InviewWrapper from '@/components/framer-motion/inview-wrapper';
+import CustomPortableText from '@/components/sanity/portable-text';
 import { cn } from '@/lib/utils';
+import { DateItem } from '@/sanity/lib/queries';
 
-const isDateStrictlyBeforeToday = (dateString: string) => {
+const isDateStrictlyBeforeToday = (dateString: string | null) => {
+  if (!dateString) return false;
   const date = Date.parse(dateString);
   const today = Date.now();
   return date < today;
 };
 
+function findCloserDate(dates: string[]): string | null {
+  if (dates.length === 0) return null;
+
+  return dates.reduce((plusRecente: string, dateCourante: string) => {
+    // Convertir les dates en objets Date
+    const datePlusRecente = new Date(plusRecente);
+    const dateCouranteObj = new Date(dateCourante);
+
+    // Comparer les dates
+    if (dateCouranteObj > datePlusRecente) {
+      return dateCourante;
+    } else {
+      return plusRecente;
+    }
+  });
+}
+
 export default function DateRow({
   date,
   actualDate,
   setActualDate,
-
-  index
+  index,
+  key
 }: {
-  date: DateProps;
+  date: DateItem;
   actualDate: string | null;
   setActualDate: (date: string) => void;
-
+  key: string;
   index: number;
 }) {
   return (
@@ -46,30 +65,31 @@ export default function DateRow({
       }}
       className={cn(
         'relative flex flex-col  gap-sm  rounded-md border px-md py-md duration-medium hover:z-30 hover:shadow-xl',
-        actualDate === date.index ? ' shadow-xl ' : '',
-        isDateStrictlyBeforeToday(date.date) && 'pointer-events-none [&>span]:opacity-50'
+        actualDate === date._key ? ' shadow-xl ' : '',
+        isDateStrictlyBeforeToday(findCloserDate(date.dates)) &&
+          'pointer-events-none [&>span]:opacity-50'
       )}
     >
       <span
         className={'relative z-20 flex w-full cursor-pointer justify-between'}
-        onClick={() => setActualDate(date.index)}
+        onClick={() => setActualDate(date._key)}
       >
         <h3 className="heading--sub-large  font-bold">{date.ville}</h3>
         <LuChevronRight
           size={40}
           className={cn(
             'origin-center text-black duration-medium',
-            actualDate === date.index && 'rotate-90'
+            actualDate === date._key && 'rotate-90'
           )}
         ></LuChevronRight>
       </span>
       <span
         className={cn(
-          '  flex items-center overflow-hidden duration-slow',
-          actualDate === date.index ? 'h-xl' : 'h-0'
+          'flex  h-fit flex-col items-start gap-sm overflow-hidden duration-slow',
+          actualDate === date._key ? 'max-h-[40rem]' : 'max-h-0'
         )}
       >
-        <p className="body">{date.information}</p>
+        <CustomPortableText value={date.description}></CustomPortableText>
       </span>
     </InviewWrapper>
   );

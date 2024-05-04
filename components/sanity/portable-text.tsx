@@ -36,7 +36,7 @@ export default function CustomPortableText({ value }: { value: PortableTextBlock
     marks: {
       link: ({ children, value }) => {
         return (
-          <a href={value?.href} rel="noreferrer noopener">
+          <a href={value?.href} rel="noreferrer noopener" className="text-blue-800 underline">
             {children}
           </a>
         );

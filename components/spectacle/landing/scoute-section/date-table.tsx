@@ -1,5 +1,6 @@
 'use client';
 
+import { DateItem } from '@/sanity/lib/queries';
 import { useState } from 'react';
 import DateRow from './date-row';
 
@@ -78,14 +79,17 @@ const TEMPARR = [
   }
 ];
 
-export default function DateTable() {
+export default function DateTable({ stops }: { stops: DateItem[] }) {
   const [actualDate, setActualDate] = useState<string | null>(null);
+
+  console.log(stops);
 
   return (
     <ul className="flex w-full flex-col gap-sm  px-0 ">
-      {TEMPARR.map((item, index) => (
+      {stops.map((item, index) => (
         <DateRow
           index={index}
+          key={item._key}
           setActualDate={setActualDate}
           actualDate={actualDate}
           date={item}
