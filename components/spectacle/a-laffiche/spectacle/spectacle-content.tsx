@@ -5,6 +5,13 @@ import { notFound } from 'next/navigation';
 import CustomPortableText from '../../../sanity/portable-text';
 import EmblaCarousel from '../../../ui/image-carousel/carousel/embla-post-carousel';
 
+const formatList = (list: string[]) => {
+  if (!list || list.length === 0) return '';
+  if (list.length === 1) return list[0];
+  if (list.length === 2) return list.join(' et ');
+  return list.slice(0, -1).join(', ') + ' et ' + list.slice(-1);
+};
+
 export default async function SpectacleContent({
   spectacle
 }: {
@@ -25,19 +32,77 @@ export default async function SpectacleContent({
       )
     : null;
 
-  const { ecritureEtJeu, miseEnScene, costumes, lumiereEtRegie, musiqueEtSon, photos } = spectacle;
-
-  const spectacleDetails = {
+  const {
     ecritureEtJeu,
     miseEnScene,
     costumes,
     lumiereEtRegie,
     musiqueEtSon,
-    photos
-  };
+    photos,
+    ecritureEtJeuEtMiseEnScene,
+    duree,
+    decors,
+    body
+  } = spectacle;
 
   return (
     <>
+      <section className="flex flex-wrap gap-lg">
+        {duree && (
+          <div className="sub-heading flex flex-col gap-sm">
+            <p className="text-black/40">Durée</p>
+            <p>{duree}</p>
+          </div>
+        )}
+        {ecritureEtJeuEtMiseEnScene && (
+          <div className="sub-heading flex flex-col gap-sm">
+            <p className="text-black/40">Ecriture et jeu et mise en scène</p>
+            <p>{formatList(ecritureEtJeuEtMiseEnScene)}</p>
+          </div>
+        )}
+        {ecritureEtJeu && (
+          <div className="sub-heading flex flex-col gap-sm">
+            <p className="text-black/40">Ecriture et jeu</p>
+            <p>{formatList(ecritureEtJeu)}</p>
+          </div>
+        )}
+        {miseEnScene && !ecritureEtJeuEtMiseEnScene ? (
+          <div className="sub-heading flex flex-col gap-sm">
+            <p className="text-black/40">Mise en scène</p>
+            <p>{miseEnScene}</p>
+          </div>
+        ) : null}
+        {costumes && (
+          <div className="sub-heading flex flex-col gap-sm">
+            <p className="text-black/40">Costumes</p>
+            <p>{formatList(costumes)}</p>
+          </div>
+        )}
+        {lumiereEtRegie && (
+          <div className="sub-heading flex flex-col gap-sm">
+            <p className="text-black/40">Lumière et régie</p>
+            <p>{formatList(lumiereEtRegie)}</p>
+          </div>
+        )}
+        {musiqueEtSon && (
+          <div className="sub-heading flex flex-col gap-sm">
+            <p className="text-black/40">Musique et son</p>
+            <p>{formatList(musiqueEtSon)}</p>
+          </div>
+        )}
+        {decors && (
+          <div className="sub-heading flex flex-col gap-sm">
+            <p className="text-black/40">Décors</p>
+            <p>{formatList(decors)}</p>
+          </div>
+        )}
+        {photos && (
+          <div className="sub-heading flex flex-col gap-sm">
+            <p className="text-black/40">Photos</p>
+            <p>{formatList(photos)}</p>
+          </div>
+        )}
+      </section>
       {spectacle.mainImage ? (
         <Image
           className="shrink-0 rounded-sm"
@@ -52,7 +117,7 @@ export default async function SpectacleContent({
       ) : null}
 
       <div className="prose prose-base max-w-full">
-        {spectacle.body ? <CustomPortableText value={spectacle.body}></CustomPortableText> : null}
+        {body ? <CustomPortableText value={body}></CustomPortableText> : null}
       </div>
       {imagesWithUrl ? (
         <EmblaCarousel imageArr={imagesWithUrl} options={{ loop: true, active: true }} />

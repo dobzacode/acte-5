@@ -124,7 +124,7 @@ export interface Spectacle {
   _createdAt: string;
   titre: string;
   costumes: string[] | null;
-  photos: String[] | null;
+  photos: string[] | null;
   _updatedAt: string;
   slug: {
     current: string;

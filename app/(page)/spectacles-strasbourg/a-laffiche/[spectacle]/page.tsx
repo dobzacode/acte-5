@@ -1,9 +1,4 @@
-import {
-  SPECTACLES_QUERY,
-  SPECTACLE_QUERY,
-  SpectacleQueryResponse,
-  SpectaclesQueryResponse
-} from '@/sanity/lib/queries';
+import { SPECTACLES_QUERY, SPECTACLE_QUERY, SpectacleQueryResponse } from '@/sanity/lib/queries';
 
 import { ComingFromBottomVariant } from '@/components/framer-motion/div-variants';
 import DivWrapper from '@/components/framer-motion/div-wrapper';
@@ -20,7 +15,7 @@ type Props = {
 };
 
 export async function generateStaticParams() {
-  const spectacles = await sanityFetch<SpectaclesQueryResponse>({
+  const spectacles = await sanityFetch<{ spectacle: string }[]>({
     query: `${SPECTACLES_QUERY}{"spectacle": slug.current}`,
     perspective: 'published',
     stega: false
