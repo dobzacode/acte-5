@@ -68,14 +68,16 @@ export default defineType({
       title: 'Ecriture et jeu',
       type: 'array',
       group: 'production',
-      of: [{ type: 'string' }]
+      of: [{ type: 'string' }],
+      hidden: ({ document }) => !document?.ecritureEtJeuEtMiseEnScene
     }),
     defineField({
       name: 'miseEnScene',
       title: 'Mise en scène',
       type: 'array',
       group: 'production',
-      of: [{ type: 'string' }]
+      of: [{ type: 'string' }],
+      hidden: ({ document }) => !document?.ecritureEtJeuEtMiseEnScene
     }),
 
     defineField({
