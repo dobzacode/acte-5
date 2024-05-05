@@ -60,8 +60,7 @@ export default defineType({
       title: 'Ecriture, jeu et mise en scène',
       type: 'array',
       group: 'production',
-      of: [{ type: 'string' }],
-      validation: (Rule) => Rule.required()
+      of: [{ type: 'string' }]
     }),
     defineField({
       name: 'ecritureEtJeu',
