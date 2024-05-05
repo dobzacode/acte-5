@@ -8,8 +8,11 @@ export default function SpectacleCard({
   spectacle: Spectacle & { url: string; blurSrc: string };
 }) {
   return (
-    <li className="card flex w-1/6 flex-col gap-md px-0 pt-0">
-      <Link href={`/spectacles-strasbourg/a-laffiche/${spectacle.slug.current}`}>
+    <li className="card  w-1/6  gap-md px-0 pt-0 duration-medium hover:scale-105 hover:shadow-2xl">
+      <Link
+        className="flex flex-col gap-md"
+        href={`/spectacles-strasbourg/a-laffiche/${spectacle.slug.current}`}
+      >
         <div className="relative h-[20rem] w-full">
           <Image
             alt={spectacle.mainImage.alt ?? ''}

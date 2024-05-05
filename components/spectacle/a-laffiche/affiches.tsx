@@ -32,7 +32,7 @@ export default async function Affiches() {
   );
 
   return (
-    <ul className="flex w-full justify-center gap-md p-sm ">
+    <ul className="flex w-full justify-center gap-md  ">
       {withUrl.map((spectacle) => {
         return <SpectacleCard spectacle={spectacle} key={spectacle._id}></SpectacleCard>;
       })}

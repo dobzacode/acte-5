@@ -16,7 +16,7 @@ import { Member } from './team-section';
 
 type PropType = {
   options?: EmblaOptionsType;
-  imageArr: Member[] | { url: string; alt?: string; blurSrc: string }[];
+  imageArr: Member[] | { url: string; alt?: string; blurSrc: string; title: string }[];
 };
 
 const MemberCarousel: React.FC<PropType> = (props) => {
@@ -90,6 +90,13 @@ const MemberCarousel: React.FC<PropType> = (props) => {
                       <strong>{(image as Member).name}</strong>
                     </p>
                     <p className="body">{(image as Member).work}</p>
+                  </div>
+                )}
+                {'title' in image && (
+                  <div className="flex max-w-[20ch] flex-col items-center gap-md text-pretty text-center">
+                    <p className="sub-heading">
+                      <strong className="text-white">{image.title}</strong>
+                    </p>
                   </div>
                 )}
               </div>

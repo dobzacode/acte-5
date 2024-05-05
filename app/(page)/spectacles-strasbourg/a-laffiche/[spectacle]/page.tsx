@@ -1,7 +1,8 @@
 import { SPECTACLES_QUERY, SPECTACLE_QUERY, SpectacleQueryResponse } from '@/sanity/lib/queries';
 
-import { ComingFromBottomVariant } from '@/components/framer-motion/div-variants';
+import { ComingFromRightVariant } from '@/components/framer-motion/div-variants';
 import DivWrapper from '@/components/framer-motion/div-wrapper';
+import SimilaireProject from '@/components/spectacle/a-laffiche/spectacle/similaire-project';
 import SpectacleContent from '@/components/spectacle/a-laffiche/spectacle/spectacle-content';
 import TitleSection from '@/components/ui/title-section';
 import { sanityFetch } from '@/sanity/lib/fetch';
@@ -60,7 +61,7 @@ export default async function Page({ params }: Props) {
   return (
     <>
       <main className="relative mx-auto flex flex-col items-center justify-center gap-2xl px-0 pt-5xl laptop:pt-7xl">
-        <section className="max-laptop:section-px relative mx-auto flex flex-col items-center justify-center gap-2xl max-laptop:gap-3xl mobile-small:gap-3xl mobile-medium:gap-2xl  mobile-large:gap-4xl  laptop:max-w-[50rem]">
+        <section className="max-laptop:section-px relative mx-auto flex flex-col items-center justify-center gap-xl   mobile-large:gap-2xl  laptop:max-w-[50rem]">
           <TitleSection
             className="px-0"
             title={spectacle.titre.toUpperCase()}
@@ -72,12 +73,13 @@ export default async function Page({ params }: Props) {
           ></TitleSection>
           <DivWrapper
             className="flex flex-col gap-2xl  overflow-hidden laptop:container mobile-large:gap-xl laptop:mx-auto"
-            variant={ComingFromBottomVariant}
+            variant={ComingFromRightVariant}
             inverseOnExit={false}
           >
             <SpectacleContent spectacle={spectacle} />
           </DivWrapper>
         </section>
+        <SimilaireProject></SimilaireProject>
       </main>
     </>
   );
