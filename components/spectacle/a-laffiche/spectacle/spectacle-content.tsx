@@ -47,7 +47,7 @@ export default async function SpectacleContent({
 
   return (
     <>
-      <section className="flex flex-wrap gap-lg">
+      <section className="[&>div]:body [&>div>*]:last-child:font-medium grid grid-cols-4 gap-xl">
         {duree && (
           <div className="sub-heading flex flex-col gap-sm">
             <p className="text-black/40">Durée</p>
@@ -55,49 +55,49 @@ export default async function SpectacleContent({
           </div>
         )}
         {ecritureEtJeuEtMiseEnScene && (
-          <div className="sub-heading flex flex-col gap-sm">
+          <div className=" flex flex-col gap-sm">
             <p className="text-black/40">Ecriture et jeu et mise en scène</p>
             <p>{formatList(ecritureEtJeuEtMiseEnScene)}</p>
           </div>
         )}
         {ecritureEtJeu && (
-          <div className="sub-heading flex flex-col gap-sm">
+          <div className=" flex flex-col gap-sm">
             <p className="text-black/40">Ecriture et jeu</p>
             <p>{formatList(ecritureEtJeu)}</p>
           </div>
         )}
         {miseEnScene && !ecritureEtJeuEtMiseEnScene ? (
-          <div className="sub-heading flex flex-col gap-sm">
+          <div className=" flex flex-col gap-sm">
             <p className="text-black/40">Mise en scène</p>
             <p>{miseEnScene}</p>
           </div>
         ) : null}
         {costumes && (
-          <div className="sub-heading flex flex-col gap-sm">
+          <div className=" flex flex-col gap-sm">
             <p className="text-black/40">Costumes</p>
             <p>{formatList(costumes)}</p>
           </div>
         )}
         {lumiereEtRegie && (
-          <div className="sub-heading flex flex-col gap-sm">
+          <div className=" flex flex-col gap-sm">
             <p className="text-black/40">Lumière et régie</p>
             <p>{formatList(lumiereEtRegie)}</p>
           </div>
         )}
         {musiqueEtSon && (
-          <div className="sub-heading flex flex-col gap-sm">
+          <div className=" flex flex-col gap-sm">
             <p className="text-black/40">Musique et son</p>
             <p>{formatList(musiqueEtSon)}</p>
           </div>
         )}
         {decors && (
-          <div className="sub-heading flex flex-col gap-sm">
+          <div className=" flex flex-col gap-sm">
             <p className="text-black/40">Décors</p>
             <p>{formatList(decors)}</p>
           </div>
         )}
         {photos && (
-          <div className="sub-heading flex flex-col gap-sm">
+          <div className=" flex flex-col gap-sm">
             <p className="text-black/40">Photos</p>
             <p>{formatList(photos)}</p>
           </div>

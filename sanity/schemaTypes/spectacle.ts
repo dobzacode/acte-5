@@ -69,7 +69,8 @@ export default defineType({
       type: 'array',
       group: 'production',
       of: [{ type: 'string' }],
-      hidden: ({ document }) => (document?.ecritureEtJeuEtMiseEnScene ? true : false)
+      //@ts-expect-error is not defined
+      hidden: ({ document }) => (document?.ecritureEtJeuEtMiseEnScene.length > 0 ? true : false)
     }),
     defineField({
       name: 'miseEnScene',
@@ -77,7 +78,8 @@ export default defineType({
       type: 'array',
       group: 'production',
       of: [{ type: 'string' }],
-      hidden: ({ document }) => (document?.ecritureEtJeuEtMiseEnScene ? true : false)
+      //@ts-expect-error is not defined
+      hidden: ({ document }) => (document?.ecritureEtJeuEtMiseEnScene.length > 0 ? true : false)
     }),
 
     defineField({
