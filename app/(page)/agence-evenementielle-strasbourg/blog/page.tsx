@@ -1,9 +1,9 @@
+import PostSnippet from '@/components/event/blog/post/post-snippet';
 import {
   ComingFromLeftVariant,
   ComingFromRightVariant
 } from '@/components/framer-motion/div-variants';
 import InviewWrapper from '@/components/framer-motion/inview-wrapper';
-import PostSnippet from '@/components/post/post-snippet';
 import TitleSection from '@/components/ui/title-section';
 import { sanityFetch } from '@/sanity/lib/fetch';
 import { POSTS_QUERY, Post, PostsQueryResponse } from '@/sanity/lib/queries';

@@ -2,7 +2,7 @@ import { groq } from 'next-sanity';
 
 import { POSTS_QUERY, POST_QUERY, PostQueryResponse } from '@/sanity/lib/queries';
 
-import PostpageContent from '@/components/post/postpage-content';
+import PostpageContent from '@/components/event/blog/post/postpage-content';
 import { sanityFetch } from '@/sanity/lib/fetch';
 import { resolveOpenGraphImage } from '@/sanity/lib/utils';
 import { Metadata, ResolvingMetadata } from 'next';

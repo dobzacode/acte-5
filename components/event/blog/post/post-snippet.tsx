@@ -5,7 +5,7 @@ import { format } from 'date-fns';
 import { fr } from 'date-fns/locale';
 import Image from 'next/image';
 import Link from 'next/link';
-import InViewWrapper from '../framer-motion/inview-wrapper';
+import InViewWrapper from '../../../framer-motion/inview-wrapper';
 
 export default function PostSnippet({
   post,

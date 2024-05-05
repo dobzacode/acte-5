@@ -1,4 +1,4 @@
-import Post from '@/components/post/post';
+import Post from '@/components/event/blog/post/post';
 import { sanityFetch } from '@/sanity/lib/fetch';
 import { POST_QUERY, PostQueryResponse } from '@/sanity/lib/queries';
 import { QueryParams } from 'next-sanity';

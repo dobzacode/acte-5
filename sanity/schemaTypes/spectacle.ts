@@ -54,13 +54,21 @@ export default defineType({
       group: 'contenu',
       type: 'blockContent'
     }),
+
+    defineField({
+      name: 'ecritureEtJeuEtMiseEnScene',
+      title: 'Ecriture et jeu et mise en scène',
+      type: 'array',
+      group: 'production',
+      of: [{ type: 'string' }],
+      validation: (Rule) => Rule.required()
+    }),
     defineField({
       name: 'ecritureEtJeu',
       title: 'Ecriture et jeu',
       type: 'array',
       group: 'production',
-      of: [{ type: 'string' }],
-      validation: (Rule) => Rule.required()
+      of: [{ type: 'string' }]
     }),
     defineField({
       name: 'miseEnScene',
@@ -105,6 +113,12 @@ export default defineType({
       type: 'array',
       group: 'production',
       of: [{ type: 'string' }]
+    }),
+    defineField({
+      name: 'duree',
+      title: 'Durée',
+      type: 'string',
+      group: 'production'
     }),
     defineField({
       name: 'imageGallery',

@@ -2,9 +2,9 @@ import { sanityFetch } from '@/sanity/lib/fetch';
 import { POST_QUERY, PostQueryResponse } from '@/sanity/lib/queries';
 import { draftMode } from 'next/headers';
 import { notFound } from 'next/navigation';
-import { ComingFromBottomVariant } from '../framer-motion/div-variants';
-import DivWrapper from '../framer-motion/div-wrapper';
-import TitleSection from '../ui/title-section';
+import { ComingFromBottomVariant } from '../../../framer-motion/div-variants';
+import DivWrapper from '../../../framer-motion/div-wrapper';
+import TitleSection from '../../../ui/title-section';
 import Post from './post';
 
 export default async function PostpageContent({ params }: { params: { slug: string } }) {

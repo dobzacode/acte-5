@@ -1,7 +1,6 @@
 import { FromTopStaggerVariant } from '@/components/framer-motion/div-variants';
 import StaggeredText from '@/components/framer-motion/staggered-text';
 import Affiches from '@/components/spectacle/a-laffiche/affiches';
-import HistorySection from '@/components/spectacle/a-propos/history-section';
 import TitleSection from '@/components/ui/title-section';
 
 export default function Home() {
@@ -25,7 +24,6 @@ export default function Home() {
         labore et dolore magna
       </StaggeredText>
       <Affiches></Affiches>
-      <HistorySection></HistorySection>
     </main>
   );
 }

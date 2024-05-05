@@ -104,6 +104,34 @@ export interface DateItem {
   emplacement: string;
 }
 
+export interface Spectacle {
+  date: string;
+  metadescription: string;
+  _id: string;
+  imageGallery: Image[];
+  miseEnScene: string[];
+  _rev: string;
+  ecritureEtJeu: string[] | null;
+  ecritureEtJeuEtMiseEnScene: string[] | null;
+  duree: string[] | null;
+  body: PortableTextBlock[];
+  decors: string[] | null;
+  lumiereEtRegie: string[] | null;
+  musiqueEtSon: string[] | null;
+  mainImage: Image;
+  _type: string;
+  metatitre: string;
+  _createdAt: string;
+  titre: string;
+  costumes: string[] | null;
+  photos: String[] | null;
+  _updatedAt: string;
+  slug: {
+    current: string;
+    _type: string;
+  };
+}
+
 export const POSTS_QUERY = groq`*[_type == "publication" && defined(slug)]`;
 
 export type PostsQueryResponse =
@@ -122,12 +150,24 @@ export type PostQueryResponse =
 
 export const EVENTS_QUERY = groq`*[_type == "evenement"]`;
 
+export type EventsQueryResponse = Event[] | null;
+
 export const AFFICHES_QUERY = groq`*[_type == "revueScouteAffiche"]`;
+
+export type AffichesQueryResponse = Affiche[] | null;
 
 export const REVUESCOUTEACTUELLE_QUERY = groq`*[_type == "revueScouteActuelle"]`;
 
 export type RevueScouteActuelleQueryResponse = RevueScoute[] | null;
 
-export type AffichesQueryResponse = Affiche[] | null;
+export const SPECTACLES_QUERY = groq`*[_type == "spectacle"]`;
 
-export type EventsQueryResponse = Event[] | null;
+export type SpectaclesQueryResponse = Spectacle[] | null;
+
+export const SPECTACLE_QUERY = groq`*[_type == "spectacle" && slug.current == $slug][0]`;
+
+export type SpectacleQueryResponse =
+  | (Spectacle & {
+      body?: PortableTextBlock[] | null;
+    })
+  | null;

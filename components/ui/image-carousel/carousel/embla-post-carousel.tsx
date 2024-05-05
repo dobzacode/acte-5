@@ -83,7 +83,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
 
   return (
     <>
-      <div className="embla  container relative overflow-hidden ">
+      <div className="embla relative  w-full ">
         <div className="relative rounded-sm" ref={emblaRef}>
           <div className="embla__container ">
             {props.imageArr.map((image, index) => (
@@ -91,7 +91,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                 onClick={() => {
                   openLightbox(index);
                 }}
-                className="embla__slide relative aspect-square h-[20rem]  cursor-pointer overflow-hidden  rounded-sm mobile-large:h-[40rem]"
+                className="embla__slide relative h-[20rem] w-full  cursor-pointer overflow-hidden  rounded-sm mobile-large:h-[40rem]"
                 key={index}
               >
                 <div className="embla__slide__number">
@@ -108,22 +108,26 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
               </div>
             ))}
           </div>
-          <div className="absolute top-1/2 flex w-full -translate-y-1/2 justify-between">
-            <PrevButton onClick={scrollPrev} disabled={prevBtnDisabled} />
-            <NextButton onClick={scrollNext} disabled={nextBtnDisabled} />
+          {props.imageArr.length > 1 && (
+            <div className="absolute top-1/2 flex w-full -translate-y-1/2 justify-between">
+              <PrevButton onClick={scrollPrev} disabled={prevBtnDisabled} />
+              <NextButton onClick={scrollNext} disabled={nextBtnDisabled} />
+            </div>
+          )}
+        </div>
+        {props.imageArr.length > 1 && (
+          <div className="embla__dots absolute bottom-0 z-[99] flex w-full">
+            {scrollSnaps.map((_: any, index: number) => (
+              <DotButton
+                key={index}
+                onClick={() => scrollTo(index)}
+                className={'embla__dot'.concat(
+                  index === selectedIndex ? ' embla__dot--selected' : ''
+                )}
+              />
+            ))}
           </div>
-        </div>
-        <div className="embla__dots absolute bottom-0 z-[99] flex w-full">
-          {scrollSnaps.map((_: any, index: number) => (
-            <DotButton
-              key={index}
-              onClick={() => scrollTo(index)}
-              className={'embla__dot'.concat(
-                index === selectedIndex ? ' embla__dot--selected' : ''
-              )}
-            />
-          ))}
-        </div>
+        )}
       </div>
 
       <Lightbox
