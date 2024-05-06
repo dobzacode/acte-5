@@ -1,4 +1,7 @@
-import { ComingFromLeftVariant } from '@/components/framer-motion/div-variants';
+import {
+  ComingFromBottomVariant,
+  ComingFromTopVariant
+} from '@/components/framer-motion/div-variants';
 import InviewWrapper from '@/components/framer-motion/inview-wrapper';
 import { sanityFetch } from '@/sanity/lib/fetch';
 import { Event, EventsQueryResponse } from '@/sanity/lib/queries';
@@ -49,16 +52,16 @@ export default async function LastEvent({
   );
 
   return (
-    <InviewWrapper
-      tag="section"
-      viewport={{ once: true, margin: '-200px 0px -200px 0px' }}
-      variant={ComingFromLeftVariant}
-      className=" flex w-full flex-col items-center gap-2xl overflow-x-hidden pt-5xl"
-    >
-      <div className="section-px container mx-auto flex flex-col items-center gap-xl text-center">
-        <h2 className="heading--large text-primary-400">{h2}</h2>
-      </div>
-      <ServiceCarousel options={{ loop: true }} events={eventsWithImg}></ServiceCarousel>
-    </InviewWrapper>
+    <section className=" mt-2xl flex w-full flex-col items-center gap-2xl overflow-hidden overflow-x-hidden bg-primary-400 py-2xl ">
+      <InviewWrapper
+        className="section-px container mx-auto flex flex-col items-center gap-xl text-center"
+        variant={ComingFromTopVariant}
+      >
+        <h2 className="heading--large text-white">{h2}</h2>
+      </InviewWrapper>
+      <InviewWrapper className="laptop:container laptop:mx-auto" variant={ComingFromBottomVariant}>
+        <ServiceCarousel events={eventsWithImg}></ServiceCarousel>
+      </InviewWrapper>
+    </section>
   );
 }

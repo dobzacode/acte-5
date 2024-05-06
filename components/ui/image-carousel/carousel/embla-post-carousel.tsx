@@ -84,14 +84,14 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
   return (
     <>
       <div className="embla relative  w-full ">
-        <div className="relative rounded-sm" ref={emblaRef}>
+        <div className="relative overflow-hidden rounded-sm" ref={emblaRef}>
           <div className="embla__container ">
             {props.imageArr.map((image, index) => (
               <div
                 onClick={() => {
                   openLightbox(index);
                 }}
-                className="embla__slide relative h-[20rem] w-full  cursor-pointer overflow-hidden  rounded-sm mobile-large:h-[40rem]"
+                className="embla__slide  relative h-[20rem]   cursor-pointer overflow-hidden  rounded-sm mobile-large:h-[40rem]"
                 key={index}
               >
                 <div className="embla__slide__number">
@@ -99,7 +99,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                 </div>
                 <Image
                   fill
-                  className="object-cover"
+                  className="object-cover "
                   src={image.url}
                   placeholder="blur"
                   blurDataURL={image.blurSrc}

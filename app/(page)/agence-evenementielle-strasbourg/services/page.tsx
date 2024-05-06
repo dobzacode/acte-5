@@ -23,11 +23,6 @@ export default function Home() {
           L&apos;agence événementielle Acte 5 s&apos;appuie depuis près de 30 ans sur les arts de la
           scène et la pratique théâtrale pour faire passer les messages.
         </StaggeredText>
-        <p className="sub-heading ">
-          Inauguration, convention et séminaire d&apos;entreprise, portes ouvertes, fête du
-          personnel, lancement de produit, intervention théâtrale en entreprise, écriture
-          personnalisée… quel que soit votre besoin, nous saurons y répondre !
-        </p>
       </div>
       <ServiceGalerie></ServiceGalerie>
     </main>

@@ -60,40 +60,48 @@ export default function ServiceGalerie({}) {
   return (
     <section ref={ref} className=" section-px min-h-screen w-full laptop:container laptop:mx-auto">
       {isInView && (
-        <ul className=" grid grid-cols-2  justify-center gap-x-sm gap-y-md mobile-large:grid-cols-3 mobile-large:gap-x-lg mobile-large:gap-y-xl tablet:gap-y-2xl ">
+        <ul className=" grid grid-cols-2  justify-center gap-x-sm gap-y-md  mobile-large:grid-cols-3 mobile-large:gap-x-lg mobile-large:gap-y-xl tablet:gap-y-2xl ">
           {SERVICES.map((service, index) => {
             return (
               <motion.li
-                className=" group relative  h-fit w-full overflow-hidden rounded-b-sm rounded-t-sm duration-fast before:absolute before:left-0 before:top-0 before:h-full before:max-h-0 before:w-full before:bg-primary-400 before:duration-medium hover:rounded-t-sm hover:before:max-h-full "
-                initial={{ opacity: 0, y: -300 }}
+                className=" group relative  h-fit w-full overflow-hidden rounded-b-sm rounded-t-sm border border-black/10 bg-white shadow-md duration-medium before:absolute before:left-0 before:top-0 before:h-full before:w-full before:max-w-0 before:bg-primary-400 before:duration-medium  hover:scale-110 hover:rounded-t-sm hover:shadow-xl hover:before:max-w-full "
+                initial={{ opacity: 0, y: -300, pointerEvents: 'none' }}
                 animate={{
                   opacity: 1,
                   y: 0,
+                  pointerEvents: 'auto',
                   transition: {
                     opacity: { duration: 0.2, delay: index * 0.3 },
+                    pointerEvents: { delay: index * 0.3 },
                     y: { duration: 0.3, delay: index * 0.3 }
                   }
                 }}
                 exit={{ opacity: 0, y: -300 }}
                 style={{ zIndex: 30 - index }}
               >
-                <Link className=" flex flex-col-reverse gap-sm" href={service.href}>
+                <Link className=" flex flex-col-reverse" href={service.href}>
                   <motion.h3
-                    className={`sub-heading before-bg relative text-pretty  py-2 duration-medium  group-hover:-mt-1 group-hover:ml-2 group-hover:text-white `}
-                    initial={{ opacity: 0, y: -300 }}
+                    className={`sub-heading before-bg relative  text-pretty px-md duration-slow hover:duration-fast   group-hover:text-white `}
+                    initial={{ opacity: 0, y: -300, maxHeight: 0, paddingTop: 0, paddingBottom: 0 }}
                     animate={{
                       opacity: 1,
                       y: 0,
+                      paddingTop: '1rem',
+                      paddingBottom: '1rem',
+                      maxHeight: 100,
                       transition: {
                         opacity: { duration: 0.1, delay: index * 0.3 + 0.3 },
-                        y: { duration: 0.2, delay: index * 0.3 + 0.2 }
+                        maxHeight: { duration: 0.2, delay: index * 0.3 + 0.3 },
+                        paddingTop: { duration: 0.2, delay: index * 0.3 + 0.3 },
+                        paddingBottom: { duration: 0.2, delay: index * 0.3 + 0.3 },
+                        y: { duration: 0.2, delay: index * 0.3 + 0.3 }
                       }
                     }}
                     exit={{ opacity: 0, y: -300 }}
                   >
                     {service.text}
                   </motion.h3>
-                  <div className="relative aspect-square  overflow-hidden rounded-sm group-hover:rounded-b-none">
+                  <div className="relative aspect-square  overflow-hidden rounded-b-none">
                     <Image
                       fill
                       className={` object-cover duration-medium`}

@@ -11,8 +11,8 @@ type UsePrevNextButtonsType = {
 
 export const usePrevNextButtons = (
   emblaApi: EmblaCarouselType | undefined,
-  setSelectedIndex: (index: number) => void,
-  events: EventWithImgAndIndex[]
+  setSelectedIndex?: (index: number) => void,
+  events?: EventWithImgAndIndex[]
 ): UsePrevNextButtonsType => {
   const [prevBtnDisabled, setPrevBtnDisabled] = useState(true);
   const [nextBtnDisabled, setNextBtnDisabled] = useState(true);
@@ -21,7 +21,9 @@ export const usePrevNextButtons = (
     if (!emblaApi) return;
     emblaApi.scrollPrev();
     const selectedIndex = emblaApi.selectedScrollSnap();
+    if (!setSelectedIndex || !events) return;
     const prevIndex = selectedIndex === 0 ? events.length - 1 : selectedIndex - 1;
+    if (!setSelectedIndex) return;
     setSelectedIndex(prevIndex);
   }, [emblaApi, setSelectedIndex]);
 
@@ -29,7 +31,9 @@ export const usePrevNextButtons = (
     if (!emblaApi) return;
     emblaApi.scrollNext();
     const selectedIndex = emblaApi.selectedScrollSnap();
+    if (!setSelectedIndex || !events) return;
     const nextIndex = selectedIndex === events.length - 1 ? 0 : selectedIndex + 1;
+
     setSelectedIndex(nextIndex);
   }, [emblaApi, setSelectedIndex]);
 
