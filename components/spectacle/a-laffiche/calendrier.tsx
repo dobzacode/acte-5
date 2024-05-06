@@ -2,8 +2,8 @@ import { sanityFetch } from '@/sanity/lib/fetch';
 import {
   REVUESCOUTEACTUELLE_QUERY,
   RevueScouteActuelleQueryResponse,
-  SPECTACLES_AVEC_DATES_QUERY,
-  SpectaclesAvecDatesQueryResponse
+  SPECTACLES_QUERY,
+  SpectaclesQueryResponse
 } from '@/sanity/lib/queries';
 
 import { draftMode } from 'next/headers';
@@ -11,25 +11,44 @@ import { notFound } from 'next/navigation';
 import CalendrierTable from './calendrier-table';
 
 export default async function Calendrier() {
-  const spectacles = await sanityFetch<SpectaclesAvecDatesQueryResponse>({
-    query: SPECTACLES_AVEC_DATES_QUERY,
+  const spectacles = await sanityFetch<SpectaclesQueryResponse>({
+    query: SPECTACLES_QUERY,
     stega: draftMode().isEnabled,
     perspective: draftMode().isEnabled ? 'previewDrafts' : 'published'
   });
 
-  const revueScouteActuelle = await sanityFetch<RevueScouteActuelleQueryResponse>({
+  const revueScoute = await sanityFetch<RevueScouteActuelleQueryResponse>({
     query: REVUESCOUTEACTUELLE_QUERY,
     stega: draftMode().isEnabled,
     perspective: draftMode().isEnabled ? 'previewDrafts' : 'published'
   });
 
-  if (!spectacles || !revueScouteActuelle) {
+  if (!spectacles || !revueScoute) {
     return notFound();
+  }
+
+  const datesArr: any[] = [];
+  if (revueScoute[0] && revueScoute[0].date && revueScoute[0].date.length > 0) {
+    revueScoute[0].date.forEach((dateItem) => {
+      if (dateItem.dates && dateItem.dates.length > 0) {
+        dateItem.dates.forEach((date) => {
+          const nouvelleDate = {
+            ville: dateItem.ville,
+            lien: dateItem.lien,
+            _type: dateItem._type,
+            description: dateItem.description,
+            _key: dateItem._key,
+            emplacement: dateItem.emplacement,
+            date: date
+          };
+
+          datesArr.push(nouvelleDate);
+        });
+      }
+    });
   }
 
   console.log(spectacles);
 
-  return (
-    <CalendrierTable spectacles={spectacles} revueScoute={revueScouteActuelle}></CalendrierTable>
-  );
+  return <CalendrierTable spectacles={spectacles} revueScoute={revueScoute}></CalendrierTable>;
 }

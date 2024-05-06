@@ -10,8 +10,6 @@ export default function CalendrierTable({
   spectacles: Spectacle[];
   revueScoute: RevueScouteActuelleQueryResponse;
 }) {
-  console.log(revueScoute);
-
   return (
     <div className="flex flex-col items-center gap-sm">
       <p className="heading font-bold text-white">MOIS, ANNEE</p>
