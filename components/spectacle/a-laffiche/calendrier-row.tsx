@@ -1,3 +1,3 @@
-export default function CalendrierRow({ spectacle }: { spectacle: any }) {
+export default function CalendrierRow({}: {}) {
   return <li></li>;
 }

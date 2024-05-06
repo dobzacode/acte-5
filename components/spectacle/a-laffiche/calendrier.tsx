@@ -8,7 +8,7 @@ import {
 
 import { draftMode } from 'next/headers';
 import { notFound } from 'next/navigation';
-import CalendrierTable from './calendrier-row';
+import CalendrierTable from './calendrier-table';
 
 export default async function Calendrier() {
   const spectacles = await sanityFetch<SpectaclesAvecDatesQueryResponse>({
@@ -23,11 +23,13 @@ export default async function Calendrier() {
     perspective: draftMode().isEnabled ? 'previewDrafts' : 'published'
   });
 
-  if (!spectacles && !revueScouteActuelle) {
+  if (!spectacles || !revueScouteActuelle) {
     return notFound();
   }
 
   console.log(spectacles);
 
-  return <CalendrierTable spectacles={spectacles}></CalendrierTable>;
+  return (
+    <CalendrierTable spectacles={spectacles} revueScoute={revueScouteActuelle}></CalendrierTable>
+  );
 }
