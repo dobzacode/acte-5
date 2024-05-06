@@ -31,7 +31,7 @@ export default defineType({
       group: 'contenu'
     }),
     defineField({
-      name: 'date',
+      name: 'dates',
       title: 'Dates',
       type: 'array',
       of: [
