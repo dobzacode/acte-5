@@ -64,7 +64,7 @@ const MemberCarousel: React.FC<PropType> = (props) => {
                   'rounded-extra-small  relative flex w-[6rem] shrink-0 flex-col items-center gap-lg px-0 pt-0 last:mr-lg tablet:w-[8rem] laptop:w-[11rem]',
                   'name' in image
                     ? 'card member_embla__slide'
-                    : 'w-[10rem] overflow-hidden rounded-xs tablet:w-[15rem]'
+                    : 'w-[10rem] overflow-hidden rounded-xs tablet:w-[15rem] laptop:w-[20rem]'
                 )}
                 key={index}
               >

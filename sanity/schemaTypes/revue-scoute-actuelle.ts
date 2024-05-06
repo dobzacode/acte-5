@@ -56,8 +56,7 @@ export default defineType({
             {
               type: 'blockContent',
               title: 'Description',
-              name: 'description',
-              validation: (Rule) => Rule.required()
+              name: 'description'
             },
             {
               type: 'array',

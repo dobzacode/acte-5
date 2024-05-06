@@ -3,6 +3,7 @@ import InviewWrapper from '@/components/framer-motion/inview-wrapper';
 import CustomPortableText from '@/components/sanity/portable-text';
 import { sanityFetch } from '@/sanity/lib/fetch';
 import { REVUESCOUTEACTUELLE_QUERY, RevueScouteActuelleQueryResponse } from '@/sanity/lib/queries';
+import { urlForImage } from '@/sanity/lib/utils';
 import { draftMode } from 'next/headers';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
@@ -20,6 +21,14 @@ export default async function Section2024() {
     return notFound();
   }
 
+  const mainUrl = await urlForImage(revueScouteActuelle[0].mainImage)
+    .width(1920)
+    .height(1080)
+    .dpr(2)
+    .quality(80)
+    .url();
+  const blurSrc = await urlForImage(revueScouteActuelle[0].mainImage).width(20).quality(20).url();
+
   return (
     <section
       className="section-px flex flex-col
@@ -34,7 +43,14 @@ export default async function Section2024() {
           {revueScouteActuelle[0].titre}
         </InviewWrapper>
         <div className="relative h-[30rem] w-full overflow-hidden rounded-sm">
-          <Image src="/placeholder-image.png" fill alt="image" className="object-cover"></Image>
+          <Image
+            src={mainUrl}
+            blurDataURL={blurSrc}
+            sizes={'(max-width: 640px) 100vw, (max-width: 768px) 50vw, 90vw'}
+            fill
+            alt="image"
+            className="object-cover"
+          ></Image>
         </div>
 
         <CustomPortableText value={revueScouteActuelle[0].description}></CustomPortableText>

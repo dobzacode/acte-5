@@ -34,7 +34,10 @@ export default function Flag({ inverted, className }: { inverted?: boolean; clas
             x: !inverted ? 1000 : -1000
           }
         }}
-        className="relative z-10 aspect-[5/2] w-1/2 overflow-hidden rounded-l-sm"
+        className={cn(
+          'relative z-10 aspect-[5/2] w-1/2 overflow-hidden ',
+          inverted ? 'rounded-r-sm' : 'rounded-l-sm'
+        )}
       >
         <Image src="/placeholder-image.png" alt="image" fill className="object-cover"></Image>
       </InviewWrapper>

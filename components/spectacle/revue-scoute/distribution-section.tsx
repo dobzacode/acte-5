@@ -11,7 +11,7 @@ export default async function DistributionSection({
 }) {
   const withUrl = await Promise.all(
     distribution.map(async (item) => {
-      const url = await urlForImage(item.picture).width(1920).height(1080).dpr(2).quality(80).url();
+      const url = await urlForImage(item.picture).width(800).height(800).dpr(2).quality(80).url();
       const blurSrc = urlForImage(item.picture).width(20).quality(20).url();
       return { ...item, blurSrc, url };
     })
@@ -57,6 +57,7 @@ export default async function DistributionSection({
             >
               <div className="relative h-[15rem] w-[13rem]">
                 <Image
+                  sizes={'(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw'}
                   blurDataURL={people.blurSrc}
                   placeholder="blur"
                   src={people.url}
