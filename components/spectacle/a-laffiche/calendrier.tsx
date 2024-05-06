@@ -1,5 +1,7 @@
 import { sanityFetch } from '@/sanity/lib/fetch';
 import {
+  REVUESCOUTEACTUELLE_QUERY,
+  RevueScouteActuelleQueryResponse,
   SPECTACLES_AVEC_DATES_QUERY,
   SpectaclesAvecDatesQueryResponse
 } from '@/sanity/lib/queries';
@@ -14,9 +16,17 @@ export default async function Calendrier() {
     perspective: draftMode().isEnabled ? 'previewDrafts' : 'published'
   });
 
-  if (!spectacles) {
+  const revueScouteActuelle = await sanityFetch<RevueScouteActuelleQueryResponse>({
+    query: REVUESCOUTEACTUELLE_QUERY,
+    stega: draftMode().isEnabled,
+    perspective: draftMode().isEnabled ? 'previewDrafts' : 'published'
+  });
+
+  if (!spectacles && !revueScouteActuelle) {
     return notFound();
   }
+
+  console.log(spectacles);
 
   return <ul></ul>;
 }

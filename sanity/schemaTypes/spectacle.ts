@@ -67,8 +67,7 @@ export default defineType({
           ]
         }
       ],
-      group: 'contenu',
-      validation: (Rule) => Rule.required()
+      group: 'contenu'
     }),
     defineField({
       name: 'mainImage',

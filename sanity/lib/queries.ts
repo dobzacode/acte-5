@@ -105,7 +105,7 @@ export interface DateItem {
 }
 
 export interface Spectacle {
-  date?: DateItem[];
+  dates?: DateItem[];
   metadescription: string;
   _id: string;
   imageGallery: Image[];
@@ -173,7 +173,7 @@ export type SpectacleQueryResponse =
   | null;
 
 export const SPECTACLES_AVEC_DATES_QUERY = groq`
-  *[_type == "spectacle" && defined(date)]
+  *[_type == "spectacle" && defined(dates)]
 `;
 
 export type SpectaclesAvecDatesQueryResponse = Spectacle[] | null;
