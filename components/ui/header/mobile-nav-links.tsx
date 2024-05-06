@@ -38,7 +38,7 @@ export default function MobileNavLinks({
         >
           <Link
             className={cn(
-              ' sub-heading w-fit px-sm text-black hover:bg-primary-500 hover:text-white',
+              'sub-heading w-fit px-sm py-2 text-black hover:bg-primary-500 hover:text-white max-laptop:text-md max-laptop:leading-md',
               `${pathname.includes(link.href) && 'pointer-events-none'}`,
               index % 2 === 0 ? 'hvr-grow-rotate' : 'hvr-grow-rotate-reverse',
               pathname.includes(link.href)

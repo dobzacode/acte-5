@@ -114,6 +114,7 @@ const ProjectCarousel: React.FC<PropType> = (props) => {
               >
                 <div className="project_embla__slide__number relative h-full w-full overflow-hidden rounded-sm shadow-medium ">
                   <Image
+                    sizes={'(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw'}
                     fill
                     className="object-cover"
                     src={event.src}

@@ -17,7 +17,7 @@ export default function PostSnippet({
   if (!post) return null;
 
   return (
-    <li className={cn('group flex w-full gap-lg', className)}>
+    <div className={cn('group flex w-full gap-lg', className)}>
       <Link
         className="relative aspect-square w-1/2 max-tablet:hidden"
         href={`blog/${post.slug.current}`}
@@ -58,6 +58,6 @@ export default function PostSnippet({
 
         {post.auteur && <p className="body font-semibold">Par {post.auteur._type}</p>}
       </div>
-    </li>
+    </div>
   );
 }

@@ -28,7 +28,7 @@ export default async function PostpageContent({ params }: { params: { slug: stri
             title={post.titre.toUpperCase()}
             element={[
               { text: 'Evenement', href: '/agence-evenementielle-strasbourg' },
-              { text: 'Blog', href: '/blog' },
+              { text: 'Blog', href: '/agence-evenementielle-strasbourg/blog' },
               { text: post.titre, href: post.slug.current }
             ]}
           ></TitleSection>

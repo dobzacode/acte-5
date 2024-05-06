@@ -2,6 +2,7 @@
 
 import { cn } from '@/lib/utils';
 import { Variants, motion } from 'framer-motion';
+import { v4 } from 'uuid';
 
 interface StaggeredTextProps {
   children: string;
@@ -33,7 +34,7 @@ export default function StaggeredText({
     >
       {children.split(' ').map((word) => {
         return (
-          <span key={`${word}-word`} className="inline-block">
+          <span key={`${word}-word-${v4()}`} className="inline-block">
             {word.split('').map((char, index) => {
               return (
                 <motion.span className="inline-block" variants={variant} key={char + '-' + index}>
