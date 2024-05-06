@@ -66,7 +66,7 @@ export default function Header({ className }: { className?: string }) {
         onClick={() => {
           setShowMenu(false);
         }}
-        className="body relative flex shrink-0 self-center overflow-hidden rounded-sm border p-xs font-normal shadow-md before:absolute before:right-0 before:top-0 before:-z-10 before:h-full before:w-full before:bg-white max-tablet:absolute max-tablet:top-1/2 max-tablet:-translate-y-1/2 max-tablet:translate-x-1/2 max-tablet:self-center laptop:p-sm"
+        className="body relative z-40 flex shrink-0 self-center overflow-hidden rounded-sm border p-xs font-normal shadow-md before:absolute before:right-0 before:top-0 before:-z-10 before:h-full before:w-full before:bg-white max-tablet:absolute max-tablet:left-1/2 max-tablet:top-1/2 max-tablet:-translate-x-1/2 max-tablet:-translate-y-1/2 max-tablet:self-center laptop:p-sm"
       >
         <SectionLinks pathname={pathname}></SectionLinks>
       </nav>

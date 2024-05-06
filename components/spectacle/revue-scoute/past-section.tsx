@@ -37,7 +37,7 @@ export default async function PastSection() {
   }
 
   return (
-    <section className="w-full overflow-hidden bg-primary-400 py-xl">
+    <section className="flex w-full flex-col gap-xl overflow-hidden bg-primary-400 py-xl">
       <InviewWrapper
         className="heading--sub-extra-large section-px text-center text-white "
         tag="h2"

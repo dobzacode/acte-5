@@ -20,7 +20,6 @@ export const EVENTLINKS: Links[] = [
 export const SPECTACLELINKS: Links[] = [
   { name: 'Revue scoute', href: '/spectacles-strasbourg/revue-scoute' },
   { name: "A l'affiche", href: '/spectacles-strasbourg/a-laffiche' },
-  { name: 'Portfolio', href: '/spectacles-strasbourg/portfolio' },
   { name: 'A propos', href: '/spectacles-strasbourg/a-propos' },
   { name: 'Contact', href: '/spectacles-strasbourg/contact' }
 ];
