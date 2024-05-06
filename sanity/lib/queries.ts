@@ -73,7 +73,7 @@ export interface Affiche {
   imageGallery: Image[];
 }
 
-interface DistributionItem {
+export interface DistributionItem {
   _key: string;
   nom: string;
   picture: Image;

@@ -16,8 +16,6 @@ export default async function Affiches() {
     return notFound();
   }
 
-  console.log(spectacles[0].mainImage);
-
   const withUrl = await Promise.all(
     spectacles.map(async (spectacle) => {
       const url = await urlForImage(spectacle.mainImage)

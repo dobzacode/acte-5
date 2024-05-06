@@ -33,13 +33,12 @@ export default function DateRow({
   date,
   actualDate,
   setActualDate,
-  index,
-  key
+  index
 }: {
   date: DateItem;
   actualDate: string | null;
   setActualDate: (date: string | null) => void;
-  key: string;
+
   index: number;
 }) {
   return (

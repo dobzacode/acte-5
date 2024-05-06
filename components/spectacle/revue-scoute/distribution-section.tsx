@@ -1,0 +1,75 @@
+import { ComingFromLeftVariant } from '@/components/framer-motion/div-variants';
+import InviewWrapper from '@/components/framer-motion/inview-wrapper';
+import { DistributionItem } from '@/sanity/lib/queries';
+import { urlForImage } from '@/sanity/lib/utils';
+import Image from 'next/image';
+
+export default async function DistributionSection({
+  distribution
+}: {
+  distribution: DistributionItem[];
+}) {
+  const withUrl = await Promise.all(
+    distribution.map(async (item) => {
+      const url = await urlForImage(item.picture).width(1920).height(1080).dpr(2).quality(80).url();
+      const blurSrc = urlForImage(item.picture).width(20).quality(20).url();
+      return { ...item, blurSrc, url };
+    })
+  );
+
+  console.log(withUrl);
+
+  return (
+    <section className=" flex w-full flex-col gap-xl ">
+      <InviewWrapper
+        className="heading--sub-extra-large  text-primary-400 "
+        tag="h2"
+        variant={ComingFromLeftVariant}
+      >
+        Distribution
+      </InviewWrapper>
+      <ul className="relative -z-10 flex w-full  flex-wrap items-center gap-md">
+        {withUrl.map((people, index) => {
+          return (
+            <InviewWrapper
+              key={people._key}
+              tag="li"
+              style={{ zIndex: 20 - index }}
+              variant={{
+                hidden: {
+                  opacity: 0,
+                  y: -200
+                },
+                enter: {
+                  opacity: 1,
+                  y: 0,
+                  transition: {
+                    y: { delay: 0.5 + index * 0.1, type: 'spring', damping: 20 },
+                    opacity: { duration: 0.2, delay: 0.5 + index * 0.1 }
+                  }
+                },
+                exit: {
+                  opacity: 0,
+                  y: -200
+                }
+              }}
+              className="card relative flex max-w-[13rem]  flex-col gap-md overflow-hidden px-0 pt-0"
+            >
+              <div className="relative h-[15rem] w-[13rem]">
+                <Image
+                  blurDataURL={people.blurSrc}
+                  placeholder="blur"
+                  src={people.url}
+                  alt="image"
+                  fill
+                  className="object-cover"
+                ></Image>
+              </div>
+              <p className="sub-heading px-sm text-center">{people.nom}</p>
+            </InviewWrapper>
+          );
+        })}
+      </ul>
+    </section>
+  );
+}

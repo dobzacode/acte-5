@@ -33,7 +33,7 @@ export default function StaggeredText({
     >
       {children.split(' ').map((word) => {
         return (
-          <span className="inline-block">
+          <span key={`${word}-word`} className="inline-block">
             {word.split('').map((char, index) => {
               return (
                 <motion.span className="inline-block" variants={variant} key={char + '-' + index}>
