@@ -9,7 +9,7 @@ import CompetenceSection from './competence-section';
 
 export default function AproposSection() {
   return (
-    <section className="flex flex-col items-center gap-3xl  overflow-x-clip pb-5xl mobile-large:gap-4xl tablet:gap-6xl laptop:gap-7xl laptop-large:gap-9xl ">
+    <section className="flex flex-col items-center gap-2xl   overflow-x-clip  pb-5xl mobile-large:gap-4xl   ">
       <CompetenceSection></CompetenceSection>
       <div className="section-px flex flex-col items-center gap-lg text-center mobile-large:gap-xl tablet:gap-2xl ">
         <StaggeredText

@@ -66,46 +66,49 @@ export default function Header({ className }: { className?: string }) {
         onClick={() => {
           setShowMenu(false);
         }}
-        className="body relative z-40 flex shrink-0 self-center overflow-hidden rounded-sm border p-xs font-normal shadow-md before:absolute before:right-0 before:top-0 before:-z-10 before:h-full before:w-full before:bg-white max-tablet:absolute max-tablet:left-1/2 max-tablet:top-1/2 max-tablet:-translate-x-1/2 max-tablet:-translate-y-1/2 max-tablet:self-center laptop:p-sm"
+        className="body relative z-40 flex shrink-0 self-center overflow-hidden rounded-sm border p-xs font-normal shadow-md before:absolute before:right-0 before:top-0 before:-z-10 before:h-full before:w-full before:bg-white max-tablet:absolute max-tablet:left-1/2 max-tablet:top-1/2 max-tablet:-translate-x-1/2 max-tablet:-translate-y-1/2 max-tablet:self-center "
       >
         <SectionLinks pathname={pathname}></SectionLinks>
       </nav>
       <AnimatePresence mode="wait">
-        <div key="menu" className={cn('flex shrink-0 items-center tablet:hidden')}>
-          <Hamburger
-            className={cn('h-fit w-xl duration-fast hover:scale-105')}
-            showMenu={showMenu}
-            setShowMenu={setShowMenu}
-          ></Hamburger>
-          <motion.div
-            key="menuBackground"
-            exit={{ y: '-100%' }}
-            transition={{ duration: 500 }}
-            className={cn(
-              'absolute left-0 top-0 -z-20 h-screen w-screen max-w-0 bg-transparent  bg-white bg-opacity-100   duration-medium ease-in-out',
-              showMenu ? 'max-w-full ' : 'delay-300'
-            )}
-          ></motion.div>
+        {pathname.includes('agence-evenementielle-strasbourg') ||
+        pathname.includes('spectacles-strasbourg') ? (
+          <div key="menu" className={cn('flex shrink-0 items-center tablet:hidden')}>
+            <Hamburger
+              className={cn('h-fit w-xl duration-fast hover:scale-105')}
+              showMenu={showMenu}
+              setShowMenu={setShowMenu}
+            ></Hamburger>
+            <motion.div
+              key="menuBackground"
+              exit={{ y: '-100%' }}
+              transition={{ duration: 500 }}
+              className={cn(
+                'absolute left-0 top-0 -z-20 h-screen w-screen max-w-0 bg-transparent  bg-white bg-opacity-100   duration-medium ease-in-out',
+                showMenu ? 'max-w-full ' : 'delay-300'
+              )}
+            ></motion.div>
 
-          {showMenu && !isTablet ? (
-            <motion.nav
-              className={cn(' absolute left-0 top-4xl z-10 flex max-w-full flex-col px-sm')}
-            >
-              <ul
-                className={cn(
-                  ' flex flex-col gap-md opacity-0',
-                  showMenu ? 'translate-y-0 opacity-100 duration-slow' : '  duration-300'
-                )}
+            {showMenu && !isTablet ? (
+              <motion.nav
+                className={cn(' absolute left-0 top-4xl z-10 flex max-w-full flex-col px-sm')}
               >
-                {pathname.includes('agence-evenementielle-strasbourg') ? (
-                  <MobileNavLinks setShowMenu={setShowMenu} pathname={pathname} isEvent={true} />
-                ) : (
-                  <MobileNavLinks setShowMenu={setShowMenu} pathname={pathname} isEvent={false} />
-                )}
-              </ul>
-            </motion.nav>
-          ) : null}
-        </div>
+                <ul
+                  className={cn(
+                    ' flex flex-col gap-md opacity-0',
+                    showMenu ? 'translate-y-0 opacity-100 duration-slow' : '  duration-300'
+                  )}
+                >
+                  {pathname.includes('agence-evenementielle-strasbourg') ? (
+                    <MobileNavLinks setShowMenu={setShowMenu} pathname={pathname} isEvent={true} />
+                  ) : (
+                    <MobileNavLinks setShowMenu={setShowMenu} pathname={pathname} isEvent={false} />
+                  )}
+                </ul>
+              </motion.nav>
+            ) : null}
+          </div>
+        ) : null}
       </AnimatePresence>
     </section>
   );

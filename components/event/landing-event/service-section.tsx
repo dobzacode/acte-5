@@ -1,3 +1,7 @@
+import {
+  ComingFromLeftVariant,
+  ComingFromRightVariant
+} from '@/components/framer-motion/div-variants';
 import InviewWrapper from '@/components/framer-motion/inview-wrapper';
 import Marquee from '@/components/framer-motion/marquee';
 import UiButton from '@/components/ui/ui-button';
@@ -56,13 +60,15 @@ export default function ServiceSection() {
   };
 
   return (
-    <section className="flex w-full flex-col gap-2xl overflow-x-clip bg-black ">
+    <section className="flex w-full flex-col gap-2xl overflow-hidden overflow-x-clip bg-black">
       <Marquee>
         <p className="heading--extra-large text-white">{ONGLETS}</p>
       </Marquee>
 
       <div className="section-px flex flex-col gap-md mobile-large:gap-lg tablet:gap-xl">
-        <h2 className="heading--large flex text-white tablet:hidden">NOS SERVICES</h2>
+        <InviewWrapper className="tablet:hidden" variant={ComingFromLeftVariant}>
+          <h2 className="heading--large flex text-white ">NOS SERVICES</h2>
+        </InviewWrapper>
         <div className="  grid h-full w-full grid-cols-10 grid-rows-[200px_200px] gap-2 tablet:grid-rows-[200px_200px_200px] tablet:gap-5">
           {GRID_CHILDREN().map((child, index) => (
             <InviewWrapper
@@ -90,7 +96,10 @@ export default function ServiceSection() {
             </InviewWrapper>
           ))}
         </div>
-        <div className="flex w-full flex-col gap-lg rounded-sm pt-md  text-white tablet:hidden">
+        <InviewWrapper
+          variant={ComingFromRightVariant}
+          className="flex w-full flex-col gap-lg rounded-sm pt-md  text-white tablet:hidden"
+        >
           <p className="sub-heading">
             {' '}
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
@@ -100,7 +109,7 @@ export default function ServiceSection() {
           <UiButton className="w-fit" size="lg" variant="solid" color="primary">
             Découvrez nos services
           </UiButton>
-        </div>
+        </InviewWrapper>
       </div>
 
       <Marquee inverted>
