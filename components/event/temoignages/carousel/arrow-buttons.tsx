@@ -67,7 +67,7 @@ export const PrevButton: React.FC<PropType> = (props) => {
 
   return (
     <button
-      className="project_embla__button embla__button--prev origin-right rounded-l-sm rounded-r-none border-1  border-solid border-gray-400 duration-fast hover:border-primary-300 hover:bg-primary-300  [&>svg>path]:hover:fill-white"
+      className="project_embla__button embla__button--prev origin-right rounded-l-sm rounded-r-none border-1  border-solid border-gray-400 duration-fast hover:border-primary-300 hover:bg-primary-300 active:border-primary-300 [&>svg>path]:hover:fill-white"
       type="button"
       {...restProps}
     >
