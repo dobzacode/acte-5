@@ -30,51 +30,51 @@ export default defineType({
       type: 'datetime',
       group: 'contenu'
     }),
-    defineField({
-      name: 'dates',
-      title: 'Dates',
-      type: 'array',
-      of: [
-        {
-          type: 'object',
-          name: 'stop',
-          title: 'Stop',
-          fields: [
-            {
-              type: 'string',
-              title: 'Ville',
-              name: 'ville',
-              validation: (Rule) => Rule.required()
-            },
-            {
-              type: 'string',
-              title: 'Emplacement',
-              name: 'emplacement',
-              validation: (Rule) => Rule.required()
-            },
-            {
-              type: 'blockContent',
-              title: 'Description',
-              name: 'description'
-            },
-            {
-              type: 'array',
-              of: [{ type: 'datetime', title: 'Horaires', name: 'horaires' }],
-              title: 'Dates et horaires',
-              name: 'dates',
-              validation: (Rule) => Rule.required()
-            },
-            {
-              type: 'url',
-              title: 'Lien',
-              name: 'lien',
-              description: "Lien vers plus d'informations"
-            }
-          ]
-        }
-      ],
-      group: 'contenu'
-    }),
+    // defineField({
+    //   name: 'dates',
+    //   title: 'Dates',
+    //   type: 'array',
+    //   of: [
+    //     {
+    //       type: 'object',
+    //       name: 'stop',
+    //       title: 'Stop',
+    //       fields: [
+    //         {
+    //           type: 'string',
+    //           title: 'Ville',
+    //           name: 'ville',
+    //           validation: (Rule) => Rule.required()
+    //         },
+    //         {
+    //           type: 'string',
+    //           title: 'Emplacement',
+    //           name: 'emplacement',
+    //           validation: (Rule) => Rule.required()
+    //         },
+    //         {
+    //           type: 'blockContent',
+    //           title: 'Description',
+    //           name: 'description'
+    //         },
+    //         {
+    //           type: 'array',
+    //           of: [{ type: 'datetime', title: 'Horaires', name: 'horaires' }],
+    //           title: 'Dates et horaires',
+    //           name: 'dates',
+    //           validation: (Rule) => Rule.required()
+    //         },
+    //         {
+    //           type: 'url',
+    //           title: 'Lien',
+    //           name: 'lien',
+    //           description: "Lien vers plus d'informations"
+    //         }
+    //       ]
+    //     }
+    //   ],
+    //   group: 'contenu'
+    // }),
     defineField({
       name: 'body',
       title: 'Description',

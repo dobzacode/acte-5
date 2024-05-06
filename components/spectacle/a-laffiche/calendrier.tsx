@@ -8,6 +8,7 @@ import {
 
 import { draftMode } from 'next/headers';
 import { notFound } from 'next/navigation';
+import CalendrierTable from './calendrier-row';
 
 export default async function Calendrier() {
   const spectacles = await sanityFetch<SpectaclesAvecDatesQueryResponse>({
@@ -28,5 +29,5 @@ export default async function Calendrier() {
 
   console.log(spectacles);
 
-  return <ul></ul>;
+  return <CalendrierTable spectacles={spectacles}></CalendrierTable>;
 }
