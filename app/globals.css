@@ -51,11 +51,11 @@
   }
 
   .main-gap {
-    @apply gap-xl mobile-small:gap-3xl mobile-medium:gap-2xl mobile-large:gap-4xl tablet:gap-5xl;
+    @apply gap-xl mobile-small:gap-3xl mobile-medium:gap-2xl mobile-large:gap-3xl tablet:gap-4xl laptop-large:gap-5xl;
   }
 
   .inner-section-py {
-    @apply py-xl mobile-small:py-3xl mobile-medium:py-2xl mobile-large:py-4xl tablet:py-5xl laptop:py-6xl laptop-large:py-8xl;
+    @apply py-2xl mobile-small:py-3xl mobile-medium:py-2xl mobile-large:py-4xl tablet:py-5xl;
   }
 
   .card {

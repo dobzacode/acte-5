@@ -9,7 +9,7 @@ import Image from 'next/image';
 
 export default function SpectacleSection() {
   return (
-    <section className="section-px flex w-full flex-col items-center gap-4xl bg-transparent text-white">
+    <section className="section-px flex w-full flex-col items-center gap-2xl bg-transparent text-white">
       <InviewWrapper
         variant={ComingFromTopVariant}
         tag="h1"
@@ -18,7 +18,7 @@ export default function SpectacleSection() {
         Spectacle d'entreprise
       </InviewWrapper>
       <StaggeredText
-        className="heading--sub-large max-w-[30ch] text-pretty text-center"
+        className="heading--sub-large max-w-[30ch] text-pretty text-center text-white"
         variant={FromTopStaggerVariant}
         delay={1}
       >
@@ -48,7 +48,7 @@ export default function SpectacleSection() {
               x: 200
             }
           }}
-          className="sub-heading relative -z-10"
+          className="sub-heading relative -z-10 max-tablet:hidden"
         >
           LOREM IPSUM DOLOR SIT AMET
         </InviewWrapper>
@@ -81,7 +81,7 @@ export default function SpectacleSection() {
               x: -200
             }
           }}
-          className="sub-heading relative -z-10"
+          className="sub-heading relative -z-10 max-tablet:hidden"
         >
           LOREM IPSUM DOLOR SIT AMET
         </InviewWrapper>

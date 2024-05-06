@@ -10,7 +10,7 @@ import GalleryScrollAnimation from './gallery-scroll-animation';
 
 export default function ScouteSection() {
   return (
-    <section className="inner-section-py relative z-20 flex w-full flex-col gap-9xl rounded-br-4xl rounded-tl-4xl bg-white">
+    <section className="inner-section-py relative z-20 flex w-full flex-col gap-2xl rounded-br-2xl rounded-tl-2xl bg-white max-tablet:overflow-hidden  mobile-large:rounded-br-4xl  mobile-large:rounded-tl-4xl tablet:gap-4xl tablet:rounded-br-6xl  tablet:rounded-tl-6xl  laptop:rounded-br-8xl laptop:rounded-tl-8xl">
       <div className="flex flex-col items-center gap-xl">
         <InviewWrapper
           variant={ComingFromLeftVariant}
@@ -30,7 +30,7 @@ export default function ScouteSection() {
 
       <GalleryScrollAnimation></GalleryScrollAnimation>
       <InviewWrapper
-        className="section-px flex items-center justify-center gap-xl  laptop:ml-auto"
+        className="section-px  flex items-center justify-center  gap-xl laptop:ml-auto"
         variant={ComingFromRightVariant}
       >
         <Image
@@ -40,7 +40,7 @@ export default function ScouteSection() {
           height={400}
           className="rounded-sm"
         ></Image>
-        <p className="sub-heading w-[40ch] text-pretty text-center">
+        <p className="sub-heading w-[40ch] text-pretty mobile-large:text-center">
           Lorem ipsum dolor sit amet, consectetur adipiscing eli, sed do eiusmod tempor incididunt
           ut labore et dolore magna. Lorem ipsum dolor sit amet, consectetur adipiscing el
         </p>
@@ -56,7 +56,7 @@ export default function ScouteSection() {
           height={400}
           className="rounded-sm"
         ></Image>
-        <p className="sub-heading w-[40ch] text-pretty text-center">
+        <p className="sub-heading w-[40ch] text-pretty mobile-large:text-center">
           Lorem ipsum dolor sit amet, consectetur adipiscing eli, sed do eiusmod tempor incididunt
           ut labore et dolore magna. Lorem ipsum dolor sit amet, consectetur adipiscing el
         </p>
