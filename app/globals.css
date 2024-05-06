@@ -35,11 +35,11 @@
   }
 
   .sub-heading {
-    @apply text-sm font-light leading-sm laptop:text-md laptop:leading-md;
+    @apply text-sm font-normal leading-sm laptop:text-md laptop:leading-md;
   }
 
   .body {
-    @apply text-sm font-light leading-sm;
+    @apply text-sm font-normal leading-sm;
   }
 
   .caption {

@@ -1,18 +1,26 @@
 import { sanityFetch } from '@/sanity/lib/fetch';
 import {
+  DateItem,
   REVUESCOUTEACTUELLE_QUERY,
   RevueScouteActuelleQueryResponse,
-  SPECTACLES_QUERY,
-  SpectaclesQueryResponse
+  SPECTACLES_AVEC_DATES_QUERY,
+  SpectaclesAvecDatesQueryResponse
 } from '@/sanity/lib/queries';
 
 import { draftMode } from 'next/headers';
 import { notFound } from 'next/navigation';
+import { Image } from 'sanity';
 import CalendrierTable from './calendrier-table';
 
+export interface DateItemCal extends DateItem {
+  titre: string;
+  type: 'La Revue Scoute' | 'Spectacle';
+  picture: Image;
+}
+
 export default async function Calendrier() {
-  const spectacles = await sanityFetch<SpectaclesQueryResponse>({
-    query: SPECTACLES_QUERY,
+  const spectacles = await sanityFetch<SpectaclesAvecDatesQueryResponse>({
+    query: SPECTACLES_AVEC_DATES_QUERY,
     stega: draftMode().isEnabled,
     perspective: draftMode().isEnabled ? 'previewDrafts' : 'published'
   });
@@ -27,34 +35,30 @@ export default async function Calendrier() {
     return notFound();
   }
 
-  const datesArr: any[] = [];
-  if (revueScoute[0] && revueScoute[0].date && revueScoute[0].date.length > 0) {
-    for (const dateItem of revueScoute[0].date) {
-      if (dateItem.dates && dateItem.dates.length > 0) {
-        for (const date of dateItem.dates) {
-          const nouvelleDate = {
-            ville: dateItem.ville,
-            lien: dateItem.lien,
-            _type: dateItem._type,
-            description: dateItem.description,
-            _key: dateItem._key,
-            emplacement: dateItem.emplacement,
-            date: date
-          };
+  let datesArr: DateItemCal[] = [];
+  revueScoute[0].date.map((spectacle) => {
+    datesArr.push({
+      ...spectacle,
+      titre: revueScoute[0].titre,
+      type: 'La Revue Scoute',
+      picture: { ...revueScoute[0].mainImage }
+    });
+  });
+  spectacles.map((spectacle) => {
+    if (!spectacle.dates) return;
+    spectacle.dates.map((date) => {
+      datesArr.push({
+        ...date,
+        titre: spectacle.titre,
+        type: 'Spectacle',
+        picture: { ...spectacle.mainImage }
+      });
+    });
+  });
 
-          datesArr.push(nouvelleDate);
-        }
-      }
-    }
-  }
+  datesArr.sort((a, b) => {
+    return a.dates[0].localeCompare(b.dates[0]);
+  });
 
-  console.log(datesArr);
-
-  return (
-    <CalendrierTable
-      spectacles={spectacles}
-      revueScoute={revueScoute}
-      datesArr={datesArr}
-    ></CalendrierTable>
-  );
+  return <CalendrierTable revueScoute={revueScoute} datesArr={datesArr}></CalendrierTable>;
 }

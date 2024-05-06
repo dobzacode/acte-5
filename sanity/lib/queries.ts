@@ -104,6 +104,8 @@ export interface DateItem {
   emplacement: string;
 }
 
+
+
 export interface Spectacle {
   dates?: DateItem[];
   metadescription: string;
