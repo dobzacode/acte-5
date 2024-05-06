@@ -1,4 +1,7 @@
-import { ComingFromLeftVariant } from '@/components/framer-motion/div-variants';
+import {
+  ComingFromBottomVariant,
+  ComingFromTopVariant
+} from '@/components/framer-motion/div-variants';
 import InviewWrapper from '@/components/framer-motion/inview-wrapper';
 import { dynamicBlurDataUrl } from '@/lib/utils';
 import MemberCarousel from './member-carousel';
@@ -84,22 +87,22 @@ export default async function TeamSection() {
   );
 
   return (
-    <InviewWrapper
-      tag="section"
-      viewport={{ once: true, margin: '-200px 0px -200px 0px' }}
-      variant={ComingFromLeftVariant}
-      className=" flex w-full flex-col items-center gap-2xl overflow-x-hidden pt-5xl"
-    >
-      <div className="section-px flex flex-col items-center gap-xl text-center laptop:container laptop:mx-auto">
-        <h2 className="heading--large text-primary-400">Une agence pluri-indisciplinée...</h2>
-        <p className="sub-heading max-w-[80ch] text-pretty">
+    <section className="mt-2xl flex w-full flex-col items-center gap-2xl overflow-hidden overflow-x-hidden bg-primary-400 py-2xl tablet:mt-5xl">
+      <InviewWrapper
+        variant={ComingFromTopVariant}
+        className="section-px flex flex-col items-center gap-xl text-center laptop:container laptop:mx-auto"
+      >
+        <h2 className="heading--large text-white">Une agence pluri-indisciplinée...</h2>
+        <p className="sub-heading max-w-[80ch] text-pretty text-white">
           Ne demandez pas une présentation académique de l&apos;équipe ! On s&apos;y ennuierait bien
           vite. Sachez simplement qu&apos;à eux 6, ils représentent 25 diplômes dont 2 de
           secouriste, 12 flocons, 10 étoiles, 1 flèche d&apos;argent, 1 de bronze, 4 permis B et 13
           galops. Mais voyons plutôt !
         </p>
-      </div>
-      <MemberCarousel options={{ loop: true }} imageArr={imageArr}></MemberCarousel>
-    </InviewWrapper>
+      </InviewWrapper>
+      <InviewWrapper variant={ComingFromBottomVariant}>
+        <MemberCarousel options={{ loop: true }} imageArr={imageArr}></MemberCarousel>
+      </InviewWrapper>
+    </section>
   );
 }

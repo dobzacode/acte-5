@@ -61,10 +61,11 @@ const MemberCarousel: React.FC<PropType> = (props) => {
             {props.imageArr.map((image, index) => (
               <div
                 className={cn(
-                  'rounded-extra-small  relative flex w-[6rem] shrink-0 flex-col items-center gap-lg px-0 pt-0 last:mr-lg tablet:w-[8rem] laptop:w-[11rem]',
+                  'relative  flex w-[6rem] shrink-0 flex-col items-center gap-lg rounded-sm last:mr-sm  tablet:w-[8rem] tablet:last:mr-lg laptop:w-[11rem]',
                   'name' in image
-                    ? 'card member_embla__slide'
-                    : 'w-[10rem] overflow-hidden rounded-xs tablet:w-[15rem] laptop:w-[20rem]'
+                    ? 'card member_embla__slide rounded-sm border-0 shadow-xl'
+                    : 'w-[10rem] overflow-hidden rounded-xs tablet:w-[15rem] laptop:w-[20rem]',
+                  'px-0 pt-0'
                 )}
                 key={index}
               >
@@ -75,9 +76,10 @@ const MemberCarousel: React.FC<PropType> = (props) => {
                     openLightbox(index);
                   }}
                   className={cn(
-                    'aspect-square cursor-pointer rounded-t-md object-cover',
+                    'aspect-square cursor-pointer rounded-t-sm object-cover',
                     'name' in image ? null : 'rounded-t-none'
                   )}
+                  sizes={'(max-width: 640px) 100vw, 50vw'}
                   src={image.url}
                   placeholder="blur"
                   blurDataURL={image.blurSrc}
@@ -85,7 +87,7 @@ const MemberCarousel: React.FC<PropType> = (props) => {
                 ></Image>
 
                 {'name' in image && (
-                  <div className="flex max-w-[20ch] flex-col items-center gap-md text-pretty text-center">
+                  <div className="flex max-w-[20ch] flex-col items-center gap-md text-pretty px-sm text-center text-ellipsis">
                     <p className="sub-heading   whitespace-nowrap">
                       <strong>{(image as Member).name}</strong>
                     </p>
