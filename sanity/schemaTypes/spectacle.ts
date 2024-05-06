@@ -26,6 +26,12 @@ export default defineType({
     }),
     defineField({
       name: 'date',
+      title: 'Date',
+      type: 'datetime',
+      group: 'contenu'
+    }),
+    defineField({
+      name: 'date',
       title: 'Dates',
       type: 'array',
       of: [
@@ -68,23 +74,6 @@ export default defineType({
         }
       ],
       group: 'contenu'
-    }),
-    defineField({
-      name: 'mainImage',
-      title: 'Image principal',
-      type: 'image',
-      group: 'media',
-      options: {
-        hotspot: true
-      },
-      fields: [
-        {
-          name: 'alt',
-          type: 'string',
-          title: 'Texte alternatif'
-        }
-      ],
-      validation: (Rule) => Rule.required()
     }),
     defineField({
       name: 'body',
