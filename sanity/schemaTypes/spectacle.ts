@@ -90,7 +90,7 @@ export default defineType({
       group: 'production',
       of: [{ type: 'string' }],
       //@ts-expect-error is not defined
-      hidden: ({ document }) => (document?.ecritureEtJeuEtMiseEnScene.length > 0 ? true : false)
+      hidden: ({ document }) => (document?.ecritureEtJeuEtMiseEnScene?.length > 0 ? true : false)
     }),
     defineField({
       name: 'miseEnScene',
@@ -99,7 +99,7 @@ export default defineType({
       group: 'production',
       of: [{ type: 'string' }],
       //@ts-expect-error is not defined
-      hidden: ({ document }) => (document?.ecritureEtJeuEtMiseEnScene.length > 0 ? true : false)
+      hidden: ({ document }) => (document?.ecritureEtJeuEtMiseEnScene?.length > 0 ? true : false)
     }),
 
     defineField({
@@ -195,7 +195,6 @@ export default defineType({
   preview: {
     select: {
       title: 'titre',
-
       media: 'imageGallery.0'
     },
     prepare(selection) {

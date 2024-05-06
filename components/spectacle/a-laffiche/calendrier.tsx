@@ -29,9 +29,9 @@ export default async function Calendrier() {
 
   const datesArr: any[] = [];
   if (revueScoute[0] && revueScoute[0].date && revueScoute[0].date.length > 0) {
-    revueScoute[0].date.forEach((dateItem) => {
+    for (const dateItem of revueScoute[0].date) {
       if (dateItem.dates && dateItem.dates.length > 0) {
-        dateItem.dates.forEach((date) => {
+        for (const date of dateItem.dates) {
           const nouvelleDate = {
             ville: dateItem.ville,
             lien: dateItem.lien,
@@ -43,12 +43,18 @@ export default async function Calendrier() {
           };
 
           datesArr.push(nouvelleDate);
-        });
+        }
       }
-    });
+    }
   }
 
-  console.log(spectacles);
+  console.log(datesArr);
 
-  return <CalendrierTable spectacles={spectacles} revueScoute={revueScoute}></CalendrierTable>;
+  return (
+    <CalendrierTable
+      spectacles={spectacles}
+      revueScoute={revueScoute}
+      datesArr={datesArr}
+    ></CalendrierTable>
+  );
 }

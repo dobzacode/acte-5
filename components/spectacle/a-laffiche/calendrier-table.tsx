@@ -5,11 +5,14 @@ import CalendrierRow from './calendrier-row';
 
 export default function CalendrierTable({
   spectacles,
-  revueScoute
+  revueScoute,
+  datesArr
 }: {
   spectacles: Spectacle[];
   revueScoute: RevueScouteActuelleQueryResponse;
+  datesArr: any[];
 }) {
+  console.log(datesArr);
   return (
     <div className="flex flex-col items-center gap-sm">
       <p className="heading font-bold text-white">MOIS, ANNEE</p>
