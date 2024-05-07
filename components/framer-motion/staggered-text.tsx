@@ -29,7 +29,7 @@ export default function StaggeredText({
       initial="hidden"
       whileInView="enter"
       viewport={{ once: once, margin: margin }}
-      exit="exit"
+      exit={{ opacity: 0, transition: { duration: 0.5 } }}
       className={cn(className)}
     >
       {children.split(' ').map((word) => {

@@ -11,6 +11,101 @@ const nextConfig = {
     }
   },
 
+  async redirects() {
+    return [
+      {
+        source: '/agence-evenementielle-strasbourg/convention-entreprise-strasbourg',
+        destination: '/agence-evenementielle-strasbourg/services/convention-entreprise-strasbourg',
+        permanent: true
+      },
+      {
+        source: '/agence-evenementielle-strasbourg/inauguration-entreprise',
+        destination: '/agence-evenementielle-strasbourg/services/inauguration-entreprise',
+        permanent: true
+      },
+      {
+        source: '/agence-evenementielle-strasbourg/organisateur-anniversaire',
+        destination: '/agence-evenementielle-strasbourg/services/organisateur-anniversaire',
+        permanent: true
+      },
+      {
+        source: '/agence-evenementielle-strasbourg/ceremonie-remise-medailles',
+        destination: '/agence-evenementielle-strasbourg/services/ceremonie-remise-medailles',
+        permanent: true
+      },
+      {
+        source: '/agence-evenementielle-strasbourg/ceremonie-voeux',
+        destination: '/agence-evenementielle-strasbourg/services/ceremonie-voeux',
+        permanent: true
+      },
+      {
+        source: '/agence-evenementielle-strasbourg/portes-ouvertes',
+        destination: '/agence-evenementielle-strasbourg/services/portes-ouvertes',
+        permanent: true
+      },
+      {
+        source: '/agence-evenementielle-strasbourg/soiree-gala',
+        destination: '/agence-evenementielle-strasbourg/services/soiree-gala',
+        permanent: true
+      },
+      {
+        source: '/agence-evenementielle-strasbourg/spectacle-entreprise',
+        destination: '/agence-evenementielle-strasbourg/services/spectacle-entreprise',
+        permanent: true
+      },
+      {
+        source: '/agence-evenementielle-strasbourg/team-building',
+        destination: '/agence-evenementielle-strasbourg/services/team-building',
+        permanent: true
+      },
+      {
+        source: '/blog',
+        destination: '/agence-evenementielle-strasbourg/blog',
+        permanent: true
+      },
+      {
+        source: '/contact',
+        destination: '/agence-evenementielle-strasbourg/contact',
+        permanent: true
+      },
+      {
+        source: '/agence',
+        destination: '/agence-evenementielle-strasbourg/a-propos',
+        permanent: true
+      },
+      {
+        source: '/agence-communication-strasbourg',
+        destination: '/agence-evenementielle-strasbourg',
+        permanent: true
+      },
+      {
+        source: '/agence-communication-strasbourg/strategie-communication',
+        destination: '/agence-evenementielle-strasbourg/strategie-communication',
+        permanent: true
+      },
+      {
+        source: '/agence-communication-strasbourg/video-entreprise',
+        destination: '/agence-evenementielle-strasbourg/video-entreprise',
+        permanent: true
+      },
+      {
+        source: '/agence-communication-strasbourg/identite-visuelle',
+        destination: '/agence-evenementielle-strasbourg/identite-visuelle',
+        permanent: true
+      },
+      {
+        source: '/reservations',
+        destination: '/spectacles-strasbourg/a-laffiche',
+        permanent: true
+      },
+      {
+        source: '/calendrier',
+        destination: '/spectacles-strasbourg/a-laffiche',
+        permanent: true
+      }
+    ];
+  },
+
   experimental: {
     taint: true,
     turbo: {

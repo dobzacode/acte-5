@@ -28,10 +28,13 @@ export default async function LastEvent({
     | 'Portes ouvertes'
     | 'Soirée de gala'
     | "Spectacle d'entreprise"
-    | 'Team Building';
+    | 'Team Building'
+    | 'Stratégie de communication'
+    | 'Identité visuelle'
+    | "Vidéo d'entreprise";
 }) {
   const events = await sanityFetch<EventsQueryResponse>({
-    query: groq`*[_type == "evenement" && categorie == "Convention"]`,
+    query: groq`*[_type == "evenement" && categorie == "${categorie}"]`,
     perspective: 'published',
     stega: false
   });

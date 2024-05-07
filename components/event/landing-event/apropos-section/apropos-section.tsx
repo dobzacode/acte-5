@@ -5,6 +5,7 @@ import {
 import InviewWrapper from '@/components/framer-motion/inview-wrapper';
 import StaggeredText from '@/components/framer-motion/staggered-text';
 import UiButton from '@/components/ui/ui-button';
+import Link from 'next/link';
 import CompetenceSection from './competence-section';
 
 export default function AproposSection() {
@@ -24,7 +25,14 @@ export default function AproposSection() {
           viewport={{ once: true, margin: '-200px 0px -200px 0px' }}
           variant={ComingFromBottomVariant}
         >
-          <UiButton size="lg" className=" w-fit " variant="solid" color="pastelPrimary">
+          <UiButton
+            href="/agence-evenementielle-strasbourg/a-propos"
+            as={Link}
+            size="lg"
+            className=" w-fit "
+            variant="solid"
+            color="pastelPrimary"
+          >
             Non, je souhaite en savoir plus
           </UiButton>
         </InviewWrapper>

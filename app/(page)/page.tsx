@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <main className="main inner-section-gap section-px flex  h-full flex-col justify-between  pb-5xl pt-5xl tablet:pt-6xl ">
+      <main className="inner-section-gap section-px flex  h-full flex-col items-center  justify-between pb-5xl pt-5xl tablet:pt-6xl">
         <DivWrapper
           className="inner-section-gap flex  w-2/3 flex-col items-center"
           variant={ComingFromTopVariant}

@@ -2,6 +2,7 @@ import { ComingFromLeftVariant } from '@/components/framer-motion/div-variants';
 import InviewWrapper from '@/components/framer-motion/inview-wrapper';
 import UiButton from '@/components/ui/ui-button';
 import Image from 'next/image';
+import Link from 'next/link';
 import ScrollImage from './scroll-image';
 
 export default function ProductionSection() {
@@ -69,7 +70,14 @@ export default function ProductionSection() {
           }}
           className="relative z-10 flex h-fit laptop:w-1/2"
         >
-          <UiButton size="lg" className="w-fit" variant="solid" color="default">
+          <UiButton
+            href="/spectacle-strasbourg/a-propos"
+            as={Link}
+            size="lg"
+            className="w-fit"
+            variant="solid"
+            color="default"
+          >
             En savoir plus sur notre expertise
           </UiButton>
         </InviewWrapper>

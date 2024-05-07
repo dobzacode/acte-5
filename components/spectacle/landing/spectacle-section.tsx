@@ -6,6 +6,7 @@ import {
 import InviewWrapper from '@/components/framer-motion/inview-wrapper';
 import UiButton from '@/components/ui/ui-button';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function SpectacleSection() {
   return (
@@ -105,7 +106,14 @@ export default function SpectacleSection() {
         }}
         className="relative z-10 flex h-fit w-full items-center justify-center"
       >
-        <UiButton size="lg" className="w-fit" variant="solid" color="default">
+        <UiButton
+          href="/agence-evenementielle-strasbourg/services/spectacle-entreprise"
+          as={Link}
+          size="lg"
+          className="w-fit"
+          variant="solid"
+          color="default"
+        >
           Découvrir d'avantage
         </UiButton>
       </InviewWrapper>

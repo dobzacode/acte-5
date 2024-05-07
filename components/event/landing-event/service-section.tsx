@@ -5,6 +5,7 @@ import {
 import InviewWrapper from '@/components/framer-motion/inview-wrapper';
 import Marquee from '@/components/framer-motion/marquee';
 import UiButton from '@/components/ui/ui-button';
+import Link from 'next/link';
 
 const ONGLETS =
   'CONVENTION D’ENTREPRISE - ANNIVERSAIRE - INAUGURATION D’ENTREPRISE - CÉRÉMONIE DES MÉDAILLES - CÉRÉMONIE DES VŒUX - PORTES OUVERTES - SOIRÉE DE GALA - SPECTACLE D’ENTREPRISE - TEAM BUILDING - CONVENTION D’ENTREPRISE - ANNIVERSAIRE';
@@ -106,7 +107,14 @@ export default function ServiceSection() {
             incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur
             adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
-          <UiButton className="w-fit" size="lg" variant="solid" color="primary">
+          <UiButton
+            href="/agence-evenementielle-strasbourg/services"
+            as={Link}
+            className="w-fit"
+            size="lg"
+            variant="solid"
+            color="primary"
+          >
             Découvrez nos services
           </UiButton>
         </InviewWrapper>

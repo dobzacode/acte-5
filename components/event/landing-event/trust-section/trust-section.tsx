@@ -4,6 +4,7 @@ import {
 } from '@/components/framer-motion/div-variants';
 import InviewWrapper from '@/components/framer-motion/inview-wrapper';
 import UiButton from '@/components/ui/ui-button';
+import Link from 'next/link';
 
 export default function TrustSection() {
   return (
@@ -33,7 +34,14 @@ export default function TrustSection() {
             <p className="aspect-square w-5xl rounded-sm bg-gray-200 laptop:w-7xl"> </p>
             <p className="aspect-square w-5xl rounded-sm bg-gray-200 laptop:w-7xl"> </p>
           </div>
-          <UiButton size="lg" className="w-fit " variant="solid" color="pastelPrimary">
+          <UiButton
+            href="/agence-evenementielle-strasbourg/temoignages"
+            as={Link}
+            size="lg"
+            className="w-fit "
+            variant="solid"
+            color="pastelPrimary"
+          >
             Voir les témoignages
           </UiButton>
         </div>

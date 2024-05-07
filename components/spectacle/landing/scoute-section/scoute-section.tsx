@@ -6,6 +6,7 @@ import {
 import InviewWrapper from '@/components/framer-motion/inview-wrapper';
 import UiButton from '@/components/ui/ui-button';
 import Image from 'next/image';
+import Link from 'next/link';
 import GalleryScrollAnimation from './gallery-scroll-animation';
 
 export default function ScouteSection() {
@@ -62,7 +63,14 @@ export default function ScouteSection() {
         </p>
       </InviewWrapper>
       <InviewWrapper className="flex w-full justify-center" variant={ComingFromBottomVariant}>
-        <UiButton size="lg" className="w-fit  " variant="solid" color="pastelPrimary">
+        <UiButton
+          href="/spectacle-strasbourg/revue-scoute"
+          as={Link}
+          size="lg"
+          className="w-fit  "
+          variant="solid"
+          color="pastelPrimary"
+        >
           Découvrir la tournée 2024
         </UiButton>
       </InviewWrapper>

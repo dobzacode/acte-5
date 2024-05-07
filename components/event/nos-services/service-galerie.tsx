@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRef } from 'react';
 
-const SERVICES = [
+export const SERVICES = [
   {
     href: '/agence-evenementielle-strasbourg/services/inauguration-entreprise',
     text: 'Inauguration',
@@ -49,6 +49,11 @@ const SERVICES = [
   {
     href: '/agence-evenementielle-strasbourg/services/team-building',
     text: 'Team building',
+    src: '/placeholder-image.png'
+  },
+  {
+    href: '/agence-evenementielle-strasbourg/services/strategie-communication',
+    text: 'Stratégie de communication',
     src: '/placeholder-image.png'
   }
 ];
