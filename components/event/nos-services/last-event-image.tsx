@@ -4,12 +4,12 @@ import {
 } from '@/components/framer-motion/div-variants';
 import InviewWrapper from '@/components/framer-motion/inview-wrapper';
 import { sanityFetch } from '@/sanity/lib/fetch';
-import { Event, EventWithImgQueryRes } from '@/sanity/lib/queries';
+import { EventWithImgQueryRes } from '@/sanity/lib/queries';
 import { urlForImage } from '@/sanity/lib/utils';
 import { groq } from 'next-sanity';
 import ServiceCarousel from './service-carousel';
 
-export interface EventWithImg extends Event {
+export interface EventWithImg extends EventWithImgQueryRes {
   src: string;
   blurSrc: string;
 }
@@ -30,8 +30,7 @@ export default async function LastEvent({
     | "Spectacle d'entreprise"
     | 'Team Building'
     | 'Stratégie de communication'
-    | 'Identité visuelle'
-    | "Vidéo d'entreprise";
+    | 'Identité visuelle';
 }) {
   const events = await sanityFetch<EventWithImgQueryRes[]>({
     query: groq`*[_type == "evenement" && defined(imageGallery) && categorie == "${categorie}"]`,
