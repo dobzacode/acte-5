@@ -1,7 +1,7 @@
 'use client';
 
 import { RevueScouteActuelleQueryResponse } from '@/sanity/lib/queries';
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import { LuChevronLeft, LuChevronRight } from 'react-icons/lu';
 
 import DivWrapper from '@/components/framer-motion/div-wrapper';
@@ -27,7 +27,7 @@ export default function CalendrierTable({
     return datesArr.filter((dateItem) => new Date(dateItem.dates[0]).getMonth() === mois);
   };
 
-  const moisSuivant = () => {
+  const moisSuivant = useCallback(() => {
     let prochainMois = moisSelectionne !== null ? moisSelectionne + 1 : moisActuel + 1;
     let prochaineAnnee = anneeSelectionnee;
 
@@ -38,9 +38,9 @@ export default function CalendrierTable({
 
     setMoisSelectionne(prochainMois);
     setAnneeSelectionnee(prochaineAnnee);
-  };
+  }, [moisSelectionne, anneeSelectionnee]);
 
-  const moisPrecedent = () => {
+  const moisPrecedent = useCallback(() => {
     let moisPrecedent = moisSelectionne !== null ? moisSelectionne - 1 : moisActuel - 1;
     let anneePrecedente = anneeSelectionnee;
 
@@ -51,7 +51,7 @@ export default function CalendrierTable({
 
     setMoisSelectionne(moisPrecedent);
     setAnneeSelectionnee(anneePrecedente);
-  };
+  }, [moisSelectionne, anneeSelectionnee]);
 
   return (
     <div className="card mx-auto flex w-full max-w-[35rem] flex-col items-center justify-center gap-md overflow-hidden rounded-sm bg-white shadow-xl">
@@ -72,13 +72,13 @@ export default function CalendrierTable({
         <div className="h-fit pt-[4px]">
           <button
             className="rounded-l-sm border border-black/10 bg-white text-black"
-            onClick={moisPrecedent}
+            onClick={() => moisPrecedent()}
           >
             <LuChevronLeft size={40}></LuChevronLeft>
           </button>
           <button
             className="rounded-r-sm border border-black/10 bg-white text-black"
-            onClick={moisSuivant}
+            onClick={() => moisSuivant()}
           >
             <LuChevronRight size={40}></LuChevronRight>
           </button>

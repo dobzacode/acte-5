@@ -14,6 +14,7 @@ import {
   useDisclosure
 } from '@nextui-org/modal';
 import Image from 'next/image';
+import { useMemo } from 'react';
 
 const formatDateString = (isoDateString: string) => {
   const date = new Date(isoDateString);
@@ -30,21 +31,21 @@ const formatDateString = (isoDateString: string) => {
 export default function CalendrierRow({ dateItem }: { dateItem?: DateItemCal }) {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
-  const isDateAncienne = () => {
+  const isDateAncienne = useMemo(() => {
     if (dateItem && dateItem.dates && dateItem.dates.length > 0) {
       const dateLaPlusAncienne = new Date(dateItem.dates[0]);
       const dateActuelle = new Date();
       return dateLaPlusAncienne < dateActuelle;
     }
     return false;
-  };
+  }, [dateItem]);
 
   return (
     <>
       <div
         className={cn(
           ' sub-heading flex h-fit cursor-pointer flex-col items-center justify-center gap-sm overflow-clip rounded-xs border border-black/10 bg-white shadow-sm duration-medium hover:z-30 hover:shadow-md',
-          isDateAncienne() && 'pointer-events-none opacity-40'
+          isDateAncienne && 'pointer-events-none opacity-40'
         )}
       >
         {dateItem ? (
