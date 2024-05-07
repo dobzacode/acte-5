@@ -31,7 +31,7 @@
   }
 
   .heading {
-    @apply text-lg font-normal leading-lg;
+    @apply text-md font-normal leading-md laptop:text-lg laptop:leading-lg;
   }
 
   .sub-heading {
@@ -76,6 +76,10 @@
 
   .fade-x {
     @apply before:absolute before:right-0 before:z-20 before:h-full before:w-1/6 before:bg-gradient-to-l before:from-white before:to-transparent after:absolute after:left-0 after:top-0 after:z-20 after:h-full after:w-1/6 after:bg-gradient-to-r after:from-white after:to-transparent;
+  }
+
+  .inner-section-gap {
+    @apply gap-lg mobile-large:gap-lg tablet:gap-xl;
   }
 }
 

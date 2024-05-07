@@ -1,32 +1,28 @@
 import {
-  ComingFromTopVariant,
-  FromTopStaggerVariant
+  ComingFromLeftVariant,
+  ComingFromRightVariant,
+  ComingFromTopVariant
 } from '@/components/framer-motion/div-variants';
 import InviewWrapper from '@/components/framer-motion/inview-wrapper';
-import StaggeredText from '@/components/framer-motion/staggered-text';
 import UiButton from '@/components/ui/ui-button';
 import Image from 'next/image';
 
 export default function SpectacleSection() {
   return (
-    <section className="section-px flex w-full flex-col items-center gap-2xl bg-transparent text-white">
-      <InviewWrapper
-        variant={ComingFromTopVariant}
-        tag="h1"
-        className="heading--extra-large max-w-[30ch] text-center"
-      >
-        Spectacle d'entreprise
+    <section className="section-px max-w-screen inner-section-gap flex w-full flex-col items-center  bg-transparent text-white">
+      <InviewWrapper variant={ComingFromLeftVariant}>
+        <h1 className="heading--extra-large max-w-[30ch] text-center">Spectacle d'entreprise</h1>
       </InviewWrapper>
-      <StaggeredText
-        className="heading--sub-large max-w-[30ch] text-pretty text-center text-white"
-        variant={FromTopStaggerVariant}
-        delay={1}
+      <InviewWrapper
+        className="heading max-w-[30ch] text-pretty text-center text-white"
+        variant={ComingFromRightVariant}
+        tag="p"
       >
         Pour créer l&apos;animation lors de vos fêtes de Noël, de vos soirées comité
         d&apos;entreprise (CSE) ou encore pour votre association, pensez à nos spectacles
         d&apos;humour !
-      </StaggeredText>
-      <div className="relative z-20 flex w-full items-center justify-around gap-lg text-pretty text-center">
+      </InviewWrapper>
+      <div className="inner-section-gap relative z-20 flex w-full items-center justify-around text-pretty text-center">
         <InviewWrapper
           tag="p"
           variant={{
@@ -52,7 +48,7 @@ export default function SpectacleSection() {
         >
           LOREM IPSUM DOLOR SIT AMET
         </InviewWrapper>
-        <InviewWrapper variant={ComingFromTopVariant}>
+        <InviewWrapper className="relative -z-20" variant={ComingFromTopVariant}>
           <Image
             src="/placeholder-image.png"
             alt="image"

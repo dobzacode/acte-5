@@ -65,7 +65,7 @@ export default function ServiceSection() {
         <p className="heading--extra-large text-white">{ONGLETS}</p>
       </Marquee>
 
-      <div className="section-px flex flex-col gap-md mobile-large:gap-lg tablet:gap-xl">
+      <div className="section-px inner-section-gap flex flex-col">
         <InviewWrapper className="tablet:hidden" variant={ComingFromLeftVariant}>
           <h2 className="heading--large flex text-white ">NOS SERVICES</h2>
         </InviewWrapper>
@@ -98,7 +98,7 @@ export default function ServiceSection() {
         </div>
         <InviewWrapper
           variant={ComingFromRightVariant}
-          className="flex w-full flex-col gap-lg rounded-sm pt-md  text-white tablet:hidden"
+          className="inner-section-gap flex w-full flex-col rounded-sm pt-md  text-white tablet:hidden"
         >
           <p className="sub-heading">
             {' '}

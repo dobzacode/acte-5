@@ -5,7 +5,7 @@ import SpectacleSection from '@/components/spectacle/landing/spectacle-section';
 
 export default function Home() {
   return (
-    <main className="main main-gap relative  px-0 after:absolute after:-z-30  after:h-full after:w-full after:bg-primary-400">
+    <main className="main main-gap relative  overflow-clip px-0 after:absolute after:-z-30  after:h-full after:w-full after:bg-primary-400">
       <HeroSection></HeroSection>
       <SpectacleSection></SpectacleSection>
       <ScouteSection></ScouteSection>

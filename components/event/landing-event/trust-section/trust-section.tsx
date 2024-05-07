@@ -7,7 +7,7 @@ import UiButton from '@/components/ui/ui-button';
 
 export default function TrustSection() {
   return (
-    <section className="section-px flex h-fit w-full flex-col  gap-2xl   mobile-large:gap-3xl">
+    <section className="section-px inner-section-gap flex h-fit w-full  flex-col">
       <InviewWrapper
         variant={ComingFromLeftVariant}
         viewport={{ once: true, margin: '-200px 0px -200px 0px' }}

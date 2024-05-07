@@ -5,7 +5,7 @@ import TrustSection from '@/components/event/landing-event/trust-section/trust-s
 
 export default function Home() {
   return (
-    <main className="main main-gap  relative px-0">
+    <main className="main main-gap  relative overflow-clip px-0">
       <HeroSection></HeroSection>
       <TrustSection></TrustSection>
       <ServiceSection></ServiceSection>

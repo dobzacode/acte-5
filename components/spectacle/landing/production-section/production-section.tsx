@@ -6,13 +6,18 @@ import ScrollImage from './scroll-image';
 
 export default function ProductionSection() {
   return (
-    <section className="section-px relative flex  w-full items-center gap-2xl  bg-primary-400 text-white laptop:container">
-      <div className="flex flex-col gap-2xl ">
+    <section className="section-px inner-section-gap relative  flex w-full items-center  bg-primary-400 text-white laptop:container">
+      <div className="inner-section-gap flex flex-col ">
         <InviewWrapper className="whitespace-nowrap" variant={ComingFromLeftVariant}>
           <h2 className="heading--extra-large  text-pretty">Production de spectacle</h2>
         </InviewWrapper>
-        <div className="relative h-[20rem] w-full laptop:hidden ">
-          <Image src="/placeholder-image.png" alt="image" fill className="object-cover" />
+        <div className="relative h-[20rem] w-full rounded-sm laptop:hidden">
+          <Image
+            src="/placeholder-image.png"
+            alt="image"
+            fill
+            className="rounded-sm object-cover"
+          />
         </div>
         <InviewWrapper
           variant={{
@@ -69,8 +74,8 @@ export default function ProductionSection() {
           </UiButton>
         </InviewWrapper>
       </div>
-      <ScrollImage className="max-laptop:hidden">
-        <Image src="/placeholder-image.png" alt="image" fill className="object-cover" />
+      <ScrollImage className="max-laptop:hidden ">
+        <Image src="/placeholder-image.png" alt="image" fill className="rounded-sm object-cover" />
       </ScrollImage>
     </section>
   );
