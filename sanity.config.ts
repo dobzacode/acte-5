@@ -2,7 +2,6 @@ import { defineConfig } from 'sanity';
 import { structureTool } from 'sanity/structure';
 
 import { frFRLocale } from '@sanity/locale-fr-fr';
-import { muxInput } from 'sanity-plugin-mux-input';
 import { presentationTool } from 'sanity/presentation';
 import { dataset, projectId, studioUrl } from './sanity/lib/api';
 import { schema } from './sanity/schema';
@@ -16,7 +15,6 @@ export default defineConfig({
   dataset,
 
   plugins: [
-    muxInput(),
     structureTool({
       //@ts-expect-error - TS doesn't know about the `structure` method
       structure: (S) =>

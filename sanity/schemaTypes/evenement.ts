@@ -95,7 +95,7 @@ export default defineType({
     defineField({
       title: 'Fichier vidéo',
       name: 'video',
-      type: 'mux.video',
+      type: 'file',
       group: 'media',
       hidden: ({ document }) => (document?.categorie === "Vidéo d'entreprise" ? false : true)
     }),
