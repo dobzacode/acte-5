@@ -79,7 +79,7 @@ export default function ServiceGalerie({}) {
           {SERVICES.map((service, index) => {
             return (
               <motion.li
-                className=" group relative  h-full w-full overflow-hidden rounded-b-sm rounded-t-sm border border-black/10 bg-white shadow-md duration-medium before:absolute before:left-0 before:top-0 before:h-full before:w-full before:max-w-0 before:bg-primary-400 before:duration-medium  hover:scale-110 hover:rounded-t-sm hover:shadow-xl hover:before:max-w-full "
+                className=" group relative flex aspect-square h-full w-full items-end overflow-hidden rounded-b-sm rounded-t-sm border border-black/10 bg-white shadow-md duration-medium   hover:scale-110 hover:rounded-t-sm hover:shadow-xl hover:before:max-w-full "
                 initial={{ opacity: 0, y: -300, pointerEvents: 'none' }}
                 animate={{
                   opacity: 1,
@@ -94,10 +94,13 @@ export default function ServiceGalerie({}) {
                 exit={{ opacity: 0, y: -300 }}
                 style={{ zIndex: 30 - index }}
               >
-                <Link className=" flex flex-col-reverse" href={service.href}>
+                <Link
+                  className=" relative z-40 flex h-full w-full flex-col-reverse after:absolute  after:left-0 after:top-0 after:z-10 after:h-full after:w-full after:bg-gradient-to-t after:from-black/50 after:to-transparent"
+                  href={service.href}
+                >
                   <motion.h3
-                    className={`sub-heading before-bg relative  text-pretty px-md duration-slow hover:duration-fast   group-hover:text-white `}
-                    initial={{ opacity: 0, y: -300, maxHeight: 0, paddingTop: 0, paddingBottom: 0 }}
+                    className={`sub-heading before-bg relative z-50 text-pretty px-md text-white duration-slow     hover:duration-fast`}
+                    initial={{ opacity: 0, y: 300, maxHeight: 0, paddingTop: 0, paddingBottom: 0 }}
                     animate={{
                       opacity: 1,
                       y: 0,
@@ -112,18 +115,18 @@ export default function ServiceGalerie({}) {
                         y: { duration: 0.2, delay: index * 0.3 + 0.3 }
                       }
                     }}
-                    exit={{ opacity: 0, y: -300 }}
+                    exit={{ opacity: 0, y: 300 }}
                   >
                     {service.text}
                   </motion.h3>
-                  <div className="relative aspect-square  overflow-hidden rounded-b-none">
-                    <Image
-                      fill
-                      className={` object-cover duration-medium`}
-                      src={service.src}
-                      alt={`${service}`}
-                    ></Image>
-                  </div>
+
+                  <Image
+                    fill
+                    sizes={'(min-width: 1024px) 50vw, 100vw'}
+                    className={` object-cover duration-medium`}
+                    src={service.src}
+                    alt={`${service}`}
+                  ></Image>
                 </Link>
               </motion.li>
             );

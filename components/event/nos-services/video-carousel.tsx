@@ -16,7 +16,7 @@ interface VideoProps extends EventWithVideoQueryRes {
 
 export default function VideoCarousel({ videoArr }: { videoArr: VideoProps[] }) {
   return (
-    <Carousel opts={{ align: 'center' }} className="section-px flex items-center gap-md">
+    <Carousel className="section-px flex items-center gap-md">
       {videoArr.length > 1 && (
         <>
           <CarouselPrevious className="relative" />
