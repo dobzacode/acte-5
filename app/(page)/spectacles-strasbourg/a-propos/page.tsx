@@ -7,7 +7,7 @@ import Image from 'next/image';
 
 export default function Home() {
   return (
-    <main className="relative flex  flex-col items-center justify-center gap-xl px-0 pt-5xl mobile-small:gap-3xl mobile-medium:gap-2xl mobile-large:gap-4xl tablet:gap-5xl tablet:pt-7xl laptop:gap-6xl laptop-large:gap-6xl">
+    <main className="relative flex flex-col items-center justify-center gap-xl overflow-x-clip px-0 pt-5xl mobile-small:gap-3xl mobile-medium:gap-2xl mobile-large:gap-4xl tablet:gap-5xl tablet:pt-7xl laptop:gap-6xl laptop-large:gap-6xl">
       <TitleSection
         title={'A PROPOS'}
         element={[
@@ -15,7 +15,7 @@ export default function Home() {
           { href: '/spectacles-strasbourg/a-propos', text: 'A propos' }
         ]}
       ></TitleSection>
-      <div className="flex w-full max-w-[90rem] flex-col items-center gap-lg">
+      <div className="section-px inner-section-gap flex w-full max-w-[90rem] flex-col items-center">
         <InviewWrapper
           className="self-start"
           variant={{
@@ -38,7 +38,7 @@ export default function Home() {
             }
           }}
         >
-          <div className="relative aspect-[5/3] w-[30rem]">
+          <div className="relative aspect-[5/3] overflow-hidden rounded-sm max-mobile-large:container max-mobile-large:w-[25rem] mobile-large:w-[30rem]">
             <Image src="/placeholder-image.png" alt="image" fill className="object-cover"></Image>
           </div>
         </InviewWrapper>
@@ -73,7 +73,7 @@ export default function Home() {
             }
           }}
         >
-          <div className="relative aspect-[5/3] w-[30rem]">
+          <div className="relative aspect-[5/3] overflow-hidden rounded-sm max-mobile-large:container max-mobile-large:w-[25rem] mobile-large:w-[30rem]">
             <Image src="/placeholder-image.png" alt="image" fill className="object-cover"></Image>
           </div>
         </InviewWrapper>

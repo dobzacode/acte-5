@@ -54,12 +54,13 @@ export default function CalendrierRow({ dateItem }: { dateItem?: DateItemCal }) 
             variant={'solid'}
             color="primary"
             onPress={onOpen}
-            className="relative flex h-fit gap-md  self-start whitespace-normal rounded-[0.5px]   border-none !bg-white px-md py-md text-left text-md text-black tap-highlight-transparent hover:!bg-white hover:!text-black  focus:outline-none active:!bg-white"
+            className="relative flex h-fit items-start gap-md self-start whitespace-normal rounded-[0.5px]   border-none !bg-white px-md py-md text-left text-md text-black tap-highlight-transparent hover:!bg-white hover:!text-black  focus:outline-none active:!bg-white"
           >
-            <p className=" block">
+            <p className=" block shrink-0 ">
               {new Date(dateItem.dates[0]).toISOString().split('T')[0].split('-')[2]}
-              {' - '}
-              <span className=" body align-super">
+
+              <span className="body align-super">
+                -
                 {`${
                   new Date(dateItem.dates[dateItem.dates.length - 1])
                     .toISOString()
