@@ -90,9 +90,9 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
 
   return (
     <>
-      <div className="embla relative   ">
+      <div className="embla   relative ">
         <div
-          className="relative mx-auto rounded-sm  max-tablet:container max-tablet:overflow-hidden"
+          className="container  relative mx-auto overflow-hidden  rounded-sm tablet:max-w-[600px]"
           ref={emblaRef}
         >
           <div className="embla__container   tablet:gap-lg">
@@ -101,7 +101,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                 onClick={() => {
                   openLightbox(index);
                 }}
-                className="embla__slide  relative flex cursor-pointer flex-col items-center  overflow-hidden rounded-sm  bg-white   shadow-xl tablet:basis-1/3"
+                className="embla__slide  relative flex  cursor-pointer flex-col  items-center overflow-hidden  rounded-sm   bg-white shadow-xl"
                 key={index}
               >
                 <div className="embla__slide__number">
