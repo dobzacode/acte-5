@@ -37,11 +37,11 @@ export default function ServiceSection() {
       ></div>,
       <div
         key={'6'}
-        className="col-span-4 row-start-2 rounded-sm bg-gray-200  max-laptop:hidden max-tablet:block tablet:col-span-3 tablet:col-start-7  tablet:row-start-1 laptop:col-span-5 laptop:col-start-1 laptop:row-span-2 laptop-large:col-span-4"
+        className="col-span-6 row-start-2 rounded-sm bg-gray-200  max-laptop:hidden max-tablet:block tablet:col-span-6 tablet:col-start-7  tablet:row-start-1 laptop:col-span-5 laptop:col-start-1 laptop:row-span-2 laptop-large:col-span-4"
       ></div>,
       <div
         key={'7'}
-        className="col-span-2 row-start-2 rounded-sm bg-gray-200 tablet:col-span-5 tablet:col-start-1 tablet:row-start-3 laptop:col-span-6 laptop:col-start-5  laptop:row-start-2 laptop-large:col-span-3  laptop-large:row-span-3 laptop-large:row-start-2"
+        className="col-span-2 row-start-2 rounded-sm bg-gray-200 max-laptop:hidden tablet:col-span-5 tablet:col-start-1 tablet:row-start-3 laptop:col-span-6 laptop:col-start-5  laptop:row-start-2 laptop-large:col-span-3  laptop-large:row-span-3 laptop-large:row-start-2"
       ></div>,
       <div
         key={'8'}
@@ -99,7 +99,7 @@ export default function ServiceSection() {
         </div>
         <InviewWrapper
           variant={ComingFromRightVariant}
-          className="inner-section-gap flex w-full flex-col rounded-sm pt-md  text-white tablet:hidden"
+          className="inner-section-gap flex w-full flex-col rounded-sm   text-white tablet:hidden"
         >
           <p className="sub-heading">
             {' '}
