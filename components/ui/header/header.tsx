@@ -95,7 +95,7 @@ export default function Header({ className }: { className?: string }) {
               >
                 <ul
                   className={cn(
-                    ' flex flex-col gap-md opacity-0',
+                    ' flex flex-col gap-sm opacity-0',
                     showMenu ? 'translate-y-0 opacity-100 duration-slow' : '  duration-300'
                   )}
                 >
