@@ -3,7 +3,14 @@ import InviewWrapper from '@/components/framer-motion/inview-wrapper';
 import StaggeredText from '@/components/framer-motion/staggered-text';
 import HistorySection from '@/components/spectacle/a-propos/history-section';
 import TitleSection from '@/components/ui/title-section';
+import { Metadata } from 'next';
 import Image from 'next/image';
+
+export const metadata: Metadata = {
+  title: 'À Propos de Notre Compagnie de production de Spectacles | Acte 5',
+  description:
+    "Découvrez l'histoire et la passion qui animent notre compagnie de spectacles. Plongez dans l'univers artistique qui nourrit nos productions captivantes et rencontrez l'équipe dévouée qui donne vie à chaque représentation. Explorez notre vision, nos valeurs et notre engagement envers l'excellence artistique. Bienvenue dans le monde envoûtant de notre compagnie de spectacles, où chaque représentation est une expérience inoubliable."
+};
 
 export default function Home() {
   return (

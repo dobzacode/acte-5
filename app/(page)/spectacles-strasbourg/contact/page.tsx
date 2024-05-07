@@ -2,6 +2,13 @@ import { ComingFromRightVariant } from '@/components/framer-motion/div-variants'
 import InviewWrapper from '@/components/framer-motion/inview-wrapper';
 import FormWrapped from '@/components/ui/form/form-wrapped';
 import TitleSection from '@/components/ui/title-section';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Nous contacter | Acte 5',
+  description:
+    'Contactez notre équipe pour organiser une expérience spectaculaire pour votre groupe ou obtenir des informations détaillées sur nos spectacles captivants. Que vous planifiiez une sortie en groupe ou que vous recherchiez simplement des informations, nous sommes là pour vous aider. Réservez dès maintenant pour garantir les meilleurs sièges et laissez-nous vous guider à travers une aventure théâtrale inoubliable.'
+};
 
 export default function Home() {
   return (

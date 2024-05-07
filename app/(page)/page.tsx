@@ -6,7 +6,14 @@ import {
 import DivWrapper from '@/components/framer-motion/div-wrapper';
 import Footer from '@/components/ui/footer/footer';
 import FooterContent from '@/components/ui/footer/footer-content';
+import { Metadata } from 'next';
 import Link from 'next/link';
+
+export const metadata: Metadata = {
+  title: 'Acte 5 | Agence de Communication Événementielle à Strasbourg',
+  description:
+    'Acte 5 vous accompagne dans vos projets événementiels, spectacles et communication depuis notre agence à Strasbourg.'
+};
 
 export default function Home() {
   return (

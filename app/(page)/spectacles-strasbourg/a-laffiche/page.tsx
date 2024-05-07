@@ -3,6 +3,13 @@ import StaggeredText from '@/components/framer-motion/staggered-text';
 import Affiches from '@/components/spectacle/a-laffiche/affiches';
 import CalendrierSection from '@/components/spectacle/a-laffiche/calendrier-section';
 import TitleSection from '@/components/ui/title-section';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Calendrier des Spectacles | Acte 5',
+  description:
+    "Consultez notre calendrier pour découvrir toutes les dates des représentations à venir de nos spectacles captivants. De la comédie musicale à la pièce de théâtre, trouvez l'événement qui vous enchante et réservez vos places dès maintenant pour une expérience théâtrale inoubliable."
+};
 
 export default function Home() {
   return (

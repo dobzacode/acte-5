@@ -4,7 +4,14 @@ import StaggeredText from '@/components/framer-motion/staggered-text';
 import PastSection from '@/components/spectacle/revue-scoute/past-section';
 import Section2024 from '@/components/spectacle/revue-scoute/section-2024';
 import TitleSection from '@/components/ui/title-section';
+import { Metadata } from 'next';
 import Image from 'next/image';
+
+export const metadata: Metadata = {
+  title: 'La Revue Scoute | Acte 5',
+  description:
+    "Avec 40 ans d'existence, 36 millésimes, 45 000 spectateurs par an, la Revue Scoute, revue de cabaret satirique, est devenue une institution en Alsace."
+};
 
 export default async function Home() {
   return (
