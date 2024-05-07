@@ -1,4 +1,4 @@
-import LastEvent from '@/components/event/nos-services/last-event';
+import LastEvent from '@/components/event/nos-services/last-event-image';
 import { ComingFromRightVariant } from '@/components/framer-motion/div-variants';
 import DivWrapper from '@/components/framer-motion/div-wrapper';
 import TitleSection from '@/components/ui/title-section';
@@ -18,6 +18,7 @@ export default function Home() {
         {' '}
         <TitleSection
           className="px-0"
+          h1Css={'heading--sub-extra-large'}
           title={'TEAM BUILDING'}
           element={[
             { href: '/agence-evenementielle-strasbourg', text: 'Évenement' },

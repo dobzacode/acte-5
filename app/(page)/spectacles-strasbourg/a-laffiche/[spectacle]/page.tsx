@@ -63,11 +63,12 @@ export default async function Page({ params }: Props) {
       <main className="relative mx-auto flex flex-col items-center justify-center gap-2xl px-0 pt-5xl laptop:pt-7xl">
         <section className="max-laptop:section-px relative mx-auto flex flex-col items-center justify-center gap-xl   mobile-large:gap-2xl  laptop:max-w-[50rem]">
           <TitleSection
-            className="heading--sub-extra-large px-0"
+            className="px-0"
+            h1Css={'heading--sub-extra-large'}
             title={spectacle.titre.toUpperCase()}
             element={[
               { text: 'Spectacle', href: '/spectacles-strasbourg' },
-              { text: 'A l"affiche', href: '/a-laffiche' },
+              { text: "A l'affiche", href: '/spectacles-strasbourg/a-laffiche' },
               { text: spectacle.titre, href: spectacle.slug.current }
             ]}
           ></TitleSection>

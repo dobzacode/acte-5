@@ -26,8 +26,26 @@ export interface Event {
   client: string;
   metadescription: string;
   metatitre: string;
+  imageGallery?: Image[];
+  video?: {
+    asset: {
+      _ref: string;
+    };
+  };
+}
+
+export interface EventWithImgQueryRes extends Omit<Event, 'imageGallery'> {
   imageGallery: Image[];
 }
+
+export interface EventWithVideoQueryRes extends Omit<Event, 'video'> {
+  video: {
+    asset: {
+      _ref: string;
+    };
+  };
+}
+
 export interface Author {
   _type: string;
   _ref: string;

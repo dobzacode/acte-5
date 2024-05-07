@@ -55,6 +55,16 @@ export const SERVICES = [
     href: '/agence-evenementielle-strasbourg/services/strategie-communication',
     text: 'Stratégie de communication',
     src: '/placeholder-image.png'
+  },
+  {
+    href: '/agence-evenementielle-strasbourg/services/identite-visuelle',
+    text: 'Identité visuelle',
+    src: '/placeholder-image.png'
+  },
+  {
+    href: '/agence-evenementielle-strasbourg/services/video-entreprise',
+    text: "Vidéo d'entreprise",
+    src: '/placeholder-image.png'
   }
 ];
 

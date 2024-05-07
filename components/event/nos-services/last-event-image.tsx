@@ -4,7 +4,7 @@ import {
 } from '@/components/framer-motion/div-variants';
 import InviewWrapper from '@/components/framer-motion/inview-wrapper';
 import { sanityFetch } from '@/sanity/lib/fetch';
-import { Event, EventsQueryResponse } from '@/sanity/lib/queries';
+import { Event, EventWithImgQueryRes } from '@/sanity/lib/queries';
 import { urlForImage } from '@/sanity/lib/utils';
 import { groq } from 'next-sanity';
 import ServiceCarousel from './service-carousel';
@@ -33,8 +33,8 @@ export default async function LastEvent({
     | 'Identité visuelle'
     | "Vidéo d'entreprise";
 }) {
-  const events = await sanityFetch<EventsQueryResponse>({
-    query: groq`*[_type == "evenement" && categorie == "${categorie}"]`,
+  const events = await sanityFetch<EventWithImgQueryRes[]>({
+    query: groq`*[_type == "evenement" && defined(imageGallery) && categorie == "${categorie}"]`,
     perspective: 'published',
     stega: false
   });

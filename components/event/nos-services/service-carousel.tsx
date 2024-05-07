@@ -16,7 +16,7 @@ import {
   NextButton,
   PrevButton
 } from '@/components/ui/image-carousel/carousel/embla-carousel-arrows-dot-button';
-import { EventWithImg } from './last-event';
+import { EventWithImg } from './last-event-image';
 
 type PropType = {
   options?: EmblaOptionsType;

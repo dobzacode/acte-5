@@ -1,10 +1,10 @@
-import { EventWithImg } from '@/components/event/nos-services/last-event';
+import { EventWithImg } from '@/components/event/nos-services/last-event-image';
 import ProjectSection from '@/components/event/temoignages/project-section';
 import { ComingFromRightVariant } from '@/components/framer-motion/div-variants';
 import InviewWrapper from '@/components/framer-motion/inview-wrapper';
 import TitleSection from '@/components/ui/title-section';
 import { sanityFetch } from '@/sanity/lib/fetch';
-import { EventsQueryResponse } from '@/sanity/lib/queries';
+import { EventWithImgQueryRes } from '@/sanity/lib/queries';
 import { urlForImage } from '@/sanity/lib/utils';
 import { Metadata } from 'next';
 import { groq } from 'next-sanity';
@@ -20,8 +20,8 @@ export interface EventWithImgAndIndex extends EventWithImg {
 }
 
 export default async function Home() {
-  const events = await sanityFetch<EventsQueryResponse>({
-    query: groq`*[_type == "evenement"]`,
+  const events = await sanityFetch<EventWithImgQueryRes[]>({
+    query: groq`*[_type == "evenement" && defined(imageGallery)]`,
     perspective: 'published',
     stega: false
   });
