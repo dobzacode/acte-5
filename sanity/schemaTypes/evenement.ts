@@ -25,7 +25,10 @@ export default defineType({
           { title: 'Portes ouvertes', value: 'Portes ouvertes' },
           { title: 'Soirée de gala', value: 'Soirée de gala' },
           { title: "Spectacle d'entreprise", value: "Spectacle d'entreprise" },
-          { title: 'Team building', value: 'Team Building' }
+          { title: 'Team building', value: 'Team Building' },
+          { title: 'Identité visuelle', value: 'Identité visuelle' },
+          { title: 'Stratégie de communication', value: 'Stratégie de communication' },
+          { title: "Vidéo d'entreprise", value: "Vidéo d'entreprise" }
         ]
       },
       validation: (Rule) => Rule.required()
@@ -72,6 +75,7 @@ export default defineType({
       title: "Galerie d'image",
       type: 'array',
       group: 'media',
+      hidden: ({ document }) => (document?.categorie === "Vidéo d'entreprise" ? true : false),
       of: [
         {
           type: 'image',
@@ -87,6 +91,13 @@ export default defineType({
           ]
         }
       ]
+    }),
+    defineField({
+      title: 'Fichier vidéo',
+      name: 'video',
+      type: 'mux.video',
+      group: 'media',
+      hidden: ({ document }) => (document?.categorie === "Vidéo d'entreprise" ? false : true)
     }),
     defineField({
       name: 'metatitre',

@@ -16,7 +16,10 @@ export interface Event {
     | 'Portes ouvertes'
     | 'Soirée de gala'
     | "Spectacle d'entreprise"
-    | 'Team Building';
+    | 'Team Building'
+    | 'Identité visuelle'
+    | "Vidéo d'entreprise"
+    | 'Stratégie de communication';
   date: string;
   titre: string;
   description: string;
@@ -103,8 +106,6 @@ export interface DateItem {
   _key: string;
   emplacement: string;
 }
-
-
 
 export interface Spectacle {
   dates?: DateItem[];
