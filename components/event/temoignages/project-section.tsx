@@ -18,14 +18,14 @@ export default function ProjectSection({ events }: { events: EventWithImgAndInde
   }, [selectedIndex, events]);
 
   return (
-    <section className="section-px flex justify-between gap-xl laptop:container max-laptop:flex-col laptop:mx-auto">
+    <section className="laptop:section-px flex justify-between gap-xl laptop:container max-laptop:flex-col laptop:mx-auto">
       <AnimatePresence mode="wait">
         {selectedEvent && (
           <InviewWrapper
             inverseOnExit
             key={v4()}
             variant={TextSliderVariant}
-            className="flex flex-col gap-xl laptop:w-1/2"
+            className="max-laptop:section-px flex flex-col gap-xl laptop:w-1/2"
           >
             <>
               <h2 className="heading--large text-pretty text-primary-400">
@@ -37,7 +37,7 @@ export default function ProjectSection({ events }: { events: EventWithImgAndInde
         )}
       </AnimatePresence>
       <InviewWrapper
-        className="fade-x relative overflow-x-hidden laptop:w-1/2"
+        className="laptop:fade-x relative overflow-x-hidden laptop:w-1/2"
         variant={ComingFromRightVariant}
       >
         <ProjectCarousel

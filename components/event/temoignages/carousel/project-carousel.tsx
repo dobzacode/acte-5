@@ -109,10 +109,10 @@ const ProjectCarousel: React.FC<PropType> = (props) => {
           <div className="project_embla__container ">
             {events.map((event, index) => (
               <div
-                className="project_embla__slide relative   aspect-square h-[20rem] cursor-pointer  rounded-sm    mobile-large:h-[30rem]"
+                className="project_embla__slide relative   aspect-square h-[20rem] cursor-pointer  rounded-sm    mobile-large:h-[30rem] "
                 key={index}
               >
-                <div className="project_embla__slide__number relative h-full w-full overflow-hidden rounded-sm shadow-medium ">
+                <div className="project_embla__slide__number relative  h-full w-full overflow-hidden rounded-sm shadow-medium">
                   <Image
                     sizes={'(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw'}
                     fill

@@ -20,7 +20,7 @@ export default async function DistributionSection({
   console.log(withUrl);
 
   return (
-    <section className=" flex w-full flex-col gap-xl ">
+    <section className=" inner-section-gap flex w-full flex-col ">
       <InviewWrapper
         className="heading--sub-extra-large  text-primary-400 "
         tag="h2"
@@ -28,7 +28,7 @@ export default async function DistributionSection({
       >
         Distribution
       </InviewWrapper>
-      <ul className="relative -z-10 flex w-full  flex-wrap items-center gap-md">
+      <ul className="relative -z-10 grid w-full grid-cols-3 items-center gap-sm tablet:grid-cols-4   laptop:grid-cols-5">
         {withUrl.map((people, index) => {
           return (
             <InviewWrapper
@@ -53,9 +53,9 @@ export default async function DistributionSection({
                   y: -200
                 }
               }}
-              className="card relative flex max-w-[13rem]  flex-col gap-md overflow-hidden px-0 pt-0"
+              className="card relative flex h-full w-full  flex-col gap-md overflow-hidden px-0 pt-0"
             >
-              <div className="relative h-[15rem] w-[13rem]">
+              <div className="relative aspect-[3/4] w-full">
                 <Image
                   sizes={'(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw'}
                   blurDataURL={people.blurSrc}

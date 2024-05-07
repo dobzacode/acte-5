@@ -51,7 +51,7 @@
   }
 
   .main-gap {
-    @apply gap-xl mobile-small:gap-3xl mobile-medium:gap-2xl mobile-large:gap-3xl tablet:gap-4xl laptop-large:gap-5xl;
+    @apply gap-xl mobile-small:gap-2xl mobile-medium:gap-2xl mobile-large:gap-3xl tablet:gap-4xl laptop-large:gap-5xl;
   }
 
   .inner-section-py {

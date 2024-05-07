@@ -64,7 +64,7 @@ export default function ServiceGalerie({}) {
           {SERVICES.map((service, index) => {
             return (
               <motion.li
-                className=" group relative  h-fit w-full overflow-hidden rounded-b-sm rounded-t-sm border border-black/10 bg-white shadow-md duration-medium before:absolute before:left-0 before:top-0 before:h-full before:w-full before:max-w-0 before:bg-primary-400 before:duration-medium  hover:scale-110 hover:rounded-t-sm hover:shadow-xl hover:before:max-w-full "
+                className=" group relative  h-full w-full overflow-hidden rounded-b-sm rounded-t-sm border border-black/10 bg-white shadow-md duration-medium before:absolute before:left-0 before:top-0 before:h-full before:w-full before:max-w-0 before:bg-primary-400 before:duration-medium  hover:scale-110 hover:rounded-t-sm hover:shadow-xl hover:before:max-w-full "
                 initial={{ opacity: 0, y: -300, pointerEvents: 'none' }}
                 animate={{
                   opacity: 1,

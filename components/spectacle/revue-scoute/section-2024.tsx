@@ -31,10 +31,10 @@ export default async function Section2024() {
 
   return (
     <section
-      className="section-px flex flex-col
-    gap-6xl laptop:container laptop:mx-auto "
+      className="section-px main-gap flex
+    flex-col laptop:container laptop:mx-auto "
     >
-      <section className=" flex flex-col gap-xl ">
+      <section className=" inner-section-gap flex flex-col ">
         <InviewWrapper
           className="heading--sub-extra-large text-primary-400"
           tag="h2"
@@ -55,7 +55,7 @@ export default async function Section2024() {
 
         <CustomPortableText value={revueScouteActuelle[0].description}></CustomPortableText>
       </section>
-      <section className=" flex flex-col gap-xl ">
+      <section className=" inner-section-gap flex flex-col ">
         <InviewWrapper
           className="heading--sub-extra-large text-primary-400"
           tag="h2"

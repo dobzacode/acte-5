@@ -42,7 +42,7 @@ export default function ScrollWrapper({
         }}
         ref={ref}
         className={cn(
-          ' card container ml-auto flex h-fit items-center gap-xl rounded-l-sm bg-white p-sm shadow-xl tablet:rounded-l-5xl',
+          ' card container ml-auto flex h-fit items-center gap-xl rounded-l-sm bg-white p-sm shadow-xl max-tablet:p-md tablet:rounded-l-5xl',
           inverted &&
             'card  ml-0 mr-auto flex-row-reverse rounded-l-none rounded-r-sm shadow-xl tablet:rounded-l-none tablet:rounded-r-5xl'
         )}

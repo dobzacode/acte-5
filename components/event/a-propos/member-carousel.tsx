@@ -1,6 +1,5 @@
 'use client';
 
-import Autoplay from 'embla-carousel-autoplay';
 import useEmblaCarousel from 'embla-carousel-react';
 import React, { useState } from 'react';
 
@@ -21,7 +20,7 @@ type PropType = {
 
 const MemberCarousel: React.FC<PropType> = (props) => {
   const { options } = props;
-  const [emblaRef, emblaApi] = useEmblaCarousel(options, [Autoplay()]);
+  const [emblaRef, emblaApi] = useEmblaCarousel(options);
 
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [lightboxIsOpen, setLightboxIsOpen] = useState<boolean>(false);
@@ -55,9 +54,9 @@ const MemberCarousel: React.FC<PropType> = (props) => {
 
   return (
     <>
-      <div className="member_embla   py-xl">
-        <div className="emba__viewport" ref={emblaRef}>
-          <div className="member_embla__container mx-auto w-fit gap-sm tablet:gap-md">
+      <div className="member_embla  ">
+        <div className="" ref={emblaRef}>
+          <div className="member_embla__container mx-auto w-fit justify-center gap-sm tablet:gap-md">
             {props.imageArr.map((image, index) => (
               <div
                 className={cn(
@@ -87,7 +86,7 @@ const MemberCarousel: React.FC<PropType> = (props) => {
                 ></Image>
 
                 {'name' in image && (
-                  <div className="flex max-w-[20ch] flex-col items-center gap-md text-pretty px-sm text-center text-ellipsis">
+                  <div className="flex max-w-[20ch] flex-col items-center gap-md text-ellipsis text-pretty px-sm text-center">
                     <p className="sub-heading   whitespace-nowrap">
                       <strong>{(image as Member).name}</strong>
                     </p>

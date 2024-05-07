@@ -8,7 +8,7 @@ import Image from 'next/image';
 
 export default async function Home() {
   return (
-    <main className="relative flex w-full snap-mandatory flex-col gap-xl  pt-5xl mobile-small:gap-3xl mobile-medium:gap-2xl mobile-large:gap-4xl tablet:gap-5xl tablet:pt-7xl laptop:gap-6xl laptop-large:gap-6xl">
+    <main className="relative flex w-full  flex-col gap-xl overflow-x-clip  pt-5xl mobile-small:gap-3xl mobile-medium:gap-2xl mobile-large:gap-4xl tablet:gap-5xl tablet:pt-7xl laptop:gap-6xl laptop-large:gap-6xl">
       <TitleSection
         title={'LA REVUE SCOUTE'}
         element={[
@@ -16,9 +16,9 @@ export default async function Home() {
           { href: '/spectacles-strasbourg/revue-scoute', text: 'La Revue scoute' }
         ]}
       ></TitleSection>
-      <div className="section-px flex gap-xl laptop:container laptop:mx-auto">
+      <div className="section-px inner-section-gap flex laptop:container max-laptop-large:items-start max-tablet:flex-col laptop:mx-auto">
         <StaggeredText
-          className=" heading--sub-large container relative mx-auto"
+          className=" heading--sub-large relative tablet:container tablet:mx-auto"
           variant={FromTopStaggerVariant}
           delay={0.5}
         >
@@ -77,7 +77,7 @@ export default async function Home() {
             }}
           >
             <Image
-              className="-ml-7xl -mt-5xl rounded-xs"
+              className="-ml-7xl -mt-5xl rounded-xs max-laptop-large:hidden"
               src="/placeholder-image.png"
               alt="Image"
               width={400}

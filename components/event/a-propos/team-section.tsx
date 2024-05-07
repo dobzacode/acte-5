@@ -3,8 +3,9 @@ import {
   ComingFromTopVariant
 } from '@/components/framer-motion/div-variants';
 import InviewWrapper from '@/components/framer-motion/inview-wrapper';
-import { dynamicBlurDataUrl } from '@/lib/utils';
-import MemberCarousel from './member-carousel';
+import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
+import { cn, dynamicBlurDataUrl } from '@/lib/utils';
+import Image from 'next/image';
 
 export interface Member {
   url: string;
@@ -87,10 +88,10 @@ export default async function TeamSection() {
   );
 
   return (
-    <section className="mt-2xl flex w-full flex-col items-center gap-2xl overflow-hidden overflow-x-hidden bg-primary-400 py-2xl tablet:mt-5xl">
+    <section className="inner-section-gap  flex w-full flex-col items-center overflow-hidden overflow-x-hidden bg-primary-400 py-2xl max-tablet:py-xl tablet:mt-5xl">
       <InviewWrapper
         variant={ComingFromTopVariant}
-        className="section-px flex flex-col items-center gap-xl text-center laptop:container laptop:mx-auto"
+        className="section-px inner-section-gap flex flex-col items-center text-center laptop:container laptop:mx-auto"
       >
         <h2 className="heading--large text-white">Une agence pluri-indisciplinée...</h2>
         <p className="sub-heading max-w-[80ch] text-pretty text-white">
@@ -101,7 +102,43 @@ export default async function TeamSection() {
         </p>
       </InviewWrapper>
       <InviewWrapper variant={ComingFromBottomVariant}>
-        <MemberCarousel options={{ loop: true }} imageArr={imageArr}></MemberCarousel>
+        <Carousel className="max-laptop:container max-laptop:mx-auto">
+          <CarouselContent className="laptop-large:-ml-sm">
+            {imageArr.map((image, index) => (
+              <CarouselItem className=" basis-1/2 mobile-large:basis-1/3 tablet:basis-1/4 laptop-large:basis-1/4 laptop-large:pr-sm ">
+                <div
+                  className={cn(
+                    'card   relative flex  h-full flex-col items-center gap-sm  rounded-sm border-0 p-0 shadow-xl'
+                  )}
+                  key={index}
+                >
+                  <Image
+                    width={400}
+                    height={400}
+                    className={cn(
+                      'aspect-square w-full cursor-pointer rounded-t-sm object-cover',
+                      'name' in image ? null : 'rounded-t-none'
+                    )}
+                    sizes={'(max-width: 640px) 100vw, 50vw'}
+                    src={image.url}
+                    placeholder="blur"
+                    blurDataURL={image.blurSrc}
+                    alt={image.alt ? image.alt : `Image ${index + 1}`}
+                  ></Image>
+
+                  {'name' in image && (
+                    <div className="flex h-full max-w-[20ch] flex-col items-center gap-sm  text-pretty p-md text-center">
+                      <p className="sub-heading   text-ellipsis">
+                        <strong>{(image as Member).name}</strong>
+                      </p>
+                      <p className="body">{(image as Member).work}</p>
+                    </div>
+                  )}
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel>
       </InviewWrapper>
     </section>
   );
