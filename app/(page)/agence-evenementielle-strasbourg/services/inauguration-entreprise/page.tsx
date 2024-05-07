@@ -2,7 +2,14 @@ import LastEvent from '@/components/event/nos-services/last-event';
 import { ComingFromRightVariant } from '@/components/framer-motion/div-variants';
 import DivWrapper from '@/components/framer-motion/div-wrapper';
 import TitleSection from '@/components/ui/title-section';
+import { Metadata } from 'next';
 import Image from 'next/image';
+
+export const metadata: Metadata = {
+  title: "Inauguration d'entreprise à Strasbourg | Acte 5",
+  description:
+    "L'inauguration est un moment décisif qui inspire un nouvel élan pour votre entreprise. Elle fera date et portera votre marque au-delà des murs."
+};
 
 export default function Home() {
   return (

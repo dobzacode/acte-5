@@ -2,18 +2,16 @@ import LastEvent from '@/components/event/nos-services/last-event';
 import { ComingFromRightVariant } from '@/components/framer-motion/div-variants';
 import DivWrapper from '@/components/framer-motion/div-wrapper';
 import TitleSection from '@/components/ui/title-section';
-import { sanityFetch } from '@/sanity/lib/fetch';
-import { EventsQueryResponse } from '@/sanity/lib/queries';
-import { groq } from 'next-sanity';
+import { Metadata } from 'next';
 import Image from 'next/image';
 
-export default async function Page() {
-  const events = await sanityFetch<EventsQueryResponse>({
-    query: groq`*[_type == "evenement" && categorie == "Cérémonie des médailles"]`,
-    perspective: 'published',
-    stega: false
-  });
+export const metadata: Metadata = {
+  title: 'Cérémonie de remise de médailles à Strasbourg | Acte 5',
+  description:
+    'Nous pouvons donner du sens à ce que beaucoup voient comme une simple cérémonie de remise de médailles solennelle et compassée.'
+};
 
+export default async function Page() {
   return (
     <main className="main relative mx-auto gap-2xl px-0 pt-5xl laptop:pt-7xl">
       <section className="max-laptop:section-px relative mx-auto flex flex-col items-center justify-center gap-2xl  max-laptop:gap-3xl mobile-small:gap-3xl mobile-medium:gap-2xl  mobile-large:gap-4xl  laptop:max-w-[50rem]">

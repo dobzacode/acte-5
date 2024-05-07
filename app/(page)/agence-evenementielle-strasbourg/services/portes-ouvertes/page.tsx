@@ -2,7 +2,14 @@ import LastEvent from '@/components/event/nos-services/last-event';
 import { ComingFromRightVariant } from '@/components/framer-motion/div-variants';
 import DivWrapper from '@/components/framer-motion/div-wrapper';
 import TitleSection from '@/components/ui/title-section';
+import { Metadata } from 'next';
 import Image from 'next/image';
+
+export const metadata: Metadata = {
+  title: 'Organisation de Portes Ouvertes à Strasbourg | Acte 5',
+  description:
+    "Ouvrir les portes pour permettre la découverte de son activité reste un moment crucial dans la vie de l'entreprise. Découvrir, rencontrer, être émerveiller, voici ce qu'on souhaite transmettre à ceux qui vous rendent visite…"
+};
 
 export default function Home() {
   return (

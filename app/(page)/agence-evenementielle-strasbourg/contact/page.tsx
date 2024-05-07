@@ -2,6 +2,13 @@ import { ComingFromRightVariant } from '@/components/framer-motion/div-variants'
 import InviewWrapper from '@/components/framer-motion/inview-wrapper';
 import FormWrapped from '@/components/ui/form/form-wrapped';
 import TitleSection from '@/components/ui/title-section';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Nous contacter | Acte 5 à Strasbourg',
+  description:
+    "Prenez contact avec notre équipe événementielle expérimentée pour concrétiser vos projets les plus ambitieux. Que vous planifiiez une inauguration, une convention d'entreprise ou tout autre événement spécial, notre équipe est là pour vous aider à transformer votre vision en réalité. Contactez-nous dès aujourd'hui pour commencer à planifier un événement inoubliable qui impressionnera vos clients et collaborateurs."
+};
 
 export default function Home() {
   return (

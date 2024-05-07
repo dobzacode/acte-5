@@ -2,7 +2,14 @@ import LastEvent from '@/components/event/nos-services/last-event';
 import { ComingFromRightVariant } from '@/components/framer-motion/div-variants';
 import DivWrapper from '@/components/framer-motion/div-wrapper';
 import TitleSection from '@/components/ui/title-section';
+import { Metadata } from 'next';
 import Image from 'next/image';
+
+export const metadata: Metadata = {
+  title: 'Organisation de soirée de Gala à Strasbourg | Acte 5',
+  description:
+    "Chaque année, vous envisagez un événement de prestige, à l'adresse de vos collaborateurs, de vos partenaires, de vos clients."
+};
 
 export default function Home() {
   return (

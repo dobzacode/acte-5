@@ -2,6 +2,13 @@ import ServiceGalerie from '@/components/event/nos-services/service-galerie';
 import { FromTopStaggerVariant } from '@/components/framer-motion/div-variants';
 import StaggeredText from '@/components/framer-motion/staggered-text';
 import TitleSection from '@/components/ui/title-section';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "Expérience Théâtrale au Service de Votre Communication d'Entreprise | Acte 5",
+  description:
+    "Découvrez comment notre agence événementielle, Acte 5, utilise l'art de la scène et la pratique théâtrale depuis près de 30 ans pour communiquer efficacement à travers des événements marquants. Que ce soit pour des inaugurations, conventions, séminaires d'entreprise ou interventions théâtrales personnalisées, notre équipe experte saura répondre à tous vos besoins. Avec Acte 5, transformez vos événements en expériences inoubliables et franchissez avec succès chaque étape importante de la vie de votre entreprise."
+};
 
 export default function Home() {
   return (

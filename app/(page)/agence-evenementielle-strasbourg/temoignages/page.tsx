@@ -6,7 +6,14 @@ import TitleSection from '@/components/ui/title-section';
 import { sanityFetch } from '@/sanity/lib/fetch';
 import { EventsQueryResponse } from '@/sanity/lib/queries';
 import { urlForImage } from '@/sanity/lib/utils';
+import { Metadata } from 'next';
 import { groq } from 'next-sanity';
+
+export const metadata: Metadata = {
+  title: 'Découvrez notre portfolio | Acte 5 à Strasbourg',
+  description:
+    "Découvrez comment notre agence crée des expériences mémorables, des séminaires inspirants aux grands événements corporatifs. Explorez notre portfolio pour trouver l'inspiration et voir comment nous pouvons transformer votre prochain événement en un moment inoubliable pour vos clients et collaborateurs."
+};
 
 export interface EventWithImgAndIndex extends EventWithImg {
   index: number;

@@ -3,6 +3,13 @@ import TeamSection from '@/components/event/a-propos/team-section';
 import { FromTopStaggerVariant } from '@/components/framer-motion/div-variants';
 import StaggeredText from '@/components/framer-motion/staggered-text';
 import TitleSection from '@/components/ui/title-section';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Notre agence | Acte 5 à Strasbourg',
+  description:
+    "Acte 5 est une agence pluri-indisciplinée…. mais ne demandez pas une présentation académique de l'équipe ! On s'y ennuierait bien vite."
+};
 
 export default function Home() {
   return (

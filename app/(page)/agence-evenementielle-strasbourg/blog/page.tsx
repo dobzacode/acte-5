@@ -7,6 +7,13 @@ import InviewWrapper from '@/components/framer-motion/inview-wrapper';
 import TitleSection from '@/components/ui/title-section';
 import { sanityFetch } from '@/sanity/lib/fetch';
 import { POSTS_QUERY, Post, PostsQueryResponse } from '@/sanity/lib/queries';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Blog | Acte 5 à Strasbourg',
+  description:
+    "Explorez notre blog événementiel pour trouver des conseils pratiques, des idées inspirantes et les dernières tendances dans l'organisation d'événements d'entreprise. Découvrez comment rendre vos événements inoubliables grâce à nos articles riches en conseils et en expertise. Que vous planifiiez une inauguration, une convention ou une soirée spéciale, notre blog est votre ressource ultime pour réussir chaque étape de votre événement."
+};
 
 export default async function Home() {
   const posts = await sanityFetch<PostsQueryResponse>({
@@ -14,8 +21,6 @@ export default async function Home() {
     perspective: 'published',
     stega: false
   });
-
-  console.log(posts);
 
   return (
     <main className="relative flex flex-col items-center justify-center gap-xl overflow-hidden px-0 pt-5xl  mobile-small:gap-3xl mobile-medium:gap-2xl mobile-large:gap-4xl tablet:gap-5xl tablet:pt-7xl laptop:gap-6xl laptop-large:gap-6xl">

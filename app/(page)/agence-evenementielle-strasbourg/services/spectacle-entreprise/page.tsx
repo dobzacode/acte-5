@@ -2,7 +2,14 @@ import LastEvent from '@/components/event/nos-services/last-event';
 import { ComingFromRightVariant } from '@/components/framer-motion/div-variants';
 import DivWrapper from '@/components/framer-motion/div-wrapper';
 import TitleSection from '@/components/ui/title-section';
+import { Metadata } from 'next';
 import Image from 'next/image';
+
+export const metadata: Metadata = {
+  title: "Spectacles d'entreprises à Strasbourg | Acte 5",
+  description:
+    "Depuis plus de 30 ans la spécificité d'Acte 5 est d'écrire des saynètes et des sketches sur mesure pour votre spectacle d'entreprise."
+};
 
 export default function Home() {
   return (

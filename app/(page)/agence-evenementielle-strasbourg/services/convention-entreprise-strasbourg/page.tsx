@@ -2,7 +2,14 @@ import LastEvent from '@/components/event/nos-services/last-event';
 import { ComingFromRightVariant } from '@/components/framer-motion/div-variants';
 import DivWrapper from '@/components/framer-motion/div-wrapper';
 import TitleSection from '@/components/ui/title-section';
+import { Metadata } from 'next';
 import Image from 'next/image';
+
+export const metadata: Metadata = {
+  title: "Organisation de convention d'entreprise à Strasbourg - Acte 5",
+  description:
+    "Conventionnelle ou non ? Académique ou décalée ? Nous organisons votre convention d'entreprise tout en respectant sa raison d'être."
+};
 
 export default async function Home() {
   return (

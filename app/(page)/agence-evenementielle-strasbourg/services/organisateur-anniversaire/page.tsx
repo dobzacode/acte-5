@@ -2,7 +2,14 @@ import LastEvent from '@/components/event/nos-services/last-event';
 import { ComingFromRightVariant } from '@/components/framer-motion/div-variants';
 import DivWrapper from '@/components/framer-motion/div-wrapper';
 import TitleSection from '@/components/ui/title-section';
+import { Metadata } from 'next';
 import Image from 'next/image';
+
+export const metadata: Metadata = {
+  title: "Organisateur d'Anniversaire pour entreprise à Strasbourg | Acte 5",
+  description:
+    "Célébrer un anniversaire permet à l'entreprise d'immerger ses partenaires dans son intimité et ainsi dévoiler son âme."
+};
 
 export default function Home() {
   return (

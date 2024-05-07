@@ -2,7 +2,14 @@ import LastEvent from '@/components/event/nos-services/last-event';
 import { ComingFromRightVariant } from '@/components/framer-motion/div-variants';
 import DivWrapper from '@/components/framer-motion/div-wrapper';
 import TitleSection from '@/components/ui/title-section';
+import { Metadata } from 'next';
 import Image from 'next/image';
+
+export const metadata: Metadata = {
+  title: 'Organisateur de Team Building à Strasbourg | Acte 5',
+  description:
+    'Quitter son bureau, se couper de son téléphone, ne pas lire ses mails, lâcher prise le temps d’un instant pour se retrouver avec soi-même dans le but de servir le groupe.'
+};
 
 export default function Home() {
   return (
