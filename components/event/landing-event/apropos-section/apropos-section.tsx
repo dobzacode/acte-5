@@ -27,13 +27,14 @@ export default function AproposSection() {
         >
           <UiButton
             href="/agence-evenementielle-strasbourg/a-propos"
-            as={Link}
             size="lg"
             className=" w-fit "
             variant="solid"
             color="pastelPrimary"
           >
-            Non, je souhaite en savoir plus !
+            <Link href="/agence-evenementielle-strasbourg/a-propos" scroll={false}>
+              Non, je souhaite en savoir plus !
+            </Link>
           </UiButton>
         </InviewWrapper>
       </div>

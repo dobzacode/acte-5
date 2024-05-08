@@ -98,13 +98,11 @@ export default function FooterContent() {
           </Link>
         </section>
         <section className="flex flex-col gap-sm">
-          <Link className="sub-heading pb-sm font-normal " href="legal">
-            Informations légales
-          </Link>
-          <Link className="body" href="spectacle/revue-scoute">
+          <p className="sub-heading pb-sm font-normal ">Informations légales</p>
+          <Link className="body hover:opacity-hover" href="politique-confidentialite">
             Politique de confidentialité
           </Link>
-          <Link className="body" href="spectacle/revue-scoute">
+          <Link className="body hover:opacity-hover" href="mentions-legales">
             Mentions légales
           </Link>
         </section>
