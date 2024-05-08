@@ -13,11 +13,11 @@ export default function Stake({}) {
   return (
     <div
       ref={targetRef}
-      className="absolute left-1/2 top-0 z-20 h-full -translate-x-1/2 overflow-hidden rounded-full bg-white px-sm"
+      className="absolute left-1/2 top-0 z-20 h-full  -translate-x-1/2 overflow-hidden rounded-full bg-white px-sm max-laptop:z-10"
     >
       <motion.div
         style={{ height }}
-        className="absolute left-0 top-0 z-20 w-full rounded-b-[0.3rem] bg-black"
+        className="absolute left-0 top-0 z-20 w-full rounded-b-[0.3rem] bg-black laptop:left-0"
       ></motion.div>
     </div>
   );

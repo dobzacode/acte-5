@@ -14,7 +14,7 @@ export default function InviewWrapper({
   noExit
 }: {
   style?: MotionStyle | undefined;
-  variant: Variants;
+  variant: Variants | undefined;
   children: React.ReactNode;
   className?: string;
   viewport?: any;
