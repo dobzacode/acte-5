@@ -127,7 +127,7 @@ const ProjectCarousel: React.FC<PropType> = (props) => {
             ))}
           </div>
         </div>
-        <div className="flex w-full justify-center pt-sm">
+        <div className="flex w-full justify-center  pt-sm">
           <div className="flex h-fit w-fit  rounded-sm shadow-medium max-tablet:scale-90 [&>button]:active:scale-110">
             <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
             <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />

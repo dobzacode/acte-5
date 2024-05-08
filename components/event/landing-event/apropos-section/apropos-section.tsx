@@ -33,7 +33,7 @@ export default function AproposSection() {
             variant="solid"
             color="pastelPrimary"
           >
-            Non, je souhaite en savoir plus
+            Non, je souhaite en savoir plus !
           </UiButton>
         </InviewWrapper>
       </div>

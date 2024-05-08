@@ -7,7 +7,7 @@ interface LogoProps {
 
 export default function Logo({ className }: LogoProps) {
   return (
-    <Link href="/">
+    <Link scroll={false} href="/">
       <BrandLogo className={className} />
     </Link>
   );

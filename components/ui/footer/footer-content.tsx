@@ -9,48 +9,96 @@ export default function FooterContent() {
         <Logo className="w-4xl"></Logo>
       </div>
       <nav className="flex flex-wrap justify-between gap-3xl max-laptop:w-full tablet:flex-nowrap laptop:justify-normal">
-        <section className="flex flex-col gap-sm">
-          <Link className="sub-heading font-normal" href="evenementiel">
+        <section className="flex flex-col gap-sm ">
+          <Link
+            scroll={false}
+            className="sub-heading pb-sm font-normal hover:opacity-hover"
+            href="agence-evenementielle-strasbourg"
+          >
             Evenementiel
           </Link>
-          <Link className="body" href="evenementiel/service">
+          <Link
+            scroll={false}
+            className="body hover:opacity-hover"
+            href="agence-evenementielle-strasbourg/service"
+          >
             Service
           </Link>
-          <Link className="body" href="evenementiel/temoignages">
+          <Link
+            scroll={false}
+            className="body hover:opacity-hover"
+            href="agence-evenementielle-strasbourg/temoignages"
+          >
             Témoignages
           </Link>
-          <Link className="body" href="evenementiel/a-propos">
+          <Link
+            scroll={false}
+            className="body hover:opacity-hover"
+            href="agence-evenementielle-strasbourg/a-propos"
+          >
             A propos
           </Link>
-          <Link className="body" href="evenementiel/blog">
+          <Link
+            scroll={false}
+            className="body hover:opacity-hover"
+            href="agence-evenementielle-strasbourg/blog"
+          >
             Blog
           </Link>
-          <Link className="body" href="evenementiel/contact">
+          <Link
+            scroll={false}
+            className="body hover:opacity-hover"
+            href="agence-evenementielle-strasbourg/contact"
+          >
             Contact
           </Link>
         </section>
         <section className="flex flex-col gap-sm">
-          <Link className="sub-heading font-normal" href="spectacle">
+          <Link
+            scroll={false}
+            className="sub-heading pb-sm font-normal hover:opacity-hover"
+            href="spectacles-strasbourg"
+          >
             Spectacle
           </Link>
-          <Link className="body" href="spectacle/revue-scoute">
+          <Link
+            scroll={false}
+            className="body hover:opacity-hover"
+            href="spectacles-strasbourg/revue-scoute"
+          >
             Revue scoute
           </Link>
-          <Link className="body" href="spectacle/a-laffiche">
+          <Link
+            scroll={false}
+            className="body hover:opacity-hover"
+            href="spectacles-strasbourg/a-laffiche"
+          >
             A l'affiche
           </Link>
-          <Link className="body" href="spectacle/portfolio">
+          <Link
+            scroll={false}
+            className="body hover:opacity-hover"
+            href="spectacles-strasbourg/portfolio"
+          >
             Portfolio
           </Link>
-          <Link className="body" href="spectacle/a-propos">
+          <Link
+            scroll={false}
+            className="body hover:opacity-hover"
+            href="spectacles-strasbourg/a-propos"
+          >
             A propos
           </Link>
-          <Link className="body" href="spectacle/contact">
+          <Link
+            scroll={false}
+            className="body hover:opacity-hover"
+            href="spectacles-strasbourg/contact"
+          >
             Contact
           </Link>
         </section>
         <section className="flex flex-col gap-sm">
-          <Link className="sub-heading font-normal" href="legal">
+          <Link className="sub-heading pb-sm font-normal " href="legal">
             Informations légales
           </Link>
           <Link className="body" href="spectacle/revue-scoute">
@@ -61,10 +109,10 @@ export default function FooterContent() {
           </Link>
         </section>
         <section className="flex flex-col gap-sm">
-          <p className="sub-heading font-normal">Nous suivre</p>
-          <p className="body">Social 1</p>
-          <p className="body">Social 2</p>
-          <p className="body">Social 3</p>
+          <p className="sub-heading pb-sm font-normal ">Nous suivre</p>
+          <p className="body opacity-hover">Social 1</p>
+          <p className="body opacity-hover">Social 2</p>
+          <p className="body opacity-hover">Social 3</p>
         </section>
       </nav>
     </footer>
