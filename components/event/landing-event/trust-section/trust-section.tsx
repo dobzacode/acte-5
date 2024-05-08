@@ -55,7 +55,7 @@ export default function TrustSection() {
             className="sub-heading shadow-primary-sm 0 flex w-fit items-center gap-xs rounded-sm border-b-2 border-r-2 border-primary-400 bg-primary-50 px-md py-sm text-primary-400 laptop:gap-sm laptop:px-lg laptop:py-md "
             scroll={false}
           >
-            <span>Voir les témoignages</span>
+            <span>Explorer les réussites de nos clients</span>
           </Link>
         </DivHoverWrapper>
       </InviewWrapper>

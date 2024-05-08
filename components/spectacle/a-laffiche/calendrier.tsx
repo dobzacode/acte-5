@@ -7,6 +7,8 @@ import {
   SpectaclesAvecDatesQueryResponse
 } from '@/sanity/lib/queries';
 
+import { ComingFromBottomVariant } from '@/components/framer-motion/div-variants';
+import InviewWrapper from '@/components/framer-motion/inview-wrapper';
 import { draftMode } from 'next/headers';
 import { notFound } from 'next/navigation';
 import { Image } from 'sanity';
@@ -60,5 +62,9 @@ export default async function Calendrier() {
     return a.dates[0].localeCompare(b.dates[0]);
   });
 
-  return <CalendrierTable revueScoute={revueScoute} datesArr={datesArr}></CalendrierTable>;
+  return (
+    <InviewWrapper tag="div" variant={ComingFromBottomVariant}>
+      <CalendrierTable revueScoute={revueScoute} datesArr={datesArr}></CalendrierTable>
+    </InviewWrapper>
+  );
 }

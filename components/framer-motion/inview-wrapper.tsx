@@ -11,7 +11,8 @@ export default function InviewWrapper({
   inverseOnExit,
   id,
   tag = 'div',
-  noExit
+  noExit,
+  whileHover,
 }: {
   style?: MotionStyle | undefined;
   variant: Variants | undefined;
@@ -22,6 +23,7 @@ export default function InviewWrapper({
   id?: string;
   tag?: string;
   noExit?: boolean;
+  whileHover?: any;
 }) {
   //@ts-expect-error tag is a string
   const MotionComponent = motion[tag];
@@ -36,6 +38,7 @@ export default function InviewWrapper({
       viewport={viewport}
       whileInView="enter"
       initial="hidden"
+      whileHover={whileHover}
       exit={() => {
         if (noExit) return;
         inverseOnExit ? 'exit' : 'hidden';

@@ -1,10 +1,10 @@
-import EventFooter from '@/components/ui/footer/event-footer';
+import SpectacleFooter from '@/components/ui/footer/spectacle-footer';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
       {children}
-      <EventFooter />
+      <SpectacleFooter />
     </>
   );
 }

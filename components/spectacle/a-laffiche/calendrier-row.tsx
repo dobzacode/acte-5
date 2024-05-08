@@ -70,12 +70,12 @@ export default function CalendrierRow({ dateItem }: { dateItem?: DateItemCal }) 
               </span>
             </p>
             <div className="flex flex-col gap-xs after:absolute after:left-0  after:top-0 after:z-20 after:h-full after:w-full  after:bg-gradient-to-b after:from-transparent after:from-90% after:to-white">
-              <p className=" flex">
-                <div className="line-clamp-2">
+              <div className=" flex">
+                <p className="line-clamp-2">
                   {`${dateItem.titre}`} / {`${dateItem.ville}`} /{' '}
                   {`${dateItem.emplacement.split('/')[0]}`}
-                </div>
-              </p>
+                </p>
+              </div>
               <div className=" body flex">{dateItem.type}</div>
             </div>
           </UiButton>

@@ -5,12 +5,8 @@ import TimelapseSection from './timelapse-section';
 export default function HistorySection() {
   return (
     <section className=" inner-section-py flex w-full flex-col items-center gap-2xl bg-primary-400 text-white">
-      <InviewWrapper
-        className="heading--extra-large section-px text-center text-white"
-        variant={ComingFromTopVariant}
-        tag="h2"
-      >
-        Notre histoire
+      <InviewWrapper variant={ComingFromTopVariant}>
+        <h2 className="heading--extra-large section-px text-center text-white">Notre histoire</h2>
       </InviewWrapper>
       <TimelapseSection></TimelapseSection>
     </section>

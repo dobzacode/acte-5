@@ -6,12 +6,10 @@ export default function TimelapseSection() {
     <section className="laptop:section-px relative flex w-full flex-col justify-between gap-9xl py-9xl">
       <Stake></Stake>
 
-      <div className="flex flex-col gap-9xl ">
-        <Flag></Flag>
-        <Flag inverted={true}></Flag>
-        <Flag></Flag>
-        <Flag inverted={true}></Flag>
-      </div>
+      <Flag></Flag>
+      <Flag inverted={true}></Flag>
+      <Flag></Flag>
+      <Flag inverted={true}></Flag>
     </section>
   );
 }
