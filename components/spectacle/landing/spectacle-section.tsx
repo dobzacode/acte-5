@@ -108,13 +108,17 @@ export default function SpectacleSection() {
       >
         <UiButton
           href="/agence-evenementielle-strasbourg/services/spectacle-entreprise"
-          as={Link}
           size="lg"
           className="w-fit"
           variant="solid"
-          color="default"
+          color="white"
         >
-          Découvrir d'avantage
+          <Link
+            href="/agence-evenementielle-strasbourg/services/spectacle-entreprise"
+            scroll={false}
+          >
+            Découvrir d'avantage
+          </Link>
         </UiButton>
       </InviewWrapper>
     </section>

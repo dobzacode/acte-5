@@ -41,7 +41,7 @@ export default async function SimilaireProject() {
   }
 
   return (
-    <section className="w-full overflow-hidden bg-primary-400 py-xl">
+    <section className="inner-section-gap flex w-full flex-col overflow-hidden bg-primary-400 py-xl">
       <InviewWrapper variant={ComingFromTopVariant}>
         <h2 className="heading--sub-extra-large section-px text-center text-white laptop:mx-auto">
           Projets similaires

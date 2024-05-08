@@ -82,15 +82,16 @@ export default function CalendrierRow({ dateItem }: { dateItem?: DateItemCal }) 
         )}
       </div>
       {dateItem ? (
-        <Modal size="xl" isOpen={isOpen} onOpenChange={onOpenChange}>
+        <Modal className="" isOpen={isOpen} onOpenChange={onOpenChange}>
           <ModalContent>
             {(onClose) => (
               <>
-                <ModalHeader className="relative flex h-fit gap-md self-start rounded-[0.5px]  rounded-t-sm   !bg-primary-400 px-md py-md text-left text-md  text-white tap-highlight-transparent hover:!bg-white hover:!text-black  focus:outline-none active:!bg-white">
-                  <p className=" ">
+                <ModalHeader className="pointer-events-none relative  flex h-fit gap-md self-start rounded-[0.5px]  rounded-t-sm   !bg-primary-400 px-md py-md text-left text-md  text-white tap-highlight-transparent hover:!bg-white hover:!text-black  focus:outline-none active:!bg-white">
+                  <p className=" block shrink-0 ">
                     {new Date(dateItem.dates[0]).toISOString().split('T')[0].split('-')[2]}
-                    {' - '}
-                    <span className=" body align-super ">
+
+                    <span className="body align-super">
+                      -
                       {`${
                         new Date(dateItem.dates[dateItem.dates.length - 1])
                           .toISOString()
@@ -107,8 +108,8 @@ export default function CalendrierRow({ dateItem }: { dateItem?: DateItemCal }) 
                     <div className=" body flex ">{dateItem.type}</div>
                   </div>
                 </ModalHeader>
-                <ModalBody className=" gap-0  px-0 pt-0 ">
-                  <div className="relative h-[20rem] w-full ">
+                <ModalBody className="gap-0   px-0 pt-0 ">
+                  <div className="relative h-[20rem] w-full max-tablet:hidden">
                     <Image
                       fill
                       className="object-cover"

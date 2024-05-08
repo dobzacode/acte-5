@@ -7,7 +7,10 @@ export const UiButton = extendVariants(Button, {
   variants: {
     color: {
       success: 'bg-success text-white',
-      pastelPrimary: 'bg-primary-50 text-primary-400'
+      pastelPrimary: 'bg-primary-50 text-primary-400',
+      black: 'bg-black text-white',
+      white:
+        'bg-white text-black hover:bg-black hover:text-white hover:opacity-100 data-[hover=true]:opacity-100'
     },
 
     size: {

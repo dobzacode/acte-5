@@ -16,7 +16,7 @@ interface VideoProps extends EventWithVideoQueryRes {
 
 export default function VideoCarousel({ videoArr }: { videoArr: VideoProps[] }) {
   return (
-    <Carousel className="section-px flex items-center gap-md">
+    <Carousel className="section-px flex items-center gap-md [&>div]:rounded-sm">
       {videoArr.length > 1 && (
         <>
           <CarouselPrevious className="relative" />
@@ -24,7 +24,7 @@ export default function VideoCarousel({ videoArr }: { videoArr: VideoProps[] }) 
       )}
       <CarouselContent>
         {videoArr.map((video, index) => (
-          <CarouselItem className="basis-1/2 max-tablet:basis-full" key={index}>
+          <CarouselItem className="basis-1/3 max-tablet:basis-full" key={index}>
             <div
               className={cn(
                 'card   relative flex  h-full  flex-col items-center gap-sm overflow-clip  rounded-sm border-0 p-0 '

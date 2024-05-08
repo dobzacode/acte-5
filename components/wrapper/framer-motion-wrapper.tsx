@@ -8,7 +8,15 @@ const FramerMotionWrapper = ({ children }: { children: React.ReactNode }) => {
   const pathname = usePathname();
 
   return (
-    <AnimatePresence mode="wait">
+    <AnimatePresence
+      initial={false}
+      onExitComplete={() => {
+        if (typeof window !== 'undefined') {
+          window.scrollTo({ top: 0 });
+        }
+      }}
+      mode="wait"
+    >
       <motion.div key={pathname}>
         <FrozenRoute>{children}</FrozenRoute>
       </motion.div>

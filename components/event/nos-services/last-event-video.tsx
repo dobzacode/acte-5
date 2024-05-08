@@ -41,7 +41,7 @@ export default async function LastEventVideo({
       >
         <h2 className="heading--large text-white">{h2}</h2>
       </InviewWrapper>
-      <InviewWrapper className="container mx-auto" variant={ComingFromBottomVariant}>
+      <InviewWrapper className="mx-auto max-w-[100vw]" variant={ComingFromBottomVariant}>
         <VideoCarousel videoArr={withVideo}></VideoCarousel>
       </InviewWrapper>
     </section>

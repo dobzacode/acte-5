@@ -3,7 +3,13 @@ import {
   ComingFromTopVariant
 } from '@/components/framer-motion/div-variants';
 import InviewWrapper from '@/components/framer-motion/inview-wrapper';
-import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious
+} from '@/components/ui/carousel';
 import { cn, dynamicBlurDataUrl } from '@/lib/utils';
 import Image from 'next/image';
 
@@ -102,13 +108,16 @@ export default async function TeamSection() {
         </p>
       </InviewWrapper>
       <InviewWrapper variant={ComingFromBottomVariant}>
-        <Carousel className="max-laptop:container max-laptop:mx-auto">
+        <Carousel className="section-px  flex max-w-[100vw] items-center  gap-md laptop:mx-auto [&>div]:rounded-sm">
+          <>
+            <CarouselPrevious className="relative" />
+          </>
           <CarouselContent className="laptop-large:-ml-sm">
             {imageArr.map((image, index) => (
-              <CarouselItem className=" basis-1/2 mobile-large:basis-1/3 tablet:basis-1/4 laptop-large:basis-1/4 laptop-large:pr-sm ">
+              <CarouselItem className=" basis-full mobile-large:basis-1/2 tablet:basis-1/3 laptop:basis-1/5 laptop-large:basis-1/5 laptop-large:pr-sm ">
                 <div
                   className={cn(
-                    'card   relative flex  h-full flex-col items-center gap-sm  rounded-sm border-0 p-0 shadow-xl'
+                    'card   relative flex  h-full flex-col items-center gap-md  rounded-sm border-0 p-0 shadow-xl '
                   )}
                   key={index}
                 >
@@ -116,7 +125,7 @@ export default async function TeamSection() {
                     width={400}
                     height={400}
                     className={cn(
-                      'aspect-square w-full cursor-pointer rounded-t-sm object-cover',
+                      'aspect-square h-full w-full grow cursor-pointer rounded-t-sm object-cover',
                       'name' in image ? null : 'rounded-t-none'
                     )}
                     sizes={'(max-width: 640px) 100vw, 50vw'}
@@ -127,7 +136,7 @@ export default async function TeamSection() {
                   ></Image>
 
                   {'name' in image && (
-                    <div className="flex h-full max-w-[20ch] flex-col items-center gap-sm  text-pretty p-md text-center">
+                    <div className="flex h-full  flex-col items-center gap-sm  text-pretty px-md pb-md text-center">
                       <p className="sub-heading   text-ellipsis">
                         <strong>{(image as Member).name}</strong>
                       </p>
@@ -138,6 +147,9 @@ export default async function TeamSection() {
               </CarouselItem>
             ))}
           </CarouselContent>
+          <>
+            <CarouselNext className="relative" />
+          </>
         </Carousel>
       </InviewWrapper>
     </section>

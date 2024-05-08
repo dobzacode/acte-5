@@ -1,11 +1,11 @@
 import Footer from './footer';
 import FooterContent from './footer-content';
 
-export default function EventFooter() {
+export default function SpectacleFooter() {
   return (
     <>
       <section>
-        <div className="bg-black py-7xl"></div>
+        <div className="bg-white py-7xl"></div>
         <Footer>
           <FooterContent></FooterContent>
         </Footer>

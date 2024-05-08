@@ -18,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="light">
+    <html lang="en" className="scroll-smooth light">
       <body className=" min-h-screen  brand-theme">
         {draftMode().isEnabled && <AlertBanner />}
         <Providers>{children}</Providers>

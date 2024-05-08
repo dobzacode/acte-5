@@ -65,13 +65,14 @@ export default function ScouteSection() {
       <InviewWrapper className="flex w-full justify-center" variant={ComingFromBottomVariant}>
         <UiButton
           href="/spectacle-strasbourg/revue-scoute"
-          as={Link}
           size="lg"
           className="w-fit  "
           variant="solid"
           color="pastelPrimary"
         >
-          Découvrir la tournée 2024
+          <Link href="/spectacle-strasbourg/revue-scoute" scroll={false}>
+            Découvrir la tournée 2024
+          </Link>
         </UiButton>
       </InviewWrapper>
     </section>

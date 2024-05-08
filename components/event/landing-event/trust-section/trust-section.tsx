@@ -39,14 +39,15 @@ export default function TrustSection() {
         </div>
         <UiButton
           href="/agence-evenementielle-strasbourg/temoignages"
-          as={Link}
           size="lg"
           className="w-fit "
           variant="solid"
           color="pastelPrimary"
           endContent={<LuChevronRight className="shrink-0" />}
         >
-          Voir les témoignages
+          <Link href="/agence-evenementielle-strasbourg/temoignages" scroll={false}>
+            Voir les témoignages
+          </Link>
         </UiButton>
       </InviewWrapper>
     </section>

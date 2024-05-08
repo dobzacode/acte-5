@@ -53,8 +53,20 @@ export default function ServiceSection() {
           ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit,
           sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
-        <UiButton className="w-fit" size="lg" variant="solid" color="primary">
-          Découvrez nos services
+        <UiButton
+          href="/agence-evenementielle-strasbourg/services"
+          className="w-fit"
+          size="lg"
+          variant="solid"
+          color="primary"
+        >
+          <Link
+            className="relative z-10 flex h-full w-full items-center"
+            href="/agence-evenementielle-strasbourg/services"
+            scroll={false}
+          >
+            Découvrez nos services
+          </Link>
         </UiButton>
       </div>
     ];
@@ -109,13 +121,18 @@ export default function ServiceSection() {
           </p>
           <UiButton
             href="/agence-evenementielle-strasbourg/services"
-            as={Link}
-            className="w-fit"
+            className="flex w-fit items-center justify-center"
             size="lg"
             variant="solid"
             color="primary"
           >
-            Découvrez nos services
+            <Link
+              className="relative z-10 flex h-full w-full items-center"
+              href="/agence-evenementielle-strasbourg/services"
+              scroll={false}
+            >
+              Découvrez nos services
+            </Link>
           </UiButton>
         </InviewWrapper>
       </div>

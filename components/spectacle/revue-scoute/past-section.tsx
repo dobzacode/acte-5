@@ -40,17 +40,17 @@ export default async function PastSection() {
   }
 
   return (
-    <section className="inner-section-gap flex w-full  flex-col overflow-hidden bg-primary-400 py-xl">
+    <section className="inner-section-gap flex w-full  flex-col overflow-hidden bg-primary-400 py-xl !pb-2xl">
       <InviewWrapper variant={ComingFromTopVariant}>
         <h2 className="heading--sub-extra-large section-px text-center text-white ">
           Et pour la postérité...
         </h2>
       </InviewWrapper>
       <InviewWrapper variant={ComingFromBottomVariant}>
-        <Carousel className="max-laptop:container max-laptop:mx-auto">
-          <CarouselContent className="laptop-large:-ml-sm">
+        <Carousel className="max-w-[100vw] [&>div]:rounded-sm">
+          <CarouselContent className="justify-center laptop-large:-ml-sm">
             {imagesWithUrl.map((image, index) => (
-              <CarouselItem className=" basis-1/2 mobile-large:basis-1/3 tablet:basis-1/4 laptop-large:basis-1/4 laptop-large:pr-sm ">
+              <CarouselItem className=" basis-1/2 mobile-large:basis-1/3 tablet:basis-1/4 laptop-large:basis-1/6 laptop-large:pr-sm  ">
                 <div
                   className={cn(
                     'card   relative flex  h-full flex-col items-center gap-sm  rounded-sm border-0 p-0 shadow-xl'

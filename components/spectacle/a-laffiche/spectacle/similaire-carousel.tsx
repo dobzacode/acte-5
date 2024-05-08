@@ -2,7 +2,7 @@
 
 import Autoplay from 'embla-carousel-autoplay';
 import useEmblaCarousel from 'embla-carousel-react';
-import React, { useState } from 'react';
+import React from 'react';
 
 import 'yet-another-react-lightbox/styles.css';
 
@@ -10,6 +10,13 @@ import { cn } from '@/lib/utils';
 import { EmblaOptionsType } from 'embla-carousel';
 import Image from 'next/image';
 
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious
+} from '@/components/ui/carousel';
 import { Spectacle } from '@/sanity/lib/queries';
 import Link from 'next/link';
 
@@ -28,59 +35,49 @@ const SimilaireCarousel: React.FC<PropType> = (props) => {
   const { options } = props;
   const [emblaRef, emblaApi] = useEmblaCarousel(options, [Autoplay()]);
 
-  const [selectedIndex, setSelectedIndex] = useState(0);
-  const [lightboxIsOpen, setLightboxIsOpen] = useState<boolean>(false);
-  const [currentImage, setCurrentImage] = useState<number>(0);
-
-  const openLightbox = (index: number) => {
-    setCurrentImage(index);
-    setLightboxIsOpen(true);
-  };
-  const closeLightbox = () => {
-    setCurrentImage(0);
-    setLightboxIsOpen(false);
-  };
-
   return (
     <>
-      <div className="member_embla   py-xl">
-        <div className="emba__viewport" ref={emblaRef}>
-          <div className="member_embla__container mx-auto w-fit gap-sm tablet:gap-md">
-            {props.imageArr.map((image, index) => (
-              <Link href={`/spectacles-strasbourg/a-laffiche/${image.slug.current}`}>
-                <div
+      <Carousel className="section-px flex max-w-[100vw] items-center  gap-md laptop:mx-auto [&>div]:rounded-sm">
+        <>
+          <CarouselPrevious className="relative" />
+        </>
+        <CarouselContent className="laptop-large:-ml-sm">
+          {props.imageArr.map((image, index) => (
+            <CarouselItem className=" basis-full mobile-large:basis-1/2 tablet:basis-1/3 laptop:basis-1/3 laptop-large:basis-1/3 laptop-large:pr-sm ">
+              <Link
+                href={`/spectacles-strasbourg/a-laffiche/${image.slug.current}`}
+                className={cn(
+                  'card   relative flex  h-full flex-col items-center gap-md overflow-hidden rounded-sm border-0 p-0 shadow-xl'
+                )}
+                key={index}
+              >
+                <Image
+                  width={400}
+                  height={400}
                   className={cn(
-                    'rounded-extra-small card relative flex w-[6rem] shrink-0 flex-col items-center gap-lg bg-white px-0 pt-0 duration-medium  last:mr-lg hover:scale-105 hover:shadow-2xl tablet:w-[8rem] laptop:w-[18rem]',
-                    ' overflow-hidden rounded-xs'
+                    'aspect-square h-full w-full grow cursor-pointer overflow-hidden rounded-t-sm  object-cover',
+                    'name' in image ? null : 'rounded-t-none'
                   )}
-                  key={index}
-                >
-                  <Image
-                    width={400}
-                    height={400}
-                    onClick={() => {
-                      openLightbox(index);
-                    }}
-                    className={cn(
-                      'aspect-square cursor-pointer rounded-t-md object-cover',
-                      'name' in image ? null : 'rounded-t-none'
-                    )}
-                    src={image.url}
-                    placeholder="blur"
-                    blurDataURL={image.blurSrc}
-                    alt={image.alt ? image.alt : `Image ${index + 1}`}
-                  ></Image>
-                  <div className="flex max-w-[20ch] flex-col items-center gap-md text-pretty text-center">
-                    <p className="sub-heading">
-                      <strong>{image.titre}</strong>
-                    </p>
-                  </div>
+                  sizes={'(max-width: 640px) 100vw, 50vw'}
+                  src={image.url}
+                  placeholder="blur"
+                  blurDataURL={image.blurSrc}
+                  alt={`Image ${image.titre}`}
+                ></Image>
+
+                <div className="flex  flex-col items-center gap-sm  text-pretty px-md pb-md text-center">
+                  <p className="sub-heading   text-ellipsis">
+                    <strong>{image.titre}</strong>
+                  </p>
                 </div>
               </Link>
-            ))}
-          </div>
-        </div>
-      </div>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <>
+          <CarouselNext className="relative" />
+        </>
+      </Carousel>
     </>
   );
 };

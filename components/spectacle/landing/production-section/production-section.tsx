@@ -72,13 +72,14 @@ export default function ProductionSection() {
         >
           <UiButton
             href="/spectacle-strasbourg/a-propos"
-            as={Link}
             size="lg"
             className="w-fit"
             variant="solid"
-            color="default"
+            color="white"
           >
-            En savoir plus sur notre expertise
+            <Link href="/spectacle-strasbourg/a-propos" scroll={false}>
+              En savoir plus sur notre expertise
+            </Link>
           </UiButton>
         </InviewWrapper>
       </div>

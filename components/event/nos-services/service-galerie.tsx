@@ -95,7 +95,7 @@ export default function ServiceGalerie({}) {
                 style={{ zIndex: 30 - index }}
               >
                 <Link
-                  className=" relative z-40 flex h-full w-full flex-col-reverse after:absolute  after:left-0 after:top-0 after:z-10 after:h-full after:w-full after:bg-gradient-to-t after:from-black/50 after:to-transparent"
+                  className=" relative z-40 flex h-full w-full flex-col-reverse after:absolute  after:left-0 after:top-0 after:z-10 after:h-full after:w-full after:bg-gradient-to-t after:from-black/50 after:to-transparent after:to-30%"
                   href={service.href}
                 >
                   <motion.h3

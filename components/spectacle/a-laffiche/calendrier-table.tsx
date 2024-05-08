@@ -71,16 +71,16 @@ export default function CalendrierTable({
         </p>
         <div className="h-fit pt-[4px]">
           <button
-            className="rounded-l-sm border border-black/10 bg-white text-black"
+            className="rounded-l-sm border border-black/10  bg-white p-sm text-black duration-medium hover:bg-black active:scale-105 hover:[&>*]:scale-105 [&>*]:hover:text-white"
             onClick={() => moisPrecedent()}
           >
-            <LuChevronLeft size={40}></LuChevronLeft>
+            <LuChevronLeft className="duration-medium" size={30}></LuChevronLeft>
           </button>
           <button
-            className="rounded-r-sm border border-black/10 bg-white text-black"
+            className="rounded-r-sm border border-black/10  bg-white p-sm text-black duration-medium hover:bg-black active:scale-105 hover:[&>*]:scale-105 [&>*]:hover:text-white"
             onClick={() => moisSuivant()}
           >
-            <LuChevronRight size={40}></LuChevronRight>
+            <LuChevronRight className="duration-medium" size={30}></LuChevronRight>
           </button>
         </div>
       </div>
