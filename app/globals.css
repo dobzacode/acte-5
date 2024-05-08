@@ -89,6 +89,29 @@
 
 @tailwind utilities;
 
+:root {
+  --shadow-color: 19deg 29% 65%;
+  --shadow-elevation-low: 0.6px 0.5px 0.6px hsl(var(--shadow-color) / 0.86),
+    2.1px 1.8px 2.1px -5px hsl(var(--shadow-color) / 0.43);
+  --shadow-elevation-medium: 0.6px 0.5px 0.6px hsl(var(--shadow-color) / 0.8),
+    1.8px 1.5px 1.8px -2.5px hsl(var(--shadow-color) / 0.54),
+    10.6px 8.9px 10.4px -5px hsl(var(--shadow-color) / 0.27);
+  --shadow-elevation-high: 0.6px 0.5px 0.6px hsl(var(--shadow-color) / 0.75),
+    1px 0.8px 1px -1px hsl(var(--shadow-color) / 0.62),
+    3.6px 3.1px 3.6px -2px hsl(var(--shadow-color) / 0.5),
+    10.9px 9.2px 10.7px -3px hsl(var(--shadow-color) / 0.37),
+    25.1px 21.1px 24.6px -4px hsl(var(--shadow-color) / 0.25),
+    48.5px 40.7px 47.5px -5px hsl(var(--shadow-color) / 0.12);
+}
+
+.shadow-primary-sm {
+  box-shadow: var(--shadow-elevation-low);
+}
+
+.shadow-primary-md {
+  box-shadow: var(--shadow-elevation-medium);
+}
+
 @layer base {
   * {
     @apply min-w-0;

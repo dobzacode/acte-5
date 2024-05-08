@@ -30,7 +30,7 @@ export default function Home() {
           </p>
         </DivWrapper>
         <section className="inner-section-gap  container flex justify-between max-tablet:flex-col   laptop:justify-center   laptop-large:max-w-[1200px] ">
-          <Link href="agence-evenementielle-strasbourg">
+          <Link scroll={false} href="agence-evenementielle-strasbourg">
             <DivWrapper
               className="heading--sub-large flex w-fit flex-col items-center gap-md rounded-md bg-default-200 px-xl py-3xl tablet:px-2xl tablet:py-5xl"
               variant={ComingFromLeftVariant}
@@ -42,7 +42,7 @@ export default function Home() {
               </p>
             </DivWrapper>
           </Link>
-          <Link href="spectacles-strasbourg">
+          <Link scroll={false} href="spectacles-strasbourg">
             <DivWrapper
               className="heading--sub-large flex w-fit flex-col items-center gap-md rounded-md bg-default-200 px-xl py-3xl tablet:px-2xl tablet:py-5xl"
               variant={ComingFromRightVariant}

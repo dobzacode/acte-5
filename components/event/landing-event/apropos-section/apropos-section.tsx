@@ -2,9 +2,9 @@ import {
   ComingFromBottomVariant,
   FromTopStaggerVariant
 } from '@/components/framer-motion/div-variants';
+import DivHoverWrapper from '@/components/framer-motion/hover-wrapper';
 import InviewWrapper from '@/components/framer-motion/inview-wrapper';
 import StaggeredText from '@/components/framer-motion/staggered-text';
-import UiButton from '@/components/ui/ui-button';
 import Link from 'next/link';
 import CompetenceSection from './competence-section';
 
@@ -25,17 +25,28 @@ export default function AproposSection() {
           viewport={{ once: true, margin: '-200px 0px -200px 0px' }}
           variant={ComingFromBottomVariant}
         >
-          <UiButton
-            href="/agence-evenementielle-strasbourg/a-propos"
-            size="lg"
-            className=" w-fit "
-            variant="solid"
-            color="pastelPrimary"
+          <DivHoverWrapper
+            className="group w-fit origin-center duration-medium hover:opacity-90"
+            variant={{
+              hover: {
+                scale: 1.02,
+                transition: {
+                  duration: 0.5,
+                  ease: 'easeInOut',
+                  repeat: Infinity,
+                  repeatType: 'mirror'
+                }
+              }
+            }}
           >
-            <Link href="/agence-evenementielle-strasbourg/a-propos" scroll={false}>
-              Non, je souhaite en savoir plus !
+            <Link
+              href="/agence-evenementielle-strasbourg/a-propos"
+              className="sub-heading shadow-primary-sm 0 flex w-fit items-center gap-xs rounded-sm border-b-2 border-r-2 border-primary-400 bg-primary-50 px-md py-sm text-primary-400 laptop:gap-sm laptop:px-lg laptop:py-md "
+              scroll={false}
+            >
+              <span>Non, je souhaite en savoir plus !</span>
             </Link>
-          </UiButton>
+          </DivHoverWrapper>
         </InviewWrapper>
       </div>
     </section>

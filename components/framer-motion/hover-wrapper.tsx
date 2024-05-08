@@ -13,7 +13,7 @@ export default function DivHoverWrapper({
   className?: string;
 }) {
   return (
-    <motion.div className={className} variants={variant} whileHover="hover">
+    <motion.div exit="exit" className={className} variants={variant} whileHover="hover">
       {children}
     </motion.div>
   );

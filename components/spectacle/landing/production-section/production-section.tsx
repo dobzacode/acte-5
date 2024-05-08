@@ -1,6 +1,6 @@
 import { ComingFromLeftVariant } from '@/components/framer-motion/div-variants';
+import DivHoverWrapper from '@/components/framer-motion/hover-wrapper';
 import InviewWrapper from '@/components/framer-motion/inview-wrapper';
-import UiButton from '@/components/ui/ui-button';
 import Image from 'next/image';
 import Link from 'next/link';
 import ScrollImage from './scroll-image';
@@ -70,17 +70,28 @@ export default function ProductionSection() {
           }}
           className="relative z-10 flex h-fit laptop:w-1/2"
         >
-          <UiButton
-            href="/spectacle-strasbourg/a-propos"
-            size="lg"
-            className="w-fit"
-            variant="solid"
-            color="white"
+          <DivHoverWrapper
+            className="group w-fit origin-center duration-medium hover:opacity-90"
+            variant={{
+              hover: {
+                scale: 1.02,
+                transition: {
+                  duration: 0.5,
+                  ease: 'easeInOut',
+                  repeat: Infinity,
+                  repeatType: 'mirror'
+                }
+              }
+            }}
           >
-            <Link href="/spectacle-strasbourg/a-propos" scroll={false}>
-              En savoir plus sur notre expertise
+            <Link
+              href="/spectacle-strasbourg/a-propos"
+              className="sub-heading shadow-primary-sm 0 flex w-fit items-center gap-xs rounded-sm border-b-2 border-r-2 border-black bg-white px-md py-sm text-black laptop:gap-sm laptop:px-lg laptop:py-md "
+              scroll={false}
+            >
+              <span> En savoir plus sur notre expertise</span>
             </Link>
-          </UiButton>
+          </DivHoverWrapper>
         </InviewWrapper>
       </div>
       <ScrollImage className="max-laptop:hidden ">

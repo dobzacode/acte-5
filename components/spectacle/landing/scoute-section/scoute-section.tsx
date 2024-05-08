@@ -3,8 +3,8 @@ import {
   ComingFromLeftVariant,
   ComingFromRightVariant
 } from '@/components/framer-motion/div-variants';
+import DivHoverWrapper from '@/components/framer-motion/hover-wrapper';
 import InviewWrapper from '@/components/framer-motion/inview-wrapper';
-import UiButton from '@/components/ui/ui-button';
 import Image from 'next/image';
 import Link from 'next/link';
 import GalleryScrollAnimation from './gallery-scroll-animation';
@@ -63,17 +63,28 @@ export default function ScouteSection() {
         </p>
       </InviewWrapper>
       <InviewWrapper className="flex w-full justify-center" variant={ComingFromBottomVariant}>
-        <UiButton
-          href="/spectacle-strasbourg/revue-scoute"
-          size="lg"
-          className="w-fit  "
-          variant="solid"
-          color="pastelPrimary"
+        <DivHoverWrapper
+          className="group w-fit origin-center duration-medium hover:opacity-90"
+          variant={{
+            hover: {
+              scale: 1.02,
+              transition: {
+                duration: 0.5,
+                ease: 'easeInOut',
+                repeat: Infinity,
+                repeatType: 'mirror'
+              }
+            }
+          }}
         >
-          <Link href="/spectacle-strasbourg/revue-scoute" scroll={false}>
-            Découvrir la tournée 2024
+          <Link
+            href="/spectacle-strasbourg/revue-scoute"
+            className="sub-heading shadow-primary-sm 0 flex w-fit items-center gap-xs rounded-sm border-b-2 border-r-2 border-primary-400 bg-primary-50 px-md py-sm text-primary-400 laptop:gap-sm laptop:px-lg laptop:py-md "
+            scroll={false}
+          >
+            <span>Découvrir la tournée 2024</span>
           </Link>
-        </UiButton>
+        </DivHoverWrapper>
       </InviewWrapper>
     </section>
   );

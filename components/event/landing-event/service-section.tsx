@@ -1,10 +1,12 @@
 import {
   ComingFromLeftVariant,
-  ComingFromRightVariant
+  ComingFromRightVariant,
+  FullTranslateFromLeft
 } from '@/components/framer-motion/div-variants';
+import DivWrapper from '@/components/framer-motion/div-wrapper';
+import DivHoverWrapper from '@/components/framer-motion/hover-wrapper';
 import InviewWrapper from '@/components/framer-motion/inview-wrapper';
 import Marquee from '@/components/framer-motion/marquee';
-import UiButton from '@/components/ui/ui-button';
 import Link from 'next/link';
 
 const ONGLETS =
@@ -53,27 +55,39 @@ export default function ServiceSection() {
           ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit,
           sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
-        <UiButton
-          href="/agence-evenementielle-strasbourg/services"
-          className="w-fit"
-          size="lg"
-          variant="solid"
-          color="primary"
+        <DivHoverWrapper
+          className="group w-fit origin-center duration-medium hover:opacity-90"
+          variant={{
+            hover: {
+              scale: 1.02,
+              transition: {
+                duration: 0.5,
+                ease: 'easeInOut',
+                repeat: Infinity,
+                repeatType: 'mirror'
+              }
+            }
+          }}
         >
           <Link
-            className="relative z-10 flex h-full w-full items-center"
             href="/agence-evenementielle-strasbourg/services"
+            className="sub-heading shadow-primary-sm 0 flex w-fit items-center gap-xs rounded-sm border-b-2 border-r-2 border-white bg-primary-400 px-md py-sm text-white laptop:gap-sm laptop:px-lg laptop:py-md "
             scroll={false}
           >
-            Découvrez nos services
+            <span>Découvrez nos services</span>
           </Link>
-        </UiButton>
+        </DivHoverWrapper>
       </div>
     ];
   };
 
   return (
-    <section className="flex w-full flex-col gap-2xl overflow-hidden overflow-x-clip bg-black">
+    <DivWrapper
+      noExit={true}
+      variant={FullTranslateFromLeft}
+      tag="section"
+      className="relative z-20 flex w-full flex-col gap-2xl overflow-hidden overflow-x-clip bg-black"
+    >
       <Marquee>
         <p className="heading--extra-large text-white">{ONGLETS}</p>
       </Marquee>
@@ -119,27 +133,34 @@ export default function ServiceSection() {
             incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur
             adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
-          <UiButton
-            href="/agence-evenementielle-strasbourg/services"
-            className="flex w-fit items-center justify-center"
-            size="lg"
-            variant="solid"
-            color="primary"
+          <DivHoverWrapper
+            className="group w-fit origin-center duration-medium hover:opacity-90"
+            variant={{
+              hover: {
+                scale: 1.02,
+                transition: {
+                  duration: 0.5,
+                  ease: 'easeInOut',
+                  repeat: Infinity,
+                  repeatType: 'mirror'
+                }
+              }
+            }}
           >
             <Link
-              className="relative z-10 flex h-full w-full items-center"
               href="/agence-evenementielle-strasbourg/services"
+              className="sub-heading shadow-primary-sm 0 flex w-fit items-center gap-xs rounded-sm border-b-2 border-r-2 border-white bg-primary-400 px-md py-sm text-white laptop:gap-sm laptop:px-lg laptop:py-md "
               scroll={false}
             >
-              Découvrez nos services
+              <span>Découvrez nos services</span>
             </Link>
-          </UiButton>
+          </DivHoverWrapper>
         </InviewWrapper>
       </div>
 
       <Marquee inverted>
         <p className="heading--extra-large text-white">{ONGLETSBIS}</p>
       </Marquee>
-    </section>
+    </DivWrapper>
   );
 }

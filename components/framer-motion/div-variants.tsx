@@ -47,6 +47,21 @@ export const ComingFromLeftVariant: Variants = {
   }
 };
 
+export const FullTranslateFromLeft: Variants = {
+  hidden: {
+    opacity: 0,
+    x: -100
+  },
+  enter: {
+    opacity: 1,
+    x: 0
+  },
+  exit: {
+    opacity: 0,
+    x: 100
+  }
+};
+
 export const TextSliderVariant: Variants = {
   hidden: {
     opacity: 0,

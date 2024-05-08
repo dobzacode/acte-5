@@ -3,8 +3,8 @@ import {
   ComingFromRightVariant,
   ComingFromTopVariant
 } from '@/components/framer-motion/div-variants';
+import DivHoverWrapper from '@/components/framer-motion/hover-wrapper';
 import InviewWrapper from '@/components/framer-motion/inview-wrapper';
-import UiButton from '@/components/ui/ui-button';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -106,20 +106,28 @@ export default function SpectacleSection() {
         }}
         className="relative z-10 flex h-fit w-full items-center justify-center"
       >
-        <UiButton
-          href="/agence-evenementielle-strasbourg/services/spectacle-entreprise"
-          size="lg"
-          className="w-fit"
-          variant="solid"
-          color="white"
+        <DivHoverWrapper
+          className="group w-fit origin-center duration-medium hover:opacity-90"
+          variant={{
+            hover: {
+              scale: 1.02,
+              transition: {
+                duration: 0.5,
+                ease: 'easeInOut',
+                repeat: Infinity,
+                repeatType: 'mirror'
+              }
+            }
+          }}
         >
           <Link
             href="/agence-evenementielle-strasbourg/services/spectacle-entreprise"
+            className="sub-heading shadow-primary-sm 0 flex w-fit items-center gap-xs rounded-sm border-b-2 border-r-2 border-black bg-white px-md py-sm text-black laptop:gap-sm laptop:px-lg laptop:py-md "
             scroll={false}
           >
-            Découvrir d'avantage
+            <span>Découvrir d'avantage</span>
           </Link>
-        </UiButton>
+        </DivHoverWrapper>
       </InviewWrapper>
     </section>
   );

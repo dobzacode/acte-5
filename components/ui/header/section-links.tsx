@@ -16,7 +16,9 @@ export default function SectionLinks({ pathname }: { pathname: string }) {
             : ''
         )}
       >
-        <Link href="/agence-evenementielle-strasbourg">Evenementiel</Link>
+        <Link scroll={false} href="/agence-evenementielle-strasbourg">
+          Evenementiel
+        </Link>
       </li>
       <li
         className={cn(
@@ -30,7 +32,9 @@ export default function SectionLinks({ pathname }: { pathname: string }) {
             : ''
         )}
       >
-        <Link href="/spectacles-strasbourg">Spectacle</Link>
+        <Link scroll={false} href="/spectacles-strasbourg">
+          Spectacle
+        </Link>
       </li>
     </ul>
   );

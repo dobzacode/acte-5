@@ -2,14 +2,13 @@ import {
   ComingFromLeftVariant,
   ComingFromRightVariant
 } from '@/components/framer-motion/div-variants';
+import DivHoverWrapper from '@/components/framer-motion/hover-wrapper';
 import InviewWrapper from '@/components/framer-motion/inview-wrapper';
-import UiButton from '@/components/ui/ui-button';
 import Link from 'next/link';
-import { LuChevronRight } from 'react-icons/lu';
 
 export default function TrustSection() {
   return (
-    <section className="section-px inner-section-gap flex h-fit w-full  flex-col">
+    <section className="section-px inner-section-gap relative z-10 flex h-fit w-full  flex-col">
       <InviewWrapper
         variant={ComingFromLeftVariant}
         viewport={{ once: true, margin: '-200px 0px -200px 0px' }}
@@ -37,18 +36,28 @@ export default function TrustSection() {
             <p className="aspect-square  rounded-sm bg-gray-200 "> </p>
           </div>
         </div>
-        <UiButton
-          href="/agence-evenementielle-strasbourg/temoignages"
-          size="lg"
-          className="w-fit "
-          variant="solid"
-          color="pastelPrimary"
-          endContent={<LuChevronRight className="shrink-0" />}
+        <DivHoverWrapper
+          className="group w-fit origin-center duration-medium hover:opacity-90"
+          variant={{
+            hover: {
+              scale: 1.02,
+              transition: {
+                duration: 0.5,
+                ease: 'easeInOut',
+                repeat: Infinity,
+                repeatType: 'mirror'
+              }
+            }
+          }}
         >
-          <Link href="/agence-evenementielle-strasbourg/temoignages" scroll={false}>
-            Voir les témoignages
+          <Link
+            href="/agence-evenementielle-strasbourg/temoignages"
+            className="sub-heading shadow-primary-sm 0 flex w-fit items-center gap-xs rounded-sm border-b-2 border-r-2 border-primary-400 bg-primary-50 px-md py-sm text-primary-400 laptop:gap-sm laptop:px-lg laptop:py-md "
+            scroll={false}
+          >
+            <span>Voir les témoignages</span>
           </Link>
-        </UiButton>
+        </DivHoverWrapper>
       </InviewWrapper>
     </section>
   );

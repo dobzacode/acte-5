@@ -26,7 +26,7 @@ export default function GalleryScrollAnimation({}) {
 
   return (
     <div ref={ref} className="relative -z-10 h-[2000px] w-full pt-8xl max-tablet:hidden">
-      <div className="sticky top-1/2 flex   items-center justify-center ">
+      <div className="sticky top-0 flex   items-center justify-center ">
         <motion.div
           style={{ scale: scale, x: positiveXTranslation, rotate: positiveRotate, opacity }}
           className=" absolute mx-auto aspect-square h-[20rem] origin-center overflow-hidden rounded-sm  "
