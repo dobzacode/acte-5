@@ -3,15 +3,13 @@ import {
   ComingFromTopVariant
 } from '@/components/framer-motion/div-variants';
 import InviewWrapper from '@/components/framer-motion/inview-wrapper';
-import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
-import { cn } from '@/lib/utils';
 import { sanityFetch } from '@/sanity/lib/fetch';
 import { AFFICHES_QUERY, AffichesQueryResponse, Image as SanityImage } from '@/sanity/lib/queries';
 import { urlForImage } from '@/sanity/lib/utils';
 import { draftMode } from 'next/headers';
-import Image from 'next/image';
 
 import { notFound } from 'next/navigation';
+import PastCarousel from './past-carousel';
 
 export default async function PastSection() {
   const affiches = await sanityFetch<AffichesQueryResponse>({
@@ -47,31 +45,7 @@ export default async function PastSection() {
         </h2>
       </InviewWrapper>
       <InviewWrapper variant={ComingFromBottomVariant}>
-        <Carousel className="max-w-[100vw] [&>div]:rounded-sm">
-          <CarouselContent className="justify-center laptop-large:-ml-sm">
-            {imagesWithUrl.map((image, index) => (
-              <CarouselItem className=" basis-1/2 mobile-large:basis-1/3 tablet:basis-1/4 laptop-large:basis-1/6 laptop-large:pr-sm  ">
-                <div
-                  className={cn(
-                    'card   relative flex  h-full flex-col items-center gap-sm  rounded-sm border-0 p-0 shadow-xl'
-                  )}
-                  key={index}
-                >
-                  <Image
-                    width={400}
-                    height={400}
-                    className={cn('aspect-square w-full cursor-pointer rounded-sm object-cover')}
-                    sizes={'(max-width: 640px) 100vw, 50vw'}
-                    src={image.url}
-                    placeholder="blur"
-                    blurDataURL={image.blurSrc}
-                    alt={image.alt ? image.alt : `Image ${index + 1}`}
-                  ></Image>
-                </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-        </Carousel>
+        <PastCarousel imagesWithUrl={imagesWithUrl} />
       </InviewWrapper>
     </section>
   );

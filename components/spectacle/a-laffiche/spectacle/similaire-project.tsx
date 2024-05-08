@@ -4,15 +4,15 @@ import {
 } from '@/components/framer-motion/div-variants';
 import InviewWrapper from '@/components/framer-motion/inview-wrapper';
 import { sanityFetch } from '@/sanity/lib/fetch';
-import { SPECTACLES_QUERY, SpectaclesQueryResponse } from '@/sanity/lib/queries';
+import { SpectaclesQueryResponse } from '@/sanity/lib/queries';
 import { urlForImage } from '@/sanity/lib/utils';
 import { draftMode } from 'next/headers';
 import { notFound } from 'next/navigation';
 import SimilaireCarousel from './similaire-carousel';
 
-export default async function SimilaireProject() {
+export default async function SimilaireProject({ actualSpectacle }: { actualSpectacle: string }) {
   const spectacles = await sanityFetch<SpectaclesQueryResponse>({
-    query: SPECTACLES_QUERY,
+    query: `*[_type == "spectacle" && !(slug.current == "${actualSpectacle}")]`,
     stega: draftMode().isEnabled,
     perspective: draftMode().isEnabled ? 'previewDrafts' : 'published'
   });

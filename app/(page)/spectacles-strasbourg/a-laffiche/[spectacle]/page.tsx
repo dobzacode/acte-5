@@ -80,7 +80,7 @@ export default async function Page({ params }: Props) {
             <SpectacleContent spectacle={spectacle} />
           </DivWrapper>
         </section>
-        <SimilaireProject></SimilaireProject>
+        <SimilaireProject actualSpectacle={params.spectacle}></SimilaireProject>
       </main>
     </>
   );

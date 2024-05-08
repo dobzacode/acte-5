@@ -33,8 +33,8 @@ export default function PostSnippet({
         />
       </Link>
 
-      <div className="flex w-full flex-col gap-md mobile-large:gap-lg tablet:gap-xl laptop:w-3/4 ">
-        <p className="body whitespace-nowrap font-bold ">
+      <div className="max-tablet:card flex w-full flex-col gap-md mobile-large:gap-lg tablet:gap-xl laptop:w-3/4">
+        <p className="body  whitespace-nowrap font-bold">
           {format(new Date(post._createdAt), 'dd MMMM yyyy', { locale: fr }).toUpperCase()}
         </p>
         <InViewWrapper
@@ -48,7 +48,7 @@ export default function PostSnippet({
             </Link>
           </h2>
         </InViewWrapper>
-        <p className="sub-heading ">
+        <p className="sub-heading line-clamp-4">
           {post.description
             ? post.description
             : `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lacinia quam non mi

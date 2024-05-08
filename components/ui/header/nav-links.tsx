@@ -27,26 +27,26 @@ export const SPECTACLELINKS: Links[] = [
 export default function NavLinks({ isEvent, pathname }: { isEvent: boolean; pathname: string }) {
   const links = isEvent ? EVENTLINKS : SPECTACLELINKS;
 
-  console.log('rerender');
+  console.log(pathname, links);
 
   return (
     <nav className="">
       <ul className="flex justify-between gap-md tablet:gap-lg laptop:gap-xl ">
         {links.map((link, index) => (
           <motion.li
-            initial={{ y: -200 }}
+            initial={{ y: -100 }}
             animate={{
               y: 0,
               transition: { ease: 'easeInOut', delay: index * 0.15, duration: 0.9 }
             }}
             exit={{
-              y: -200,
-              transition: { ease: 'easeInOut', duration: 0.9, delay: index * 0.15 }
+              y: 50,
+              transition: { ease: 'easeInOut', duration: 0.4, delay: index * 0.15 }
             }}
-            key={link.name}
+            key={`${link.href}`}
             className={cn(
-              pathname.includes(link.href) && 'font-semibold',
               'body w-fit text-center font-normal hover:font-semibold',
+              pathname.includes(link.href) && 'font-semibold',
               link.name.includes(' ') && 'shrink-0'
             )}
           >

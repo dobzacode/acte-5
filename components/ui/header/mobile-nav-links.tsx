@@ -3,7 +3,6 @@
 import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { v4 as uuidv4 } from 'uuid';
 import { EVENTLINKS, SPECTACLELINKS } from './nav-links';
 
 export default function MobileNavLinks({
@@ -21,7 +20,7 @@ export default function MobileNavLinks({
     <>
       {links.map((link, index) => (
         <motion.li
-          key={uuidv4()}
+          key={`${link.href}`}
           onClick={() => setShowMenu(false)}
           initial={{ x: -300 }}
           animate={{

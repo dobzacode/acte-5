@@ -45,6 +45,7 @@ const SimilaireCarousel: React.FC<PropType> = (props) => {
           {props.imageArr.map((image, index) => (
             <CarouselItem className=" basis-full mobile-large:basis-1/2 tablet:basis-1/3 laptop:basis-1/3 laptop-large:basis-1/3 laptop-large:pr-sm ">
               <Link
+                scroll={false}
                 href={`/spectacles-strasbourg/a-laffiche/${image.slug.current}`}
                 className={cn(
                   'card   relative flex  h-full flex-col items-center gap-md overflow-hidden rounded-sm border-0 p-0 shadow-xl'

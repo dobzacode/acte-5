@@ -2,7 +2,6 @@ import { ComingFromTopVariant } from '@/components/framer-motion/div-variants';
 import DivWrapper from '@/components/framer-motion/div-wrapper';
 import Header from '@/components/ui/header/header';
 import HeaderWrapper from '@/components/ui/header/header-wrapper';
-import FramerMotionWrapper from '@/components/wrapper/framer-motion-wrapper';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -23,7 +22,7 @@ export default function RootLayout({
           <Header></Header>
         </HeaderWrapper>
       </DivWrapper>
-      <FramerMotionWrapper>{children}</FramerMotionWrapper>
+      {children}
     </>
   );
 }

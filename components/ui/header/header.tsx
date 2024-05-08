@@ -51,17 +51,19 @@ export default function Header({ className }: { className?: string }) {
         <Logo className={cn('w-xl duration-medium ')}></Logo>
         <p className="heading n  font-bold max-laptop:hidden">ACTE 5</p>
       </div>
-      <AnimatePresence mode="wait">
-        {isTablet && pathname !== '/' ? (
-          <>
+
+      {isTablet && pathname !== '/' ? (
+        <>
+          <AnimatePresence mode="wait">
             {pathname.includes('agence-evenementielle-strasbourg') ? (
               <NavLinks key="menuEvent" pathname={pathname} isEvent={true} />
             ) : (
               <NavLinks key="menuSpectacle" pathname={pathname} isEvent={false} />
             )}
-          </>
-        ) : null}
-      </AnimatePresence>
+          </AnimatePresence>
+        </>
+      ) : null}
+
       <nav
         onClick={() => {
           setShowMenu(false);
@@ -100,9 +102,19 @@ export default function Header({ className }: { className?: string }) {
                   )}
                 >
                   {pathname.includes('agence-evenementielle-strasbourg') ? (
-                    <MobileNavLinks setShowMenu={setShowMenu} pathname={pathname} isEvent={true} />
+                    <MobileNavLinks
+                      key={'event-laptop-navigation'}
+                      setShowMenu={setShowMenu}
+                      pathname={pathname}
+                      isEvent={true}
+                    />
                   ) : (
-                    <MobileNavLinks setShowMenu={setShowMenu} pathname={pathname} isEvent={false} />
+                    <MobileNavLinks
+                      key={'spectacle-laptop-navigation'}
+                      setShowMenu={setShowMenu}
+                      pathname={pathname}
+                      isEvent={false}
+                    />
                   )}
                 </ul>
               </motion.nav>
