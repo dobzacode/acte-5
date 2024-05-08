@@ -37,7 +37,7 @@ export default function ProjectSection({ events }: { events: EventWithImgAndInde
         )}
       </AnimatePresence>
       <InviewWrapper
-        className="laptop:fade-x relative overflow-x-hidden laptop:w-1/2"
+        className="laptop:fade-x relative flex justify-center overflow-x-hidden laptop:w-1/2"
         variant={ComingFromRightVariant}
       >
         <ProjectCarousel
