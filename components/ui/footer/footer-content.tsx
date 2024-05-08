@@ -13,42 +13,42 @@ export default function FooterContent() {
           <Link
             scroll={false}
             className="sub-heading pb-sm font-normal hover:opacity-hover"
-            href="agence-evenementielle-strasbourg"
+            href="/agence-evenementielle-strasbourg"
           >
             Evenementiel
           </Link>
           <Link
             scroll={false}
             className="body hover:opacity-hover"
-            href="agence-evenementielle-strasbourg/service"
+            href="/agence-evenementielle-strasbourg/service"
           >
             Service
           </Link>
           <Link
             scroll={false}
             className="body hover:opacity-hover"
-            href="agence-evenementielle-strasbourg/temoignages"
+            href="/agence-evenementielle-strasbourg/temoignages"
           >
             Témoignages
           </Link>
           <Link
             scroll={false}
             className="body hover:opacity-hover"
-            href="agence-evenementielle-strasbourg/a-propos"
+            href="/agence-evenementielle-strasbourg/a-propos"
           >
             A propos
           </Link>
           <Link
             scroll={false}
             className="body hover:opacity-hover"
-            href="agence-evenementielle-strasbourg/blog"
+            href="/agence-evenementielle-strasbourg/blog"
           >
             Blog
           </Link>
           <Link
             scroll={false}
             className="body hover:opacity-hover"
-            href="agence-evenementielle-strasbourg/contact"
+            href="/agence-evenementielle-strasbourg/contact"
           >
             Contact
           </Link>
@@ -57,42 +57,36 @@ export default function FooterContent() {
           <Link
             scroll={false}
             className="sub-heading pb-sm font-normal hover:opacity-hover"
-            href="spectacles-strasbourg"
+            href="/spectacles-strasbourg"
           >
             Spectacle
           </Link>
           <Link
             scroll={false}
             className="body hover:opacity-hover"
-            href="spectacles-strasbourg/revue-scoute"
+            href="/spectacles-strasbourg/revue-scoute"
           >
             Revue scoute
           </Link>
           <Link
             scroll={false}
             className="body hover:opacity-hover"
-            href="spectacles-strasbourg/a-laffiche"
+            href="/spectacles-strasbourg/a-laffiche"
           >
             A l'affiche
           </Link>
+
           <Link
             scroll={false}
             className="body hover:opacity-hover"
-            href="spectacles-strasbourg/portfolio"
-          >
-            Portfolio
-          </Link>
-          <Link
-            scroll={false}
-            className="body hover:opacity-hover"
-            href="spectacles-strasbourg/a-propos"
+            href="/spectacles-strasbourg/a-propos"
           >
             A propos
           </Link>
           <Link
             scroll={false}
             className="body hover:opacity-hover"
-            href="spectacles-strasbourg/contact"
+            href="/spectacles-strasbourg/contact"
           >
             Contact
           </Link>

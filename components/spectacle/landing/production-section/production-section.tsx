@@ -85,7 +85,7 @@ export default function ProductionSection() {
             }}
           >
             <Link
-              href="/spectacle-strasbourg/a-propos"
+              href="/spectacles-strasbourg/a-propos"
               className="sub-heading shadow-primary-sm 0 flex w-fit items-center gap-xs rounded-sm border-b-2 border-r-2 border-black bg-white px-md py-sm text-black laptop:gap-sm laptop:px-lg laptop:py-md "
               scroll={false}
             >
