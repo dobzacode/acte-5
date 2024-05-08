@@ -34,23 +34,25 @@ export default async function Home() {
           { href: '/agence-evenementielle-strasbourg/blog', text: 'Blog' }
         ]}
       ></TitleSection>
-      <ul className="section-px flex flex-col gap-xl pt-xl laptop:container  mobile-small:gap-3xl mobile-medium:gap-2xl mobile-large:gap-4xl tablet:gap-5xl laptop:mx-auto laptop:gap-6xl laptop-large:gap-6xl">
-        {posts
-          ? posts.map((post: Post, index: number) => {
-              return (
-                <InviewWrapper
-                  tag="li"
-                  className=""
-                  variant={index % 2 ? ComingFromLeftVariant : ComingFromRightVariant}
-                  inverseOnExit={true}
-                  key={post._id}
-                >
-                  <PostSnippet className={index % 2 ? 'flex-row-reverse' : ''} post={post} />
-                </InviewWrapper>
-              );
-            })
-          : 'No posts found'}
-      </ul>
+      <section className="mx-auto w-fit">
+        <ul className="section-px flex flex-col gap-xl pt-xl laptop:container  mobile-small:gap-3xl mobile-medium:gap-2xl mobile-large:gap-4xl tablet:gap-5xl laptop:mx-auto laptop:gap-6xl laptop-large:gap-6xl">
+          {posts
+            ? posts.map((post: Post, index: number) => {
+                return (
+                  <InviewWrapper
+                    tag="li"
+                    className=""
+                    variant={index % 2 ? ComingFromLeftVariant : ComingFromRightVariant}
+                    inverseOnExit={true}
+                    key={post._id}
+                  >
+                    <PostSnippet className={index % 2 ? 'flex-row-reverse' : ''} post={post} />
+                  </InviewWrapper>
+                );
+              })
+            : 'No posts found'}
+        </ul>
+      </section>
     </main>
   );
 }

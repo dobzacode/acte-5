@@ -11,13 +11,16 @@ import { Textarea } from '@/components/ui/shadcn/textarea';
 import { cn } from '@/lib/utils';
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 import BarLoader from 'react-spinners/BarLoader';
+import { Label } from '../ui/shadcn/label';
 import UiButton from '../ui/ui-button';
 
 const formSchema = z.object({
   sujet: z.string().min(2, {
     message: 'Le sujet doit comporter au moins deux caractères.'
   }),
-
+  société: z.string().min(2, {
+    message: 'La société doit comporter au moins deux caractères.'
+  }),
   nom: z.string().min(2, {
     message: 'Le nom doit comporter au moins deux caractères.'
   }),
@@ -48,6 +51,7 @@ export default function SpectacleForm() {
     resolver: zodResolver(formSchema),
     defaultValues: {
       sujet: '',
+      société: '',
       nom: '',
       prénom: '',
       email: '',
@@ -77,7 +81,7 @@ export default function SpectacleForm() {
       <form
         onSubmit={form.handleSubmit(onSubmit)}
         aria-disabled={form.formState.isSubmitting}
-        className="card container mx-auto flex max-w-[40rem] flex-col gap-lg"
+        className="card container mx-auto flex max-w-[40rem] flex-col gap-lg border-black/10 p-lg"
       >
         <div
           className={cn('grid grid-cols-2 gap-md', form.formState.isSubmitting && 'animate-pulse')}
@@ -87,13 +91,16 @@ export default function SpectacleForm() {
             name="sujet"
             disabled={form.formState.isSubmitting}
             render={({ field }) => (
-              <FormItem className="col-span-1">
+              <FormItem className="col-span-1 flex flex-col gap-0.5">
+                <Label className="caption font-normal" htmlFor={'sujet'}>
+                  Sujet *
+                </Label>
                 <FormControl>
                   <Input
-                    className="body rounded-xs  border-x-0  border-t-0  shadow-inner ring-primary-400"
+                    className="body rounded-xs    shadow-inner ring-primary-400"
                     required
                     color="primary"
-                    placeholder="Sujet *"
+                    placeholder=""
                     {...field}
                   />
                 </FormControl>
@@ -101,19 +108,41 @@ export default function SpectacleForm() {
               </FormItem>
             )}
           />
-
+          <FormField
+            control={form.control}
+            name="société"
+            disabled={form.formState.isSubmitting}
+            render={({ field }) => (
+              <FormItem className="col-span-1 flex flex-col gap-0.5">
+                <Label className="caption font-normal" htmlFor={'société'}>
+                  Société
+                </Label>
+                <FormControl>
+                  <Input
+                    className="body rounded-xs    shadow-inner ring-primary-400"
+                    required
+                    color="primary"
+                    {...field}
+                  />
+                </FormControl>
+                <FormMessage className="text-sm font-normal text-danger-400" />
+              </FormItem>
+            )}
+          />
           <FormField
             control={form.control}
             name="nom"
             disabled={form.formState.isSubmitting}
             render={({ field }) => (
-              <FormItem className="col-span-1">
+              <FormItem className="col-span-1 flex flex-col gap-0.5">
+                <Label className="caption font-normal" htmlFor={'nom'}>
+                  Nom *
+                </Label>
                 <FormControl>
                   <Input
-                    className="body rounded-xs  border-x-0  border-t-0  shadow-inner ring-primary-400"
+                    className="body rounded-xs    shadow-inner ring-primary-400"
                     required
                     color="primary"
-                    placeholder="Nom *"
                     {...field}
                   />
                 </FormControl>
@@ -126,13 +155,15 @@ export default function SpectacleForm() {
             name="prénom"
             disabled={form.formState.isSubmitting}
             render={({ field }) => (
-              <FormItem className="col-span-1">
+              <FormItem className="col-span-1 flex flex-col gap-0.5">
+                <Label className="caption font-normal" htmlFor={'prénom'}>
+                  Prénom *
+                </Label>
                 <FormControl>
                   <Input
-                    className="body rounded-xs  border-x-0  border-t-0  shadow-inner ring-primary-400"
+                    className="body rounded-xs    shadow-inner ring-primary-400"
                     required
                     color="primary"
-                    placeholder="Prénom *"
                     {...field}
                   />
                 </FormControl>
@@ -145,12 +176,15 @@ export default function SpectacleForm() {
             disabled={form.formState.isSubmitting}
             name="email"
             render={({ field }) => (
-              <FormItem className="col-span-1">
+              <FormItem className="col-span-1 flex flex-col gap-0.5">
+                <Label className="caption font-normal" htmlFor={'email'}>
+                  Email *
+                </Label>
+
                 <FormControl>
                   <Input
-                    className="body rounded-xs  border-x-0  border-t-0  shadow-inner ring-primary-400"
+                    className="body rounded-xs    shadow-inner ring-primary-400"
                     color="primary"
-                    placeholder="Email *"
                     required
                     {...field}
                   />
@@ -164,13 +198,15 @@ export default function SpectacleForm() {
             disabled={form.formState.isSubmitting}
             name="téléphone"
             render={({ field }) => (
-              <FormItem className="col-span-1">
+              <FormItem className="col-span-1 flex flex-col gap-0.5">
+                <Label className="caption font-normal" htmlFor={'téléphone'}>
+                  Téléphone
+                </Label>
                 <FormControl>
                   <Input
-                    className="body rounded-xs  border-x-0  border-t-0  shadow-inner ring-primary-400"
+                    className="body rounded-xs    shadow-inner ring-primary-400"
                     type="number"
                     color="primary"
-                    placeholder="Téléphone"
                     {...field}
                   />
                 </FormControl>
@@ -183,14 +219,17 @@ export default function SpectacleForm() {
             disabled={form.formState.isSubmitting}
             name="message"
             render={({ field }) => (
-              <FormItem className="col-span-2">
+              <FormItem className="col-span-2 flex flex-col gap-0.5">
+                <Label className="caption font-normal" htmlFor={'message'}>
+                  Message *
+                </Label>
                 <FormControl>
                   <Textarea
-                    className="body rounded-xs  border-x-0  border-t-0  shadow-inner ring-primary-400"
+                    rows={4}
+                    className="body rounded-xs    shadow-inner ring-primary-400"
                     required
                     color="primary"
                     {...field}
-                    placeholder="Message *"
                   />
                 </FormControl>
                 <FormMessage className="text-sm font-normal text-danger-400" />
@@ -216,7 +255,7 @@ export default function SpectacleForm() {
         >
           Envoyer ma demande
         </UiButton>
-        <p className={`caption  text-center`}>
+        <p className={`caption text-center  font-normal`}>
           Ce site est protégé par reCAPTCHA, les
           <a className="text-primary-500" href="https://policies.google.com/privacy">
             {' '}

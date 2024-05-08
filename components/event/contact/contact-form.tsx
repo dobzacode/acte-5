@@ -7,6 +7,7 @@ import { z } from 'zod';
 import { verifyCaptchaAction } from '@/app/_actions';
 import { Form, FormControl, FormField, FormItem, FormMessage } from '@/components/ui/shadcn/form';
 import { Input } from '@/components/ui/shadcn/input';
+import { Label } from '@/components/ui/shadcn/label';
 import { Textarea } from '@/components/ui/shadcn/textarea';
 import { cn } from '@/lib/utils';
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
@@ -17,7 +18,7 @@ const formSchema = z.object({
   type: z.string().min(2, {
     message: 'Le type de projet doit comporter au moins deux caractères.'
   }),
-  societé: z.string().min(2, {
+  société: z.string().min(2, {
     message: 'La société doit comporter au moins deux caractères.'
   }),
   nom: z.string().min(2, {
@@ -50,7 +51,7 @@ export default function ContactForm() {
     resolver: zodResolver(formSchema),
     defaultValues: {
       type: '',
-      societé: '',
+      société: '',
       nom: '',
       prénom: '',
       email: '',
@@ -80,7 +81,7 @@ export default function ContactForm() {
       <form
         onSubmit={form.handleSubmit(onSubmit)}
         aria-disabled={form.formState.isSubmitting}
-        className="card container mx-auto flex max-w-[40rem] flex-col gap-lg"
+        className="card container mx-auto flex max-w-[40rem] flex-col gap-lg border-black/10 p-lg"
       >
         <div
           className={cn('grid grid-cols-2 gap-md', form.formState.isSubmitting && 'animate-pulse')}
@@ -90,13 +91,16 @@ export default function ContactForm() {
             name="type"
             disabled={form.formState.isSubmitting}
             render={({ field }) => (
-              <FormItem className="col-span-1">
+              <FormItem className="col-span-1 flex flex-col gap-0.5">
+                <Label className="caption font-normal" htmlFor={'type'}>
+                  Type de projet *
+                </Label>
                 <FormControl>
                   <Input
-                    className="body rounded-xs  border-x-0  border-t-0  shadow-inner ring-primary-400"
+                    className="body rounded-xs    shadow-inner ring-primary-400"
                     required
                     color="primary"
-                    placeholder="Type de projet *"
+                    placeholder=""
                     {...field}
                   />
                 </FormControl>
@@ -106,16 +110,18 @@ export default function ContactForm() {
           />
           <FormField
             control={form.control}
-            name="societé"
+            name="société"
             disabled={form.formState.isSubmitting}
             render={({ field }) => (
-              <FormItem className="col-span-1">
+              <FormItem className="col-span-1 flex flex-col gap-0.5">
+                <Label className="caption font-normal" htmlFor={'société'}>
+                  Société *
+                </Label>
                 <FormControl>
                   <Input
-                    className="body rounded-xs  border-x-0  border-t-0  shadow-inner ring-primary-400"
+                    className="body rounded-xs    shadow-inner ring-primary-400"
                     required
                     color="primary"
-                    placeholder="Societé *"
                     {...field}
                   />
                 </FormControl>
@@ -128,13 +134,15 @@ export default function ContactForm() {
             name="nom"
             disabled={form.formState.isSubmitting}
             render={({ field }) => (
-              <FormItem className="col-span-1">
+              <FormItem className="col-span-1 flex flex-col gap-0.5">
+                <Label className="caption font-normal" htmlFor={'nom'}>
+                  Nom *
+                </Label>
                 <FormControl>
                   <Input
-                    className="body rounded-xs  border-x-0  border-t-0  shadow-inner ring-primary-400"
+                    className="body rounded-xs    shadow-inner ring-primary-400"
                     required
                     color="primary"
-                    placeholder="Nom *"
                     {...field}
                   />
                 </FormControl>
@@ -147,13 +155,15 @@ export default function ContactForm() {
             name="prénom"
             disabled={form.formState.isSubmitting}
             render={({ field }) => (
-              <FormItem className="col-span-1">
+              <FormItem className="col-span-1 flex flex-col gap-0.5">
+                <Label className="caption font-normal" htmlFor={'prénom'}>
+                  Prénom *
+                </Label>
                 <FormControl>
                   <Input
-                    className="body rounded-xs  border-x-0  border-t-0  shadow-inner ring-primary-400"
+                    className="body rounded-xs    shadow-inner ring-primary-400"
                     required
                     color="primary"
-                    placeholder="Prénom *"
                     {...field}
                   />
                 </FormControl>
@@ -166,12 +176,15 @@ export default function ContactForm() {
             disabled={form.formState.isSubmitting}
             name="email"
             render={({ field }) => (
-              <FormItem className="col-span-1">
+              <FormItem className="col-span-1 flex flex-col gap-0.5">
+                <Label className="caption font-normal" htmlFor={'email'}>
+                  Email *
+                </Label>
+
                 <FormControl>
                   <Input
-                    className="body rounded-xs  border-x-0  border-t-0  shadow-inner ring-primary-400"
+                    className="body rounded-xs    shadow-inner ring-primary-400"
                     color="primary"
-                    placeholder="Email *"
                     required
                     {...field}
                   />
@@ -185,13 +198,15 @@ export default function ContactForm() {
             disabled={form.formState.isSubmitting}
             name="téléphone"
             render={({ field }) => (
-              <FormItem className="col-span-1">
+              <FormItem className="col-span-1 flex flex-col gap-0.5">
+                <Label className="caption font-normal" htmlFor={'téléphone'}>
+                  Téléphone
+                </Label>
                 <FormControl>
                   <Input
-                    className="body rounded-xs  border-x-0  border-t-0  shadow-inner ring-primary-400"
+                    className="body rounded-xs    shadow-inner ring-primary-400"
                     type="number"
                     color="primary"
-                    placeholder="Téléphone"
                     {...field}
                   />
                 </FormControl>
@@ -204,14 +219,17 @@ export default function ContactForm() {
             disabled={form.formState.isSubmitting}
             name="message"
             render={({ field }) => (
-              <FormItem className="col-span-2">
+              <FormItem className="col-span-2 flex flex-col gap-0.5">
+                <Label className="caption font-normal" htmlFor={'message'}>
+                  Message *
+                </Label>
                 <FormControl>
                   <Textarea
-                    className="body rounded-xs  border-x-0  border-t-0  shadow-inner ring-primary-400"
+                    rows={4}
+                    className="body rounded-xs    shadow-inner ring-primary-400"
                     required
                     color="primary"
                     {...field}
-                    placeholder="Message *"
                   />
                 </FormControl>
                 <FormMessage className="text-sm font-normal text-danger-400" />
@@ -237,7 +255,7 @@ export default function ContactForm() {
         >
           Envoyer ma demande
         </UiButton>
-        <p className={`caption  text-center`}>
+        <p className={`caption text-center  font-normal`}>
           Ce site est protégé par reCAPTCHA, les
           <a className="text-primary-500" href="https://policies.google.com/privacy">
             {' '}
