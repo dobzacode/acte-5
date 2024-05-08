@@ -31,8 +31,10 @@ export default async function Affiches() {
 
   return (
     <ul className="max-tablet:section-px grid w-full grid-cols-1 flex-wrap gap-md mobile-medium:grid-cols-2 tablet:flex tablet:justify-center">
-      {withUrl.map((spectacle) => {
-        return <SpectacleCard spectacle={spectacle} key={spectacle._id}></SpectacleCard>;
+      {withUrl.map((spectacle, index) => {
+        return (
+          <SpectacleCard index={index} spectacle={spectacle} key={spectacle._id}></SpectacleCard>
+        );
       })}
     </ul>
   );

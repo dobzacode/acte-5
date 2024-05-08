@@ -248,7 +248,7 @@ export default function SpectacleForm() {
               style={{ position: 'absolute', bottom: '0.2rem', width: '100%' }}
             ></BarLoader>
           }
-          className="relative h-unit-2xl"
+          className="relative h-unit-2xl rounded-xs"
           isLoading={form.formState.isSubmitting}
           type="submit"
           color="primary"

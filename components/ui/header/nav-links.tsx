@@ -50,7 +50,9 @@ export default function NavLinks({ isEvent, pathname }: { isEvent: boolean; path
               link.name.includes(' ') && 'shrink-0'
             )}
           >
-            <Link href={link.href}>{link.name}</Link>
+            <Link scroll={false} href={link.href}>
+              {link.name}
+            </Link>
           </motion.li>
         ))}
       </ul>

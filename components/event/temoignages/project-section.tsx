@@ -1,7 +1,11 @@
 'use client';
 
 import { EventWithImgAndIndex } from '@/app/(page)/agence-evenementielle-strasbourg/temoignages/page';
-import { ComingFromRightVariant, TextSliderVariant } from '@/components/framer-motion/div-variants';
+import {
+  ComingFromLeftVariant,
+  ComingFromRightVariant,
+  TextSliderVariant
+} from '@/components/framer-motion/div-variants';
 import InviewWrapper from '@/components/framer-motion/inview-wrapper';
 import { AnimatePresence } from 'framer-motion';
 import { useEffect, useState } from 'react';
@@ -18,7 +22,11 @@ export default function ProjectSection({ events }: { events: EventWithImgAndInde
   }, [selectedIndex, events]);
 
   return (
-    <section className="laptop:section-px flex justify-between gap-xl laptop:container max-laptop:flex-col laptop:mx-auto">
+    <InviewWrapper
+      variant={ComingFromLeftVariant}
+      tag="section"
+      className="laptop:section-px flex justify-between gap-xl laptop:container max-laptop:flex-col laptop:mx-auto"
+    >
       <AnimatePresence mode="wait">
         {selectedEvent && (
           <InviewWrapper
@@ -46,6 +54,6 @@ export default function ProjectSection({ events }: { events: EventWithImgAndInde
           events={events}
         ></ProjectCarousel>
       </InviewWrapper>
-    </section>
+    </InviewWrapper>
   );
 }

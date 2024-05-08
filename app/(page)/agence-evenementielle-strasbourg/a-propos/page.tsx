@@ -17,8 +17,8 @@ export default function Home() {
       <TitleSection
         title={'A PROPOS'}
         element={[
-          { href: '/evenement', text: 'Évenement' },
-          { href: '/evenement/a-propos', text: 'A propos' }
+          { href: '/agence-evenementielle-strasbourg', text: 'Évenement' },
+          { href: '/agence-evenementielle-strasbourg/a-propos', text: 'A propos' }
         ]}
       ></TitleSection>
       <StaggeredText

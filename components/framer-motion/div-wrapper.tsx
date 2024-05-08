@@ -9,7 +9,7 @@ export default function DivWrapper({
   className,
   tag = 'div',
   style,
-  noExit
+  noExit = false
 }: {
   variant: Variants;
   children: React.ReactNode;
@@ -31,7 +31,7 @@ export default function DivWrapper({
       initial="hidden"
       exit={() => {
         if (noExit) return;
-        inverseOnExit ? 'exit' : 'hidden';
+        return inverseOnExit ? 'exit' : 'hidden';
       }}
       animate="enter"
     >

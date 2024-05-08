@@ -12,7 +12,7 @@ export default function InviewWrapper({
   id,
   tag = 'div',
   noExit,
-  whileHover,
+  whileHover
 }: {
   style?: MotionStyle | undefined;
   variant: Variants | undefined;
@@ -41,7 +41,7 @@ export default function InviewWrapper({
       whileHover={whileHover}
       exit={() => {
         if (noExit) return;
-        inverseOnExit ? 'exit' : 'hidden';
+        return inverseOnExit ? 'exit' : 'hidden';
       }}
     >
       {children}

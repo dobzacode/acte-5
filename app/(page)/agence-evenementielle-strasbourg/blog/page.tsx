@@ -43,7 +43,6 @@ export default async function Home() {
                     tag="li"
                     className=""
                     variant={index % 2 ? ComingFromLeftVariant : ComingFromRightVariant}
-                    inverseOnExit={true}
                     key={post._id}
                   >
                     <PostSnippet className={index % 2 ? 'flex-row-reverse' : ''} post={post} />

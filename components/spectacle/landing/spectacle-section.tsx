@@ -1,7 +1,7 @@
 import {
+  ComingFromBottomVariant,
   ComingFromLeftVariant,
-  ComingFromRightVariant,
-  ComingFromTopVariant
+  ComingFromRightVariant
 } from '@/components/framer-motion/div-variants';
 import DivHoverWrapper from '@/components/framer-motion/hover-wrapper';
 import InviewWrapper from '@/components/framer-motion/inview-wrapper';
@@ -29,27 +29,26 @@ export default function SpectacleSection() {
           variant={{
             hidden: {
               opacity: 0,
-              x: 200
+              x: -200
             },
             enter: {
               opacity: 1,
               x: 0,
               transition: {
-                delay: 1,
                 type: 'spring',
                 damping: 20
               }
             },
             exit: {
               opacity: 0,
-              x: 200
+              x: -200
             }
           }}
           className="sub-heading relative -z-10 max-tablet:hidden"
         >
           LOREM IPSUM DOLOR SIT AMET
         </InviewWrapper>
-        <InviewWrapper className="relative -z-20" variant={ComingFromTopVariant}>
+        <InviewWrapper className="relative -z-20" variant={ComingFromBottomVariant}>
           <Image
             src="/placeholder-image.png"
             alt="image"
@@ -62,20 +61,19 @@ export default function SpectacleSection() {
           variant={{
             hidden: {
               opacity: 0,
-              x: -200
+              x: 200
             },
             enter: {
               opacity: 1,
               x: 0,
               transition: {
-                delay: 1,
                 type: 'spring',
                 damping: 20
               }
             },
             exit: {
               opacity: 0,
-              x: -200
+              x: 200
             }
           }}
           className="sub-heading relative -z-10 max-tablet:hidden"
@@ -94,7 +92,6 @@ export default function SpectacleSection() {
             opacity: 1,
             y: 0,
             transition: {
-              delay: 1,
               type: 'spring',
               damping: 20
             }
