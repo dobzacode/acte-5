@@ -6,6 +6,7 @@ import DivHoverWrapper from '@/components/framer-motion/hover-wrapper';
 import InviewWrapper from '@/components/framer-motion/inview-wrapper';
 import StaggeredText from '@/components/framer-motion/staggered-text';
 import Link from 'next/link';
+import { LuArrowUpRight } from 'react-icons/lu';
 import CompetenceSection from './competence-section';
 
 export default function AproposSection() {
@@ -41,10 +42,11 @@ export default function AproposSection() {
           >
             <Link
               href="/agence-evenementielle-strasbourg/a-propos"
-              className="sub-heading shadow-primary-sm 0 flex w-fit items-center gap-xs rounded-sm border-b-2 border-r-2 border-primary-400 bg-primary-50 px-md py-sm text-primary-400 laptop:gap-sm laptop:px-lg laptop:py-md "
+              className="sub-heading group  relative flex w-fit items-center gap-xs   rounded-sm before:absolute before:-bottom-2  before:z-10 before:h-[1px] before:w-full before:max-w-0 before:bg-black before:duration-medium after:absolute after:-bottom-2 after:z-10  after:h-[1px] after:w-full after:bg-black/20 hover:before:max-w-full laptop:gap-sm "
               scroll={false}
             >
               <span>Non, je souhaite en savoir plus !</span>
+              <LuArrowUpRight className="rotate-0 duration-medium group-hover:rotate-45 group-hover:delay-300" />
             </Link>
           </DivHoverWrapper>
         </InviewWrapper>
