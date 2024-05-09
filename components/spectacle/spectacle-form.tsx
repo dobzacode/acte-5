@@ -11,7 +11,6 @@ import { Textarea } from '@/components/ui/shadcn/textarea';
 import { cn } from '@/lib/utils';
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 import BarLoader from 'react-spinners/BarLoader';
-import { Label } from '../ui/shadcn/label';
 import UiButton from '../ui/ui-button';
 
 const formSchema = z.object({
@@ -92,15 +91,12 @@ export default function SpectacleForm() {
             disabled={form.formState.isSubmitting}
             render={({ field }) => (
               <FormItem className="col-span-1 flex flex-col gap-0.5">
-                <Label className="caption font-normal" htmlFor={'sujet'}>
-                  Sujet *
-                </Label>
                 <FormControl>
                   <Input
                     className="body rounded-xs    shadow-inner ring-primary-400"
                     required
                     color="primary"
-                    placeholder=""
+                    placeholder="Sujet *"
                     {...field}
                   />
                 </FormControl>
@@ -114,11 +110,9 @@ export default function SpectacleForm() {
             disabled={form.formState.isSubmitting}
             render={({ field }) => (
               <FormItem className="col-span-1 flex flex-col gap-0.5">
-                <Label className="caption font-normal" htmlFor={'société'}>
-                  Société
-                </Label>
                 <FormControl>
                   <Input
+                    placeholder="Société *"
                     className="body rounded-xs    shadow-inner ring-primary-400"
                     required
                     color="primary"
@@ -135,11 +129,9 @@ export default function SpectacleForm() {
             disabled={form.formState.isSubmitting}
             render={({ field }) => (
               <FormItem className="col-span-1 flex flex-col gap-0.5">
-                <Label className="caption font-normal" htmlFor={'nom'}>
-                  Nom *
-                </Label>
                 <FormControl>
                   <Input
+                    placeholder="Nom *"
                     className="body rounded-xs    shadow-inner ring-primary-400"
                     required
                     color="primary"
@@ -156,11 +148,9 @@ export default function SpectacleForm() {
             disabled={form.formState.isSubmitting}
             render={({ field }) => (
               <FormItem className="col-span-1 flex flex-col gap-0.5">
-                <Label className="caption font-normal" htmlFor={'prénom'}>
-                  Prénom *
-                </Label>
                 <FormControl>
                   <Input
+                    placeholder="Prénom *"
                     className="body rounded-xs    shadow-inner ring-primary-400"
                     required
                     color="primary"
@@ -177,12 +167,9 @@ export default function SpectacleForm() {
             name="email"
             render={({ field }) => (
               <FormItem className="col-span-1 flex flex-col gap-0.5">
-                <Label className="caption font-normal" htmlFor={'email'}>
-                  Email *
-                </Label>
-
                 <FormControl>
                   <Input
+                    placeholder="Email *"
                     className="body rounded-xs    shadow-inner ring-primary-400"
                     color="primary"
                     required
@@ -199,11 +186,9 @@ export default function SpectacleForm() {
             name="téléphone"
             render={({ field }) => (
               <FormItem className="col-span-1 flex flex-col gap-0.5">
-                <Label className="caption font-normal" htmlFor={'téléphone'}>
-                  Téléphone
-                </Label>
                 <FormControl>
                   <Input
+                    placeholder="Téléphone"
                     className="body rounded-xs    shadow-inner ring-primary-400"
                     type="number"
                     color="primary"
@@ -220,11 +205,9 @@ export default function SpectacleForm() {
             name="message"
             render={({ field }) => (
               <FormItem className="col-span-2 flex flex-col gap-0.5">
-                <Label className="caption font-normal" htmlFor={'message'}>
-                  Message *
-                </Label>
                 <FormControl>
                   <Textarea
+                    placeholder="Message *"
                     rows={4}
                     className="body rounded-xs    shadow-inner ring-primary-400"
                     required

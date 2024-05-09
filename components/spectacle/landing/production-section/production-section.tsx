@@ -12,14 +12,17 @@ export default function ProductionSection() {
         <InviewWrapper className="whitespace-nowrap" variant={ComingFromLeftVariant}>
           <h2 className="heading--extra-large  text-pretty">Production de spectacle</h2>
         </InviewWrapper>
-        <div className="relative h-[20rem] w-full rounded-sm laptop:hidden">
+        <InviewWrapper
+          variant={ComingFromLeftVariant}
+          className="relative h-[20rem] w-full rounded-sm laptop:hidden"
+        >
           <Image
             src="/placeholder-image.png"
             alt="image"
             fill
             className="rounded-sm object-cover"
           />
-        </div>
+        </InviewWrapper>
         <InviewWrapper
           variant={{
             hidden: {
@@ -94,6 +97,7 @@ export default function ProductionSection() {
           </DivHoverWrapper>
         </InviewWrapper>
       </div>
+
       <ScrollImage className="max-laptop:hidden ">
         <Image src="/placeholder-image.png" alt="image" fill className="rounded-sm object-cover" />
       </ScrollImage>

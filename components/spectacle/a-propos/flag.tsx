@@ -128,7 +128,6 @@ export default function Flag({ inverted, className }: { inverted?: boolean; clas
           isLaptop
             ? {
                 hidden: {
-                  opacity: 0,
                   x: !inverted ? -400 : 400
                 },
                 enter: {
@@ -169,7 +168,6 @@ export default function Flag({ inverted, className }: { inverted?: boolean; clas
             isLaptop
               ? {
                   hidden: {
-                    opacity: 0,
                     x: !inverted ? -400 : 400
                   },
                   enter: {
@@ -199,7 +197,6 @@ export default function Flag({ inverted, className }: { inverted?: boolean; clas
             isLaptop
               ? {
                   hidden: {
-                    opacity: 0,
                     x: !inverted ? -400 : 400
                   },
                   enter: {

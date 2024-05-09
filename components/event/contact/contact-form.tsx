@@ -7,7 +7,6 @@ import { z } from 'zod';
 import { verifyCaptchaAction } from '@/app/_actions';
 import { Form, FormControl, FormField, FormItem, FormMessage } from '@/components/ui/shadcn/form';
 import { Input } from '@/components/ui/shadcn/input';
-import { Label } from '@/components/ui/shadcn/label';
 import { Textarea } from '@/components/ui/shadcn/textarea';
 import { cn } from '@/lib/utils';
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
@@ -92,15 +91,12 @@ export default function ContactForm() {
             disabled={form.formState.isSubmitting}
             render={({ field }) => (
               <FormItem className="col-span-1 flex flex-col gap-0.5">
-                <Label className="caption font-normal" htmlFor={'type'}>
-                  Type de projet *
-                </Label>
                 <FormControl>
                   <Input
                     className="body rounded-xs    shadow-inner ring-primary-400"
                     required
                     color="primary"
-                    placeholder=""
+                    placeholder="Type de projet *"
                     {...field}
                   />
                 </FormControl>
@@ -114,13 +110,11 @@ export default function ContactForm() {
             disabled={form.formState.isSubmitting}
             render={({ field }) => (
               <FormItem className="col-span-1 flex flex-col gap-0.5">
-                <Label className="caption font-normal" htmlFor={'société'}>
-                  Société *
-                </Label>
                 <FormControl>
                   <Input
                     className="body rounded-xs    shadow-inner ring-primary-400"
                     required
+                    placeholder="Société *"
                     color="primary"
                     {...field}
                   />
@@ -135,13 +129,11 @@ export default function ContactForm() {
             disabled={form.formState.isSubmitting}
             render={({ field }) => (
               <FormItem className="col-span-1 flex flex-col gap-0.5">
-                <Label className="caption font-normal" htmlFor={'nom'}>
-                  Nom *
-                </Label>
                 <FormControl>
                   <Input
                     className="body rounded-xs    shadow-inner ring-primary-400"
                     required
+                    placeholder="Nom *"
                     color="primary"
                     {...field}
                   />
@@ -156,11 +148,9 @@ export default function ContactForm() {
             disabled={form.formState.isSubmitting}
             render={({ field }) => (
               <FormItem className="col-span-1 flex flex-col gap-0.5">
-                <Label className="caption font-normal" htmlFor={'prénom'}>
-                  Prénom *
-                </Label>
                 <FormControl>
                   <Input
+                    placeholder="Prénom *"
                     className="body rounded-xs    shadow-inner ring-primary-400"
                     required
                     color="primary"
@@ -177,14 +167,11 @@ export default function ContactForm() {
             name="email"
             render={({ field }) => (
               <FormItem className="col-span-1 flex flex-col gap-0.5">
-                <Label className="caption font-normal" htmlFor={'email'}>
-                  Email *
-                </Label>
-
                 <FormControl>
                   <Input
                     className="body rounded-xs    shadow-inner ring-primary-400"
                     color="primary"
+                    placeholder="Email *"
                     required
                     {...field}
                   />
@@ -199,13 +186,11 @@ export default function ContactForm() {
             name="téléphone"
             render={({ field }) => (
               <FormItem className="col-span-1 flex flex-col gap-0.5">
-                <Label className="caption font-normal" htmlFor={'téléphone'}>
-                  Téléphone
-                </Label>
                 <FormControl>
                   <Input
                     className="body rounded-xs    shadow-inner ring-primary-400"
                     type="number"
+                    placeholder="Téléphone *"
                     color="primary"
                     {...field}
                   />
@@ -220,14 +205,12 @@ export default function ContactForm() {
             name="message"
             render={({ field }) => (
               <FormItem className="col-span-2 flex flex-col gap-0.5">
-                <Label className="caption font-normal" htmlFor={'message'}>
-                  Message *
-                </Label>
                 <FormControl>
                   <Textarea
                     rows={4}
                     className="body rounded-xs    shadow-inner ring-primary-400"
                     required
+                    placeholder="Message *"
                     color="primary"
                     {...field}
                   />

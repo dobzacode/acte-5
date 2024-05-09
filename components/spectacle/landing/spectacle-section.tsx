@@ -48,7 +48,26 @@ export default function SpectacleSection() {
         >
           LOREM IPSUM DOLOR SIT AMET
         </InviewWrapper>
-        <InviewWrapper className="relative -z-20" variant={ComingFromBottomVariant}>
+        <InviewWrapper
+          className="relative -z-20"
+          variant={{
+            hidden: {
+              y: 200
+            },
+            enter: {
+              opacity: 1,
+              y: 0,
+              transition: {
+                type: 'spring',
+                damping: 20
+              }
+            },
+            exit: {
+              opacity: 0,
+              y: -200
+            }
+          }}
+        >
           <Image
             src="/placeholder-image.png"
             alt="image"
@@ -83,24 +102,7 @@ export default function SpectacleSection() {
       </div>
       <InviewWrapper
         viewport={{ margin: '0px', once: true }}
-        variant={{
-          hidden: {
-            opacity: 0,
-            y: -200
-          },
-          enter: {
-            opacity: 1,
-            y: 0,
-            transition: {
-              type: 'spring',
-              damping: 20
-            }
-          },
-          exit: {
-            opacity: 0,
-            y: -200
-          }
-        }}
+        variant={ComingFromBottomVariant}
         className="relative z-10 flex h-fit w-full items-center justify-center"
       >
         <DivHoverWrapper
