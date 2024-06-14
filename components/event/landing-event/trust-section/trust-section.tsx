@@ -14,9 +14,10 @@ export default function TrustSection() {
         variant={ComingFromLeftVariant}
         viewport={{ once: true, margin: '-200px 0px -200px 0px' }}
       >
-        <h1 className="heading--extra-large w-fit min-[1600px]:w-1/2">
-          agence en communication évenementielle
-        </h1>
+        <h2 className="heading--large w-fit min-[1600px]:w-1/2">
+          Forte de plus de 30 ans d&apos;expertise en communication événementielle, Acte 5 puise
+          dans les arts de la scène pour donner vie à vos messages d&apos;entreprise
+        </h2>
       </InviewWrapper>
       <InviewWrapper
         variant={ComingFromRightVariant}

@@ -11,17 +11,17 @@ import Image from 'next/image';
 
 const COMPETENCE = [
   {
-    name: 'COMPETENCE',
+    name: 'EVENEMENTIEL',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua'
   },
   {
-    name: 'COMPETENCE',
+    name: "SPECTACLE D'ENTREPRISE",
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua'
   },
   {
-    name: 'COMPETENCE',
+    name: 'GRAPHISME',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua'
   }

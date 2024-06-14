@@ -1,4 +1,5 @@
 import { EventWithImgAndIndex } from '@/app/(page)/agence-evenementielle-strasbourg/temoignages/page';
+import { cn } from '@/lib/utils';
 import { EmblaCarouselType } from 'embla-carousel';
 import React, { PropsWithChildren, useCallback, useEffect, useState } from 'react';
 
@@ -67,7 +68,10 @@ export const PrevButton: React.FC<PropType> = (props) => {
 
   return (
     <button
-      className="project_embla__button embla__button--prev origin-right rounded-l-sm rounded-r-none border-1  border-solid border-gray-400 duration-fast hover:border-primary-300 hover:bg-primary-300 active:border-primary-300 [&>svg>path]:hover:fill-white"
+      className={cn(
+        `project_embla__button embla__button--prev`,
+        ' origin-right !rounded-l-sm !rounded-r-none border-1  border-solid border-gray-400 duration-fast hover:border-primary-300 hover:bg-primary-300 active:border-primary-300 [&>svg>path]:hover:fill-white'
+      )}
       type="button"
       {...restProps}
     >
@@ -87,7 +91,10 @@ export const NextButton: React.FC<PropType> = (props) => {
 
   return (
     <button
-      className="project_embla__button embla__button--next origin-left rounded-l-none rounded-r-sm border-1  border-solid border-gray-400 duration-fast hover:border-primary-300 hover:bg-primary-300 active:border-primary-300 [&>svg>path]:hover:fill-white"
+      className={cn(
+        `project_embla__button embla__button--next`,
+        'origin-left  !rounded-l-none !rounded-r-sm border-1  border-solid border-gray-400 duration-fast hover:border-primary-300 hover:bg-primary-300 active:border-primary-300 [&>svg>path]:hover:fill-white'
+      )}
       type="button"
       {...restProps}
     >

@@ -27,14 +27,14 @@ export default function ProjectSection({ events }: { events: EventWithImgAndInde
 
   return (
     <section className="laptop:section-px flex justify-between gap-xl laptop:container max-laptop:flex-col laptop:mx-auto">
-      <InviewWrapper variant={ComingFromLeftVariant}>
+      <InviewWrapper className="laptop:w-1/2" variant={ComingFromLeftVariant}>
         <AnimatePresence mode="wait">
           {selectedEvent && (
             <InviewWrapper
               inverseOnExit
               key={v4()}
               variant={TextSliderVariant}
-              className="max-laptop:section-px flex flex-col gap-xl laptop:w-1/2"
+              className="max-laptop:section-px flex flex-col gap-xl"
             >
               <>
                 <h2 className="heading--large text-pretty text-primary-400">

@@ -51,9 +51,9 @@ export default function ServiceSection() {
       >
         <p className="sub-heading">
           {' '}
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-          ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Nous allions l'art du storytelling à la précision théâtrale pour créer des événements B2B
+          inoubliables. Notre approche unique garantit une réalisation où chaque détail compte et où
+          chaque événement est synonyme de succès.
         </p>
         <DivHoverWrapper
           className="group w-fit origin-center duration-medium hover:opacity-90"

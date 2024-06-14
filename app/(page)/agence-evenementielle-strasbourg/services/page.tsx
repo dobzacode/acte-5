@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <main className="relative flex w-full flex-col items-center justify-center gap-xl px-0 pt-5xl mobile-small:gap-3xl mobile-medium:gap-2xl mobile-large:gap-4xl tablet:gap-5xl tablet:pt-7xl laptop:gap-6xl laptop-large:gap-6xl">
       <TitleSection
-        title={'NOS SERVICES'}
+        title={'EVENEMENTIEL'}
         element={[
           { href: '/agence-evenementielle-strasbourg', text: 'Évenement' },
           { href: '/agence-evenementielle-strasbourg/services', text: 'Nos services' }
@@ -27,8 +27,8 @@ export default function Home() {
           variant={FromTopStaggerVariant}
           className="heading--large"
         >
-          L&apos;agence événementielle Acte 5 s&apos;appuie depuis près de 30 ans sur les arts de la
-          scène et la pratique théâtrale pour faire passer les messages.
+          L&apos;agence événementielle Acte 5 allie l'art du storytelling à la précision théâtrale
+          pour des événements B2B inoubliables.
         </StaggeredText>
       </div>
       <ServiceGalerie></ServiceGalerie>

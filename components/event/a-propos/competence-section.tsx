@@ -13,11 +13,11 @@ export default function CompetenceSection() {
           height={300}
         />
 
-        <div className="flex flex-col  gap-xl">
-          <h2 className="heading--sub-extra-large text-primary-400">Compétence</h2>
+        <div className="flex flex-col  gap-md">
+          <h2 className="heading--large text-primary-400">Evenementiel</h2>
           <p className="sub-heading max-w-[50ch]">
-            Lorem ipsum dolor sit amet, consectetur adipiscing eli, sed do eiusmod tempor incididunt
-            ut labore et dolore magna. Lorem ipsum dolor sit amet, consectetur adipiscing el
+            Chaque événement est une œuvre d'art. Nous concevons, planifions et mettons en scène des
+            expériences mémorables qui laissent une empreinte durable dans le cœur de vos cibles.
           </p>
         </div>
       </ScrollWrapper>
@@ -29,11 +29,11 @@ export default function CompetenceSection() {
           width={300}
           height={300}
         />
-        <div className="flex flex-col  gap-xl">
-          <h2 className="heading--sub-extra-large text-primary-400">Compétence</h2>
+        <div className="flex flex-col  gap-md">
+          <h2 className="heading--large text-primary-400">Spectacle d&apos;entreprise</h2>
           <p className="sub-heading max-w-[50ch]">
-            Lorem ipsum dolor sit amet, consectetur adipiscing eli, sed do eiusmod tempor incididunt
-            ut labore et dolore magna. Lorem ipsum dolor sit amet, consectetur adipiscing el
+            Nous tissons des récits fascinants et élaborons des spectacles d&apos;entreprise sur
+            mesure qui transportent et enchantent les spectateurs.
           </p>
         </div>
       </ScrollWrapper>
@@ -45,11 +45,11 @@ export default function CompetenceSection() {
           width={300}
           height={300}
         />
-        <div className="flex flex-col  gap-xl">
-          <h2 className="heading--sub-extra-large text-primary-400">Compétence</h2>
+        <div className="flex flex-col  gap-md">
+          <h2 className="heading--large text-primary-400">Design graphique </h2>
           <p className="sub-heading max-w-[50ch]">
-            Lorem ipsum dolor sit amet, consectetur adipiscing eli, sed do eiusmod tempor incididunt
-            ut labore et dolore magna. Lorem ipsum dolor sit amet, consectetur adipiscing el
+            Nous concevons des visuels puissants et expressifs qui captivent l'attention et
+            renforcent l'impact de vos messages événementiels.
           </p>
         </div>
       </ScrollWrapper>

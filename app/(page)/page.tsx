@@ -18,39 +18,41 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <main className="inner-section-gap section-px flex  h-full flex-col items-center  justify-between pb-5xl pt-5xl tablet:pt-6xl">
+      <main className="section-px flex h-full  flex-col items-center justify-between gap-xl pb-5xl  pt-5xl tablet:gap-xl tablet:pt-6xl laptop:gap-3xl">
         <DivWrapper
           className="inner-section-gap flex  w-2/3 flex-col items-center"
           variant={ComingFromTopVariant}
         >
-          <p className="heading--sub-extra-large text-primary-400">Slogan</p>
-          <p className="heading max-w-[35ch] text-center">
-            Lorem ipsum dolor sit amet, consectetur adipiscing eli, sed do eiusmod tempor incididunt
-            ut labore et dolore magna
+          <p className="heading--sub-extra-large text-center text-primary-400">
+            Agence de communication évènementielle spectaculaire
           </p>
         </DivWrapper>
         <section className="inner-section-gap  container flex justify-between max-tablet:flex-col   laptop:justify-center   laptop-large:max-w-[1200px] ">
-          <Link scroll={false} href="agence-evenementielle-strasbourg">
+          <Link
+            scroll={false}
+            className="w-fit tablet:w-1/2"
+            href="agence-evenementielle-strasbourg"
+          >
             <DivWrapper
-              className="heading--sub-large flex w-fit flex-col items-center gap-md rounded-md bg-default-200 px-xl py-3xl tablet:px-2xl tablet:py-5xl"
+              className="heading--sub-large flex   flex-col items-center gap-md rounded-md bg-default-200 px-xl py-3xl tablet:h-[400px] tablet:px-2xl tablet:py-5xl"
               variant={ComingFromLeftVariant}
             >
               <h2>EVENEMENTIEL</h2>
-              <p className="sub-heading  text-center">
-                Lorem ipsum dolor sit amet, consectetur adipiscing eli, sed do eiusmod tempor
-                incididunt ut labore et dolore magna{' '}
+              <p className="sub-heading  text-pretty text-center">
+                Des événements sur mesure pour sublimer vos projets et renforcer l&apos;image de
+                votre entreprise.
               </p>
             </DivWrapper>
           </Link>
-          <Link scroll={false} href="spectacles-strasbourg">
+          <Link scroll={false} className="w-fit tablet:w-1/2" href="spectacles-strasbourg">
             <DivWrapper
-              className="heading--sub-large flex w-fit flex-col items-center gap-md rounded-md bg-default-200 px-xl py-3xl tablet:px-2xl tablet:py-5xl"
+              className="heading--sub-large flex   flex-col items-center gap-md rounded-md bg-default-200 px-xl py-3xl tablet:h-[400px] tablet:px-2xl tablet:py-5xl"
               variant={ComingFromRightVariant}
             >
               <h2>SPECTACLE</h2>
-              <p className="sub-heading  text-center">
-                Lorem ipsum dolor sit amet, consectetur adipiscing eli, sed do eiusmod tempor
-                incididunt ut labore et dolore magna{' '}
+              <p className="sub-heading  text-pretty text-center">
+                Retrouvez toutes les infos sur nos spectacles tel que la Revue Scoute : billetterie
+                et date de représentation, c&apos;est par ici !{' '}
               </p>
             </DivWrapper>
           </Link>

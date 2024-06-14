@@ -27,8 +27,8 @@ export default function Home() {
         delay={1}
         className="heading--sub-large section-px text-pretty text-center laptop:container laptop:mx-auto"
       >
-        Lorem ipsum dolor sit amet, consectetur adipiscing eli, sed do eiusmod tempor incididunt ut
-        labore et dolore magna
+        Forte de plus de 30 ans d&apos;expertise en communication événementielle, Acte 5 puise dans
+        les arts de la scène pour donner vie à vos messages d&apos;entreprise
       </StaggeredText>
       <CompetenceSection></CompetenceSection>
       <TeamSection></TeamSection>
