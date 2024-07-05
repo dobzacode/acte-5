@@ -18,8 +18,6 @@ export default function ProjectSection({ events }: { events: EventWithImgAndInde
   const [selectedIndex, setSelectedIndex] = useState<number>(0);
   const [selectedEvent, setSelectedEvent] = useState<EventWithImgAndIndex | null>(null);
 
-  const isLaptop = useBetterMediaQuery('(min-width: 1024px)');
-
   useEffect(() => {
     const foundEvent = events.find((event) => event.index === selectedIndex);
     setSelectedEvent(foundEvent || null);
@@ -44,11 +42,11 @@ export default function ProjectSection({ events }: { events: EventWithImgAndInde
               </>
             </InviewWrapper>
           )}
-        </AnimatePresence>{' '}
+        </AnimatePresence>
       </InviewWrapper>
       <InviewWrapper
         className="laptop:fade-x relative flex justify-center overflow-x-hidden laptop:w-1/2"
-        variant={isLaptop ? ComingFromRightVariant : ComingFromBottomVariant}
+        variant={ComingFromRightVariant}
       >
         <ProjectCarousel
           selectedIndex={selectedIndex}

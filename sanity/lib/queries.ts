@@ -128,6 +128,11 @@ export interface DateItem {
 export interface Spectacle {
   dates?: DateItem[];
   metadescription: string;
+  metatitre: string;
+  slug: {
+    current: string;
+    _type: string;
+  };
   _id: string;
   imageGallery: Image[];
   miseEnScene: string[];
@@ -141,16 +146,13 @@ export interface Spectacle {
   musiqueEtSon: string[] | null;
   mainImage: Image;
   _type: string;
-  metatitre: string;
+  
   _createdAt: string;
   titre: string;
   costumes: string[] | null;
   photos: string[] | null;
   _updatedAt: string;
-  slug: {
-    current: string;
-    _type: string;
-  };
+  
 }
 
 export const POSTS_QUERY = groq`*[_type == "publication" && defined(slug)]`;

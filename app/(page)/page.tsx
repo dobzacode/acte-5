@@ -18,14 +18,14 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <main className="section-px flex h-full  flex-col items-center justify-between gap-xl pb-5xl  pt-5xl tablet:gap-xl tablet:pt-6xl laptop:gap-3xl">
+      <main className="section-px flex h-full  flex-col items-center justify-between gap-xl   pt-5xl tablet:gap-xl tablet:pt-6xl laptop:gap-3xl">
         <DivWrapper
-          className="inner-section-gap flex  w-2/3 flex-col items-center"
+          className="inner-section-gap flex   flex-col items-center"
           variant={ComingFromTopVariant}
         >
-          <p className="heading--sub-extra-large text-center text-primary-400">
-            Agence de communication évènementielle spectaculaire
-          </p>
+          <h1 className="heading--sub-extra-large text-pretty text-center text-primary-400">
+            agence de communication évènementielle spectaculaire
+          </h1>
         </DivWrapper>
         <section className="inner-section-gap  container flex justify-between max-tablet:flex-col   laptop:justify-center   laptop-large:max-w-[1200px] ">
           <Link
