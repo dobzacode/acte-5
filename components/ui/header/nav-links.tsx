@@ -45,8 +45,8 @@ export default function NavLinks({ isEvent, pathname }: { isEvent: boolean; path
             }}
             key={`${link.href}`}
             className={cn(
-              'body w-fit text-center font-normal hover:font-semibold',
-              pathname.includes(link.href) && 'font-semibold',
+              'body w-fit text-center font-normal hover:font-medium',
+              pathname.includes(link.href) && 'font-medium',
               link.name.includes(' ') && 'shrink-0'
             )}
           >

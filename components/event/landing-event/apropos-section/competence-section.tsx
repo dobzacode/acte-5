@@ -41,13 +41,13 @@ export default function CompetenceSection() {
   const isLaptop = useBetterMediaQuery('(min-width: 1024px)');
 
   return (
-    <ul className=" section-px relative flex flex-col gap-xl  mobile-large:gap-3xl">
+    <ul className=" section-px relative flex flex-col gap-xl  mobile-large:gap-3xl ">
       {isLaptop
         ? COMPETENCE.map((item, index) => {
             return (
               <InviewWrapper
                 key={`${item.name}-${index}`}
-                className=" sticky top-0 cursor-pointer"
+                className=" sticky top-0 cursor-pointer "
                 variant={index % 2 === 0 ? variantLeft : variantRight}
               >
                 <li className="group  relative flex   w-full items-center justify-between gap-3xl overflow-hidden rounded-sm px-2xl py-xl   duration-extra-slow hover:bg-primary-400 hover:duration-0">
