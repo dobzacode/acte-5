@@ -7,7 +7,7 @@
 
 @layer components {
   .heading--mega-extra-large {
-    @apply text-xl font-bold leading-xl mobile-medium:text-2xl mobile-medium:leading-2xl tablet:text-4xl tablet:leading-4xl laptop:text-4xl laptop:leading-4xl laptop-large:text-6xl laptop-large:leading-6xl;
+    @apply text-xl font-bold leading-xl mobile-medium:text-2xl mobile-medium:leading-2xl tablet:text-4xl tablet:leading-4xl laptop:text-4xl laptop:leading-4xl laptop-large:text-5xl laptop-large:leading-5xl;
   }
 
   .heading--mega-large {

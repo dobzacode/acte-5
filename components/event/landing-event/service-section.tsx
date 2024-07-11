@@ -86,17 +86,17 @@ export default function ServiceSection() {
       noExit={true}
       variant={FullTranslateFromLeft}
       tag="section"
-      className="relative z-20 flex w-full flex-col gap-2xl overflow-hidden overflow-x-clip bg-black"
+      className="relative z-20 flex w-full flex-col gap-2xl overflow-hidden overflow-x-clip bg-black "
     >
       <Marquee>
         <p className="heading--extra-large text-white">{ONGLETS}</p>
       </Marquee>
 
-      <div className="section-px inner-section-gap flex flex-col">
+      <div className="section-px inner-section-gap flex flex-col laptop:container laptop:mx-auto">
         <InviewWrapper className="tablet:hidden" variant={ComingFromLeftVariant}>
           <h2 className="heading--large flex text-white ">NOS SERVICES</h2>
         </InviewWrapper>
-        <div className="  grid h-full w-full grid-cols-10 grid-rows-[200px_200px] gap-2 tablet:grid-rows-[200px_200px_200px] tablet:gap-5">
+        <div className="  grid h-full w-full grid-cols-10 grid-rows-[200px_200px] gap-2 tablet:grid-rows-[200px_200px_200px] tablet:gap-4">
           {GRID_CHILDREN().map((child, index) => (
             <InviewWrapper
               id={child.key ?? undefined}

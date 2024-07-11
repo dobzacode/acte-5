@@ -7,7 +7,7 @@ import ScrollImage from './scroll-image';
 
 export default function ProductionSection() {
   return (
-    <section className="section-px inner-section-gap relative  flex w-full items-center  bg-primary-400 text-white laptop:container">
+    <section className="section-px inner-section-gap relative  flex w-full items-center  bg-primary-400 text-white laptop:container laptop:mx-auto">
       <div className="inner-section-gap flex flex-col ">
         <InviewWrapper className="whitespace-nowrap" variant={ComingFromLeftVariant}>
           <h2 className="heading--extra-large  text-pretty">Production de spectacle</h2>

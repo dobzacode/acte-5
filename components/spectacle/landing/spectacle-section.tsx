@@ -10,7 +10,7 @@ import Link from 'next/link';
 
 export default function SpectacleSection() {
   return (
-    <section className="section-px max-w-screen inner-section-gap flex w-full flex-col items-center  bg-transparent text-white">
+    <section className="section-px max-w-screen inner-section-gap flex w-full flex-col items-center  bg-transparent text-white laptop:container laptop:mx-auto">
       <InviewWrapper variant={ComingFromLeftVariant}>
         <h1 className="heading--extra-large max-w-[30ch] text-center">Spectacle d'entreprise</h1>
       </InviewWrapper>

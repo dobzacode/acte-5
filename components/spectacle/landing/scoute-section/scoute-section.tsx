@@ -31,63 +31,65 @@ export default function ScouteSection() {
       </div>
 
       <GalleryScrollAnimation></GalleryScrollAnimation>
-      <InviewWrapper
-        className="section-px  inner-section-gap flex items-center  justify-center laptop:ml-auto"
-        variant={ComingFromRightVariant}
-      >
-        <Image
-          src="/placeholder-image.png"
-          alt="Image"
-          width={400}
-          height={400}
-          className="rounded-sm"
-        ></Image>
-        <p className="sub-heading w-[40ch] text-pretty mobile-large:text-center">
-          Lorem ipsum dolor sit amet, consectetur adipiscing eli, sed do eiusmod tempor incididunt
-          ut labore et dolore magna. Lorem ipsum dolor sit amet, consectetur adipiscing el
-        </p>
-      </InviewWrapper>
-      <InviewWrapper
-        className="section-px inner-section-gap flex flex-row-reverse items-center justify-center  laptop:mr-auto"
-        variant={ComingFromRightVariant}
-      >
-        <Image
-          src="/placeholder-image.png"
-          alt="Image"
-          width={400}
-          height={400}
-          className="rounded-sm"
-        ></Image>
-        <p className="sub-heading w-[40ch] text-pretty mobile-large:text-center">
-          Lorem ipsum dolor sit amet, consectetur adipiscing eli, sed do eiusmod tempor incididunt
-          ut labore et dolore magna. Lorem ipsum dolor sit amet, consectetur adipiscing el
-        </p>
-      </InviewWrapper>
-      <InviewWrapper className="flex w-full justify-center" variant={ComingFromBottomVariant}>
-        <DivHoverWrapper
-          className="group w-fit origin-center duration-medium hover:opacity-90"
-          variant={{
-            hover: {
-              scale: 1.02,
-              transition: {
-                duration: 0.5,
-                ease: 'easeInOut',
-                repeat: Infinity,
-                repeatType: 'mirror'
-              }
-            }
-          }}
+      <div className="inner-section-gap flex flex-col laptop:container tablet:gap-4xl laptop:mx-auto">
+        <InviewWrapper
+          className="section-px  inner-section-gap flex items-center  justify-center laptop:ml-auto"
+          variant={ComingFromRightVariant}
         >
-          <Link
-            href="/spectacles-strasbourg/revue-scoute"
-            className="sub-heading group  relative flex w-fit items-center gap-xs   rounded-sm before:absolute before:-bottom-2  before:z-10 before:h-[1px] before:w-full before:max-w-0 before:bg-black before:duration-medium after:absolute after:-bottom-2 after:z-10  after:h-[1px] after:w-full after:bg-black/20 hover:before:max-w-full laptop:gap-sm "
-            scroll={false}
+          <Image
+            src="/placeholder-image.png"
+            alt="Image"
+            width={400}
+            height={400}
+            className="rounded-sm"
+          ></Image>
+          <p className="sub-heading w-[40ch] text-pretty mobile-large:text-center">
+            Lorem ipsum dolor sit amet, consectetur adipiscing eli, sed do eiusmod tempor incididunt
+            ut labore et dolore magna. Lorem ipsum dolor sit amet, consectetur adipiscing el
+          </p>
+        </InviewWrapper>
+        <InviewWrapper
+          className="section-px inner-section-gap flex flex-row-reverse items-center justify-center  laptop:mr-auto"
+          variant={ComingFromRightVariant}
+        >
+          <Image
+            src="/placeholder-image.png"
+            alt="Image"
+            width={400}
+            height={400}
+            className="rounded-sm"
+          ></Image>
+          <p className="sub-heading w-[40ch] text-pretty mobile-large:text-center">
+            Lorem ipsum dolor sit amet, consectetur adipiscing eli, sed do eiusmod tempor incididunt
+            ut labore et dolore magna. Lorem ipsum dolor sit amet, consectetur adipiscing el
+          </p>
+        </InviewWrapper>
+        <InviewWrapper className="flex w-full justify-center" variant={ComingFromBottomVariant}>
+          <DivHoverWrapper
+            className="group w-fit origin-center duration-medium hover:opacity-90"
+            variant={{
+              hover: {
+                scale: 1.02,
+                transition: {
+                  duration: 0.5,
+                  ease: 'easeInOut',
+                  repeat: Infinity,
+                  repeatType: 'mirror'
+                }
+              }
+            }}
           >
-            <span>Découvrir la tournée 2024</span>
-            <LuArrowUpRight className="rotate-0 duration-medium group-hover:rotate-45 group-hover:delay-300" />
-          </Link>
-        </DivHoverWrapper>
-      </InviewWrapper>
+            <Link
+              href="/spectacles-strasbourg/revue-scoute"
+              className="sub-heading group  relative flex w-fit items-center gap-xs   rounded-sm before:absolute before:-bottom-2  before:z-10 before:h-[1px] before:w-full before:max-w-0 before:bg-black before:duration-medium after:absolute after:-bottom-2 after:z-10  after:h-[1px] after:w-full after:bg-black/20 hover:before:max-w-full laptop:gap-sm "
+              scroll={false}
+            >
+              <span>Découvrir la tournée 2024</span>
+              <LuArrowUpRight className="rotate-0 duration-medium group-hover:rotate-45 group-hover:delay-300" />
+            </Link>
+          </DivHoverWrapper>
+        </InviewWrapper>
+      </div>
     </section>
   );
 }

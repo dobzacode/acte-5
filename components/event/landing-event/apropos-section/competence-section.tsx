@@ -41,7 +41,7 @@ export default function CompetenceSection() {
   const isLaptop = useBetterMediaQuery('(min-width: 1024px)');
 
   return (
-    <ul className="max-laptop:section-px relative flex flex-col gap-xl mobile-large:gap-3xl  laptop:px-2xl laptop-large:px-7xl">
+    <ul className=" section-px relative flex flex-col gap-xl  mobile-large:gap-3xl">
       {isLaptop
         ? COMPETENCE.map((item, index) => {
             return (
