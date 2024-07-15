@@ -56,7 +56,7 @@ export default async function Home() {
         variant={ComingFromRightVariant}
         viewport={{ once: true, margin: '-200px 0px -200px 0px' }}
       >
-        <div className="section-px fade-x container relative mx-auto flex gap-sm  overflow-clip [&>*]:shrink-0">
+        <div className="section-px container relative mx-auto flex gap-sm   ">
           <p className="aspect-square w-5xl rounded-sm bg-gray-200 laptop:w-7xl"></p>
           <p className="aspect-square w-5xl rounded-sm bg-gray-200 laptop:w-7xl"></p>
           <p className="aspect-square  w-5xl rounded-sm bg-gray-200 laptop:w-7xl"></p>

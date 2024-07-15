@@ -27,8 +27,6 @@ export const SPECTACLELINKS: Links[] = [
 export default function NavLinks({ isEvent, pathname }: { isEvent: boolean; pathname: string }) {
   const links = isEvent ? EVENTLINKS : SPECTACLELINKS;
 
-  console.log(pathname, links);
-
   return (
     <nav className="">
       <ul className="flex justify-between gap-md tablet:gap-lg laptop:gap-xl ">

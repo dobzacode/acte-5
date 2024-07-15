@@ -1,5 +1,7 @@
 'use client';
 
+import { FadeInVariant } from '@/components/framer-motion/div-variants';
+import DivWrapper from '@/components/framer-motion/div-wrapper';
 import useBetterMediaQuery from '@/hooks/use-better-media-query';
 import { cn } from '@/lib/utils';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -53,21 +55,36 @@ export default function Header({ className }: { className?: string }) {
             'h-[70px] w-[70px] rounded-xs duration-medium max-mobile-large:h-[50px] max-mobile-large:w-[50px] max-mobile-medium:h-[40px] max-mobile-medium:w-[40px]'
           )}
         ></Logo>
-        <p className="heading   font-bold max-laptop:hidden">ACTE 5</p>
       </div>
-
-      {isTablet && pathname !== '/' ? (
-        <>
-          <AnimatePresence mode="wait">
-            {pathname.includes('agence-evenementielle-strasbourg') ? (
-              <NavLinks key="menuEvent" pathname={pathname} isEvent={true} />
-            ) : (
-              <NavLinks key="menuSpectacle" pathname={pathname} isEvent={false} />
-            )}
-          </AnimatePresence>
-        </>
-      ) : null}
-
+      <AnimatePresence mode="wait">
+        {isTablet && pathname !== '/' ? (
+          <DivWrapper variant={FadeInVariant} inverseOnExit={true}>
+            <AnimatePresence mode="wait">
+              {pathname.includes('agence-evenementielle-strasbourg') ? (
+                <NavLinks key="menuEvent" pathname={pathname} isEvent={true} />
+              ) : (
+                <NavLinks key="menuSpectacle" pathname={pathname} isEvent={false} />
+              )}
+            </AnimatePresence>
+          </DivWrapper>
+        ) : (
+          <motion.p
+            initial={{ y: -100 }}
+            animate={{
+              y: 0,
+              transition: { ease: 'easeInOut', duration: 0.9 }
+            }}
+            exit={{
+              y: 70,
+              transition: { ease: 'easeInOut', duration: 0.4 }
+            }}
+            key={`ACTE5`}
+            className={cn(' heading w-fit text-center font-semibold  max-laptop:hidden')}
+          >
+            ACTE 5
+          </motion.p>
+        )}
+      </AnimatePresence>
       <nav
         onClick={() => {
           setShowMenu(false);

@@ -4,14 +4,14 @@ import Logo from '../header/logo';
 export default function FooterContent() {
   return (
     <footer className="section-px mx-auto flex flex-wrap  justify-center gap-2xl laptop:container laptop:justify-between">
-      <div className="flex flex-col gap-sm max-laptop-large:hidden">
-        <Logo width={84} height={84} className="rounded-xs"></Logo>
-        <p className="sub-heading font-medium">ACTE 5</p>
+      <div className="flex flex-col items-center gap-sm max-laptop-large:hidden">
+        <Logo width={160} height={160} className="rounded-xs"></Logo>
+        <p className="heading font-medium">ACTE 5</p>
       </div>
-      <nav className="flex flex-wrap justify-between gap-3xl max-laptop:w-full tablet:flex-nowrap laptop:justify-normal">
-        <div className="flex flex-col gap-sm max-tablet:hidden laptop-large:hidden">
+      <nav className="flex flex-wrap justify-center gap-3xl max-laptop:w-full tablet:flex-nowrap tablet:justify-between laptop:justify-normal">
+        <div className="flex flex-col items-center gap-sm max-tablet:hidden laptop-large:hidden">
           <Logo width={84} height={84} className="rounded-xs"></Logo>
-          <p className="sub-heading text-md font-medium">ACTE 5</p>
+          <p className="sub-heading whitespace-nowrap text-md font-medium">ACTE 5</p>
         </div>
         <section className="flex flex-col gap-sm ">
           <Link

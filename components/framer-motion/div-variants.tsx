@@ -2,6 +2,18 @@
 
 import { Variants } from 'framer-motion';
 
+export const FadeInVariant: Variants = {
+  hidden: {
+    opacity: 0
+  },
+  enter: {
+    opacity: 1
+  },
+  exit: {
+    opacity: 0
+  }
+};
+
 export const ComingFromTopVariant: Variants = {
   hidden: {
     opacity: 0,

@@ -2,13 +2,11 @@
 
 import { EventWithImgAndIndex } from '@/app/(page)/agence-evenementielle-strasbourg/temoignages/page';
 import {
-  ComingFromBottomVariant,
   ComingFromLeftVariant,
   ComingFromRightVariant,
   TextSliderVariant
 } from '@/components/framer-motion/div-variants';
 import InviewWrapper from '@/components/framer-motion/inview-wrapper';
-import useBetterMediaQuery from '@/hooks/use-better-media-query';
 import { AnimatePresence } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { v4 } from 'uuid';
@@ -22,6 +20,8 @@ export default function ProjectSection({ events }: { events: EventWithImgAndInde
     const foundEvent = events.find((event) => event.index === selectedIndex);
     setSelectedEvent(foundEvent || null);
   }, [selectedIndex, events]);
+
+  console.log(selectedIndex);
 
   return (
     <section className="laptop:section-px flex justify-between gap-xl laptop:container max-laptop:flex-col laptop:mx-auto">
@@ -45,7 +45,7 @@ export default function ProjectSection({ events }: { events: EventWithImgAndInde
         </AnimatePresence>
       </InviewWrapper>
       <InviewWrapper
-        className="laptop:fade-x relative flex justify-center overflow-x-hidden laptop:w-1/2"
+        className=" relative flex justify-center overflow-x-clip laptop:w-1/2"
         variant={ComingFromRightVariant}
       >
         <ProjectCarousel
