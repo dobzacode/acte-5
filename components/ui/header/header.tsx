@@ -47,8 +47,8 @@ export default function Header({ className }: { className?: string }) {
         !showMenu && 'overflow-hidden'
       )}
     >
-      <div className="flex  shrink-0 gap-md">
-        <Logo className={cn('w-xl duration-medium ')}></Logo>
+      <div className="flex  shrink-0 items-center gap-md">
+        <Logo width={70} height={70} className={cn('rounded-xs duration-medium')}></Logo>
         <p className="heading n  font-bold max-laptop:hidden">ACTE 5</p>
       </div>
 

@@ -3,12 +3,14 @@ import Link from 'next/link';
 
 interface LogoProps {
   className?: string;
+  width?: number;
+  height?: number;
 }
 
-export default function Logo({ className }: LogoProps) {
+export default function Logo({ className, width, height }: LogoProps) {
   return (
     <Link scroll={false} href="/">
-      <BrandLogo className={className} />
+      <BrandLogo width={width} height={height} className={className} />
     </Link>
   );
 }

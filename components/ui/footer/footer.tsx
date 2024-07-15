@@ -8,7 +8,7 @@ export default function Footer({ children }: { children: React.ReactNode }) {
   return (
     <div
       className={cn(
-        'mx-auto  px-xl py-4xl tablet:container',
+        '  relative z-40 border-t border-black  border-opacity-10   py-xl ',
         pathname.includes('evenemement') ? 'text-white' : 'text-black'
       )}
     >

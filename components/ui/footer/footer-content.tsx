@@ -3,10 +3,10 @@ import Logo from '../header/logo';
 
 export default function FooterContent() {
   return (
-    <footer className="jusitfy-center flex flex-wrap gap-2xl  laptop:justify-between">
+    <footer className="section-px mx-auto flex flex-wrap  justify-center gap-2xl laptop:container laptop:justify-between">
       <div className="flex flex-col gap-sm max-laptop:hidden">
+        <Logo width={84} height={84} className="rounded-xs"></Logo>
         <p className="sub-heading font-normal">ACTE 5</p>
-        <Logo className="w-4xl"></Logo>
       </div>
       <nav className="flex flex-wrap justify-between gap-3xl max-laptop:w-full tablet:flex-nowrap laptop:justify-normal">
         <section className="flex flex-col gap-sm ">

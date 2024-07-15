@@ -1,49 +1,49 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 @import url('@/style/embla.css');
 @import url('@/style/animation.css');
+@import url('@/style/fonts.css');
 
 @tailwind base;
 @tailwind components;
 
 @layer components {
   .heading--mega-extra-large {
-    @apply text-xl font-bold leading-xl mobile-medium:text-2xl mobile-medium:leading-2xl tablet:text-4xl tablet:leading-4xl laptop:text-4xl laptop:leading-4xl laptop-large:text-5xl laptop-large:leading-5xl;
+    @apply font-[Quasimoda] text-xl font-bold leading-xl mobile-medium:text-2xl mobile-medium:leading-2xl tablet:text-4xl tablet:leading-4xl laptop:text-4xl laptop:leading-4xl laptop-large:text-5xl laptop-large:leading-5xl;
   }
 
   .heading--mega-large {
-    @apply text-2xl font-bold mobile-large:text-2xl mobile-large:leading-2xl tablet:text-3xl tablet:leading-3xl laptop:text-5xl laptop:leading-5xl;
+    @apply font-[Quasimoda] text-2xl font-bold mobile-large:text-2xl mobile-large:leading-2xl tablet:text-3xl tablet:leading-3xl laptop:text-5xl laptop:leading-5xl;
   }
 
   .heading--extra-large {
-    @apply text-xl font-bold leading-xl mobile-large:text-2xl mobile-large:leading-2xl tablet:text-3xl tablet:leading-3xl laptop:text-3xl laptop:leading-3xl laptop-large:text-4xl laptop-large:leading-4xl;
+    @apply font-[Quasimoda] text-xl font-bold leading-xl mobile-large:text-2xl mobile-large:leading-2xl tablet:text-3xl tablet:leading-3xl laptop:text-3xl laptop:leading-3xl laptop-large:text-4xl laptop-large:leading-4xl;
   }
 
   .heading--sub-extra-large {
-    @apply text-xl font-bold leading-xl mobile-large:text-xl mobile-large:leading-xl tablet:text-2xl tablet:leading-2xl laptop:text-3xl laptop:leading-3xl;
+    @apply font-[Quasimoda] text-xl font-bold leading-xl mobile-large:text-xl mobile-large:leading-xl tablet:text-2xl tablet:leading-2xl laptop:text-3xl laptop:leading-3xl;
   }
 
   .heading--large {
-    @apply text-lg font-bold leading-lg  tablet:text-xl tablet:leading-xl laptop:text-2xl laptop:leading-2xl;
+    @apply font-[Quasimoda] text-lg font-bold leading-lg  tablet:text-xl tablet:leading-xl laptop:text-2xl laptop:leading-2xl;
   }
 
   .heading--sub-large {
-    @apply text-lg font-medium leading-lg laptop:text-xl laptop:leading-xl;
+    @apply font-[Quasimoda] text-lg font-medium leading-lg laptop:text-xl laptop:leading-xl;
   }
 
   .heading {
-    @apply text-md font-normal leading-md laptop:text-lg laptop:leading-lg;
+    @apply font-[Quasimoda] text-md font-normal leading-md laptop:text-lg laptop:leading-lg;
   }
 
   .sub-heading {
-    @apply text-sm font-normal leading-sm laptop:text-md laptop:leading-md;
+    @apply font-[Avenir] text-sm font-normal leading-[24px] laptop:text-md laptop:leading-[28px];
   }
 
   .body {
-    @apply text-sm font-normal leading-sm;
+    @apply font-[Avenir] text-sm font-normal leading-sm;
   }
 
   .caption {
-    @apply text-xs font-light leading-xs;
+    @apply font-[Avenir] text-xs font-light leading-xs;
   }
 
   .main {
@@ -122,108 +122,6 @@
 *:before,
 *:after {
   box-sizing: border-box;
-}
-
-@font-face {
-  font-family: 'Quasimoda';
-  src: url('/fonts/Quasimoda-BlackItalic.eot');
-  src:
-    url('/fonts/Quasimoda-BlackItalic.eot?#iefix') format('embedded-opentype'),
-    url('/fonts/Quasimoda-BlackItalic.woff2') format('woff2'),
-    url('/fonts/Quasimoda-BlackItalic.woff') format('woff'),
-    url('/fonts/Quasimoda-BlackItalic.ttf') format('truetype'),
-    url('/fonts/Quasimoda-BlackItalic.svg#Quasimoda-BlackItalic') format('svg');
-  font-weight: 900;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Quasimoda';
-  src: url('/fonts/Quasimoda-Black.eot');
-  src:
-    url('/fonts/Quasimoda-Black.eot?#iefix') format('embedded-opentype'),
-    url('/fonts/Quasimoda-Black.woff2') format('woff2'),
-    url('/fonts/Quasimoda-Black.woff') format('woff'),
-    url('/fonts/Quasimoda-Black.ttf') format('truetype'),
-    url('/fonts/Quasimoda-Black.svg#Quasimoda-Black') format('svg');
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Quasimoda';
-  src: url('/fonts/Quasimoda-MediumItalic.eot');
-  src:
-    url('/fonts/Quasimoda-MediumItalic.eot?#iefix') format('embedded-opentype'),
-    url('/fonts/Quasimoda-MediumItalic.woff2') format('woff2'),
-    url('/fonts/Quasimoda-MediumItalic.woff') format('woff'),
-    url('/fonts/Quasimoda-MediumItalic.ttf') format('truetype'),
-    url('/fonts/Quasimoda-MediumItalic.svg#Quasimoda-MediumItalic') format('svg');
-  font-weight: 500;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Quasimoda';
-  src: url('/fonts/Quasimoda-SemiBoldItalic.eot');
-  src:
-    url('/fonts/Quasimoda-SemiBoldItalic.eot?#iefix') format('embedded-opentype'),
-    url('/fonts/Quasimoda-SemiBoldItalic.woff2') format('woff2'),
-    url('/fonts/Quasimoda-SemiBoldItalic.woff') format('woff'),
-    url('/fonts/Quasimoda-SemiBoldItalic.ttf') format('truetype'),
-    url('/fonts/Quasimoda-SemiBoldItalic.svg#Quasimoda-SemiBoldItalic') format('svg');
-  font-weight: 600;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Quasimoda';
-  src: url('/fonts/Quasimoda-Medium.eot');
-  src:
-    url('/fonts/Quasimoda-Medium.eot?#iefix') format('embedded-opentype'),
-    url('/fonts/Quasimoda-Medium.woff2') format('woff2'),
-    url('/fonts/Quasimoda-Medium.woff') format('woff'),
-    url('/fonts/Quasimoda-Medium.ttf') format('truetype'),
-    url('/fonts/Quasimoda-Medium.svg#Quasimoda-Medium') format('svg');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Quasimoda';
-  src: url('/fonts/Quasimoda-Heavy.eot');
-  src:
-    url('/fonts/Quasimoda-Heavy.eot?#iefix') format('embedded-opentype'),
-    url('/fonts/Quasimoda-Heavy.woff2') format('woff2'),
-    url('/fonts/Quasimoda-Heavy.woff') format('woff'),
-    url('/fonts/Quasimoda-Heavy.ttf') format('truetype'),
-    url('/fonts/Quasimoda-Heavy.svg#Quasimoda-Heavy') format('svg');
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Quasimoda';
-  src: url('/fonts/Quasimoda-ExtraBold.eot');
-  src:
-    url('/fonts/Quasimoda-ExtraBold.eot?#iefix') format('embedded-opentype'),
-    url('/fonts/Quasimoda-ExtraBold.woff2') format('woff2'),
-    url('/fonts/Quasimoda-ExtraBold.woff') format('woff'),
-    url('/fonts/Quasimoda-ExtraBold.ttf') format('truetype'),
-    url('/fonts/Quasimoda-ExtraBold.svg#Quasimoda-ExtraBold') format('svg');
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-}
-
-html {
-  font-family: Quasimoda;
 }
 
 .primary-glow {
