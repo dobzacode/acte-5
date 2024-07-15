@@ -40,7 +40,7 @@ export default function NavLinks({ isEvent, pathname }: { isEvent: boolean; path
               transition: { ease: 'easeInOut', delay: index * 0.15, duration: 0.9 }
             }}
             exit={{
-              y: 50,
+              y: 70,
               transition: { ease: 'easeInOut', duration: 0.4, delay: index * 0.15 }
             }}
             key={`${link.href}`}

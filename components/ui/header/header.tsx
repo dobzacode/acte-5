@@ -47,9 +47,13 @@ export default function Header({ className }: { className?: string }) {
         !showMenu && 'overflow-hidden'
       )}
     >
-      <div className="flex  shrink-0 items-center gap-md">
-        <Logo width={70} height={70} className={cn('rounded-xs duration-medium')}></Logo>
-        <p className="heading n  font-bold max-laptop:hidden">ACTE 5</p>
+      <div className="flex   items-center gap-md">
+        <Logo
+          className={cn(
+            'h-[70px] w-[70px] rounded-xs duration-medium max-mobile-large:h-[50px] max-mobile-large:w-[50px] max-mobile-medium:h-[40px] max-mobile-medium:w-[40px]'
+          )}
+        ></Logo>
+        <p className="heading   font-bold max-laptop:hidden">ACTE 5</p>
       </div>
 
       {isTablet && pathname !== '/' ? (
@@ -91,14 +95,18 @@ export default function Header({ className }: { className?: string }) {
               )}
             ></motion.div>
 
-            {showMenu && !isTablet ? (
+            {!isTablet ? (
               <motion.nav
-                className={cn(' absolute left-0 top-4xl z-10 flex max-w-full flex-col px-sm')}
+                className={cn(
+                  ' absolute left-0 z-10 flex max-w-full flex-col px-sm mobile-small:top-4xl mobile-medium:top-4xl mobile-large:top-5xl'
+                )}
               >
                 <ul
                   className={cn(
-                    ' flex flex-col gap-sm opacity-0',
-                    showMenu ? 'translate-y-0 opacity-100 duration-slow' : '  duration-300'
+                    ' flex flex-col gap-md opacity-0',
+                    showMenu
+                      ? 'translate-y-0 opacity-100 delay-200 duration-slow'
+                      : '  duration-300'
                   )}
                 >
                   {pathname.includes('agence-evenementielle-strasbourg') ? (
