@@ -25,7 +25,7 @@ export default function PostSnippet({
         <Image
           className="rounded-md object-cover duration-medium hover:shadow-large"
           src={urlForImage(post.mainImage).width(1000).height(800).dpr(2).quality(80).url()}
-          alt="My Image"
+          alt={post.mainImage.alt ?? ''}
           fill
           sizes="(max-width: 600px) 90vw, (max-width: 1400px) 60vw, 1000px"
           placeholder="blur"
