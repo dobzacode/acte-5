@@ -41,10 +41,11 @@ export default function Home() {
           </h2>
           <Image
             className="rounded-sm"
-            src={'/placeholder-image.png'}
+            src={'/assets/event/services/anniversaire/anniversaire.jpg'}
+            sizes={'(max-width: 640px) 100vw, (min-width: 640px) 80vw'}
             width={800}
             height={800}
-            alt="convention-entreprise-strasbourg"
+            alt="anniversaire"
           ></Image>
           <div className="flex flex-col gap-md">
             <h3 className="heading text-primary-400">

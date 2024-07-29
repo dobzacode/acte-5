@@ -43,7 +43,8 @@ export default async function Home() {
           </h2>
           <Image
             className="rounded-sm"
-            src={'/placeholder-image.png'}
+            src={'/assets/event/services/convention/convention.jpg'}
+            sizes={'(max-width: 640px) 100vw, (min-width: 640px) 80vw'}
             width={800}
             height={800}
             alt="convention-entreprise-strasbourg"

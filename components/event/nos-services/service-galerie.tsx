@@ -9,62 +9,62 @@ export const SERVICES = [
   {
     href: '/agence-evenementielle-strasbourg/services/inauguration-entreprise',
     text: 'Inauguration',
-    src: '/placeholder-image.png'
+    src: '/assets/event/services/inauguration.jpg'
   },
   {
     href: '/agence-evenementielle-strasbourg/services/convention-entreprise-strasbourg',
     text: 'Convention',
-    src: '/placeholder-image.png'
+    src: '/assets/event/services/convention.jpg'
   },
   {
     href: '/agence-evenementielle-strasbourg/services/organisateur-anniversaire',
     text: 'Anniversaire',
-    src: '/placeholder-image.png'
+    src: '/assets/event/services/anniversaire.jpg'
   },
   {
     href: '/agence-evenementielle-strasbourg/services/ceremonie-remise-medailles',
     text: 'Cérémonie des médailles',
-    src: '/placeholder-image.png'
+    src: '/assets/event/services/medailles.jpg'
   },
   {
     href: '/agence-evenementielle-strasbourg/services/ceremonie-voeux',
     text: 'Cérémonie des vœux',
-    src: '/placeholder-image.png'
+    src: '/assets/event/services/voeux.jpg'
   },
   {
     href: '/agence-evenementielle-strasbourg/services/portes-ouvertes',
     text: 'Portes ouvertes',
-    src: '/placeholder-image.png'
+    src: '/assets/event/services/portes.jpg'
   },
   {
     href: '/agence-evenementielle-strasbourg/services/soiree-gala',
     text: 'Soirée de Gala',
-    src: '/placeholder-image.png'
+    src: '/assets/event/services/gala.jpg'
   },
   {
     href: '/agence-evenementielle-strasbourg/services/spectacle-entreprise',
     text: "Spectacle d'entreprise",
-    src: '/placeholder-image.png'
+    src: '/assets/event/services/spectacle.jpg'
   },
   {
     href: '/agence-evenementielle-strasbourg/services/team-building',
     text: 'Team building',
-    src: '/placeholder-image.png'
+    src: '/assets/event/services/teambuilding.jpg'
   },
   {
     href: '/agence-evenementielle-strasbourg/services/strategie-communication',
     text: 'Stratégie de communication',
-    src: '/placeholder-image.png'
+    src: '/assets/event/services'
   },
   {
     href: '/agence-evenementielle-strasbourg/services/identite-visuelle',
     text: 'Identité visuelle',
-    src: '/placeholder-image.png'
+    src: '/assets/event/services/design.jpg'
   },
   {
     href: '/agence-evenementielle-strasbourg/services/video-entreprise',
     text: "Vidéo d'entreprise",
-    src: '/placeholder-image.png'
+    src: '/assets/event/services/video.jpg'
   }
 ];
 
@@ -97,11 +97,11 @@ export default function ServiceGalerie({}) {
               >
                 <Link
                   scroll={false}
-                  className=" relative z-40 flex h-full w-full flex-col-reverse after:absolute  after:left-0 after:top-0 after:z-10 after:h-full after:w-full after:bg-gradient-to-t after:from-black/50 after:to-transparent after:to-30%"
+                  className=" relative z-40 flex h-full w-full flex-col-reverse after:absolute  after:left-0 after:top-0 after:z-10 after:h-full after:w-full after:bg-gradient-to-t after:from-black/100 after:to-transparent after:to-30%"
                   href={service.href}
                 >
                   <motion.h3
-                    className={`sub-heading before-bg  relative z-50 text-pretty px-md text-white duration-slow     hover:duration-fast`}
+                    className={`sub-heading before-bg  relative z-50 text-pretty px-md text-white    duration-slow   hover:duration-fast`}
                     initial={{ opacity: 0, y: 300, maxHeight: 0, paddingTop: 0, paddingBottom: 0 }}
                     animate={{
                       opacity: 1,

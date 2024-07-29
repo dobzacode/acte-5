@@ -39,10 +39,11 @@ export default function Home() {
           </h2>
           <Image
             className="rounded-sm"
-            src={'/placeholder-image.png'}
+            src={'/assets/event/services/video/video.jpg'}
+            sizes={'(max-width: 640px) 100vw, (min-width: 640px) 80vw'}
             width={800}
             height={800}
-            alt="convention-entreprise-strasbourg"
+            alt="Video d'entreprise"
           ></Image>
           <div className="flex flex-col gap-md">
             <p className="body text-pretty">

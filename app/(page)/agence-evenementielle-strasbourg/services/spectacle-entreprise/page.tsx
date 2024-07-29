@@ -34,16 +34,13 @@ export default function Home() {
           className="flex flex-col gap-2xl mobile-large:gap-3xl"
           tag="section"
         >
-          {/* <h2 className="sub-heading font-normal">
-          Des chaussures de ski sur un tapis rouge, des escarpins vernis sur le sable, pieds nus sur
-          une piste de danse, boire du champagne comme de l&apos;eau…
-        </h2> */}
           <Image
             className="rounded-sm"
-            src={'/placeholder-image.png'}
+            src={'/assets/event/services/spectacle/spectacle.jpg'}
+            sizes={'(max-width: 640px) 100vw, (min-width: 640px) 80vw'}
             width={800}
             height={800}
-            alt="convention-entreprise-strasbourg"
+            alt="Spectacle d'entreprise"
           ></Image>
           <div className="flex flex-col gap-md">
             <h3 className="heading text-primary-400">
@@ -58,20 +55,6 @@ export default function Home() {
               la prise de conscience.
             </p>
           </div>
-          {/* <div className="flex flex-col gap-md">
-          <h3 className="heading text-primary-400">
-            Le moment exceptionnel de votre soirée de gala d'entreprise
-          </h3>
-          <p className="body text-pretty">
-            Le repas est le moment exceptionnel et capital de la soirée. Il doit être plein de
-            raffinement et de surprises, une rencontre des saveurs dans une atmosphère inoubliable.
-            Des divertissements (spectacle, animation, etc…) sont proposés dans le cadre d&apos;une
-            soirée de gala mémorable. <br />
-            <br />
-            Mémorable ? Vous voulez en garder la trace ? Graver le souvenir ? Nous nous en occupons.
-            Puisque qu&apos;on peut tout faire….
-          </p>
-        </div> */}
         </DivWrapper>
       </section>
       <LastEvent
