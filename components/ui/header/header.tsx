@@ -55,19 +55,7 @@ export default function Header({ className }: { className?: string }) {
             'h-[70px] w-[70px] rounded-xs duration-medium max-mobile-large:h-[50px] max-mobile-large:w-[50px] max-mobile-medium:h-[40px] max-mobile-medium:w-[40px]'
           )}
         ></Logo>
-      </div>
-      <AnimatePresence mode="wait">
-        {isTablet && pathname !== '/' ? (
-          <DivWrapper variant={FadeInVariant} inverseOnExit={true}>
-            <AnimatePresence mode="wait">
-              {pathname.includes('agence-evenementielle-strasbourg') ? (
-                <NavLinks key="menuEvent" pathname={pathname} isEvent={true} />
-              ) : (
-                <NavLinks key="menuSpectacle" pathname={pathname} isEvent={false} />
-              )}
-            </AnimatePresence>
-          </DivWrapper>
-        ) : (
+        {isTablet && pathname === '/' ? (
           <motion.p
             initial={{ y: -100 }}
             animate={{
@@ -83,7 +71,20 @@ export default function Header({ className }: { className?: string }) {
           >
             ACTE 5
           </motion.p>
-        )}
+        ) : null}
+      </div>
+      <AnimatePresence mode="wait">
+        {isTablet && pathname !== '/' ? (
+          <DivWrapper variant={FadeInVariant} inverseOnExit={true}>
+            <AnimatePresence mode="wait">
+              {pathname.includes('agence-evenementielle-strasbourg') ? (
+                <NavLinks key="menuEvent" pathname={pathname} isEvent={true} />
+              ) : (
+                <NavLinks key="menuSpectacle" pathname={pathname} isEvent={false} />
+              )}
+            </AnimatePresence>
+          </DivWrapper>
+        ) : null}
       </AnimatePresence>
       <nav
         onClick={() => {
