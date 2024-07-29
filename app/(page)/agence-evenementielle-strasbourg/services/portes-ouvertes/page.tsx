@@ -34,7 +34,7 @@ export default function Home() {
           className="flex flex-col gap-2xl mobile-large:gap-3xl"
           tag="section"
         >
-          <h2 className="sub-heading font-normal">
+          <h2 className="sub-heading font-semibold">
             Ouvrir les portes pour permettre la découverte de son activité reste un moment crucial
             dans la vie de l&apos;entreprise. Découvrir, rencontrer, être émerveiller, voici ce
             qu&apos;on souhaite transmettre à ceux qui vous rendent visite…

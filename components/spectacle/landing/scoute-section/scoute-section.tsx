@@ -25,8 +25,8 @@ export default function ScouteSection() {
           variant={ComingFromRightVariant}
           className="sub-heading w-[40ch] text-pretty text-center"
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing eli, sed do eiusmod tempor incididunt
-          ut labore et dolore magna. Lorem ipsum dolor sit amet, consectetur adipiscing el
+          Le plus grand cabaret satirique d’alsace se moque de tout et de tout le monde depuis 50
+          ans dans un spectacle
         </InviewWrapper>
       </div>
 

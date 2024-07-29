@@ -53,7 +53,9 @@ export default async function Section2024() {
           ></Image>
         </div>
 
-        <CustomPortableText value={revueScouteActuelle[0].description}></CustomPortableText>
+        <div className="prose prose-base">
+          <CustomPortableText value={revueScouteActuelle[0].description}></CustomPortableText>
+        </div>
       </section>
       <section className=" inner-section-gap flex flex-col ">
         <InviewWrapper

@@ -34,7 +34,7 @@ export default function Home() {
           className="flex flex-col gap-2xl mobile-large:gap-3xl"
           tag="section"
         >
-          <h2 className="sub-heading font-normal">
+          <h2 className="sub-heading font-semibold">
             L'image, c'est ce qui donne la première impression, qui chatouille les sens et donne
             envie de pousser la porte pour entrer dans la boutique. Une création graphique
             impactante et efficace marque les esprits et reste dans les mémoires

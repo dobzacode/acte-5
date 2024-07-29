@@ -50,8 +50,7 @@ export default function ServiceSection() {
         className="laptop-large::col-start-7 col-span-6  row-span-2 row-start-3 flex flex-col gap-lg rounded-sm text-white max-tablet:hidden tablet:col-span-6 tablet:row-start-3 laptop:col-start-6 laptop-large:col-start-8 laptop-large:row-start-2 laptop-large:content-start "
       >
         <p className="sub-heading">
-          {' '}
-          Nous allions l'art du storytelling à la précision théâtrale pour créer des événements B2B
+          Nous allions l'art du storytelling à la précision théâtrale pour créer des événements
           inoubliables. Notre approche unique garantit une réalisation où chaque détail compte et où
           chaque événement est synonyme de succès.
         </p>

@@ -34,7 +34,7 @@ export default function Home() {
           className="flex flex-col gap-2xl mobile-large:gap-3xl"
           tag="section"
         >
-          <h2 className="sub-heading font-normal">
+          <h2 className="sub-heading font-semibold">
             Quitter son bureau, se couper de son téléphone, ne pas lire ses mails, lâcher prise le
             temps d&apos;un instant pour se retrouver avec soi-même dans le but de servir le groupe.
           </h2>
@@ -63,13 +63,13 @@ export default function Home() {
               Pour un jour ou deux, trouvez un rythme de travail différent pour vos collaborateurs.
             </h3>
             <p className="body text-pretty">
-              Brisez le cadre quotidien de leurs activités et offrez une nouvelle perspective au
-              collectif…. Vos équipes s&apos;entraident et s&apos;épanouissent dans des projets
-              ludiques, sportifs, créatifs qui les amènent à trouver une nouvelle cohésion… source
-              d&apos;une motivation renouvelée. Chaque compétence individuelle est sollicitée, elle
-              apporte à l&apos;ensemble, en interaction avec les autres… un renforcement de ses
-              possibilités, un nouveau potentiel à exploiter. Les forces conjointes forgeront une
-              nouvelle unité des acteurs de votre société.
+              <strong>Brisez le cadre quotidien de leurs activités</strong> et offrez une nouvelle
+              perspective au collectif…. Vos équipes s&apos;entraident et s&apos;épanouissent dans
+              des projets ludiques, sportifs, créatifs qui les amènent à trouver une nouvelle
+              cohésion… source d&apos;une motivation renouvelée. Chaque compétence individuelle est
+              sollicitée, elle apporte à l&apos;ensemble, en interaction avec les autres… un
+              renforcement de ses possibilités, un nouveau potentiel à exploiter. Les forces
+              conjointes forgeront une nouvelle unité des acteurs de votre société.
             </p>
           </div>
         </DivWrapper>

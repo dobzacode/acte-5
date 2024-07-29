@@ -34,7 +34,7 @@ export default async function Home() {
           className="flex flex-col gap-2xl mobile-large:gap-3xl"
           tag="section"
         >
-          <h2 className="sub-heading font-normal">
+          <h2 className="sub-heading font-semibold">
             Conventionnelle ou non ? Académique ou décalée ? On brise les conventions, tout en
             respectant leur raison d&apos;être. Grâce aux conventions, les entreprises fédèrent et
             rassemblent les publics, donnent l&apos;opportunité à leurs parties prenantes de
@@ -51,13 +51,14 @@ export default async function Home() {
           <div className="flex flex-col gap-md">
             <h3 className="heading text-primary-400">Pourquoi organiser une convention ?</h3>
             <p className="body text-pretty">
-              Vous avez le besoin de transmettre un message fort à vos collaborateurs, à vos
-              partenaires. Avec vous, nous définissons l&apos;ensemble des priorités de la
-              manifestation. Nous imaginons un projet sur mesure dans un lieu adéquat et nous vous
-              proposons, ainsi, le format le plus adapté. Votre discours est enrichi par un
-              habillage inventif, une mise en scène de vos idées et de vos actions. Par le biais de
-              supports variés (habillage scénique, vidéo, lumière, son, communication visuelle et
-              graphique…) nous vous accompagnons dans l&apos;expression de votre message. <br />
+              Vous avez le besoin de{' '}
+              <strong>transmettre un message fort à vos collaborateurs</strong>, à vos partenaires.
+              Avec vous, nous définissons l&apos;ensemble des priorités de la manifestation. Nous
+              imaginons un projet sur mesure dans un lieu adéquat et nous vous proposons, ainsi, le
+              format le plus adapté. Votre discours est enrichi par un habillage inventif, une mise
+              en scène de vos idées et de vos actions. Par le biais de supports variés (habillage
+              scénique, vidéo, lumière, son, communication visuelle et graphique…) nous vous
+              accompagnons dans l&apos;expression de votre message. <br />
               <br /> Un rythme est trouvé, une animation mise en place, accompagnée selon vos
               souhaits, par une série d&apos;animations ludiques ou artistiques.
             </p>
@@ -70,11 +71,13 @@ export default async function Home() {
               soutenir votre propos avec les arts du spectacle et le rendre accessible,
               compréhensible du plus grand nombre.
               <br />
-              <br /> L&apos;objectif de la démarche vise, entre autres, à maintenir la cohésion de
-              toutes les forces vives de l&apos;entreprise. Elle permet le lancement de nouvelles
-              stratégies tout en donnant la possibilité aux collaborateurs d&apos;en devenir acteur.
-              C&apos;est l&apos;occasion pour l&apos;entreprise et les managers de renouveler la
-              confiance en leurs équipes.
+              <br /> L&apos;objectif de la démarche vise, entre autres, à{' '}
+              <strong>
+                maintenir la cohésion de toutes les forces vives de l&apos;entreprise.
+              </strong>{' '}
+              Elle permet le lancement de nouvelles stratégies tout en donnant la possibilité aux
+              collaborateurs d&apos;en devenir acteur. C&apos;est l&apos;occasion pour
+              l&apos;entreprise et les managers de renouveler la confiance en leurs équipes.
             </p>
           </div>
         </DivWrapper>

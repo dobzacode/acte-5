@@ -33,8 +33,10 @@ export default async function Page() {
           className="flex flex-col gap-2xl mobile-large:gap-3xl"
           tag="section"
         >
-          <h2 className="sub-heading text-pretty font-normal ">
-            Une cérémonie de médailles pour une entreprise en réussite, fière de son succès
+          <h2 className="sub-heading text-pretty font-semibold ">
+            Que ce soit une cérémonie des médailles du travail, ou encore une cérémonie pour
+            célébrer l’ancienneté, chaque salarié a droit, au cours de sa carrière à son moment de
+            gloire, de reconnaissance.
           </h2>
           <Image
             className="rounded-sm"
@@ -50,10 +52,10 @@ export default async function Page() {
             <p className="body text-pretty">
               Une entreprise en réussite, fière de son succès salue aussi bien ses collaborateurs
               fidèles que ceux honorés pour une longue carrière professionnelle. Elle tient en haute
-              estime ses partenaires de longue date. Cette cérémonie de médailles est le témoignage
-              de la reconnaissance de l&apos;entreprise envers les acteurs de sa réussite. Réception
-              au déroulé précis… sans anicroche, sans contretemps… car nous aurons pris le temps
-              nécessaire pour en peaufiner les détails.
+              estime ses partenaires de longue date. <strong>Cette cérémonie de médailles</strong>{' '}
+              est le témoignage de la reconnaissance de l&apos;entreprise envers les acteurs de sa
+              réussite. Réception au déroulé précis… sans anicroche, sans contretemps… car nous
+              aurons pris le temps nécessaire pour en peaufiner les détails.
             </p>
           </div>
           <div className="flex flex-col gap-md">
@@ -67,9 +69,12 @@ export default async function Page() {
               professionnels. Une trame joliment dessinée sans dévoiler tout le travail de
               préparation, c&apos;est notre métier !
               <br />
-              <br /> La cérémonie des médailles peut être agrémentée par un cocktail, par une
-              animation musicale, théâtrale ou encore artistique, afin de prolonger la convivialité
-              de ce moment.
+              <br />{' '}
+              <strong>
+                La cérémonie des médailles peut être agrémentée par un cocktail, par une animation
+                musicale, théâtrale ou encore artistique
+              </strong>
+              , afin de prolonger la convivialité de ce moment.
             </p>
           </div>
         </DivWrapper>

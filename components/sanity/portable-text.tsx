@@ -33,6 +33,8 @@ export default function CustomPortableText({ value }: { value: PortableTextBlock
       image: SampleImageComponent
     },
 
+    block: { normal: ({ children }) => <p className="body">{children}</p> },
+
     marks: {
       link: ({ children, value }) => {
         return (

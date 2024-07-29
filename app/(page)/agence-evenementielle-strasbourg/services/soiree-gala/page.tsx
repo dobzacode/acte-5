@@ -34,7 +34,7 @@ export default function Home() {
           className="flex flex-col gap-2xl mobile-large:gap-3xl"
           tag="section"
         >
-          <h2 className="sub-heading font-normal">
+          <h2 className="sub-heading font-semibold">
             Des chaussures de ski sur un tapis rouge, des escarpins vernis sur le sable, pieds nus
             sur une piste de danse, boire du champagne comme de l&apos;eau…
           </h2>
@@ -54,15 +54,15 @@ export default function Home() {
               Paillettes, tapis rouge, bulles de champagne. Soirée toute en sobriété si cela vous
               dit (tout est possible !). Une invitation est un privilège.
               <br />
-              <br /> Pour qu&apos;elle soit particulièrement réussie, cette soirée de gala pour
-              entreprise est minutieusement organisée par une équipe de professionnels. Soirée
-              classique ou prestation originale, elle reflète un certain standing et offre une image
-              valorisante pour ses invités. Quoiqu&apos;il en soit, elle doit marquer les esprits.
-              Cette fête officielle, prestigieuse, créée la surprise dans une ambiance
-              particulièrement choisie. Après avoir mis au point, avec vous, sa conception, nous
-              prenons en charge la coordination générale de la soirée, du lieu, de la décoration, de
-              la logistique, de l&apos;équipement, du choix des prestations, des artistes invités
-              et, last but not least, de la sélection du traiteur.
+              <br /> Pour qu&apos;elle soit particulièrement réussie, cette
+              <strong> soirée de gala pour entreprise</strong> est minutieusement organisée par une
+              équipe de professionnels. Soirée classique ou prestation originale, elle reflète un
+              certain standing et offre une image valorisante pour ses invités. Quoiqu&apos;il en
+              soit, elle doit marquer les esprits. Cette fête officielle, prestigieuse, créée la
+              surprise dans une ambiance particulièrement choisie. Après avoir mis au point, avec
+              vous, sa conception, nous prenons en charge la coordination générale de la soirée, du
+              lieu, de la décoration, de la logistique, de l&apos;équipement, du choix des
+              prestations, des artistes invités et, last but not least, de la sélection du traiteur.
             </p>
           </div>
           <div className="flex flex-col gap-md">

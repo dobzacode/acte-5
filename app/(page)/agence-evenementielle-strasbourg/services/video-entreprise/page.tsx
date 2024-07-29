@@ -34,7 +34,7 @@ export default function Home() {
           className="flex flex-col gap-2xl mobile-large:gap-3xl"
           tag="section"
         >
-          <h2 className="sub-heading font-normal">
+          <h2 className="sub-heading font-semibold">
             Nous conceptualisons et réalisons vos vidéos d'entreprise sur mesure
           </h2>
           <Image

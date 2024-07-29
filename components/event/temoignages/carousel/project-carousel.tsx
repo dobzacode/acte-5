@@ -73,7 +73,7 @@ const ProjectCarousel: React.FC<PropType> = (props) => {
           <div className="project_embla__container ">
             {events.map((event, index) => (
               <div
-                className="project_emb-la__slide relative aspect-square h-[20rem] flex-[0_0_100%]   cursor-pointer  overflow-hidden  rounded-sm mobile-large:h-[30rem]"
+                className="project_embla__slide relative aspect-square h-[20rem] flex-[0_0_100%]   cursor-pointer  overflow-hidden  rounded-sm mobile-large:h-[30rem]"
                 key={index}
               >
                 <div

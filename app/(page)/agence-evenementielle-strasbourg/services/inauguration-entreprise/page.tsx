@@ -33,7 +33,7 @@ export default function Home() {
           className="flex flex-col gap-2xl mobile-large:gap-3xl "
           tag="section"
         >
-          <h2 className="sub-heading font-normal">
+          <h2 className="sub-heading  font-semibold">
             Comme des oiseaux de bon augure… Longue vie… Carpe Diem…Bon vent… Bonne route… « Y a
             plus qu’à !»… C’est parti ! Autant d’expressions/vocabulaire que nous pouvons retrouver
             dans un discours inaugural pour souhaiter la réussite de ce nouveau projet.
@@ -50,12 +50,13 @@ export default function Home() {
               L'inauguration est un moment décisif qui inspire un nouvel élan pour votre entreprise
             </h3>
             <p className="body text-pretty">
-              Elle fera date et portera votre marque au-delà des murs. L&apos;inauguration d&apos;un
-              lieu nouveau, de locaux ou d&apos;un magasin est un moment particulier pour votre
-              entreprise et son développement. L&apos;occasion de réunir vos clients, vos
-              partenaires et vos prestataires pour saluer votre réussite. C&apos;est une opération
-              de communication qui présente vos produits, vos services, vos savoir-faire, votre
-              identité. L&apos;inauguration est une mise en valeur de vos activités et
+              Elle fera date et portera votre marque au-delà des murs.{' '}
+              <strong>L&apos;inauguration d&apos;un lieu nouveau</strong>, de locaux ou d&apos;un
+              magasin est un moment particulier pour votre entreprise et son développement.
+              L&apos;occasion de réunir vos clients, vos partenaires et vos prestataires pour saluer
+              votre réussite. C&apos;est une opération de communication qui présente vos produits,
+              vos services, vos savoir-faire, votre identité.{' '}
+              <strong>L&apos;inauguration est une mise en valeur de vos activités</strong> et
               l&apos;opportunité d&apos;installer une représentation positive de votre entreprise.
             </p>
           </div>
@@ -72,8 +73,8 @@ export default function Home() {
               <br /> Du cocktail classique, cérémonieux, inattendu, festif à l&apos;innovation
               personnalisée, de la mise en valeur par un habillage lumière à la création d&apos;une
               vidéo (corporate, retrospective, inaugurale, de lancement), du projet le plus fou à la
-              maitrise parfaite de votre budget, Acte 5 est le partenaire idéal pour organiser votre
-              inauguration.
+              maitrise parfaite de votre budget,{' '}
+              <strong>Acte 5 est le partenaire idéal pour organiser votre inauguration.</strong>
             </p>
           </div>
         </DivWrapper>

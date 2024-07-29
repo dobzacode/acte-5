@@ -17,7 +17,7 @@ export default function AproposSection() {
         <StaggeredText
           margin={'-200px 0px -200px 0px'}
           staggerValue={0.05}
-          className="heading--sub-extra-large"
+          className="heading--sub-extra-large text-pretty"
           variant={FromTopStaggerVariant}
         >
           Toujours pas convaincu ?

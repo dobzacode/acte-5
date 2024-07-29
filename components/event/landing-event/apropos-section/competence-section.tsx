@@ -13,17 +13,17 @@ const COMPETENCE = [
   {
     name: 'EVENEMENTIEL',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua'
+      'De la soirée de gala en passant par la convention, le séminaire, la journée portes ouvertes ou encore l’anniversaire d’entreprise, Acte 5 a déjà œuvré pour de nombreux clients issus du monde industriel, tertiaire, médical, automobile, du logement social, et également '
   },
   {
     name: "SPECTACLE D'ENTREPRISE",
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua'
+      'Acte 5 est producteur de la Revue Scoute depuis 1979. Elle produit également des spectacles thématiques (Bien vivre sa retraite, le cabaret des aidants, Les Scouts libèrent leur durable attitude, etc.) et des spectacles sur-mesure à destination des entreprises (Draber Neff, Habitat de l’Ill, etc.). Un grand nombre d’entreprises a déjà fait confiance à Acte 5 pour la réalisation de saynètes écrites spécifiquement pour l’événement. '
   },
   {
     name: 'GRAPHISME',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua'
+      'Grâce à un studio graphique intégré l’agence conçoit et réalise en interne l’habillage visuel des événements et la scénographie des spectacles. Le studio gère également de A à Z des projets de communication graphique (identité visuelle, brochures, panneaux d’exposition, signalétique, etc.). '
   }
 ];
 
@@ -75,8 +75,8 @@ export default function CompetenceSection() {
                 className=" sticky top-0 cursor-pointer"
                 variant={index % 2 === 0 ? ComingFromLeftVariant : ComingFromRightVariant}
               >
-                <li className="card flex flex-col gap-lg px-0 pb-sm pt-0">
-                  <div className="group  relative flex   w-full items-center justify-between gap-3xl overflow-hidden rounded-sm px-2xl py-xl duration-extra-slow ">
+                <li className="card flex flex-col p-0">
+                  <div className="group  relative flex   w-full items-center justify-between gap-3xl overflow-hidden rounded-sm rounded-b-none px-2xl py-xl duration-extra-slow ">
                     <h3 className="heading--large relative z-20 w-full text-center font-medium text-black duration-medium ">
                       {item.name}
                     </h3>
@@ -88,7 +88,7 @@ export default function CompetenceSection() {
                       objectFit="cover"
                     ></Image>
                   </div>
-                  <p className="body relative z-10 w-fit px-sm font-light  duration-medium ">
+                  <p className="body relative z-10 w-fit p-md font-light  duration-medium ">
                     {item.description}
                   </p>
                 </li>

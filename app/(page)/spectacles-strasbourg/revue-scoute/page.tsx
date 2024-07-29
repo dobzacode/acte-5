@@ -1,6 +1,5 @@
-import { FromTopStaggerVariant } from '@/components/framer-motion/div-variants';
+import { ComingFromRightVariant } from '@/components/framer-motion/div-variants';
 import InviewWrapper from '@/components/framer-motion/inview-wrapper';
-import StaggeredText from '@/components/framer-motion/staggered-text';
 import PastSection from '@/components/spectacle/revue-scoute/past-section';
 import Section2024 from '@/components/spectacle/revue-scoute/section-2024';
 import TitleSection from '@/components/ui/title-section';
@@ -24,14 +23,18 @@ export default async function Home() {
         ]}
       ></TitleSection>
       <div className="section-px inner-section-gap flex laptop:container max-laptop-large:items-start max-tablet:flex-col laptop:mx-auto">
-        <StaggeredText
-          className=" heading--sub-large relative tablet:container tablet:mx-auto"
-          variant={FromTopStaggerVariant}
-          delay={0.5}
+        <InviewWrapper
+          tag="p"
+          className="sub-heading  relative   tablet:container tablet:mx-auto"
+          variant={ComingFromRightVariant}
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing eli, sed do eiusmod tempor incididunt
-          ut labore et dolore magna
-        </StaggeredText>
+          La Revue Scoute, c’est un spectacle de cabaret satirique en français qui met en scène une
+          troupe de 8 comédiens et 4 musiciens <br />
+          <br />
+          Chaque année, on revisite les petits et grands événements de l’année en nous moquant de
+          tout et de tout le monde : de la politique locale et nationale, des faits de société, de
+          nos travers, de là où ça grince et où ça ne passe que quand le rire s’en mêle !
+        </InviewWrapper>
 
         <div className="relative">
           <InviewWrapper
