@@ -54,7 +54,7 @@ export default function CalendrierTable({
   }, [moisSelectionne, anneeSelectionnee]);
 
   return (
-    <div className="card mx-auto flex w-full max-w-[35rem] flex-col items-center justify-center gap-md overflow-hidden rounded-sm bg-white shadow-xl">
+    <div className="card mx-auto flex w-full max-w-[40rem] flex-col items-center justify-center gap-md overflow-hidden rounded-sm bg-white shadow-xl">
       <div className="flex w-full items-center  justify-between gap-lg">
         <p className="heading--sub-large font-bold text-black">
           {moisSelectionne !== null && (

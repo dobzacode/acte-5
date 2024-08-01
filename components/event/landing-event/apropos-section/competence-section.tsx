@@ -47,7 +47,7 @@ export default function CompetenceSection() {
             return (
               <InviewWrapper
                 key={`${item.name}-${index}`}
-                className=" sticky top-0 cursor-pointer "
+                className=" sticky top-0  "
                 variant={index % 2 === 0 ? variantLeft : variantRight}
               >
                 <li className="group  relative flex   w-full items-center justify-between gap-3xl overflow-hidden rounded-sm px-2xl py-xl   duration-extra-slow hover:bg-primary-400 hover:duration-0">
@@ -72,7 +72,7 @@ export default function CompetenceSection() {
             return (
               <InviewWrapper
                 key={`${item.name}-mobile-${index}`}
-                className=" sticky top-0 cursor-pointer"
+                className=" sticky top-0 "
                 variant={index % 2 === 0 ? ComingFromLeftVariant : ComingFromRightVariant}
               >
                 <li className="card flex flex-col p-0">

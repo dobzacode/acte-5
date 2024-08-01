@@ -28,7 +28,8 @@
     "**/**/*.tsx",
     ".next/types/**/*.ts",
     "svgr.d.ts",
-    "app/(page)/publication/[slug]/loading.js"
+    "app/(page)/publication/[slug]/loading.js",
+    "script.ts"
   ],
   "exclude": ["node_modules"]
 }

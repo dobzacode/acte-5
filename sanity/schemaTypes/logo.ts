@@ -16,7 +16,7 @@ export default defineType({
     }),
     defineField({
       name: 'title',
-      title: 'Title',
+      title: 'Titre',
       type: 'string',
       validation: (Rule) => Rule.required()
     })
@@ -24,11 +24,12 @@ export default defineType({
 
   preview: {
     select: {
-      title: 'titre',
+      title: 'title',
       media: 'logo'
     },
     prepare(selection) {
-      return { ...selection };
+      const { title, media } = selection;
+      return { title, media };
     }
   }
 });
