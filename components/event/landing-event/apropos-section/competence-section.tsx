@@ -51,10 +51,10 @@ export default function CompetenceSection() {
                 variant={index % 2 === 0 ? variantLeft : variantRight}
               >
                 <li className="group  relative flex   w-full items-center justify-between gap-3xl overflow-hidden rounded-sm px-2xl py-xl   duration-extra-slow hover:bg-primary-400 hover:duration-0">
-                  <h3 className="heading--large relative z-20 w-full font-medium text-black duration-medium group-hover:text-primary-400">
+                  <h3 className="heading--large relative z-20  w-full font-medium text-black duration-medium group-hover:text-primary-400">
                     {item.name}
                   </h3>
-                  <p className="heading relative z-10 w-fit translate-x-[104%] font-light text-white  duration-medium group-hover:translate-x-0">
+                  <p className="sub-heading relative z-10 w-fit translate-x-[104%] font-light text-white  duration-medium group-hover:translate-x-0">
                     {item.description}
                   </p>
                   <Image
