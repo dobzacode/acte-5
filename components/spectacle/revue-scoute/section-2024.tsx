@@ -1,4 +1,7 @@
-import { ComingFromLeftVariant } from '@/components/framer-motion/div-variants';
+import {
+  ComingFromLeftVariant,
+  ComingFromRightVariant
+} from '@/components/framer-motion/div-variants';
 import InviewWrapper from '@/components/framer-motion/inview-wrapper';
 import CustomPortableText from '@/components/sanity/portable-text';
 import { sanityFetch } from '@/sanity/lib/fetch';
@@ -42,7 +45,10 @@ export default async function Section2024() {
         >
           {revueScouteActuelle[0].titre}
         </InviewWrapper>
-        <div className="relative h-[30rem] w-full overflow-hidden rounded-sm">
+        <InviewWrapper
+          variant={ComingFromRightVariant}
+          className="relative h-[30rem] w-full overflow-hidden rounded-sm"
+        >
           <Image
             src={mainUrl}
             blurDataURL={blurSrc}
@@ -51,11 +57,11 @@ export default async function Section2024() {
             alt="image"
             className="object-cover"
           ></Image>
-        </div>
+        </InviewWrapper>
 
-        <div className="prose prose-base">
+        <InviewWrapper variant={ComingFromLeftVariant} className="prose prose-base max-w-full">
           <CustomPortableText value={revueScouteActuelle[0].description}></CustomPortableText>
-        </div>
+        </InviewWrapper>
       </section>
       <section className=" inner-section-gap flex flex-col ">
         <InviewWrapper

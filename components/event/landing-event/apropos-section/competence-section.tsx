@@ -8,22 +8,25 @@ import InviewWrapper from '@/components/framer-motion/inview-wrapper';
 import useBetterMediaQuery from '@/hooks/use-better-media-query';
 import { Variants } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const COMPETENCE = [
   {
     name: 'EVENEMENTIEL',
-    description:
-      'De la soirée de gala en passant par la convention, le séminaire, la journée portes ouvertes ou encore l’anniversaire d’entreprise, Acte 5 a déjà œuvré pour de nombreux clients issus du monde industriel, tertiaire, médical, automobile, du logement social, et également '
+    category: 'evenementiel',
+    description: "La création et l'organisation d'événements sur mesure pour les entreprises."
   },
   {
     name: "SPECTACLE D'ENTREPRISE",
+    category: 'spectacle',
     description:
-      'Acte 5 est producteur de la Revue Scoute depuis 1979. Elle produit également des spectacles thématiques (Bien vivre sa retraite, le cabaret des aidants, Les Scouts libèrent leur durable attitude, etc.) et des spectacles sur-mesure à destination des entreprises (Draber Neff, Habitat de l’Ill, etc.). Un grand nombre d’entreprises a déjà fait confiance à Acte 5 pour la réalisation de saynètes écrites spécifiquement pour l’événement. '
+      'La création et la production de spectacles pour le grand public et les entreprises.'
   },
   {
     name: 'GRAPHISME',
+    category: 'graphisme',
     description:
-      'Grâce à un studio graphique intégré l’agence conçoit et réalise en interne l’habillage visuel des événements et la scénographie des spectacles. Le studio gère également de A à Z des projets de communication graphique (identité visuelle, brochures, panneaux d’exposition, signalétique, etc.). '
+      'La communication visuelle habille nos événements et nos spectacles, mais pas seulement...'
   }
 ];
 
@@ -46,15 +49,20 @@ export default function CompetenceSection() {
         ? COMPETENCE.map((item, index) => {
             return (
               <InviewWrapper
+                tag="li"
                 key={`${item.name}-${index}`}
                 className=" sticky top-0  "
                 variant={index % 2 === 0 ? variantLeft : variantRight}
               >
-                <li className="group  relative flex   w-full items-center justify-between gap-3xl overflow-hidden rounded-sm px-2xl py-xl   duration-extra-slow hover:bg-primary-400 hover:duration-0">
-                  <h3 className="heading--large relative z-20  w-full font-medium text-black duration-medium group-hover:text-primary-400">
+                <Link
+                  scroll={false}
+                  href={`/agence-evenementielle-strasbourg/services?categorie=${item.category}`}
+                  className="group  relative flex   w-full items-center justify-between gap-3xl overflow-hidden rounded-sm px-2xl py-xl   duration-extra-slow hover:bg-primary-400 hover:duration-0"
+                >
+                  <h3 className="heading--large max-laptop-large:heading--sub-large relative z-20  w-full font-medium text-black duration-medium group-hover:text-primary-400">
                     {item.name}
                   </h3>
-                  <p className="sub-heading relative z-10 w-fit translate-x-[104%] font-light text-white  duration-medium group-hover:translate-x-0">
+                  <p className="heading relative z-10 w-fit translate-x-[104%] !font-[Avenir] !font-light text-white  duration-medium group-hover:translate-x-0">
                     {item.description}
                   </p>
                   <Image
@@ -64,18 +72,23 @@ export default function CompetenceSection() {
                     alt=""
                     objectFit="cover"
                   ></Image>
-                </li>
+                </Link>
               </InviewWrapper>
             );
           })
         : COMPETENCE.map((item, index) => {
             return (
               <InviewWrapper
+                tag="li"
                 key={`${item.name}-mobile-${index}`}
                 className=" sticky top-0 "
                 variant={index % 2 === 0 ? ComingFromLeftVariant : ComingFromRightVariant}
               >
-                <li className="card flex flex-col p-0">
+                <Link
+                  scroll={false}
+                  href={`/agence-evenementielle-strasbourg/services?categorie=${item.category}`}
+                  className="card flex flex-col p-0"
+                >
                   <div className="group  relative flex   w-full items-center justify-between gap-3xl overflow-hidden rounded-sm rounded-b-none px-2xl py-xl duration-extra-slow ">
                     <h3 className="heading--large relative z-20 w-full text-center font-medium text-black duration-medium ">
                       {item.name}
@@ -88,10 +101,10 @@ export default function CompetenceSection() {
                       objectFit="cover"
                     ></Image>
                   </div>
-                  <p className="body relative z-10 w-fit p-md font-light  duration-medium ">
+                  <p className="body font-Linkght relative z-10 w-fit p-md  duration-medium ">
                     {item.description}
                   </p>
-                </li>
+                </Link>
               </InviewWrapper>
             );
           })}

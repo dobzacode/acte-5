@@ -51,6 +51,16 @@ export interface Author {
   _ref: string;
 }
 
+export interface Logo {
+  _id: string;
+  _type: string;
+  _rev: string;
+  _createdAt: string;
+  _updatedAt: string;
+  title: string;
+  logo: Image;
+}
+
 export interface Image {
   _type: string;
   asset: any;
@@ -146,13 +156,12 @@ export interface Spectacle {
   musiqueEtSon: string[] | null;
   mainImage: Image;
   _type: string;
-  
+
   _createdAt: string;
   titre: string;
   costumes: string[] | null;
   photos: string[] | null;
   _updatedAt: string;
-  
 }
 
 export const POSTS_QUERY = groq`*[_type == "publication" && defined(slug)]`;
@@ -186,6 +195,10 @@ export type RevueScouteActuelleQueryResponse = RevueScoute[] | null;
 export const SPECTACLES_QUERY = groq`*[_type == "spectacle"]`;
 
 export type SpectaclesQueryResponse = Spectacle[] | null;
+
+export const LOGOS_QUERY = groq`*[_type == "logo"]`;
+
+export type LogosQueryResponse = Logo[] | null;
 
 export const SPECTACLE_QUERY = groq`*[_type == "spectacle" && slug.current == $slug][0]`;
 

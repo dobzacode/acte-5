@@ -1,3 +1,4 @@
+import CompetenceSection from '@/components/event/nos-services/competence-section';
 import ServiceGalerie from '@/components/event/nos-services/service-galerie';
 import { FromTopStaggerVariant } from '@/components/framer-motion/div-variants';
 import StaggeredText from '@/components/framer-motion/staggered-text';
@@ -14,7 +15,7 @@ export default function Home() {
   return (
     <main className="relative flex w-full flex-col items-center justify-center gap-xl px-0 pt-5xl mobile-small:gap-3xl mobile-medium:gap-2xl mobile-large:gap-4xl tablet:gap-5xl tablet:pt-7xl laptop:gap-6xl laptop-large:gap-6xl">
       <TitleSection
-        title={'EVENEMENTIEL'}
+        title={'NOS SERVICES'}
         element={[
           { href: '/agence-evenementielle-strasbourg', text: 'Évenement' },
           { href: '/agence-evenementielle-strasbourg/services', text: 'Nos services' }
@@ -31,6 +32,7 @@ export default function Home() {
           pour des événements B2B inoubliables.
         </StaggeredText>
       </div>
+      <CompetenceSection></CompetenceSection>
       <ServiceGalerie></ServiceGalerie>
     </main>
   );

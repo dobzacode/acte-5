@@ -1,3 +1,4 @@
+import LogoFetchWrapper from '@/components/event/landing-event/trust-section/logo-fetch-wrapper';
 import { EventWithImg } from '@/components/event/nos-services/last-event-image';
 import ProjectSection from '@/components/event/temoignages/project-section';
 import { ComingFromRightVariant } from '@/components/framer-motion/div-variants';
@@ -56,16 +57,7 @@ export default async function Home() {
         variant={ComingFromRightVariant}
         viewport={{ once: true, margin: '-200px 0px -200px 0px' }}
       >
-        <div className="section-px container relative mx-auto flex gap-sm   ">
-          <p className="aspect-square w-5xl rounded-sm bg-gray-200 laptop:w-7xl"></p>
-          <p className="aspect-square w-5xl rounded-sm bg-gray-200 laptop:w-7xl"></p>
-          <p className="aspect-square  w-5xl rounded-sm bg-gray-200 laptop:w-7xl"></p>
-          <p className="aspect-square  w-5xl rounded-sm bg-gray-200 laptop:w-7xl"></p>
-          <p className="aspect-square  w-5xl rounded-sm bg-gray-200 laptop:w-7xl"></p>
-          <p className="aspect-square  w-5xl rounded-sm bg-gray-200 laptop:w-7xl"></p>
-          <p className="aspect-square  w-5xl rounded-sm bg-gray-200 laptop:w-7xl"></p>
-          <p className="aspect-square w-5xl rounded-sm bg-gray-200 laptop:w-7xl"> </p>
-        </div>
+        <LogoFetchWrapper isTrustSection={false}></LogoFetchWrapper>
       </InviewWrapper>
       <ProjectSection events={eventsWithImg}></ProjectSection>
     </main>

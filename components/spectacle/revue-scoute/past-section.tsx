@@ -38,13 +38,16 @@ export default async function PastSection() {
   }
 
   return (
-    <section className="inner-section-gap flex w-full  flex-col overflow-hidden bg-primary-400 py-xl !pb-2xl">
+    <section className="inner-section-gap flex w-full  flex-col overflow-hidden bg-primary-400 py-xl ">
       <InviewWrapper variant={ComingFromTopVariant}>
         <h2 className="heading--sub-extra-large section-px text-center text-white ">
           Et pour la postérité...
         </h2>
       </InviewWrapper>
-      <InviewWrapper variant={ComingFromBottomVariant}>
+      <InviewWrapper
+        viewport={{ once: true, margin: '200px 0px 200px 0px' }}
+        variant={ComingFromBottomVariant}
+      >
         <PastCarousel imagesWithUrl={imagesWithUrl} />
       </InviewWrapper>
     </section>

@@ -1,4 +1,3 @@
-import CompetenceSection from '@/components/event/a-propos/competence-section';
 import TeamSection from '@/components/event/a-propos/team-section';
 import { FromTopStaggerVariant } from '@/components/framer-motion/div-variants';
 import StaggeredText from '@/components/framer-motion/staggered-text';
@@ -30,7 +29,7 @@ export default function Home() {
         Forte de plus de 30 ans d&apos;expertise en communication événementielle, Acte 5 puise dans
         les arts de la scène pour donner vie à vos messages d&apos;entreprise
       </StaggeredText>
-      <CompetenceSection></CompetenceSection>
+
       <TeamSection></TeamSection>
     </main>
   );

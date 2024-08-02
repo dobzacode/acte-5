@@ -24,9 +24,9 @@ export default function FooterContent() {
           <Link
             scroll={false}
             className="body hover:opacity-hover"
-            href="/agence-evenementielle-strasbourg/service"
+            href="/agence-evenementielle-strasbourg/services"
           >
-            Service
+            Services
           </Link>
           <Link
             scroll={false}

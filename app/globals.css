@@ -58,6 +58,14 @@
     @apply gap-xl mobile-small:gap-2xl mobile-medium:gap-2xl mobile-large:gap-3xl tablet:gap-4xl laptop-large:gap-5xl;
   }
 
+  .section-inner-py {
+    @apply pt-xl mobile-small:pt-2xl mobile-medium:pt-2xl mobile-large:pt-3xl tablet:pt-4xl laptop-large:pt-5xl;
+  }
+
+  .last-section-inner-py {
+    @apply pb-xl mobile-small:pb-2xl mobile-medium:pb-2xl mobile-large:pb-3xl tablet:pb-4xl laptop-large:pb-5xl;
+  }
+
   .inner-section-py {
     @apply py-2xl mobile-small:py-3xl mobile-medium:py-2xl mobile-large:py-4xl tablet:py-5xl;
   }

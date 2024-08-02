@@ -6,6 +6,7 @@ import DivHoverWrapper from '@/components/framer-motion/hover-wrapper';
 import InviewWrapper from '@/components/framer-motion/inview-wrapper';
 import Link from 'next/link';
 import { LuArrowUpRight } from 'react-icons/lu';
+import LogoFetchWrapper from './logo-fetch-wrapper';
 
 export default function TrustSection() {
   return (
@@ -26,17 +27,7 @@ export default function TrustSection() {
       >
         <div className="relative z-20 flex w-full flex-col gap-md pt-md mobile-large:gap-md">
           <p className="heading whitespace-nowrap">Ils nous ont fait confiance</p>
-          <div className="relative flex w-full flex-wrap gap-sm [&>*]:w-xl [&>*]:shrink-0 [&>*]:mobile-small:w-2xl [&>*]:mobile-medium:w-3xl [&>*]:mobile-large:w-4xl [&>*]:tablet:w-5xl [&>*]:laptop:w-6xl [&>*]:laptop-large:w-7xl">
-            <p className="aspect-square  rounded-sm bg-gray-200 "></p>
-            <p className="aspect-square  rounded-sm bg-gray-200 "></p>
-            <p className="aspect-square   rounded-sm bg-gray-200 "></p>
-            <p className="aspect-square   rounded-sm bg-gray-200 "></p>
-            <p className="aspect-square   rounded-sm bg-gray-200 "></p>
-            <p className="aspect-square   rounded-sm bg-gray-200 "></p>
-            <p className="aspect-square   rounded-sm bg-gray-200 "></p>
-            <p className="aspect-square  rounded-sm bg-gray-200 "> </p>
-            <p className="aspect-square  rounded-sm bg-gray-200 "> </p>
-          </div>
+          <LogoFetchWrapper></LogoFetchWrapper>
         </div>
         <DivHoverWrapper
           className="group w-fit origin-center duration-medium hover:opacity-90"

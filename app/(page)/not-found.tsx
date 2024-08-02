@@ -26,7 +26,7 @@ export default async function NotFound() {
           la page d&apos;accueil.
         </p>
         <Link
-          className="sub-heading shadow-primary-sm 0 flex w-fit items-center gap-xs rounded-sm   bg-primary-400 px-md py-sm text-white laptop:gap-sm laptop:px-lg laptop:py-md "
+          className="body shadow-primary-sm 0 flex w-fit items-center gap-xs rounded-sm   bg-primary-400 px-md py-sm text-white laptop:gap-sm "
           href="/"
         >
           RETOUR À LA PAGE D&apos;ACCUEIL

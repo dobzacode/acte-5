@@ -69,7 +69,11 @@ export default async function LastEvent({
       >
         <h2 className="heading--large text-white">{h2}</h2>
       </InviewWrapper>
-      <InviewWrapper className="" variant={ComingFromBottomVariant}>
+      <InviewWrapper
+        viewport={{ once: true, margin: '200px 0px 200px 0px' }}
+        className=""
+        variant={ComingFromBottomVariant}
+      >
         <Carousel className="section-px  flex max-w-[100vw] items-center  gap-md laptop:mx-auto [&>div]:rounded-sm">
           <>
             <CarouselPrevious className="relative" />

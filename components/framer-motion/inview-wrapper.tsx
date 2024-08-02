@@ -12,7 +12,8 @@ export default function InviewWrapper({
   id,
   tag = 'div',
   noExit,
-  whileHover
+  whileHover,
+  ref
 }: {
   style?: MotionStyle | undefined;
   variant: Variants | undefined;
@@ -24,12 +25,14 @@ export default function InviewWrapper({
   tag?: string;
   noExit?: boolean;
   whileHover?: any;
+  ref?: any;
 }) {
   //@ts-expect-error tag is a string
   const MotionComponent = motion[tag];
 
   return (
     <MotionComponent
+      ref={ref}
       id={id}
       style={style}
       transition={{ duration: 1, ease: 'easeInOut' }}

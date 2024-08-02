@@ -107,7 +107,10 @@ export default async function TeamSection() {
           galops. Mais voyons plutôt !
         </p>
       </InviewWrapper>
-      <InviewWrapper variant={ComingFromBottomVariant}>
+      <InviewWrapper
+        viewport={{ once: true, margin: '200px 0px 200px 0px' }}
+        variant={ComingFromBottomVariant}
+      >
         <Carousel className="section-px  flex max-w-[100vw] items-center  gap-md laptop:mx-auto [&>div]:rounded-sm">
           <>
             <CarouselPrevious className="relative" />
