@@ -4,6 +4,7 @@ import { FromTopStaggerVariant } from '@/components/framer-motion/div-variants';
 import StaggeredText from '@/components/framer-motion/staggered-text';
 import TitleSection from '@/components/ui/title-section';
 import { Metadata } from 'next';
+import { Suspense } from 'react';
 
 export const metadata: Metadata = {
   title: "Expérience Théâtrale au Service de Votre Communication d'Entreprise | Acte 5",
@@ -33,7 +34,9 @@ export default function Home() {
         </StaggeredText>
       </div>
       <CompetenceSection></CompetenceSection>
-      <ServiceGalerie></ServiceGalerie>
+      <Suspense>
+        <ServiceGalerie></ServiceGalerie>
+      </Suspense>
     </main>
   );
 }

@@ -1,12 +1,11 @@
 'use client';
 
 import { AnimatePresence, motion } from 'framer-motion';
-import { usePathname, useSearchParams } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import FrozenRoute from './frozen-route';
 
 const FramerMotionWrapper = ({ children }: { children: React.ReactNode }) => {
   const pathname = usePathname();
-  const params = useSearchParams();
 
   return (
     <AnimatePresence
