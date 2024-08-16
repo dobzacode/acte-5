@@ -3,7 +3,7 @@
 import { AnimatePresence, motion, useInView } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useSearchParams } from 'next/navigation';
+import { usePathname, useSearchParams } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
 import CategoryPicker from './category-picker';
 
@@ -81,14 +81,19 @@ export default function ServiceGalerie({}) {
   const [actualParams, setActualParams] = useState<string>(
     params.get('categorie') ?? 'evenementiel'
   );
+  const pathname = usePathname();
   const ref = useRef(null);
   const isInView = useInView(ref, { margin: '-200px 0px -200px 0px', once: true });
 
   useEffect(() => {
-    setActualParams(params.get('categorie') ?? 'evenementiel');
+    console.log(pathname);
+    pathname === '/agence-evenementielle-strasbourg/services' &&
+      setActualParams(params.get('categorie') ?? 'evenementiel');
     // actualParams ??
     //   document.getElementById('service-galerie')?.scrollIntoView({ behavior: 'smooth' });
   }, [params]);
+
+  console.log(actualParams);
 
   return (
     <section
