@@ -37,8 +37,8 @@ export default function ScouteSection() {
           variant={ComingFromRightVariant}
         >
           <Image
-            src="/placeholder-image.png"
-            alt="Image"
+            src="/assets/spectacle/landing/scoute_1.jpg"
+            alt="Photo de spectacle"
             width={400}
             height={400}
             className="rounded-sm"
@@ -53,8 +53,8 @@ export default function ScouteSection() {
           variant={ComingFromRightVariant}
         >
           <Image
-            src="/placeholder-image.png"
-            alt="Image"
+            src="/assets/spectacle/landing/scoute_2.jpg"
+            alt="Photo de spectacle"
             width={400}
             height={400}
             className="rounded-sm"

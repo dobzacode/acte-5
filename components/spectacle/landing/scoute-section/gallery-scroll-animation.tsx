@@ -31,26 +31,47 @@ export default function GalleryScrollAnimation({}) {
           style={{ scale: scale, x: positiveXTranslation, rotate: positiveRotate, opacity }}
           className=" absolute mx-auto aspect-square h-[20rem] origin-center overflow-hidden rounded-sm  "
         >
-          <Image className="object-cover" src="/placeholder-image.png" fill alt=""></Image>
+          <Image
+            className="object-cover"
+            src="/assets/spectacle/landing/scoute_3.jpg"
+            sizes={'(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw'}
+            fill
+            alt="Photo de spectacle"
+          ></Image>
         </motion.div>
         <motion.div
           style={{ scale: scale, x: negativeXTranslation, rotate: negativeRotate, opacity }}
           className=" absolute mx-auto aspect-square h-[20rem] origin-center overflow-hidden rounded-sm  "
         >
-          <Image className="object-cover" src="/placeholder-image.png" fill alt=""></Image>
+          <Image
+            className="object-cover"
+            src="/assets/spectacle/landing/scoute_4.jpg"
+            fill
+            alt="Photo de spectacle"
+          ></Image>
         </motion.div>
 
         <motion.div
           style={{ scale: scale, y: positiveYTranslation, opacity }}
           className=" absolute mx-auto aspect-square h-[20rem] origin-center overflow-hidden rounded-sm  "
         >
-          <Image className="object-cover" src="/placeholder-image.png" fill alt=""></Image>
+          <Image
+            className="object-cover"
+            src="/assets/spectacle/landing/scoute_5.jpg"
+            fill
+            alt="Photo de spectacle"
+          ></Image>
         </motion.div>
         <motion.div
           style={{ scale: scale, y: negativeYTranslation, opacity }}
           className=" absolute mx-auto aspect-square h-[20rem] origin-center overflow-hidden rounded-sm  "
         >
-          <Image className="object-cover" src="/placeholder-image.png" fill alt=""></Image>
+          <Image
+            className="object-cover"
+            src="/assets/spectacle/landing/scoute_6.jpg"
+            fill
+            alt="Photo de spectacle"
+          ></Image>
         </motion.div>
       </div>
     </div>

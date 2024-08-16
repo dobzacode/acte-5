@@ -7,6 +7,7 @@ import DivWrapper from '@/components/framer-motion/div-wrapper';
 import Footer from '@/components/ui/footer/footer';
 import FooterContent from '@/components/ui/footer/footer-content';
 import { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
@@ -34,23 +35,41 @@ export default function Home() {
             href="agence-evenementielle-strasbourg"
           >
             <DivWrapper
-              className="heading--sub-large flex   flex-col items-center gap-md rounded-md bg-default-200 px-xl py-3xl tablet:h-[400px] tablet:px-2xl tablet:py-5xl"
+              className=" group relative  flex flex-col items-center justify-center gap-md overflow-hidden rounded-md p-md grayscale duration-medium after:absolute after:bottom-0 after:z-10 after:h-full after:w-full after:bg-gradient-to-t after:from-black after:from-5% after:to-transparent after:opacity-0 after:duration-medium hover:grayscale-0  hover:after:opacity-100 tablet:h-[400px]"
               variant={ComingFromLeftVariant}
             >
-              <h2>EVENEMENTIEL</h2>
-              <p className="sub-heading  text-pretty text-center">
-                Des événements sur mesure pour sublimer vos projets et renforcer l&apos;image de
+              <Image
+                alt="Photo de spectacle"
+                className="rounded-md object-cover"
+                fill
+                sizes={'(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw'}
+                src={`/assets/landing/spectacle/spectacle_${Math.floor(Math.random() * 3) + 1}.png`}
+              />
+              <h2 className="heading--sub-large absolute top-1/2 z-20 -translate-y-1/2 px-md py-sm font-normal text-white backdrop-blur-sm duration-medium after:absolute after:left-0 after:top-0 after:-z-10 after:h-full after:w-full after:rounded-xs after:bg-black after:opacity-20 ">
+                EVENEMENTIEL
+              </h2>
+              <p className="sub-heading relative z-20 mt-auto translate-y-[200%] self-end text-pretty text-center text-white duration-medium group-hover:translate-y-0">
+                Des événements sur mesure pour sublimer vos projets et renformer l&apos;image de
                 votre entreprise.
               </p>
             </DivWrapper>
           </Link>
           <Link scroll={false} className="w-fit tablet:w-1/2" href="spectacles-strasbourg">
             <DivWrapper
-              className="heading--sub-large flex   flex-col items-center gap-md rounded-md bg-default-200 px-xl py-3xl tablet:h-[400px] tablet:px-2xl tablet:py-5xl"
+              className=" group relative  flex flex-col items-center justify-center gap-md overflow-hidden rounded-md p-md grayscale duration-medium after:absolute after:bottom-0 after:z-10 after:h-full after:w-full after:bg-gradient-to-t after:from-black after:from-5% after:to-transparent after:opacity-0 after:duration-medium hover:grayscale-0  hover:after:opacity-100 tablet:h-[400px]"
               variant={ComingFromRightVariant}
             >
-              <h2>SPECTACLE</h2>
-              <p className="sub-heading  text-pretty text-center">
+              <Image
+                alt="Photo de spectacle"
+                className="rounded-md object-cover"
+                fill
+                sizes={'(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw'}
+                src={`/assets/landing/spectacle/spectacle_${Math.floor(Math.random() * 3) + 1}.png`}
+              />
+              <h2 className="heading--sub-large absolute top-1/2 z-20 -translate-y-1/2 px-md py-sm font-normal text-white backdrop-blur-sm duration-medium after:absolute after:left-0 after:top-0 after:-z-10 after:h-full after:w-full after:rounded-xs after:bg-black after:opacity-20 ">
+                SPECTACLE
+              </h2>
+              <p className="sub-heading relative z-20 mt-auto translate-y-[200%] self-end text-pretty text-center text-white duration-medium group-hover:translate-y-0">
                 Retrouvez toutes les infos sur nos spectacles tel que la Revue Scoute : billetterie
                 et date de représentation, c&apos;est par ici !{' '}
               </p>

@@ -2,26 +2,36 @@
 
 import { AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
+import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { FadeInVariant } from '../framer-motion/div-variants';
-import InviewWrapper from '../framer-motion/inview-wrapper';
+import DivWrapper from '../framer-motion/div-wrapper';
 import { Button } from '../ui/button';
 
 function MyPage() {
-  const [showPopup, setShowPopup] = useState(false);
+  const [showPopup, setShowPopup] = useState(true);
+  const pathname = usePathname();
 
   useEffect(() => {
     const hasSeenPopup = localStorage.getItem('hasSeenPopup');
-    if (!hasSeenPopup) {
+    console.log(hasSeenPopup);
+
+    if (hasSeenPopup === 'false' && pathname.includes('spectacles-strasbourg')) {
       setShowPopup(true);
-      setTimeout(() => localStorage.setItem('hasSeenPopup', 'true'), 1000);
+      localStorage.setItem('hasSeenPopup', 'true');
     }
-  }, []);
+
+    if (!pathname.includes('spectacles-strasbourg')) {
+      setShowPopup(false);
+      localStorage.setItem('hasSeenPopup', 'false');
+    }
+  }, [pathname]);
 
   return (
     <AnimatePresence mode="wait">
       {showPopup && (
-        <InviewWrapper
+        <DivWrapper
+          key="popup-calendar"
           variant={FadeInVariant}
           className="card fixed  bottom-lg right-lg z-50 flex flex-col gap-md border border-black/[0.05] p-xl"
         >
@@ -38,7 +48,7 @@ function MyPage() {
           >
             Oui je me rends sur la billeterie
           </Button>
-        </InviewWrapper>
+        </DivWrapper>
       )}
     </AnimatePresence>
   );

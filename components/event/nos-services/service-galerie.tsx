@@ -110,7 +110,7 @@ export default function ServiceGalerie({}) {
                 return (
                   <motion.li
                     key={`${service.text}-${index}`}
-                    className="  group relative flex aspect-square h-full w-full items-end overflow-hidden rounded-b-sm rounded-t-sm  bg-white shadow-md duration-medium   hover:scale-110 hover:rounded-t-sm hover:shadow-xl hover:before:max-w-full "
+                    className="  group relative flex aspect-square h-full w-full items-end overflow-hidden rounded-b-sm rounded-t-sm  bg-black shadow-md duration-medium   hover:scale-110 hover:rounded-t-sm hover:shadow-xl hover:before:max-w-full "
                     initial={{ opacity: 0, y: -10, pointerEvents: 'none' }}
                     animate={{
                       opacity: 1,
@@ -161,6 +161,8 @@ export default function ServiceGalerie({}) {
                         fill
                         sizes={'(min-width: 1024px) 50vw, 100vw'}
                         className={` object-cover duration-medium`}
+                        placeholder="blur"
+                        blurDataURL={service.src}
                         src={service.src}
                         alt={`${service}`}
                       ></Image>

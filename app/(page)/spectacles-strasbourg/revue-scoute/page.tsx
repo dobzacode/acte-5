@@ -59,8 +59,8 @@ export default async function Home() {
           >
             <Image
               className="rounded-xs"
-              src="/placeholder-image.png"
-              alt="Image"
+              src="/assets/spectacle/scoute/scoute_1.jpg"
+              alt="Photo de spectacle"
               width={800}
               height={800}
             ></Image>
@@ -87,9 +87,9 @@ export default async function Home() {
             }}
           >
             <Image
-              className="-ml-7xl -mt-5xl rounded-xs max-laptop-large:hidden"
-              src="/placeholder-image.png"
-              alt="Image"
+              className="-ml-7xl -mt-4xl rounded-xs max-laptop-large:hidden"
+              src="/assets/spectacle/scoute/scoute_2.jpg"
+              alt="Photo de spectacle"
               width={400}
               height={400}
             ></Image>

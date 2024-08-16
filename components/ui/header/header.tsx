@@ -38,10 +38,6 @@ export default function Header({ className }: { className?: string }) {
     }
   }, [pathname]);
 
-  useEffect(() => {
-    console.log(pathname, showMenu);
-  });
-
   return (
     <section
       className={cn(

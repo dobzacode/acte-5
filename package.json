@@ -57,7 +57,7 @@
     "tailwindcss-animate": "^1.0.7",
     "uuid": "^9.0.1",
     "vidstack": "^0.6.15",
-    "yet-another-react-lightbox": "^3.17.2",
+    "yet-another-react-lightbox": "^3.21.3",
     "zod": "^3.22.4"
   },
   "devDependencies": {

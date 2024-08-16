@@ -60,11 +60,10 @@ export default function CalendrierTable({
           {moisSelectionne !== null && (
             <span>
               {new Date(anneeSelectionnee, moisSelectionne)
-                .toLocaleString('default', {
+                .toLocaleString('fr-FR', {
                   month: 'long'
                 })
-                .toUpperCase()}
-              {` `}
+                .toUpperCase()}{' '}
               {anneeSelectionnee}
             </span>
           )}
