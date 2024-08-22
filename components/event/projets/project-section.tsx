@@ -1,6 +1,6 @@
 'use client';
 
-import { EventWithImgAndIndex } from '@/app/(page)/agence-evenementielle-strasbourg/temoignages/page';
+import { EventWithImgAndIndex } from '@/app/(page)/agence-evenementielle-strasbourg/projets/page';
 import {
   ComingFromLeftVariant,
   ComingFromRightVariant,
@@ -45,7 +45,7 @@ export default function ProjectSection({ events }: { events: EventWithImgAndInde
         </AnimatePresence>
       </InviewWrapper>
       <InviewWrapper
-        className=" relative flex justify-center overflow-x-clip laptop:w-1/2"
+        className="relative flex justify-center overflow-x-clip laptop:w-1/2"
         variant={ComingFromRightVariant}
       >
         <ProjectCarousel

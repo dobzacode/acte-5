@@ -5,7 +5,7 @@ import React, { useCallback, useEffect, useRef } from 'react';
 
 import 'yet-another-react-lightbox/styles.css';
 
-import { EventWithImgAndIndex } from '@/app/(page)/agence-evenementielle-strasbourg/temoignages/page';
+import { EventWithImgAndIndex } from '@/app/(page)/agence-evenementielle-strasbourg/projets/page';
 
 import { cn } from '@/lib/utils';
 import { EmblaCarouselType, EmblaOptionsType } from 'embla-carousel';
@@ -69,16 +69,16 @@ const ProjectCarousel: React.FC<PropType> = (props) => {
           className
         )}
       >
-        <div className=" relative rounded-sm" ref={emblaRef}>
-          <div className="project_embla__container ">
+        <div className="relative rounded-sm" ref={emblaRef}>
+          <div className="project_embla__container">
             {events.map((event, index) => (
               <div
-                className="project_embla__slide relative aspect-square h-[20rem] flex-[0_0_100%]   cursor-pointer  overflow-hidden  rounded-sm mobile-large:h-[30rem]"
+                className="project_embla__slide relative aspect-square h-[20rem] flex-[0_0_100%] cursor-pointer overflow-hidden rounded-sm mobile-large:h-[30rem]"
                 key={index}
               >
                 <div
                   className={cn(
-                    `project_embla__slide__number  relative  h-full   rounded-sm shadow-medium `
+                    `project_embla__slide__number relative h-full rounded-sm shadow-medium`
                   )}
                 >
                   <Image
@@ -95,8 +95,8 @@ const ProjectCarousel: React.FC<PropType> = (props) => {
             ))}
           </div>
         </div>
-        <div className="flex w-full justify-center  pt-sm">
-          <div className="flex h-fit w-fit  rounded-sm shadow-medium max-tablet:scale-90 [&>button]:active:scale-110">
+        <div className="flex w-full justify-center pt-sm">
+          <div className="flex h-fit w-fit rounded-sm shadow-medium max-tablet:scale-90 [&>button]:active:scale-110">
             <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
             <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
           </div>

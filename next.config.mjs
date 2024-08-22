@@ -14,6 +14,11 @@ const nextConfig = {
   async redirects() {
     return [
       {
+        source: '/portfolio',
+        destination: '/agence-evenementielle-strasbourg/projets',
+        permanent: true
+      },
+      {
         source: '/agence-evenementielle-strasbourg/convention-entreprise-strasbourg',
         destination: '/agence-evenementielle-strasbourg/services/convention-entreprise-strasbourg',
         permanent: true

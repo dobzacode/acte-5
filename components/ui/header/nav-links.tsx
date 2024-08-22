@@ -11,7 +11,7 @@ interface Links {
 
 export const EVENTLINKS: Links[] = [
   { name: 'Services', href: '/agence-evenementielle-strasbourg/services' },
-  { name: 'Témoignages', href: '/agence-evenementielle-strasbourg/temoignages' },
+  { name: 'Projets', href: '/agence-evenementielle-strasbourg/projets' },
   { name: 'A propos', href: '/agence-evenementielle-strasbourg/a-propos' },
   { name: 'Blog', href: '/agence-evenementielle-strasbourg/blog' },
   { name: 'Contact', href: '/agence-evenementielle-strasbourg/contact' }
@@ -29,7 +29,7 @@ export default function NavLinks({ isEvent, pathname }: { isEvent: boolean; path
 
   return (
     <nav className="">
-      <ul className="flex justify-between gap-md tablet:gap-lg laptop:gap-xl ">
+      <ul className="flex justify-between gap-md tablet:gap-lg laptop:gap-xl">
         {links.map((link, index) => (
           <motion.li
             initial={{ y: -100 }}

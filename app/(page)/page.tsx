@@ -19,23 +19,23 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <main className="section-px flex h-full  flex-col items-center justify-between gap-xl   pb-3xl pt-5xl tablet:gap-xl tablet:py-6xl laptop:gap-3xl laptop:py-6xl laptop-large:py-7xl [&>section:last-child]:pb-0">
+      <main className="section-px flex h-full flex-col items-center justify-between gap-xl pb-3xl pt-5xl tablet:gap-xl tablet:py-6xl laptop:gap-3xl laptop:py-6xl laptop-large:py-7xl [&>section:last-child]:pb-0">
         <DivWrapper
-          className="inner-section-gap flex   flex-col items-center"
+          className="inner-section-gap flex flex-col items-center"
           variant={ComingFromTopVariant}
         >
           <h1 className="heading--sub-extra-large text-pretty text-center text-primary-400">
-            agence de communication évènementielle spectaculaire
+            agence de communication événementielle spectaculaire
           </h1>
         </DivWrapper>
-        <section className="inner-section-gap  container flex   max-w-[1200px]  justify-between  max-tablet:flex-col   laptop:justify-center ">
+        <section className="inner-section-gap container flex max-w-[1200px] justify-between max-tablet:flex-col laptop:justify-center">
           <Link
             scroll={false}
             className="w-fit tablet:w-1/2"
             href="agence-evenementielle-strasbourg"
           >
             <DivWrapper
-              className=" group relative  flex flex-col items-center justify-center gap-md overflow-hidden rounded-md p-md grayscale duration-medium after:absolute after:bottom-0 after:z-10 after:h-full after:w-full after:bg-gradient-to-t after:from-black after:from-5% after:to-transparent after:opacity-0 after:duration-medium hover:grayscale-0  hover:after:opacity-100 tablet:h-[400px]"
+              className="group relative flex flex-col items-center justify-center gap-md overflow-hidden rounded-md p-md grayscale duration-medium after:absolute after:bottom-0 after:z-10 after:h-full after:w-full after:bg-gradient-to-t after:from-black after:from-5% after:to-transparent after:opacity-0 after:duration-medium hover:grayscale-0 hover:after:opacity-100 tablet:h-[400px]"
               variant={ComingFromLeftVariant}
             >
               <Image
@@ -45,7 +45,7 @@ export default function Home() {
                 sizes={'(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw'}
                 src={`/assets/landing/spectacle/spectacle_${Math.floor(Math.random() * 3) + 1}.png`}
               />
-              <h2 className="heading--sub-large absolute top-1/2 z-20 -translate-y-1/2 px-md py-sm font-normal text-white backdrop-blur-sm duration-medium after:absolute after:left-0 after:top-0 after:-z-10 after:h-full after:w-full after:rounded-xs after:bg-black after:opacity-20 ">
+              <h2 className="heading--sub-large absolute top-1/2 z-20 -translate-y-1/2 px-md py-sm font-normal text-white backdrop-blur-sm duration-medium after:absolute after:left-0 after:top-0 after:-z-10 after:h-full after:w-full after:rounded-xs after:bg-black after:opacity-20">
                 EVENEMENTIEL
               </h2>
               <p className="sub-heading relative z-20 mt-auto translate-y-[200%] self-end text-pretty text-center text-white duration-medium group-hover:translate-y-0">
@@ -56,7 +56,7 @@ export default function Home() {
           </Link>
           <Link scroll={false} className="w-fit tablet:w-1/2" href="spectacles-strasbourg">
             <DivWrapper
-              className=" group relative  flex flex-col items-center justify-center gap-md overflow-hidden rounded-md p-md grayscale duration-medium after:absolute after:bottom-0 after:z-10 after:h-full after:w-full after:bg-gradient-to-t after:from-black after:from-5% after:to-transparent after:opacity-0 after:duration-medium hover:grayscale-0  hover:after:opacity-100 tablet:h-[400px]"
+              className="group relative flex flex-col items-center justify-center gap-md overflow-hidden rounded-md p-md grayscale duration-medium after:absolute after:bottom-0 after:z-10 after:h-full after:w-full after:bg-gradient-to-t after:from-black after:from-5% after:to-transparent after:opacity-0 after:duration-medium hover:grayscale-0 hover:after:opacity-100 tablet:h-[400px]"
               variant={ComingFromRightVariant}
             >
               <Image
@@ -66,7 +66,7 @@ export default function Home() {
                 sizes={'(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw'}
                 src={`/assets/landing/spectacle/spectacle_${Math.floor(Math.random() * 3) + 1}.png`}
               />
-              <h2 className="heading--sub-large absolute top-1/2 z-20 -translate-y-1/2 px-md py-sm font-normal text-white backdrop-blur-sm duration-medium after:absolute after:left-0 after:top-0 after:-z-10 after:h-full after:w-full after:rounded-xs after:bg-black after:opacity-20 ">
+              <h2 className="heading--sub-large absolute top-1/2 z-20 -translate-y-1/2 px-md py-sm font-normal text-white backdrop-blur-sm duration-medium after:absolute after:left-0 after:top-0 after:-z-10 after:h-full after:w-full after:rounded-xs after:bg-black after:opacity-20">
                 SPECTACLE
               </h2>
               <p className="sub-heading relative z-20 mt-auto translate-y-[200%] self-end text-pretty text-center text-white duration-medium group-hover:translate-y-0">
