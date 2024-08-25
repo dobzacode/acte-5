@@ -39,6 +39,7 @@ export interface Event {
       _ref: string;
     };
   };
+  mainImage?: Image;
 }
 
 export interface EventWithImgQueryRes extends Omit<Event, 'imageGallery'> {

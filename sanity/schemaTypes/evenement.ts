@@ -96,13 +96,6 @@ export default defineType({
       ]
     }),
     defineField({
-      title: 'Fichier vidéo',
-      name: 'video',
-      type: 'file',
-      group: 'media',
-      hidden: ({ document }) => (document?.categorie === "Vidéo d'entreprise" ? false : true)
-    }),
-    defineField({
       name: 'mainImage',
       title: 'Image principal',
       type: 'image',
