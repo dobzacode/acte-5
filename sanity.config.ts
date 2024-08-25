@@ -16,7 +16,6 @@ export default defineConfig({
 
   plugins: [
     structureTool({
-      //@ts-expect-error - TS doesn't know about the `structure` method
       structure: (S) =>
         S.list()
           .title('Contenu')
