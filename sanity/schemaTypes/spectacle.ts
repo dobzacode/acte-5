@@ -172,7 +172,7 @@ export default defineType({
       group: 'seo',
       validation: (Rule) => Rule.required(),
       options: {
-        source: 'title',
+        source: 'titre',
         maxLength: 96
       }
     }),

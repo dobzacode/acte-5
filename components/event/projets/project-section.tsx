@@ -3,6 +3,7 @@
 import { EventWithImgAndIndex } from '@/app/(page)/agence-evenementielle-strasbourg/projets/page';
 import { ComingFromRightVariant } from '@/components/framer-motion/div-variants';
 import InviewWrapper from '@/components/framer-motion/inview-wrapper';
+import { Input } from '@/components/ui/shadcn/input';
 import { cn, getCategoryWithSubCategory } from '@/lib/utils';
 import { AnimatePresence, motion } from 'framer-motion';
 import Image from 'next/image';
@@ -17,61 +18,65 @@ export default function ProjectSection({ events }: { events: EventWithImgAndInde
   );
 
   return (
-    <section className="laptop:section-px flex justify-between gap-xl laptop:container max-laptop:flex-col laptop:mx-auto">
-      <div className="search-container mb-4 flex items-center">
-        <input
-          className="search-input rounded-md border border-gray-300 px-4 py-2 focus:border-sky-500 focus:outline-none"
+    <section className="laptop:section-px flex flex-col justify-between gap-xl laptop:container laptop:mx-auto">
+      <div className="flex w-fit gap-sm">
+        <Input
+          className="body h-full rounded-xs shadow-inner ring-primary-400"
+          type="number"
+          color="primary"
           placeholder="Rechercher un événement"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
+        <nav className="body relative z-40 flex h-full w-fit shrink-0 self-center overflow-hidden rounded-sm border font-normal shadow-inner before:absolute before:right-0 before:top-0 before:-z-10 before:h-full before:w-full before:bg-white">
+          <ul className="[&>li>button]:body flex h-full [&>li]:px-md [&>li]:py-xs">
+            <li
+              className={cn(
+                'relative flex origin-center items-center justify-center overflow-hidden whitespace-nowrap border-r text-default-400 duration-medium before:absolute before:-z-10 before:h-full before:w-full before:-translate-y-full before:bg-black',
+                categorie === 'Evenementiel' ? 'text-primary' : 'hover:text-black'
+              )}
+            >
+              <button
+                onClick={() => {
+                  setCategorie('Evenementiel');
+                }}
+              >
+                Evenementiel
+              </button>
+            </li>
+            <li
+              className={cn(
+                'relative flex origin-center items-center justify-center overflow-hidden whitespace-nowrap border-r text-default-400 duration-medium before:absolute before:-z-10 before:h-full before:w-full before:translate-y-full before:bg-black',
+                categorie === 'Spectacle' ? 'text-primary' : 'hover:text-black'
+              )}
+            >
+              <button
+                onClick={() => {
+                  setCategorie('Spectacle');
+                }}
+              >
+                Spectacle d'entreprise
+              </button>
+            </li>
+            <li
+              className={cn(
+                'relative flex origin-center items-center justify-center overflow-hidden whitespace-nowrap py-xs text-default-400 duration-medium before:absolute before:-z-10 before:h-full before:w-full before:-translate-y-full before:bg-black',
+                categorie === 'Graphisme' ? 'text-primary' : 'hover:text-black'
+              )}
+            >
+              <button
+                onClick={() => {
+                  setCategorie('Graphisme');
+                }}
+              >
+                Graphisme
+              </button>
+            </li>
+          </ul>
+        </nav>
       </div>
-      <ul className="[&>li>button]:body flex h-full [&>li]:px-md [&>li]:py-sm">
-        <li
-          className={cn(
-            'relative flex origin-center items-center justify-center overflow-hidden whitespace-nowrap border-r py-xs text-default-400 duration-medium before:absolute before:-z-10 before:h-full before:w-full before:-translate-y-full before:bg-black',
-            categorie === 'Evenementiel' ? 'text-primary' : 'hover:text-black'
-          )}
-        >
-          <button
-            onClick={() => {
-              setCategorie('Evenementiel');
-            }}
-          >
-            Evenementiel
-          </button>
-        </li>
-        <li
-          className={cn(
-            'relative flex origin-center items-center justify-center overflow-hidden whitespace-nowrap border-r py-xs text-default-400 duration-medium before:absolute before:-z-10 before:h-full before:w-full before:translate-y-full before:bg-black',
-            categorie === 'Spectacle' ? 'text-primary' : 'hover:text-black'
-          )}
-        >
-          <button
-            onClick={() => {
-              setCategorie('Spectacle');
-            }}
-          >
-            Spectacle d'entreprise
-          </button>
-        </li>
-        <li
-          className={cn(
-            'relative flex origin-center items-center justify-center overflow-hidden whitespace-nowrap py-xs text-default-400 duration-medium before:absolute before:-z-10 before:h-full before:w-full before:-translate-y-full before:bg-black',
-            categorie === 'Graphisme' ? 'text-primary' : 'hover:text-black'
-          )}
-        >
-          <button
-            onClick={() => {
-              setCategorie('Graphisme');
-            }}
-          >
-            Graphisme
-          </button>
-        </li>
-      </ul>
       <InviewWrapper
-        className="relative flex justify-center overflow-x-clip laptop:w-1/2"
+        className="relative flex justify-center overflow-x-clip"
         variant={ComingFromRightVariant}
       >
         <ul className="section-px grid grid-cols-2 justify-center gap-sm laptop:container mobile-large:grid-cols-3 laptop:mx-auto">
