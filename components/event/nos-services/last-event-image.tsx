@@ -16,6 +16,7 @@ import { EventWithImgQueryRes } from '@/sanity/lib/queries';
 import { urlForImage } from '@/sanity/lib/utils';
 import { groq } from 'next-sanity';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export interface EventWithImg extends EventWithImgQueryRes {
   src: string;
@@ -24,24 +25,36 @@ export interface EventWithImg extends EventWithImgQueryRes {
 
 export default async function LastEvent({
   h2,
-  categorie
+  categorie,
+  actualSlug
 }: {
   h2: string;
   categorie:
     | 'Convention'
     | 'Anniversaire'
     | 'Inauguration'
+    | 'Spectacle clef en main'
+    | 'Spectacle sur mesure'
     | 'Cérémonie des médailles'
     | 'Cérémonie des voeux'
     | 'Portes ouvertes'
     | 'Soirée de gala'
     | "Spectacle d'entreprise"
     | 'Team Building'
-    | 'Stratégie de communication'
-    | 'Identité visuelle';
+    | 'Identité visuelle'
+    | "Vidéo d'entreprise"
+    | 'Support de communication'
+    | 'Edition';
+  actualSlug?: string;
 }) {
+  const query = !actualSlug
+    ? groq`*[_type == "evenement" && defined(imageGallery) && categorie == "${categorie}" && defined(slug.current)]`
+    : groq`*[_type == "evenement" && defined(slug.current) && slug.current != "${actualSlug}"]`;
+
+  console.log(query);
+
   const events = await sanityFetch<EventWithImgQueryRes[]>({
-    query: groq`*[_type == "evenement" && defined(imageGallery) && categorie == "${categorie}"]`,
+    query,
     perspective: 'published',
     stega: false
   });
@@ -50,19 +63,29 @@ export default async function LastEvent({
 
   const eventsWithImg = await Promise.all(
     events.map(async (event) => {
-      const src = await urlForImage(event.imageGallery[0])
+      if (event.mainImage) {
+        const src = await urlForImage(event.mainImage)
+          .width(1920)
+          .height(1080)
+          .dpr(2)
+          .quality(80)
+          .url();
+        const blurSrc = urlForImage(event.mainImage).width(20).quality(20).url();
+        return { src, blurSrc, ...event };
+      }
+      const src = await urlForImage(event.imageGallery?.[0])
         .width(1920)
         .height(1080)
         .dpr(2)
         .quality(80)
         .url();
-      const blurSrc = urlForImage(event.imageGallery[0]).width(20).quality(20).url();
+      const blurSrc = urlForImage(event.imageGallery?.[0]).width(20).quality(20).url();
       return { src, blurSrc, ...event };
     })
   );
 
   return (
-    <section className=" inner-section-gap mt-2xl flex w-full flex-col items-center overflow-hidden overflow-x-hidden bg-primary-400 py-2xl ">
+    <section className="inner-section-gap mt-2xl flex w-full flex-col items-center overflow-hidden overflow-x-hidden bg-primary-400 py-2xl">
       <InviewWrapper
         className="section-px container mx-auto flex flex-col items-center gap-xl text-center"
         variant={ComingFromTopVariant}
@@ -74,16 +97,20 @@ export default async function LastEvent({
         className=""
         variant={ComingFromBottomVariant}
       >
-        <Carousel className="section-px  flex max-w-[100vw] items-center  gap-md laptop:mx-auto [&>div]:rounded-sm">
+        <Carousel className="section-px flex max-w-[100vw] items-center gap-md laptop:mx-auto [&>div]:rounded-sm">
           <>
             <CarouselPrevious className="relative" />
           </>
           <CarouselContent className="laptop-large:-ml-sm">
             {eventsWithImg.map((image, index) => (
-              <CarouselItem className=" basis-full mobile-large:basis-1/2 tablet:basis-1/3 laptop:basis-1/3 laptop-large:basis-1/3 laptop-large:pr-sm ">
-                <div
+              <CarouselItem
+                key={`${image.titre}-${index}`}
+                className="basis-full mobile-large:basis-1/2 tablet:basis-1/3 laptop:basis-1/3 laptop-large:basis-1/3 laptop-large:pr-sm"
+              >
+                <Link
+                  href={`/agence-evenementielle-strasbourg/projets/${image.slug.current}`}
                   className={cn(
-                    'card   relative flex  h-full flex-col items-center gap-md overflow-hidden rounded-sm border-0 p-0 shadow-xl'
+                    'card relative flex h-full flex-col items-center gap-md overflow-hidden rounded-sm border-0 p-0 shadow-xl'
                   )}
                   key={index}
                 >
@@ -91,7 +118,7 @@ export default async function LastEvent({
                     width={400}
                     height={400}
                     className={cn(
-                      'aspect-square h-full w-full grow cursor-pointer overflow-hidden rounded-t-sm  object-cover',
+                      'aspect-square h-full w-full grow cursor-pointer overflow-hidden rounded-t-sm object-cover',
                       'name' in image ? null : 'rounded-t-none'
                     )}
                     sizes={'(max-width: 640px) 100vw, 50vw'}
@@ -101,8 +128,8 @@ export default async function LastEvent({
                     alt={`Image ${image.titre}`}
                   ></Image>
 
-                  <div className="flex  flex-col items-center gap-sm  text-pretty px-md pb-md text-center">
-                    <p className="sub-heading   text-ellipsis">
+                  <div className="flex flex-col items-center gap-sm text-pretty px-md pb-md text-center">
+                    <p className="sub-heading text-ellipsis">
                       <strong>
                         {image.titre}
                         {image.titre}
@@ -110,7 +137,7 @@ export default async function LastEvent({
                       </strong>
                     </p>
                   </div>
-                </div>
+                </Link>
               </CarouselItem>
             ))}
           </CarouselContent>

@@ -27,7 +27,7 @@ export default async function Post({ post }: { post: PostQueryResponse }) {
         <Image
           className="shrink-0 rounded-sm"
           src={urlForImage(post.mainImage).width(800).height(400).dpr(2).quality(80).url()}
-          alt="My Image"
+          alt={post.mainImage.alt ? post.mainImage.alt : ''}
           width={800}
           height={800}
           sizes="(max-width: 600px) 90vw, (max-width: 1200px) 60vw, 500px"

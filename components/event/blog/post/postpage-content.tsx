@@ -2,7 +2,7 @@ import { sanityFetch } from '@/sanity/lib/fetch';
 import { POST_QUERY, PostQueryResponse } from '@/sanity/lib/queries';
 import { draftMode } from 'next/headers';
 import { notFound } from 'next/navigation';
-import { ComingFromLeftVariant } from '../../../framer-motion/div-variants';
+import { ComingFromRightVariant } from '../../../framer-motion/div-variants';
 import DivWrapper from '../../../framer-motion/div-wrapper';
 import TitleSection from '../../../ui/title-section';
 import Post from './post';
@@ -35,7 +35,7 @@ export default async function PostpageContent({ params }: { params: { slug: stri
           ></TitleSection>
           <DivWrapper
             className="flex flex-col gap-2xl overflow-hidden laptop:container mobile-large:gap-3xl laptop:mx-auto"
-            variant={ComingFromLeftVariant}
+            variant={ComingFromRightVariant}
             inverseOnExit={false}
           >
             <Post post={post} />

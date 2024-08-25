@@ -188,10 +188,13 @@ export type PostQueryResponse =
     })
   | null;
 
-export const EVENTS_QUERY = groq`*[_type == "evenement"]`;
+export const EVENTS_QUERY = groq`*[_type == "evenement" && defined(slug)]`;
 
 export type EventsQueryResponse = Event[] | null;
 
+export const EVENT_QUERY = groq`*[_type == "evenement" && slug.current == $slug][0]`;
+
+export type EventQueryResponse = Event | null;
 export const AFFICHES_QUERY = groq`*[_type == "revueScouteAffiche"]`;
 
 export type AffichesQueryResponse = Affiche[] | null;

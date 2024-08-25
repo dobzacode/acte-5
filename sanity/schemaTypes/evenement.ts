@@ -36,6 +36,7 @@ export default defineType({
       },
       validation: (Rule) => Rule.required()
     }),
+
     defineField({
       name: 'titre',
       title: 'Titre',
@@ -110,7 +111,13 @@ export default defineType({
           title: 'Texte alternatif'
         }
       ],
-
+      validation: (Rule) =>
+        Rule.custom((mainImage, context) => {
+          if (!mainImage?.asset && context?.document?.categorie === "Vidéo d'entreprise") {
+            return "le champ 'Image principal' est obligatoire pour les vidéos d'entreprise";
+          }
+          return true;
+        }),
       hidden: ({ document }) => (document?.categorie === "Vidéo d'entreprise" ? false : true)
     }),
     defineField({

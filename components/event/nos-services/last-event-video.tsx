@@ -13,13 +13,15 @@ import VideoCarousel from './video-carousel';
 
 export default async function LastEventVideo({
   h2,
-  categorie
+  categorie,
+  actualSlug
 }: {
   h2: string;
   categorie: "Vidéo d'entreprise";
+  actualSlug?: string;
 }) {
   const events = await sanityFetch<EventWithVideoQueryRes[]>({
-    query: groq`*[ _type == "evenement" && defined(video) && categorie == "Vidéo d'entreprise"]`,
+    query: groq`*[ _type == "evenement" && defined(video) && categorie == "Vidéo d'entreprise" && defined(slug.current) && slug.current != ${actualSlug}]`,
     perspective: 'published',
     stega: false
   });
@@ -31,10 +33,8 @@ export default async function LastEventVideo({
     })
   );
 
-  console.log(withVideo);
-
   return (
-    <section className=" mt-2xl flex w-full flex-col items-center gap-2xl overflow-hidden overflow-x-hidden bg-primary-400 py-2xl ">
+    <section className="mt-2xl flex w-full flex-col items-center gap-2xl overflow-hidden overflow-x-hidden bg-primary-400 py-2xl">
       <InviewWrapper
         className="section-px container mx-auto flex flex-col items-center gap-xl text-center"
         variant={ComingFromTopVariant}
