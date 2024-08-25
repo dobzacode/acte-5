@@ -116,7 +116,7 @@ export default function ProjectSection({ events }: { events: EventWithImgAndInde
                         <Link
                           scroll={false}
                           className="group relative z-40 flex h-full w-full flex-col-reverse after:absolute after:left-0 after:top-0 after:z-10 after:h-full after:w-full after:bg-gradient-to-t after:from-black/100 after:to-transparent after:to-30%"
-                          href={`/agence-evenementielle-strasbourg/projets/${event.slug.current}`}
+                          href={`/`}
                         >
                           <motion.h3
                             className={`sub-heading before-bg relative z-50 text-pretty px-md text-white duration-slow hover:duration-fast`}
@@ -182,7 +182,7 @@ export default function ProjectSection({ events }: { events: EventWithImgAndInde
                         <Link
                           scroll={false}
                           className="group relative z-40 flex h-full w-full flex-col-reverse after:absolute after:left-0 after:top-0 after:z-10 after:h-full after:w-full after:bg-gradient-to-t after:from-black/100 after:to-transparent after:to-30%"
-                          href={`/agence-evenementielle-strasbourg/projets/${event.slug.current}`}
+                          href={`/`}
                         >
                           <motion.h3
                             className={`sub-heading before-bg relative z-50 text-pretty px-md text-white duration-slow hover:duration-fast`}
