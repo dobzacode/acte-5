@@ -200,7 +200,7 @@ export const REVUESCOUTEACTUELLE_QUERY = groq`*[_type == "revueScouteActuelle"]`
 
 export type RevueScouteActuelleQueryResponse = RevueScoute[] | null;
 
-export const SPECTACLES_QUERY = groq`*[_type == "spectacle"]`;
+export const SPECTACLES_QUERY = groq`*[_type == "spectacle" && defined(slug)]`;
 
 export type SpectaclesQueryResponse = Spectacle[] | null;
 

@@ -32,7 +32,7 @@ export const ComingFromTopVariant: Variants = {
 export const ComingFromBottomVariant: Variants = {
   hidden: {
     opacity: 0,
-    y: '100%'
+    y: 100
   },
   enter: {
     opacity: 1,
@@ -40,7 +40,7 @@ export const ComingFromBottomVariant: Variants = {
   },
   exit: {
     opacity: 0,
-    y: '-100%'
+    y: -100
   }
 };
 
