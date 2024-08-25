@@ -7,24 +7,25 @@ import { cn, getCategoryWithSubCategory } from '@/lib/utils';
 import { AnimatePresence, motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 export default function ProjectSection({ events }: { events: EventWithImgAndIndex[] }) {
-  const [selectedIndex, setSelectedIndex] = useState<number>(0);
   const [selectedEvent, setSelectedEvent] = useState<EventWithImgAndIndex | null>(null);
+  const [searchTerm, setSearchTerm] = useState('');
   const [categorie, setCategorie] = useState<'Evenementiel' | 'Spectacle' | 'Graphisme' | null>(
     null
   );
 
-  useEffect(() => {
-    const foundEvent = events.find((event) => event.index === selectedIndex);
-    setSelectedEvent(foundEvent || null);
-  }, [selectedIndex, events]);
-
-  console.log(selectedIndex);
-
   return (
     <section className="laptop:section-px flex justify-between gap-xl laptop:container max-laptop:flex-col laptop:mx-auto">
+      <div className="search-container mb-4 flex items-center">
+        <input
+          className="search-input rounded-md border border-gray-300 px-4 py-2 focus:border-sky-500 focus:outline-none"
+          placeholder="Rechercher un événement"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
+      </div>
       <ul className="[&>li>button]:body flex h-full [&>li]:px-md [&>li]:py-sm">
         <li
           className={cn(
@@ -78,6 +79,7 @@ export default function ProjectSection({ events }: { events: EventWithImgAndInde
             {categorie
               ? events
                   .filter((event) => getCategoryWithSubCategory(event.categorie) === categorie)
+                  .filter((event) => event.titre.toLowerCase().startsWith(searchTerm.toLowerCase()))
                   .map((event, index) => {
                     return (
                       <motion.li
@@ -100,7 +102,7 @@ export default function ProjectSection({ events }: { events: EventWithImgAndInde
                         <Link
                           scroll={false}
                           className="relative z-40 flex h-full w-full flex-col-reverse after:absolute after:left-0 after:top-0 after:z-10 after:h-full after:w-full after:bg-gradient-to-t after:from-black/100 after:to-transparent after:to-30%"
-                          href={event.slug.current}
+                          href={'/'}
                         >
                           <motion.h3
                             className={`sub-heading before-bg relative z-50 text-pretty px-md text-white duration-slow hover:duration-fast`}
@@ -164,7 +166,7 @@ export default function ProjectSection({ events }: { events: EventWithImgAndInde
                       <Link
                         scroll={false}
                         className="relative z-40 flex h-full w-full flex-col-reverse after:absolute after:left-0 after:top-0 after:z-10 after:h-full after:w-full after:bg-gradient-to-t after:from-black/100 after:to-transparent after:to-30%"
-                        href={event.slug.current}
+                        href={'/'}
                       >
                         <motion.h3
                           className={`sub-heading before-bg relative z-50 text-pretty px-md text-white duration-slow hover:duration-fast`}
