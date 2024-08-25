@@ -110,7 +110,7 @@ export default defineType({
           title: 'Texte alternatif'
         }
       ],
-      validation: (Rule) => Rule.required(),
+
       hidden: ({ document }) => (document?.categorie === "Vidéo d'entreprise" ? false : true)
     }),
     defineField({

@@ -139,7 +139,7 @@ export default function ServiceGalerie({}) {
                 return (
                   <motion.li
                     key={`${service.text}-${index}`}
-                    className="group relative flex aspect-square h-full w-full items-end overflow-hidden rounded-b-sm rounded-t-sm bg-black shadow-md duration-medium hover:scale-110 hover:rounded-t-sm hover:shadow-xl hover:before:max-w-full"
+                    className="group relative flex aspect-square h-full w-full items-end overflow-hidden rounded-b-sm rounded-t-sm bg-black shadow-md duration-medium hover:rounded-t-sm hover:shadow-xl"
                     initial={{ opacity: 0, y: -10, pointerEvents: 'none' }}
                     animate={{
                       opacity: 1,
@@ -156,7 +156,7 @@ export default function ServiceGalerie({}) {
                   >
                     <Link
                       scroll={false}
-                      className="relative z-40 flex h-full w-full flex-col-reverse after:absolute after:left-0 after:top-0 after:z-10 after:h-full after:w-full after:bg-gradient-to-t after:from-black/100 after:to-transparent after:to-30%"
+                      className="group relative z-40 flex h-full w-full flex-col-reverse duration-medium after:absolute after:left-0 after:top-0 after:z-10 after:h-full after:w-full after:bg-gradient-to-t after:from-black/100 after:to-transparent after:to-30%"
                       href={service.href}
                     >
                       <motion.h3
@@ -189,7 +189,7 @@ export default function ServiceGalerie({}) {
                       <Image
                         fill
                         sizes={'(min-width: 1024px) 50vw, 100vw'}
-                        className={`object-cover duration-medium`}
+                        className={`object-cover duration-medium group-hover:scale-[102%]`}
                         placeholder="blur"
                         blurDataURL={service.src}
                         src={service.src}

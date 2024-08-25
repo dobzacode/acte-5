@@ -22,7 +22,7 @@ export interface EventWithImgAndIndex extends EventWithImg {
 
 export default async function Home() {
   const events = await sanityFetch<EventWithImgQueryRes[]>({
-    query: groq`*[_type == "evenement" && defined(imageGallery || mainImage)]`,
+    query: groq`*[_type == "evenement" && (defined(imageGallery) || defined(mainImage))]`,
     perspective: 'published',
     stega: false
   });
