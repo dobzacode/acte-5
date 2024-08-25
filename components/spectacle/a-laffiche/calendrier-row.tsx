@@ -44,7 +44,7 @@ export default function CalendrierRow({ dateItem }: { dateItem?: DateItemCal }) 
     <>
       <div
         className={cn(
-          ' sub-heading flex h-fit cursor-pointer flex-col items-center justify-center gap-sm overflow-clip rounded-xs border border-black/10 bg-white shadow-sm duration-medium hover:z-30 hover:shadow-md',
+          'sub-heading flex h-fit cursor-pointer flex-col items-center justify-center gap-sm overflow-clip rounded-xs border border-black/10 bg-white shadow-sm duration-medium hover:z-30 hover:shadow-md',
           isDateAncienne && 'pointer-events-none opacity-40'
         )}
       >
@@ -54,9 +54,9 @@ export default function CalendrierRow({ dateItem }: { dateItem?: DateItemCal }) 
             variant={'solid'}
             color="primary"
             onPress={onOpen}
-            className="relative flex h-fit items-start gap-md self-start whitespace-normal rounded-[0.5px]   border-none !bg-white px-md py-md text-left text-md text-black tap-highlight-transparent hover:!bg-white hover:!text-black  focus:outline-none active:!bg-white"
+            className="relative flex h-fit items-start gap-md self-start whitespace-normal rounded-[0.5px] border-none !bg-white px-md py-md text-left text-md text-black tap-highlight-transparent hover:!bg-white hover:!text-black focus:outline-none active:!bg-white"
           >
-            <p className=" block shrink-0 ">
+            <p className="block shrink-0">
               {new Date(dateItem.dates[0]).toISOString().split('T')[0].split('-')[2]}
 
               <span className="body align-super">
@@ -69,14 +69,14 @@ export default function CalendrierRow({ dateItem }: { dateItem?: DateItemCal }) 
                 }`}
               </span>
             </p>
-            <div className="flex flex-col gap-xs after:absolute after:left-0  after:top-0 after:z-20 after:h-full after:w-full  after:bg-gradient-to-b after:from-transparent after:from-90% after:to-white">
-              <div className=" flex">
+            <div className="flex flex-col gap-xs after:absolute after:left-0 after:top-0 after:z-20 after:h-full after:w-full after:bg-gradient-to-b after:from-transparent after:from-90% after:to-white">
+              <div className="flex">
                 <p className="line-clamp-2">
                   {`${dateItem.titre}`} / {`${dateItem.ville}`} /{' '}
                   {`${dateItem.emplacement.split('/')[0]}`}
                 </p>
               </div>
-              <div className=" body flex">{dateItem.type}</div>
+              <div className="body flex">{dateItem.type}</div>
             </div>
           </UiButton>
         ) : (
@@ -84,12 +84,12 @@ export default function CalendrierRow({ dateItem }: { dateItem?: DateItemCal }) 
         )}
       </div>
       {dateItem ? (
-        <Modal className="" isOpen={isOpen} onOpenChange={onOpenChange}>
+        <Modal placement="center" className="" isOpen={isOpen} onOpenChange={onOpenChange}>
           <ModalContent>
             {(onClose) => (
               <>
-                <ModalHeader className="pointer-events-none relative  flex h-fit gap-md self-start rounded-[0.5px]  rounded-t-sm   !bg-primary-400 px-md py-md text-left text-md  text-white tap-highlight-transparent hover:!bg-white hover:!text-black  focus:outline-none active:!bg-white">
-                  <p className=" block shrink-0 ">
+                <ModalHeader className="pointer-events-none relative flex h-fit w-full gap-md self-start rounded-[0.5px] rounded-t-sm !bg-primary-400 px-md py-md text-left text-md text-white tap-highlight-transparent hover:!bg-white hover:!text-black focus:outline-none active:!bg-white">
+                  <p className="block shrink-0 font-[Avenir]">
                     {new Date(dateItem.dates[0]).toISOString().split('T')[0].split('-')[2]}
 
                     <span className="body align-super">
@@ -102,15 +102,15 @@ export default function CalendrierRow({ dateItem }: { dateItem?: DateItemCal }) 
                       }`}
                     </span>
                   </p>
-                  <div className="flex flex-col gap-xs ">
-                    <p className=" flex leading-md">
+                  <div className="flex flex-col gap-xs">
+                    <p className="heading sub-heading flex">
                       {`${dateItem.titre}`} / {`${dateItem.ville}`} /{' '}
                       {`${dateItem.emplacement.split('/')[0]}`}
                     </p>
-                    <div className=" body flex ">{dateItem.type}</div>
+                    <div className="body flex">{dateItem.type}</div>
                   </div>
                 </ModalHeader>
-                <ModalBody className="gap-0   px-0 pt-0 ">
+                <ModalBody className="gap-0 px-0 pt-0">
                   <div className="relative h-[20rem] w-full max-tablet:hidden">
                     <Image
                       fill
@@ -120,8 +120,8 @@ export default function CalendrierRow({ dateItem }: { dateItem?: DateItemCal }) 
                     ></Image>
                   </div>
                   <div className="grid grid-cols-2 gap-sm px-sm pt-sm">
-                    <div className="flex  flex-col gap-md rounded-xs border border-black/10 p-md shadow-inner">
-                      <p className="sub-heading font-semibold  text-black">HORAIRES</p>
+                    <div className="flex flex-col gap-md rounded-xs border border-black/10 p-md shadow-inner">
+                      <p className="sub-heading font-semibold text-black">HORAIRES</p>
                       <div className="body">
                         {dateItem.dates.map((date) => {
                           return (
@@ -133,23 +133,23 @@ export default function CalendrierRow({ dateItem }: { dateItem?: DateItemCal }) 
                         })}
                       </div>
                     </div>
-                    <div className="flex  flex-col gap-md rounded-xs border border-black/10 p-md shadow-inner">
-                      <p className="sub-heading font-semibold  text-black">EMPLACEMENT</p>
-                      <p className="body ">{dateItem.emplacement}</p>
+                    <div className="flex flex-col gap-md rounded-xs border border-black/10 p-md shadow-inner">
+                      <p className="sub-heading font-semibold text-black">EMPLACEMENT</p>
+                      <p className="body">{dateItem.emplacement}</p>
                     </div>
                     {dateItem.description && (
-                      <div className="col-span-2  flex flex-col gap-md rounded-xs border border-black/10 p-md shadow-inner">
-                        <p className="sub-heading font-semibold  text-black">DESCRIPTION</p>
+                      <div className="col-span-2 flex flex-col gap-md rounded-xs border border-black/10 p-md shadow-inner">
+                        <p className="sub-heading font-semibold text-black">DESCRIPTION</p>
                         <CustomPortableText value={dateItem.description} />
                       </div>
                     )}
                   </div>
                 </ModalBody>
                 <ModalFooter>
-                  <UiButton color="danger" variant="light" onPress={onClose}>
+                  <UiButton color="danger" variant="light" onPress={onClose} className="body">
                     Fermer
                   </UiButton>
-                  <UiButton color="primary" onPress={onClose}>
+                  <UiButton color="primary" onPress={onClose} className="body">
                     En savoir plus
                   </UiButton>
                 </ModalFooter>

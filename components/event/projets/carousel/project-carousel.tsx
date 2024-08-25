@@ -6,7 +6,6 @@ import React, { useCallback, useEffect, useRef } from 'react';
 import 'yet-another-react-lightbox/styles.css';
 
 import { EventWithImgAndIndex } from '@/app/(page)/agence-evenementielle-strasbourg/projets/page';
-
 import { cn } from '@/lib/utils';
 import { EmblaCarouselType, EmblaOptionsType } from 'embla-carousel';
 import Image from 'next/image';

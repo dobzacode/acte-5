@@ -7,10 +7,16 @@ export interface Event {
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
+  slug: {
+    current: string;
+    _type: string;
+  };
   categorie:
     | 'Convention'
     | 'Anniversaire'
     | 'Inauguration'
+    | 'Spectacle clef en main'
+    | 'Spectacle sur mesure'
     | 'Cérémonie des médailles'
     | 'Cérémonie des voeux'
     | 'Portes ouvertes'
@@ -19,7 +25,8 @@ export interface Event {
     | 'Team Building'
     | 'Identité visuelle'
     | "Vidéo d'entreprise"
-    | 'Stratégie de communication';
+    | 'Support de communication'
+    | 'Edition';
   date: string;
   titre: string;
   description: string;

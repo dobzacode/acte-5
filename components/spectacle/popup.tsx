@@ -33,7 +33,7 @@ function MyPage() {
         <DivWrapper
           key="popup-calendar"
           variant={FadeInVariant}
-          className="card fixed  bottom-lg right-lg z-50 flex flex-col gap-md border border-black/[0.05] p-xl"
+          className="card fixed bottom-lg right-lg z-50 flex h-[140px] flex-col gap-md border border-black/[0.05] p-xl"
         >
           <X
             size={16}

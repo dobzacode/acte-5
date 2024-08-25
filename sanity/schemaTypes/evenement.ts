@@ -27,7 +27,10 @@ export default defineType({
           { title: "Spectacle d'entreprise", value: "Spectacle d'entreprise" },
           { title: 'Team building', value: 'Team Building' },
           { title: 'Identité visuelle', value: 'Identité visuelle' },
-          { title: 'Stratégie de communication', value: 'Stratégie de communication' },
+          { title: 'Support de communication', value: 'Support de communication' },
+          { title: 'Edition', value: 'Edition' },
+          { title: 'Spectacle clef en main', value: 'Spectacle clef en main' },
+          { title: 'Spectacle sur mesure', value: 'Spectacle sur mesure' },
           { title: "Vidéo d'entreprise", value: "Vidéo d'entreprise" }
         ]
       },
@@ -98,6 +101,17 @@ export default defineType({
       type: 'file',
       group: 'media',
       hidden: ({ document }) => (document?.categorie === "Vidéo d'entreprise" ? false : true)
+    }),
+    defineField({
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      group: 'seo',
+      validation: (Rule) => Rule.required(),
+      options: {
+        source: 'title',
+        maxLength: 96
+      }
     }),
     defineField({
       name: 'metatitre',

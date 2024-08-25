@@ -36,3 +36,40 @@ export function imageByIndex(images: Image[], index: number) {
   const image = images[index % images.length];
   return image.asset; // Retourner uniquement l'objet asset de l'image
 }
+
+export function getCategoryWithSubCategory(
+  categorie:
+    | 'Convention'
+    | 'Anniversaire'
+    | 'Inauguration'
+    | 'Spectacle clef en main'
+    | 'Spectacle sur mesure'
+    | 'Cérémonie des médailles'
+    | 'Cérémonie des voeux'
+    | 'Portes ouvertes'
+    | 'Soirée de gala'
+    | "Spectacle d'entreprise"
+    | 'Team Building'
+    | 'Identité visuelle'
+    | "Vidéo d'entreprise"
+    | 'Support de communication'
+    | 'Edition'
+) {
+  switch (categorie) {
+    case 'Inauguration':
+    case 'Convention':
+    case 'Anniversaire':
+    case 'Cérémonie des médailles':
+    case 'Cérémonie des voeux':
+    case 'Portes ouvertes':
+    case 'Soirée de gala':
+    case 'Team Building':
+      return 'Evenementiel';
+    case "Spectacle d'entreprise":
+    case 'Spectacle clef en main':
+    case 'Spectacle sur mesure':
+      return 'Spectacle';
+    default:
+      return 'Graphisme';
+  }
+}

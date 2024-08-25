@@ -41,11 +41,11 @@ export default function Header({ className }: { className?: string }) {
   return (
     <section
       className={cn(
-        ` z-50 flex w-full items-center justify-between border-b border-black border-opacity-10 bg-transparent bg-white bg-opacity-75 px-md py-md mobile-large:gap-3xl laptop:px-xl   laptop-large:px-2xl `,
+        `z-50 flex h-4xl w-full items-center justify-between border-b border-black border-opacity-10 bg-transparent bg-white bg-opacity-75 px-md py-md mobile-large:gap-3xl laptop:px-xl laptop-large:px-2xl`,
         !showMenu && 'overflow-hidden'
       )}
     >
-      <div className="flex   items-center gap-md">
+      <div className="flex items-center gap-md">
         <Logo
           className={cn(
             'h-[70px] w-[70px] rounded-xs duration-medium max-mobile-large:h-[50px] max-mobile-large:w-[50px] max-mobile-medium:h-[40px] max-mobile-medium:w-[40px]'
@@ -63,7 +63,7 @@ export default function Header({ className }: { className?: string }) {
               transition: { ease: 'easeInOut', duration: 0.4 }
             }}
             key={`ACTE5`}
-            className={cn(' heading w-fit text-center font-semibold  max-laptop:hidden')}
+            className={cn('heading w-fit text-center font-semibold max-laptop:hidden')}
           >
             ACTE 5
           </motion.p>
@@ -86,7 +86,10 @@ export default function Header({ className }: { className?: string }) {
         onClick={() => {
           setShowMenu(false);
         }}
-        className="body relative z-40 flex shrink-0 self-center overflow-hidden rounded-sm border p-xs font-normal shadow-md before:absolute before:right-0 before:top-0 before:-z-10 before:h-full before:w-full before:bg-white max-tablet:absolute max-tablet:left-1/2 max-tablet:top-1/2 max-tablet:-translate-x-1/2 max-tablet:-translate-y-1/2 max-tablet:self-center "
+        className={cn(
+          'body relative z-40 flex shrink-0 self-center overflow-hidden rounded-sm border p-xs font-normal shadow-md duration-slow ease-in-out before:absolute before:right-0 before:top-0 before:-z-10 before:h-full before:w-full before:bg-white max-tablet:absolute max-tablet:left-1/2 max-tablet:top-1/2 max-tablet:-translate-x-1/2 max-tablet:-translate-y-1/2 max-tablet:self-center',
+          pathname === '/' && 'max-tablet:translate-x-1/2'
+        )}
       >
         <SectionLinks pathname={pathname}></SectionLinks>
       </nav>
@@ -104,23 +107,21 @@ export default function Header({ className }: { className?: string }) {
               exit={{ y: '-100%' }}
               transition={{ duration: 500 }}
               className={cn(
-                'absolute left-0 top-0 -z-20 h-screen w-screen max-w-0 bg-transparent  bg-white bg-opacity-100   duration-medium ease-in-out',
-                showMenu ? 'max-w-full ' : 'delay-300'
+                'absolute left-0 top-0 -z-20 h-screen w-screen max-w-0 bg-transparent bg-white bg-opacity-100 duration-medium ease-in-out',
+                showMenu ? 'max-w-full' : 'delay-300'
               )}
             ></motion.div>
 
             {!isTablet ? (
               <motion.nav
                 className={cn(
-                  ' absolute left-0 z-10 flex max-w-full flex-col px-sm mobile-small:top-4xl mobile-medium:top-4xl mobile-large:top-5xl'
+                  'absolute left-0 z-10 flex max-w-full flex-col px-sm mobile-small:top-4xl mobile-medium:top-4xl mobile-large:top-5xl'
                 )}
               >
                 <ul
                   className={cn(
-                    ' flex flex-col gap-md opacity-0',
-                    showMenu
-                      ? 'translate-y-0 opacity-100 delay-200 duration-slow'
-                      : '  duration-300'
+                    'flex flex-col gap-md opacity-0',
+                    showMenu ? 'translate-y-0 opacity-100 delay-200 duration-slow' : 'duration-300'
                   )}
                 >
                   {pathname.includes('agence-evenementielle-strasbourg') ? (

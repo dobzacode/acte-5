@@ -1,20 +1,20 @@
 'use client';
 
 import { EventWithImgAndIndex } from '@/app/(page)/agence-evenementielle-strasbourg/projets/page';
-import {
-  ComingFromLeftVariant,
-  ComingFromRightVariant,
-  TextSliderVariant
-} from '@/components/framer-motion/div-variants';
+import { ComingFromRightVariant } from '@/components/framer-motion/div-variants';
 import InviewWrapper from '@/components/framer-motion/inview-wrapper';
-import { AnimatePresence } from 'framer-motion';
+import { cn, getCategoryWithSubCategory } from '@/lib/utils';
+import { AnimatePresence, motion } from 'framer-motion';
+import Image from 'next/image';
+import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import { v4 } from 'uuid';
-import ProjectCarousel from './carousel/project-carousel';
 
 export default function ProjectSection({ events }: { events: EventWithImgAndIndex[] }) {
   const [selectedIndex, setSelectedIndex] = useState<number>(0);
   const [selectedEvent, setSelectedEvent] = useState<EventWithImgAndIndex | null>(null);
+  const [categorie, setCategorie] = useState<'Evenementiel' | 'Spectacle' | 'Graphisme' | null>(
+    null
+  );
 
   useEffect(() => {
     const foundEvent = events.find((event) => event.index === selectedIndex);
@@ -25,34 +25,189 @@ export default function ProjectSection({ events }: { events: EventWithImgAndInde
 
   return (
     <section className="laptop:section-px flex justify-between gap-xl laptop:container max-laptop:flex-col laptop:mx-auto">
-      <InviewWrapper className="laptop:w-1/2" variant={ComingFromLeftVariant}>
-        <AnimatePresence mode="wait">
-          {selectedEvent && (
-            <InviewWrapper
-              inverseOnExit
-              key={v4()}
-              variant={TextSliderVariant}
-              className="max-laptop:section-px flex flex-col gap-xl"
-            >
-              <>
-                <h2 className="heading--large text-pretty text-primary-400">
-                  {selectedEvent.client}
-                </h2>
-                <p className="sub-heading">{selectedEvent.description}</p>
-              </>
-            </InviewWrapper>
+      <ul className="[&>li>button]:body flex h-full [&>li]:px-md [&>li]:py-sm">
+        <li
+          className={cn(
+            'relative flex origin-center items-center justify-center overflow-hidden whitespace-nowrap border-r py-xs text-default-400 duration-medium before:absolute before:-z-10 before:h-full before:w-full before:-translate-y-full before:bg-black',
+            categorie === 'Evenementiel' ? 'text-primary' : 'hover:text-black'
           )}
-        </AnimatePresence>
-      </InviewWrapper>
+        >
+          <button
+            onClick={() => {
+              setCategorie('Evenementiel');
+            }}
+          >
+            Evenementiel
+          </button>
+        </li>
+        <li
+          className={cn(
+            'relative flex origin-center items-center justify-center overflow-hidden whitespace-nowrap border-r py-xs text-default-400 duration-medium before:absolute before:-z-10 before:h-full before:w-full before:translate-y-full before:bg-black',
+            categorie === 'Spectacle' ? 'text-primary' : 'hover:text-black'
+          )}
+        >
+          <button
+            onClick={() => {
+              setCategorie('Spectacle');
+            }}
+          >
+            Spectacle d'entreprise
+          </button>
+        </li>
+        <li
+          className={cn(
+            'relative flex origin-center items-center justify-center overflow-hidden whitespace-nowrap py-xs text-default-400 duration-medium before:absolute before:-z-10 before:h-full before:w-full before:-translate-y-full before:bg-black',
+            categorie === 'Graphisme' ? 'text-primary' : 'hover:text-black'
+          )}
+        >
+          <button
+            onClick={() => {
+              setCategorie('Graphisme');
+            }}
+          >
+            Graphisme
+          </button>
+        </li>
+      </ul>
       <InviewWrapper
         className="relative flex justify-center overflow-x-clip laptop:w-1/2"
         variant={ComingFromRightVariant}
       >
-        <ProjectCarousel
-          selectedIndex={selectedIndex}
-          setSelectedIndex={setSelectedIndex}
-          events={events}
-        ></ProjectCarousel>
+        <ul className="section-px grid grid-cols-2 justify-center gap-sm laptop:container mobile-large:grid-cols-3 laptop:mx-auto">
+          <AnimatePresence mode="wait">
+            {categorie
+              ? events
+                  .filter((event) => getCategoryWithSubCategory(event.categorie) === categorie)
+                  .map((event, index) => {
+                    return (
+                      <motion.li
+                        key={`${event.titre}-${index}`}
+                        className="group relative flex aspect-square h-full w-full items-end overflow-hidden rounded-b-sm rounded-t-sm bg-black shadow-md duration-medium hover:scale-110 hover:rounded-t-sm hover:shadow-xl hover:before:max-w-full"
+                        initial={{ opacity: 0, y: -10, pointerEvents: 'none' }}
+                        animate={{
+                          opacity: 1,
+                          y: 0,
+                          pointerEvents: 'auto',
+                          transition: {
+                            opacity: { duration: 0.5, delay: index * 0.3 },
+                            pointerEvents: { delay: index * 0.3 },
+                            y: { duration: 0.3, delay: index * 0.3 }
+                          }
+                        }}
+                        exit={{ opacity: 0 }}
+                        style={{ zIndex: 30 - index }}
+                      >
+                        <Link
+                          scroll={false}
+                          className="relative z-40 flex h-full w-full flex-col-reverse after:absolute after:left-0 after:top-0 after:z-10 after:h-full after:w-full after:bg-gradient-to-t after:from-black/100 after:to-transparent after:to-30%"
+                          href={event.slug.current}
+                        >
+                          <motion.h3
+                            className={`sub-heading before-bg relative z-50 text-pretty px-md text-white duration-slow hover:duration-fast`}
+                            initial={{
+                              opacity: 0,
+                              y: 300,
+                              maxHeight: 0,
+                              paddingTop: 0,
+                              paddingBottom: 0
+                            }}
+                            animate={{
+                              opacity: 1,
+                              y: 0,
+                              paddingTop: '1rem',
+                              paddingBottom: '1rem',
+                              maxHeight: 100,
+                              transition: {
+                                opacity: { duration: 0.1, delay: index * 0.3 },
+                                maxHeight: { duration: 0.2, delay: index * 0.3 },
+                                paddingTop: { duration: 0.2, delay: index * 0.3 },
+                                paddingBottom: { duration: 0.2, delay: index * 0.3 },
+                                y: { duration: 0.2, delay: index * 0.3 }
+                              }
+                            }}
+                            exit={{ opacity: 0 }}
+                          >
+                            {event.titre}
+                          </motion.h3>
+                          <Image
+                            fill
+                            sizes={'(min-width: 1024px) 50vw, 100vw'}
+                            className={`object-cover duration-medium`}
+                            placeholder="blur"
+                            blurDataURL={event.src}
+                            src={event.src}
+                            alt={`${event}`}
+                          ></Image>
+                        </Link>
+                      </motion.li>
+                    );
+                  })
+              : events.map((event, index) => {
+                  return (
+                    <motion.li
+                      key={`${event.titre}-${index}`}
+                      className="group relative flex aspect-square h-full w-full items-end overflow-hidden rounded-b-sm rounded-t-sm bg-black shadow-md duration-medium hover:scale-110 hover:rounded-t-sm hover:shadow-xl hover:before:max-w-full"
+                      initial={{ opacity: 0, y: -10, pointerEvents: 'none' }}
+                      animate={{
+                        opacity: 1,
+                        y: 0,
+                        pointerEvents: 'auto',
+                        transition: {
+                          opacity: { duration: 0.5, delay: index * 0.3 },
+                          pointerEvents: { delay: index * 0.3 },
+                          y: { duration: 0.3, delay: index * 0.3 }
+                        }
+                      }}
+                      exit={{ opacity: 0 }}
+                      style={{ zIndex: 30 - index }}
+                    >
+                      <Link
+                        scroll={false}
+                        className="relative z-40 flex h-full w-full flex-col-reverse after:absolute after:left-0 after:top-0 after:z-10 after:h-full after:w-full after:bg-gradient-to-t after:from-black/100 after:to-transparent after:to-30%"
+                        href={event.slug.current}
+                      >
+                        <motion.h3
+                          className={`sub-heading before-bg relative z-50 text-pretty px-md text-white duration-slow hover:duration-fast`}
+                          initial={{
+                            opacity: 0,
+                            y: 300,
+                            maxHeight: 0,
+                            paddingTop: 0,
+                            paddingBottom: 0
+                          }}
+                          animate={{
+                            opacity: 1,
+                            y: 0,
+                            paddingTop: '1rem',
+                            paddingBottom: '1rem',
+                            maxHeight: 100,
+                            transition: {
+                              opacity: { duration: 0.1, delay: index * 0.3 },
+                              maxHeight: { duration: 0.2, delay: index * 0.3 },
+                              paddingTop: { duration: 0.2, delay: index * 0.3 },
+                              paddingBottom: { duration: 0.2, delay: index * 0.3 },
+                              y: { duration: 0.2, delay: index * 0.3 }
+                            }
+                          }}
+                          exit={{ opacity: 0 }}
+                        >
+                          {event.titre}
+                        </motion.h3>
+                        <Image
+                          fill
+                          sizes={'(min-width: 1024px) 50vw, 100vw'}
+                          className={`object-cover duration-medium`}
+                          placeholder="blur"
+                          blurDataURL={event.src}
+                          src={event.src}
+                          alt={`${event}`}
+                        ></Image>
+                      </Link>
+                    </motion.li>
+                  );
+                })}
+          </AnimatePresence>
+        </ul>
       </InviewWrapper>
     </section>
   );

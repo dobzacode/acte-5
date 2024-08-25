@@ -6,11 +6,11 @@ import { useRouter } from 'next/navigation';
 export default function CategoryPicker({ actualParams }: { actualParams: string }) {
   const router = useRouter();
   return (
-    <ul className="[&>li>button]:body flex h-full [&>li]:px-md [&>li]:py-sm ">
+    <ul className="[&>li>button]:body flex h-full [&>li]:px-md [&>li]:py-sm">
       <li
         className={cn(
-          'relative flex origin-center items-center justify-center overflow-hidden whitespace-nowrap border-r   py-xs text-default-400 duration-medium before:absolute before:-z-10 before:h-full before:w-full before:-translate-y-full  before:bg-black     ',
-          actualParams === 'evenementiel' ? ' text-primary  ' : 'hover:text-black'
+          'relative flex origin-center items-center justify-center overflow-hidden whitespace-nowrap border-r py-xs text-default-400 duration-medium before:absolute before:-z-10 before:h-full before:w-full before:-translate-y-full before:bg-black',
+          actualParams === 'evenementiel' ? 'text-primary' : 'hover:text-black'
         )}
       >
         <button
@@ -25,8 +25,8 @@ export default function CategoryPicker({ actualParams }: { actualParams: string 
       </li>
       <li
         className={cn(
-          'relative  flex origin-center items-center justify-center overflow-hidden whitespace-nowrap border-r  py-xs text-default-400 duration-medium before:absolute before:-z-10 before:h-full before:w-full before:translate-y-full  before:bg-black    ',
-          actualParams === 'spectacle' ? 'text-primary ' : 'hover:text-black'
+          'relative flex origin-center items-center justify-center overflow-hidden whitespace-nowrap border-r py-xs text-default-400 duration-medium before:absolute before:-z-10 before:h-full before:w-full before:translate-y-full before:bg-black',
+          actualParams === 'spectacle' ? 'text-primary' : 'hover:text-black'
         )}
       >
         <button
@@ -41,8 +41,8 @@ export default function CategoryPicker({ actualParams }: { actualParams: string 
       </li>
       <li
         className={cn(
-          'relative  flex origin-center items-center justify-center overflow-hidden whitespace-nowrap  py-xs text-default-400 duration-medium before:absolute before:-z-10 before:h-full before:w-full before:-translate-y-full  before:bg-black  ',
-          actualParams === 'graphisme' ? 'text-primary ' : 'hover:text-black'
+          'relative flex origin-center items-center justify-center overflow-hidden whitespace-nowrap py-xs text-default-400 duration-medium before:absolute before:-z-10 before:h-full before:w-full before:-translate-y-full before:bg-black',
+          actualParams === 'graphisme' ? 'text-primary' : 'hover:text-black'
         )}
       >
         <button

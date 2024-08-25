@@ -19,11 +19,11 @@
   }
 
   .heading--sub-extra-large {
-    @apply font-[Quasimoda] text-xl font-bold leading-xl mobile-large:text-xl mobile-large:leading-xl tablet:text-2xl tablet:leading-2xl laptop:text-3xl laptop:leading-3xl;
+    @apply font-[Quasimoda] text-xl font-bold leading-xl mobile-large:text-xl mobile-large:leading-xl tablet:text-2xl tablet:leading-2xl laptop:text-3xl laptop:leading-[6.5rem];
   }
 
   .heading--large {
-    @apply font-[Quasimoda] text-lg font-bold leading-lg  tablet:text-xl tablet:leading-xl laptop:text-2xl laptop:leading-2xl;
+    @apply font-[Quasimoda] text-lg font-bold leading-lg tablet:text-xl tablet:leading-xl laptop:text-2xl laptop:leading-2xl;
   }
 
   .heading--sub-large {
@@ -47,7 +47,7 @@
   }
 
   .main {
-    @apply flex w-full flex-col items-center justify-center laptop:px-2xl  laptop-large:px-4xl;
+    @apply flex w-full flex-col items-center justify-center laptop:px-2xl laptop-large:px-4xl;
   }
 
   main {
@@ -75,7 +75,7 @@
   }
 
   .menu-item {
-    @apply heading  relative  tracking-wide text-default-50;
+    @apply heading relative tracking-wide text-default-50;
   }
 
   .section-px {
