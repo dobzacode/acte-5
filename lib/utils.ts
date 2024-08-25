@@ -55,6 +55,7 @@ export function getCategoryWithSubCategory(
     | 'Support de communication'
     | 'Edition'
 ) {
+  console.log(categorie);
   switch (categorie) {
     case 'Inauguration':
     case 'Convention':

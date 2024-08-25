@@ -103,6 +103,31 @@ export default defineType({
       hidden: ({ document }) => (document?.categorie === "Vidéo d'entreprise" ? false : true)
     }),
     defineField({
+      name: 'mainImage',
+      title: 'Image principal',
+      type: 'image',
+      group: 'media',
+      options: {
+        hotspot: true
+      },
+      fields: [
+        {
+          name: 'alt',
+          type: 'string',
+          title: 'Texte alternatif'
+        }
+      ],
+      validation: (Rule) => Rule.required(),
+      hidden: ({ document }) => (document?.categorie === "Vidéo d'entreprise" ? false : true)
+    }),
+    defineField({
+      title: 'Fichier vidéo',
+      name: 'video',
+      type: 'file',
+      group: 'media',
+      hidden: ({ document }) => (document?.categorie === "Vidéo d'entreprise" ? false : true)
+    }),
+    defineField({
       name: 'slug',
       title: 'Slug',
       type: 'slug',

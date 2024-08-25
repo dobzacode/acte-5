@@ -17,9 +17,11 @@ export default function ProjectSection({ events }: { events: EventWithImgAndInde
     null
   );
 
+  console.log(events);
+
   return (
     <section className="laptop:section-px flex flex-col justify-between gap-xl laptop:container laptop:mx-auto">
-      <div className="flex w-fit gap-sm">
+      <div className="mx-auto flex w-fit gap-sm">
         <Input
           className="body h-full rounded-xs shadow-inner ring-primary-400"
           type="number"
@@ -28,7 +30,7 @@ export default function ProjectSection({ events }: { events: EventWithImgAndInde
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
-        <nav className="body relative z-40 flex h-full w-fit shrink-0 self-center overflow-hidden rounded-sm border font-normal shadow-inner before:absolute before:right-0 before:top-0 before:-z-10 before:h-full before:w-full before:bg-white">
+        <nav className="body relative z-40 flex h-full w-fit shrink-0 self-center overflow-hidden rounded-sm font-normal shadow-inner before:absolute before:right-0 before:top-0 before:-z-10 before:h-full before:w-full before:bg-white">
           <ul className="[&>li>button]:body flex h-full [&>li]:px-md [&>li]:py-xs">
             <li
               className={cn(
