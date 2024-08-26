@@ -103,18 +103,23 @@ export default async function TeamSection() {
         viewport={{ once: true, margin: '200px 0px 200px 0px' }}
         variant={ComingFromBottomVariant}
       >
-        <Carousel className="section-px flex max-w-[100vw] items-center gap-md laptop:mx-auto [&>div]:rounded-sm">
+        <Carousel
+          opts={{ loop: true }}
+          className="section-px flex max-w-[100vw] items-center gap-md laptop:mx-auto [&>div]:rounded-sm"
+        >
           <>
             <CarouselPrevious className="relative" />
           </>
           <CarouselContent className="laptop-large:-ml-sm">
             {imageArr.map((image, index) => (
-              <CarouselItem key={index} className="basis-full mobile-large:basis-1/2 tablet:basis-1/3 laptop:basis-1/4 laptop-large:basis-1/5 laptop-large:pr-sm">
+              <CarouselItem
+                key={index}
+                className="basis-full mobile-large:basis-1/2 tablet:basis-1/3 laptop:basis-1/4 laptop-large:basis-1/5 laptop-large:pr-sm"
+              >
                 <div
                   className={cn(
                     'card relative flex h-full flex-col items-center gap-md rounded-sm border-0 p-0 shadow-xl'
                   )}
-                  
                 >
                   <Image
                     width={400}

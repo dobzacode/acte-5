@@ -97,7 +97,10 @@ export default async function LastEvent({
         className=""
         variant={ComingFromBottomVariant}
       >
-        <Carousel className="section-px flex max-w-[100vw] items-center gap-md laptop:mx-auto [&>div]:rounded-sm">
+        <Carousel
+          opts={{ loop: true }}
+          className="section-px flex max-w-[100vw] items-center gap-md laptop:mx-auto [&>div]:rounded-sm"
+        >
           <>
             <CarouselPrevious className="relative" />
           </>
@@ -110,7 +113,7 @@ export default async function LastEvent({
                 <Link
                   href={`/agence-evenementielle-strasbourg/projets/${image.slug.current}`}
                   className={cn(
-                    'card relative flex h-full flex-col items-center gap-md overflow-hidden rounded-sm border-0 p-0 shadow-xl'
+                    'card relative flex h-full flex-col items-center gap-md overflow-hidden rounded-sm border-0 p-0 shadow-xl laptop:gap-lg'
                   )}
                   key={index}
                 >
@@ -118,7 +121,7 @@ export default async function LastEvent({
                     width={400}
                     height={400}
                     className={cn(
-                      'aspect-square h-full w-full grow cursor-pointer overflow-hidden rounded-t-sm object-cover',
+                      'aspect-square h-full w-full grow cursor-pointer overflow-hidden rounded-t-sm object-cover object-top',
                       'name' in image ? null : 'rounded-t-none'
                     )}
                     sizes={'(max-width: 640px) 100vw, 50vw'}
@@ -128,13 +131,9 @@ export default async function LastEvent({
                     alt={`Image ${image.titre}`}
                   ></Image>
 
-                  <div className="flex flex-col items-center gap-sm text-pretty px-md pb-md text-center">
-                    <p className="sub-heading text-ellipsis">
-                      <strong>
-                        {image.titre}
-                        {image.titre}
-                        {image.titre}
-                      </strong>
+                  <div className="flex flex-col items-center gap-sm text-pretty px-md pb-md text-center laptop:pb-lg">
+                    <p className="sub-heading line-clamp-1">
+                      <strong>{image.titre}</strong>
                     </p>
                   </div>
                 </Link>

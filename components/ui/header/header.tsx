@@ -18,7 +18,7 @@ export default function Header({ className }: { className?: string }) {
 
   const pathname = usePathname();
 
-  const isTablet = useBetterMediaQuery('(min-width: 768px)');
+  const isLaptop = useBetterMediaQuery('(min-width: 1024px)');
 
   useEffect(() => {
     if (showMenu) {
@@ -51,7 +51,7 @@ export default function Header({ className }: { className?: string }) {
             'h-[70px] w-[70px] rounded-xs duration-medium max-mobile-large:h-[50px] max-mobile-large:w-[50px] max-mobile-medium:h-[40px] max-mobile-medium:w-[40px]'
           )}
         ></Logo>
-        {isTablet && pathname === '/' ? (
+        {isLaptop && pathname === '/' ? (
           <motion.p
             initial={{ y: -100 }}
             animate={{
@@ -70,7 +70,7 @@ export default function Header({ className }: { className?: string }) {
         ) : null}
       </div>
       <AnimatePresence mode="wait">
-        {isTablet && pathname !== '/' ? (
+        {isLaptop && pathname !== '/' ? (
           <DivWrapper variant={FadeInVariant} inverseOnExit={true}>
             <AnimatePresence mode="wait">
               {pathname.includes('agence-evenementielle-strasbourg') ? (
@@ -87,8 +87,8 @@ export default function Header({ className }: { className?: string }) {
           setShowMenu(false);
         }}
         className={cn(
-          'body relative z-40 flex shrink-0 self-center overflow-hidden rounded-sm border p-xs font-normal shadow-md duration-slow ease-in-out before:absolute before:right-0 before:top-0 before:-z-10 before:h-full before:w-full before:bg-white max-tablet:absolute max-tablet:left-1/2 max-tablet:top-1/2 max-tablet:-translate-x-1/2 max-tablet:-translate-y-1/2 max-tablet:self-center',
-          pathname === '/' && 'max-tablet:translate-x-1/2'
+          'body relative z-40 flex shrink-0 self-center overflow-hidden rounded-sm p-xs font-normal shadow-md duration-slow ease-in-out before:absolute before:right-0 before:top-0 before:-z-10 before:h-full before:w-full before:bg-white max-laptop:absolute max-laptop:left-1/2 max-laptop:top-1/2 max-laptop:-translate-x-1/2 max-laptop:-translate-y-1/2 max-laptop:self-center',
+          pathname === '/' && 'max-laptop:translate-x-1/2'
         )}
       >
         <SectionLinks pathname={pathname}></SectionLinks>
@@ -96,7 +96,7 @@ export default function Header({ className }: { className?: string }) {
       <AnimatePresence mode="wait">
         {pathname.includes('agence-evenementielle-strasbourg') ||
         pathname.includes('spectacles-strasbourg') ? (
-          <div key="menu" className={cn('flex shrink-0 items-center tablet:hidden')}>
+          <div key="menu" className={cn('flex shrink-0 items-center laptop:hidden')}>
             <Hamburger
               className={cn('h-fit w-xl duration-fast hover:scale-105')}
               showMenu={showMenu}
@@ -112,7 +112,7 @@ export default function Header({ className }: { className?: string }) {
               )}
             ></motion.div>
 
-            {!isTablet ? (
+            {!isLaptop ? (
               <motion.nav
                 className={cn(
                   'absolute left-0 z-10 flex max-w-full flex-col px-sm mobile-small:top-4xl mobile-medium:top-4xl mobile-large:top-5xl'

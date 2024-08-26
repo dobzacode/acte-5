@@ -28,7 +28,13 @@ const formatDateString = (isoDateString: string) => {
   return date.toLocaleDateString('fr-FR', options);
 };
 
-export default function CalendrierRow({ dateItem }: { dateItem?: DateItemCal }) {
+export default function CalendrierRow({
+  dateItem,
+  isBig
+}: {
+  dateItem?: DateItemCal;
+  isBig?: boolean;
+}) {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
   const isDateAncienne = useMemo(() => {
@@ -44,8 +50,9 @@ export default function CalendrierRow({ dateItem }: { dateItem?: DateItemCal }) 
     <>
       <div
         className={cn(
-          'sub-heading flex h-fit cursor-pointer flex-col items-center justify-center gap-sm overflow-clip rounded-xs border border-black/10 bg-white shadow-sm duration-medium hover:z-30 hover:shadow-md',
-          isDateAncienne && 'pointer-events-none opacity-40'
+          'sub-heading flex h-full cursor-pointer flex-col items-center justify-center gap-sm overflow-clip rounded-xs border border-black/10 bg-white shadow-sm duration-medium hover:z-30 hover:shadow-md',
+          isDateAncienne ? 'pointer-events-none opacity-40' : '',
+          !dateItem && 'pointer-events-none opacity-40 shadow-none'
         )}
       >
         {dateItem ? (

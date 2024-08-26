@@ -12,6 +12,7 @@ import InviewWrapper from '@/components/framer-motion/inview-wrapper';
 import { draftMode } from 'next/headers';
 import { notFound } from 'next/navigation';
 import { Image } from 'sanity';
+import BigCalendrierTable from './big-calendrier-table';
 import CalendrierTable from './calendrier-table';
 
 export interface DateItemCal extends DateItem {
@@ -20,7 +21,7 @@ export interface DateItemCal extends DateItem {
   picture: Image;
 }
 
-export default async function Calendrier() {
+export default async function Calendrier({ isBig }: { isBig?: boolean }) {
   const spectacles = await sanityFetch<SpectaclesAvecDatesQueryResponse>({
     query: SPECTACLES_AVEC_DATES_QUERY,
     stega: draftMode().isEnabled,
@@ -63,8 +64,26 @@ export default async function Calendrier() {
   });
 
   return (
-    <InviewWrapper tag="div" variant={ComingFromBottomVariant}>
-      <CalendrierTable revueScoute={revueScoute} datesArr={datesArr}></CalendrierTable>
-    </InviewWrapper>
+    <>
+      {!isBig ? (
+        <InviewWrapper tag="div" variant={ComingFromBottomVariant}>
+          <CalendrierTable
+            className={isBig ? 'laptop:hidden' : ''}
+            revueScoute={revueScoute}
+            datesArr={datesArr}
+          ></CalendrierTable>
+        </InviewWrapper>
+      ) : (
+        <>
+          <BigCalendrierTable revueScoute={revueScoute} datesArr={datesArr}></BigCalendrierTable>
+
+          <CalendrierTable
+            className={'laptop:hidden'}
+            revueScoute={revueScoute}
+            datesArr={datesArr}
+          ></CalendrierTable>
+        </>
+      )}
+    </>
   );
 }
