@@ -2,8 +2,8 @@ import { nextui } from '@nextui-org/react';
 
 const shadowColor = '0deg 0% 80%';
 
-const primaryColor = '21, 90%,';
-const secondaryColor = '109, 36% ,';
+const primaryColor = '19, 90%,';
+const secondaryColor = '49, 90% ,';
 
 const config = {
   content: [
