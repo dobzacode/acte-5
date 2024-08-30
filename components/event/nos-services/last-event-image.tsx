@@ -47,6 +47,8 @@ export default async function LastEvent({
     | 'Edition';
   actualSlug?: string;
 }) {
+  return null;
+
   const query =
     !actualSlug && !categorie
       ? groq`*[_type == "evenement" && defined(imageGallery) && "${categorie}" in categories && defined(slug.current)]`
