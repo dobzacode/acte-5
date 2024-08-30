@@ -140,8 +140,8 @@ export default defineType({
       media: 'imageGallery.0'
     },
     prepare(selection) {
-      const { title } = selection;
-      return { title };
+      const { title, client } = selection;
+      return { title, subtitle: client };
     }
   }
 });
