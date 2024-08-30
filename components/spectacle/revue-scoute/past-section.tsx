@@ -11,6 +11,10 @@ import { draftMode } from 'next/headers';
 import { notFound } from 'next/navigation';
 import PastCarousel from './past-carousel';
 
+function notEmpty<TValue>(value: TValue | null | undefined): value is TValue {
+  return value !== null && value !== undefined;
+}
+
 export default async function PastSection() {
   const affiches = await sanityFetch<AffichesQueryResponse>({
     query: AFFICHES_QUERY,
@@ -22,13 +26,19 @@ export default async function PastSection() {
     return notFound();
   }
 
+  console.log(affiches);
+
   const imagesWithUrl = affiches[0]
     ? await Promise.all(
-        affiches[0].imageGallery.map(async (image: SanityImage) => {
-          image.url = await urlForImage(image).width(1920).height(1080).dpr(2).quality(80).url();
+        affiches[0].imageGallery.map(async (image: SanityImage, index) => {
+          try {
+            image.url = await urlForImage(image).width(1920).height(1080).dpr(2).quality(80).url();
 
-          image.blurSrc = urlForImage(image).width(20).quality(20).url();
-          return image;
+            image.blurSrc = urlForImage(image).width(20).quality(20).url();
+            return image;
+          } catch (e) {
+            return null;
+          }
         })
       )
     : null;
@@ -37,10 +47,12 @@ export default async function PastSection() {
     return notFound();
   }
 
+  const filteredImages = imagesWithUrl.filter(notEmpty);
+
   return (
-    <section className="inner-section-gap flex w-full  flex-col overflow-hidden bg-primary-400 py-xl ">
+    <section className="inner-section-gap flex w-full flex-col overflow-hidden bg-primary-400 py-xl">
       <InviewWrapper variant={ComingFromTopVariant}>
-        <h2 className="heading--sub-extra-large section-px text-center text-white ">
+        <h2 className="heading--sub-extra-large section-px text-center text-white">
           Et pour la postérité...
         </h2>
       </InviewWrapper>
@@ -48,7 +60,7 @@ export default async function PastSection() {
         viewport={{ once: true, margin: '200px 0px 200px 0px' }}
         variant={ComingFromBottomVariant}
       >
-        <PastCarousel imagesWithUrl={imagesWithUrl} />
+        <PastCarousel imagesWithUrl={filteredImages} />
       </InviewWrapper>
     </section>
   );
