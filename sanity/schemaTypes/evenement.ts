@@ -35,7 +35,7 @@ export default defineType({
           { title: "Vidéo d'entreprise", value: "Vidéo d'entreprise" }
         ]
       },
-      validation: (Rule) => Rule.required().length(1)
+      validation: (Rule) => Rule.required().min(1)
     }),
 
     defineField({
@@ -80,7 +80,7 @@ export default defineType({
       title: "Galerie d'image",
       type: 'array',
       group: 'media',
-      validation: (Rule) => Rule.required().length(1),
+      validation: (Rule) => Rule.required().min(1),
       of: [
         {
           type: 'image',
