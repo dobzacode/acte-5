@@ -48,7 +48,7 @@ export default async function LastEvent({
   actualSlug?: string;
 }) {
   const query = !actualSlug
-    ? groq`*[_type == "evenement" && defined(imageGallery) && categorie == "${categorie}" && defined(slug.current)]`
+    ? groq`*[_type == "evenement" && defined(imageGallery) && "${categorie}" in categories && defined(slug.current)]`
     : groq`*[_type == "evenement" && defined(slug.current) && slug.current != "${actualSlug}"]`;
 
   console.log(query);
@@ -63,16 +63,6 @@ export default async function LastEvent({
 
   const eventsWithImg = await Promise.all(
     events.map(async (event) => {
-      if (event.mainImage) {
-        const src = await urlForImage(event.mainImage)
-          .width(1920)
-          .height(1080)
-          .dpr(2)
-          .quality(80)
-          .url();
-        const blurSrc = urlForImage(event.mainImage).width(20).quality(20).url();
-        return { src, blurSrc, ...event };
-      }
       const src = await urlForImage(event.imageGallery?.[0])
         .width(1920)
         .height(1080)

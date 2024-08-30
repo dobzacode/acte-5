@@ -11,7 +11,7 @@ export interface Event {
     current: string;
     _type: string;
   };
-  categorie:
+  categories: (
     | 'Convention'
     | 'Anniversaire'
     | 'Inauguration'
@@ -26,7 +26,8 @@ export interface Event {
     | 'Identité visuelle'
     | "Vidéo d'entreprise"
     | 'Support de communication'
-    | 'Edition';
+    | 'Edition'
+  )[];
   date: string;
   titre: string;
   description: string;

@@ -22,7 +22,7 @@ export interface EventWithImgAndIndex extends EventWithImg {
 
 export default async function Home() {
   const events = await sanityFetch<EventWithImgQueryRes[]>({
-    query: groq`*[_type == "evenement" && (defined(imageGallery) || defined(mainImage))]`,
+    query: groq`*[_type == "evenement" && defined(imageGallery) && defined(slug.current)]`,
     perspective: 'published',
     stega: false
   });
@@ -32,16 +32,6 @@ export default async function Home() {
   const eventsWithImg = await Promise.all(
     events.map(async (event) => {
       const index = events.indexOf(event);
-      if (event.mainImage) {
-        const src = await urlForImage(event.mainImage)
-          .width(1920)
-          .height(1080)
-          .dpr(2)
-          .quality(80)
-          .url();
-        const blurSrc = urlForImage(event.mainImage).width(20).quality(20).url();
-        return { src, blurSrc, ...event, index };
-      }
       const src = await urlForImage(event.imageGallery[0])
         .width(1920)
         .height(1080)

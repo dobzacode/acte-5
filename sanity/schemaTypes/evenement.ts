@@ -11,9 +11,10 @@ export default defineType({
   ],
   fields: [
     defineField({
-      name: 'categorie',
-      title: 'Catégorie',
-      type: 'string',
+      name: 'categories',
+      title: 'Catégories',
+      type: 'array',
+      of: [{ type: 'string' }],
       group: 'contenu',
       options: {
         list: [
@@ -34,7 +35,7 @@ export default defineType({
           { title: "Vidéo d'entreprise", value: "Vidéo d'entreprise" }
         ]
       },
-      validation: (Rule) => Rule.required()
+      validation: (Rule) => Rule.required().length(1)
     }),
 
     defineField({
@@ -79,7 +80,7 @@ export default defineType({
       title: "Galerie d'image",
       type: 'array',
       group: 'media',
-      hidden: ({ document }) => (document?.categorie === "Vidéo d'entreprise" ? true : false),
+      validation: (Rule) => Rule.required().length(1),
       of: [
         {
           type: 'image',
@@ -97,35 +98,13 @@ export default defineType({
       ]
     }),
     defineField({
-      name: 'mainImage',
-      title: 'Image principal',
-      type: 'image',
-      group: 'media',
-      options: {
-        hotspot: true
-      },
-      fields: [
-        {
-          name: 'alt',
-          type: 'string',
-          title: 'Texte alternatif'
-        }
-      ],
-      validation: (Rule) =>
-        Rule.custom((mainImage, context) => {
-          if (!mainImage?.asset && context?.document?.categorie === "Vidéo d'entreprise") {
-            return "le champ 'Image principal' est obligatoire pour les vidéos d'entreprise";
-          }
-          return true;
-        }),
-      hidden: ({ document }) => (document?.categorie === "Vidéo d'entreprise" ? false : true)
-    }),
-    defineField({
       title: 'Fichier vidéo',
       name: 'video',
       type: 'file',
       group: 'media',
-      hidden: ({ document }) => (document?.categorie === "Vidéo d'entreprise" ? false : true)
+      hidden: ({ document }) =>
+        //@ts-expect-error is not defined
+        document?.categories?.some((categorie) => categorie === "Vidéo d'entreprise") ? false : true
     }),
     defineField({
       name: 'slug',
@@ -162,7 +141,7 @@ export default defineType({
     },
     prepare(selection) {
       const { title } = selection;
-      return { ...selection, subtitle: title };
+      return { title };
     }
   }
 });

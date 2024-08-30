@@ -45,7 +45,7 @@ export default async function ProjectpageContent({ params }: { params: { projet:
       <LastEvent
         actualSlug={project.slug.current}
         h2="Découvrez nos autres projets"
-        categorie={project.categorie}
+        categorie={project.categories}
       ></LastEvent>
     </main>
   );

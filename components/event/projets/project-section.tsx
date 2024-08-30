@@ -13,6 +13,8 @@ export default function ProjectSection({ events }: { events: EventWithImgAndInde
     null
   );
 
+  console.log(events);
+
   return (
     <section className="laptop:section-px flex flex-col justify-between gap-xl laptop:container laptop:mx-auto">
       <div className="mx-auto flex w-fit gap-sm">
@@ -92,7 +94,11 @@ export default function ProjectSection({ events }: { events: EventWithImgAndInde
           <AnimatePresence mode="wait">
             {categorie
               ? events
-                  .filter((event) => getCategoryWithSubCategory(event.categorie) === categorie)
+                  .filter((event) =>
+                    event?.categories?.some(
+                      (subcat) => getCategoryWithSubCategory(subcat) === categorie
+                    )
+                  )
                   // .filter((event) => event.titre.toLowerCase().startsWith(searchTerm.toLowerCase()))
                   .map((event, index) => {
                     return (
