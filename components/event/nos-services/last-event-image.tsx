@@ -52,15 +52,13 @@ export default async function LastEvent({
       ? groq`*[_type == "evenement" && defined(imageGallery) && "${categorie}" in categories && defined(slug.current)]`
       : groq`*[_type == "evenement" && defined(slug.current) && slug.current != "${actualSlug}"]`;
 
-  console.log(query);
-
   const events = await sanityFetch<EventWithImgQueryRes[]>({
     query,
     perspective: 'published',
     stega: false
   });
 
-  if (!events) return null;
+  if (!events || !events.some((event) => event.imageGallery[0])) return null;
 
   const eventsWithImg = await Promise.all(
     events.map(async (event) => {
