@@ -29,7 +29,7 @@ export default async function LastEvent({
   actualSlug
 }: {
   h2: string;
-  categorie:
+  categorie?:
     | 'Convention'
     | 'Anniversaire'
     | 'Inauguration'
@@ -47,9 +47,10 @@ export default async function LastEvent({
     | 'Edition';
   actualSlug?: string;
 }) {
-  const query = !actualSlug
-    ? groq`*[_type == "evenement" && defined(imageGallery) && "${categorie}" in categories && defined(slug.current)]`
-    : groq`*[_type == "evenement" && defined(slug.current) && slug.current != "${actualSlug}"]`;
+  const query =
+    !actualSlug && !categorie
+      ? groq`*[_type == "evenement" && defined(imageGallery) && "${categorie}" in categories && defined(slug.current)]`
+      : groq`*[_type == "evenement" && defined(slug.current) && slug.current != "${actualSlug}"]`;
 
   console.log(query);
 
