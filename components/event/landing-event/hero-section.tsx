@@ -15,7 +15,14 @@ export default function HeroSection({ isSpectacle = false }: { isSpectacle?: boo
           loop
           className="absolute left-0 top-0 h-full w-full object-cover"
         >
-          <source src={'/assets/spectacle/landing/bg-spectacle.mp4'} type="video/mp4" />
+          <source
+            src={
+              isSpectacle
+                ? '/assets/spectacle/landing/bg-spectacle.mp4'
+                : '/assets/event/landing/bg-event.mp4'
+            }
+            type="video/mp4"
+          />
           Votre navigateur ne supporte pas la balise video.
         </video>
         {!isSpectacle && (

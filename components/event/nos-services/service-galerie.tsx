@@ -58,7 +58,7 @@ export const SERVICES = [
   },
   {
     href: '/agence-evenementielle-strasbourg/services/spectacle-clef-en-main',
-    text: 'Spectacle clef en main',
+    text: 'Spectacle clé en main',
     src: '/assets/event/services/spectacle-clef-en-main.jpg',
     category: 'spectacle'
   },

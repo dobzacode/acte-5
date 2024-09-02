@@ -9,6 +9,8 @@ import FooterContent from '@/components/ui/footer/footer-content';
 import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import eventimage from '/public/assets/landing/event.jpg';
+import spectacleimage from '/public/assets/landing/spectacle.png';
 
 export const metadata: Metadata = {
   title: 'Acte 5 | Agence de Communication Événementielle à Strasbourg',
@@ -42,8 +44,9 @@ export default function Home() {
                 alt="Photo de spectacle"
                 className="rounded-md object-cover"
                 fill
+                placeholder="blur"
                 sizes={'(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw'}
-                src={`/assets/landing/spectacle/spectacle_${Math.floor(Math.random() * 3) + 1}.png`}
+                src={eventimage}
               />
               <h2 className="heading--sub-large absolute top-1/2 z-20 -translate-y-1/2 px-md py-sm font-normal text-white backdrop-blur-sm duration-medium after:absolute after:left-0 after:top-0 after:-z-10 after:h-full after:w-full after:rounded-xs after:bg-black after:opacity-20">
                 EVENEMENTIEL
@@ -63,8 +66,9 @@ export default function Home() {
                 alt="Photo de spectacle"
                 className="rounded-md object-cover"
                 fill
+                placeholder="blur"
                 sizes={'(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw'}
-                src={`/assets/landing/spectacle/spectacle_${Math.floor(Math.random() * 3) + 1}.png`}
+                src={spectacleimage}
               />
               <h2 className="heading--sub-large absolute top-1/2 z-20 -translate-y-1/2 px-md py-sm font-normal text-white backdrop-blur-sm duration-medium after:absolute after:left-0 after:top-0 after:-z-10 after:h-full after:w-full after:rounded-xs after:bg-black after:opacity-20">
                 SPECTACLE

@@ -12,8 +12,8 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <main className="main main-gap  relative overflow-clip px-0">
-      <HeroSection></HeroSection>
+    <main className="main main-gap relative overflow-clip px-0">
+      <HeroSection isSpectacle={false}></HeroSection>
       <TrustSection></TrustSection>
       <ServiceSection></ServiceSection>
       <AproposSection></AproposSection>
