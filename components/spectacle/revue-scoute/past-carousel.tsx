@@ -50,11 +50,11 @@ export default function PastCarousel({ imagesWithUrl }: { imagesWithUrl: SanityI
               onClick={() => {
                 openLightbox(index);
               }}
-              className=" basis-1/2 mobile-large:basis-1/3 tablet:basis-1/4 laptop-large:basis-1/6 laptop-large:pr-sm  "
+              className="basis-1/2 mobile-large:basis-1/3 tablet:basis-1/4 laptop-large:basis-1/6 laptop-large:pr-sm"
             >
               <div
                 className={cn(
-                  'card   relative flex  h-full flex-col items-center gap-sm  rounded-sm border-0 p-0 shadow-xl'
+                  'card relative flex h-full flex-col items-center gap-sm rounded-sm border-0 p-0 shadow-xl'
                 )}
               >
                 <Image

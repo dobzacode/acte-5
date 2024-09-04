@@ -56,137 +56,139 @@ export default function BigCalendrierTable({
   });
 
   return (
-    <div className="card relative mx-auto flex w-full flex-col items-center justify-center gap-md overflow-hidden rounded-sm bg-white shadow-xl max-laptop:hidden">
-      <div className="flex w-full items-center justify-between gap-lg">
-        <p className="laptop-large:heading--sub-large tablet:heading grid w-full grid-cols-3 gap-md text-black tablet:font-bold laptop-large:font-semibold">
-          {monthsToDisplay.map(({ month, year }, index) => (
-            <span
-              className="flex w-full items-center justify-between gap-md self-center whitespace-nowrap"
-              key={`${year}-${month}`}
-            >
-              {new Date(year, month)
-                .toLocaleString('fr-FR', {
-                  month: 'long'
-                })
-                .toUpperCase()}{' '}
-              {index < monthsToDisplay.length - 1}
-              {index === 2 && (
-                <span className="flex h-fit shrink-0 whitespace-nowrap rounded-xs shadow-sm">
-                  <button
-                    className="rounded-l-xs border border-black/10 bg-white p-sm text-black duration-medium hover:bg-black active:scale-105 hover:[&>*]:scale-105 [&>*]:hover:text-white"
-                    onClick={() => handleMoisChange('prev')}
-                  >
-                    <LuChevronLeft className="duration-medium" size={30}></LuChevronLeft>
-                  </button>
-                  <button
-                    className="rounded-r-xs border border-black/10 bg-white p-sm text-black duration-medium hover:bg-black active:scale-105 hover:[&>*]:scale-105 [&>*]:hover:text-white"
-                    onClick={() => handleMoisChange('next')}
-                  >
-                    <LuChevronRight className="duration-medium" size={30}></LuChevronRight>
-                  </button>
-                </span>
-              )}
-            </span>
-          ))}
-        </p>
-      </div>
-      <div className="grid w-full grid-cols-3 gap-sm">
-        <AnimatePresence mode="wait">
-          {monthsToDisplay.map(({ month, year }, colIndex) => (
-            <div key={`${year}-${month}`} className="col h-full">
-              <ul className="flex h-full flex-col gap-sm">
-                {filtrerDatesParMois(month, year, datesArr).map((dateItem, index) => (
-                  <DivWrapper
-                    key={`${dateItem._key}-${month}-${year}`}
-                    className="w-full"
-                    style={{ zIndex: 30 - index }}
-                    variant={{
-                      hidden: { maxHeight: '0rem', y: 100 },
-                      enter: {
-                        maxHeight: '10rem',
-                        y: 0,
-                        transition: {
-                          y: {
-                            type: 'spring',
-                            damping: 20
-                          },
-                          opacity: {
-                            duration: 0.2,
-                            delay: index * 0.1
-                          },
-                          duration: 0.5,
-                          delay: index * 0.1
-                        }
-                      },
-                      exit: {
-                        maxHeight: '0rem',
-                        y: 100,
-                        opacity: 0,
-                        transition: {
-                          y: {
-                            type: 'spring',
-                            damping: 20
-                          },
-                          opacity: {
-                            duration: 0.1,
-                            delay: 0.2 + index * 0.1
-                          },
-                          duration: 0.5,
-                          delay: index * 0.1
-                        }
-                      }
-                    }}
-                    tag="li"
-                  >
-                    <CalendrierRow dateItem={dateItem}></CalendrierRow>
-                  </DivWrapper>
-                ))}
-                {filtrerDatesParMois(month, year, datesArr).length === 0 && (
-                  <DivWrapper
-                    key={`empty-${month}-${year}`}
-                    className="pointer-events-none relative h-full w-full"
-                    variant={{
-                      hidden: { maxHeight: '0rem', y: 100 },
-                      enter: {
-                        maxHeight: '7.4rem',
-                        y: 0,
-                        transition: {
-                          y: {
-                            type: 'spring',
-                            damping: 20
-                          },
-                          opacity: {
-                            duration: 0.2
-                          },
-                          duration: 0.5
-                        }
-                      },
-                      exit: {
-                        maxHeight: '0rem',
-                        y: 100,
-                        opacity: 0,
-                        transition: {
-                          y: {
-                            type: 'spring',
-                            damping: 20
-                          },
-                          opacity: {
-                            duration: 0.1,
-                            delay: 0.2
-                          },
-                          duration: 0.5
-                        }
-                      }
-                    }}
-                    tag="li"
-                  >
-                    <CalendrierRow isBig={true}></CalendrierRow>
-                  </DivWrapper>
+    <div className="section-px w-screen max-laptop:hidden">
+      <div className="card relative mx-auto flex w-full flex-col items-center justify-center gap-md overflow-hidden rounded-sm bg-white shadow-xl">
+        <div className="flex w-full items-center justify-between gap-lg">
+          <p className="laptop-large:heading--sub-large tablet:heading grid w-full grid-cols-3 gap-md text-black tablet:font-bold laptop-large:font-semibold">
+            {monthsToDisplay.map(({ month, year }, index) => (
+              <span
+                className="flex w-full items-center justify-between gap-md self-center whitespace-nowrap"
+                key={`${year}-${month}`}
+              >
+                {new Date(year, month)
+                  .toLocaleString('fr-FR', {
+                    month: 'long'
+                  })
+                  .toUpperCase()}{' '}
+                {index < monthsToDisplay.length - 1}
+                {index === 2 && (
+                  <span className="flex h-fit shrink-0 whitespace-nowrap rounded-xs shadow-sm">
+                    <button
+                      className="rounded-l-xs border border-black/10 bg-white p-sm text-black duration-medium hover:bg-black active:scale-105 hover:[&>*]:scale-105 [&>*]:hover:text-white"
+                      onClick={() => handleMoisChange('prev')}
+                    >
+                      <LuChevronLeft className="duration-medium" size={30}></LuChevronLeft>
+                    </button>
+                    <button
+                      className="rounded-r-xs border border-black/10 bg-white p-sm text-black duration-medium hover:bg-black active:scale-105 hover:[&>*]:scale-105 [&>*]:hover:text-white"
+                      onClick={() => handleMoisChange('next')}
+                    >
+                      <LuChevronRight className="duration-medium" size={30}></LuChevronRight>
+                    </button>
+                  </span>
                 )}
-              </ul>
-            </div>
-          ))}
-        </AnimatePresence>
+              </span>
+            ))}
+          </p>
+        </div>
+        <div className="grid w-full grid-cols-3 gap-sm">
+          <AnimatePresence mode="wait">
+            {monthsToDisplay.map(({ month, year }, colIndex) => (
+              <div key={`${year}-${month}`} className="col h-full">
+                <ul className="flex h-full flex-col gap-sm">
+                  {filtrerDatesParMois(month, year, datesArr).map((dateItem, index) => (
+                    <DivWrapper
+                      key={`${dateItem._key}-${month}-${year}`}
+                      className="w-full"
+                      style={{ zIndex: 30 - index }}
+                      variant={{
+                        hidden: { maxHeight: '0rem', y: 100 },
+                        enter: {
+                          maxHeight: '10rem',
+                          y: 0,
+                          transition: {
+                            y: {
+                              type: 'spring',
+                              damping: 20
+                            },
+                            opacity: {
+                              duration: 0.2,
+                              delay: index * 0.1
+                            },
+                            duration: 0.5,
+                            delay: index * 0.1
+                          }
+                        },
+                        exit: {
+                          maxHeight: '0rem',
+                          y: 100,
+                          opacity: 0,
+                          transition: {
+                            y: {
+                              type: 'spring',
+                              damping: 20
+                            },
+                            opacity: {
+                              duration: 0.1,
+                              delay: 0.2 + index * 0.1
+                            },
+                            duration: 0.5,
+                            delay: index * 0.1
+                          }
+                        }
+                      }}
+                      tag="li"
+                    >
+                      <CalendrierRow dateItem={dateItem}></CalendrierRow>
+                    </DivWrapper>
+                  ))}
+                  {filtrerDatesParMois(month, year, datesArr).length === 0 && (
+                    <DivWrapper
+                      key={`empty-${month}-${year}`}
+                      className="pointer-events-none relative h-full w-full"
+                      variant={{
+                        hidden: { maxHeight: '0rem', y: 100 },
+                        enter: {
+                          maxHeight: '7.4rem',
+                          y: 0,
+                          transition: {
+                            y: {
+                              type: 'spring',
+                              damping: 20
+                            },
+                            opacity: {
+                              duration: 0.2
+                            },
+                            duration: 0.5
+                          }
+                        },
+                        exit: {
+                          maxHeight: '0rem',
+                          y: 100,
+                          opacity: 0,
+                          transition: {
+                            y: {
+                              type: 'spring',
+                              damping: 20
+                            },
+                            opacity: {
+                              duration: 0.1,
+                              delay: 0.2
+                            },
+                            duration: 0.5
+                          }
+                        }
+                      }}
+                      tag="li"
+                    >
+                      <CalendrierRow isBig={true}></CalendrierRow>
+                    </DivWrapper>
+                  )}
+                </ul>
+              </div>
+            ))}
+          </AnimatePresence>
+        </div>
       </div>
     </div>
   );
