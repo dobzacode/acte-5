@@ -42,7 +42,7 @@ export default defineType({
             },
             {
               type: 'string',
-              title: 'Emplacement',
+              title: 'Emplacement (Place ID)',
               name: 'emplacement',
               validation: (Rule) => Rule.required()
             },
