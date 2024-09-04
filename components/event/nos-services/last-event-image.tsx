@@ -62,14 +62,18 @@ export default async function LastEvent({
 
   const eventsWithImg = await Promise.all(
     events.map(async (event) => {
-      const src = await urlForImage(event.imageGallery?.[0])
-        .width(1920)
-        .height(1080)
-        .dpr(2)
-        .quality(80)
-        .url();
-      const blurSrc = urlForImage(event.imageGallery?.[0]).width(20).quality(20).url();
-      return { src, blurSrc, ...event };
+      try {
+        const src = await urlForImage(event.imageGallery?.[0])
+          .width(1920)
+          .height(1080)
+          .dpr(2)
+          .quality(80)
+          .url();
+        const blurSrc = urlForImage(event.imageGallery?.[0]).width(20).quality(20).url();
+        return { src, blurSrc, ...event };
+      } catch (e) {
+        return null;
+      }
     })
   );
 

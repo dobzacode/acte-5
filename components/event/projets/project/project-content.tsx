@@ -8,6 +8,10 @@ import TitleSection from '../../../ui/title-section';
 import LastEvent from '../../nos-services/last-event-image';
 import Project from './project';
 
+function notEmpty<TValue>(value: TValue | null | undefined): value is TValue {
+  return value !== null && value !== undefined;
+}
+
 export default async function ProjectpageContent({ params }: { params: { projet: string } }) {
   const project = await sanityFetch<EventQueryResponse>({
     query: EVENT_QUERY,
