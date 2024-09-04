@@ -10,10 +10,10 @@ import { DateItemCal } from './calendrier';
 import CalendrierRow from './calendrier-row';
 
 const filtrerDatesParMois = (mois: number, annee: number, datesArr: DateItemCal[]) => {
-  return datesArr.filter(
-    (dateItem) =>
-      new Date(dateItem.dates[0]).getMonth() === mois &&
-      new Date(dateItem.dates[0]).getFullYear() === annee
+  return datesArr.filter((dateItem) =>
+    dateItem.dates.some(
+      (date) => new Date(date).getMonth() === mois && new Date(date).getFullYear() === annee
+    )
   );
 };
 

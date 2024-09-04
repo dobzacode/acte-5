@@ -63,7 +63,7 @@ export default function Header({ className }: { className?: string }) {
               transition: { ease: 'easeInOut', duration: 0.4 }
             }}
             key={`ACTE5`}
-            className={cn('heading w-fit text-center font-semibold max-laptop:hidden')}
+            className={cn('heading w-fit text-center font-["Quasimoda"] max-laptop:hidden')}
           >
             ACTE 5
           </motion.p>

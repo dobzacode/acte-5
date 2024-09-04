@@ -105,7 +105,7 @@ export default function ProjectSection({ events }: { events: EventWithImgAndInde
                       <motion.li
                         key={`${event.titre}-${index}-${categorie}`}
                         className="group relative flex aspect-square h-full w-full items-end overflow-hidden rounded-b-sm rounded-t-sm bg-black shadow-md duration-medium hover:scale-110 hover:rounded-t-sm hover:shadow-xl hover:before:max-w-full"
-                        initial={{ opacity: 0, y: -10, pointerEvents: 'none' }}
+                        initial={{ opacity: 0, y: -10, pointerEvents: 'auto' }}
                         animate={{
                           opacity: 1,
                           y: 0,

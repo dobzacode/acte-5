@@ -1,7 +1,5 @@
 import CompetenceSection from '@/components/event/nos-services/competence-section';
 import ServiceGalerie from '@/components/event/nos-services/service-galerie';
-import { FromTopStaggerVariant } from '@/components/framer-motion/div-variants';
-import StaggeredText from '@/components/framer-motion/staggered-text';
 import TitleSection from '@/components/ui/title-section';
 import { Metadata } from 'next';
 import { Suspense } from 'react';
@@ -22,17 +20,7 @@ export default function Home() {
           { href: '/agence-evenementielle-strasbourg/services', text: 'Nos services' }
         ]}
       ></TitleSection>
-      <div className="section-px flex flex-col gap-3xl  laptop:container laptop:mx-auto">
-        <StaggeredText
-          delay={1}
-          staggerValue={0.05}
-          variant={FromTopStaggerVariant}
-          className="heading--large"
-        >
-          L&apos;agence événementielle Acte 5 allie l'art du storytelling à la précision théâtrale
-          pour des événements inoubliables.
-        </StaggeredText>
-      </div>
+
       <CompetenceSection></CompetenceSection>
       <Suspense>
         <ServiceGalerie></ServiceGalerie>

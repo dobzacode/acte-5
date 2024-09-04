@@ -2,7 +2,7 @@ import { ComingFromTopVariant } from '@/components/framer-motion/div-variants';
 import InviewWrapper from '@/components/framer-motion/inview-wrapper';
 import Calendrier from './calendrier';
 
-export default function CalendrierSection() {
+export default function CalendrierSection({ isLanding = false }: { isLanding?: boolean }) {
   return (
     <section
       className={`inner-section-gap flex w-full flex-col justify-center overflow-hidden bg-primary-400 py-2xl duration-medium mobile-small:py-3xl mobile-medium:py-2xl mobile-large:py-4xl tablet:py-5xl`}
@@ -14,7 +14,7 @@ export default function CalendrierSection() {
       >
         Calendrier des spectacles
       </InviewWrapper>
-      <Calendrier isBig={true}></Calendrier>
+      <Calendrier isBig={isLanding ? false : true}></Calendrier>
     </section>
   );
 }

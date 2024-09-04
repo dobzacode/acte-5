@@ -17,7 +17,7 @@ export default function Home() {
       <HeroSection isSpectacle={true}></HeroSection>
 
       <ScouteSection></ScouteSection>
-      <CalendrierSection></CalendrierSection>
+      <CalendrierSection isLanding={true}></CalendrierSection>
       <SpectacleSection></SpectacleSection>
 
       <ProductionSection></ProductionSection>

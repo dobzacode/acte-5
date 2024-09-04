@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <main className=" relative flex w-full flex-col items-center justify-center gap-xl overflow-hidden overflow-x-clip px-0 pt-5xl mobile-small:gap-3xl mobile-medium:gap-2xl mobile-large:gap-4xl tablet:gap-5xl tablet:pt-7xl laptop:gap-6xl laptop-large:gap-6xl">
+    <main className="relative flex w-full flex-col items-center justify-center gap-xl overflow-hidden overflow-x-clip px-0 pt-5xl mobile-small:gap-3xl mobile-medium:gap-2xl mobile-large:gap-4xl tablet:gap-5xl tablet:pt-7xl laptop:gap-6xl laptop-large:gap-6xl">
       <TitleSection
         h1Css="laptop-large:w-[10ch]"
         description={
@@ -31,6 +31,7 @@ export default function Home() {
       >
         <FormWrapped></FormWrapped>
       </InviewWrapper>
+      <ContactBanner></ContactBanner>
     </main>
   );
 }

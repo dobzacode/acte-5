@@ -5,7 +5,6 @@ import { DateItemCal } from './calendrier';
 import Map from '@/components/event/contact/map';
 import CustomPortableText from '@/components/sanity/portable-text';
 import UiButton from '@/components/ui/ui-button';
-import { urlForImage } from '@/sanity/lib/utils';
 import {
   Modal,
   ModalBody,
@@ -14,7 +13,6 @@ import {
   ModalHeader,
   useDisclosure
 } from '@nextui-org/modal';
-import Image from 'next/image';
 import { useMemo } from 'react';
 
 const formatDateString = (isoDateString: string) => {
@@ -47,6 +45,8 @@ export default function CalendrierRow({
     return false;
   }, [dateItem]);
 
+  console.log(document.getElementById('header-wrapper')?.style.top);
+
   return (
     <>
       <div
@@ -61,20 +61,34 @@ export default function CalendrierRow({
             disableAnimation
             variant={'solid'}
             color="primary"
-            onPress={onOpen}
+            onPress={() => {
+              onOpen();
+            }}
             className="relative flex h-fit items-start gap-md self-start whitespace-normal rounded-[0.5px] border-none !bg-white px-md py-md text-left text-md text-black tap-highlight-transparent hover:!bg-white hover:!text-black focus:outline-none active:!bg-white"
           >
-            <p className="block shrink-0">
-              {new Date(dateItem.dates[0]).toISOString().split('T')[0].split('-')[2]}
-
-              <span className="body align-super">
-                -
-                {`${
-                  new Date(dateItem.dates[dateItem.dates.length - 1])
-                    .toISOString()
-                    .split('T')[0]
-                    .split('-')[2]
-                }`}
+            <p className="flex shrink-0 gap-xs whitespace-nowrap">
+              <span className="flex flex-col">
+                {new Date(dateItem.dates[0]).toISOString().split('T')[0].split('-')[2]}
+                <span className="body -mt-sm flex flex-col align-super">
+                  {` ${new Date(dateItem.dates[0]).toLocaleDateString('fr-FR', { month: 'short' })}`}
+                </span>
+              </span>
+              -
+              <span className="flex flex-col">
+                <span className="body align-super">
+                  {`${
+                    new Date(dateItem.dates[dateItem.dates.length - 1])
+                      .toISOString()
+                      .split('T')[0]
+                      .split('-')[2]
+                  }`}
+                </span>
+                <span className="body -mt-sm align-super">
+                  {` ${new Date(dateItem.dates[dateItem.dates.length - 1]).toLocaleDateString(
+                    'fr-FR',
+                    { month: 'short' }
+                  )}`}
+                </span>
               </span>
             </p>
             <div className="flex flex-col gap-xs after:absolute after:left-0 after:top-0 after:z-20 after:h-full after:w-full after:bg-gradient-to-b after:from-transparent after:from-90% after:to-white">
@@ -98,21 +112,38 @@ export default function CalendrierRow({
           isOpen={isOpen}
           onOpenChange={onOpenChange}
         >
-          <ModalContent className="tablet:min-w-[40rem] laptop:min-w-[50rem]">
+          <ModalContent
+            className={cn(
+              'mt-5xl tablet:min-w-[40rem] laptop:min-w-[50rem]',
+              document.getElementById('header-wrapper')?.style.top === '-100px' && '!mt-0'
+            )}
+          >
             {(onClose) => (
               <>
                 <ModalHeader className="pointer-events-none relative flex h-fit w-full gap-md self-start rounded-[0.5px] rounded-t-sm !bg-primary-400 px-md py-md text-left text-md text-white tap-highlight-transparent hover:!bg-white hover:!text-black focus:outline-none active:!bg-white">
-                  <p className="block shrink-0 font-[Avenir]">
-                    {new Date(dateItem.dates[0]).toISOString().split('T')[0].split('-')[2]}
-
-                    <span className="body align-super">
-                      -
-                      {`${
-                        new Date(dateItem.dates[dateItem.dates.length - 1])
-                          .toISOString()
-                          .split('T')[0]
-                          .split('-')[2]
-                      }`}
+                  <p className="flex shrink-0 gap-xs whitespace-nowrap">
+                    <span className="flex flex-col font-[Avenir]">
+                      {new Date(dateItem.dates[0]).toISOString().split('T')[0].split('-')[2]}
+                      <span className="body -mt-sm flex flex-col align-super">
+                        {` ${new Date(dateItem.dates[0]).toLocaleDateString('fr-FR', { month: 'short' })}`}
+                      </span>
+                    </span>
+                    -
+                    <span className="flex flex-col">
+                      <span className="body align-super">
+                        {`${
+                          new Date(dateItem.dates[dateItem.dates.length - 1])
+                            .toISOString()
+                            .split('T')[0]
+                            .split('-')[2]
+                        }`}
+                      </span>
+                      <span className="body -mt-sm align-super">
+                        {` ${new Date(dateItem.dates[dateItem.dates.length - 1]).toLocaleDateString(
+                          'fr-FR',
+                          { month: 'short' }
+                        )}`}
+                      </span>
                     </span>
                   </p>
                   <div className="flex flex-col gap-xs">
@@ -124,16 +155,6 @@ export default function CalendrierRow({
                   </div>
                 </ModalHeader>
                 <ModalBody className="gap-0 px-0 pt-0">
-                  {Object.keys(dateItem.picture).length > 0 && (
-                    <div className="relative h-[20rem] w-full max-tablet:hidden">
-                      <Image
-                        fill
-                        className="object-cover"
-                        alt={`${dateItem.titre} affiche`}
-                        src={urlForImage(dateItem.picture).width(400).height(600).url()}
-                      ></Image>
-                    </div>
-                  )}
                   <div className="grid grid-cols-2 gap-sm px-sm pt-sm max-tablet:flex max-tablet:flex-col">
                     <div className="flex flex-col gap-md rounded-xs border border-black/10 p-md shadow-inner">
                       <p className="sub-heading font-semibold text-black">HORAIRES</p>
@@ -150,7 +171,7 @@ export default function CalendrierRow({
                     </div>
                     <div className="flex flex-col gap-md rounded-xs border border-black/10 p-md shadow-inner">
                       <p className="sub-heading font-semibold text-black">EMPLACEMENT</p>
-                      <div>
+                      <div className="aspect-square h-full">
                         <Map placeId={dateItem.placeId}></Map>
                       </div>
                     </div>

@@ -26,7 +26,8 @@ export default function HeaderWrapper({ children }: { children: React.ReactNode 
   return (
     <header
       ref={headerRef}
-      className=" shadow-sm backdrop-blur-md duration-700 ease-in-out"
+      className="shadow-sm backdrop-blur-md duration-700 ease-in-out"
+      id={'header-wrapper'}
       style={{
         position: 'fixed',
         top: visible ? 0 : -100,
