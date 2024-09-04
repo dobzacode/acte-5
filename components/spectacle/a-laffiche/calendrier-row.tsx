@@ -2,6 +2,7 @@
 import { cn } from '@/lib/utils';
 import { DateItemCal } from './calendrier';
 
+import Map from '@/components/event/contact/map';
 import CustomPortableText from '@/components/sanity/portable-text';
 import UiButton from '@/components/ui/ui-button';
 import { urlForImage } from '@/sanity/lib/utils';
@@ -149,7 +150,9 @@ export default function CalendrierRow({
                     </div>
                     <div className="flex flex-col gap-md rounded-xs border border-black/10 p-md shadow-inner">
                       <p className="sub-heading font-semibold text-black">EMPLACEMENT</p>
-                      <p className="body">{dateItem.emplacement}</p>
+                      <div>
+                        <Map placeId={dateItem.placeId}></Map>
+                      </div>
                     </div>
                     {dateItem.description && (
                       <div className="col-span-2 flex flex-col gap-md rounded-xs border border-black/10 p-md shadow-inner">

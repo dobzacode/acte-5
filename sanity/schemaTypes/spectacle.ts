@@ -42,8 +42,14 @@ export default defineType({
             },
             {
               type: 'string',
-              title: 'Emplacement (Place ID)',
+              title: 'Emplacement',
               name: 'emplacement',
+              validation: (Rule) => Rule.required()
+            },
+            {
+              type: 'string',
+              title: 'Place ID',
+              name: 'placeId',
               validation: (Rule) => Rule.required()
             },
             {
