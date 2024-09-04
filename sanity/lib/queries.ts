@@ -160,6 +160,7 @@ export interface Spectacle {
   ecritureEtJeuEtMiseEnScene: string[] | null;
   duree: string[] | null;
   body: PortableTextBlock[];
+  informations: PortableTextBlock[];
   decors: string[] | null;
   lumiereEtRegie: string[] | null;
   musiqueEtSon: string[] | null;

@@ -51,6 +51,7 @@ export default defineType({
               title: 'Description',
               name: 'description'
             },
+
             {
               type: 'array',
               of: [{ type: 'datetime', title: 'Horaires', name: 'horaires' }],
@@ -72,6 +73,12 @@ export default defineType({
     defineField({
       name: 'body',
       title: 'Description',
+      group: 'contenu',
+      type: 'blockContent'
+    }),
+    defineField({
+      name: 'informations',
+      title: 'Informations additionnelles',
       group: 'contenu',
       type: 'blockContent'
     }),
