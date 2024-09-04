@@ -78,3 +78,16 @@ export function getCategoryWithSubCategory(
 export function notEmpty<TValue>(value: TValue | null | undefined): value is TValue {
   return value !== null && value !== undefined;
 }
+
+const pattern = /^image-([a-f\d]+)-(\d+x\d+)-(\w+)$/;
+
+export const decodeAssetId = (id: string) => {
+  const [, assetId, dimensions, format] = pattern.exec(id) ?? [];
+  const [width, height] = dimensions.split('x').map((v: string) => parseInt(v, 10));
+
+  return {
+    format,
+    width,
+    height
+  };
+};

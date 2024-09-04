@@ -1,10 +1,10 @@
-import { notEmpty } from '@/lib/utils';
+import EmblaCarousel from '@/components/ui/image-carousel/carousel/embla-post-carousel';
+import { decodeAssetId, notEmpty } from '@/lib/utils';
 import { Image as ImageSanity, SpectacleQueryResponse } from '@/sanity/lib/queries';
 import { urlForImage } from '@/sanity/lib/utils';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import CustomPortableText from '../../../sanity/portable-text';
-import EmblaCarousel from '../../../ui/image-carousel/carousel/embla-post-carousel';
 
 const formatList = (list: string[]) => {
   if (!list || list.length === 0) return '';
@@ -26,9 +26,14 @@ export default async function SpectacleContent({
     ? await Promise.all(
         spectacle.imageGallery.map(async (image: ImageSanity) => {
           try {
-            image.url = await urlForImage(image).width(1920).height(1080).dpr(2).quality(80).url();
-
-            image.blurSrc = urlForImage(image).width(20).quality(20).url();
+            const { width, height } = decodeAssetId(image.asset._ref);
+            image.url = await urlForImage(image)
+              .width(width)
+              .height(height)
+              .dpr(2)
+              .quality(80)
+              .url();
+            image.blurSrc = urlForImage(image).width(width).height(height).quality(20).url();
             return image;
           } catch (e) {
             return null;
@@ -47,15 +52,19 @@ export default async function SpectacleContent({
     ecritureEtJeuEtMiseEnScene,
     duree,
     decors,
-    body
+    body,
+    informations,
+    dates
   } = spectacle;
 
   const imageArr = imagesWithUrl ? imagesWithUrl.filter(notEmpty) : null;
 
+  const { width, height } = decodeAssetId(spectacle.mainImage?.asset._ref);
+
   let mainImage;
   try {
     mainImage = spectacle.mainImage
-      ? urlForImage(spectacle.mainImage).width(800).height(400).dpr(2).quality(80).url()
+      ? urlForImage(spectacle.mainImage).width(width).height(height).dpr(2).quality(80).url()
       : null;
   } catch (error) {
     console.error('Error generating main image URL:', error);
@@ -67,7 +76,7 @@ export default async function SpectacleContent({
       <div className="flex h-full gap-md max-tablet:flex-col-reverse">
         {mainImage ? (
           <Image
-            className="rounded-sm object-cover"
+            className="h-full rounded-sm"
             src={mainImage}
             alt="My Image"
             width={800}
@@ -136,6 +145,12 @@ export default async function SpectacleContent({
 
       <div className="prose prose-base max-w-full">
         {body ? <CustomPortableText value={body}></CustomPortableText> : null}
+        {informations && (
+          <>
+            <br />
+            <CustomPortableText value={informations}></CustomPortableText>
+          </>
+        )}
       </div>
       {imageArr ? (
         <EmblaCarousel imageArr={imageArr} options={{ loop: true, active: true }} />

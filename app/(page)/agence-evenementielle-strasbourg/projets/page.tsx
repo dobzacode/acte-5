@@ -4,7 +4,7 @@ import ProjectSection from '@/components/event/projets/project-section';
 import { ComingFromRightVariant } from '@/components/framer-motion/div-variants';
 import InviewWrapper from '@/components/framer-motion/inview-wrapper';
 import TitleSection from '@/components/ui/title-section';
-import { notEmpty } from '@/lib/utils';
+import { decodeAssetId, notEmpty } from '@/lib/utils';
 import { sanityFetch } from '@/sanity/lib/fetch';
 import { EventWithImgQueryRes } from '@/sanity/lib/queries';
 import { urlForImage } from '@/sanity/lib/utils';
@@ -34,13 +34,18 @@ export default async function Home() {
     events.map(async (event) => {
       try {
         const index = events.indexOf(event);
+        const { width, height } = decodeAssetId(event.imageGallery[0].asset._ref);
         const src = await urlForImage(event.imageGallery[0])
-          .width(1920)
-          .height(1080)
+          .width(width)
+          .height(height)
           .dpr(2)
           .quality(80)
           .url();
-        const blurSrc = urlForImage(event.imageGallery[0]).width(20).quality(20).url();
+        const blurSrc = urlForImage(event.imageGallery[0])
+          .width(width)
+          .height(height)
+          .quality(20)
+          .url();
         return { src, blurSrc, ...event, index };
       } catch (e) {
         return null;

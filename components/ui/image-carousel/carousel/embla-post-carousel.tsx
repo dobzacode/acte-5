@@ -99,7 +99,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                 </div>
                 <Image
                   fill
-                  className="object-cover object-center"
+                  className="object-contain object-center"
                   sizes={'(max-width: 640px) 100vw, (max-width: 768px) 50vw, 50vw'}
                   src={image.url}
                   placeholder="blur"

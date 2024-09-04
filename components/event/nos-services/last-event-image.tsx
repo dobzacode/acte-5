@@ -10,7 +10,7 @@ import {
   CarouselNext,
   CarouselPrevious
 } from '@/components/ui/carousel';
-import { cn, notEmpty } from '@/lib/utils';
+import { cn, decodeAssetId, notEmpty } from '@/lib/utils';
 import { sanityFetch } from '@/sanity/lib/fetch';
 import { EventWithImgQueryRes } from '@/sanity/lib/queries';
 import { urlForImage } from '@/sanity/lib/utils';
@@ -63,13 +63,18 @@ export default async function LastEvent({
   const eventsWithImg = await Promise.all(
     events.map(async (event) => {
       try {
+        const { width, height } = decodeAssetId(event.imageGallery?.[0].asset._ref);
         const src = await urlForImage(event.imageGallery?.[0])
-          .width(1920)
-          .height(1080)
+          .width(width)
+          .height(height)
           .dpr(2)
           .quality(80)
           .url();
-        const blurSrc = urlForImage(event.imageGallery?.[0]).width(20).quality(20).url();
+        const blurSrc = urlForImage(event.imageGallery?.[0])
+          .width(width)
+          .height(height)
+          .quality(20)
+          .url();
         return { src, blurSrc, ...event };
       } catch (e) {
         return null;
@@ -107,6 +112,7 @@ export default async function LastEvent({
                   className="basis-full mobile-large:basis-1/2 tablet:basis-1/3 laptop:basis-1/3 laptop-large:basis-1/3 laptop-large:pr-sm"
                 >
                   <Link
+                    scroll={false}
                     href={`/agence-evenementielle-strasbourg/projets/${image.slug.current}`}
                     className={cn(
                       'card relative flex h-full flex-col items-center gap-md overflow-hidden rounded-sm border-0 p-0 shadow-xl laptop:gap-lg'
@@ -117,7 +123,7 @@ export default async function LastEvent({
                       width={400}
                       height={400}
                       className={cn(
-                        'aspect-square h-full w-full grow cursor-pointer overflow-hidden rounded-t-sm object-cover object-top',
+                        'aspect-square h-full w-full grow cursor-pointer overflow-hidden rounded-t-sm object-cover object-center',
                         'name' in image ? null : 'rounded-t-none'
                       )}
                       sizes={'(max-width: 640px) 100vw, 50vw'}

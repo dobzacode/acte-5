@@ -1,11 +1,11 @@
+import CarouselProject from '@/components/ui/image-carousel/carousel/carousel-project';
 import { Player } from '@/components/ui/video/video-player';
-import { cn, notEmpty } from '@/lib/utils';
+import { cn, decodeAssetId, notEmpty } from '@/lib/utils';
 import { client } from '@/sanity/lib/client';
 import { EventQueryResponse, Image as ImageSanity } from '@/sanity/lib/queries';
 import { urlForImage } from '@/sanity/lib/utils';
 import { getFileAsset } from '@sanity/asset-utils';
 import { notFound } from 'next/navigation';
-import EmblaCarousel from '../../../ui/image-carousel/carousel/embla-post-carousel';
 
 export default async function Project({ project }: { project: EventQueryResponse }) {
   if (!project) {
@@ -16,9 +16,14 @@ export default async function Project({ project }: { project: EventQueryResponse
     ? await Promise.all(
         project.imageGallery.map(async (image: ImageSanity) => {
           try {
-            image.url = await urlForImage(image).width(1920).height(1080).dpr(2).quality(100).url();
-
-            image.blurSrc = urlForImage(image).width(20).quality(20).url();
+            const { width, height } = decodeAssetId(image.asset._ref);
+            image.url = await urlForImage(image)
+              .width(width)
+              .height(height)
+              .dpr(2)
+              .quality(100)
+              .url();
+            image.blurSrc = urlForImage(image).width(width).height(height).quality(20).url();
             return image;
           } catch (e) {
             return null;
@@ -36,7 +41,13 @@ export default async function Project({ project }: { project: EventQueryResponse
       <div className="prose prose-base max-w-full">
         <p className="body text-pretty">{project.description}</p>
       </div>
-      {imageArr && <EmblaCarousel imageArr={imageArr} options={{ loop: true, active: true }} />}
+      {imageArr && (
+        <CarouselProject
+          className="basis-full"
+          innerClassName="flex h-full w-full grow cursor-pointer items-center justify-center object-contain object-center"
+          imageArr={imageArr}
+        />
+      )}
       {project.video && video ? (
         <div
           className={cn(

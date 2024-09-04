@@ -16,25 +16,35 @@ export default function PostSnippet({
 }) {
   if (!post) return null;
 
+  let mainImage;
+  try {
+    mainImage = post.mainImage
+      ? urlForImage(post.mainImage).width(800).height(400).dpr(2).quality(80).url()
+      : null;
+  } catch (error) {
+    console.error('Error generating main image URL:', error);
+    mainImage = null;
+  }
+
   return (
     <div className={cn('group flex w-full gap-lg', className)}>
       <Link
         className="relative aspect-square w-1/2 max-tablet:hidden"
         href={`blog/${post.slug.current}`}
       >
-        <Image
-          className="rounded-md object-cover duration-medium hover:shadow-large"
-          src={urlForImage(post.mainImage).width(1000).height(800).dpr(2).quality(80).url()}
-          alt={post.mainImage.alt ?? ''}
-          fill
-          sizes="(max-width: 600px) 90vw, (max-width: 1400px) 60vw, 1000px"
-          placeholder="blur"
-          blurDataURL={urlForImage(post.mainImage).width(20).quality(20).url()}
-        />
+        {mainImage && (
+          <Image
+            className="rounded-md object-cover duration-medium hover:shadow-large"
+            src={mainImage}
+            alt={post.mainImage.alt ?? ''}
+            fill
+            sizes="(max-width: 600px) 90vw, (max-width: 1400px) 60vw, 1000px"
+          />
+        )}
       </Link>
 
       <div className="max-tablet:card flex w-full flex-col gap-md mobile-large:gap-lg tablet:gap-xl laptop:w-3/4">
-        <p className="body  whitespace-nowrap font-bold">
+        <p className="body whitespace-nowrap font-bold">
           {format(new Date(post._createdAt), 'dd MMMM yyyy', { locale: fr }).toUpperCase()}
         </p>
         <InViewWrapper

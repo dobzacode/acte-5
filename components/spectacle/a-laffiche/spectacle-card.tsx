@@ -37,14 +37,14 @@ export default function SpectacleCard({
           }
         }
       }}
-      className="card w-full shrink-0 gap-md px-0 pt-0  duration-medium hover:scale-105 hover:shadow-2xl tablet:w-1/3 laptop:w-1/4 laptop-large:w-1/5"
+      className="card w-full shrink-0 gap-md px-0 pt-0 duration-medium hover:scale-105 hover:shadow-2xl tablet:w-1/3 laptop:w-1/4 laptop-large:w-1/5"
     >
       <Link
         scroll={false}
         className="flex flex-col gap-md"
         href={`/spectacles-strasbourg/a-laffiche/${spectacle.slug.current}`}
       >
-        <div className="relative h-[20rem] w-full">
+        <div className="relative aspect-square h-[20rem]">
           <Image
             sizes={'(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw'}
             alt={spectacle.mainImage.alt ?? ''}

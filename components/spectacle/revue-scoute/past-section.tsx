@@ -8,9 +8,9 @@ import { AFFICHES_QUERY, AffichesQueryResponse, Image as SanityImage } from '@/s
 import { urlForImage } from '@/sanity/lib/utils';
 import { draftMode } from 'next/headers';
 
-import { notEmpty } from '@/lib/utils';
+import CarouselProject from '@/components/ui/image-carousel/carousel/carousel-project';
+import { decodeAssetId, notEmpty } from '@/lib/utils';
 import { notFound } from 'next/navigation';
-import PastCarousel from './past-carousel';
 
 export default async function PastSection() {
   const affiches = await sanityFetch<AffichesQueryResponse>({
@@ -29,9 +29,15 @@ export default async function PastSection() {
     ? await Promise.all(
         affiches[0].imageGallery.map(async (image: SanityImage, index) => {
           try {
-            image.url = await urlForImage(image).width(1920).height(1080).dpr(2).quality(80).url();
+            const { width, height } = decodeAssetId(image.asset._ref);
+            image.url = await urlForImage(image)
+              .width(width)
+              .height(height)
+              .dpr(2)
+              .quality(80)
+              .url();
+            image.blurSrc = urlForImage(image).width(width).height(height).quality(20).url();
 
-            image.blurSrc = urlForImage(image).width(20).quality(20).url();
             return image;
           } catch (e) {
             return null;
@@ -57,7 +63,14 @@ export default async function PastSection() {
         viewport={{ once: true, margin: '200px 0px 200px 0px' }}
         variant={ComingFromBottomVariant}
       >
-        <PastCarousel imagesWithUrl={filteredImages} />
+        <CarouselProject
+          previousClassName="left-xl shrink-0"
+          nextClassName="right-xl shrink-0"
+          outerClassName="section-px  relative"
+          innerClassName="object-cover h-full"
+          className="basis-full mobile-large:basis-1/2 tablet:basis-1/3 laptop:basis-1/3 laptop-large:basis-1/5 laptop-large:pr-sm"
+          imageArr={filteredImages}
+        />
       </InviewWrapper>
     </section>
   );
