@@ -16,8 +16,9 @@ export default function TrustSection() {
         viewport={{ once: true, margin: '-200px 0px -200px 0px' }}
       >
         <h2 className="heading--large w-fit">
-          Forte de plus de 30 ans d&apos;expertise en communication événementielle, Acte 5 puise
-          dans les arts de la scène pour donner vie à vos messages d&apos;entreprise
+          Forte de plus de 30 ans d'expertise, Acte 5 allie précision et créativité en s&apos;inspirant
+          des arts du spectacle pour orchestrer des mises en scène qui donnent vie à vos messages
+          d&apos;entreprise.
         </h2>
       </InviewWrapper>
       <InviewWrapper
