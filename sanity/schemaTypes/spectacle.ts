@@ -151,8 +151,17 @@ export default defineType({
       group: 'media',
       options: {
         hotspot: true
-      }
+      },
+      fields: [
+        {
+          name: 'alt',
+          type: 'string',
+          title: 'Texte alternatif'
+        }
+      ],
+      validation: (Rule) => Rule.required()
     }),
+
     defineField({
       name: 'imageGallery',
       title: "Galerie d'image",
