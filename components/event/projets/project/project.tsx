@@ -16,7 +16,7 @@ export default async function Project({ project }: { project: EventQueryResponse
     ? await Promise.all(
         project.imageGallery.map(async (image: ImageSanity) => {
           try {
-            image.url = await urlForImage(image).width(1920).height(1080).dpr(2).quality(80).url();
+            image.url = await urlForImage(image).width(1920).height(1080).dpr(2).quality(100).url();
 
             image.blurSrc = urlForImage(image).width(20).quality(20).url();
             return image;

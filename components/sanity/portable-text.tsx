@@ -43,7 +43,9 @@ export default function CustomPortableText({ value }: { value: PortableTextBlock
           </a>
         );
       }
-    }
+    },
+
+    listItem: ({ children }) => <li className="body">{children}</li>
   };
 
   return <PortableText components={components} value={value} />;

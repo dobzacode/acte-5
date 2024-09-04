@@ -5,7 +5,7 @@ import Calendrier from './calendrier';
 export default function CalendrierSection() {
   return (
     <section
-      className={`inner-section-gap section-px flex w-full flex-col overflow-hidden bg-primary-400 py-2xl duration-medium mobile-small:py-3xl mobile-medium:py-2xl mobile-large:py-4xl  tablet:py-5xl`}
+      className={`inner-section-gap flex w-full flex-col justify-center overflow-hidden bg-primary-400 py-2xl duration-medium mobile-small:py-3xl mobile-medium:py-2xl mobile-large:py-4xl tablet:py-5xl`}
     >
       <InviewWrapper
         className="heading--sub-extra-large section-px text-center text-white"
@@ -14,7 +14,7 @@ export default function CalendrierSection() {
       >
         Calendrier des spectacles
       </InviewWrapper>
-      <Calendrier></Calendrier>
+      <Calendrier isBig={true}></Calendrier>
     </section>
   );
 }

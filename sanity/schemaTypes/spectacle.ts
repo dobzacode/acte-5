@@ -145,6 +145,15 @@ export default defineType({
       group: 'production'
     }),
     defineField({
+      name: 'mainImage',
+      title: 'Image principal',
+      type: 'image',
+      group: 'media',
+      options: {
+        hotspot: true
+      }
+    }),
+    defineField({
       name: 'imageGallery',
       title: "Galerie d'image",
       type: 'array',

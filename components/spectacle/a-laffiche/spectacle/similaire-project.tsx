@@ -3,6 +3,7 @@ import {
   ComingFromTopVariant
 } from '@/components/framer-motion/div-variants';
 import InviewWrapper from '@/components/framer-motion/inview-wrapper';
+import { notEmpty } from '@/lib/utils';
 import { sanityFetch } from '@/sanity/lib/fetch';
 import { SpectaclesQueryResponse } from '@/sanity/lib/queries';
 import { urlForImage } from '@/sanity/lib/utils';
@@ -24,14 +25,18 @@ export default async function SimilaireProject({ actualSpectacle }: { actualSpec
   const imagesWithUrl = spectacles[0]
     ? await Promise.all(
         spectacles.map(async (spectacle) => {
-          const url = await urlForImage(spectacle.mainImage)
-            .width(1920)
-            .height(1080)
-            .dpr(2)
-            .quality(80)
-            .url();
-          const blurSrc = urlForImage(spectacle.mainImage).width(20).quality(20).url();
-          return { ...spectacle, url, blurSrc };
+          try {
+            const url = await urlForImage(spectacle.mainImage)
+              .width(1920)
+              .height(1080)
+              .dpr(2)
+              .quality(80)
+              .url();
+            const blurSrc = urlForImage(spectacle.mainImage).width(20).quality(20).url();
+            return { ...spectacle, url, blurSrc };
+          } catch (e) {
+            return null;
+          }
         })
       )
     : null;
@@ -40,15 +45,17 @@ export default async function SimilaireProject({ actualSpectacle }: { actualSpec
     return notFound();
   }
 
+  const imageArr = imagesWithUrl.filter(notEmpty);
+
   return (
-    <section className="inner-section-gap flex w-full flex-col overflow-hidden bg-primary-400 py-xl">
+    <section className="inner-section-gap flex w-full flex-col justify-center overflow-hidden bg-primary-400 py-xl">
       <InviewWrapper variant={ComingFromTopVariant}>
         <h2 className="heading--sub-extra-large section-px text-center text-white laptop:mx-auto">
           Projets similaires
         </h2>
       </InviewWrapper>
       <InviewWrapper variant={ComingFromBottomVariant}>
-        <SimilaireCarousel options={{ loop: true }} imageArr={imagesWithUrl}></SimilaireCarousel>
+        <SimilaireCarousel options={{ loop: true }} imageArr={imageArr}></SimilaireCarousel>
       </InviewWrapper>
     </section>
   );

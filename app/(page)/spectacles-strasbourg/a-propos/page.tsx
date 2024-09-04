@@ -1,7 +1,6 @@
 import { FromTopStaggerVariant } from '@/components/framer-motion/div-variants';
 import InviewWrapper from '@/components/framer-motion/inview-wrapper';
 import StaggeredText from '@/components/framer-motion/staggered-text';
-import CompetenceSection from '@/components/spectacle/a-propos/competence-section';
 import HistorySection from '@/components/spectacle/a-propos/history-section';
 import TitleSection from '@/components/ui/title-section';
 import { Metadata } from 'next';
@@ -87,7 +86,7 @@ export default function Home() {
         </InviewWrapper>
       </div>
       <HistorySection></HistorySection>
-      <CompetenceSection></CompetenceSection>
+      {/* <CompetenceSection></CompetenceSection> */}
     </main>
   );
 }

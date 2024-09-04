@@ -37,18 +37,21 @@ const SimilaireCarousel: React.FC<PropType> = (props) => {
 
   return (
     <>
-      <Carousel className="section-px flex max-w-[100vw] items-center  gap-md laptop:mx-auto [&>div]:rounded-sm">
+      <Carousel className="section-px flex max-w-[100vw] items-center justify-center gap-md laptop:mx-auto [&>div]:rounded-sm">
         <>
           <CarouselPrevious className="relative" />
         </>
         <CarouselContent className="laptop-large:-ml-sm">
           {props.imageArr.map((image, index) => (
-            <CarouselItem className=" basis-full mobile-large:basis-1/2 tablet:basis-1/3 laptop:basis-1/3 laptop-large:basis-1/3 laptop-large:pr-sm ">
+            <CarouselItem
+              key={`carousel-item-${index}`}
+              className="basis-full mobile-large:basis-1/2 tablet:basis-1/3 laptop:basis-1/3 laptop-large:basis-1/3 laptop-large:pr-sm"
+            >
               <Link
                 scroll={false}
                 href={`/spectacles-strasbourg/a-laffiche/${image.slug.current}`}
                 className={cn(
-                  'card   relative flex  h-full flex-col items-center gap-md overflow-hidden rounded-sm border-0 p-0 shadow-xl'
+                  'card relative flex h-full flex-col items-center gap-md overflow-hidden rounded-sm border-0 p-0 shadow-xl'
                 )}
                 key={index}
               >
@@ -56,7 +59,7 @@ const SimilaireCarousel: React.FC<PropType> = (props) => {
                   width={400}
                   height={400}
                   className={cn(
-                    'aspect-square h-full w-full grow cursor-pointer overflow-hidden rounded-t-sm  object-cover',
+                    'aspect-square h-full w-full grow cursor-pointer overflow-hidden rounded-t-sm object-cover',
                     'name' in image ? null : 'rounded-t-none'
                   )}
                   sizes={'(max-width: 640px) 100vw, 50vw'}
@@ -66,8 +69,8 @@ const SimilaireCarousel: React.FC<PropType> = (props) => {
                   alt={`Image ${image.titre}`}
                 ></Image>
 
-                <div className="flex  flex-col items-center gap-sm  text-pretty px-md pb-md text-center">
-                  <p className="sub-heading   text-ellipsis">
+                <div className="flex flex-col items-center gap-sm text-pretty px-md pb-md text-center">
+                  <p className="sub-heading text-ellipsis">
                     <strong>{image.titre}</strong>
                   </p>
                 </div>

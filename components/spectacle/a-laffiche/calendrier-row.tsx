@@ -91,8 +91,13 @@ export default function CalendrierRow({
         )}
       </div>
       {dateItem ? (
-        <Modal placement="center" className="" isOpen={isOpen} onOpenChange={onOpenChange}>
-          <ModalContent>
+        <Modal
+          scrollBehavior="inside"
+          placement="center"
+          isOpen={isOpen}
+          onOpenChange={onOpenChange}
+        >
+          <ModalContent className="tablet:min-w-[40rem] laptop:min-w-[50rem]">
             {(onClose) => (
               <>
                 <ModalHeader className="pointer-events-none relative flex h-fit w-full gap-md self-start rounded-[0.5px] rounded-t-sm !bg-primary-400 px-md py-md text-left text-md text-white tap-highlight-transparent hover:!bg-white hover:!text-black focus:outline-none active:!bg-white">
@@ -118,15 +123,17 @@ export default function CalendrierRow({
                   </div>
                 </ModalHeader>
                 <ModalBody className="gap-0 px-0 pt-0">
-                  <div className="relative h-[20rem] w-full max-tablet:hidden">
-                    <Image
-                      fill
-                      className="object-cover"
-                      alt={`${dateItem.titre} affiche`}
-                      src={urlForImage(dateItem.picture).width(400).height(600).url()}
-                    ></Image>
-                  </div>
-                  <div className="grid grid-cols-2 gap-sm px-sm pt-sm">
+                  {Object.keys(dateItem.picture).length > 0 && (
+                    <div className="relative h-[20rem] w-full max-tablet:hidden">
+                      <Image
+                        fill
+                        className="object-cover"
+                        alt={`${dateItem.titre} affiche`}
+                        src={urlForImage(dateItem.picture).width(400).height(600).url()}
+                      ></Image>
+                    </div>
+                  )}
+                  <div className="grid grid-cols-2 gap-sm px-sm pt-sm max-tablet:flex max-tablet:flex-col">
                     <div className="flex flex-col gap-md rounded-xs border border-black/10 p-md shadow-inner">
                       <p className="sub-heading font-semibold text-black">HORAIRES</p>
                       <div className="body">

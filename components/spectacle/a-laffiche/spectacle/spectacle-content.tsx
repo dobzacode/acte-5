@@ -52,19 +52,27 @@ export default async function SpectacleContent({
 
   const imageArr = imagesWithUrl ? imagesWithUrl.filter(notEmpty) : null;
 
+  let mainImage;
+  try {
+    mainImage = spectacle.mainImage
+      ? urlForImage(spectacle.mainImage).width(800).height(400).dpr(2).quality(80).url()
+      : null;
+  } catch (error) {
+    console.error('Error generating main image URL:', error);
+    mainImage = null;
+  }
+
   return (
     <>
       <div className="flex h-full gap-md max-tablet:flex-col-reverse">
-        {spectacle.mainImage ? (
+        {mainImage ? (
           <Image
             className="rounded-sm object-cover"
-            src={urlForImage(spectacle.mainImage).width(800).height(400).dpr(2).quality(80).url()}
+            src={mainImage}
             alt="My Image"
             width={800}
             height={800}
             sizes="(max-width: 600px) 90vw, (max-width: 1200px) 60vw, 500px"
-            placeholder="blur"
-            blurDataURL={urlForImage(spectacle.mainImage).width(20).quality(20).url()}
           />
         ) : null}
         <div className="flex-grow bg-primary-400 pl-0.5"></div>
