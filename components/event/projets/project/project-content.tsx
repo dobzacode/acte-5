@@ -30,7 +30,8 @@ export default async function ProjectpageContent({ params }: { params: { projet:
         <TitleSection
           className="px-0"
           h1Css={'heading--sub-extra-large'}
-          title={project.titre.toUpperCase()}
+          title={project.client.toUpperCase()}
+          subtitle={project.titre}
           element={[
             { text: 'Evenement', href: '/agence-evenementielle-strasbourg' },
             { text: 'Projets', href: '/agence-evenementielle-strasbourg/projets' },

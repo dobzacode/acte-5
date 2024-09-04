@@ -11,6 +11,7 @@ export interface Event {
     current: string;
     _type: string;
   };
+  pertinence: number;
   categories: (
     | 'Convention'
     | 'Anniversaire'
@@ -67,7 +68,7 @@ export interface Logo {
   _createdAt: string;
   _updatedAt: string;
   title: string;
-  logo: Image;
+  logo: Image;  
 }
 
 export interface Image {

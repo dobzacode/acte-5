@@ -30,7 +30,7 @@ export default function Home() {
           className="heading--large"
         >
           L&apos;agence événementielle Acte 5 allie l'art du storytelling à la précision théâtrale
-          pour des événements B2B inoubliables.
+          pour des événements inoubliables.
         </StaggeredText>
       </div>
       <CompetenceSection></CompetenceSection>

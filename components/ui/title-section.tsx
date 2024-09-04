@@ -8,7 +8,8 @@ export default function TitleSection({
   element,
   className,
   description,
-  h1Css
+  h1Css,
+  subtitle
 }: {
   element: {
     text: string;
@@ -18,19 +19,23 @@ export default function TitleSection({
   className?: string;
   description?: string;
   h1Css?: string;
+  subtitle?: string;
 }) {
   return (
     <DivWrapper
       className={cn(
-        'section-px  flex flex-col  gap-5 self-start laptop:container laptop:mx-auto',
+        'section-px flex flex-col gap-5 self-start laptop:container laptop:mx-auto',
         className
       )}
       tag="section"
       variant={ComingFromLeftVariant}
     >
-      <h1 className={cn('heading--extra-large container text-pretty text-primary-400 ', h1Css)}>
+      <h1 className={cn('heading--extra-large container text-pretty text-primary-400', h1Css)}>
         {title}
       </h1>
+      {subtitle && (
+        <h2 className={cn('heading container -my-sm text-pretty text-black')}>{subtitle}</h2>
+      )}
       <UiBreadcrumbs className="body" element={element}></UiBreadcrumbs>
       {description && <p className="sub-heading max-w-[60ch] pt-lg">{description}</p>}
     </DivWrapper>

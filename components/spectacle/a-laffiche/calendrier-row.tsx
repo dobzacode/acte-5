@@ -163,9 +163,11 @@ export default function CalendrierRow({
                   <UiButton color="danger" variant="light" onPress={onClose} className="body">
                     Fermer
                   </UiButton>
-                  <UiButton color="primary" onPress={onClose} className="body">
-                    En savoir plus
-                  </UiButton>
+                  <a href={dateItem.lien}>
+                    <UiButton color="primary" onPress={onClose} className="body">
+                      En savoir plus
+                    </UiButton>
+                  </a>
                 </ModalFooter>
               </>
             )}

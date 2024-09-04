@@ -130,6 +130,14 @@ export default defineType({
       type: 'string',
       group: 'seo',
       validation: (Rule) => Rule.required()
+    }),
+    defineField({
+      name: 'pertinence',
+      title: 'Pertinence',
+      type: 'number',
+      group: 'contenu',
+      validation: (Rule) => Rule.required().min(0).max(100),
+      initialValue: 50
     })
   ],
 
