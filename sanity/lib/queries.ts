@@ -41,6 +41,7 @@ export interface Event {
       _ref: string;
     };
   };
+
   mainImage?: Image;
 }
 
@@ -68,7 +69,7 @@ export interface Logo {
   _createdAt: string;
   _updatedAt: string;
   title: string;
-  logo: Image;  
+  logo: Image;
 }
 
 export interface Image {
@@ -143,6 +144,7 @@ export interface DateItem {
   dates: string[];
   _key: string;
   emplacement: string;
+  placeId: string;
 }
 
 export interface Spectacle {
