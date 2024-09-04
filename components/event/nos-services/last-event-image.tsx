@@ -10,7 +10,7 @@ import {
   CarouselNext,
   CarouselPrevious
 } from '@/components/ui/carousel';
-import { cn } from '@/lib/utils';
+import { cn, notEmpty } from '@/lib/utils';
 import { sanityFetch } from '@/sanity/lib/fetch';
 import { EventWithImgQueryRes } from '@/sanity/lib/queries';
 import { urlForImage } from '@/sanity/lib/utils';
@@ -47,8 +47,6 @@ export default async function LastEvent({
     | 'Edition';
   actualSlug?: string;
 }) {
-  return null;
-
   const query =
     !actualSlug && !categorie
       ? groq`*[_type == "evenement" && defined(imageGallery) && "${categorie}" in categories && defined(slug.current)]`
@@ -75,6 +73,8 @@ export default async function LastEvent({
     })
   );
 
+  const imageArr = eventsWithImg ? eventsWithImg.filter(notEmpty) : null;
+
   return (
     <section className="inner-section-gap mt-2xl flex w-full flex-col items-center overflow-hidden overflow-x-hidden bg-primary-400 py-2xl">
       <InviewWrapper
@@ -88,53 +88,55 @@ export default async function LastEvent({
         className=""
         variant={ComingFromBottomVariant}
       >
-        <Carousel
-          opts={{ loop: true }}
-          className="section-px flex max-w-[100vw] items-center gap-md laptop:mx-auto [&>div]:rounded-sm"
-        >
-          <>
-            <CarouselPrevious className="relative" />
-          </>
-          <CarouselContent className="laptop-large:-ml-sm">
-            {eventsWithImg.map((image, index) => (
-              <CarouselItem
-                key={`${image.titre}-${index}`}
-                className="basis-full mobile-large:basis-1/2 tablet:basis-1/3 laptop:basis-1/3 laptop-large:basis-1/3 laptop-large:pr-sm"
-              >
-                <Link
-                  href={`/agence-evenementielle-strasbourg/projets/${image.slug.current}`}
-                  className={cn(
-                    'card relative flex h-full flex-col items-center gap-md overflow-hidden rounded-sm border-0 p-0 shadow-xl laptop:gap-lg'
-                  )}
-                  key={index}
+        {imageArr && (
+          <Carousel
+            opts={{ loop: true }}
+            className="section-px flex max-w-[100vw] items-center gap-md laptop:mx-auto [&>div]:rounded-sm"
+          >
+            <>
+              <CarouselPrevious className="relative" />
+            </>
+            <CarouselContent className="laptop-large:-ml-sm">
+              {imageArr.map((image, index) => (
+                <CarouselItem
+                  key={`${image.titre}-${index}`}
+                  className="basis-full mobile-large:basis-1/2 tablet:basis-1/3 laptop:basis-1/3 laptop-large:basis-1/3 laptop-large:pr-sm"
                 >
-                  <Image
-                    width={400}
-                    height={400}
+                  <Link
+                    href={`/agence-evenementielle-strasbourg/projets/${image.slug.current}`}
                     className={cn(
-                      'aspect-square h-full w-full grow cursor-pointer overflow-hidden rounded-t-sm object-cover object-top',
-                      'name' in image ? null : 'rounded-t-none'
+                      'card relative flex h-full flex-col items-center gap-md overflow-hidden rounded-sm border-0 p-0 shadow-xl laptop:gap-lg'
                     )}
-                    sizes={'(max-width: 640px) 100vw, 50vw'}
-                    src={image.src}
-                    placeholder="blur"
-                    blurDataURL={image.blurSrc}
-                    alt={`Image ${image.titre}`}
-                  ></Image>
+                    key={index}
+                  >
+                    <Image
+                      width={400}
+                      height={400}
+                      className={cn(
+                        'aspect-square h-full w-full grow cursor-pointer overflow-hidden rounded-t-sm object-cover object-top',
+                        'name' in image ? null : 'rounded-t-none'
+                      )}
+                      sizes={'(max-width: 640px) 100vw, 50vw'}
+                      src={image.src}
+                      placeholder="blur"
+                      blurDataURL={image.blurSrc}
+                      alt={`Image ${image.titre}`}
+                    ></Image>
 
-                  <div className="flex flex-col items-center gap-sm text-pretty px-md pb-md text-center laptop:pb-lg">
-                    <p className="sub-heading line-clamp-1">
-                      <strong>{image.titre}</strong>
-                    </p>
-                  </div>
-                </Link>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <>
-            <CarouselNext className="relative" />
-          </>
-        </Carousel>
+                    <div className="flex flex-col items-center gap-sm text-pretty px-md pb-md text-center laptop:pb-lg">
+                      <p className="sub-heading line-clamp-1">
+                        <strong>{image.titre}</strong>
+                      </p>
+                    </div>
+                  </Link>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <>
+              <CarouselNext className="relative" />
+            </>
+          </Carousel>
+        )}
       </InviewWrapper>
     </section>
   );

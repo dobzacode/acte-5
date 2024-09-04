@@ -8,12 +8,9 @@ import { AFFICHES_QUERY, AffichesQueryResponse, Image as SanityImage } from '@/s
 import { urlForImage } from '@/sanity/lib/utils';
 import { draftMode } from 'next/headers';
 
+import { notEmpty } from '@/lib/utils';
 import { notFound } from 'next/navigation';
 import PastCarousel from './past-carousel';
-
-function notEmpty<TValue>(value: TValue | null | undefined): value is TValue {
-  return value !== null && value !== undefined;
-}
 
 export default async function PastSection() {
   const affiches = await sanityFetch<AffichesQueryResponse>({

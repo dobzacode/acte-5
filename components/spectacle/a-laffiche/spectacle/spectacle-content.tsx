@@ -1,3 +1,4 @@
+import { notEmpty } from '@/lib/utils';
 import { Image as ImageSanity, SpectacleQueryResponse } from '@/sanity/lib/queries';
 import { urlForImage } from '@/sanity/lib/utils';
 import Image from 'next/image';
@@ -24,10 +25,14 @@ export default async function SpectacleContent({
   const imagesWithUrl = spectacle.imageGallery
     ? await Promise.all(
         spectacle.imageGallery.map(async (image: ImageSanity) => {
-          image.url = await urlForImage(image).width(1920).height(1080).dpr(2).quality(80).url();
+          try {
+            image.url = await urlForImage(image).width(1920).height(1080).dpr(2).quality(80).url();
 
-          image.blurSrc = urlForImage(image).width(20).quality(20).url();
-          return image;
+            image.blurSrc = urlForImage(image).width(20).quality(20).url();
+            return image;
+          } catch (e) {
+            return null;
+          }
         })
       )
     : null;
@@ -45,6 +50,8 @@ export default async function SpectacleContent({
     body
   } = spectacle;
 
+  const imageArr = imagesWithUrl ? imagesWithUrl.filter(notEmpty) : null;
+
   return (
     <>
       <div className="flex h-full gap-md max-tablet:flex-col-reverse">
@@ -60,58 +67,58 @@ export default async function SpectacleContent({
             blurDataURL={urlForImage(spectacle.mainImage).width(20).quality(20).url()}
           />
         ) : null}
-        <div className=" flex-grow bg-primary-400 pl-0.5 "></div>
-        <aside className="[&>div]:body flex w-fit flex-wrap   gap-md   tablet:flex-col [&>div>*:first-child]:laptop:whitespace-nowrap [&>div>*:last-child]:font-medium">
+        <div className="flex-grow bg-primary-400 pl-0.5"></div>
+        <aside className="[&>div]:body flex w-fit flex-wrap gap-md tablet:flex-col [&>div>*:first-child]:laptop:whitespace-nowrap [&>div>*:last-child]:font-medium">
           {duree && (
-            <div className="sub-heading flex flex-col ">
+            <div className="sub-heading flex flex-col">
               <p className="text-black/40">Durée</p>
               <p>{duree}</p>
             </div>
           )}
           {ecritureEtJeuEtMiseEnScene && (
-            <div className=" flex flex-col ">
+            <div className="flex flex-col">
               <p className="text-black/40">Ecriture et jeu et mise en scène</p>
               <p>{formatList(ecritureEtJeuEtMiseEnScene)}</p>
             </div>
           )}
           {ecritureEtJeu && (
-            <div className=" flex flex-col ">
+            <div className="flex flex-col">
               <p className="text-black/40">Ecriture et jeu</p>
               <p>{formatList(ecritureEtJeu)}</p>
             </div>
           )}
           {miseEnScene && !ecritureEtJeuEtMiseEnScene ? (
-            <div className=" flex flex-col ">
+            <div className="flex flex-col">
               <p className="text-black/40">Mise en scène</p>
               <p>{miseEnScene}</p>
             </div>
           ) : null}
           {costumes && (
-            <div className=" flex flex-col ">
+            <div className="flex flex-col">
               <p className="text-black/40">Costumes</p>
               <p>{formatList(costumes)}</p>
             </div>
           )}
           {lumiereEtRegie && (
-            <div className=" flex flex-col ">
+            <div className="flex flex-col">
               <p className="text-black/40">Lumière et régie</p>
               <p>{formatList(lumiereEtRegie)}</p>
             </div>
           )}
           {musiqueEtSon && (
-            <div className=" flex flex-col ">
+            <div className="flex flex-col">
               <p className="text-black/40">Musique et son</p>
               <p>{formatList(musiqueEtSon)}</p>
             </div>
           )}
           {decors && (
-            <div className=" flex flex-col ">
+            <div className="flex flex-col">
               <p className="text-black/40">Décors</p>
               <p>{formatList(decors)}</p>
             </div>
           )}
           {photos && (
-            <div className=" flex flex-col ">
+            <div className="flex flex-col">
               <p className="text-black/40">Photos</p>
               <p>{formatList(photos)}</p>
             </div>
@@ -122,8 +129,8 @@ export default async function SpectacleContent({
       <div className="prose prose-base max-w-full">
         {body ? <CustomPortableText value={body}></CustomPortableText> : null}
       </div>
-      {imagesWithUrl ? (
-        <EmblaCarousel imageArr={imagesWithUrl} options={{ loop: true, active: true }} />
+      {imageArr ? (
+        <EmblaCarousel imageArr={imageArr} options={{ loop: true, active: true }} />
       ) : null}
     </>
   );
