@@ -1,14 +1,9 @@
 import { SPECTACLES_QUERY, SPECTACLE_QUERY, SpectacleQueryResponse } from '@/sanity/lib/queries';
 
-import {
-  ComingFromLeftVariant,
-  ComingFromRightVariant
-} from '@/components/framer-motion/div-variants';
+import { ComingFromRightVariant } from '@/components/framer-motion/div-variants';
 import DivWrapper from '@/components/framer-motion/div-wrapper';
-import InviewWrapper from '@/components/framer-motion/inview-wrapper';
 import SimilaireProject from '@/components/spectacle/a-laffiche/spectacle/similaire-project';
 import SpectacleContent from '@/components/spectacle/a-laffiche/spectacle/spectacle-content';
-import { Calendar } from '@/components/ui/calendar';
 import TitleSection from '@/components/ui/title-section';
 import { sanityFetch } from '@/sanity/lib/fetch';
 import { resolveOpenGraphImage } from '@/sanity/lib/utils';
@@ -84,7 +79,7 @@ export default async function Page({ params }: Props) {
           >
             <SpectacleContent spectacle={spectacle} />
           </DivWrapper>
-          {spectacle?.dates && (
+          {/* {spectacle?.dates && (
             <section className="inner-section-gap flex flex-col">
               <InviewWrapper
                 className="heading--sub-extra-large text-primary-400"
@@ -99,7 +94,7 @@ export default async function Page({ params }: Props) {
                 modifiersClassNames={{ test: 'bg-destructive' }}
               ></Calendar>
             </section>
-          )}
+          )} */}
         </section>
         <SimilaireProject actualSpectacle={params.spectacle}></SimilaireProject>
       </main>

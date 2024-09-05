@@ -13,7 +13,7 @@ import {
   ModalHeader,
   useDisclosure
 } from '@nextui-org/modal';
-import { useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 const formatDateString = (isoDateString: string) => {
   const date = new Date(isoDateString);
@@ -35,6 +35,14 @@ export default function CalendrierRow({
   isBig?: boolean;
 }) {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
+  const [headerOffset, setHeaderOffset] = useState<string | null>(null);
+
+  useEffect(() => {
+    const headerWrapper = document.getElementById('header-wrapper');
+    if (headerWrapper) {
+      setHeaderOffset(headerWrapper.style.top);
+    }
+  }, [isOpen]);
 
   const isDateAncienne = useMemo(() => {
     if (dateItem && dateItem.dates && dateItem.dates.length > 0) {
@@ -112,8 +120,8 @@ export default function CalendrierRow({
         >
           <ModalContent
             className={cn(
-              'mt-5xl tablet:min-w-[40rem] laptop:min-w-[50rem]'
-              // document.getElementById('header-wrapper')?.style.top === '-100px' && '!mt-0'
+              'mt-5xl tablet:min-w-[40rem] laptop:min-w-[50rem]',
+              headerOffset === '-100px' && '!mt-0'
             )}
           >
             {(onClose) => (
