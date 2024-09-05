@@ -24,6 +24,7 @@ export default async function Project({ project }: { project: EventQueryResponse
               .quality(100)
               .url();
             image.blurSrc = urlForImage(image).width(width).height(height).quality(20).url();
+
             return image;
           } catch (e) {
             return null;

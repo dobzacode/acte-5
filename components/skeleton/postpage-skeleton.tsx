@@ -18,7 +18,7 @@ export const SVGSkeleton = ({ className }: { className: string }) => (
 
 export default function PostpageSkeleton({}) {
   return (
-    <section className="fadeIn container mx-auto flex flex-col gap-lg  pb-lg laptop:max-w-[50rem]">
+    <main className="section-px relative mx-auto flex w-full flex-col items-center justify-center gap-2xl overflow-hidden py-5xl laptop:container laptop:py-7xl">
       <BreadcrumbsSkeleton size="w-[18.2rem]"></BreadcrumbsSkeleton>
       <TitleSkeleton></TitleSkeleton>
       <MainPictureSkeleton size="w-full"></MainPictureSkeleton>
@@ -26,6 +26,6 @@ export default function PostpageSkeleton({}) {
       <ParagraphSkeleton length={5}></ParagraphSkeleton>
       <ParagraphSkeleton length={5}></ParagraphSkeleton>
       <ParagraphSkeleton length={5}></ParagraphSkeleton>
-    </section>
+    </main>
   );
 }

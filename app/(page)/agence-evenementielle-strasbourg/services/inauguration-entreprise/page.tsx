@@ -1,9 +1,12 @@
 import LastEvent from '@/components/event/nos-services/last-event-image';
 import { ComingFromRightVariant } from '@/components/framer-motion/div-variants';
 import DivWrapper from '@/components/framer-motion/div-wrapper';
+import LastEventSkeleton from '@/components/skeleton/last-event-skeleton';
 import TitleSection from '@/components/ui/title-section';
 import { Metadata } from 'next';
 import Image from 'next/image';
+import { Suspense } from 'react';
+import image from '/public/assets/event/services/inauguration/inauguration.jpg';
 
 export const metadata: Metadata = {
   title: "Inauguration d'entreprise à Strasbourg | Acte 5",
@@ -14,7 +17,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main className="main relative mx-auto gap-2xl px-0 pt-5xl laptop:pt-7xl">
-      <section className="max-laptop:section-px  relative mx-auto flex flex-col items-center justify-center gap-2xl  max-laptop:gap-3xl mobile-small:gap-3xl mobile-medium:gap-2xl  mobile-large:gap-4xl  laptop:max-w-[50rem]">
+      <section className="max-laptop:section-px relative mx-auto flex flex-col items-center justify-center gap-2xl max-laptop:gap-3xl mobile-small:gap-3xl mobile-medium:gap-2xl mobile-large:gap-4xl laptop:max-w-[50rem]">
         <TitleSection
           className="px-0"
           h1Css={'heading--sub-extra-large'}
@@ -30,17 +33,18 @@ export default function Home() {
         ></TitleSection>
         <DivWrapper
           variant={ComingFromRightVariant}
-          className="flex flex-col gap-2xl mobile-large:gap-3xl "
+          className="flex flex-col gap-2xl mobile-large:gap-3xl"
           tag="section"
         >
-          <h2 className="sub-heading  font-semibold">
+          <h2 className="sub-heading font-semibold">
             Comme des oiseaux de bon augure… Longue vie… Carpe Diem…Bon vent… Bonne route… « Y a
             plus qu’à !»… C’est parti ! Autant d’expressions/vocabulaire que nous pouvons retrouver
             dans un discours inaugural pour souhaiter la réussite de ce nouveau projet.
           </h2>
           <Image
             className="rounded-sm"
-            src={'/assets/event/services/inauguration/inauguration.jpg'}
+            src={image}
+            placeholder="blur"
             sizes={'(max-width: 640px) 100vw, (min-width: 640px) 80vw'}
             width={800}
             height={800}
@@ -80,10 +84,12 @@ export default function Home() {
           </div>
         </DivWrapper>
       </section>
-      <LastEvent
-        h2="Nos précédentes inaugurations d'entreprise organisés à Strasbourg en Alsace"
-        categorie="Inauguration"
-      ></LastEvent>
+      <Suspense fallback={<LastEventSkeleton />}>
+        <LastEvent
+          h2="Nos précédentes inaugurations d'entreprise organisés à Strasbourg en Alsace"
+          categorie="Inauguration"
+        ></LastEvent>
+      </Suspense>
     </main>
   );
 }

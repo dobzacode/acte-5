@@ -1,101 +1,113 @@
 'use client';
 
+import ImagePulsing from '@/components/ui/image-pulsing';
 import { AnimatePresence, motion, useInView } from 'framer-motion';
-import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname, useSearchParams } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
 import CategoryPicker from './category-picker';
+import anniversairepic from '/public/assets/event/services/anniversaire.jpg';
+import conventionpic from '/public/assets/event/services/convention.jpg';
+import designpic from '/public/assets/event/services/design.jpg';
+import galapic from '/public/assets/event/services/gala.jpg';
+import inaugurationpic from '/public/assets/event/services/inauguration.jpg';
+import medaillepic from '/public/assets/event/services/medailles.jpg';
+import portespic from '/public/assets/event/services/portes.jpg';
+import spectaclepic from '/public/assets/event/services/spectacle.jpg';
+import teambuildingpic from '/public/assets/event/services/teambuilding.jpg';
+import videopic from '/public/assets/event/services/video.jpg';
+import voeuxpic from '/public/assets/event/services/voeux.jpg';
+import placeholder from '/public/placeholder-image.png';
 
 export const SERVICES = [
   {
     href: '/agence-evenementielle-strasbourg/services/inauguration-entreprise',
     text: 'Inauguration',
-    src: '/assets/event/services/inauguration.jpg',
+    src: inaugurationpic,
     category: 'evenementiel'
   },
   {
     href: '/agence-evenementielle-strasbourg/services/convention-entreprise-strasbourg',
     text: 'Convention',
-    src: '/assets/event/services/convention.jpg',
+    src: conventionpic,
     category: 'evenementiel'
   },
   {
     href: '/agence-evenementielle-strasbourg/services/organisateur-anniversaire',
     text: 'Anniversaire',
-    src: '/assets/event/services/anniversaire.jpg',
+    src: anniversairepic,
     category: 'evenementiel'
   },
   {
     href: '/agence-evenementielle-strasbourg/services/ceremonie-remise-medailles',
     text: 'Cérémonie des médailles',
-    src: '/assets/event/services/medailles.jpg',
+    src: medaillepic,
     category: 'evenementiel'
   },
   {
     href: '/agence-evenementielle-strasbourg/services/ceremonie-voeux',
     text: 'Cérémonie des vœux',
-    src: '/assets/event/services/voeux.jpg',
+    src: voeuxpic,
     category: 'evenementiel'
   },
   {
     href: '/agence-evenementielle-strasbourg/services/portes-ouvertes',
     text: 'Portes ouvertes',
-    src: '/assets/event/services/portes.jpg',
+    src: portespic,
     category: 'evenementiel'
   },
   {
     href: '/agence-evenementielle-strasbourg/services/soiree-gala',
     text: 'Soirée de Gala',
-    src: '/assets/event/services/gala.jpg',
+    src: galapic,
     category: 'evenementiel'
   },
   {
     href: '/agence-evenementielle-strasbourg/services/spectacle-entreprise',
     text: "Spectacle d'entreprise",
-    src: '/assets/event/services/spectacle.jpg',
+    src: spectaclepic,
     category: 'spectacle'
   },
   {
     href: '/agence-evenementielle-strasbourg/services/spectacle-clef-en-main',
     text: 'Spectacle clé en main',
-    src: '/assets/event/services/spectacle-clef-en-main.jpg',
+    src: placeholder,
     category: 'spectacle'
   },
   {
     href: '/agence-evenementielle-strasbourg/services/spectacle-sur-mesure',
     text: 'Spectacle sur mesure',
-    src: '/assets/event/services/spectacle-sur-mesure.jpg',
+    src: placeholder,
     category: 'spectacle'
   },
   {
     href: '/agence-evenementielle-strasbourg/services/team-building',
     text: 'Team building',
-    src: '/assets/event/services/teambuilding.jpg',
+    src: teambuildingpic,
     category: 'evenementiel'
   },
   {
     href: '/agence-evenementielle-strasbourg/services/identite-visuelle',
     text: 'Identité visuelle',
-    src: '/assets/event/services/design.jpg',
+    src: designpic,
     category: 'graphisme'
   },
   {
     href: '/agence-evenementielle-strasbourg/services/video-entreprise',
     text: "Vidéo d'entreprise",
-    src: '/assets/event/services/video.jpg',
+    src: videopic,
     category: 'graphisme'
   },
   {
     href: '/agence-evenementielle-strasbourg/services/support-de-communication',
     text: 'Support de communication',
-    src: '/assets/event/services/support.jpg',
+    src: placeholder,
     category: 'graphisme'
   },
   {
     href: '/agence-evenementielle-strasbourg/services/edition',
     text: 'Edition',
-    src: '/assets/event/services/edition.jpg',
+    src: placeholder,
     category: 'graphisme'
   }
 ];
@@ -110,14 +122,9 @@ export default function ServiceGalerie({}) {
   const isInView = useInView(ref, { margin: '-200px 0px -200px 0px', once: true });
 
   useEffect(() => {
-    console.log(pathname);
     pathname === '/agence-evenementielle-strasbourg/services' &&
       setActualParams(params.get('categorie') ?? 'evenementiel');
-    // actualParams ??
-    //   document.getElementById('service-galerie')?.scrollIntoView({ behavior: 'smooth' });
   }, [params]);
-
-  console.log(actualParams);
 
   return (
     <section
@@ -132,7 +139,7 @@ export default function ServiceGalerie({}) {
       </nav>
 
       {isInView && (
-        <ul className="section-px grid grid-cols-2 justify-center gap-sm laptop:container mobile-large:grid-cols-3 laptop:mx-auto">
+        <ul className="section-px grid w-full grid-cols-2 justify-center gap-sm laptop:container mobile-large:grid-cols-3 laptop:mx-auto">
           <AnimatePresence mode="wait">
             {SERVICES.filter((service) => service.category === actualParams).map(
               (service, index) => {
@@ -186,15 +193,15 @@ export default function ServiceGalerie({}) {
                       >
                         {service.text}
                       </motion.h3>
-                      <Image
+                      <ImagePulsing
+                        skeletoncss={'h-full w-full object-cover absolute object-center'}
                         fill
                         sizes={'(min-width: 1024px) 50vw, 100vw'}
-                        className={`object-cover duration-medium group-hover:scale-[102%]`}
+                        className={`h-full w-full object-cover duration-medium group-hover:scale-[102%]`}
                         placeholder="blur"
-                        blurDataURL={service.src}
                         src={service.src}
                         alt={`${service}`}
-                      ></Image>
+                      ></ImagePulsing>
                     </Link>
                   </motion.li>
                 );

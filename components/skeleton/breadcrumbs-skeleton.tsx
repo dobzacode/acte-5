@@ -1,6 +1,11 @@
-import { cn } from '@/lib/utils';
-import { Skeleton } from '@nextui-org/react';
+import { Skeleton } from '@/components/ui/skeleton';
 
 export default function BreadcrumbsSkeleton({ size }: { size: string }) {
-  return <Skeleton className={cn('container  h-[2.2rem]  rounded-sm', size)}></Skeleton>;
+  return (
+    <div className="flex w-full flex-col gap-5 self-start laptop:container laptop:mx-auto">
+      <Skeleton className="h-14 w-1/2 rounded-xs" />
+      <Skeleton className="h-8 w-1/3 rounded-xs" />
+      <Skeleton className="h-6 w-2/5 rounded-xs" />
+    </div>
+  );
 }

@@ -1,10 +1,13 @@
+import { Skeleton } from '@/components/ui/skeleton';
 import { cn } from '@/lib/utils';
-import { Skeleton } from '@nextui-org/react';
 
 export default function MainPictureSkeleton({ size }: { size: string }) {
   return (
     <Skeleton
-      className={cn('container h-[12rem] w-full mobile-large:h-[16rem] tablet:h-[24rem]', size)}
+      className={cn(
+        'h-[12rem] w-full rounded-xs laptop:container mobile-large:h-[16rem] tablet:h-[24rem]',
+        size
+      )}
     ></Skeleton>
   );
 }

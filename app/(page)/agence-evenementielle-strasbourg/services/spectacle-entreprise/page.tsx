@@ -1,10 +1,12 @@
 import LastEvent from '@/components/event/nos-services/last-event-image';
 import { ComingFromRightVariant } from '@/components/framer-motion/div-variants';
 import DivWrapper from '@/components/framer-motion/div-wrapper';
+import LastEventSkeleton from '@/components/skeleton/last-event-skeleton';
 import TitleSection from '@/components/ui/title-section';
 import { Metadata } from 'next';
 import Image from 'next/image';
-
+import { Suspense } from 'react';
+import image from '/public/assets/event/services/spectacle/spectacle.jpg';
 export const metadata: Metadata = {
   title: "Spectacles d'entreprises à Strasbourg | Acte 5",
   description:
@@ -36,7 +38,8 @@ export default function Home() {
         >
           <Image
             className="rounded-sm"
-            src={'/assets/event/services/spectacle/spectacle.jpg'}
+            src={image}
+            placeholder="blur"
             sizes={'(max-width: 640px) 100vw, (min-width: 640px) 80vw'}
             width={800}
             height={800}
@@ -57,10 +60,12 @@ export default function Home() {
           </div>
         </DivWrapper>
       </section>
-      <LastEvent
-        h2="Nos précédents spectacles d'entreprises organisés à Strasbourg et en Alsace"
-        categorie="Spectacle d'entreprise"
-      ></LastEvent>
+      <Suspense fallback={<LastEventSkeleton />}>
+        <LastEvent
+          h2="Nos précédents spectacles d'entreprises organisés à Strasbourg et en Alsace"
+          categorie="Spectacle d'entreprise"
+        ></LastEvent>
+      </Suspense>
     </main>
   );
 }

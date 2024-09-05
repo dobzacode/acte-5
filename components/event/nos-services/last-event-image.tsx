@@ -10,12 +10,12 @@ import {
   CarouselNext,
   CarouselPrevious
 } from '@/components/ui/carousel';
+import ImagePulsing from '@/components/ui/image-pulsing';
 import { cn, decodeAssetId, notEmpty } from '@/lib/utils';
 import { sanityFetch } from '@/sanity/lib/fetch';
 import { EventWithImgQueryRes } from '@/sanity/lib/queries';
 import { urlForImage } from '@/sanity/lib/utils';
 import { groq } from 'next-sanity';
-import Image from 'next/image';
 import Link from 'next/link';
 
 export interface EventWithImg extends EventWithImgQueryRes {
@@ -119,7 +119,7 @@ export default async function LastEvent({
                     )}
                     key={index}
                   >
-                    <Image
+                    <ImagePulsing
                       width={400}
                       height={400}
                       className={cn(
@@ -131,9 +131,9 @@ export default async function LastEvent({
                       placeholder="blur"
                       blurDataURL={image.blurSrc}
                       alt={`Image ${image.titre}`}
-                    ></Image>
+                    ></ImagePulsing>
 
-                    <div className="flex flex-col items-center gap-sm text-pretty px-md pb-md text-center laptop:pb-lg">
+                    <div className="relative z-20 flex flex-col items-center gap-sm text-pretty rounded-b-sm bg-white px-md pb-md text-center">
                       <p className="sub-heading line-clamp-1">
                         <strong>{image.titre}</strong>
                       </p>

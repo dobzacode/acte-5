@@ -1,6 +1,7 @@
 'use client';
 
 import { EventWithImgAndIndex } from '@/app/(page)/agence-evenementielle-strasbourg/projets/page';
+import ImagePulsing from '@/components/ui/image-pulsing';
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
@@ -10,7 +11,6 @@ import {
 import { cn } from '@/lib/utils';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ArrowDown, ArrowUp } from 'lucide-react';
-import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
@@ -237,13 +237,13 @@ export default function ProjectSection({ events }: { events: EventWithImgAndInde
                     {event.titre}
                   </motion.h3>
                   {event.src && (
-                    <Image
+                    <ImagePulsing
                       fill
                       sizes={'(min-width: 1024px) 50vw, 100vw'}
                       className={`object-cover duration-medium group-hover:scale-[102%]`}
                       src={event.src ?? ''}
                       alt={`${event}`}
-                    ></Image>
+                    ></ImagePulsing>
                   )}
                 </Link>
               </motion.li>

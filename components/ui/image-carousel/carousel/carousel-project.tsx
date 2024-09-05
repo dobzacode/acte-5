@@ -1,19 +1,19 @@
 'use client';
 
 import {
-    Carousel,
-    CarouselContent,
-    CarouselItem,
-    CarouselNext,
-    CarouselPrevious
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious
 } from '@/components/ui/carousel';
 import { cn } from '@/lib/utils';
 import { Image as ImageSanity } from '@/sanity/lib/queries';
-import Image from 'next/image';
 import React, { useState } from 'react';
 import Lightbox from 'yet-another-react-lightbox';
 import Zoom from 'yet-another-react-lightbox/plugins/zoom';
 import 'yet-another-react-lightbox/styles.css';
+import ImagePulsing from '../../image-pulsing';
 import NextJsImage from './nextjs-image';
 
 type CarouselProjectProps = {
@@ -70,8 +70,9 @@ const CarouselProject: React.FC<CarouselProjectProps> = ({
         <CarouselContent>
           {imageArr.map((image, index) => (
             <CarouselItem key={`${image}-${index}`} className={cn(className)}>
-              <Image
+              <ImagePulsing
                 key={index}
+                
                 width={800}
                 height={800}
                 className={cn(innerClassName)}
@@ -86,10 +87,14 @@ const CarouselProject: React.FC<CarouselProjectProps> = ({
           ))}
         </CarouselContent>
         <>
-          <CarouselPrevious className={cn("absolute left-sm top-1/2 -translate-y-1/2", previousClassName)} />
+          <CarouselPrevious
+            className={cn('absolute left-sm top-1/2 -translate-y-1/2', previousClassName)}
+          />
         </>
         <>
-          <CarouselNext className={cn("absolute right-sm top-1/2 -translate-y-1/2", nextClassName)} />
+          <CarouselNext
+            className={cn('absolute right-sm top-1/2 -translate-y-1/2', nextClassName)}
+          />
         </>
       </Carousel>
 

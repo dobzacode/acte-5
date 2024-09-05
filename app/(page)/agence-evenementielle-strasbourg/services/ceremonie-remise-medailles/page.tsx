@@ -1,9 +1,12 @@
 import LastEvent from '@/components/event/nos-services/last-event-image';
 import { ComingFromRightVariant } from '@/components/framer-motion/div-variants';
 import DivWrapper from '@/components/framer-motion/div-wrapper';
+import LastEventSkeleton from '@/components/skeleton/last-event-skeleton';
 import TitleSection from '@/components/ui/title-section';
 import { Metadata } from 'next';
 import Image from 'next/image';
+import { Suspense } from 'react';
+import image from '/public/assets/event/services/medailles/medailles.jpg';
 
 export const metadata: Metadata = {
   title: 'Cérémonie de remise de médailles à Strasbourg | Acte 5',
@@ -14,7 +17,7 @@ export const metadata: Metadata = {
 export default async function Page() {
   return (
     <main className="main relative mx-auto gap-2xl px-0 pt-5xl laptop:pt-7xl">
-      <section className="max-laptop:section-px relative mx-auto flex flex-col items-center justify-center gap-2xl  max-laptop:gap-3xl mobile-small:gap-3xl mobile-medium:gap-2xl  mobile-large:gap-4xl  laptop:max-w-[50rem]">
+      <section className="max-laptop:section-px relative mx-auto flex flex-col items-center justify-center gap-2xl max-laptop:gap-3xl mobile-small:gap-3xl mobile-medium:gap-2xl mobile-large:gap-4xl laptop:max-w-[50rem]">
         <TitleSection
           className="px-0"
           h1Css={'heading--sub-extra-large'}
@@ -33,14 +36,15 @@ export default async function Page() {
           className="flex flex-col gap-2xl mobile-large:gap-3xl"
           tag="section"
         >
-          <h2 className="sub-heading text-pretty font-semibold ">
+          <h2 className="sub-heading text-pretty font-semibold">
             Que ce soit une cérémonie des médailles du travail, ou encore une cérémonie pour
             célébrer l’ancienneté, chaque salarié a droit, au cours de sa carrière à son moment de
             gloire, de reconnaissance.
           </h2>
           <Image
             className="rounded-sm"
-            src={'/assets/event/services/medailles/medailles.jpg'}
+            src={image}
+            placeholder="blur"
             sizes={'(max-width: 640px) 100vw, (min-width: 640px) 80vw'}
             width={800}
             height={800}
@@ -80,10 +84,12 @@ export default async function Page() {
           </div>
         </DivWrapper>
       </section>
-      <LastEvent
-        h2="Nos précédentes cérémonies des médailles organisés à Strasbourg en Alsace"
-        categorie="Cérémonie des médailles"
-      ></LastEvent>
+      <Suspense fallback={<LastEventSkeleton />}>
+        <LastEvent
+          h2="Nos précédentes cérémonies des médailles organisés à Strasbourg en Alsace"
+          categorie="Cérémonie des médailles"
+        ></LastEvent>
+      </Suspense>
     </main>
   );
 }
