@@ -1,3 +1,4 @@
+import ContactBanner from '@/components/event/contact/contact-banner';
 import { ComingFromRightVariant } from '@/components/framer-motion/div-variants';
 import InviewWrapper from '@/components/framer-motion/inview-wrapper';
 import FormWrapped from '@/components/ui/form/form-wrapped';
