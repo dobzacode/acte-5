@@ -181,7 +181,7 @@ export default function BigCalendrierTable({
                       }}
                       tag="li"
                     >
-                      <CalendrierRow isBig={true}></CalendrierRow>
+                      <CalendrierRow></CalendrierRow>
                     </DivWrapper>
                   )}
                 </ul>

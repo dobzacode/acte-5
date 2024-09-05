@@ -41,7 +41,7 @@ export default function Header({ className }: { className?: string }) {
   return (
     <section
       className={cn(
-        `z-50 flex h-4xl w-full items-center justify-between border-b border-black border-opacity-10 bg-transparent bg-white bg-opacity-75 px-md py-md mobile-large:gap-3xl laptop:px-xl laptop-large:px-2xl`,
+        `!z-[800] flex h-4xl w-full items-center justify-between border-b border-black border-opacity-10 bg-transparent bg-white bg-opacity-75 px-md py-md mobile-large:gap-3xl laptop:px-xl laptop-large:px-2xl`,
         !showMenu && 'overflow-hidden'
       )}
     >

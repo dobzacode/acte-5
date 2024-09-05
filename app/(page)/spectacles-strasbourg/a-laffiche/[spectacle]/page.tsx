@@ -1,8 +1,13 @@
 import { SPECTACLES_QUERY, SPECTACLE_QUERY, SpectacleQueryResponse } from '@/sanity/lib/queries';
 
-import { ComingFromRightVariant } from '@/components/framer-motion/div-variants';
+import {
+  ComingFromLeftVariant,
+  ComingFromRightVariant
+} from '@/components/framer-motion/div-variants';
 import DivWrapper from '@/components/framer-motion/div-wrapper';
+import InviewWrapper from '@/components/framer-motion/inview-wrapper';
 import SimilaireProject from '@/components/spectacle/a-laffiche/spectacle/similaire-project';
+import SpectacleCalendar from '@/components/spectacle/a-laffiche/spectacle/spectacle-calendar';
 import SpectacleContent from '@/components/spectacle/a-laffiche/spectacle/spectacle-content';
 import TitleSection from '@/components/ui/title-section';
 import { sanityFetch } from '@/sanity/lib/fetch';
@@ -79,22 +84,25 @@ export default async function Page({ params }: Props) {
           >
             <SpectacleContent spectacle={spectacle} />
           </DivWrapper>
-          {/* {spectacle?.dates && (
-            <section className="inner-section-gap flex flex-col">
+          {spectacle?.dates && (
+            <section className="inner-section-gap flex flex-col place-self-start">
               <InviewWrapper
-                className="heading--sub-extra-large text-primary-400"
-                tag="h2"
+                className="heading--large text-primary-400"
+                tag="h3"
                 variant={ComingFromLeftVariant}
               >
-                Les dates
+                Calendrier des dates
               </InviewWrapper>
-              <Calendar
-                fromDate={new Date()}
-                modifiers={{ test: new Date() }}
-                modifiersClassNames={{ test: 'bg-destructive' }}
-              ></Calendar>
+
+              <SpectacleCalendar
+                dates={spectacle?.dates.map((date) => ({
+                  ...date,
+                  type: 'Spectacle',
+                  titre: spectacle.titre
+                }))}
+              ></SpectacleCalendar>
             </section>
-          )} */}
+          )}
         </section>
         <SimilaireProject actualSpectacle={params.spectacle}></SimilaireProject>
       </main>
