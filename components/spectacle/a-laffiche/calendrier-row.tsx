@@ -45,8 +45,6 @@ export default function CalendrierRow({
     return false;
   }, [dateItem]);
 
-  console.log(document.getElementById('header-wrapper')?.style.top);
-
   return (
     <>
       <div
@@ -114,8 +112,8 @@ export default function CalendrierRow({
         >
           <ModalContent
             className={cn(
-              'mt-5xl tablet:min-w-[40rem] laptop:min-w-[50rem]',
-              document.getElementById('header-wrapper')?.style.top === '-100px' && '!mt-0'
+              'mt-5xl tablet:min-w-[40rem] laptop:min-w-[50rem]'
+              // document.getElementById('header-wrapper')?.style.top === '-100px' && '!mt-0'
             )}
           >
             {(onClose) => (
