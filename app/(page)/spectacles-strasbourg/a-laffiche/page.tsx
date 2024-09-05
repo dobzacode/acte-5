@@ -1,9 +1,11 @@
 import { FromTopStaggerVariant } from '@/components/framer-motion/div-variants';
 import StaggeredText from '@/components/framer-motion/staggered-text';
+import AffichesSkeleton from '@/components/skeleton/affiches-skeleton';
 import Affiches from '@/components/spectacle/a-laffiche/affiches';
 import CalendrierSection from '@/components/spectacle/a-laffiche/calendrier-section';
 import TitleSection from '@/components/ui/title-section';
 import { Metadata } from 'next';
+import { Suspense } from 'react';
 
 export const metadata: Metadata = {
   title: 'Calendrier des Spectacles | Acte 5',
@@ -30,7 +32,9 @@ export default function Home() {
       >
         Il n’y a pas que la Revue Scoute dans la vie !
       </StaggeredText>
-      <Affiches></Affiches>
+      <Suspense fallback={<AffichesSkeleton />}>
+        <Affiches></Affiches>
+      </Suspense>
       <CalendrierSection></CalendrierSection>
     </main>
   );

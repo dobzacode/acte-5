@@ -1,5 +1,7 @@
 import { ComingFromTopVariant } from '@/components/framer-motion/div-variants';
 import InviewWrapper from '@/components/framer-motion/inview-wrapper';
+import { Skeleton } from '@/components/ui/skeleton';
+import { Suspense } from 'react';
 import Calendrier from './calendrier';
 
 export default function CalendrierSection({ isLanding = false }: { isLanding?: boolean }) {
@@ -14,8 +16,22 @@ export default function CalendrierSection({ isLanding = false }: { isLanding?: b
       >
         Calendrier des spectacles
       </InviewWrapper>
-      <Calendrier isBig={isLanding ? false : true}></Calendrier>
+      <Suspense
+        fallback={
+          isLanding ? (
+            <Skeleton className="card mx-auto flex h-[20rem] w-full max-w-[40rem] flex-col items-center justify-center gap-md overflow-hidden rounded-sm bg-white shadow-xl" />
+          ) : (
+            <>
+              <div className="section-px h-full w-screen max-laptop:hidden">
+                <Skeleton className="card relative mx-auto flex h-[30rem] w-full flex-col items-center justify-center gap-md overflow-hidden rounded-sm bg-white shadow-xl" />
+              </div>
+              <Skeleton className="card mx-auto flex h-[20rem] w-full max-w-[40rem] flex-col items-center justify-center gap-md overflow-hidden rounded-sm bg-white shadow-xl laptop:hidden" />
+            </>
+          )
+        }
+      >
+        <Calendrier isBig={isLanding ? false : true}></Calendrier>
+      </Suspense>
     </section>
   );
 }
- 

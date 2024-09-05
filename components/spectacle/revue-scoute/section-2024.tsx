@@ -33,11 +33,8 @@ export default async function Section2024() {
   const blurSrc = await urlForImage(revueScouteActuelle[0].mainImage).width(20).quality(20).url();
 
   return (
-    <section
-      className="section-px main-gap flex
-    flex-col laptop:container laptop:mx-auto "
-    >
-      <section className=" inner-section-gap flex flex-col ">
+    <section className="section-px main-gap flex flex-col laptop:container laptop:mx-auto">
+      <section className="inner-section-gap flex flex-col">
         <InviewWrapper
           className="heading--sub-extra-large text-primary-400"
           tag="h2"
@@ -63,7 +60,7 @@ export default async function Section2024() {
           <CustomPortableText value={revueScouteActuelle[0].description}></CustomPortableText>
         </InviewWrapper>
       </section>
-      <section className=" inner-section-gap flex flex-col ">
+      <section className="inner-section-gap flex flex-col">
         <InviewWrapper
           className="heading--sub-extra-large text-primary-400"
           tag="h2"

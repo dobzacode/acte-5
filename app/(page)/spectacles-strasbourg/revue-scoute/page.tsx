@@ -1,10 +1,15 @@
 import { ComingFromRightVariant } from '@/components/framer-motion/div-variants';
 import InviewWrapper from '@/components/framer-motion/inview-wrapper';
+import PastSectionSkeleton from '@/components/skeleton/past-section-skeleton';
+import ScouteSkeleton from '@/components/skeleton/scoute-skeleton';
 import PastSection from '@/components/spectacle/revue-scoute/past-section';
 import Section2024 from '@/components/spectacle/revue-scoute/section-2024';
 import TitleSection from '@/components/ui/title-section';
 import { Metadata } from 'next';
 import Image from 'next/image';
+import { Suspense } from 'react';
+import pic1 from '/public/assets/spectacle/scoute/scoute_1.jpg';
+import pic2 from '/public/assets/spectacle/scoute/scoute_2.jpg';
 
 export const metadata: Metadata = {
   title: 'La Revue Scoute | Acte 5',
@@ -14,7 +19,7 @@ export const metadata: Metadata = {
 
 export default async function Home() {
   return (
-    <main className="relative flex w-full  flex-col gap-xl overflow-x-clip  pt-5xl mobile-small:gap-3xl mobile-medium:gap-2xl mobile-large:gap-4xl tablet:gap-5xl tablet:pt-7xl laptop:gap-6xl laptop-large:gap-6xl">
+    <main className="relative flex w-full flex-col gap-xl overflow-x-clip pt-5xl mobile-small:gap-3xl mobile-medium:gap-2xl mobile-large:gap-4xl tablet:gap-5xl tablet:pt-7xl laptop:gap-6xl laptop-large:gap-6xl">
       <TitleSection
         title={'LA REVUE SCOUTE'}
         element={[
@@ -25,7 +30,7 @@ export default async function Home() {
       <div className="section-px inner-section-gap flex laptop:container max-laptop-large:items-start max-tablet:flex-col laptop:mx-auto">
         <InviewWrapper
           tag="p"
-          className="sub-heading  relative   tablet:container tablet:mx-auto"
+          className="sub-heading relative tablet:container tablet:mx-auto"
           variant={ComingFromRightVariant}
         >
           La Revue Scoute, c’est un spectacle de cabaret satirique en français qui met en scène une
@@ -59,7 +64,8 @@ export default async function Home() {
           >
             <Image
               className="rounded-xs"
-              src="/assets/spectacle/scoute/scoute_1.jpg"
+              src={pic1}
+              placeholder="blur"
               alt="Photo de spectacle"
               width={800}
               height={800}
@@ -88,7 +94,8 @@ export default async function Home() {
           >
             <Image
               className="-ml-7xl -mt-4xl rounded-xs max-laptop-large:hidden"
-              src="/assets/spectacle/scoute/scoute_2.jpg"
+              src={pic2}
+              placeholder="blur"
               alt="Photo de spectacle"
               width={400}
               height={400}
@@ -96,8 +103,12 @@ export default async function Home() {
           </InviewWrapper>
         </div>
       </div>
-      <Section2024></Section2024>
-      <PastSection></PastSection>
+      <Suspense fallback={<ScouteSkeleton />}>
+        <Section2024></Section2024>
+      </Suspense>
+      <Suspense fallback={<PastSectionSkeleton />}>
+        <PastSection></PastSection>
+      </Suspense>
     </main>
   );
 }

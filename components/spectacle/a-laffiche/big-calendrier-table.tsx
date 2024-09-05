@@ -10,11 +10,27 @@ import { DateItemCal } from './calendrier';
 import CalendrierRow from './calendrier-row';
 
 const filtrerDatesParMois = (mois: number, annee: number, datesArr: DateItemCal[]) => {
-  return datesArr.filter((dateItem) =>
-    dateItem.dates.some(
-      (date) => new Date(date).getMonth() === mois && new Date(date).getFullYear() === annee
-    )
-  );
+  const uniqueItems = new Set<string>();
+  const result = [];
+
+  for (const dateItem of datesArr) {
+    const filteredDates = dateItem.dates.filter((date) => {
+      const dateObj = new Date(date);
+      return dateObj.getMonth() === mois && dateObj.getFullYear() === annee;
+    });
+
+    if (filteredDates.length > 0) {
+      if (!uniqueItems.has(dateItem._key)) {
+        uniqueItems.add(dateItem._key);
+        result.push({
+          ...dateItem,
+          dates: filteredDates
+        });
+      }
+    }
+  }
+
+  return result;
 };
 
 export default function BigCalendrierTable({

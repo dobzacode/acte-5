@@ -3,6 +3,9 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
 import { useRef } from 'react';
+import pic1 from '/public/assets/spectacle/landing/scoute_1.jpg';
+import pic2 from '/public/assets/spectacle/landing/scoute_2.jpg';
+import pic3 from '/public/assets/spectacle/landing/scoute_3.jpg';
 
 export default function GalleryScrollAnimation({}) {
   const ref = useRef<HTMLDivElement>(null);
@@ -26,14 +29,15 @@ export default function GalleryScrollAnimation({}) {
 
   return (
     <div ref={ref} className="relative -z-10 h-[2000px] w-full pt-8xl max-tablet:hidden">
-      <div className="sticky top-1/2 flex   items-center justify-center ">
+      <div className="sticky top-1/2 flex items-center justify-center">
         <motion.div
           style={{ scale: scale, x: positiveXTranslation, rotate: positiveRotate, opacity }}
-          className=" absolute mx-auto aspect-square h-[20rem] origin-center overflow-hidden rounded-sm  "
+          className="absolute mx-auto aspect-square h-[20rem] origin-center overflow-hidden rounded-sm"
         >
           <Image
             className="object-cover"
-            src="/assets/spectacle/landing/scoute_3.jpg"
+            src={pic3}
+            placeholder="blur"
             sizes={'(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw'}
             fill
             alt="Photo de spectacle"
@@ -41,11 +45,12 @@ export default function GalleryScrollAnimation({}) {
         </motion.div>
         <motion.div
           style={{ scale: scale, x: negativeXTranslation, rotate: negativeRotate, opacity }}
-          className=" absolute mx-auto aspect-square h-[20rem] origin-center overflow-hidden rounded-sm  "
+          className="absolute mx-auto aspect-square h-[20rem] origin-center overflow-hidden rounded-sm"
         >
           <Image
             className="object-cover"
-            src="/assets/spectacle/landing/scoute_4.jpg"
+            src={pic2}
+            placeholder="blur"
             fill
             alt="Photo de spectacle"
           ></Image>
@@ -53,18 +58,19 @@ export default function GalleryScrollAnimation({}) {
 
         <motion.div
           style={{ scale: scale, y: positiveYTranslation, opacity }}
-          className=" absolute mx-auto aspect-square h-[20rem] origin-center overflow-hidden rounded-sm  "
+          className="absolute mx-auto aspect-square h-[20rem] origin-center overflow-hidden rounded-sm"
         >
           <Image
             className="object-cover"
-            src="/assets/spectacle/landing/scoute_5.jpg"
+            src={pic1}
+            placeholder="blur"
             fill
             alt="Photo de spectacle"
           ></Image>
         </motion.div>
         <motion.div
           style={{ scale: scale, y: negativeYTranslation, opacity }}
-          className=" absolute mx-auto aspect-square h-[20rem] origin-center overflow-hidden rounded-sm  "
+          className="absolute mx-auto aspect-square h-[20rem] origin-center overflow-hidden rounded-sm"
         >
           <Image
             className="object-cover"

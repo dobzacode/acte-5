@@ -5,8 +5,10 @@ import {
 import InviewWrapper from '@/components/framer-motion/inview-wrapper';
 import StaggeredText from '@/components/framer-motion/staggered-text';
 import Calendrier from '@/components/spectacle/a-laffiche/calendrier';
+import { Skeleton } from '@/components/ui/skeleton';
 import TitleSection from '@/components/ui/title-section';
 import { Metadata } from 'next';
+import { Suspense } from 'react';
 
 export const metadata: Metadata = {
   title: 'Calendrier des Spectacles | Acte 5',
@@ -37,7 +39,13 @@ export default function Home() {
         className="max-laptop:section-px laptop:px-3xl laptop-large:px-0"
         variant={ComingFromRightVariant}
       >
-        <Calendrier isBig={true}></Calendrier>
+        <Suspense
+          fallback={
+            <Skeleton className="card mx-auto flex h-[20rem] w-full max-w-[40rem] flex-col items-center justify-center gap-md overflow-hidden rounded-sm bg-white shadow-xl laptop:hidden" />
+          }
+        >
+          <Calendrier isBig={true}></Calendrier>
+        </Suspense>
       </InviewWrapper>
     </main>
   );

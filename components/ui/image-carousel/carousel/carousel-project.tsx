@@ -75,7 +75,7 @@ const CarouselProject: React.FC<CarouselProjectProps> = ({
                 
                 width={800}
                 height={800}
-                className={cn(innerClassName)}
+                className={cn(innerClassName, "cursor-pointer")}
                 sizes={'(max-width: 640px) 100vw, 50vw'}
                 src={image.url}
                 placeholder="blur"

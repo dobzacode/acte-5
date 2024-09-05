@@ -9,10 +9,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { LuArrowUpRight } from 'react-icons/lu';
 import GalleryScrollAnimation from './gallery-scroll-animation';
+import pic1 from '/public/assets/spectacle/landing/scoute_1.jpg';
+import pic2 from '/public/assets/spectacle/landing/scoute_2.jpg';
 
 export default function ScouteSection() {
   return (
-    <section className="inner-section-py section-inner-py inner-section-gap relative z-20 flex w-full flex-col rounded-br-2xl bg-white max-tablet:overflow-hidden   mobile-large:rounded-br-4xl   tablet:gap-4xl   tablet:rounded-br-6xl laptop:rounded-br-8xl    ">
+    <section className="inner-section-py section-inner-py inner-section-gap relative z-20 flex w-full flex-col rounded-br-2xl bg-white max-tablet:overflow-hidden mobile-large:rounded-br-4xl tablet:gap-4xl tablet:rounded-br-6xl laptop:rounded-br-8xl">
       <div className="flex flex-col items-center gap-xl">
         <InviewWrapper
           variant={ComingFromLeftVariant}
@@ -33,11 +35,12 @@ export default function ScouteSection() {
       <GalleryScrollAnimation></GalleryScrollAnimation>
       <div className="inner-section-gap flex flex-col laptop:container tablet:gap-4xl laptop:mx-auto">
         <InviewWrapper
-          className="section-px  inner-section-gap flex items-center  justify-center laptop:ml-auto"
+          className="section-px inner-section-gap flex items-center justify-center laptop:ml-auto"
           variant={ComingFromRightVariant}
         >
           <Image
-            src="/assets/spectacle/landing/scoute_1.jpg"
+            src={pic1}
+            placeholder="blur"
             alt="Photo de spectacle"
             width={400}
             height={400}
@@ -49,11 +52,12 @@ export default function ScouteSection() {
           </p>
         </InviewWrapper>
         <InviewWrapper
-          className="section-px inner-section-gap flex flex-row-reverse items-center justify-center  laptop:mr-auto"
+          className="section-px inner-section-gap flex flex-row-reverse items-center justify-center laptop:mr-auto"
           variant={ComingFromRightVariant}
         >
           <Image
-            src="/assets/spectacle/landing/scoute_2.jpg"
+            src={pic2}
+            placeholder="blur"
             alt="Photo de spectacle"
             width={400}
             height={400}
@@ -81,7 +85,7 @@ export default function ScouteSection() {
           >
             <Link
               href="/spectacles-strasbourg/revue-scoute"
-              className="sub-heading group  relative flex w-fit items-center gap-xs   rounded-sm before:absolute before:-bottom-2  before:z-10 before:h-[1px] before:w-full before:max-w-0 before:bg-black before:duration-medium after:absolute after:-bottom-2 after:z-10  after:h-[1px] after:w-full after:bg-black/20 hover:before:max-w-full laptop:gap-sm "
+              className="sub-heading group relative flex w-fit items-center gap-xs rounded-sm before:absolute before:-bottom-2 before:z-10 before:h-[1px] before:w-full before:max-w-0 before:bg-black before:duration-medium after:absolute after:-bottom-2 after:z-10 after:h-[1px] after:w-full after:bg-black/20 hover:before:max-w-full laptop:gap-sm"
               scroll={false}
             >
               <span>Découvrir la tournée 2024</span>

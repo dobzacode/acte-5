@@ -86,7 +86,6 @@ export default function Home() {
         </InviewWrapper>
       </div>
       <HistorySection></HistorySection>
-      {/* <CompetenceSection></CompetenceSection> */}
     </main>
   );
 }
