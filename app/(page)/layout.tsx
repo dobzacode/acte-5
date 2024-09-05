@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <>
-      <DivWrapper variant={ComingFromTopVariant}>
+      <DivWrapper className="relative z-50" variant={ComingFromTopVariant}>
         <HeaderWrapper>
           <Header></Header>
         </HeaderWrapper>
