@@ -10,6 +10,7 @@ import { EventWithImgQueryRes } from '@/sanity/lib/queries';
 import { urlForImage } from '@/sanity/lib/utils';
 import { Metadata } from 'next';
 import { groq } from 'next-sanity';
+import { Suspense } from 'react';
 
 export const metadata: Metadata = {
   title: 'Découvrez notre portfolio | Acte 5 à Strasbourg',
@@ -71,7 +72,11 @@ export default async function Home() {
       >
         <LogoFetchWrapper isTrustSection={false}></LogoFetchWrapper>
       </InviewWrapper>
-      {imageArr && <ProjectSection events={imageArr}></ProjectSection>}
+      {imageArr && (
+        <Suspense>
+          <ProjectSection events={imageArr}></ProjectSection>
+        </Suspense>
+      )}
     </main>
   );
 }
