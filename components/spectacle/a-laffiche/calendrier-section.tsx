@@ -7,7 +7,7 @@ import Calendrier from './calendrier';
 export default function CalendrierSection({ isLanding = false }: { isLanding?: boolean }) {
   return (
     <section
-      className={`inner-section-gap section-px flex w-full flex-col justify-center overflow-hidden bg-primary-400 py-2xl duration-medium mobile-small:py-3xl mobile-medium:py-2xl mobile-large:py-4xl tablet:py-5xl`}
+      className={`inner-section-gap section-px relative !z-[800] flex w-full flex-col justify-center overflow-hidden bg-primary-400 py-2xl duration-medium mobile-small:py-3xl mobile-medium:py-2xl mobile-large:py-4xl tablet:py-5xl`}
     >
       <InviewWrapper
         className="heading--sub-extra-large section-px text-center text-white"
