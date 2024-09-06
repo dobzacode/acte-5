@@ -1,8 +1,5 @@
-import {
-  ComingFromRightVariant,
-  FromTopStaggerVariant
-} from '@/components/framer-motion/div-variants';
-import InviewWrapper from '@/components/framer-motion/inview-wrapper';
+import { FromTopStaggerVariant } from '@/components/framer-motion/div-variants';
+import DivWrapper from '@/components/framer-motion/div-wrapper';
 import StaggeredText from '@/components/framer-motion/staggered-text';
 import Calendrier from '@/components/spectacle/a-laffiche/calendrier';
 import { Skeleton } from '@/components/ui/skeleton';
@@ -28,25 +25,46 @@ export default function Home() {
       ></TitleSection>
 
       <StaggeredText
+        margin={'0px 0px -200px 0px'}
         variant={FromTopStaggerVariant}
+        inview
         staggerValue={0.05}
         delay={1}
-        className="heading--sub-large section-px max-w-[35ch] text-pretty text-center laptop:mx-auto"
+        className="heading--sub-large section-px h-fit max-w-[35ch] text-pretty text-center laptop:mx-auto"
       >
         Retrouvez ci-dessous le calendrier de nos spectacles
       </StaggeredText>
-      <InviewWrapper
-        className="max-laptop:section-px laptop:px-3xl laptop-large:px-0"
-        variant={ComingFromRightVariant}
+
+      <Suspense
+        fallback={
+          <Skeleton className="card mx-auto flex h-[20rem] w-full max-w-[40rem] flex-col items-center justify-center gap-md overflow-hidden rounded-sm bg-white shadow-xl laptop:hidden" />
+        }
       >
-        <Suspense
-          fallback={
-            <Skeleton className="card mx-auto flex h-[20rem] w-full max-w-[40rem] flex-col items-center justify-center gap-md overflow-hidden rounded-sm bg-white shadow-xl laptop:hidden" />
-          }
+        <DivWrapper
+          className="max-laptop:section-px h-fit laptop:px-3xl laptop-large:px-0"
+          variant={{
+            hidden: {
+              opacity: 0,
+              x: 100
+            },
+            enter: {
+              opacity: 1,
+              x: 0,
+              transition: {
+                delay: 2,
+
+                type: 'spring'
+              }
+            },
+            exit: {
+              opacity: 0,
+              x: -100
+            }
+          }}
         >
           <Calendrier isBig={true}></Calendrier>
-        </Suspense>
-      </InviewWrapper>
+        </DivWrapper>
+      </Suspense>
     </main>
   );
 }

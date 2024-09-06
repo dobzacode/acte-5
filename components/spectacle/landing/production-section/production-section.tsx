@@ -44,14 +44,13 @@ export default function ProductionSection() {
             }
           }}
           tag="p"
-          className="sub-heading laptop:w-1/2"
+          className="sub-heading h-fit laptop:w-1/2"
         >
           Lorem ipsum dolor sit amet, consectetur adipiscing eli, sed do eiusmod tempor incididunt
           ut labore et dolore magna. Lorem ipsum dolor sit amet, consectetur adipiscing el
         </InviewWrapper>
 
         <InviewWrapper
-          viewport={{ margin: '0px', once: true }}
           variant={{
             hidden: {
               opacity: 0,

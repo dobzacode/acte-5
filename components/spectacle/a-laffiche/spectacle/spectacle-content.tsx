@@ -85,7 +85,7 @@ export default async function SpectacleContent({
             sizes="(max-width: 600px) 90vw, (max-width: 1200px) 60vw, 500px"
           />
         ) : null}
-        <div className="flex-grow bg-primary-400 pl-0.5"></div>
+        <div className="bg-primary-400 pl-0.5"></div>
         <aside className="[&>div]:body flex w-fit flex-wrap gap-md tablet:flex-col [&>div>*:first-child]:laptop:whitespace-nowrap [&>div>*:last-child]:font-medium">
           {duree && (
             <div className="sub-heading flex flex-col">

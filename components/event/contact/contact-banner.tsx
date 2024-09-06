@@ -1,4 +1,4 @@
-import { ComingFromTopVariant } from '@/components/framer-motion/div-variants';
+import { ComingFromTopVariant, FadeInVariant } from '@/components/framer-motion/div-variants';
 import InviewWrapper from '@/components/framer-motion/inview-wrapper';
 import Image from 'next/image';
 import planImage from '/public/assets/plan-acte-5-2024.webp';
@@ -15,7 +15,10 @@ export default function ContactBanner() {
       >
         Plus d&apos;informations
       </InviewWrapper>
-      <div className="inner-section-gap flex items-center justify-center max-laptop-large:flex-col">
+      <InviewWrapper
+        variant={FadeInVariant}
+        className="inner-section-gap flex items-center justify-center max-laptop-large:flex-col"
+      >
         <div className="flex items-center overflow-hidden max-laptop-large:justify-between max-laptop-large:gap-lg max-laptop:items-start">
           <div className="flex flex-col gap-md text-right text-white">
             <h2 className="heading--sub-large flex items-center gap-sm">
@@ -86,7 +89,7 @@ export default function ContactBanner() {
             </a>
           </div>
         </div>
-      </div>
+      </InviewWrapper>
     </section>
   );
 }

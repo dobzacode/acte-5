@@ -25,10 +25,11 @@ export default function Home() {
       ></TitleSection>
 
       <StaggeredText
+        inview
         variant={FromTopStaggerVariant}
         staggerValue={0.05}
         delay={1}
-        className="heading--sub-large section-px max-w-[35ch] text-pretty text-center laptop:mx-auto"
+        className="heading--sub-large section-px h-fit max-w-[35ch] text-pretty text-center laptop:mx-auto"
       >
         Il n’y a pas que la Revue Scoute dans la vie !
       </StaggeredText>

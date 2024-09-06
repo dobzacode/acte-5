@@ -42,7 +42,7 @@ export default function DateModal({
     <Modal scrollBehavior="inside" placement="center" isOpen={isOpen} onOpenChange={onOpenChange}>
       <ModalContent
         className={cn(
-          'mt-5xl tablet:min-w-[40rem] laptop:min-w-[50rem]',
+          'mx-sm mt-5xl max-mobile-large:mt-3xl tablet:min-w-[40rem] laptop:min-w-[50rem]',
           headerOffset === '-100px' && '!mt-0'
         )}
       >

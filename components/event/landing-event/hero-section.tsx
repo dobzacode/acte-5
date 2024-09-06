@@ -3,10 +3,10 @@ import DivWrapper from '@/components/framer-motion/div-wrapper';
 
 export default function HeroSection({ isSpectacle = false }: { isSpectacle?: boolean }) {
   return (
-    <section className="max-w-screen h-[calc(85vh)] w-full bg-white after:absolute after:bg-white tablet:h-[calc(95vhpx)]">
+    <section className="max-w-screen h-[calc(85vh)] w-full bg-white after:absolute after:bg-white tablet:h-[95vh]">
       <DivWrapper
         variant={ComingFromLeftVariant}
-        className="absolute left-0 top-0 z-10 flex h-[calc(85vh)] w-full items-center justify-center overflow-hidden rounded-br-2xl bg-gray-200 mobile-large:rounded-br-4xl tablet:h-[calc(95vhpx)] tablet:rounded-br-6xl laptop:rounded-br-8xl"
+        className="absolute left-0 top-0 z-10 flex h-[calc(85vh)] w-full items-center justify-center overflow-hidden rounded-br-2xl bg-gray-200 mobile-large:rounded-br-4xl tablet:h-[95vh] tablet:rounded-br-6xl laptop:rounded-br-8xl"
       >
         <video
           autoPlay

@@ -12,6 +12,7 @@ interface StaggeredTextProps {
   once?: boolean;
   margin?: string;
   delay?: number;
+  inview?: boolean;
 }
 
 export default function StaggeredText({
@@ -21,16 +22,18 @@ export default function StaggeredText({
   staggerValue = 0.05,
   once = true,
   margin,
-  delay = 0
+  delay = 0,
+  inview = true
 }: StaggeredTextProps) {
   return (
     <motion.p
       transition={{ staggerChildren: staggerValue, delayChildren: delay }}
       initial="hidden"
-      whileInView="enter"
+      whileInView={inview ? undefined : 'enter'}
+      animate={inview ? 'enter' : undefined}
       viewport={{ once: once, margin: margin }}
       exit={{ opacity: 0, transition: { duration: 0.5 } }}
-      className={cn(className)}
+      className={cn(className, 'h-fit')}
     >
       {children.split(' ').map((word) => {
         return (

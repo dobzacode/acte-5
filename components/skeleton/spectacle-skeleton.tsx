@@ -5,9 +5,9 @@ import { Skeleton } from '@/components/ui/skeleton';
 
 export default function SpectacleSkeleton() {
   return (
-    <main className="section-px relative mx-auto flex w-full flex-col items-center justify-center gap-2xl overflow-hidden py-5xl laptop:container laptop:py-7xl">
-      <div className="flex w-full flex-col gap-5 self-start laptop:container laptop:mx-auto">
-        <Skeleton className="h-14 w-1/2 rounded-xs" />
+    <section className="max-laptop:section-px relative mx-auto flex w-full flex-col items-center justify-center gap-xl mobile-large:gap-2xl laptop:max-w-[50rem]">
+      <div className="flex w-full flex-col gap-5 self-start laptop:mx-auto">
+        <Skeleton className="h-14 w-1/2 rounded-xs max-mobile-large:w-2/3" />
 
         <Skeleton className="h-6 w-2/5 rounded-xs" />
       </div>
@@ -29,6 +29,6 @@ export default function SpectacleSkeleton() {
       <ParagraphSkeleton length={5}></ParagraphSkeleton>
       <TitleSkeleton />
       <MainPictureSkeleton size="w-full"></MainPictureSkeleton>
-    </main>
+    </section>
   );
 }
