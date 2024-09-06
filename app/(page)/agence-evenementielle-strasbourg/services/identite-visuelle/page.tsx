@@ -43,6 +43,7 @@ export default function Home() {
             impactante et efficace marque les esprits et reste dans les mémoires
           </h2>
           <Image
+            priority={true}
             className="rounded-sm"
             src={image}
             placeholder="blur"

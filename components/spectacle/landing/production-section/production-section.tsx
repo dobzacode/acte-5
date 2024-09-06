@@ -7,10 +7,10 @@ import ScrollImage from './scroll-image';
 
 export default function ProductionSection() {
   return (
-    <section className="section-px section-inner-py last-section-inner-py inner-section-gap relative  flex w-full items-center  bg-primary-400 text-white laptop:container laptop:mx-auto">
-      <div className="inner-section-gap flex flex-col ">
+    <section className="section-px section-inner-py last-section-inner-py inner-section-gap relative flex w-full items-center bg-primary-400 text-white laptop:container laptop:mx-auto">
+      <div className="inner-section-gap flex flex-col">
         <InviewWrapper className="whitespace-nowrap" variant={ComingFromLeftVariant}>
-          <h2 className="heading--extra-large  text-pretty">Production de spectacle</h2>
+          <h2 className="heading--extra-large text-pretty">Production de spectacle</h2>
         </InviewWrapper>
         <InviewWrapper
           variant={ComingFromLeftVariant}
@@ -89,7 +89,7 @@ export default function ProductionSection() {
           >
             <Link
               href="/spectacles-strasbourg/a-propos"
-              className="sub-heading shadow-primary-sm 0 flex w-fit items-center gap-xs rounded-sm border-b-2 border-r-2 border-black bg-white px-md py-sm text-black laptop:gap-sm laptop:px-lg laptop:py-md "
+              className="sub-heading shadow-primary-sm 0 flex w-fit items-center gap-xs rounded-sm border-b-2 border-r-2 border-black bg-white px-md py-sm text-black laptop:gap-sm laptop:px-lg laptop:py-md"
               scroll={false}
             >
               <span> En savoir plus sur notre expertise</span>
@@ -98,7 +98,7 @@ export default function ProductionSection() {
         </InviewWrapper>
       </div>
 
-      <ScrollImage className="max-laptop:hidden ">
+      <ScrollImage className="max-laptop:hidden">
         <Image src="/placeholder-image.png" alt="image" fill className="rounded-sm object-cover" />
       </ScrollImage>
     </section>

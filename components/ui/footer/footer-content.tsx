@@ -19,7 +19,7 @@ export default function FooterContent() {
             className="sub-heading pb-sm text-md font-medium hover:opacity-hover"
             href="/agence-evenementielle-strasbourg"
           >
-            Evenementiel
+            Evénementiel
           </Link>
           <Link
             scroll={false}

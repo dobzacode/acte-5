@@ -41,6 +41,7 @@ export default function Home() {
             temps d&apos;un instant pour se retrouver avec soi-même dans le but de servir le groupe.
           </h2>
           <Image
+            priority={true}
             className="rounded-sm"
             src={image}
             placeholder="blur"

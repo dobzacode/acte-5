@@ -42,6 +42,7 @@ export default async function Post({ post }: { post: PostQueryResponse }) {
     <>
       {mainImage ? (
         <Image
+          priority={true}
           className="shrink-0 rounded-sm"
           src={mainImage}
           alt={post.mainImage.alt ? post.mainImage.alt : ''}

@@ -42,6 +42,7 @@ export default function Home() {
             sur une piste de danse, boire du champagne comme de l&apos;eau…
           </h2>
           <Image
+            priority={true}
             placeholder="blur"
             className="rounded-sm"
             src={image}

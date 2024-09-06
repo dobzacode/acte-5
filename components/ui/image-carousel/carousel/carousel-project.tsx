@@ -72,10 +72,10 @@ const CarouselProject: React.FC<CarouselProjectProps> = ({
             <CarouselItem key={`${image}-${index}`} className={cn(className)}>
               <ImagePulsing
                 key={index}
-                
+                skeletoncss="h-full object-cover w-full"
                 width={800}
                 height={800}
-                className={cn(innerClassName, "cursor-pointer")}
+                className={cn(innerClassName, 'cursor-pointer')}
                 sizes={'(max-width: 640px) 100vw, 50vw'}
                 src={image.url}
                 placeholder="blur"

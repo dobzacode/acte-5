@@ -42,6 +42,7 @@ export default async function Page() {
             gloire, de reconnaissance.
           </h2>
           <Image
+            priority={true}
             className="rounded-sm"
             src={image}
             placeholder="blur"

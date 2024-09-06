@@ -40,6 +40,7 @@ export default function Home() {
             Nous conceptualisons et réalisons vos vidéos d'entreprise sur mesure
           </h2>
           <Image
+            priority={true}
             className="rounded-sm"
             src={image}
             placeholder="blur"

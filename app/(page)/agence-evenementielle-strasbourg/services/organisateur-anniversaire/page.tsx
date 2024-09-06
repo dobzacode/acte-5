@@ -42,6 +42,7 @@ export default function Home() {
             Elle jubile de célébrer son anniversaire…
           </h2>
           <Image
+            priority={true}
             className="rounded-sm"
             src={image}
             sizes={'(max-width: 640px) 100vw, (min-width: 640px) 80vw'}

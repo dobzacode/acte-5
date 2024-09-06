@@ -10,9 +10,8 @@ import {
   CarouselNext,
   CarouselPrevious
 } from '@/components/ui/carousel';
-import ImagePulsing from '@/components/ui/image-pulsing';
 import { cn, dynamicBlurDataUrl } from '@/lib/utils';
-import { StaticImageData } from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import alexis_pic from '/public/assets/event/a-propos/alexis_koessel.jpg';
 import brinbellepic from '/public/assets/event/a-propos/brinbelle_chambet.jpg';
 import charle_pic from '/public/assets/event/a-propos/charles_alain_billard.jpg';
@@ -127,7 +126,7 @@ export default async function TeamSection() {
                     'card relative flex h-full flex-col items-center gap-md rounded-sm border-0 p-0 shadow-xl'
                   )}
                 >
-                  <ImagePulsing
+                  <Image
                     width={400}
                     height={400}
                     className={cn(
@@ -138,7 +137,7 @@ export default async function TeamSection() {
                     src={image.src}
                     placeholder="blur"
                     alt={image.alt ? image.alt : `Image ${index + 1}`}
-                  ></ImagePulsing>
+                  ></Image>
 
                   {'name' in image && (
                     <div className="relative z-20 flex h-full flex-col items-center gap-sm text-pretty rounded-b-sm bg-white px-md pb-md text-center">

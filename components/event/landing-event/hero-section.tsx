@@ -27,7 +27,7 @@ export default function HeroSection({ isSpectacle = false }: { isSpectacle?: boo
         </video>
         {!isSpectacle && (
           <h1 className="heading--extra-large relative z-20 w-[18ch] text-center text-white">
-            agence de communication évenementielle spectaculaire
+            agence de communication événementielle spectaculaire
           </h1>
         )}
       </DivWrapper>

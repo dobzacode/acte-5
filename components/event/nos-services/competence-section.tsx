@@ -1,3 +1,5 @@
+import { FadeInVariant } from '@/components/framer-motion/div-variants';
+import DivWrapper from '@/components/framer-motion/div-wrapper';
 import ScrollWrapper from '@/components/framer-motion/scroll-wrapper';
 import Image from 'next/image';
 import designimage from '/public/assets/event/services/movingimage/design-graphique.jpg';
@@ -6,7 +8,11 @@ import spectacleimage from '/public/assets/event/services/movingimage/spectacle.
 
 export default function CompetenceSection() {
   return (
-    <ul className="relative flex w-full flex-col gap-2xl overflow-x-clip tablet:gap-7xl">
+    <DivWrapper
+      variant={FadeInVariant}
+      tag="ul"
+      className="relative flex w-full flex-col gap-2xl overflow-x-clip tablet:gap-7xl"
+    >
       <ScrollWrapper tag="li" className="flex w-full items-center justify-center">
         <Image
           src={evenementimage}
@@ -18,7 +24,7 @@ export default function CompetenceSection() {
         />
 
         <div className="flex flex-col gap-md">
-          <h2 className="heading--large text-primary-400">Evenementiel</h2>
+          <h2 className="heading--large text-primary-400">Evénementiel</h2>
           <p className="sub-heading max-w-[50ch]">
             Chaque événement est une œuvre d'art. Nous concevons, planifions et mettons en scène des
             expériences mémorables qui laissent une empreinte durable dans le cœur de vos cibles.
@@ -59,6 +65,6 @@ export default function CompetenceSection() {
           </p>
         </div>
       </ScrollWrapper>
-    </ul>
+    </DivWrapper>
   );
 }

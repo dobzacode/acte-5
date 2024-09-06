@@ -1,6 +1,7 @@
 'use client';
 
 import { BreadcrumbItem, Breadcrumbs } from '@nextui-org/react';
+import Link from 'next/link';
 
 interface UiBreadcrumbsProps {
   className?: string;
@@ -15,8 +16,10 @@ export default function UiBreadcrumbs({ element, className }: UiBreadcrumbsProps
     <Breadcrumbs className={className}>
       {element instanceof Array ? (
         element.map((child, index) => (
-          <BreadcrumbItem href={child.href} key={index}>
-            {child.text}
+          <BreadcrumbItem key={index}>
+            <Link scroll={false} href={child.href}>
+              {child.text}
+            </Link>
           </BreadcrumbItem>
         ))
       ) : (

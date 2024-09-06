@@ -45,6 +45,7 @@ export default async function Home() {
             à mettre en place. Convivialité et sentiment d&apos;appartenance sont au rendez-vous !
           </h2>
           <Image
+            priority={true}
             className="rounded-sm"
             src={image}
             placeholder="blur"

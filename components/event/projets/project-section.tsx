@@ -1,6 +1,8 @@
 'use client';
 
 import { EventWithImgAndIndex } from '@/app/(page)/agence-evenementielle-strasbourg/projets/page';
+import { FadeInVariant } from '@/components/framer-motion/div-variants';
+import DivWrapper from '@/components/framer-motion/div-wrapper';
 import ImagePulsing from '@/components/ui/image-pulsing';
 import {
   DropdownMenu,
@@ -87,7 +89,7 @@ export default function ProjectSection({ events }: { events: EventWithImgAndInde
   const getSortOrder = () => searchParams.get('ordre') || 'desc';
 
   return (
-    <section className="laptop:section-px flex flex-col justify-between gap-xl laptop:container laptop:mx-auto">
+    <DivWrapper variant={FadeInVariant} tag="section" className="laptop:section-px flex flex-col justify-between gap-xl laptop:container laptop:mx-auto">
       <div className="mx-auto flex w-fit gap-sm">
         <nav className="body relative z-40 flex w-fit shrink-0 self-center overflow-hidden rounded-sm border p-xs font-normal shadow-md before:absolute before:right-0 before:top-0 before:-z-10 before:h-full before:w-full before:bg-white">
           <ul className="[&>li>button]:body flex h-full [&>li]:px-md [&>li]:py-xs">
@@ -191,7 +193,7 @@ export default function ProjectSection({ events }: { events: EventWithImgAndInde
             {filteredEvents.map((event, index) => (
               <motion.li
                 key={`${event.titre}-${index}-${event.slug.current}`}
-                className="group relative flex aspect-square h-full w-full items-end overflow-hidden rounded-b-sm rounded-t-sm bg-black shadow-md duration-medium hover:scale-110 hover:rounded-t-sm hover:shadow-xl hover:before:max-w-full"
+                className="group relative flex aspect-square h-full w-full items-end overflow-hidden rounded-b-sm rounded-t-sm bg-black shadow-md duration-medium hover:scale-110 hover:rounded-t-sm hover:shadow-xl hover:grayscale hover:before:max-w-full"
                 initial={{ opacity: 0, y: -10 }}
                 animate={{
                   opacity: 1,
@@ -202,14 +204,14 @@ export default function ProjectSection({ events }: { events: EventWithImgAndInde
                   }
                 }}
                 exit={{ opacity: 0 }}
-                style={{ zIndex: 30 - index }}
+                style={{ zIndex: 800 - index }}
               >
                 <Link
                   scroll={false}
                   className="group relative z-40 flex h-full w-full flex-col-reverse after:absolute after:left-0 after:top-0 after:z-10 after:h-full after:w-full after:bg-gradient-to-t after:from-black/100 after:to-transparent after:to-30%"
                   href={`/agence-evenementielle-strasbourg/projets/${event.slug.current}`}
                 >
-                  <motion.h3
+                  <motion.div
                     className={`sub-heading before-bg relative z-50 text-pretty px-md text-white duration-slow hover:duration-fast`}
                     initial={{
                       opacity: 0,
@@ -234,8 +236,8 @@ export default function ProjectSection({ events }: { events: EventWithImgAndInde
                     }}
                     exit={{ opacity: 0 }}
                   >
-                    {event.titre}
-                  </motion.h3>
+                    <h3 className="line-clamp-3">{event.titre}</h3>
+                  </motion.div>
                   {event.src && (
                     <ImagePulsing
                       fill
@@ -251,6 +253,6 @@ export default function ProjectSection({ events }: { events: EventWithImgAndInde
           </AnimatePresence>
         </ul>
       </section>
-    </section>
+    </DivWrapper>
   );
 }

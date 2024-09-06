@@ -42,6 +42,7 @@ export default function Home() {
             dans un discours inaugural pour souhaiter la réussite de ce nouveau projet.
           </h2>
           <Image
+            priority={true}
             className="rounded-sm"
             src={image}
             placeholder="blur"

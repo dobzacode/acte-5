@@ -39,6 +39,7 @@ export default function ScouteSection() {
           variant={ComingFromRightVariant}
         >
           <Image
+            priority={true}
             src={pic1}
             placeholder="blur"
             alt="Photo de spectacle"

@@ -98,6 +98,7 @@ export default function ServiceSection() {
         <div className="grid h-full w-full grid-cols-10 grid-rows-[200px_200px] gap-2 tablet:grid-rows-[200px_200px_200px] tablet:gap-4">
           {GRID_CHILDREN().map((child, index) => (
             <InviewWrapper
+              key={index}
               id={child.key ?? undefined}
               style={{ zIndex: -index + 20, position: 'relative' }}
               viewport={{ once: true }}

@@ -20,15 +20,15 @@ export default async function DistributionSection({
   console.log(withUrl);
 
   return (
-    <section className=" inner-section-gap flex w-full flex-col ">
+    <section className="inner-section-gap flex w-full flex-col">
       <InviewWrapper
-        className="heading--sub-extra-large  text-primary-400 "
+        className="heading--sub-extra-large text-primary-400"
         tag="h2"
         variant={ComingFromLeftVariant}
       >
         Distribution
       </InviewWrapper>
-      <ul className="relative -z-10 grid w-full grid-cols-3 items-center gap-sm mobile-large:gap-lg tablet:grid-cols-4   laptop:grid-cols-5">
+      <ul className="relative -z-10 grid w-full grid-cols-3 items-center gap-sm mobile-large:gap-lg tablet:grid-cols-4 laptop:grid-cols-5">
         {withUrl.map((people, index) => {
           return (
             <InviewWrapper
@@ -38,7 +38,7 @@ export default async function DistributionSection({
               variant={{
                 hidden: {
                   opacity: 0,
-                  y: -200
+                  y: 200
                 },
                 enter: {
                   opacity: 1,
@@ -50,10 +50,10 @@ export default async function DistributionSection({
                 },
                 exit: {
                   opacity: 0,
-                  y: -200
+                  y: 200
                 }
               }}
-              className="card relative flex h-full w-full  flex-col gap-md overflow-hidden px-0 pt-0"
+              className="card relative flex h-full w-full flex-col gap-md overflow-hidden px-0 pt-0"
             >
               <div className="relative aspect-[3/4] w-full">
                 <Image

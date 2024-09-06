@@ -37,6 +37,7 @@ export default function Home() {
           tag="section"
         >
           <Image
+            priority={true}
             className="rounded-sm"
             src={image}
             placeholder="blur"

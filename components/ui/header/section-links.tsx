@@ -17,7 +17,7 @@ export default function SectionLinks({ pathname }: { pathname: string }) {
         )}
       >
         <Link scroll={false} href="/agence-evenementielle-strasbourg">
-          Evenementiel
+          Evénementiel
         </Link>
       </li>
       <li

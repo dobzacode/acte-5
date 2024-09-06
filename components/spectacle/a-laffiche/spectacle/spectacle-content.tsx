@@ -76,6 +76,7 @@ export default async function SpectacleContent({
       <div className="flex h-full gap-md max-tablet:flex-col-reverse">
         {mainImage ? (
           <Image
+            priority={true}
             className="h-full rounded-sm"
             src={mainImage}
             alt="My Image"
