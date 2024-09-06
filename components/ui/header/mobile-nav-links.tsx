@@ -38,11 +38,11 @@ export default function MobileNavLinks({
           <Link
             scroll={false}
             className={cn(
-              'heading  w-fit rounded-xs px-sm py-1 text-black hover:bg-primary-400 hover:text-white',
+              'heading w-fit rounded-xs px-sm py-sm text-black hover:bg-primary-400 hover:text-white',
               `${pathname.includes(link.href) && 'pointer-events-none'}`,
               index % 2 === 0 ? 'hvr-grow-rotate' : 'hvr-grow-rotate-reverse',
               pathname.includes(link.href)
-                ? '   bg-primary-400 text-white before:max-w-full'
+                ? 'bg-primary-400 text-white before:max-w-full'
                 : 'before:max-w-0'
             )}
             href={link.href}

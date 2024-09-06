@@ -1,4 +1,4 @@
-import { notEmpty } from '@/lib/utils';
+import { decodeAssetId, notEmpty } from '@/lib/utils';
 import { sanityFetch } from '@/sanity/lib/fetch';
 import { SPECTACLES_QUERY, SpectaclesQueryResponse } from '@/sanity/lib/queries';
 import { urlForImage } from '@/sanity/lib/utils';
@@ -20,9 +20,10 @@ export default async function Affiches() {
   const withUrl = await Promise.all(
     spectacles.map(async (spectacle) => {
       try {
+        const { width, height } = decodeAssetId(spectacle.mainImage?.asset._ref);
         const url = await urlForImage(spectacle.mainImage)
-          .width(1920)
-          .height(1080)
+          .width(width)
+          .height(height)
           .dpr(2)
           .quality(80)
           .url();

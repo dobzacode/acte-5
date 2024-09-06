@@ -1,5 +1,6 @@
 import HeroSection from '@/components/event/landing-event/hero-section';
 import CalendrierSection from '@/components/spectacle/a-laffiche/calendrier-section';
+import ContactSection from '@/components/spectacle/contact-section';
 import ProductionSection from '@/components/spectacle/landing/production-section/production-section';
 import ScouteSection from '@/components/spectacle/landing/scoute-section/scoute-section';
 import SpectacleSection from '@/components/spectacle/landing/spectacle-section';
@@ -21,7 +22,7 @@ export default function Home() {
       <SpectacleSection></SpectacleSection>
 
       <ProductionSection></ProductionSection>
-      <div className="relative z-20 h-[50rem] w-full bg-white"></div>
+      <ContactSection></ContactSection>
     </main>
   );
 }

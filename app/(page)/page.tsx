@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <main className="section-px flex h-full flex-col items-center justify-between gap-xl pb-3xl pt-5xl tablet:gap-xl tablet:py-6xl laptop:gap-3xl laptop:py-6xl laptop-large:py-7xl [&>section:last-child]:pb-0">
+      <main className="section-px mx-auto flex h-full flex-col items-center justify-between gap-xl pb-3xl pt-5xl laptop:container tablet:gap-xl tablet:py-6xl laptop:gap-3xl laptop:py-6xl laptop-large:py-7xl [&>section:last-child]:pb-0">
         <DivWrapper
           className="inner-section-gap flex flex-col items-center"
           variant={ComingFromTopVariant}
@@ -37,12 +37,12 @@ export default function Home() {
             href="agence-evenementielle-strasbourg"
           >
             <DivWrapper
-              className="group relative flex flex-col items-center justify-center gap-md overflow-hidden rounded-md p-md grayscale duration-medium after:absolute after:bottom-0 after:z-10 after:h-full after:w-full after:bg-gradient-to-t after:from-black after:from-5% after:to-transparent after:opacity-0 after:duration-medium hover:grayscale-0 hover:after:opacity-100 tablet:h-[400px]"
+              className="group relative flex flex-col items-center justify-center gap-md overflow-hidden rounded-sm p-md grayscale duration-medium after:absolute after:bottom-0 after:z-10 after:h-full after:w-full after:bg-gradient-to-t after:from-black after:from-5% after:to-transparent after:opacity-0 after:duration-medium hover:grayscale-0 hover:after:opacity-100 tablet:h-[400px]"
               variant={ComingFromLeftVariant}
             >
               <Image
                 alt="Photo de spectacle"
-                className="rounded-md object-cover"
+                className="rounded-sm object-cover"
                 fill
                 placeholder="blur"
                 sizes={'(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw'}
@@ -59,12 +59,12 @@ export default function Home() {
           </Link>
           <Link scroll={false} className="w-fit tablet:w-1/2" href="spectacles-strasbourg">
             <DivWrapper
-              className="group relative flex flex-col items-center justify-center gap-md overflow-hidden rounded-md p-md grayscale duration-medium after:absolute after:bottom-0 after:z-10 after:h-full after:w-full after:bg-gradient-to-t after:from-black after:from-5% after:to-transparent after:opacity-0 after:duration-medium hover:grayscale-0 hover:after:opacity-100 tablet:h-[400px]"
+              className="group relative flex flex-col items-center justify-center gap-md overflow-hidden rounded-sm p-md grayscale duration-medium after:absolute after:bottom-0 after:z-10 after:h-full after:w-full after:bg-gradient-to-t after:from-black after:from-5% after:to-transparent after:opacity-0 after:duration-medium hover:grayscale-0 hover:after:opacity-100 tablet:h-[400px]"
               variant={ComingFromRightVariant}
             >
               <Image
                 alt="Photo de spectacle"
-                className="rounded-md object-cover"
+                className="rounded-sm object-cover"
                 fill
                 placeholder="blur"
                 sizes={'(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw'}

@@ -31,7 +31,6 @@ export default function SpectacleCard({
         },
         exit: {
           opacity: 0,
-          y: 300,
           transition: {
             y: { duration: 0.2, delay: index * 0.3 }
           }
@@ -44,7 +43,7 @@ export default function SpectacleCard({
         className="flex flex-col gap-md"
         href={`/spectacles-strasbourg/a-laffiche/${spectacle.slug.current}`}
       >
-        <div className="relative aspect-square h-[20rem]">
+        <div className="relative aspect-square">
           <Image
             sizes={'(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw'}
             alt={spectacle.mainImage.alt ?? ''}
@@ -52,7 +51,7 @@ export default function SpectacleCard({
             blurDataURL={spectacle.blurSrc}
             fill
             placeholder="blur"
-            className="rounded-xs object-cover"
+            className="rounded-xs rounded-b-none object-cover"
           ></Image>
         </div>
         <p className="sub-heading px-sm text-center font-medium">{spectacle.titre}</p>
