@@ -1,5 +1,6 @@
 import { ComingFromLeftVariant } from '@/components/framer-motion/div-variants';
 import InviewWrapper from '@/components/framer-motion/inview-wrapper';
+import { decodeAssetId, notEmpty } from '@/lib/utils';
 import { DistributionItem } from '@/sanity/lib/queries';
 import { urlForImage } from '@/sanity/lib/utils';
 import Image from 'next/image';
@@ -9,15 +10,26 @@ export default async function DistributionSection({
 }: {
   distribution: DistributionItem[];
 }) {
-  const withUrl = await Promise.all(
-    distribution.map(async (item) => {
-      const url = await urlForImage(item.picture).width(800).height(800).dpr(2).quality(80).url();
-      const blurSrc = urlForImage(item.picture).width(20).quality(20).url();
-      return { ...item, blurSrc, url };
-    })
-  );
+  const withUrl =
+    (await Promise.all(
+      distribution.map(async (item) => {
+        try {
+          const { width, height } = decodeAssetId(item.picture.asset._ref);
+          const url = await urlForImage(item.picture)
+            .width(width)
+            .height(height)
+            .dpr(2)
+            .quality(80)
+            .url();
+          const blurSrc = urlForImage(item.picture).width(20).quality(20).url();
+          return { ...item, blurSrc, url };
+        } catch (e) {
+          return null;
+        }
+      })
+    )) ?? [];
 
-  console.log(withUrl);
+  const imageArr = withUrl.filter(notEmpty);
 
   return (
     <section className="inner-section-gap flex w-full flex-col">
@@ -29,7 +41,7 @@ export default async function DistributionSection({
         Distribution
       </InviewWrapper>
       <ul className="relative -z-10 grid w-full grid-cols-3 items-center gap-sm mobile-large:gap-lg tablet:grid-cols-4 laptop:grid-cols-5">
-        {withUrl.map((people, index) => {
+        {imageArr.map((people, index) => {
           return (
             <InviewWrapper
               key={people._key}

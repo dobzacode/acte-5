@@ -4,6 +4,7 @@ import {
 } from '@/components/framer-motion/div-variants';
 import InviewWrapper from '@/components/framer-motion/inview-wrapper';
 import CustomPortableText from '@/components/sanity/portable-text';
+import { decodeAssetId } from '@/lib/utils';
 import { sanityFetch } from '@/sanity/lib/fetch';
 import { REVUESCOUTEACTUELLE_QUERY, RevueScouteActuelleQueryResponse } from '@/sanity/lib/queries';
 import { urlForImage } from '@/sanity/lib/utils';
@@ -24,13 +25,19 @@ export default async function Section2024() {
     return notFound();
   }
 
-  const mainUrl = await urlForImage(revueScouteActuelle[0].mainImage)
-    .width(1920)
-    .height(1080)
-    .dpr(2)
-    .quality(80)
-    .url();
-  const blurSrc = await urlForImage(revueScouteActuelle[0].mainImage).width(20).quality(20).url();
+  let mainUrl;
+  try {
+    const { width, height } = decodeAssetId(revueScouteActuelle[0].mainImage?.asset._ref);
+    mainUrl = await urlForImage(revueScouteActuelle[0].mainImage)
+      .width(width)
+      .height(height)
+      .dpr(2)
+      .quality(80)
+      .url();
+  } catch (e) {
+    console.error(e);
+    mainUrl = null;
+  }
 
   return (
     <section className="section-px main-gap flex flex-col laptop:container laptop:mx-auto">
@@ -42,19 +49,20 @@ export default async function Section2024() {
         >
           {revueScouteActuelle[0].titre}
         </InviewWrapper>
-        <InviewWrapper
-          variant={ComingFromRightVariant}
-          className="relative h-[30rem] w-full overflow-hidden rounded-sm"
-        >
-          <Image
-            src={mainUrl}
-            blurDataURL={blurSrc}
-            sizes={'(max-width: 640px) 100vw, (max-width: 768px) 50vw, 90vw'}
-            fill
-            alt="image"
-            className="object-cover"
-          ></Image>
-        </InviewWrapper>
+        {mainUrl && (
+          <InviewWrapper
+            variant={ComingFromRightVariant}
+            className="relative h-fit w-full overflow-hidden rounded-sm"
+          >
+            <Image
+              src={mainUrl}
+              sizes={'(max-width: 640px) 100vw, (max-width: 768px) 50vw, 90vw'}
+              alt={revueScouteActuelle[0].mainImage.alt ?? ''}
+              width={1200}
+              height={800}
+            ></Image>
+          </InviewWrapper>
+        )}
 
         <InviewWrapper variant={ComingFromLeftVariant} className="prose prose-base max-w-full">
           <CustomPortableText value={revueScouteActuelle[0].description}></CustomPortableText>
