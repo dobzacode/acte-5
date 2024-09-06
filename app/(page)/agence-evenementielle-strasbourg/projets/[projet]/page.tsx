@@ -1,9 +1,11 @@
 import { EVENTS_QUERY, EVENT_QUERY, EventQueryResponse } from '@/sanity/lib/queries';
 
 import ProjectpageContent from '@/components/event/projets/project/project-content';
+import PostpageSkeleton from '@/components/skeleton/postpage-skeleton';
 import { sanityFetch } from '@/sanity/lib/fetch';
 import { resolveOpenGraphImage } from '@/sanity/lib/utils';
 import { Metadata, ResolvingMetadata } from 'next';
+import { Suspense } from 'react';
 
 type Props = {
   params: { projet: string };
@@ -41,5 +43,9 @@ export async function generateMetadata(
 }
 
 export default function Page({ params }: Props) {
-  return <ProjectpageContent params={params}></ProjectpageContent>;
+  return (
+    <Suspense fallback={<PostpageSkeleton />}>
+      <ProjectpageContent params={params}></ProjectpageContent>
+    </Suspense>
+  );
 }

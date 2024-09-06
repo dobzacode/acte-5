@@ -1,8 +1,8 @@
 import LogoFetchWrapper from '@/components/event/landing-event/trust-section/logo-fetch-wrapper';
 import { EventWithImg } from '@/components/event/nos-services/last-event-image';
 import ProjectFetchWrapper from '@/components/event/projets/project-fetch-wrapper';
-import { ComingFromRightVariant } from '@/components/framer-motion/div-variants';
-import InviewWrapper from '@/components/framer-motion/inview-wrapper';
+import { FadeInVariant } from '@/components/framer-motion/div-variants';
+import DivWrapper from '@/components/framer-motion/div-wrapper';
 import { Skeleton } from '@/components/ui/skeleton';
 import TitleSection from '@/components/ui/title-section';
 import { Metadata } from 'next';
@@ -20,7 +20,7 @@ export interface EventWithImgAndIndex extends EventWithImg {
 
 export default async function Home() {
   return (
-    <main className="relative flex w-full flex-col gap-xl overflow-hidden pt-5xl mobile-small:gap-3xl tablet:pt-7xl">
+    <main className="relative flex w-full flex-col gap-3xl overflow-hidden pt-5xl tablet:pt-7xl">
       <TitleSection
         title={'NOS PROJETS'}
         element={[
@@ -28,13 +28,11 @@ export default async function Home() {
           { href: '/agence-evenementielle-strasbourg/projets', text: 'Nos projets' }
         ]}
       ></TitleSection>
-      <InviewWrapper
-        className=""
-        variant={ComingFromRightVariant}
-        viewport={{ once: true, margin: '-200px 0px -200px 0px' }}
-      >
+
+      <DivWrapper variant={FadeInVariant}>
         <LogoFetchWrapper isTrustSection={false}></LogoFetchWrapper>
-      </InviewWrapper>
+      </DivWrapper>
+
       <Suspense
         fallback={
           <section className="relative flex h-full min-h-[60rem] justify-center overflow-x-clip duration-medium">

@@ -11,6 +11,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import evenementimage from '/public/assets/event/landing/competence/evenementiel.png';
 import spectacleimage from '/public/assets/event/landing/competence/spectacle.png';
+import placeholder from '/public/placeholder-image.png';
 
 const COMPETENCE = [
   {
@@ -29,6 +30,7 @@ const COMPETENCE = [
   {
     name: 'GRAPHISME',
     category: 'graphisme',
+    src: placeholder,
     description:
       'La communication visuelle habille nos événements et nos spectacles, mais pas seulement...'
   }
@@ -36,12 +38,14 @@ const COMPETENCE = [
 
 const variantLeft: Variants = {
   hidden: { x: -700, opacity: 0 },
-  enter: { x: 0, opacity: 1 }
+  enter: { x: 0, opacity: 1 },
+  exit: { x: 700, opacity: 0 }
 };
 
 const variantRight: Variants = {
   hidden: { x: 700, opacity: 0 },
-  enter: { x: 0, opacity: 1 }
+  enter: { x: 0, opacity: 1 },
+  exit: { x: -700, opacity: 0 }
 };
 
 export default function CompetenceSection() {
@@ -70,11 +74,11 @@ export default function CompetenceSection() {
                     {item.description}
                   </p>
                   <Image
+                    placeholder={'blur'}
                     src={item.src ?? '/placeholder-image.png'}
-                    className="z-10 duration-medium group-hover:-translate-x-1/2 group-hover:rounded-r-sm"
+                    className="z-10 object-cover object-top duration-medium group-hover:-translate-x-1/2 group-hover:rounded-r-sm"
                     fill
                     alt=""
-                    objectFit="cover"
                   ></Image>
                 </Link>
               </InviewWrapper>
@@ -99,10 +103,10 @@ export default function CompetenceSection() {
                     </h3>
                     <Image
                       src={item.src ?? '/placeholder-image.png'}
-                      className="z-10 duration-medium"
+                      className="z-10 object-cover object-top duration-medium"
                       fill
+                      placeholder={'blur'}
                       alt=""
-                      objectFit="cover"
                     ></Image>
                   </div>
                   <p className="body font-Linkght relative z-10 w-fit p-md duration-medium">

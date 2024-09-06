@@ -52,7 +52,7 @@ export default function LogoSlider({
                       className={cn(
                         'cursor-pointer rounded-t-sm p-md mobile-large:p-md tablet:p-lg laptop:p-xl'
                       )}
-                      sizes={'(max-width: 640px) 100vw, 30vw'}
+                      sizes={'(max-width: 640px) 33vw, 30vw'}
                       src={image.url}
                       placeholder="blur"
                       blurDataURL={image.blurSrc}
@@ -96,7 +96,7 @@ export default function LogoSlider({
             {logos.map((image, index) => (
               <CarouselItem
                 key={image.title}
-                className="flex shrink-0 basis-1/4 flex-col justify-between laptop:basis-[17%] laptop-large:basis-[12.5%]"
+                className="flex shrink-0 basis-1/3 flex-col justify-between mobile-large:basis-1/4 laptop:basis-[17%] laptop-large:basis-[12.5%]"
               >
                 <div
                   className={cn(

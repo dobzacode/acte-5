@@ -15,11 +15,11 @@
   }
 
   .heading--extra-large {
-    @apply font-[Quasimoda] text-xl font-bold leading-xl mobile-large:text-2xl mobile-large:leading-2xl tablet:text-3xl tablet:leading-3xl laptop:text-3xl laptop:leading-3xl laptop-large:text-4xl laptop-large:leading-4xl;
+    @apply font-[Quasimoda] text-[2.5rem] font-bold leading-[2.5rem] mobile-medium:text-xl mobile-medium:leading-xl mobile-large:text-2xl mobile-large:leading-2xl tablet:text-3xl tablet:leading-3xl laptop:text-3xl laptop:leading-3xl laptop-large:text-4xl laptop-large:leading-4xl;
   }
 
   .heading--sub-extra-large {
-    @apply font-[Quasimoda] text-xl font-bold leading-xl mobile-large:text-xl mobile-large:leading-xl tablet:text-2xl tablet:leading-2xl laptop:text-3xl laptop:leading-[6.5rem];
+    @apply font-[Quasimoda] text-[2.5rem] font-bold leading-[2.5rem] mobile-medium:text-xl mobile-medium:leading-xl mobile-large:text-xl mobile-large:leading-xl tablet:text-2xl tablet:leading-2xl laptop:text-3xl laptop:leading-[6.5rem];
   }
 
   .heading--large {

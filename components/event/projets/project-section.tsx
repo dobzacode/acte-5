@@ -89,8 +89,12 @@ export default function ProjectSection({ events }: { events: EventWithImgAndInde
   const getSortOrder = () => searchParams.get('ordre') || 'desc';
 
   return (
-    <DivWrapper variant={FadeInVariant} tag="section" className="laptop:section-px flex flex-col justify-between gap-xl laptop:container laptop:mx-auto">
-      <div className="mx-auto flex w-fit gap-sm">
+    <DivWrapper
+      variant={FadeInVariant}
+      tag="section"
+      className="laptop:section-px flex flex-col justify-between gap-xl laptop:container laptop:mx-auto"
+    >
+      <div className="section-px mx-auto flex w-fit flex-wrap justify-center gap-sm">
         <nav className="body relative z-40 flex w-fit shrink-0 self-center overflow-hidden rounded-sm border p-xs font-normal shadow-md before:absolute before:right-0 before:top-0 before:-z-10 before:h-full before:w-full before:bg-white">
           <ul className="[&>li>button]:body flex h-full [&>li]:px-md [&>li]:py-xs">
             <li
@@ -110,7 +114,7 @@ export default function ProjectSection({ events }: { events: EventWithImgAndInde
             </li>
             <li
               className={cn(
-                'relative flex origin-center items-center justify-center overflow-hidden whitespace-nowrap border-r',
+                'relative flex origin-center items-center justify-center overflow-hidden whitespace-nowrap tablet:border-r',
                 isSortSelected('date') ? 'text-black' : 'text-default-400',
                 'duration-medium'
               )}
@@ -146,7 +150,7 @@ export default function ProjectSection({ events }: { events: EventWithImgAndInde
 
             <li
               className={cn(
-                'relative flex origin-center items-center justify-center overflow-hidden whitespace-nowrap text-default-400 duration-medium'
+                'relative flex origin-center items-center justify-center overflow-hidden whitespace-nowrap text-default-400 duration-medium max-tablet:hidden'
               )}
             >
               <DropdownMenu>
@@ -157,7 +161,7 @@ export default function ProjectSection({ events }: { events: EventWithImgAndInde
                   {Array.from(new Set(events.flatMap((event) => event.categories))).map(
                     (category) => (
                       <DropdownMenuCheckboxItem
-                        className="body"
+                        className="body !text-black"
                         key={category}
                         onCheckedChange={(checked) => {
                           handleFilter([category]);
@@ -173,6 +177,37 @@ export default function ProjectSection({ events }: { events: EventWithImgAndInde
             </li>
           </ul>
         </nav>
+        <li
+          className={cn(
+            'body relative z-40 flex w-fit shrink-0 self-center overflow-hidden rounded-sm border p-xs font-normal shadow-md before:absolute before:right-0 before:top-0 before:-z-10 before:h-full before:w-full before:bg-white tablet:hidden'
+          )}
+        >
+          <DropdownMenu>
+            <DropdownMenuTrigger
+              className={cn(
+                'text-default-400',
+                searchParams?.get('categorie') && 'text-black',
+                'border-none px-md py-xs outline-none focus:outline-none'
+              )}
+            >
+              Filtrer par catégorie
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="rounded-xs">
+              {Array.from(new Set(events.flatMap((event) => event.categories))).map((category) => (
+                <DropdownMenuCheckboxItem
+                  className="body"
+                  key={category}
+                  onCheckedChange={(checked) => {
+                    handleFilter([category]);
+                  }}
+                  checked={isCategorySelected(category)}
+                >
+                  {category}
+                </DropdownMenuCheckboxItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </li>
         <div
           className={cn(
             'body relative z-40 flex w-fit shrink-0 self-center overflow-hidden rounded-sm border p-xs font-normal shadow-md duration-medium before:absolute before:right-0 before:top-0 before:-z-10 before:h-full before:w-full before:bg-white',
@@ -188,7 +223,7 @@ export default function ProjectSection({ events }: { events: EventWithImgAndInde
       </div>
 
       <section className="relative flex h-full min-h-[60rem] justify-center overflow-x-clip duration-medium">
-        <ul className="section-px grid grid-cols-2 justify-center gap-sm self-start laptop:container mobile-large:grid-cols-3 laptop:mx-auto">
+        <ul className="section-px grid w-full grid-cols-2 justify-center gap-sm self-start laptop:container mobile-large:grid-cols-3 laptop:mx-auto">
           <AnimatePresence mode="wait">
             {filteredEvents.map((event, index) => (
               <motion.li

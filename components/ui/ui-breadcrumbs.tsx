@@ -16,8 +16,11 @@ export default function UiBreadcrumbs({ element, className }: UiBreadcrumbsProps
     <Breadcrumbs className={className}>
       {element instanceof Array ? (
         element.map((child, index) => (
-          <BreadcrumbItem key={index}>
-            <Link scroll={false} href={child.href}>
+          <BreadcrumbItem
+            className="break-words [&>*>*]:!line-clamp-2 [&>*>*]:!whitespace-break-spaces"
+            key={index}
+          >
+            <Link className="overflow-ellipsis" scroll={false} href={child.href}>
               {child.text}
             </Link>
           </BreadcrumbItem>

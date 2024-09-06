@@ -41,7 +41,7 @@ export default function Header({ className }: { className?: string }) {
   return (
     <section
       className={cn(
-        `z-50 flex h-4xl w-full items-center justify-between border-b border-black border-opacity-10 bg-transparent bg-white bg-opacity-75 px-md py-md mobile-large:gap-3xl laptop:px-xl laptop-large:px-2xl`,
+        `z-50 flex h-4xl w-full items-center justify-between border-b border-black border-opacity-10 bg-transparent bg-white bg-opacity-75 px-md py-md max-mobile-large:h-3xl mobile-large:gap-3xl laptop:px-xl laptop-large:px-2xl`,
         !showMenu && 'overflow-hidden'
       )}
     >
@@ -115,7 +115,7 @@ export default function Header({ className }: { className?: string }) {
             {!isLaptop ? (
               <motion.nav
                 className={cn(
-                  'absolute left-0 z-10 flex max-w-full flex-col px-sm mobile-small:top-4xl mobile-medium:top-4xl mobile-large:top-5xl'
+                  'absolute left-0 top-[5rem] z-10 flex max-w-full flex-col px-sm mobile-large:top-5xl'
                 )}
               >
                 <ul

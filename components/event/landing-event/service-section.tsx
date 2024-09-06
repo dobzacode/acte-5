@@ -1,9 +1,7 @@
 import {
   ComingFromLeftVariant,
-  ComingFromRightVariant,
-  FullTranslateFromLeft
+  ComingFromRightVariant
 } from '@/components/framer-motion/div-variants';
-import DivWrapper from '@/components/framer-motion/div-wrapper';
 import DivHoverWrapper from '@/components/framer-motion/hover-wrapper';
 import InviewWrapper from '@/components/framer-motion/inview-wrapper';
 import Marquee from '@/components/framer-motion/marquee';
@@ -81,12 +79,7 @@ export default function ServiceSection() {
   };
 
   return (
-    <DivWrapper
-      noExit={true}
-      variant={FullTranslateFromLeft}
-      tag="section"
-      className="relative z-20 flex w-full flex-col gap-2xl overflow-hidden overflow-x-clip bg-black"
-    >
+    <section className="relative z-20 flex w-full flex-col gap-2xl overflow-hidden overflow-x-clip bg-black">
       <Marquee>
         <p className="heading--extra-large text-white">{ONGLETS}</p>
       </Marquee>
@@ -101,7 +94,6 @@ export default function ServiceSection() {
               key={index}
               id={child.key ?? undefined}
               style={{ zIndex: -index + 20, position: 'relative' }}
-              viewport={{ once: true }}
               className={child.props.className}
               variant={{
                 hidden: { y: -300, opacity: 0 },
@@ -161,6 +153,6 @@ export default function ServiceSection() {
       <Marquee inverted>
         <p className="heading--extra-large text-white">{ONGLETSBIS}</p>
       </Marquee>
-    </DivWrapper>
+    </section>
   );
 }

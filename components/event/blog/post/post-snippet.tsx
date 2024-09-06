@@ -29,6 +29,7 @@ export default function PostSnippet({
   return (
     <div className={cn('group flex w-full gap-lg', className)}>
       <Link
+        scroll={false}
         className="relative aspect-square w-1/2 max-tablet:hidden"
         href={`blog/${post.slug.current}`}
       >
@@ -53,7 +54,7 @@ export default function PostSnippet({
           viewport={{ margin: '-20%' }}
         >
           <h2 className="heading--sub-extra-large text-pretty text-primary-400">
-            <Link className="text-pretty" href={`blog/${post.slug.current}`}>
+            <Link scroll={false} className="text-pretty" href={`blog/${post.slug.current}`}>
               {post.titre}
             </Link>
           </h2>

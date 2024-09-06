@@ -57,7 +57,7 @@ export default function FooterContent() {
             Contact
           </Link>
         </section>
-        <section className="flex flex-col gap-sm">
+        <section className="flex flex-col gap-sm max-mobile-large:mr-auto">
           <Link
             scroll={false}
             className="sub-heading pb-sm text-md font-medium hover:opacity-hover"

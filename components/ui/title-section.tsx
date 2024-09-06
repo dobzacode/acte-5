@@ -24,7 +24,7 @@ export default function TitleSection({
   return (
     <DivWrapper
       className={cn(
-        'section-px flex flex-col gap-5 self-start laptop:container laptop:mx-auto',
+        'section-px flex flex-col gap-5 self-start break-words laptop:container laptop:mx-auto',
         className
       )}
       tag="section"
@@ -36,8 +36,8 @@ export default function TitleSection({
       {subtitle && (
         <h2 className={cn('heading container -my-sm text-pretty text-black')}>{subtitle}</h2>
       )}
-      <UiBreadcrumbs className="body" element={element}></UiBreadcrumbs>
-      {description && <p className="sub-heading max-w-[60ch] pt-lg">{description}</p>}
+      <UiBreadcrumbs className="body break-words" element={element}></UiBreadcrumbs>
+      {description && <p className="sub-heading max-w-[60ch] break-words pt-lg">{description}</p>}
     </DivWrapper>
   );
 }
