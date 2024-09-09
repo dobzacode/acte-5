@@ -1,7 +1,4 @@
-import {
-  ComingFromBottomVariant,
-  FromTopStaggerVariant
-} from '@/components/framer-motion/div-variants';
+import { FadeInVariant, FromTopStaggerVariant } from '@/components/framer-motion/div-variants';
 import DivHoverWrapper from '@/components/framer-motion/hover-wrapper';
 import InviewWrapper from '@/components/framer-motion/inview-wrapper';
 import StaggeredText from '@/components/framer-motion/staggered-text';
@@ -15,14 +12,13 @@ export default function AproposSection() {
       <CompetenceSection></CompetenceSection>
       <div className="section-px flex flex-col items-center gap-lg text-center mobile-large:gap-xl tablet:gap-2xl">
         <StaggeredText
-          margin={'-200px 0px -200px 0px'}
           staggerValue={0.05}
           className="heading--sub-extra-large text-pretty"
           variant={FromTopStaggerVariant}
         >
           Toujours pas convaincu ?
         </StaggeredText>
-        <InviewWrapper className="h-fit" variant={ComingFromBottomVariant}>
+        <InviewWrapper className="h-fit" variant={FadeInVariant}>
           <DivHoverWrapper
             className="group w-fit origin-center duration-medium hover:opacity-90"
             variant={{

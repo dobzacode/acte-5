@@ -1,6 +1,6 @@
 'use client';
 
-import { FadeInVariant } from '@/components/framer-motion/div-variants';
+import { ComingFromTopVariant, FadeInVariant } from '@/components/framer-motion/div-variants';
 import DivWrapper from '@/components/framer-motion/div-wrapper';
 import useBetterMediaQuery from '@/hooks/use-better-media-query';
 import { cn } from '@/lib/utils';
@@ -42,7 +42,8 @@ export default function Header({ className }: { className?: string }) {
     <section
       className={cn(
         `z-50 flex h-4xl w-full items-center justify-between border-b border-black border-opacity-10 bg-transparent bg-white bg-opacity-75 px-md py-md max-mobile-large:h-3xl mobile-large:gap-3xl laptop:px-xl laptop-large:px-2xl`,
-        !showMenu && 'overflow-hidden'
+        !showMenu && 'overflow-hidden',
+        pathname === '/' && 'relative max-laptop:justify-between'
       )}
     >
       <div className="flex items-center gap-md">
@@ -87,18 +88,25 @@ export default function Header({ className }: { className?: string }) {
           setShowMenu(false);
         }}
         className={cn(
-          'body relative z-40 flex shrink-0 self-center overflow-hidden rounded-sm p-xs font-normal shadow-md duration-slow ease-in-out before:absolute before:right-0 before:top-0 before:-z-10 before:h-full before:w-full before:bg-white max-laptop:absolute max-laptop:left-1/2 max-laptop:top-1/2 max-laptop:-translate-x-1/2 max-laptop:-translate-y-1/2 max-laptop:self-center',
-          pathname === '/' && 'max-laptop:translate-x-1/2'
+          'body relative z-40 flex shrink-0 self-center overflow-hidden rounded-sm p-xs font-normal shadow-md duration-slow ease-in-out before:absolute before:right-0 before:top-0 before:-z-10 before:h-full before:w-full before:bg-white max-laptop:absolute max-laptop:right-1/2 max-laptop:top-1/2 max-laptop:-translate-y-1/2 max-laptop:translate-x-1/2 max-laptop:self-center',
+          pathname === '/' && 'max-laptop:right-md max-laptop:translate-x-0 max-laptop:self-auto'
         )}
       >
         <SectionLinks pathname={pathname}></SectionLinks>
       </nav>
       <AnimatePresence mode="wait">
-        {pathname.includes('agence-evenementielle-strasbourg') ||
-        pathname.includes('spectacles-strasbourg') ? (
-          <div key="menu" className={cn('flex shrink-0 items-center laptop:hidden')}>
+        {!isLaptop ? (
+          <DivWrapper
+            variant={ComingFromTopVariant}
+            inverseOnExit
+            key="menu"
+            className={cn('flex shrink-0 items-center laptop:hidden', pathname === '/' && 'hidden')}
+          >
             <Hamburger
-              className={cn('h-fit w-xl duration-fast hover:scale-105')}
+              className={cn(
+                'h-fit w-xl duration-fast hover:scale-105',
+                pathname === '/' && 'hidden'
+              )}
               showMenu={showMenu}
               setShowMenu={setShowMenu}
             ></Hamburger>
@@ -107,42 +115,40 @@ export default function Header({ className }: { className?: string }) {
               exit={{ y: '-100%' }}
               transition={{ duration: 500 }}
               className={cn(
-                'absolute left-0 top-0 -z-20 h-screen w-screen max-w-0 bg-transparent bg-white bg-opacity-100 duration-medium ease-in-out',
+                'absolute left-0 top-0 -z-20 h-[120vh] w-screen max-w-0 bg-transparent bg-white bg-opacity-100 duration-medium ease-in-out',
                 showMenu ? 'max-w-full' : 'delay-300'
               )}
             ></motion.div>
 
-            {!isLaptop ? (
-              <motion.nav
+            <motion.nav
+              className={cn(
+                'absolute left-0 top-[5rem] z-10 flex max-w-full flex-col px-sm mobile-large:top-5xl'
+              )}
+            >
+              <ul
                 className={cn(
-                  'absolute left-0 top-[5rem] z-10 flex max-w-full flex-col px-sm mobile-large:top-5xl'
+                  'flex flex-col gap-md opacity-0',
+                  showMenu ? 'translate-y-0 opacity-100 delay-200 duration-slow' : 'duration-300'
                 )}
               >
-                <ul
-                  className={cn(
-                    'flex flex-col gap-md opacity-0',
-                    showMenu ? 'translate-y-0 opacity-100 delay-200 duration-slow' : 'duration-300'
-                  )}
-                >
-                  {pathname.includes('agence-evenementielle-strasbourg') ? (
-                    <MobileNavLinks
-                      key={'event-laptop-navigation'}
-                      setShowMenu={setShowMenu}
-                      pathname={pathname}
-                      isEvent={true}
-                    />
-                  ) : (
-                    <MobileNavLinks
-                      key={'spectacle-laptop-navigation'}
-                      setShowMenu={setShowMenu}
-                      pathname={pathname}
-                      isEvent={false}
-                    />
-                  )}
-                </ul>
-              </motion.nav>
-            ) : null}
-          </div>
+                {pathname.includes('agence-evenementielle-strasbourg') ? (
+                  <MobileNavLinks
+                    key={'event-laptop-navigation'}
+                    setShowMenu={setShowMenu}
+                    pathname={pathname}
+                    isEvent={true}
+                  />
+                ) : (
+                  <MobileNavLinks
+                    key={'spectacle-laptop-navigation'}
+                    setShowMenu={setShowMenu}
+                    pathname={pathname}
+                    isEvent={false}
+                  />
+                )}
+              </ul>
+            </motion.nav>
+          </DivWrapper>
         ) : null}
       </AnimatePresence>
     </section>
