@@ -46,8 +46,9 @@ export default function ProductionSection() {
           tag="p"
           className="sub-heading h-fit laptop:w-1/2"
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing eli, sed do eiusmod tempor incididunt
-          ut labore et dolore magna. Lorem ipsum dolor sit amet, consectetur adipiscing el
+          Acte 5 vous offre des spectacles d'humour pleins d'énergie et de répartie. Entre sketches
+          mordants et rires assurés, nos créations promettent de moments de bonne humeur et de fous
+          rires partagés !
         </InviewWrapper>
 
         <InviewWrapper

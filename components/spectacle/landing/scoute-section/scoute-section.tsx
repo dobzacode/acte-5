@@ -27,8 +27,8 @@ export default function ScouteSection() {
           variant={ComingFromRightVariant}
           className="sub-heading w-[40ch] text-pretty text-center"
         >
-          Le plus grand cabaret satirique d’alsace se moque de tout et de tout le monde depuis 50
-          ans dans un spectacle
+          Le plus grand cabaret satirique d&apos;alsace se moque de tout et de tout le monde depuis
+          50 ans dans un spectacle unique en Français
         </InviewWrapper>
       </div>
 
@@ -48,8 +48,8 @@ export default function ScouteSection() {
             className="rounded-sm"
           ></Image>
           <p className="sub-heading w-[40ch] text-pretty mobile-large:text-center">
-            Lorem ipsum dolor sit amet, consectetur adipiscing eli, sed do eiusmod tempor incididunt
-            ut labore et dolore magna. Lorem ipsum dolor sit amet, consectetur adipiscing el
+            Sur scène, huit comédiens et quatre musiciens composent une mosaïque vivante où la
+            parodie et la dérision règnent en maîtres.
           </p>
         </InviewWrapper>
         <InviewWrapper
@@ -65,8 +65,8 @@ export default function ScouteSection() {
             className="rounded-sm"
           ></Image>
           <p className="sub-heading w-[40ch] text-pretty mobile-large:text-center">
-            Lorem ipsum dolor sit amet, consectetur adipiscing eli, sed do eiusmod tempor incididunt
-            ut labore et dolore magna. Lorem ipsum dolor sit amet, consectetur adipiscing el
+            Habillés de nombreux décors et costumes, la vingtaine de tableaux satiriques s'enchaine
+            tandis que la musique accompagne chaque rebondissement avec une énergie contagieuse.
           </p>
         </InviewWrapper>
         <InviewWrapper className="flex w-full justify-center" variant={ComingFromBottomVariant}>

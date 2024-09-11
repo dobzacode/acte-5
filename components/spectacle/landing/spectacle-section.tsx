@@ -10,13 +10,13 @@ import { LuArrowUpRight } from 'react-icons/lu';
 
 export default function SpectacleSection() {
   return (
-    <section className="section-inner-py max-w-screen inner-section-py relative z-20 w-full bg-white mobile-large:rounded-br-4xl  mobile-large:rounded-tl-4xl  tablet:rounded-br-6xl  tablet:rounded-tl-6xl  laptop:rounded-br-8xl laptop:rounded-tl-8xl">
-      <div className="section-px inner-section-gap flex w-full flex-col items-center   laptop:container laptop:mx-auto">
+    <section className="section-inner-py max-w-screen inner-section-py relative z-20 w-full bg-white mobile-large:rounded-br-4xl mobile-large:rounded-tl-4xl tablet:rounded-br-6xl tablet:rounded-tl-6xl laptop:rounded-br-8xl laptop:rounded-tl-8xl">
+      <div className="section-px inner-section-gap flex w-full flex-col items-center laptop:container laptop:mx-auto">
         <InviewWrapper variant={ComingFromLeftVariant}>
           <h1 className="heading--extra-large max-w-[30ch] text-center">Spectacle d'entreprise</h1>
         </InviewWrapper>
         <InviewWrapper
-          className="heading max-w-[30ch] text-pretty text-center "
+          className="heading max-w-[30ch] text-pretty text-center"
           variant={ComingFromRightVariant}
           tag="p"
         >
@@ -25,30 +25,6 @@ export default function SpectacleSection() {
           d&apos;humour !
         </InviewWrapper>
         <div className="inner-section-gap relative z-20 flex w-full items-center justify-around text-pretty text-center">
-          <InviewWrapper
-            tag="p"
-            variant={{
-              hidden: {
-                opacity: 0,
-                x: -200
-              },
-              enter: {
-                opacity: 1,
-                x: 0,
-                transition: {
-                  type: 'spring',
-                  damping: 20
-                }
-              },
-              exit: {
-                opacity: 0,
-                x: -200
-              }
-            }}
-            className="sub-heading relative -z-10 max-tablet:hidden"
-          >
-            LOREM IPSUM DOLOR SIT AMET
-          </InviewWrapper>
           <InviewWrapper
             className="relative -z-20"
             variant={{
@@ -77,29 +53,6 @@ export default function SpectacleSection() {
               className="rounded-sm"
             ></Image>
           </InviewWrapper>
-          <InviewWrapper
-            variant={{
-              hidden: {
-                opacity: 0,
-                x: 200
-              },
-              enter: {
-                opacity: 1,
-                x: 0,
-                transition: {
-                  type: 'spring',
-                  damping: 20
-                }
-              },
-              exit: {
-                opacity: 0,
-                x: 200
-              }
-            }}
-            className="sub-heading relative -z-10 max-tablet:hidden"
-          >
-            LOREM IPSUM DOLOR SIT AMET
-          </InviewWrapper>
         </div>
         <DivHoverWrapper
           className="group w-fit origin-center duration-medium hover:opacity-90"
@@ -117,7 +70,7 @@ export default function SpectacleSection() {
         >
           <Link
             href="/agence-evenementielle-strasbourg/services/spectacle-entreprise"
-            className="sub-heading group  relative flex w-fit items-center gap-xs   rounded-sm before:absolute before:-bottom-2  before:z-10 before:h-[1px] before:w-full before:max-w-0 before:bg-black before:duration-medium after:absolute after:-bottom-2 after:z-10  after:h-[1px] after:w-full after:bg-black/20 hover:before:max-w-full laptop:gap-sm "
+            className="sub-heading group relative flex w-fit items-center gap-xs rounded-sm before:absolute before:-bottom-2 before:z-10 before:h-[1px] before:w-full before:max-w-0 before:bg-black before:duration-medium after:absolute after:-bottom-2 after:z-10 after:h-[1px] after:w-full after:bg-black/20 hover:before:max-w-full laptop:gap-sm"
             scroll={false}
           >
             <span>Découvrir d'avantage</span>
