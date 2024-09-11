@@ -33,12 +33,12 @@ export default function SpectacleCalendar({ dates }: { dates: DateItemCalWithout
   const isTablet = useBetterMediaQuery('(min-width: 768px)');
 
   const colors = [
-    'to-primary-400',
-    'to-secondary-400',
-    'to-blue-400',
-    'to-slate-400',
-    'to-destructive-400',
-    'to-info-400'
+    'bg-primary-400 ',
+    'bg-secondary-400 ',
+    'bg-blue-400 ',
+    'bg-slate-400 ',
+    'bg-destructive-400 ',
+    'bg-info-400 '
   ];
   const modifiers = stopDatesArray.reduce<Record<string, Date[]>>((acc, dates, index) => {
     acc[`modifier_${index}`] = dates.map((date) => new Date(date));
@@ -47,7 +47,7 @@ export default function SpectacleCalendar({ dates }: { dates: DateItemCalWithout
 
   const modifiersClassNames = stopDatesArray.reduce<Record<string, string>>((acc, _, index) => {
     acc[`modifier_${index}`] =
-      `bg-gradient-to-br from-transparent from-85% ${colors[index % colors.length]} rounded-xs text-destructive`;
+      ` ${colors[index % colors.length]} rounded-xs text-destructive font-medium text-white`;
     return acc;
   }, {});
 

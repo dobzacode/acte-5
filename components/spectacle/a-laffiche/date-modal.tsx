@@ -48,7 +48,7 @@ export default function DateModal({
       >
         {(onClose) => (
           <>
-            <ModalHeader className="pointer-events-none relative flex h-fit w-full gap-md self-start rounded-[0.5px] rounded-t-sm !bg-primary-400 px-md py-md text-left text-md text-white tap-highlight-transparent hover:!bg-white hover:!text-black focus:outline-none active:!bg-white">
+            <ModalHeader className="pointer-events-none relative flex h-fit w-full gap-md self-start rounded-[0.5px] rounded-t-sm px-md py-md text-left text-md text-black tap-highlight-transparent hover:!bg-white hover:!text-black focus:outline-none active:!bg-white">
               <p className="flex shrink-0 gap-xs whitespace-nowrap">
                 <span className="flex flex-col font-[Avenir]">
                   {new Date(selectedDate.dates[0]).toISOString().split('T')[0].split('-')[2]}
@@ -114,7 +114,7 @@ export default function DateModal({
               {selectedDate.lien && (
                 <a href={selectedDate.lien}>
                   <UiButton color="primary" onPress={onClose} className="body">
-                    En savoir plus
+                    Je prends mon billet
                   </UiButton>
                 </a>
               )}

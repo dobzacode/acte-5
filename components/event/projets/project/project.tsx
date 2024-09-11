@@ -44,7 +44,7 @@ export default async function Project({ project }: { project: EventQueryResponse
       </div>
       {imageArr && (
         <CarouselProject
-          className="basis-full"
+          className="basis-full rounded-xs bg-primary-50 !pl-0"
           innerClassName="flex h-full w-full grow cursor-pointer items-center justify-center object-contain object-center"
           imageArr={imageArr}
         />

@@ -1,16 +1,11 @@
-import {
-  ComingFromBottomVariant,
-  ComingFromTopVariant
-} from '@/components/framer-motion/div-variants';
-import InviewWrapper from '@/components/framer-motion/inview-wrapper';
 import { sanityFetch } from '@/sanity/lib/fetch';
 import { AFFICHES_QUERY, AffichesQueryResponse, Image as SanityImage } from '@/sanity/lib/queries';
 import { urlForImage } from '@/sanity/lib/utils';
 import { draftMode } from 'next/headers';
 
-import CarouselProject from '@/components/ui/image-carousel/carousel/carousel-project';
 import { decodeAssetId, notEmpty } from '@/lib/utils';
 import { notFound } from 'next/navigation';
+import PastGrid from './past-grid';
 
 export default async function PastSection() {
   const affiches = await sanityFetch<AffichesQueryResponse>({
@@ -22,8 +17,6 @@ export default async function PastSection() {
   if (!affiches) {
     return notFound();
   }
-
-  console.log(affiches);
 
   const imagesWithUrl = affiches[0]
     ? await Promise.all(
@@ -53,28 +46,8 @@ export default async function PastSection() {
   const filteredImages = imagesWithUrl.filter(notEmpty);
 
   return (
-    <section className="inner-section-gap flex w-full flex-col overflow-hidden bg-primary-400 py-xl">
-      <InviewWrapper
-        variant={ComingFromTopVariant}
-        tag="h2"
-        className="heading--sub-extra-large section-px text-center text-white"
-      >
-        Et pour la postérité...
-      </InviewWrapper>
-
-      <InviewWrapper
-        viewport={{ once: true, margin: '200px 0px 200px 0px' }}
-        variant={ComingFromBottomVariant}
-      >
-        <CarouselProject
-          previousClassName="left-xl shrink-0"
-          nextClassName="right-xl shrink-0"
-          outerClassName="section-px  relative"
-          innerClassName="object-cover h-full"
-          className="basis-full mobile-large:basis-1/2 tablet:basis-1/3 laptop:basis-1/3 laptop-large:basis-1/5 laptop-large:pr-sm"
-          imageArr={filteredImages}
-        />
-      </InviewWrapper>
+    <section className="flex w-full flex-col overflow-hidden py-xl">
+      <PastGrid imageArr={filteredImages}></PastGrid>
     </section>
   );
 }

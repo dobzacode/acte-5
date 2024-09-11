@@ -187,7 +187,7 @@ const CarouselPrevious = React.forwardRef<HTMLButtonElement, React.ComponentProp
         size={size}
         className={cn(
           'relative h-8 w-8 shrink-0 rounded-full duration-fast hover:shadow-md tablet:h-10 tablet:w-10',
-          orientation === 'horizontal' ? ' top-1/2 ' : '-top-12  rotate-90',
+          orientation === 'horizontal' ? 'top-1/2' : '-top-12 rotate-90',
           className
         )}
         disabled={!canScrollPrev}
@@ -213,7 +213,7 @@ const CarouselNext = React.forwardRef<HTMLButtonElement, React.ComponentProps<ty
         size={size}
         className={cn(
           'relative h-8 w-8 shrink-0 rounded-full duration-fast hover:shadow-md tablet:h-10 tablet:w-10',
-          orientation === 'horizontal' ? 'top-1/2 ' : ' left-1/2  rotate-90',
+          orientation === 'horizontal' ? 'top-1/2' : 'left-1/2 rotate-90',
           className
         )}
         disabled={!canScrollNext}
