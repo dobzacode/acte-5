@@ -78,7 +78,7 @@ export default async function DistributionSection({
                   className="object-cover"
                 ></Image>
               </div>
-              <p className="sub-heading px-sm text-center">{people.nom}</p>
+              <p className="sub-heading px-sm text-center [word-spacing:50000px]">{people.nom}</p>
             </InviewWrapper>
           );
         })}

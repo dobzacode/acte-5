@@ -109,7 +109,7 @@ export default async function LastEvent({
               {imageArr.map((image, index) => (
                 <CarouselItem
                   key={`${image.titre}-${index}`}
-                  className="basis-full mobile-large:basis-1/2 tablet:basis-1/3 laptop:basis-1/3 laptop-large:basis-1/3 laptop-large:pr-sm"
+                  className="basis-full duration-medium hover:grayscale mobile-large:basis-1/2 tablet:basis-1/3 laptop:basis-1/3 laptop-large:basis-1/3 laptop-large:pr-sm"
                 >
                   <Link
                     scroll={false}

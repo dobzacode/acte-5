@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <main className="section-px mx-auto flex h-full flex-col items-center justify-between gap-xl pb-3xl pt-5xl laptop:container tablet:gap-xl tablet:py-6xl laptop:gap-3xl laptop:py-6xl laptop-large:py-7xl [&>section:last-child]:pb-0">
+      <main className="section-px mx-auto flex h-full w-full flex-col items-center justify-between gap-xl pb-3xl pt-4xl mobile-large:pt-5xl tablet:gap-xl tablet:py-6xl laptop:gap-3xl laptop:py-6xl laptop-large:py-7xl [&>section:last-child]:pb-0">
         <DivWrapper
           className="inner-section-gap flex flex-col items-center"
           variant={ComingFromTopVariant}
@@ -30,14 +30,14 @@ export default function Home() {
             agence de communication événementielle spectaculaire
           </h1>
         </DivWrapper>
-        <section className="inner-section-gap container flex max-w-[1200px] justify-between max-tablet:flex-col laptop:justify-center">
+        <section className="inner-section-gap flex justify-between max-tablet:flex-col laptop:justify-center">
           <Link
             scroll={false}
-            className="w-fit tablet:w-1/2"
+            className="h-fit w-fit tablet:w-1/2"
             href="agence-evenementielle-strasbourg"
           >
             <DivWrapper
-              className="group relative flex flex-col items-center justify-center gap-md overflow-hidden rounded-sm p-md grayscale duration-medium after:absolute after:bottom-0 after:z-10 after:h-full after:w-full after:bg-gradient-to-t after:from-black after:from-5% after:to-transparent after:opacity-0 after:duration-medium hover:grayscale-0 hover:after:opacity-100 tablet:h-[400px]"
+              className="group relative flex h-[300px] flex-col items-center justify-center gap-md overflow-hidden rounded-sm p-md grayscale duration-medium after:absolute after:bottom-0 after:z-10 after:h-full after:w-full after:bg-gradient-to-t after:from-black after:from-5% after:to-transparent after:opacity-0 after:duration-medium hover:grayscale-0 hover:after:opacity-100 tablet:h-[400px]"
               variant={ComingFromLeftVariant}
             >
               <Image
@@ -59,7 +59,7 @@ export default function Home() {
           </Link>
           <Link scroll={false} className="w-fit tablet:w-1/2" href="spectacles-strasbourg">
             <DivWrapper
-              className="group relative flex flex-col items-center justify-center gap-md overflow-hidden rounded-sm p-md grayscale duration-medium after:absolute after:bottom-0 after:z-10 after:h-full after:w-full after:bg-gradient-to-t after:from-black after:from-5% after:to-transparent after:opacity-0 after:duration-medium hover:grayscale-0 hover:after:opacity-100 tablet:h-[400px]"
+              className="group relative flex h-[300px] flex-col items-center justify-center gap-md overflow-hidden rounded-sm p-md grayscale duration-medium after:absolute after:bottom-0 after:z-10 after:h-full after:w-full after:bg-gradient-to-t after:from-black after:from-5% after:to-transparent after:opacity-0 after:duration-medium hover:grayscale-0 hover:after:opacity-100 tablet:h-[400px]"
               variant={ComingFromRightVariant}
             >
               <Image
@@ -74,8 +74,10 @@ export default function Home() {
                 SPECTACLE
               </h2>
               <p className="sub-heading relative z-20 mt-auto translate-y-[200%] self-end text-pretty text-center text-white duration-medium group-hover:translate-y-0">
-                Retrouvez toutes les infos sur nos spectacles tel que la Revue Scoute : billetterie
-                et date de représentation, c&apos;est par ici !{' '}
+                scénographie, costumes, nombre de scènes et, de chants : <br />
+                ici la vingtaine de tableaux satiriques s'enchaine, chacun habillés de divers décors
+                et autres costumes loufoques, tandis que la musique accompagne chaque rebondissement
+                avec une énergie contagieuse.
               </p>
             </DivWrapper>
           </Link>

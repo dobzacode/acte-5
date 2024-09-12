@@ -33,8 +33,9 @@ function MyPage() {
         <DivWrapper
           key="popup-calendar"
           variant={FadeInVariant}
-          className="card fixed bottom-lg right-lg z-50 flex h-[140px] flex-col gap-md border border-black/[0.05] p-xl"
+          className="card fixed bottom-lg right-lg z-50 flex h-[140px] flex-col gap-md overflow-hidden border border-black/[0.05] px-2xl py-xl"
         >
+          <div className="absolute left-0 top-0 h-full w-[8px] bg-primary-400"></div>
           <X
             size={16}
             className="body absolute right-sm top-sm z-20 cursor-pointer"

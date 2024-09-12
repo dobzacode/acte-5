@@ -108,9 +108,7 @@ export default function LogoSlider({
                     width={0}
                     height={0}
                     style={{ width: '100%', height: 'auto' }}
-                    className={cn(
-                      'cursor-pointer rounded-t-sm p-md mobile-large:p-md tablet:p-lg laptop:p-xl'
-                    )}
+                    className={cn('cursor-pointer rounded-t-sm p-md')}
                     sizes={'(max-width: 640px) 100vw, 30vw'}
                     src={image.url}
                     placeholder="blur"

@@ -14,6 +14,9 @@
 /.next/
 /out/
 
+# affiche
+/affiches
+
 # production
 /build
 

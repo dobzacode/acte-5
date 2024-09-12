@@ -13,7 +13,8 @@ export default function InviewWrapper({
   tag = 'div',
   noExit,
   whileHover,
-  ref
+  ref,
+  custom
 }: {
   style?: MotionStyle | undefined;
   variant: Variants | undefined;
@@ -26,6 +27,7 @@ export default function InviewWrapper({
   noExit?: boolean;
   whileHover?: any;
   ref?: any;
+  custom?: number;
 }) {
   //@ts-expect-error tag is a string
   const MotionComponent = motion[tag];
@@ -46,6 +48,7 @@ export default function InviewWrapper({
         if (noExit) return;
         return inverseOnExit ? 'exit' : 'hidden';
       }}
+      custom={custom}
     >
       {children}
     </MotionComponent>

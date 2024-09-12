@@ -3,6 +3,8 @@ import { AFFICHES_QUERY, AffichesQueryResponse, Image as SanityImage } from '@/s
 import { urlForImage } from '@/sanity/lib/utils';
 import { draftMode } from 'next/headers';
 
+import { ComingFromTopVariant } from '@/components/framer-motion/div-variants';
+import InviewWrapper from '@/components/framer-motion/inview-wrapper';
 import { decodeAssetId, notEmpty } from '@/lib/utils';
 import { notFound } from 'next/navigation';
 import PastGrid from './past-grid';
@@ -27,7 +29,7 @@ export default async function PastSection() {
               .width(width)
               .height(height)
               .dpr(2)
-              .quality(80)
+              .quality(100)
               .url();
             image.blurSrc = urlForImage(image).width(width).height(height).quality(20).url();
 
@@ -46,7 +48,16 @@ export default async function PastSection() {
   const filteredImages = imagesWithUrl.filter(notEmpty);
 
   return (
-    <section className="flex w-full flex-col overflow-hidden py-xl">
+    <section
+      className={`inner-section-gap relative z-[40] flex w-full flex-col justify-center overflow-hidden bg-primary-400 py-2xl duration-medium mobile-small:py-3xl mobile-medium:py-2xl tablet:py-4xl laptop:gap-2xl`}
+    >
+      <InviewWrapper
+        className="heading--sub-extra-large section-px text-center text-white"
+        tag="h2"
+        variant={ComingFromTopVariant}
+      >
+        Les anciennes éditions
+      </InviewWrapper>
       <PastGrid imageArr={filteredImages}></PastGrid>
     </section>
   );

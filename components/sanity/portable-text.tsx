@@ -3,7 +3,13 @@ import { PortableText, PortableTextBlock, PortableTextComponents } from '@portab
 import { getImageDimensions } from '@sanity/asset-utils';
 import urlBuilder from '@sanity/image-url';
 
-export default function CustomPortableText({ value }: { value: PortableTextBlock[] }) {
+export default function CustomPortableText({
+  value,
+  textSize = 'body'
+}: {
+  value: PortableTextBlock[];
+  textSize?: string;
+}) {
   const SampleImageComponent = ({ value, isInline }: { value: any; isInline: string }) => {
     const { width, height } = getImageDimensions(value);
     return (
@@ -33,7 +39,7 @@ export default function CustomPortableText({ value }: { value: PortableTextBlock
       image: SampleImageComponent
     },
 
-    block: { normal: ({ children }) => <p className="body">{children}</p> },
+    block: { normal: ({ children }) => <p className={textSize}>{children}</p> },
 
     marks: {
       link: ({ children, value }) => {

@@ -49,24 +49,29 @@ export default async function Section2024() {
         >
           {revueScouteActuelle[0].titre}
         </InviewWrapper>
-        {mainUrl && (
-          <InviewWrapper
-            variant={ComingFromRightVariant}
-            className="relative h-fit w-full overflow-hidden rounded-sm"
-          >
-            <Image
-              src={mainUrl}
-              sizes={'(max-width: 640px) 100vw, (max-width: 768px) 50vw, 90vw'}
-              alt={revueScouteActuelle[0].mainImage.alt ?? ''}
-              width={1200}
-              height={800}
-            ></Image>
+        <div className="inner-section-gap flex w-full max-laptop:flex-col">
+          {mainUrl && (
+            <InviewWrapper
+              variant={ComingFromLeftVariant}
+              className="relative h-fit shrink-0 overflow-hidden rounded-xs laptop:w-1/3"
+            >
+              <Image
+                src={mainUrl}
+                sizes={'(max-width: 640px) 100vw, (max-width: 768px) 50vw, 90vw'}
+                alt={revueScouteActuelle[0].mainImage.alt ?? ''}
+                className="h-full w-full"
+                width={800}
+                height={800}
+              ></Image>
+            </InviewWrapper>
+          )}
+          <InviewWrapper variant={ComingFromRightVariant} className="w-full">
+            <CustomPortableText
+              textSize="laptop-large:sub-heading body"
+              value={revueScouteActuelle[0].description}
+            ></CustomPortableText>
           </InviewWrapper>
-        )}
-
-        <InviewWrapper variant={ComingFromLeftVariant} className="prose prose-base max-w-full">
-          <CustomPortableText value={revueScouteActuelle[0].description}></CustomPortableText>
-        </InviewWrapper>
+        </div>
       </section>
       <section className="inner-section-gap flex flex-col">
         <InviewWrapper

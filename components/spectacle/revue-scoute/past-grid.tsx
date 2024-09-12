@@ -1,9 +1,9 @@
 'use client';
 
 import NextJsImage from '@/components/ui/image-carousel/carousel/nextjs-image';
-import ImagePulsing from '@/components/ui/image-pulsing';
 import { cn } from '@/lib/utils';
 import { Image as ImageSanity } from '@/sanity/lib/queries';
+import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 import Lightbox from 'yet-another-react-lightbox';
@@ -12,21 +12,9 @@ import 'yet-another-react-lightbox/styles.css';
 
 type CarouselProjectProps = {
   imageArr: Omit<ImageSanity, 'asset' | '_type'>[];
-  className?: string;
-  innerClassName?: string;
-  outerClassName?: string;
-  previousClassName?: string;
-  nextClassName?: string;
 };
 
-const PastGrid: React.FC<CarouselProjectProps> = ({
-  imageArr,
-  className,
-  innerClassName,
-  outerClassName,
-  previousClassName,
-  nextClassName
-}) => {
+const PastGrid: React.FC<CarouselProjectProps> = ({ imageArr }) => {
   const [lightboxIsOpen, setLightboxIsOpen] = useState<boolean>(false);
   const [currentImage, setCurrentImage] = useState<number>(0);
   const [loading, setLoading] = useState<boolean>(false);
@@ -73,9 +61,8 @@ const PastGrid: React.FC<CarouselProjectProps> = ({
       >
         <Masonry>
           {imageArr.map((image, index) => (
-            <ImagePulsing
+            <Image
               key={index}
-              skeletoncss="h-full object-cover w-full"
               width={400}
               height={400}
               className={cn('cursor-pointer')}

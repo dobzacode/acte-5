@@ -46,9 +46,9 @@ export default function ProductionSection() {
           tag="p"
           className="sub-heading h-fit laptop:w-1/2"
         >
-          Acte 5 vous offre des spectacles d'humour pleins d'énergie et de répartie. Entre sketches
-          mordants et rires assurés, nos créations promettent de moments de bonne humeur et de fous
-          rires partagés !
+          Depuis plus de 30 ans, Acte 5 crée des spectacles d'humour alliant énergie et finesse. Nos
+          sketches, toujours percutants, promettent des instants de rires et de légèreté, pour des
+          moments de partage inoubliables.
         </InviewWrapper>
 
         <InviewWrapper
