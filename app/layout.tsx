@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth light">
-      <body className=" min-h-screen  brand-theme">
+      <body className="min-h-screen brand-theme">
         {draftMode().isEnabled && <AlertBanner />}
         <Providers>{children}</Providers>
 

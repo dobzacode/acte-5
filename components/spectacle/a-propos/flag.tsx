@@ -7,18 +7,20 @@ import {
 import InviewWrapper from '@/components/framer-motion/inview-wrapper';
 import useBetterMediaQuery from '@/hooks/use-better-media-query';
 import { cn } from '@/lib/utils';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 
 export default function Flag({
   inverted,
   className,
   date,
-  text
+  text,
+  src
 }: {
   inverted?: boolean;
   className?: string;
   date?: string;
   text: string;
+  src: StaticImageData;
 }) {
   const isLaptop = useBetterMediaQuery('(min-width: 1024px)');
   const isMobile = useBetterMediaQuery('(max-width: 500px)');
@@ -57,11 +59,11 @@ export default function Flag({
             }
           }}
           className={cn(
-            'relative z-10 aspect-[5/2] w-1/2 shrink-0 overflow-hidden',
+            'relative z-10 aspect-[5/3] w-1/2 shrink-0 overflow-hidden',
             inverted ? 'rounded-r-sm' : 'rounded-l-sm'
           )}
         >
-          <Image src="/placeholder-image.png" alt="image" fill className="object-cover"></Image>
+          <Image src={src} placeholder="blur" alt="image" fill className="object-cover"></Image>
         </InviewWrapper>
         <div
           className={cn(
@@ -145,7 +147,7 @@ export default function Flag({
             'max-laptop:rounded-sm max-mobile-large:rounded-b-none'
           )}
         >
-          <Image src="/placeholder-image.png" alt="image" fill className="object-cover"></Image>
+          <Image src={src} placeholder="blur" alt="image" fill className="object-cover"></Image>
         </div>
         <div
           className={cn(
@@ -202,7 +204,7 @@ export default function Flag({
           'max-laptop:rounded-sm max-mobile-large:rounded-b-none'
         )}
       >
-        <Image src="/placeholder-image.png" alt="image" fill className="object-cover"></Image>
+        <Image src={src} placeholder="blur" alt="image" fill className="object-cover"></Image>
       </InviewWrapper>
       <div
         className={cn(
