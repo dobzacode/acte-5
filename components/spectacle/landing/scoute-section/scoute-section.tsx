@@ -14,7 +14,7 @@ import pic2 from '/public/assets/spectacle/landing/scoute_2.jpg';
 
 export default function ScouteSection() {
   return (
-    <section className="inner-section-py section-inner-py inner-section-gap relative z-20 flex w-full flex-col rounded-br-2xl bg-white max-tablet:overflow-hidden mobile-large:rounded-br-4xl tablet:gap-4xl tablet:rounded-br-6xl laptop:rounded-br-8xl">
+    <section className="inner-section-py section-inner-py inner-section-gap relative z-20 flex w-full flex-col rounded-br-2xl bg-white max-tablet:gap-2xl max-tablet:overflow-hidden mobile-large:rounded-br-4xl tablet:gap-4xl tablet:rounded-br-6xl laptop:rounded-br-8xl">
       <div className="flex flex-col items-center gap-xl">
         <InviewWrapper
           variant={ComingFromLeftVariant}
@@ -33,9 +33,9 @@ export default function ScouteSection() {
       </div>
 
       <GalleryScrollAnimation></GalleryScrollAnimation>
-      <div className="inner-section-gap flex flex-col laptop:container tablet:gap-4xl laptop:mx-auto">
+      <div className="flex flex-col gap-2xl laptop:container laptop:mx-auto laptop:gap-4xl laptop-large:gap-6xl">
         <InviewWrapper
-          className="section-px inner-section-gap flex items-center justify-center laptop:ml-auto"
+          className="section-px inner-section-gap flex flex-col items-center justify-center mobile-large:flex-row laptop:ml-auto"
           variant={ComingFromRightVariant}
         >
           <Image
@@ -53,7 +53,7 @@ export default function ScouteSection() {
           </p>
         </InviewWrapper>
         <InviewWrapper
-          className="section-px inner-section-gap flex flex-row-reverse items-center justify-center laptop:mr-auto"
+          className="section-px inner-section-gap flex flex-col items-center justify-center mobile-large:flex-row-reverse laptop:mr-auto"
           variant={ComingFromRightVariant}
         >
           <Image
@@ -69,7 +69,10 @@ export default function ScouteSection() {
             tandis que la musique accompagne chaque rebondissement avec une énergie contagieuse.
           </p>
         </InviewWrapper>
-        <InviewWrapper className="flex w-full justify-center" variant={ComingFromBottomVariant}>
+        <InviewWrapper
+          className="flex h-fit w-full justify-center"
+          variant={ComingFromBottomVariant}
+        >
           <DivHoverWrapper
             className="group w-fit origin-center duration-medium hover:opacity-90"
             variant={{

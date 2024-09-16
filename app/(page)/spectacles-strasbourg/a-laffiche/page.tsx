@@ -3,6 +3,7 @@ import StaggeredText from '@/components/framer-motion/staggered-text';
 import AffichesSkeleton from '@/components/skeleton/affiches-skeleton';
 import Affiches from '@/components/spectacle/a-laffiche/affiches';
 import CalendrierSection from '@/components/spectacle/a-laffiche/calendrier-section';
+import ContactSection from '@/components/spectacle/contact-section';
 import TitleSection from '@/components/ui/title-section';
 import { Metadata } from 'next';
 import { Suspense } from 'react';
@@ -37,6 +38,7 @@ export default function Home() {
         <Affiches></Affiches>
       </Suspense>
       <CalendrierSection></CalendrierSection>
+      <ContactSection></ContactSection>
     </main>
   );
 }

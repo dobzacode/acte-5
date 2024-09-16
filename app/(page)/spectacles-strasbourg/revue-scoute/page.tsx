@@ -2,6 +2,7 @@ import { ComingFromRightVariant } from '@/components/framer-motion/div-variants'
 import InviewWrapper from '@/components/framer-motion/inview-wrapper';
 import PastSectionSkeleton from '@/components/skeleton/past-section-skeleton';
 import ScouteSkeleton from '@/components/skeleton/scoute-skeleton';
+import ContactSection from '@/components/spectacle/contact-section';
 import PastSection from '@/components/spectacle/revue-scoute/past-section';
 import Section2024 from '@/components/spectacle/revue-scoute/section-2024';
 import TitleSection from '@/components/ui/title-section';
@@ -109,6 +110,7 @@ export default async function Home() {
       <Suspense fallback={<PastSectionSkeleton />}>
         <PastSection></PastSection>
       </Suspense>
+      <ContactSection></ContactSection>
     </main>
   );
 }

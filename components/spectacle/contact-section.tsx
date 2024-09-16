@@ -4,8 +4,8 @@ import LogoAnimation from './logo-animation';
 
 export default function ContactSection() {
   return (
-    <section className="section-inner-py max-w-screen inner-section-py relative z-20 h-[70vh] w-screen bg-white mobile-large:rounded-tl-4xl tablet:rounded-tl-6xl laptop:rounded-tl-8xl">
-      <div className="card absolute left-5xl top-[45%] z-20 ml-[20rem] flex w-fit flex-col gap-xl">
+    <section className="section-inner-py max-w-screen inner-section-py relative z-20 h-[70vh] w-screen overflow-hidden bg-black mobile-large:rounded-tl-4xl tablet:rounded-tl-6xl laptop:rounded-tl-8xl">
+      <div className="card absolute left-[12vw] top-[45%] z-20 flex w-fit flex-col gap-xl">
         <p className="sub-heading max-w-[30ch] text-center">
           Avez-vous des questions sur nos événements ou souhaitez-vous réserver pour un groupe ?{' '}
         </p>

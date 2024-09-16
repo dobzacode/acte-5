@@ -2,6 +2,7 @@ import { FromTopStaggerVariant } from '@/components/framer-motion/div-variants';
 import DivWrapper from '@/components/framer-motion/div-wrapper';
 import StaggeredText from '@/components/framer-motion/staggered-text';
 import Calendrier from '@/components/spectacle/a-laffiche/calendrier';
+import ContactSection from '@/components/spectacle/contact-section';
 import { Skeleton } from '@/components/ui/skeleton';
 import TitleSection from '@/components/ui/title-section';
 import { Metadata } from 'next';
@@ -65,6 +66,7 @@ export default function Home() {
           <Calendrier isBig={true}></Calendrier>
         </DivWrapper>
       </Suspense>
+      <ContactSection></ContactSection>
     </main>
   );
 }

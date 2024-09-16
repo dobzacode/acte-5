@@ -2,6 +2,7 @@ import { FromTopStaggerVariant } from '@/components/framer-motion/div-variants';
 import InviewWrapper from '@/components/framer-motion/inview-wrapper';
 import StaggeredText from '@/components/framer-motion/staggered-text';
 import HistorySection from '@/components/spectacle/a-propos/history-section';
+import ContactSection from '@/components/spectacle/contact-section';
 import TitleSection from '@/components/ui/title-section';
 import { Metadata } from 'next';
 import Image from 'next/image';
@@ -86,6 +87,7 @@ export default function Home() {
         </InviewWrapper>
       </div>
       <HistorySection></HistorySection>
+      <ContactSection></ContactSection>
     </main>
   );
 }

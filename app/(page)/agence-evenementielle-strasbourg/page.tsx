@@ -2,6 +2,7 @@ import AproposSection from '@/components/event/landing-event/apropos-section/apr
 import HeroSection from '@/components/event/landing-event/hero-section';
 import ServiceSection from '@/components/event/landing-event/service-section';
 import TrustSection from '@/components/event/landing-event/trust-section/trust-section';
+import ContactSection from '@/components/spectacle/contact-section';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -17,6 +18,7 @@ export default function Home() {
       <TrustSection></TrustSection>
       <ServiceSection></ServiceSection>
       <AproposSection></AproposSection>
+      <ContactSection></ContactSection>
     </main>
   );
 }

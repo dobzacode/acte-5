@@ -5,6 +5,7 @@ import SpectacleFetch from '@/components/spectacle/a-laffiche/spectacle/spectacl
 import LastEventSkeleton from '@/components/skeleton/last-event-skeleton';
 import SpectacleSkeleton from '@/components/skeleton/spectacle-skeleton';
 import SimilaireProject from '@/components/spectacle/a-laffiche/spectacle/similaire-project';
+import ContactSection from '@/components/spectacle/contact-section';
 import { sanityFetch } from '@/sanity/lib/fetch';
 import { resolveOpenGraphImage } from '@/sanity/lib/utils';
 import { Metadata, ResolvingMetadata } from 'next';
@@ -54,6 +55,7 @@ export default async function Page({ params }: Props) {
       <Suspense fallback={<LastEventSkeleton />}>
         <SimilaireProject actualSpectacle={params.spectacle}></SimilaireProject>
       </Suspense>
+      <ContactSection></ContactSection>
     </main>
   );
 }

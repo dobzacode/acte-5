@@ -5,7 +5,6 @@ export default function EventFooter() {
   return (
     <>
       <section>
-        <div className="bg-black py-7xl"></div>
         <Footer>
           <FooterContent></FooterContent>
         </Footer>
