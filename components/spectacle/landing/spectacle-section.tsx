@@ -7,6 +7,7 @@ import InviewWrapper from '@/components/framer-motion/inview-wrapper';
 import Image from 'next/image';
 import Link from 'next/link';
 import { LuArrowUpRight } from 'react-icons/lu';
+import image from '/public/assets/spectacle/landing/spectacle_image.jpg';
 
 export default function SpectacleSection() {
   return (
@@ -46,10 +47,11 @@ export default function SpectacleSection() {
             }}
           >
             <Image
-              src="/placeholder-image.png"
-              alt="image"
-              width={600}
-              height={600}
+              width={1000}
+              height={1000}
+              placeholder="blur"
+              src={image}
+              alt="Spectacle"
               className="rounded-sm"
             ></Image>
           </InviewWrapper>

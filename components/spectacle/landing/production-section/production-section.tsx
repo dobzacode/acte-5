@@ -4,6 +4,7 @@ import InviewWrapper from '@/components/framer-motion/inview-wrapper';
 import Image from 'next/image';
 import Link from 'next/link';
 import ScrollImage from './scroll-image';
+import image from '/public/assets/spectacle/landing/production_image.jpg';
 
 export default function ProductionSection() {
   return (
@@ -14,11 +15,13 @@ export default function ProductionSection() {
         </InviewWrapper>
         <InviewWrapper
           variant={ComingFromLeftVariant}
-          className="relative h-[20rem] w-full rounded-sm laptop:hidden"
+          className="relative h-[20rem] w-full rounded-sm mobile-large:h-[30rem] tablet:h-[40rem] laptop:hidden"
         >
           <Image
-            src="/placeholder-image.png"
-            alt="image"
+            src={image}
+            alt="Image de spectacle"
+            placeholder="blur"
+            sizes={'(max-width: 640px) 70vw, (min-width: 640px) 90vw'}
             fill
             className="rounded-sm object-cover"
           />
@@ -99,7 +102,14 @@ export default function ProductionSection() {
       </div>
 
       <ScrollImage className="max-laptop:hidden">
-        <Image src="/placeholder-image.png" alt="image" fill className="rounded-sm object-cover" />
+        <Image
+          src={image}
+          sizes={'(max-width: 640px) 70vw, (min-width: 640px) 60vw'}
+          alt="Image de spectacle"
+          placeholder="blur"
+          fill
+          className="rounded-sm object-cover object-left"
+        />
       </ScrollImage>
     </section>
   );

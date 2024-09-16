@@ -22,7 +22,7 @@ export default function ScrollImage({
 
   return (
     <motion.div
-      className={cn('absolute right-0 h-[30rem] w-1/3', className)}
+      className={cn('absolute right-0 h-[30rem] w-[32rem] laptop-large:w-[40rem]', className)}
       style={{ y: springY }}
       ref={ref}
     >
