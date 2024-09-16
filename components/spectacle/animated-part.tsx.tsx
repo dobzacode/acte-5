@@ -17,7 +17,7 @@ export default function AnimatedPart({ isSpectacle }: { isSpectacle?: boolean })
       if (video.currentTime >= 1.75) {
         controlsButton.start('enter');
       }
-      if (video.currentTime >= 1.82) {
+      if (video.currentTime >= 3) {
         video.pause();
       }
     });
@@ -48,14 +48,14 @@ export default function AnimatedPart({ isSpectacle }: { isSpectacle?: boolean })
   }, [controlsButton]);
 
   return (
-    <div className="-mr-8xl flex h-full w-fit items-center">
+    <div className="-mr-2xl flex h-full w-fit items-center max-laptop:-mb-2xl max-tablet:-mb-4xl laptop:-mr-4xl laptop-large:-mr-8xl">
       <motion.div
         animate={controlsDiv}
         initial="hidden"
         variants={{
           hidden: {
             y: -700,
-            height: '120px'
+            maxHeight: '120px'
           },
           enter: {
             y: 0,
@@ -64,21 +64,21 @@ export default function AnimatedPart({ isSpectacle }: { isSpectacle?: boolean })
                 type: 'spring',
                 stiffness: 20
               },
-              height: {
+              maxHeight: {
                 delay: 1.7,
                 duration: 0.35
               }
             },
-            height: '220px'
+            maxHeight: '220px'
           },
           exit: {
             y: -700
           }
         }}
-        className="card relative z-20 -mr-4xl flex h-fit w-fit flex-col items-center gap-xl overflow-hidden"
+        className="card relative z-20 -mr-4xl flex h-fit w-fit shrink-0 flex-col items-center gap-md overflow-hidden max-laptop:-mt-2xl max-tablet:-mt-xl max-mobile-large:mt-md laptop:gap-xl"
       >
-        <p className="sub-heading max-w-[30ch] text-center">
-          Avez-vous des questions sur nos événements ou souhaitez-vous réserver pour un groupe ?{' '}
+        <p className="sub-heading w-full max-w-[30ch] text-pretty text-center">
+          Avez-vous des questions sur nos événements ou souhaitez-vous réserver pour un groupe ?
         </p>
         <motion.div
           animate={controlsButton}
@@ -116,7 +116,7 @@ export default function AnimatedPart({ isSpectacle }: { isSpectacle?: boolean })
           </Link>
         </motion.div>
       </motion.div>
-      <div className="relative h-[700px] w-[700px] overflow-hidden">
+      <div className="relative h-[700px] w-[80vw] shrink-0 origin-top overflow-hidden max-laptop:scale-85 max-tablet:scale-80 max-mobile-large:pr-5xl tablet:w-[700px]">
         <video
           ref={videoRef}
           muted
