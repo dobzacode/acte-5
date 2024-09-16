@@ -33,8 +33,8 @@ export default defineConfig({
                 S.document().schemaType('revueScouteAffiche').documentId('revueScouteAffiche')
               ),
 
-            S.documentTypeListItem('evenement').title('Evenement'),
-            S.documentTypeListItem('publication').title('Publication'),
+            S.documentTypeListItem('evenement').title('Projets'),
+            S.documentTypeListItem('publication').title('Articles (blog)'),
             S.documentTypeListItem('spectacle').title('Spectacle'),
             S.documentTypeListItem('logo').title('Logo')
           ])
