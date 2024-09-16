@@ -5,7 +5,18 @@ import {
 import DivHoverWrapper from '@/components/framer-motion/hover-wrapper';
 import InviewWrapper from '@/components/framer-motion/inview-wrapper';
 import Marquee from '@/components/framer-motion/marquee';
+import Image from 'next/image';
 import Link from 'next/link';
+import image1 from '/public/assets/event/landing/services/1.jpeg';
+import image2 from '/public/assets/event/landing/services/2.jpeg';
+import image3 from '/public/assets/event/landing/services/3.jpeg';
+import image4 from '/public/assets/event/landing/services/4.jpg';
+import image5 from '/public/assets/event/landing/services/5.jpeg';
+import image6 from '/public/assets/event/landing/services/6.jpeg';
+import image7 from '/public/assets/event/landing/services/7.jpeg';
+import image8 from '/public/assets/event/landing/services/8.jpeg';
+
+const srcArr = [image1, image2, image3, image4, image5, image6, image7, image8];
 
 const ONGLETS =
   'CONVENTION D’ENTREPRISE - ANNIVERSAIRE - INAUGURATION D’ENTREPRISE - CÉRÉMONIE DES MÉDAILLES - CÉRÉMONIE DES VŒUX - PORTES OUVERTES - SOIRÉE DE GALA - SPECTACLE D’ENTREPRISE - TEAM BUILDING - CONVENTION D’ENTREPRISE - ANNIVERSAIRE';
@@ -89,31 +100,44 @@ export default function ServiceSection() {
           <h2 className="heading--large flex text-white">NOS SERVICES</h2>
         </InviewWrapper>
         <div className="grid h-full w-full grid-cols-10 grid-rows-[200px_200px] gap-2 tablet:grid-rows-[200px_200px_200px] tablet:gap-4">
-          {GRID_CHILDREN().map((child, index) => (
-            <InviewWrapper
-              key={index}
-              id={child.key ?? undefined}
-              style={{ zIndex: -index + 20, position: 'relative' }}
-              className={child.props.className}
-              variant={{
-                hidden: { y: -300, opacity: 0 },
-                enter: {
-                  y: 0,
-                  opacity: 1,
-                  transition: {
-                    delay: index * 0.2,
-                    duration: 0.9,
-                    type: 'spring',
-                    damping: 20,
-                    stiffness: 80,
-                    opacity: { duration: 0.3, delay: index * 0.2 }
+          {GRID_CHILDREN().map((child, index) => {
+            return (
+              <InviewWrapper
+                key={index}
+                id={child.key ?? undefined}
+                style={{ zIndex: -index + 20, position: 'relative' }}
+                className={child.props.className}
+                variant={{
+                  hidden: { y: -300, opacity: 0 },
+                  enter: {
+                    y: 0,
+                    opacity: 1,
+                    transition: {
+                      delay: index * 0.2,
+                      duration: 0.9,
+                      type: 'spring',
+                      damping: 20,
+                      stiffness: 80,
+                      opacity: { duration: 0.3, delay: index * 0.2 }
+                    }
                   }
-                }
-              }}
-            >
-              {child}
-            </InviewWrapper>
-          ))}
+                }}
+              >
+                {child.key !== '8' && child.key !== '3' ? (
+                  <Image
+                    src={srcArr[index]}
+                    alt="image"
+                    className="rounded-xs object-cover"
+                    fill
+                    placeholder="blur"
+                    sizes={'(max-width: 640px) 100vw, (min-width: 640px) 80vw'}
+                  />
+                ) : (
+                  child
+                )}
+              </InviewWrapper>
+            );
+          })}
         </div>
         <InviewWrapper
           variant={ComingFromRightVariant}
