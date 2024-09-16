@@ -3,6 +3,7 @@ import { EventWithImg } from '@/components/event/nos-services/last-event-image';
 import ProjectFetchWrapper from '@/components/event/projets/project-fetch-wrapper';
 import { FadeInVariant } from '@/components/framer-motion/div-variants';
 import DivWrapper from '@/components/framer-motion/div-wrapper';
+import ContactSection from '@/components/spectacle/contact-section';
 import { Skeleton } from '@/components/ui/skeleton';
 import TitleSection from '@/components/ui/title-section';
 import { Metadata } from 'next';
@@ -49,6 +50,7 @@ export default async function Home() {
       >
         <ProjectFetchWrapper></ProjectFetchWrapper>
       </Suspense>
+      <ContactSection></ContactSection>
     </main>
   );
 }

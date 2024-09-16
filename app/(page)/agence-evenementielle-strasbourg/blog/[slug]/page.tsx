@@ -2,6 +2,7 @@ import { POSTS_QUERY, POST_QUERY, PostQueryResponse } from '@/sanity/lib/queries
 
 import PostpageContent from '@/components/event/blog/post/postpage-content';
 import PostpageSkeleton from '@/components/skeleton/postpage-skeleton';
+import ContactSection from '@/components/spectacle/contact-section';
 import { sanityFetch } from '@/sanity/lib/fetch';
 import { resolveOpenGraphImage } from '@/sanity/lib/utils';
 import { Metadata, ResolvingMetadata } from 'next';
@@ -46,6 +47,7 @@ export default function Page({ params }: Props) {
   return (
     <Suspense fallback={<PostpageSkeleton />}>
       <PostpageContent params={params}></PostpageContent>
+      <ContactSection></ContactSection>
     </Suspense>
   );
 }

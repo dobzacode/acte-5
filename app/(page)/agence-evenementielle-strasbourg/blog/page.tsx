@@ -4,6 +4,7 @@ import {
   ComingFromRightVariant
 } from '@/components/framer-motion/div-variants';
 import InviewWrapper from '@/components/framer-motion/inview-wrapper';
+import ContactSection from '@/components/spectacle/contact-section';
 import TitleSection from '@/components/ui/title-section';
 import { sanityFetch } from '@/sanity/lib/fetch';
 import { POSTS_QUERY, Post, PostsQueryResponse } from '@/sanity/lib/queries';
@@ -23,7 +24,7 @@ export default async function Home() {
   });
 
   return (
-    <main className="relative flex flex-col items-center justify-center gap-xl overflow-hidden px-0 pt-5xl  mobile-small:gap-3xl mobile-medium:gap-2xl mobile-large:gap-4xl tablet:gap-5xl tablet:pt-7xl laptop:gap-6xl laptop-large:gap-6xl">
+    <main className="relative flex flex-col items-center justify-center gap-xl overflow-hidden px-0 pt-5xl mobile-small:gap-3xl mobile-medium:gap-2xl mobile-large:gap-4xl tablet:gap-5xl tablet:pt-7xl laptop:gap-6xl laptop-large:gap-6xl">
       <TitleSection
         description={
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas gravida tincidunt varius. Vivamus fermentum volutpat semper. Donec ultrices nisi ac lacus ornare, sit amet auctor erat congue. Cras rutrum sapien sit amet arcu elementum, sed ornare justo posuere. Donec egestas, justo eu porttitor vestibulum, velit dui tincidunt velit, non aliquam odio magna ac felis. Mauris ornare mauris id arcu viverra, aliquet pharetra erat cursus. Sed ultricies vestibulum posuere.'
@@ -35,7 +36,7 @@ export default async function Home() {
         ]}
       ></TitleSection>
       <section className="mx-auto w-fit">
-        <ul className="section-px flex flex-col gap-xl pt-xl laptop:container  mobile-small:gap-3xl mobile-medium:gap-2xl mobile-large:gap-4xl tablet:gap-5xl laptop:mx-auto laptop:gap-6xl laptop-large:gap-6xl">
+        <ul className="section-px flex flex-col gap-xl pt-xl laptop:container mobile-small:gap-3xl mobile-medium:gap-2xl mobile-large:gap-4xl tablet:gap-5xl laptop:mx-auto laptop:gap-6xl laptop-large:gap-6xl">
           {posts
             ? posts.map((post: Post, index: number) => {
                 return (
@@ -52,6 +53,7 @@ export default async function Home() {
             : 'No posts found'}
         </ul>
       </section>
+      <ContactSection></ContactSection>
     </main>
   );
 }

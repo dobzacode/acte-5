@@ -50,9 +50,9 @@
     @apply flex w-full flex-col items-center justify-center laptop:px-2xl laptop-large:px-4xl;
   }
 
-  main {
+  /* main {
     @apply [&>section:last-child]:pb-xl mobile-small:[&>section:last-child]:pb-2xl mobile-medium:[&>section:last-child]:pb-2xl mobile-large:[&>section:last-child]:pb-3xl tablet:[&>section:last-child]:pb-4xl laptop-large:[&>section:last-child]:pb-5xl;
-  }
+  } */
 
   .main-gap {
     @apply gap-xl mobile-small:gap-2xl mobile-medium:gap-2xl mobile-large:gap-3xl tablet:gap-4xl laptop-large:gap-5xl;
@@ -155,6 +155,10 @@
 
 .hamburger[aria-expanded='true'] :is(.top, .bottom) {
   y: 45;
+}
+
+.clip-video {
+  clip-path: square(500px, 500px);
 }
 
 .hamburger[aria-expanded='true'] .top {

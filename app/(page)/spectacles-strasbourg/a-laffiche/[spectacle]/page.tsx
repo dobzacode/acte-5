@@ -48,14 +48,16 @@ export async function generateMetadata(
 
 export default async function Page({ params }: Props) {
   return (
-    <main className="relative mx-auto flex flex-col items-center justify-center gap-2xl px-0 pt-5xl laptop:pt-7xl">
-      <Suspense fallback={<SpectacleSkeleton />}>
-        <SpectacleFetch params={params}></SpectacleFetch>
-      </Suspense>
-      <Suspense fallback={<LastEventSkeleton />}>
-        <SimilaireProject actualSpectacle={params.spectacle}></SimilaireProject>
-      </Suspense>
-      <ContactSection></ContactSection>
-    </main>
+    <>
+      <main className="relative mx-auto flex flex-col items-center justify-center gap-2xl px-0 pt-5xl laptop:pt-7xl">
+        <Suspense fallback={<SpectacleSkeleton />}>
+          <SpectacleFetch params={params}></SpectacleFetch>
+        </Suspense>
+        <Suspense fallback={<LastEventSkeleton />}>
+          <SimilaireProject actualSpectacle={params.spectacle}></SimilaireProject>
+        </Suspense>
+      </main>
+      <ContactSection className="!rounded-tl-none" isSpectacle={true}></ContactSection>
+    </>
   );
 }

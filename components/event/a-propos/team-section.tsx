@@ -91,7 +91,7 @@ export default async function TeamSection() {
   );
 
   return (
-    <section className="inner-section-gap flex w-full flex-col items-center overflow-hidden overflow-x-hidden bg-primary-400 py-2xl max-tablet:py-xl tablet:mt-5xl">
+    <section className="inner-section-gap flex w-full flex-col items-center overflow-hidden overflow-x-hidden bg-primary-400 py-xl mobile-small:py-xl mobile-medium:py-2xl mobile-large:py-3xl tablet:mt-5xl tablet:py-4xl">
       <InviewWrapper
         variant={ComingFromTopVariant}
         className="section-px inner-section-gap flex flex-col items-center text-center laptop:container laptop:mx-auto"

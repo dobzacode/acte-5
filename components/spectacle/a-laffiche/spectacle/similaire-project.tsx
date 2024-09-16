@@ -48,7 +48,7 @@ export default async function SimilaireProject({ actualSpectacle }: { actualSpec
   const imageArr = imagesWithUrl.filter(notEmpty);
 
   return (
-    <section className="inner-section-gap flex w-full flex-col justify-center overflow-hidden bg-primary-400 py-xl">
+    <section className="inner-section-gap flex w-full flex-col justify-center overflow-hidden bg-primary-400 py-xl mobile-small:py-xl mobile-medium:py-2xl mobile-large:py-3xl tablet:py-4xl">
       <InviewWrapper variant={ComingFromTopVariant}>
         <h2 className="heading--sub-extra-large section-px text-center text-white laptop:mx-auto">
           Projets similaires

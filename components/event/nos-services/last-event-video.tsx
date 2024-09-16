@@ -34,7 +34,7 @@ export default async function LastEventVideo({
   );
 
   return (
-    <section className="mt-2xl flex w-full flex-col items-center gap-2xl overflow-hidden overflow-x-hidden bg-primary-400 py-2xl">
+    <section className="mt-2xl flex w-full flex-col items-center gap-2xl overflow-hidden overflow-x-hidden bg-primary-400 py-xl mobile-small:py-xl mobile-medium:py-2xl mobile-large:py-3xl tablet:py-4xl">
       <InviewWrapper
         className="section-px container mx-auto flex flex-col items-center gap-xl text-center"
         variant={ComingFromTopVariant}

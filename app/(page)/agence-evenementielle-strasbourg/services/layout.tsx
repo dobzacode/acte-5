@@ -4,7 +4,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
       {children}
-      <ContactSection></ContactSection>
+      <ContactSection className="!rounded-tl-none"></ContactSection>
     </>
   );
 }

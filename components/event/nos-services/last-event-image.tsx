@@ -85,7 +85,7 @@ export default async function LastEvent({
   const imageArr = eventsWithImg ? eventsWithImg.filter(notEmpty) : null;
 
   return (
-    <section className="inner-section-gap mt-2xl flex w-full flex-col items-center overflow-hidden overflow-x-hidden bg-primary-400 py-2xl">
+    <section className="inner-section-gap mt-2xl flex w-full flex-col items-center overflow-hidden overflow-x-hidden bg-primary-400 py-xl mobile-small:py-xl mobile-medium:py-2xl mobile-large:py-3xl tablet:py-4xl">
       <InviewWrapper
         className="section-px container mx-auto flex flex-col items-center gap-xl text-center"
         variant={ComingFromTopVariant}

@@ -49,7 +49,7 @@ export default async function PastSection() {
 
   return (
     <section
-      className={`inner-section-gap relative z-[40] flex w-full flex-col justify-center overflow-hidden bg-primary-400 py-2xl duration-medium mobile-small:py-3xl mobile-medium:py-2xl tablet:py-4xl laptop:gap-2xl`}
+      className={`inner-section-gap relative z-[40] flex w-full flex-col justify-center overflow-hidden bg-primary-400 py-xl duration-medium mobile-small:py-xl mobile-medium:py-2xl mobile-large:py-3xl tablet:py-4xl laptop:gap-2xl`}
     >
       <InviewWrapper
         className="heading--sub-extra-large section-px text-center text-white"

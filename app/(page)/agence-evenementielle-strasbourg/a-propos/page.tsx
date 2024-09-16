@@ -1,6 +1,7 @@
 import TeamSection from '@/components/event/a-propos/team-section';
 import { FromTopStaggerVariant } from '@/components/framer-motion/div-variants';
 import StaggeredText from '@/components/framer-motion/staggered-text';
+import ContactSection from '@/components/spectacle/contact-section';
 import TitleSection from '@/components/ui/title-section';
 import { Metadata } from 'next';
 
@@ -12,25 +13,28 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <main className="relative flex flex-col items-center justify-center gap-xl overflow-x-clip px-0 pt-5xl mobile-small:gap-3xl mobile-medium:gap-2xl mobile-large:gap-4xl tablet:gap-5xl tablet:pt-7xl laptop:gap-6xl laptop-large:gap-6xl">
-      <TitleSection
-        title={'A PROPOS'}
-        element={[
-          { href: '/agence-evenementielle-strasbourg', text: 'Évenement' },
-          { href: '/agence-evenementielle-strasbourg/a-propos', text: 'A propos' }
-        ]}
-      ></TitleSection>
-      <StaggeredText
-        variant={FromTopStaggerVariant}
-        staggerValue={0.05}
-        delay={1}
-        className="heading--sub-large section-px text-pretty text-center laptop:container laptop:mx-auto"
-      >
-        Forte de plus de 30 ans d&apos;expertise en communication événementielle, Acte 5 puise dans
-        les arts de la scène pour donner vie à vos messages d&apos;entreprise
-      </StaggeredText>
+    <>
+      <main className="relative flex flex-col items-center justify-center gap-xl overflow-x-clip px-0 pt-5xl mobile-small:gap-3xl mobile-medium:gap-2xl mobile-large:gap-4xl tablet:gap-5xl tablet:pt-7xl laptop:gap-6xl laptop-large:gap-6xl">
+        <TitleSection
+          title={'A PROPOS'}
+          element={[
+            { href: '/agence-evenementielle-strasbourg', text: 'Évenement' },
+            { href: '/agence-evenementielle-strasbourg/a-propos', text: 'A propos' }
+          ]}
+        ></TitleSection>
+        <StaggeredText
+          variant={FromTopStaggerVariant}
+          staggerValue={0.05}
+          delay={1}
+          className="heading--sub-large section-px text-pretty text-center laptop:container laptop:mx-auto"
+        >
+          Forte de plus de 30 ans d&apos;expertise en communication événementielle, Acte 5 puise
+          dans les arts de la scène pour donner vie à vos messages d&apos;entreprise
+        </StaggeredText>
 
-      <TeamSection></TeamSection>
-    </main>
+        <TeamSection></TeamSection>
+      </main>
+      <ContactSection className="!rounded-tl-none" isSpectacle={true}></ContactSection>
+    </>
   );
 }

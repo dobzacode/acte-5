@@ -29,7 +29,7 @@ export default function Home() {
       >
         <FormWrapped isSpectacle={true}></FormWrapped>
       </InviewWrapper>
-      <ContactBanner></ContactBanner>
+      <ContactBanner/>
     </main>
   );
 }

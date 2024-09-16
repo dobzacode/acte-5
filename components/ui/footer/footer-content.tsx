@@ -3,7 +3,7 @@ import Logo from '../header/logo';
 
 export default function FooterContent() {
   return (
-    <footer className="section-px mx-auto flex flex-wrap justify-center gap-2xl laptop:container laptop:justify-between">
+    <footer className="section-px mx-auto flex flex-wrap justify-center gap-2xl py-lg laptop:container tablet:py-xl laptop:justify-between">
       <div className="flex flex-col items-center gap-xs max-laptop-large:hidden">
         <Logo width={160} height={160} className="rounded-xs"></Logo>
         <p className="font-[Quasimoda] text-xl">ACTE 5</p>

@@ -16,29 +16,31 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center justify-center gap-xl px-0 pt-5xl mobile-small:gap-3xl mobile-medium:gap-2xl mobile-large:gap-4xl tablet:gap-5xl tablet:pt-7xl laptop:gap-6xl laptop-large:gap-6xl">
-      <TitleSection
-        title={"A L'AFFICHE"}
-        element={[
-          { href: '/spectacles-strasbourg', text: 'Évenement' },
-          { href: '/spectacles-strasbourg/a-laffiche', text: "A l'affiche" }
-        ]}
-      ></TitleSection>
+    <>
+      <main className="flex flex-col items-center justify-center gap-xl px-0 pt-5xl mobile-small:gap-3xl mobile-medium:gap-2xl mobile-large:gap-4xl tablet:gap-5xl tablet:pt-7xl laptop:gap-6xl laptop-large:gap-6xl">
+        <TitleSection
+          title={"A L'AFFICHE"}
+          element={[
+            { href: '/spectacles-strasbourg', text: 'Évenement' },
+            { href: '/spectacles-strasbourg/a-laffiche', text: "A l'affiche" }
+          ]}
+        ></TitleSection>
 
-      <StaggeredText
-        inview
-        variant={FromTopStaggerVariant}
-        staggerValue={0.05}
-        delay={1}
-        className="heading--sub-large section-px h-fit max-w-[35ch] text-pretty text-center laptop:mx-auto"
-      >
-        Il n’y a pas que la Revue Scoute dans la vie !
-      </StaggeredText>
-      <Suspense fallback={<AffichesSkeleton />}>
-        <Affiches></Affiches>
-      </Suspense>
-      <CalendrierSection></CalendrierSection>
-      <ContactSection></ContactSection>
-    </main>
+        <StaggeredText
+          inview
+          variant={FromTopStaggerVariant}
+          staggerValue={0.05}
+          delay={1}
+          className="heading--sub-large section-px h-fit max-w-[35ch] text-pretty text-center laptop:mx-auto"
+        >
+          Il n’y a pas que la Revue Scoute dans la vie !
+        </StaggeredText>
+        <Suspense fallback={<AffichesSkeleton />}>
+          <Affiches></Affiches>
+        </Suspense>
+        <CalendrierSection></CalendrierSection>
+      </main>
+      <ContactSection className="!rounded-tl-none" isSpectacle={true}></ContactSection>
+    </>
   );
 }

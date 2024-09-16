@@ -41,7 +41,7 @@ export default async function SpectacleFetch({ params }: { params: { spectacle: 
           className="flex flex-col gap-2xl overflow-hidden laptop:container mobile-large:gap-xl laptop:mx-auto"
           variant={ComingFromRightVariant}
           inverseOnExit={false}
-        >
+          >
           <SpectacleContent spectacle={spectacle} />
         </DivWrapper>
         {spectacle?.dates && (

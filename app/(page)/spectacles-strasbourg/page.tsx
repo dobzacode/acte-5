@@ -22,7 +22,7 @@ export default function Home() {
       <SpectacleSection></SpectacleSection>
 
       <ProductionSection></ProductionSection>
-      <ContactSection></ContactSection>
+      <ContactSection isSpectacle={true}></ContactSection>
     </main>
   );
 }
