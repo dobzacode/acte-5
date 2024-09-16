@@ -52,23 +52,25 @@ export default function Header({ className }: { className?: string }) {
             'h-[70px] w-[70px] rounded-xs duration-medium max-mobile-large:h-[50px] max-mobile-large:w-[50px] max-mobile-medium:h-[40px] max-mobile-medium:w-[40px]'
           )}
         ></Logo>
-        {isLaptop && pathname === '/' ? (
-          <motion.p
-            initial={{ y: -100 }}
-            animate={{
-              y: 0,
-              transition: { ease: 'easeInOut', duration: 0.9 }
-            }}
-            exit={{
-              y: 70,
-              transition: { ease: 'easeInOut', duration: 0.4 }
-            }}
-            key={`ACTE5`}
-            className={cn('heading w-fit text-center font-["Quasimoda"] max-laptop:hidden')}
-          >
-            ACTE 5
-          </motion.p>
-        ) : null}
+        <AnimatePresence mode="wait">
+          {isLaptop && pathname === '/' ? (
+            <motion.p
+              initial={{ y: -100 }}
+              animate={{
+                y: 0,
+                transition: { ease: 'easeInOut', duration: 0.9 }
+              }}
+              exit={{
+                y: 70,
+                transition: { ease: 'easeInOut', duration: 0.4 }
+              }}
+              key={`ACTE5`}
+              className={cn('heading w-fit text-center font-["Quasimoda"] max-laptop:hidden')}
+            >
+              ACTE 5
+            </motion.p>
+          ) : null}
+        </AnimatePresence>
       </div>
       <AnimatePresence mode="wait">
         {isLaptop && pathname !== '/' ? (
