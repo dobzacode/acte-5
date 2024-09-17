@@ -7,8 +7,9 @@ import LogoFetchWrapper from './logo-fetch-wrapper';
 
 export default function TrustSection() {
   return (
-    <section className="section-px inner-section-gap relative z-10 flex h-fit w-full flex-col laptop:container laptop:mx-auto">
+    <section className="inner-section-gap relative z-10 flex h-fit w-full flex-col laptop:mx-auto">
       <InviewWrapper
+        className="section-px mx-auto laptop:container"
         variant={ComingFromLeftVariant}
         viewport={{ once: true, margin: '-200px 0px -200px 0px' }}
       >
@@ -20,14 +21,20 @@ export default function TrustSection() {
       </InviewWrapper>
       <div className="inner-section-gap flex flex-col">
         <div className="relative z-20 flex w-full flex-col gap-md pt-md mobile-large:gap-md">
-          <InviewWrapper variant={ComingFromLeftVariant} className="heading whitespace-nowrap">
+          <InviewWrapper
+            variant={ComingFromLeftVariant}
+            className="heading section-px mx-auto whitespace-nowrap laptop:container max-laptop:mx-0 max-laptop:mr-auto"
+          >
             Ils nous ont fait confiance
           </InviewWrapper>
           <InviewWrapper variant={FadeInVariant}>
             <LogoFetchWrapper></LogoFetchWrapper>
           </InviewWrapper>
         </div>
-        <InviewWrapper variant={ComingFromLeftVariant}>
+        <InviewWrapper
+          className="section-px mx-auto laptop:container max-laptop:mx-0 max-laptop:mr-auto"
+          variant={ComingFromLeftVariant}
+        >
           <DivHoverWrapper
             className="group w-fit origin-center duration-medium hover:opacity-90"
             variant={{

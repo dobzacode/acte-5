@@ -49,7 +49,7 @@ const variantRight: Variants = {
 
 export default function CompetenceSection() {
   return (
-    <ul className="section-px relative flex flex-col gap-xl mobile-large:gap-3xl">
+    <ul className="section-px relative flex w-full flex-col gap-xl mobile-large:gap-3xl">
       {COMPETENCE.map((item, index) => {
         return (
           <InviewWrapper
@@ -86,7 +86,7 @@ export default function CompetenceSection() {
           <InviewWrapper
             tag="li"
             key={`${item.name}-mobile-${index}`}
-            className="sticky top-0 laptop:hidden"
+            className="sticky top-0 w-full laptop:hidden"
             variant={index % 2 === 0 ? ComingFromLeftVariant : ComingFromRightVariant}
           >
             <Link
@@ -94,7 +94,7 @@ export default function CompetenceSection() {
               href={`/agence-evenementielle-strasbourg/services?categorie=${item.category}`}
               className="card flex flex-col p-0"
             >
-              <div className="group relative flex w-full items-center justify-between gap-3xl overflow-hidden rounded-sm rounded-b-none px-2xl py-xl duration-extra-slow">
+              <div className="group relative flex w-full items-center justify-between gap-3xl overflow-hidden rounded-sm rounded-b-none py-xl duration-extra-slow">
                 <h3 className="heading--large relative z-20 w-full text-center font-medium text-white duration-medium">
                   {item.name}
                 </h3>

@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import Logo from '../header/logo';
+import Logo from './header/logo';
 
-export default function FooterContent() {
+export default function Footer() {
   return (
     <footer className="section-px mx-auto flex flex-wrap justify-center gap-2xl py-lg laptop:container tablet:py-xl laptop:justify-between">
       <div className="flex flex-col items-center gap-xs max-laptop-large:hidden">
@@ -79,7 +79,13 @@ export default function FooterContent() {
           >
             A l'affiche
           </Link>
-
+          <Link
+            scroll={false}
+            className="body hover:opacity-hover"
+            href="/spectacles-strasbourg/calendrier"
+          >
+            Calendrier
+          </Link>
           <Link
             scroll={false}
             className="body hover:opacity-hover"

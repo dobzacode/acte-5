@@ -1,12 +1,6 @@
 'use client';
 
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious
-} from '@/components/ui/carousel';
+import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
 import { cn } from '@/lib/utils';
 import { Logo } from '@/sanity/lib/queries';
 import Autoplay from 'embla-carousel-autoplay';
@@ -23,21 +17,17 @@ export default function LogoSlider({
   return (
     <div className="relative z-20 flex w-full gap-md pt-md mobile-large:gap-md">
       <Carousel
-        plugins={[Autoplay({ delay: 2000 })]}
+        plugins={[Autoplay({ delay: 3000 })]}
         opts={{ loop: true }}
         className="flex items-center gap-md laptop:mx-auto [&>div]:rounded-sm"
       >
-        {isTrustSection && (
-          <CarouselPrevious className="absolute -left-0 z-40 max-mobile-large:hidden laptop:-left-2xl" />
-        )}
-
         {isTrustSection ? (
           <CarouselContent className="laptop-large:-ml-sm">
             {logos.map((image, index) => {
               return index % 2 === 0 ? (
                 <CarouselItem
                   key={image.title}
-                  className="flex basis-1/3 flex-col justify-between mobile-large:basis-1/4 laptop:basis-1/5"
+                  className="flex basis-1/3 flex-col justify-between mobile-large:basis-1/4 tablet:basis-1/5 laptop:basis-1/6 laptop-large:basis-[14.28%]"
                 >
                   <div
                     className={cn(
@@ -119,10 +109,6 @@ export default function LogoSlider({
               </CarouselItem>
             ))}
           </CarouselContent>
-        )}
-
-        {isTrustSection && (
-          <CarouselNext className="absolute right-0 z-40 max-mobile-large:hidden laptop:-right-2xl" />
         )}
       </Carousel>
     </div>

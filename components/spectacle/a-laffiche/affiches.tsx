@@ -1,4 +1,4 @@
-import { decodeAssetId, notEmpty } from '@/lib/utils';
+import { cn, decodeAssetId, notEmpty } from '@/lib/utils';
 import { sanityFetch } from '@/sanity/lib/fetch';
 import { SPECTACLES_QUERY, SpectaclesQueryResponse } from '@/sanity/lib/queries';
 import { urlForImage } from '@/sanity/lib/utils';
@@ -37,8 +37,17 @@ export default async function Affiches() {
 
   const imageArr = withUrl.filter(notEmpty);
 
+  console.log(imageArr.length);
+
   return (
-    <ul className="max-tablet:section-px grid w-full grid-cols-1 flex-wrap gap-md mobile-medium:grid-cols-2 tablet:flex tablet:justify-center">
+    <ul
+      className={cn(
+        'section-px grid w-fit grid-cols-1 flex-wrap gap-md mobile-medium:grid-cols-2 tablet:grid-cols-3 laptop:grid-cols-4 laptop-large:grid-cols-5',
+        imageArr.length < 5 && 'laptop-large:!grid-cols-4',
+        imageArr.length < 4 && 'laptop:!grid-cols-3',
+        imageArr.length < 3 && 'tablet:!grid-cols-2'
+      )}
+    >
       {imageArr &&
         imageArr.map((spectacle, index) => {
           return (

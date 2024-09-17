@@ -47,7 +47,7 @@ export default async function ProjectFetchWrapper() {
         <Suspense
           fallback={
             <section className="relative flex h-full min-h-[60rem] justify-center overflow-x-clip duration-medium">
-              <ul className="section-px grid grid-cols-2 justify-center gap-sm self-start laptop:container max-laptop:w-screen mobile-large:grid-cols-3 laptop:mx-auto">
+              <ul className="section-px grid grid-cols-2 justify-center gap-sm self-start laptop:container max-laptop:w-screen mobile-large:grid-cols-3 laptop:mx-auto laptop-large:grid-cols-4">
                 {Array.from({ length: 9 }).map((_, index) => (
                   <Skeleton
                     key={`${index}-skeleton`}

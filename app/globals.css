@@ -79,7 +79,7 @@
   }
 
   .section-px {
-    @apply px-md mobile-medium:px-md mobile-large:px-lg tablet:px-xl laptop:px-3xl laptop-large:px-4xl;
+    @apply px-md mobile-medium:px-md mobile-large:px-lg tablet:px-xl laptop:px-xl laptop-large:px-2xl;
   }
 
   .boosted-section-px {

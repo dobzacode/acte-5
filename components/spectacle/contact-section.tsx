@@ -11,7 +11,7 @@ export default function ContactSection({
   return (
     <section
       className={cn(
-        'relative z-20 flex h-fit w-full items-center justify-center overflow-hidden bg-black pl-md mobile-medium:pl-md mobile-large:rounded-tl-4xl mobile-large:pl-lg tablet:rounded-tl-6xl tablet:pl-xl laptop:rounded-tl-8xl laptop:pl-0',
+        'relative z-20 flex h-fit w-full items-center justify-center overflow-hidden bg-black pl-md mobile-medium:pl-md mobile-large:pl-lg tablet:pl-xl laptop:pl-0',
         className
       )}
     >

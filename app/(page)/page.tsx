@@ -4,8 +4,8 @@ import {
   ComingFromTopVariant
 } from '@/components/framer-motion/div-variants';
 import DivWrapper from '@/components/framer-motion/div-wrapper';
-import Footer from '@/components/ui/footer/footer';
-import FooterContent from '@/components/ui/footer/footer-content';
+
+import Footer from '@/components/ui/footer';
 import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -83,9 +83,7 @@ export default function Home() {
           </Link>
         </section>
       </main>
-      <Footer>
-        <FooterContent></FooterContent>
-      </Footer>
+      <Footer />
     </>
   );
 }

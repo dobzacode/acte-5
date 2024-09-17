@@ -140,7 +140,7 @@ export default function ServiceGalerie({}) {
       <InviewWrapper
         variant={FadeInVariant}
         tag="ul"
-        className="section-px grid w-full grid-cols-2 justify-center gap-sm laptop:container mobile-large:grid-cols-3 laptop:mx-auto"
+        className="section-px grid w-full grid-cols-2 justify-center gap-sm laptop:container mobile-large:grid-cols-3 laptop:mx-auto laptop-large:grid-cols-4"
       >
         <AnimatePresence mode="wait">
           {SERVICES.filter((service) => service.category === actualParams).map((service, index) => {

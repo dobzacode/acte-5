@@ -92,7 +92,7 @@ export default function ProjectSection({ events }: { events: EventWithImgAndInde
     <DivWrapper
       variant={FadeInVariant}
       tag="section"
-      className="laptop:section-px flex flex-col justify-between gap-xl laptop:container laptop:mx-auto"
+      className="flex flex-col justify-between gap-xl laptop:container laptop:mx-auto"
     >
       <div className="section-px mx-auto flex w-fit flex-wrap justify-center gap-sm">
         <nav className="body relative z-40 flex w-fit shrink-0 self-center overflow-hidden rounded-sm border p-xs font-normal shadow-md before:absolute before:right-0 before:top-0 before:-z-10 before:h-full before:w-full before:bg-white">
@@ -223,7 +223,7 @@ export default function ProjectSection({ events }: { events: EventWithImgAndInde
       </div>
 
       <section className="relative flex h-full min-h-[60rem] justify-center overflow-x-clip duration-medium">
-        <ul className="section-px grid w-full grid-cols-2 justify-center gap-sm self-start laptop:container mobile-large:grid-cols-3 laptop:mx-auto">
+        <ul className="section-px grid w-full grid-cols-2 justify-center gap-sm self-start laptop:container mobile-large:grid-cols-3 laptop:mx-auto laptop-large:grid-cols-4">
           <AnimatePresence mode="wait">
             {filteredEvents.map((event, index) => (
               <motion.li
