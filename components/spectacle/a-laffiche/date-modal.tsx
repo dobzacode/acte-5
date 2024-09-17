@@ -93,6 +93,7 @@ export default function DateModal({
                 height={400}
                 className="w-full rounded-xs object-cover px-sm"
               ></Image>
+
               <div className="grid grid-cols-2 gap-sm px-sm pt-sm max-tablet:flex max-tablet:flex-col">
                 <div className="flex flex-col gap-md rounded-xs border border-black/10 p-md shadow-inner">
                   <p className="sub-heading font-semibold text-black">HORAIRES</p>

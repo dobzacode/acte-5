@@ -55,11 +55,16 @@ export default function AnimatedPart({ isSpectacle }: { isSpectacle?: boolean })
         variants={{
           hidden: {
             y: -700,
-            maxHeight: '120px'
+            maxHeight: '120px !important',
+            opacity: 0
           },
           enter: {
             y: 0,
+            opacity: 1,
             transition: {
+              opacity: {
+                duration: 0.2
+              },
               y: {
                 type: 'spring',
                 stiffness: 20
