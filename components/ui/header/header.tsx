@@ -41,15 +41,15 @@ export default function Header({ className }: { className?: string }) {
   return (
     <section
       className={cn(
-        `section-px z-50 flex h-4xl w-full items-center justify-between border-b border-black border-opacity-10 bg-transparent bg-white bg-opacity-75 py-md max-mobile-large:h-3xl mobile-large:gap-3xl`,
+        `section-px z-[800] flex h-4xl w-full items-center justify-between border-b border-black border-opacity-10 bg-transparent bg-white bg-opacity-75 py-md max-mobile-large:h-3xl mobile-large:gap-3xl`,
         !showMenu && 'overflow-hidden',
         pathname === '/' && 'relative max-laptop:justify-between'
       )}
     >
-      <div className="flex items-center gap-md">
+      <div className="relative z-50 flex items-center gap-md">
         <Logo
           className={cn(
-            'h-[70px] w-[70px] rounded-xs duration-medium max-mobile-large:h-[50px] max-mobile-large:w-[50px] max-mobile-medium:h-[40px] max-mobile-medium:w-[40px]'
+            'relative z-50 h-[70px] w-[70px] rounded-xs duration-medium max-mobile-large:h-[50px] max-mobile-large:w-[50px] max-mobile-medium:h-[40px] max-mobile-medium:w-[40px]'
           )}
         ></Logo>
         <AnimatePresence mode="wait">
