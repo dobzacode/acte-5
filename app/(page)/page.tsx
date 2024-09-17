@@ -83,7 +83,9 @@ export default function Home() {
           </Link>
         </section>
       </main>
-      <Footer />
+      <div className="w-full border-t">
+        <Footer />
+      </div>
     </>
   );
 }

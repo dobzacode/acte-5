@@ -9,8 +9,8 @@ import { Variants } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import evenementimage from '/public/assets/event/landing/competence/evenementiel.png';
+import graphismeimage from '/public/assets/event/landing/competence/graphisme.png';
 import spectacleimage from '/public/assets/event/landing/competence/spectacle.png';
-import placeholder from '/public/placeholder-image.png';
 
 const COMPETENCE = [
   {
@@ -29,7 +29,7 @@ const COMPETENCE = [
   {
     name: 'GRAPHISME',
     category: 'graphisme',
-    src: placeholder,
+    src: graphismeimage,
     description:
       'La communication visuelle habille nos événements et nos spectacles, mais pas seulement...'
   }
@@ -62,21 +62,22 @@ export default function CompetenceSection() {
             <Link
               scroll={false}
               href={`/agence-evenementielle-strasbourg/services?categorie=${item.category}`}
-              className="group relative flex w-full items-center justify-between gap-3xl overflow-hidden rounded-sm px-2xl py-xl duration-extra-slow hover:bg-primary-400 hover:duration-0"
+              className="group relative flex h-[20vh] max-h-[300px] w-full items-start justify-between gap-3xl overflow-hidden rounded-sm p-md delay-300 duration-extra-slow hover:bg-primary-400 hover:delay-0 hover:duration-0"
             >
-              <h3 className="heading--large max-laptop-large:heading--sub-large relative z-20 w-full font-medium text-white duration-medium group-hover:text-primary-400">
+              <h3 className="heading--large max-laptop-large:heading--sub-large relative z-20 w-full whitespace-nowrap font-medium text-white delay-300 duration-medium group-hover:-translate-y-[150%] group-hover:delay-0">
                 {item.name}
               </h3>
-              <p className="heading relative z-10 w-fit translate-x-[104%] !font-[Avenir] !font-light text-white duration-medium group-hover:translate-x-0">
+              <p className="heading relative z-10 w-fit translate-x-[104%] !font-[Avenir] !font-light text-white duration-medium group-hover:translate-x-0 group-hover:delay-300">
                 {item.description}
               </p>
               <Image
                 placeholder={'blur'}
                 src={item.src ?? '/placeholder-image.png'}
-                className="z-10 object-cover object-top duration-medium group-hover:-translate-x-1/2 group-hover:rounded-r-sm"
+                className="object-cen z-10 object-cover duration-medium group-hover:-translate-x-1/2 group-hover:rounded-r-sm group-hover:delay-300"
                 fill
                 alt=""
               ></Image>
+              <div className="absolute bottom-0 left-0 right-0 top-0 z-10 h-full w-full bg-gradient-to-b from-black/70 to-transparent to-50% delay-300 duration-medium group-hover:opacity-0 group-hover:delay-0"></div>
             </Link>
           </InviewWrapper>
         );
