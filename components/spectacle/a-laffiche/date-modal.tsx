@@ -5,8 +5,9 @@ import CustomPortableText from '@/components/sanity/portable-text';
 import UiButton from '@/components/ui/ui-button';
 import { cn } from '@/lib/utils';
 import { Modal, ModalBody, ModalContent, ModalFooter, ModalHeader } from '@nextui-org/modal';
+import Image from 'next/image';
 import { useEffect, useState } from 'react';
-import { DateItemCalWithoutPic } from './spectacle/spectacle-calendar';
+import { DateItemCal } from './calendrier';
 
 const formatDateString = (isoDateString: string) => {
   const date = new Date(isoDateString);
@@ -27,7 +28,7 @@ export default function DateModal({
 }: {
   isOpen: boolean;
   onOpenChange: (open: boolean) => void;
-  selectedDate: DateItemCalWithoutPic;
+  selectedDate: DateItemCal;
 }) {
   const [headerOffset, setHeaderOffset] = useState<string | null>(null);
 
@@ -42,7 +43,7 @@ export default function DateModal({
     <Modal scrollBehavior="inside" placement="center" isOpen={isOpen} onOpenChange={onOpenChange}>
       <ModalContent
         className={cn(
-          'mx-sm mt-5xl max-mobile-large:mt-3xl tablet:min-w-[40rem] laptop:min-w-[50rem]',
+          'mx-sm mt-5xl max-mobile-large:mt-3xl tablet:min-w-[40rem] laptop:min-w-[40rem]',
           headerOffset === '-100px' && '!mt-0'
         )}
       >
@@ -84,6 +85,14 @@ export default function DateModal({
               </div>
             </ModalHeader>
             <ModalBody className="gap-0 px-0 pt-0">
+              <Image
+                src={selectedDate.picture.url}
+                alt={`Affiche ${selectedDate.titre}`}
+                width={400}
+                priority={true}
+                height={400}
+                className="w-full object-cover"
+              ></Image>
               <div className="grid grid-cols-2 gap-sm px-sm pt-sm max-tablet:flex max-tablet:flex-col">
                 <div className="flex flex-col gap-md rounded-xs border border-black/10 p-md shadow-inner">
                   <p className="sub-heading font-semibold text-black">HORAIRES</p>

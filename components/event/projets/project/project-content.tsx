@@ -39,7 +39,7 @@ export default async function ProjectpageContent({ params }: { params: { projet:
           ]}
         ></TitleSection>
         <DivWrapper
-          className="flex flex-col gap-2xl overflow-hidden laptop:container mobile-large:gap-3xl laptop:mx-auto"
+          className="inner-section-gap flex flex-col overflow-hidden laptop:container laptop:mx-auto"
           variant={ComingFromRightVariant}
           inverseOnExit={false}
         >

@@ -6,7 +6,6 @@ import { useDisclosure } from '@nextui-org/modal';
 import { useMemo } from 'react';
 import { DateItemCal } from './calendrier';
 import DateModal from './date-modal';
-import { DateItemCalWithoutPic } from './spectacle/spectacle-calendar';
 
 const formatDateString = (isoDateString: string) => {
   const date = new Date(isoDateString);
@@ -92,7 +91,7 @@ export default function CalendrierRow({ dateItem }: { dateItem?: DateItemCal }) 
         <DateModal
           isOpen={isOpen}
           onOpenChange={onOpenChange}
-          selectedDate={{ ...(dateItem as DateItemCalWithoutPic) }}
+          selectedDate={{ ...dateItem  }}
         />
       )}
     </>

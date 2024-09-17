@@ -101,10 +101,7 @@ export default defineType({
       title: 'Fichier vidéo',
       name: 'video',
       type: 'file',
-      group: 'media',
-      hidden: ({ document }) =>
-        //@ts-expect-error is not defined
-        document?.categories?.some((categorie) => categorie === "Vidéo d'entreprise") ? false : true
+      group: 'media'
     }),
     defineField({
       name: 'slug',

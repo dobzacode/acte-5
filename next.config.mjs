@@ -19,6 +19,16 @@ const nextConfig = {
         permanent: true
       },
       {
+        source: '/projet',
+        destination: '/agence-evenementielle-strasbourg/projets',
+        permanent: true
+      },
+      {
+        source: '/projet/:slug',
+        destination: '/agence-evenementielle-strasbourg/projets',
+        permanent: true
+      },
+      {
         source: '/agence-evenementielle-strasbourg/convention-entreprise-strasbourg',
         destination: '/agence-evenementielle-strasbourg/services/convention-entreprise-strasbourg',
         permanent: true
@@ -107,7 +117,8 @@ const nextConfig = {
         source: '/calendrier',
         destination: '/spectacles-strasbourg/a-laffiche',
         permanent: true
-      }
+      },
+      { source: '/reservations', destination: '/spectacles-strasbourg/a-laffiche', permanent: true }
     ];
   },
 

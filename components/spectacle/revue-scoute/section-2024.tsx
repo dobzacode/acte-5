@@ -49,12 +49,12 @@ export default async function Section2024() {
         >
           {revueScouteActuelle[0].titre}
         </InviewWrapper>
-        <div className="inner-section-gap flex w-full max-laptop:flex-col">
+        <InviewWrapper
+          variant={ComingFromRightVariant}
+          className="inner-section-gap flex w-full max-laptop:flex-col"
+        >
           {mainUrl && (
-            <InviewWrapper
-              variant={ComingFromLeftVariant}
-              className="relative h-fit shrink-0 overflow-hidden rounded-xs laptop:w-1/3"
-            >
+            <div className="relative h-fit shrink-0 overflow-hidden rounded-xs laptop:w-1/3">
               <Image
                 src={mainUrl}
                 sizes={'(max-width: 640px) 100vw, (max-width: 768px) 50vw, 90vw'}
@@ -63,15 +63,15 @@ export default async function Section2024() {
                 width={800}
                 height={800}
               ></Image>
-            </InviewWrapper>
+            </div>
           )}
-          <InviewWrapper variant={ComingFromRightVariant} className="w-full">
+          <div className="w-full">
             <CustomPortableText
               textSize="laptop-large:sub-heading body"
               value={revueScouteActuelle[0].description}
             ></CustomPortableText>
-          </InviewWrapper>
-        </div>
+          </div>
+        </InviewWrapper>
       </section>
       <section className="inner-section-gap flex flex-col">
         <InviewWrapper

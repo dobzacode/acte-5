@@ -63,8 +63,8 @@ export default function DateRow({
         }
       }}
       className={cn(
-        'relative flex flex-col  gap-sm  rounded-md border px-md py-md duration-medium hover:z-30 hover:shadow-xl',
-        actualDate === date._key ? ' shadow-xl ' : '',
+        'relative flex flex-col gap-sm rounded-md border px-md py-md duration-medium hover:z-30 hover:shadow-xl',
+        actualDate === date._key ? 'shadow-xl' : '',
         isDateStrictlyBeforeToday(findCloserDate(date.dates)) &&
           'pointer-events-none [&>span]:opacity-50'
       )}
@@ -73,7 +73,7 @@ export default function DateRow({
         className={'relative z-20 flex w-full cursor-pointer justify-between'}
         onClick={() => (actualDate === date._key ? setActualDate(null) : setActualDate(date._key))}
       >
-        <h3 className="heading--sub-large  font-bold">{date.ville}</h3>
+        <h3 className="heading--sub-large font-bold">{date.ville}</h3>
         <LuChevronRight
           size={40}
           className={cn(
@@ -84,7 +84,7 @@ export default function DateRow({
       </span>
       <span
         className={cn(
-          'flex  h-fit flex-col items-start gap-sm overflow-hidden duration-slow',
+          'flex h-fit flex-col items-start gap-sm overflow-hidden duration-slow',
           actualDate === date._key ? 'max-h-[30rem]' : 'max-h-0'
         )}
       >

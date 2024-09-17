@@ -159,7 +159,7 @@ export default defineType({
     }),
     defineField({
       name: 'mainImage',
-      title: 'Image principal',
+      title: 'Affiche du spectacle',
       type: 'image',
       group: 'media',
       options: {

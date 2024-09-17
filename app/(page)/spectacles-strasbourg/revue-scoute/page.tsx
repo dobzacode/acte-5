@@ -1,4 +1,7 @@
-import { ComingFromRightVariant } from '@/components/framer-motion/div-variants';
+import {
+  ComingFromLeftVariant,
+  ComingFromRightVariant
+} from '@/components/framer-motion/div-variants';
 import InviewWrapper from '@/components/framer-motion/inview-wrapper';
 import PastSectionSkeleton from '@/components/skeleton/past-section-skeleton';
 import ScouteSkeleton from '@/components/skeleton/scoute-skeleton';
@@ -108,6 +111,38 @@ export default async function Home() {
         <Suspense fallback={<ScouteSkeleton />}>
           <Section2024></Section2024>
         </Suspense>
+        <section className="section-px main-gap inner-section-gap flex flex-col laptop:container laptop:mx-auto">
+          <InviewWrapper
+            className="heading--sub-extra-large text-primary-400"
+            tag="h2"
+            variant={ComingFromLeftVariant}
+          >
+            Edition 2023 : L&apos;EAU REGIME DU MONDE !
+          </InviewWrapper>
+          <InviewWrapper
+            style={{
+              position: 'relative',
+              paddingBottom: '56.25%',
+              height: 0,
+              overflow: 'hidden',
+              maxWidth: '100%'
+            }}
+            variant={ComingFromRightVariant}
+            className="inner-section-gap flex h-fit w-full"
+          >
+            <iframe
+              width="100%"
+              height="100%"
+              src="https://www.youtube.com/embed/Jn-nb6MCk50?si=tMXVVAHPUhBY8tTl"
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              className="rounded-xs"
+              style={{ position: 'absolute', top: 0, left: 0, zIndex: 30 }}
+            ></iframe>
+          </InviewWrapper>
+        </section>
+
         <Suspense fallback={<PastSectionSkeleton />}>
           <PastSection></PastSection>
         </Suspense>

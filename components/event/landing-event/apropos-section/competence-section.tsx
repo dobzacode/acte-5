@@ -36,14 +36,42 @@ const COMPETENCE = [
 ];
 
 const variantLeft: Variants = {
-  hidden: { x: -700, opacity: 0 },
-  enter: { x: 0, opacity: 1 },
+  hidden: { x: -700, opacity: 0, pointerEvents: 'none' },
+  enter: {
+    x: 0,
+    opacity: 1,
+    pointerEvents: 'auto',
+    transition: {
+      x: {
+        duration: 0.5
+      },
+      opacity: {
+        duration: 0.5
+      },
+      pointerEvents: { delay: 0.5, duration: 0 }
+    }
+  },
   exit: { x: 700, opacity: 0 }
 };
 
 const variantRight: Variants = {
-  hidden: { x: 700, opacity: 0 },
-  enter: { x: 0, opacity: 1 },
+  hidden: { x: 700, opacity: 0, pointerEvents: 'none' },
+  enter: {
+    x: 0,
+    opacity: 1,
+    pointerEvents: 'auto',
+    transition: {
+      x: {
+        duration: 0.8,
+        ease: 'easeInOut'
+      },
+      opacity: {
+        duration: 0.8,
+        ease: 'easeInOut'
+      },
+      pointerEvents: { delay: 0.8, duration: 0 }
+    }
+  },
   exit: { x: -700, opacity: 0 }
 };
 

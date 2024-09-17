@@ -37,7 +37,7 @@ export default async function Affiches() {
 
   const imageArr = withUrl.filter(notEmpty);
 
-  console.log(imageArr.length);
+  console.log(imageArr[3]);
 
   return (
     <ul

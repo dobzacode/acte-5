@@ -3,11 +3,12 @@ import Stake from './stake';
 import image1 from '/public/assets/spectacle/apropos/apropos_1.jpg';
 import image2 from '/public/assets/spectacle/apropos/apropos_2.png';
 import image3 from '/public/assets/spectacle/apropos/apropos_3.jpg';
+import image4 from '/public/assets/spectacle/apropos/apropos_4.png';
 
 export const TEXT_DATE = [
   {
-    date: 'XXXX',
-    src: image1,
+    date: '1974',
+    src: image4,
     text: "L'histoire d'Acte 5 commence rue des Orphelins, dans le quartier emblématique de la Krutenau à Strasbourg. C'est là que quatre passionnés - Daniel Chambet Ithier, Patrick Missoffe, Muriel et Patrick Chevalier - ouvrent les portes de l'Ange d'Or, un café-théâtre qui deviendra le berceau de leur aventure artistique."
   },
   {
@@ -22,7 +23,7 @@ export const TEXT_DATE = [
   },
   {
     date: '1994',
-    src: image3,
+    src: image1,
     text: 'Acte 5 trouve son foyer définitif dans la salle des fêtes de Schiltigheim, affirmant ainsi sa place dans le paysage culturel local.'
   }
 ];
