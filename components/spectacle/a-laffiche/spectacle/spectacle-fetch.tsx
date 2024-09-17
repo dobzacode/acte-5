@@ -5,8 +5,10 @@ import {
 import DivWrapper from '@/components/framer-motion/div-wrapper';
 import InviewWrapper from '@/components/framer-motion/inview-wrapper';
 import TitleSection from '@/components/ui/title-section';
+import { decodeAssetId } from '@/lib/utils';
 import { sanityFetch } from '@/sanity/lib/fetch';
 import { SPECTACLE_QUERY, SpectacleQueryResponse } from '@/sanity/lib/queries';
+import { urlForImage } from '@/sanity/lib/utils';
 import { draftMode } from 'next/headers';
 import { notFound } from 'next/navigation';
 import SpectacleCalendar from './spectacle-calendar';
@@ -22,6 +24,18 @@ export default async function SpectacleFetch({ params }: { params: { spectacle: 
 
   if (!spectacle) {
     return notFound();
+  }
+
+  const { width, height } = decodeAssetId(spectacle.mainImage?.asset._ref);
+
+  let mainImage;
+  try {
+    mainImage = spectacle.mainImage
+      ? urlForImage(spectacle.mainImage).width(width).height(height).dpr(2).quality(80).url()
+      : null;
+  } catch (error) {
+    console.error('Error generating main image URL:', error);
+    mainImage = null;
   }
 
   return (
@@ -41,7 +55,7 @@ export default async function SpectacleFetch({ params }: { params: { spectacle: 
           className="flex flex-col gap-2xl overflow-hidden laptop:container mobile-large:gap-xl laptop:mx-auto"
           variant={ComingFromRightVariant}
           inverseOnExit={false}
-          >
+        >
           <SpectacleContent spectacle={spectacle} />
         </DivWrapper>
         {spectacle?.dates && (
@@ -54,13 +68,19 @@ export default async function SpectacleFetch({ params }: { params: { spectacle: 
               Calendrier des dates
             </InviewWrapper>
 
-            <SpectacleCalendar
-              dates={spectacle?.dates.map((date) => ({
-                ...date,
-                type: 'Spectacle',
-                titre: spectacle.titre
-              }))}
-            ></SpectacleCalendar>
+            {mainImage && (
+              <SpectacleCalendar
+                dates={spectacle?.dates.map((date) => ({
+                  ...date,
+                  type: 'Spectacle',
+                  titre: spectacle.titre,
+                  picture: {
+                    ...spectacle.mainImage,
+                    url: mainImage
+                  }
+                }))}
+              ></SpectacleCalendar>
+            )}
           </section>
         )}
       </section>
