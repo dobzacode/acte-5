@@ -4,17 +4,15 @@ import { ComingFromRightVariant } from '@/components/framer-motion/div-variants'
 import InviewWrapper from '@/components/framer-motion/inview-wrapper';
 import { Calendar } from '@/components/ui/calendar';
 import useBetterMediaQuery from '@/hooks/use-better-media-query';
-import { DateItem } from '@/sanity/lib/queries';
 import { useDisclosure } from '@nextui-org/modal';
 import { fr } from 'date-fns/locale';
 import { useState } from 'react';
+import { DateItemCal } from '../calendrier';
 import DateModal from '../date-modal';
 
-export type DateItemCalWithoutPic = DateItem & { type: 'Spectacle'; titre: string };
-
-export default function SpectacleCalendar({ dates }: { dates: DateItemCalWithoutPic[] }) {
+export default function SpectacleCalendar({ dates }: { dates: DateItemCal[] }) {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
-  const [selectedDate, setSelectedDate] = useState<DateItemCalWithoutPic | null>(null);
+  const [selectedDate, setSelectedDate] = useState<DateItemCal | null>(null);
 
   const handleDateClick = (date: Date) => {
     const selected = dates.find((item) =>
