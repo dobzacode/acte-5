@@ -9,7 +9,8 @@ export default function DivWrapper({
   className,
   tag = 'div',
   style,
-  noExit = false
+  noExit = false,
+  initial
 }: {
   variant: Variants;
   children: React.ReactNode;
@@ -18,6 +19,7 @@ export default function DivWrapper({
   tag?: string;
   style?: React.CSSProperties;
   noExit?: boolean;
+  initial?: string;
 }) {
   //@ts-expect-error tag is a string
   const MotionComponent = motion[tag];
@@ -28,7 +30,7 @@ export default function DivWrapper({
       className={className}
       transition={{ duration: 1, ease: 'easeInOut' }}
       variants={variant}
-      initial="hidden"
+      initial={initial ? initial : 'hidden'}
       exit={() => {
         if (noExit) return;
         return inverseOnExit ? 'exit' : 'hidden';

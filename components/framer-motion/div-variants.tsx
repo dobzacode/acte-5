@@ -53,22 +53,37 @@ export const ComingFromBottomVariant: Variants = {
   }
 };
 
-export const ComingFromLeftVariant: Variants = {
+export const FullTranslateFromLeft: Variants = {
   hidden: {
-    opacity: 0,
-    x: -100
+    opacity: 1,
+    x: '-100vw'
   },
   enter: {
     opacity: 1,
     x: 0
   },
   exit: {
-    opacity: 0,
-    x: 100
+    opacity: 1,
+    x: '100vw'
   }
 };
 
-export const FullTranslateFromLeft: Variants = {
+export const FullTranslateFromRight: Variants = {
+  hidden: {
+    opacity: 1,
+    x: '100vw'
+  },
+  enter: {
+    opacity: 1,
+    x: 0
+  },
+  exit: {
+    opacity: 1,
+    x: '-100vw'
+  }
+};
+
+export const ComingFromLeftVariant: Variants = {
   hidden: {
     opacity: 0,
     x: -100

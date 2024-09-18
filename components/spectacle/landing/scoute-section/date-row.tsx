@@ -65,8 +65,7 @@ export default function DateRow({
       className={cn(
         'relative flex flex-col gap-sm rounded-md border px-md py-md duration-medium hover:z-30 hover:shadow-xl',
         actualDate === date._key ? 'shadow-xl' : '',
-        isDateStrictlyBeforeToday(findCloserDate(date.dates)) &&
-          'pointer-events-none [&>span]:opacity-50'
+        isDateStrictlyBeforeToday(findCloserDate(date.dates)) && '[&>span]:opacity-50'
       )}
     >
       <span

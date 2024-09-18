@@ -84,7 +84,7 @@ export default function GalleryScrollAnimation({}) {
             opacity: useTransform(scrollYProgress, [0, 0.1, 0.2], [0, 0, 1]),
             scale: useTransform(scrollYProgress, [0, 0.1, 1], [0.8, 0.8, 1])
           }}
-          className="absolute -z-10 mx-auto mb-5xl mt-5 text-center text-black"
+          className="absolute -z-10 mx-auto mb-6xl mt-5 text-center text-black"
         >
           <p className="sub-heading max-w-[50ch] text-pretty">
             Le plus grand cabaret satirique d&apos;alsace se moque de tout et de tout le monde

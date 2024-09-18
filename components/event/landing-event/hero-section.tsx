@@ -1,12 +1,21 @@
-import { ComingFromLeftVariant } from '@/components/framer-motion/div-variants';
+import {
+  FullTranslateFromLeft,
+  FullTranslateFromRight
+} from '@/components/framer-motion/div-variants';
 import DivWrapper from '@/components/framer-motion/div-wrapper';
+import { cn } from '@/lib/utils';
 
 export default function HeroSection({ isSpectacle = false }: { isSpectacle?: boolean }) {
   return (
     <section className="max-w-screen h-[calc(85vh)] w-full bg-white after:absolute after:bg-white tablet:h-[95vh]">
       <DivWrapper
-        variant={ComingFromLeftVariant}
-        className="absolute left-0 top-0 z-10 flex h-[calc(85vh)] w-full items-center justify-center overflow-hidden rounded-br-2xl bg-gray-200 mobile-large:rounded-br-4xl tablet:h-[95vh] tablet:rounded-br-6xl laptop:rounded-br-8xl"
+        inverseOnExit={false}
+        variant={!isSpectacle ? FullTranslateFromLeft : FullTranslateFromRight}
+        className={cn(
+          'absolute left-0 top-0 z-10 flex h-[calc(85vh)] w-full items-center justify-center overflow-hidden rounded-br-2xl bg-gray-200 mobile-large:rounded-br-4xl tablet:h-[95vh] tablet:rounded-br-6xl laptop:rounded-br-8xl',
+          isSpectacle &&
+            '!rounded-br-none rounded-bl-2xl mobile-large:rounded-bl-4xl tablet:rounded-bl-6xl laptop:rounded-bl-8xl'
+        )}
       >
         <video
           autoPlay
