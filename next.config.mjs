@@ -19,6 +19,11 @@ const nextConfig = {
         permanent: true
       },
       {
+        source: '/project-category/:path*',
+        destination: '/agence-evenementielle-strasbourg/projets',
+        permanent: true
+      },
+      {
         source: '/projet',
         destination: '/agence-evenementielle-strasbourg/projets',
         permanent: true
@@ -84,28 +89,24 @@ const nextConfig = {
         permanent: true
       },
       {
-        source: '/agence',
+        source: '/agence/:path*',
         destination: '/agence-evenementielle-strasbourg/a-propos',
         permanent: true
       },
+      {
+        source: '/category/agence',
+        destination: '/agence-evenementielle-strasbourg',
+        permanent: true
+      },
+
       {
         source: '/agence-communication-strasbourg',
         destination: '/agence-evenementielle-strasbourg',
         permanent: true
       },
       {
-        source: '/agence-communication-strasbourg/strategie-communication',
-        destination: '/agence-evenementielle-strasbourg/strategie-communication',
-        permanent: true
-      },
-      {
-        source: '/agence-communication-strasbourg/video-entreprise',
-        destination: '/agence-evenementielle-strasbourg/video-entreprise',
-        permanent: true
-      },
-      {
-        source: '/agence-communication-strasbourg/identite-visuelle',
-        destination: '/agence-evenementielle-strasbourg/identite-visuelle',
+        source: '/agence-communication-strasbourg/:path*',
+        destination: '/agence-evenementielle-strasbourg/services/:path*',
         permanent: true
       },
       {
@@ -114,11 +115,50 @@ const nextConfig = {
         permanent: true
       },
       {
-        source: '/calendrier',
+        source: '/spectacles/:path*',
         destination: '/spectacles-strasbourg/a-laffiche',
         permanent: true
       },
-      { source: '/reservations', destination: '/spectacles-strasbourg/a-laffiche', permanent: true }
+      {
+        source: '/category/spectacles',
+        destination: '/spectacles-strasbourg/a-laffiche',
+        permanent: true
+      },
+      {
+        source: '/spectacles-strasbourg/affiche',
+        destination: '/spectacles-strasbourg/a-laffiche',
+        permanent: true
+      },
+      {
+        source: '/calendrier',
+        destination: '/spectacles-strasbourg/calendrier',
+        permanent: true
+      },
+      {
+        source: '/event-directory/',
+        destination: '/spectacles-strasbourg/calendrier',
+        permanent: true
+      },
+      {
+        source: '/reservations',
+        destination: '/spectacles-strasbourg/a-laffiche',
+        permanent: true
+      },
+      {
+        source: '/events/:path*',
+        destination: '/spectacles-strasbourg/a-laffiche',
+        permanent: true
+      },
+      {
+        source: '/event-location',
+        destination: '/spectacles-strasbourg/a-laffiche',
+        permanent: true
+      },
+      {
+        source: '/event-location/:path*',
+        destination: '/spectacles-strasbourg/a-laffiche',
+        permanent: true
+      }
     ];
   },
 
