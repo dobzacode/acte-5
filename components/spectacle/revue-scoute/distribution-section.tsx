@@ -40,7 +40,7 @@ export default async function DistributionSection({
       >
         Les artistes
       </InviewWrapper>
-      <ul className="relative -z-10 grid w-full grid-cols-3 items-center gap-sm mobile-large:gap-lg tablet:grid-cols-4 laptop:grid-cols-5">
+      <ul className="relative -z-10 grid w-full grid-cols-3 items-center gap-sm mobile-large:gap-lg tablet:grid-cols-4 laptop-large:grid-cols-5">
         {imageArr.map((people, index) => {
           return (
             <InviewWrapper
@@ -78,7 +78,12 @@ export default async function DistributionSection({
                   className="object-cover"
                 ></Image>
               </div>
-              <p className="sub-heading px-sm text-center [word-spacing:50000px]">{people.nom}</p>
+              <div className="flex flex-col gap-xs">
+                <p className="sub-heading px-sm text-center">{people.nom}</p>
+                {people.role && (
+                  <p className="body px-sm text-center font-medium text-black/70">{people.role}</p>
+                )}
+              </div>
             </InviewWrapper>
           );
         })}

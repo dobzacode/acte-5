@@ -118,6 +118,7 @@ export interface Affiche {
 export interface DistributionItem {
   _key: string;
   nom: string;
+  role: string | null;
   picture: Image;
 }
 
