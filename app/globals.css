@@ -19,7 +19,7 @@
   }
 
   .heading--sub-extra-large {
-    @apply font-[Quasimoda] text-[2.5rem] font-bold leading-[2.5rem] mobile-medium:text-xl mobile-medium:leading-xl mobile-large:text-xl mobile-large:leading-xl tablet:text-2xl tablet:leading-2xl laptop:text-3xl laptop:leading-[5.5rem];
+    @apply font-[Quasimoda] text-[2.5rem] font-bold leading-[2.5rem] mobile-medium:text-xl mobile-medium:leading-xl mobile-large:text-xl mobile-large:leading-xl tablet:text-2xl tablet:leading-2xl laptop:text-3xl laptop:leading-[5.8rem];
   }
 
   .heading--large {
