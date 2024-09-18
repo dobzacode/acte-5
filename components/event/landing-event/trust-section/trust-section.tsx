@@ -14,16 +14,15 @@ export default function TrustSection() {
         viewport={{ once: true, margin: '-200px 0px -200px 0px' }}
       >
         <h2 className="heading--large w-fit">
-          Forte de plus de 30 ans d'expertise, Acte 5 allie précision et créativité en
-          s&apos;inspirant des arts du spectacle pour orchestrer des mises en scène qui donnent vie
-          à vos messages d&apos;entreprise.
+          Forte de plus de 30 ans d&apos;expertise, Acte 5 allie précision et créativité pour
+          transformer vos messages en expériences spectaculaires.
         </h2>
       </InviewWrapper>
       <div className="inner-section-gap flex flex-col">
         <div className="relative z-20 flex w-full flex-col gap-md pt-md mobile-large:gap-md">
           <InviewWrapper
             variant={ComingFromLeftVariant}
-            className="heading section-px mx-auto whitespace-nowrap laptop:container max-laptop:mx-0 max-laptop:mr-auto"
+            className="heading section-px mx-auto laptop:container max-laptop:mx-0 max-laptop:mr-auto mobile-large:whitespace-nowrap"
           >
             Ils sont venus, ils ont vu, ils sont revenus
           </InviewWrapper>
