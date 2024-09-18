@@ -10,7 +10,7 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import eventimage from '/public/assets/landing/event.jpg';
-import spectacleimage from '/public/assets/landing/spectacle.png';
+import spectacleimage from '/public/assets/landing/spectacle.webp';
 
 export const metadata: Metadata = {
   title: 'Acte 5 | Agence de Communication Événementielle à Strasbourg',
@@ -37,7 +37,7 @@ export default function Home() {
             href="agence-evenementielle-strasbourg"
           >
             <DivWrapper
-              className="group relative flex h-[300px] flex-col items-center justify-center gap-md overflow-hidden rounded-sm p-md grayscale after:absolute after:bottom-0 after:z-10 after:h-full after:w-full after:bg-gradient-to-t after:from-black after:from-5% after:to-transparent after:opacity-0 after:duration-medium hover:grayscale-0 hover:after:opacity-100 tablet:h-[400px]"
+              className="group relative flex h-[300px] flex-col items-center justify-center gap-md overflow-hidden rounded-sm p-md after:absolute after:bottom-0 after:z-10 after:h-full after:w-full after:bg-gradient-to-t after:from-black after:from-5% after:to-transparent after:opacity-0 after:duration-medium hover:grayscale-0 hover:after:opacity-100 tablet:h-[400px]"
               variant={ComingFromLeftVariant}
             >
               <Image
@@ -59,7 +59,7 @@ export default function Home() {
           </Link>
           <Link scroll={false} className="w-fit tablet:w-1/2" href="spectacles-strasbourg">
             <DivWrapper
-              className="group relative flex h-[300px] flex-col items-center justify-center gap-md overflow-hidden rounded-sm p-md grayscale after:absolute after:bottom-0 after:z-10 after:h-full after:w-full after:bg-gradient-to-t after:from-black after:from-5% after:to-transparent after:opacity-0 after:duration-medium hover:grayscale-0 hover:after:opacity-100 tablet:h-[400px]"
+              className="group relative flex h-[300px] flex-col items-center justify-center gap-md overflow-hidden rounded-sm p-md after:absolute after:bottom-0 after:z-10 after:h-full after:w-full after:bg-gradient-to-t after:from-black after:from-5% after:to-transparent after:opacity-0 after:duration-medium hover:grayscale-0 hover:after:opacity-100 tablet:h-[400px]"
               variant={ComingFromRightVariant}
             >
               <Image
