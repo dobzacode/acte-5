@@ -24,20 +24,13 @@ export default function ScouteSection() {
         >
           La revue scoute
         </InviewWrapper>
-        <InviewWrapper
-          variant={ComingFromRightVariant}
-          className="sub-heading w-[40ch] text-pretty text-center"
-        >
-          Le plus grand cabaret satirique d&apos;alsace se moque de tout et de tout le monde depuis
-          50 ans dans un spectacle unique en Français
-        </InviewWrapper>
       </div>
 
       <GalleryScrollAnimation></GalleryScrollAnimation>
       <div className="flex flex-col gap-2xl laptop:container laptop:mx-auto laptop:gap-4xl laptop-large:gap-6xl">
         <InviewWrapper
           className="section-px inner-section-gap flex flex-col items-center justify-center mobile-large:flex-row-reverse tablet:hidden laptop:ml-auto"
-          variant={ComingFromRightVariant}
+          variant={ComingFromLeftVariant}
         >
           <Image
             priority={true}
@@ -49,9 +42,8 @@ export default function ScouteSection() {
             className="rounded-sm"
           ></Image>
           <p className="sub-heading text-pretty text-center mobile-large:w-[40ch]">
-            La vingtaine de tableaux satiriques s'enchaine, chacun habillés de divers décors et
-            autres costumes loufoques, tandis que la musique accompagne chaque rebondissement avec
-            une énergie contagieuse.
+            Le plus grand cabaret satirique d&apos;alsace se moque de tout et de tout le monde
+            depuis 50 ans dans un spectacle unique en Français
           </p>
         </InviewWrapper>
         <InviewWrapper
@@ -85,8 +77,9 @@ export default function ScouteSection() {
             className="rounded-sm"
           ></Image>
           <p className="sub-heading text-pretty text-center mobile-large:w-[40ch]">
-            Habillés de nombreux décors et costumes, la vingtaine de tableaux satiriques s'enchaine
-            tandis que la musique accompagne chaque rebondissement avec une énergie contagieuse.
+            La vingtaine de tableaux satiriques s'enchaine, chacun habillés de divers décors et
+            autres costumes loufoques, tandis que la musique accompagne chaque rebondissement avec
+            une énergie contagieuse.
           </p>
         </InviewWrapper>
         <InviewWrapper
