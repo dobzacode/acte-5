@@ -9,7 +9,7 @@ export const TEXT_DATE = [
   {
     date: '1974',
     src: image4,
-    text: "L'histoire d'Acte 5 commence rue des Orphelins, dans le quartier emblématique de la Krutenau à Strasbourg. C'est là que quatre passionnés - Daniel Chambet Ithier, Patrick Missoffe, Muriel et Patrick Chevalier - ouvrent les portes de l'Ange d'Or, un café-théâtre qui deviendra le berceau de leur aventure artistique."
+    text: "L'histoire de la Revue Scoute commence rue des Orphelins, dans le quartier emblématique de la Krutenau à Strasbourg. C'est là que quatre passionnés - Daniel Chambet Ithier, Patrick Missoffe, Muriel et Patrick Chevalier - ouvrent les portes de l'Ange d'Or, un café-théâtre qui deviendra le berceau de leur aventure artistique."
   },
   {
     date: '1979',
@@ -24,7 +24,7 @@ export const TEXT_DATE = [
   {
     date: '1994',
     src: image1,
-    text: 'Acte 5 trouve son foyer définitif dans la salle des fêtes de Schiltigheim, affirmant ainsi sa place dans le paysage culturel local.'
+    text: 'La Revue Scoute trouve son foyer définitif dans la salle des fêtes de Schiltigheim faisant de ce lieu son ancrage et un rendez-vous incontournable du paysage culturel régional.'
   }
 ];
 

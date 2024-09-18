@@ -43,8 +43,8 @@ export default function CompetenceSection() {
         <div className="flex flex-col gap-md">
           <h2 className="heading--large text-primary-400">Spectacle d&apos;entreprise</h2>
           <p className="sub-heading max-w-[50ch]">
-            Nous tissons des récits fascinants et élaborons des spectacles d&apos;entreprise sur
-            mesure qui transportent et enchantent les spectateurs.
+            Nous tissons des récits hilarants et créons des spectacles sur mesure qui surprennent,
+            amusent et captivent, pour offrir à vos spectateurs une expérience fun et inoubliable !
           </p>
         </div>
       </ScrollWrapper>
@@ -60,8 +60,8 @@ export default function CompetenceSection() {
         <div className="flex flex-col gap-md">
           <h2 className="heading--large text-primary-400">Design graphique </h2>
           <p className="sub-heading max-w-[50ch]">
-            Nous concevons des visuels puissants et expressifs qui captivent l'attention et
-            renforcent l'impact de vos messages événementiels.
+            Nous créons des visuels percutants et créatifs qui attirent l&apos;attention et
+            subliment vos messages, en mettant en valeur votre identité et vos idées.
           </p>
         </div>
       </ScrollWrapper>
