@@ -9,7 +9,7 @@ export async function generateMetadata() {
 export default function Home() {
   return (
     <main className="section-px inner-section-gap relative mx-auto flex w-full flex-col overflow-hidden pb-2xl pt-4xl laptop:container tablet:pt-6xl">
-      <h1 className="heading--extra-large tablet:mt-small relative z-10 text-primary-400 mobile-large:text-center">
+      <h1 className="heading--extra-large relative z-10 pb-lg text-primary-400">
         MENTIONS LEGALES
       </h1>
       <p className="body">
