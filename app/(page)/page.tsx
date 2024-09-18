@@ -30,14 +30,14 @@ export default function Home() {
             agence de communication événementielle spectaculaire
           </h1>
         </DivWrapper>
-        <section className="inner-section-gap flex justify-between max-tablet:flex-col laptop:justify-center">
+        <section className="flex justify-between gap-lg max-tablet:flex-col tablet:gap-md laptop:justify-center">
           <Link
             scroll={false}
-            className="h-fit w-fit tablet:w-1/2"
+            className="group flex h-fit w-fit flex-col gap-xs tablet:w-1/2"
             href="agence-evenementielle-strasbourg"
           >
             <DivWrapper
-              className="group relative flex h-[300px] flex-col items-center justify-center gap-md overflow-hidden rounded-sm p-md after:absolute after:bottom-0 after:z-10 after:h-full after:w-full after:bg-gradient-to-t after:from-black after:from-5% after:to-transparent after:opacity-0 after:duration-medium hover:grayscale-0 hover:after:opacity-100 tablet:h-[400px]"
+              className="relative flex h-[300px] flex-col items-center justify-center gap-md overflow-hidden rounded-sm p-md after:absolute after:bottom-0 after:z-10 after:h-full after:w-full after:bg-gradient-to-t after:from-black after:from-5% after:to-transparent after:opacity-0 after:duration-medium hover:grayscale-0 hover:after:opacity-100 tablet:h-[400px]"
               variant={ComingFromLeftVariant}
             >
               <Image
@@ -45,21 +45,27 @@ export default function Home() {
                 className="rounded-sm object-cover"
                 fill
                 placeholder="blur"
-                sizes={'(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw'}
+                quality={100}
+                sizes={'(max-width: 640px) 100vw, (max-width: 768px) 50vw'}
                 src={eventimage}
               />
-              <h2 className="heading--sub-large absolute top-1/2 z-20 -translate-y-1/2 px-md py-sm font-normal text-white backdrop-blur-sm duration-medium after:absolute after:left-0 after:top-0 after:-z-10 after:h-full after:w-full after:rounded-xs after:bg-black after:opacity-20">
-                EVENEMENTIEL
-              </h2>
-              <p className="sub-heading relative z-20 mt-auto translate-y-[200%] self-end text-pretty text-center text-white duration-medium group-hover:translate-y-0">
+
+              <p className="sub-heading relative z-20 mt-auto translate-y-[200%] self-end text-pretty text-start text-white duration-medium group-hover:translate-y-0">
                 Des événements sur mesure pour sublimer vos projets et renformer l&apos;image de
                 votre entreprise.
               </p>
             </DivWrapper>
+            <h2 className="heading--sub-large -z-10 translate-y-0 px-sm text-black backdrop-blur-sm duration-medium group-hover:-translate-y-[200%] laptop-large:px-md">
+              EVENEMENTIEL
+            </h2>
           </Link>
-          <Link scroll={false} className="w-fit tablet:w-1/2" href="spectacles-strasbourg">
+          <Link
+            scroll={false}
+            className="group flex h-fit w-fit flex-col gap-xs tablet:w-1/2"
+            href="spectacles-strasbourg"
+          >
             <DivWrapper
-              className="group relative flex h-[300px] flex-col items-center justify-center gap-md overflow-hidden rounded-sm p-md after:absolute after:bottom-0 after:z-10 after:h-full after:w-full after:bg-gradient-to-t after:from-black after:from-5% after:to-transparent after:opacity-0 after:duration-medium hover:grayscale-0 hover:after:opacity-100 tablet:h-[400px]"
+              className="relative flex h-[300px] flex-col items-center justify-center gap-md overflow-hidden rounded-sm p-md after:absolute after:bottom-0 after:z-10 after:h-full after:w-full after:bg-gradient-to-t after:from-black/40 after:from-5% after:to-transparent after:opacity-0 after:duration-medium hover:grayscale-0 hover:after:opacity-100 tablet:h-[400px]"
               variant={ComingFromRightVariant}
             >
               <Image
@@ -67,19 +73,19 @@ export default function Home() {
                 className="rounded-sm object-cover"
                 fill
                 placeholder="blur"
-                sizes={'(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw'}
+                quality={100}
+                sizes={'(max-width: 640px) 100vw, (max-width: 768px) 50vw'}
                 src={spectacleimage}
               />
-              <h2 className="heading--sub-large absolute top-1/2 z-20 -translate-y-1/2 px-md py-sm font-normal text-white backdrop-blur-sm duration-medium after:absolute after:left-0 after:top-0 after:-z-10 after:h-full after:w-full after:rounded-xs after:bg-black after:opacity-20">
-                SPECTACLE
-              </h2>
-              <p className="sub-heading relative z-20 mt-auto translate-y-[200%] self-end text-pretty text-center text-white duration-medium group-hover:translate-y-0">
-                scénographie, costumes, nombre de scènes et, de chants : <br />
-                ici la vingtaine de tableaux satiriques s'enchaine, chacun habillés de divers décors
-                et autres costumes loufoques, tandis que la musique accompagne chaque rebondissement
-                avec une énergie contagieuse.
+
+              <p className="sub-heading relative z-20 mt-auto translate-y-[200%] self-end text-pretty text-start text-white duration-medium group-hover:translate-y-0">
+                Retrouvez toutes les infos sur nos spectacles tel que la Revue Scoute : billetterie
+                et date de représentation, c'est par ici !
               </p>
             </DivWrapper>
+            <h2 className="heading--sub-large -z-10 translate-y-0 px-sm text-black backdrop-blur-sm duration-medium group-hover:-translate-y-[200%] laptop-large:px-md">
+              SPECTACLE
+            </h2>
           </Link>
         </section>
       </main>
