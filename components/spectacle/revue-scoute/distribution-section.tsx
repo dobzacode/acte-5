@@ -38,7 +38,7 @@ export default async function DistributionSection({
         tag="h2"
         variant={ComingFromLeftVariant}
       >
-        Distribution
+        Les artistes
       </InviewWrapper>
       <ul className="relative -z-10 grid w-full grid-cols-3 items-center gap-sm mobile-large:gap-lg tablet:grid-cols-4 laptop:grid-cols-5">
         {imageArr.map((people, index) => {

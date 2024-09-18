@@ -271,7 +271,7 @@ export default function ProjectSection({ events }: { events: EventWithImgAndInde
                     }}
                     exit={{ opacity: 0 }}
                   >
-                    <h3 className="line-clamp-3">{event.titre}</h3>
+                    <h3 className="line-clamp-3">{event.client}</h3>
                   </motion.div>
                   {event.src && (
                     <ImagePulsing

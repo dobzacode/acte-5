@@ -35,7 +35,7 @@
   }
 
   .sub-heading {
-    @apply font-[Avenir] text-sm font-normal leading-[24px] laptop:text-md laptop:leading-[28px];
+    @apply font-[Avenir] text-sm font-normal leading-[1.5rem] laptop:text-md laptop:leading-[1.75rem];
   }
 
   .body {

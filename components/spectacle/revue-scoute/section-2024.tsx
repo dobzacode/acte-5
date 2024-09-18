@@ -67,7 +67,7 @@ export default async function Section2024() {
           )}
           <div className="w-full">
             <CustomPortableText
-              textSize="laptop-large:sub-heading body"
+              textSize="laptop-large:sub-heading laptop-large:!leading-[2.2rem] body"
               value={revueScouteActuelle[0].description}
             ></CustomPortableText>
           </div>
