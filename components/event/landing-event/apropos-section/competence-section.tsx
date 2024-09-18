@@ -90,7 +90,7 @@ export default function CompetenceSection() {
             <Link
               scroll={false}
               href={`/agence-evenementielle-strasbourg/services?categorie=${item.category}`}
-              className="group relative flex h-[20vh] max-h-[300px] w-full items-start justify-between gap-3xl overflow-hidden rounded-sm p-md delay-300 duration-extra-slow hover:bg-primary-400 hover:delay-0 hover:duration-0"
+              className="group relative flex h-[20vh] max-h-[300px] w-full items-start justify-between overflow-hidden rounded-sm p-md delay-300 duration-extra-slow hover:bg-primary-400 hover:delay-0 hover:duration-0 max-laptop-large:gap-3xl"
             >
               <h3 className="heading--large max-laptop-large:heading--sub-large relative z-20 w-full whitespace-nowrap font-medium text-white delay-300 duration-medium group-hover:-translate-y-[150%] group-hover:delay-0">
                 {item.name}

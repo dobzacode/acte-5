@@ -85,12 +85,12 @@ export default function AnimatedPart({ isSpectacle }: { isSpectacle?: boolean })
           className="card relative z-20 flex h-fit max-h-0 w-fit shrink-0 flex-col items-center gap-md overflow-hidden laptop:gap-xl"
         >
           {isSpectacle && (
-            <p className="sub-heading w-full min-w-[14ch] max-w-[30ch] text-pretty text-center">
+            <p className="sub-heading w-full min-w-[14ch] max-w-[30ch] text-pretty text-center laptop:leading-[1.75rem]">
               Avez-vous des questions sur nos événements ou souhaitez-vous réserver pour un groupe ?
             </p>
           )}
           {!isSpectacle && (
-            <p className="sub-heading w-full min-w-[14ch] max-w-[30ch] text-pretty text-center">
+            <p className="sub-heading w-full min-w-[14ch] max-w-[30ch] text-pretty text-center laptop:leading-[1.75rem]">
               Besoin de communiquer ? <br />
               Des questions ?
             </p>

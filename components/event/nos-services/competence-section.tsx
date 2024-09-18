@@ -19,8 +19,8 @@ export default function CompetenceSection() {
           placeholder={'blur'}
           className="max-tablet:hidden tablet:rounded-l-full"
           alt="placeholder"
-          width={300}
-          height={300}
+          width={340}
+          height={340}
         />
 
         <div className="flex flex-col gap-md">
@@ -37,8 +37,8 @@ export default function CompetenceSection() {
           placeholder={'blur'}
           className="rounded-r-full max-tablet:hidden"
           alt="placeholder"
-          width={300}
-          height={300}
+          width={340}
+          height={340}
         />
         <div className="flex flex-col gap-md">
           <h2 className="heading--large text-primary-400">Spectacle d&apos;entreprise</h2>
@@ -54,8 +54,8 @@ export default function CompetenceSection() {
           placeholder={'blur'}
           className="rounded-l-full max-tablet:hidden"
           alt="placeholder"
-          width={300}
-          height={300}
+          width={340}
+          height={340}
         />
         <div className="flex flex-col gap-md">
           <h2 className="heading--large text-primary-400">Design graphique </h2>
