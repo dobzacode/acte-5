@@ -104,6 +104,7 @@ export default defineType({
           type: 'object',
           fields: [
             { type: 'string', title: 'Nom complet', name: 'nom' },
+            { type: 'string', title: 'Role', name: 'role' },
             { type: 'image', title: 'Photo', name: 'picture' }
           ]
         }
