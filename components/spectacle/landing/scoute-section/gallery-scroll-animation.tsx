@@ -28,7 +28,7 @@ export default function GalleryScrollAnimation({}) {
   const opacity = useTransform(scrollYProgress, [0, 0.7, 1], [1, 1, 0]);
 
   return (
-    <div ref={ref} className="relative -z-10 h-[2000px] w-full pt-8xl max-tablet:hidden">
+    <div ref={ref} className="relative -z-10 h-[2000px] w-full pt-5xl max-tablet:hidden">
       <div className="sticky top-1/2 flex items-center justify-center">
         <motion.div
           style={{ scale: scale, x: positiveXTranslation, rotate: positiveRotate, opacity }}
@@ -78,6 +78,19 @@ export default function GalleryScrollAnimation({}) {
             fill
             alt="Photo de spectacle"
           ></Image>
+        </motion.div>
+        <motion.div
+          style={{
+            opacity: useTransform(scrollYProgress, [0, 0.1, 1], [0, 0, 1]),
+            scale: useTransform(scrollYProgress, [0, 0.1, 1], [0.8, 0.8, 1])
+          }}
+          className="absolute mx-auto mb-5xl mt-5 text-center text-black"
+        >
+          <p className="sub-heading max-w-[50ch]">
+            La vingtaine de tableaux satiriques s'enchaine, chacun habillés de divers décors et
+            autres costumes loufoques, tandis que la musique accompagne chaque rebondissement avec
+            une énergie contagieuse.
+          </p>
         </motion.div>
       </div>
     </div>

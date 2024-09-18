@@ -1,7 +1,5 @@
 'use client';
 
-import Autoplay from 'embla-carousel-autoplay';
-import useEmblaCarousel from 'embla-carousel-react';
 import React from 'react';
 
 import 'yet-another-react-lightbox/styles.css';
@@ -33,14 +31,12 @@ type PropType = {
 
 const SimilaireCarousel: React.FC<PropType> = (props) => {
   const { options } = props;
-  const [emblaRef, emblaApi] = useEmblaCarousel(options, [Autoplay()]);
 
   return (
     <>
       <Carousel className="section-px flex max-w-[100vw] items-center justify-center gap-md laptop:mx-auto [&>div]:rounded-sm">
-        <>
-          <CarouselPrevious className="relative" />
-        </>
+        <CarouselPrevious className="relative" />
+
         <CarouselContent className="laptop-large:-ml-sm">
           {props.imageArr.map((image, index) => (
             <CarouselItem
@@ -78,9 +74,8 @@ const SimilaireCarousel: React.FC<PropType> = (props) => {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <>
-          <CarouselNext className="relative" />
-        </>
+
+        <CarouselNext className="relative" />
       </Carousel>
     </>
   );
