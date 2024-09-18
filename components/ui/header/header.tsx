@@ -20,6 +20,10 @@ export default function Header({ className }: { className?: string }) {
 
   const isLaptop = useBetterMediaQuery('(min-width: 1024px)');
 
+  const isHome =
+    !pathname.includes('agence-evenementielle-strasbourg') &&
+    !pathname.includes('spectacles-strasbourg');
+
   useEffect(() => {
     if (showMenu) {
       document.body.style.overflow = 'hidden';
@@ -43,7 +47,7 @@ export default function Header({ className }: { className?: string }) {
       className={cn(
         `section-px z-[800] flex h-4xl w-full items-center justify-between border-b border-black border-opacity-10 bg-transparent bg-white bg-opacity-75 py-md max-mobile-large:h-3xl mobile-large:gap-3xl`,
         !showMenu && 'overflow-hidden',
-        pathname === '/' && 'relative max-laptop:justify-between'
+        isHome && 'relative max-laptop:justify-between'
       )}
     >
       <div className="relative z-50 flex items-center gap-md">
@@ -53,7 +57,7 @@ export default function Header({ className }: { className?: string }) {
           )}
         ></Logo>
         <AnimatePresence mode="wait">
-          {isLaptop && pathname === '/' ? (
+          {isLaptop && isHome ? (
             <motion.p
               initial={{ y: -100 }}
               animate={{
@@ -73,7 +77,7 @@ export default function Header({ className }: { className?: string }) {
         </AnimatePresence>
       </div>
       <AnimatePresence mode="wait">
-        {isLaptop && pathname !== '/' ? (
+        {isLaptop && !isHome ? (
           <DivWrapper variant={FadeInVariant} inverseOnExit={true}>
             <AnimatePresence mode="wait">
               {pathname.includes('agence-evenementielle-strasbourg') ? (
@@ -91,7 +95,7 @@ export default function Header({ className }: { className?: string }) {
         }}
         className={cn(
           'body relative z-40 flex shrink-0 self-center overflow-hidden rounded-sm p-xs font-normal shadow-md duration-slow ease-in-out before:absolute before:right-0 before:top-0 before:-z-10 before:h-full before:w-full before:bg-white max-laptop:absolute max-laptop:right-1/2 max-laptop:top-1/2 max-laptop:-translate-y-1/2 max-laptop:translate-x-1/2 max-laptop:self-center',
-          pathname === '/' && 'max-laptop:right-md max-laptop:translate-x-0 max-laptop:self-auto'
+          isHome && 'max-laptop:right-md max-laptop:translate-x-0 max-laptop:self-auto'
         )}
       >
         <SectionLinks pathname={pathname}></SectionLinks>
@@ -102,13 +106,10 @@ export default function Header({ className }: { className?: string }) {
             variant={ComingFromTopVariant}
             inverseOnExit
             key="menu"
-            className={cn('flex shrink-0 items-center laptop:hidden', pathname === '/' && 'hidden')}
+            className={cn('flex shrink-0 items-center laptop:hidden', isHome && 'hidden')}
           >
             <Hamburger
-              className={cn(
-                'h-fit w-xl duration-fast hover:scale-105',
-                pathname === '/' && 'hidden'
-              )}
+              className={cn('h-fit w-xl duration-fast hover:scale-105', isHome && 'hidden')}
               showMenu={showMenu}
               setShowMenu={setShowMenu}
             ></Hamburger>
