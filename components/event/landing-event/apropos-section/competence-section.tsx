@@ -9,7 +9,7 @@ import { Variants } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import evenementimage from '/public/assets/event/landing/competence/evenementiel.png';
-import graphismeimage from '/public/assets/event/landing/competence/graphisme.png';
+import graphismeimage from '/public/assets/event/landing/competence/graphisme.jpg';
 import spectacleimage from '/public/assets/event/landing/competence/spectacle.png';
 
 const COMPETENCE = [
