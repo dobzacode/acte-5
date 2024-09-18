@@ -31,7 +31,7 @@ const COMPETENCE = [
     category: 'graphisme',
     src: graphismeimage,
     description:
-      'La communication visuelle habille nos événements et nos spectacles, mais pas seulement...'
+      "Création de visuels sur mesure pour répondre à vos besoins et maximiser l'impact de vos messages."
   }
 ];
 
@@ -134,6 +134,7 @@ export default function CompetenceSection() {
                   placeholder={'blur'}
                   alt=""
                 ></Image>
+                <div className="absolute bottom-0 left-0 right-0 top-0 z-10 h-full w-full bg-gradient-to-b from-black/70 to-transparent to-70% delay-300 duration-medium group-hover:opacity-0 group-hover:delay-0"></div>
               </div>
               <p className="body font-Linkght relative z-10 w-fit p-md duration-medium">
                 {item.description}

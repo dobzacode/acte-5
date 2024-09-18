@@ -59,9 +59,10 @@ export default function ServiceSection() {
         className="laptop-large::col-start-7 col-span-6 row-span-2 row-start-3 flex flex-col gap-lg rounded-sm text-white max-tablet:hidden tablet:col-span-6 tablet:row-start-3 laptop:col-start-6 laptop-large:col-start-8 laptop-large:row-start-2 laptop-large:content-start"
       >
         <p className="sub-heading">
-          Nous allions l'art du storytelling à la précision théâtrale pour créer des événements
-          inoubliables. Notre approche unique garantit une réalisation où chaque détail compte et où
-          chaque événement est synonyme de succès.
+          En plaçant l'écoute et la compréhension des besoins de nos clients au centre de notre
+          démarche, nous créons des expériences uniques, façonnées pour laisser une empreinte
+          mémorable. Nous allions l'art du storytelling à la précision théâtrale pour créer des
+          événements spectaculaires
         </p>
         <DivHoverWrapper
           className="group w-fit origin-center duration-medium hover:opacity-90"
@@ -144,10 +145,10 @@ export default function ServiceSection() {
           className="inner-section-gap flex w-full flex-col rounded-sm text-white tablet:hidden"
         >
           <p className="sub-heading">
-            {' '}
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            En plaçant l'écoute et la compréhension des besoins de nos clients au centre de notre
+            démarche, nous créons des expériences uniques, façonnées pour laisser une empreinte
+            mémorable. Nous allions l'art du storytelling à la précision théâtrale pour créer des
+            événements spectaculaires
           </p>
           <DivHoverWrapper
             className="group w-fit origin-center duration-medium hover:opacity-90"
