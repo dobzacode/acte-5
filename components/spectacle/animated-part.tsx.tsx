@@ -82,9 +82,17 @@ export default function AnimatedPart({ isSpectacle }: { isSpectacle?: boolean })
         }}
         className="card relative z-20 -mr-4xl flex h-fit w-fit shrink-0 flex-col items-center gap-md overflow-hidden max-laptop:-mt-2xl max-tablet:-mt-xl max-mobile-large:mt-md laptop:gap-xl"
       >
-        <p className="sub-heading w-full max-w-[30ch] text-pretty text-center">
-          Avez-vous des questions sur nos événements ou souhaitez-vous réserver pour un groupe ?
-        </p>
+        {isSpectacle && (
+          <p className="sub-heading w-full max-w-[30ch] text-pretty text-center">
+            Avez-vous des questions sur nos événements ou souhaitez-vous réserver pour un groupe ?
+          </p>
+        )}
+        {!isSpectacle && (
+          <p className="sub-heading w-full max-w-[30ch] text-pretty text-center">
+            Besoin de communiquer ? <br />
+            Des questions ?
+          </p>
+        )}
         <motion.div
           animate={controlsButton}
           initial="hidden"
@@ -117,7 +125,9 @@ export default function AnimatedPart({ isSpectacle }: { isSpectacle?: boolean })
             className="sub-heading shadow-primary-sm 0 mx-auto flex grow items-center gap-xs rounded-sm border-b-2 border-r-2 border-primary-600 bg-primary px-md py-sm text-center text-white laptop:gap-sm laptop:px-lg laptop:py-md"
             scroll={false}
           >
-            <span className="w-full text-center">Communiquons ensemble</span>
+            <span className="w-full text-center">
+              {isSpectacle ? 'Communiquons ensemble' : 'Contactez-nous'}
+            </span>
           </Link>
         </motion.div>
       </motion.div>
