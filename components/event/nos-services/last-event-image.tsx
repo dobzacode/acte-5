@@ -135,7 +135,7 @@ export default async function LastEvent({
 
                     <div className="relative z-20 flex flex-col items-center gap-sm text-pretty rounded-b-sm bg-white px-md pb-md text-center">
                       <p className="sub-heading line-clamp-1">
-                        <strong>{image.titre}</strong>
+                        <strong>{image.client}</strong>
                       </p>
                     </div>
                   </Link>

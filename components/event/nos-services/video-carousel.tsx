@@ -37,7 +37,7 @@ export default function VideoCarousel({ videoArr }: { videoArr: VideoProps[] }) 
                 title={video.titre}
               />
               <div className="relative z-30 block   max-w-[20ch] flex-col  items-center gap-sm text-ellipsis text-pretty p-md text-center text-black">
-                <p className="sub-heading text-ellipsis  whitespace-nowrap">{video.titre}</p>
+                <p className="sub-heading text-ellipsis  whitespace-nowrap">{video.client}</p>
               </div>
             </div>
           </CarouselItem>

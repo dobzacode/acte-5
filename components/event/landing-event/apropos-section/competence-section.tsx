@@ -101,7 +101,7 @@ export default function CompetenceSection() {
               <Image
                 placeholder={'blur'}
                 src={item.src ?? '/placeholder-image.png'}
-                className="object-cen z-10 object-cover duration-medium group-hover:-translate-x-1/2 group-hover:rounded-r-sm group-hover:delay-300"
+                className="object-cen z-10 object-cover duration-medium group-hover:-translate-x-1/2 group-hover:rounded-r-sm group-hover:grayscale group-hover:delay-300"
                 fill
                 alt=""
               ></Image>
