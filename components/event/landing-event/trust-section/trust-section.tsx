@@ -33,7 +33,7 @@ export default function TrustSection() {
         <InviewWrapper
           className="section-px mx-auto laptop:container max-laptop:mx-0 max-laptop:mr-auto"
           variant={ComingFromLeftVariant}
-          inverseOnExit={false}
+          inverseOnExit={true}
         >
           <DivHoverWrapper
             className="group w-fit origin-center duration-medium hover:opacity-90"

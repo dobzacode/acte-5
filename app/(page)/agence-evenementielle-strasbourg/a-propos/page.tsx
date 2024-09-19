@@ -34,7 +34,7 @@ export default function Home() {
 
         <TeamSection></TeamSection>
       </main>
-      <ContactSection className="!rounded-tl-none" isSpectacle={true}></ContactSection>
+      <ContactSection className="!rounded-tl-none"></ContactSection>
     </>
   );
 }

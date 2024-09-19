@@ -66,7 +66,7 @@ export default function Home() {
           <Calendrier isBig={true}></Calendrier>
         </DivWrapper>
       </Suspense>
-      <ContactSection></ContactSection>
+      <ContactSection isSpectacle={true}></ContactSection>
     </main>
   );
 }

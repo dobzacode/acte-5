@@ -14,7 +14,6 @@ function MyPage() {
 
   useEffect(() => {
     const hasSeenPopup = localStorage.getItem('hasSeenPopup');
-    console.log(hasSeenPopup);
 
     if (hasSeenPopup === 'false' && pathname.includes('spectacles-strasbourg')) {
       setShowPopup(true);

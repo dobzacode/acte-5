@@ -1,4 +1,8 @@
+'use client';
+
 import { cn } from '@nextui-org/react';
+
+import { useRouter } from 'next/navigation.js';
 import AnimatedPart from './animated-part.tsx';
 
 export default function ContactSection({
@@ -8,6 +12,8 @@ export default function ContactSection({
   isSpectacle?: boolean;
   className?: string;
 }) {
+  const router = useRouter();
+
   return (
     <section
       className={cn(
@@ -15,7 +21,7 @@ export default function ContactSection({
         className
       )}
     >
-      <AnimatedPart isSpectacle={isSpectacle}></AnimatedPart>
+      <AnimatedPart key={`animation-${router}`} isSpectacle={isSpectacle}></AnimatedPart>
     </section>
   );
 }
