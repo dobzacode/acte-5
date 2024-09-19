@@ -1,8 +1,4 @@
-import {
-  ComingFromLeftVariant,
-  ComingFromRightVariant,
-  ComingFromTopVariant
-} from '@/components/framer-motion/div-variants';
+import { ComingFromTopVariant } from '@/components/framer-motion/div-variants';
 import DivWrapper from '@/components/framer-motion/div-wrapper';
 
 import Footer from '@/components/ui/footer';
@@ -37,12 +33,30 @@ export default function Home() {
             href="agence-evenementielle-strasbourg"
           >
             <DivWrapper
-              className="relative flex h-[300px] flex-col items-center justify-center gap-md overflow-hidden rounded-sm p-md after:absolute after:bottom-0 after:z-10 after:h-full after:w-full after:bg-gradient-to-t after:from-black after:from-5% after:to-transparent after:opacity-0 after:duration-medium hover:grayscale-0 hover:after:opacity-100 tablet:h-[400px]"
-              variant={ComingFromLeftVariant}
+              className="relative flex h-[300px] flex-col items-center justify-center gap-md overflow-hidden rounded-sm p-md after:absolute after:bottom-0 after:z-10 after:h-1/2 after:w-full after:translate-y-[200%] after:bg-gradient-to-t after:from-black after:from-5% after:to-transparent after:duration-medium hover:grayscale-0 hover:after:translate-y-0 tablet:h-[400px]"
+              variant={{
+                hidden: {
+                  opacity: 0,
+                  x: -100
+                },
+                enter: {
+                  opacity: 1,
+                  x: 0
+                },
+                exit: {
+                  opacity: 0,
+                  x: -100,
+                  transition: {
+                    delay: 0.3,
+                    duration: 1
+                  }
+                }
+              }}
+              inverseOnExit={true}
             >
               <Image
                 alt="Photo de spectacle"
-                className="rounded-sm object-cover"
+                className="rounded-sm object-cover duration-medium group-hover:grayscale"
                 fill
                 placeholder="blur"
                 quality={100}
@@ -55,9 +69,41 @@ export default function Home() {
                 votre entreprise.
               </p>
             </DivWrapper>
-            <h2 className="heading--sub-large -z-10 translate-y-0 px-sm text-black backdrop-blur-sm duration-medium group-hover:-translate-y-[200%] laptop-large:px-md">
-              EVENEMENTIEL
-            </h2>
+            <DivWrapper
+              variant={{
+                hidden: {
+                  opacity: 0,
+                  y: -100
+                },
+                enter: {
+                  opacity: 1,
+                  y: 0,
+                  transition: {
+                    delay: 0.8,
+                    type: 'spring'
+                  }
+                },
+                exit: {
+                  y: -100,
+                  opacity: 0,
+                  transition: {
+                    y: {
+                      type: 'spring'
+                    },
+                    opacity: {
+                      duration: 0.1,
+                      delay: 0.3
+                    }
+                  }
+                }
+              }}
+              inverseOnExit={true}
+              className="relative -z-10"
+            >
+              <h2 className="heading--sub-large -z-10 translate-y-0 px-sm text-black backdrop-blur-sm duration-medium group-hover:-translate-y-[200%] laptop-large:px-md">
+                EVENEMENTIEL
+              </h2>
+            </DivWrapper>
           </Link>
           <Link
             scroll={false}
@@ -65,12 +111,30 @@ export default function Home() {
             href="spectacles-strasbourg"
           >
             <DivWrapper
-              className="relative flex h-[300px] flex-col items-center justify-center gap-md overflow-hidden rounded-sm p-md after:absolute after:bottom-0 after:z-10 after:h-full after:w-full after:bg-gradient-to-t after:from-black/40 after:from-5% after:to-transparent after:opacity-0 after:duration-medium hover:grayscale-0 hover:after:opacity-100 tablet:h-[400px]"
-              variant={ComingFromRightVariant}
+              className="relative flex h-[300px] flex-col items-center justify-center gap-md overflow-hidden rounded-sm p-md after:absolute after:bottom-0 after:z-10 after:h-1/2 after:w-full after:translate-y-[200%] after:bg-gradient-to-t after:from-black after:from-5% after:to-transparent after:duration-medium hover:grayscale-0 hover:after:translate-y-0 tablet:h-[400px]"
+              variant={{
+                hidden: {
+                  opacity: 0,
+                  x: 100
+                },
+                enter: {
+                  opacity: 1,
+                  x: 0
+                },
+                exit: {
+                  opacity: 0,
+                  x: 100,
+                  transition: {
+                    delay: 0.3,
+                    duration: 1
+                  }
+                }
+              }}
+              inverseOnExit={true}
             >
               <Image
                 alt="Photo de spectacle"
-                className="rounded-sm object-cover"
+                className="rounded-sm object-cover duration-medium group-hover:grayscale"
                 fill
                 placeholder="blur"
                 quality={100}
@@ -83,9 +147,41 @@ export default function Home() {
                 et date de représentation, c'est par ici !
               </p>
             </DivWrapper>
-            <h2 className="heading--sub-large -z-10 translate-y-0 px-sm text-black backdrop-blur-sm duration-medium group-hover:-translate-y-[200%] laptop-large:px-md">
-              SPECTACLE
-            </h2>
+            <DivWrapper
+              variant={{
+                hidden: {
+                  opacity: 0,
+                  y: -100
+                },
+                enter: {
+                  opacity: 1,
+                  y: 0,
+                  transition: {
+                    delay: 0.8,
+                    type: 'spring'
+                  }
+                },
+                exit: {
+                  y: -100,
+                  opacity: 0,
+                  transition: {
+                    y: {
+                      type: 'spring'
+                    },
+                    opacity: {
+                      duration: 0.1,
+                      delay: 0.3
+                    }
+                  }
+                }
+              }}
+              inverseOnExit={true}
+              className="relative -z-10"
+            >
+              <h2 className="heading--sub-large -z-10 translate-y-0 px-sm text-black backdrop-blur-sm duration-medium group-hover:-translate-y-[200%] laptop-large:px-md">
+                SPECTACLE
+              </h2>
+            </DivWrapper>
           </Link>
         </section>
       </main>
