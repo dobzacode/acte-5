@@ -20,7 +20,7 @@ export default function HistorySection() {
           overflow: 'hidden'
         }}
         variant={ComingFromRightVariant}
-        className="inner-section-gap section-px container -mt-3xl flex h-fit laptop:mx-auto"
+        className="inner-section-gap section-px container relative z-50 -mt-3xl flex h-fit laptop:mx-auto"
       >
         <iframe
           width="100%"

@@ -1,15 +1,12 @@
 import TeamSection from '@/components/event/a-propos/team-section';
-import {
-  ComingFromRightVariant,
-  FromTopStaggerVariant
-} from '@/components/framer-motion/div-variants';
+import { FromTopStaggerVariant } from '@/components/framer-motion/div-variants';
 import InviewWrapper from '@/components/framer-motion/inview-wrapper';
 import StaggeredText from '@/components/framer-motion/staggered-text';
 import ContactSection from '@/components/spectacle/contact-section';
 import TitleSection from '@/components/ui/title-section';
 import { Metadata } from 'next';
 import Image from 'next/image';
-import placeholder from '/public/placeholder-image.png';
+import picture from '/public/assets/event/a-propos/image.jpg';
 
 export const metadata: Metadata = {
   title: 'Notre agence | Acte 5 à Strasbourg',
@@ -32,104 +29,52 @@ export default function Home() {
           <StaggeredText
             variant={FromTopStaggerVariant}
             staggerValue={0.05}
-            delay={1}
             className="heading--sub-large text-pretty laptop:container laptop:mx-auto"
           >
             Forte de plus de 30 ans d&apos;expertise en communication événementielle, Acte 5 puise
             dans les arts de la scène pour donner vie à vos messages d&apos;entreprise
           </StaggeredText>
-          <div className="inner-section-gap flex flex-col">
-            <InviewWrapper
-              variant={ComingFromRightVariant}
-              className="relative aspect-[5/2] w-full overflow-hidden rounded-sm"
-            >
+          <InviewWrapper
+            variant={{
+              hidden: {
+                opacity: 0,
+                x: 100
+              },
+              enter: {
+                opacity: 1,
+                x: 0,
+                transition: {
+                  duration: 0.8
+                }
+              },
+              exit: {
+                opacity: 0,
+                x: -100
+              }
+            }}
+            className="inner-section-gap flex w-full max-tablet:flex-col"
+          >
+            <div className="relative shrink-0 rounded-sm tablet:w-1/2">
               <Image
                 alt=""
-                src={placeholder}
+                src={picture}
                 placeholder="blur"
-                fill
-                className="rounded-sm object-cover"
+                className="h-full w-full rounded-sm object-cover"
               />
-            </InviewWrapper>
-            <span className="sub-heading flex gap-lg max-mobile-large:flex-col">
-              <InviewWrapper
-                inverseOnExit={true}
-                variant={{
-                  hidden: {
-                    y: -100,
-                    opacity: 0
-                  },
-                  enter: {
-                    y: 0,
-                    opacity: 1,
-                    transition: {
-                      y: {
-                        type: 'spring',
-                        delay: 0
-                      },
-                      opacity: {
-                        duration: 0.05
-                      }
-                    }
-                  },
-                  exit: {
-                    opacity: 0,
-                    x: 100,
-                    transition: {
-                      duration: 1
-                    }
-                  }
-                }}
-                tag="p"
-                className="-z-10 mobile-large:w-1/2"
-                viewport={{
-                  margin: '0px -0% -25% 0px'
-                }}
-              >
+            </div>
+            <span className="tablet:heading sub-heading items-around flex flex-col gap-xl font-light tablet:w-1/2">
+              <p className="-z-10">
                 Acte 5 incarne la promesse d'un dénouement grandiose à vos projets, à l'image du
                 dernier acte d'une œuvre magistrale qui grave son empreinte dans l'âme du public.
                 Notre odyssée, forgée dans les feux de la production artistique et de la satire,
                 nous a dotés d'une vision unique.
-              </InviewWrapper>
-              <InviewWrapper
-                inverseOnExit={true}
-                variant={{
-                  hidden: {
-                    y: -100,
-                    opacity: 0
-                  },
-                  enter: {
-                    y: 0,
-                    opacity: 1,
-                    transition: {
-                      y: {
-                        type: 'spring',
-                        delay: 0.3
-                      },
-                      opacity: {
-                        duration: 0.05
-                      }
-                    }
-                  },
-                  exit: {
-                    opacity: 0,
-                    x: 100,
-                    transition: {
-                      duration: 1
-                    }
-                  }
-                }}
-                tag="p"
-                className="-z-10 mobile-large:w-1/2"
-                viewport={{
-                  margin: '0px 0px -25% 0px'
-                }}
-              >
+              </p>
+              <p className="-z-10">
                 Cette perspective singulière, nous la mettons au service de vos événements pour les
                 transformer en expériences inoubliables et percutantes.
-              </InviewWrapper>
+              </p>
             </span>
-          </div>
+          </InviewWrapper>
         </div>
 
         <TeamSection></TeamSection>

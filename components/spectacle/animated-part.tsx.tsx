@@ -19,7 +19,7 @@ export default function AnimatedPart({ isSpectacle }: { isSpectacle?: boolean })
     const div = divRef.current;
     if (!video) return;
     video.addEventListener('timeupdate', () => {
-      if (video.currentTime >= 1.75) {
+      if (video.currentTime >= 1.3) {
         controlsButton.start('enter');
       }
       if (video.currentTime >= 3) {

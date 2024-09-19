@@ -125,12 +125,12 @@ export default function Header({ className }: { className?: string }) {
 
             <motion.nav
               className={cn(
-                'absolute left-0 top-[5rem] z-10 flex max-w-full flex-col px-sm mobile-large:top-5xl'
+                'absolute left-0 top-[5rem] z-10 flex max-w-full flex-col px-sm mobile-large:top-[7rem]'
               )}
             >
               <ul
                 className={cn(
-                  'flex flex-col gap-md opacity-0',
+                  'flex flex-col gap-sm opacity-0',
                   showMenu ? 'translate-y-0 opacity-100 delay-200 duration-slow' : 'duration-300'
                 )}
               >
