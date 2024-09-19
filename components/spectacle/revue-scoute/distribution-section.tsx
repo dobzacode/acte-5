@@ -81,7 +81,9 @@ export default async function DistributionSection({
               <div className="flex flex-col gap-xs">
                 <p className="sub-heading px-sm text-center">{people.nom}</p>
                 {people.role && (
-                  <p className="body px-sm text-center font-medium text-black/70">{people.role}</p>
+                  <p className="body px-sm text-center font-medium text-black/50 max-laptop:text-xs">
+                    {people.role}
+                  </p>
                 )}
               </div>
             </InviewWrapper>

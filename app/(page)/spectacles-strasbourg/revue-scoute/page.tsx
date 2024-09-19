@@ -115,7 +115,7 @@ export default async function Home() {
         </Suspense>
         <section className="section-px main-gap inner-section-gap flex flex-col laptop:container laptop:mx-auto">
           <InviewWrapper
-            className="heading--sub-extra-large text-primary-400"
+            className="heading--sub-extra-large text-pretty text-primary-400"
             tag="h2"
             variant={ComingFromLeftVariant}
           >
