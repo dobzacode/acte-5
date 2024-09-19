@@ -20,7 +20,7 @@ export default function HistorySection() {
           overflow: 'hidden'
         }}
         variant={ComingFromRightVariant}
-        className="inner-section-gap section-px container flex h-fit laptop:mx-auto"
+        className="inner-section-gap section-px container -mt-3xl flex h-fit laptop:mx-auto"
       >
         <iframe
           width="100%"
@@ -29,7 +29,7 @@ export default function HistorySection() {
           title="YouTube video player"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           referrerPolicy="strict-origin-when-cross-origin"
-          className="rounded-xs"
+          className="l rounded-sm"
           style={{ position: 'absolute', top: 0, left: 0, zIndex: 30 }}
         ></iframe>
       </InviewWrapper>

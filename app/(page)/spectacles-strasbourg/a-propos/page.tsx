@@ -1,6 +1,8 @@
-import { FromTopStaggerVariant } from '@/components/framer-motion/div-variants';
-import InviewWrapper from '@/components/framer-motion/inview-wrapper';
-import StaggeredText from '@/components/framer-motion/staggered-text';
+import {
+  ComingFromLeftVariant,
+  ComingFromRightVariant
+} from '@/components/framer-motion/div-variants';
+import DivWrapper from '@/components/framer-motion/div-wrapper';
 import HistorySection from '@/components/spectacle/a-propos/history-section';
 import ContactSection from '@/components/spectacle/contact-section';
 import TitleSection from '@/components/ui/title-section';
@@ -24,68 +26,34 @@ export default function Home() {
             { href: '/spectacles-strasbourg/a-propos', text: 'A propos' }
           ]}
         ></TitleSection>
-        <div className="section-px inner-section-gap flex w-full max-w-[90rem] flex-col items-center">
-          <InviewWrapper
-            className="self-start"
-            variant={{
-              hidden: {
-                opacity: 0,
-                x: -200
-              },
-              enter: {
-                opacity: 1,
-                x: 0,
-                transition: {
-                  delay: 0.2,
-                  type: 'spring',
-                  damping: 30
-                }
-              },
-              exit: {
-                opacity: 0,
-                x: -200
-              }
-            }}
+        <div className="section-px main-gap flex w-full max-w-[90rem] flex-col items-center">
+          <DivWrapper
+            variant={ComingFromLeftVariant}
+            className="max-laptop:inner-section-gap flex items-center justify-between max-laptop:mr-auto max-laptop:flex-col laptop:w-full"
           >
-            <div className="relative aspect-[5/3] overflow-hidden rounded-sm max-mobile-large:container max-mobile-large:w-[25rem] mobile-large:w-[30rem]">
+            <div className="relative aspect-[5/3] w-full overflow-hidden rounded-sm max-mobile-large:container mobile-large:w-[30rem] laptop:shrink-0">
               <Image src="/placeholder-image.png" alt="image" fill className="object-cover"></Image>
             </div>
-          </InviewWrapper>
-          <StaggeredText
-            variant={FromTopStaggerVariant}
-            staggerValue={0.05}
-            delay={1}
-            className="heading--sub-large section-px max-w-[35ch] text-pretty text-center laptop:mx-auto"
+
+            <p className="heading section-px relative -z-10 max-w-[35ch] text-pretty text-center laptop:mx-auto">
+              Depuis plus de 40 ans, la Revue Scoute est un pilier de la scène satirique. Née de la
+              passion d'artistes souhaitant divertir tout en critiquant la société, elle a façonné
+              l'identité d'Acte 5.
+            </p>
+          </DivWrapper>
+          <DivWrapper
+            variant={ComingFromRightVariant}
+            className="max-laptop:inner-section-gap flex items-center justify-between max-laptop:ml-auto max-laptop:flex-col-reverse laptop:w-full"
           >
-            Lorem ipsum dolor sit amet, consectetur adipiscing eli, sed do eiusmod tempor incididunt
-            ut labore et dolore magna
-          </StaggeredText>
-          <InviewWrapper
-            className="self-end"
-            variant={{
-              hidden: {
-                opacity: 0,
-                x: 200
-              },
-              enter: {
-                opacity: 1,
-                x: 0,
-                transition: {
-                  delay: 0.2,
-                  type: 'spring',
-                  damping: 30
-                }
-              },
-              exit: {
-                opacity: 0,
-                x: 200
-              }
-            }}
-          >
-            <div className="relative aspect-[5/3] overflow-hidden rounded-sm max-mobile-large:container max-mobile-large:w-[25rem] mobile-large:w-[30rem]">
+            <p className="heading section-px max-w-[35ch] text-pretty text-center laptop:mx-auto">
+              Fondée pour soutenir ses aventures, Acte 5 a grandi aux côtés de la Revue Scoute,
+              partageant ses valeurs décalées, engagées et sa passion pour le spectacle vivant.
+            </p>
+
+            <div className="relative aspect-[5/3] w-full overflow-hidden rounded-sm max-mobile-large:container mobile-large:w-[30rem] laptop:shrink-0">
               <Image src="/placeholder-image.png" alt="image" fill className="object-cover"></Image>
             </div>
-          </InviewWrapper>
+          </DivWrapper>
         </div>
         <HistorySection></HistorySection>
       </main>

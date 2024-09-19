@@ -17,6 +17,9 @@ export default function HeroSection({ isSpectacle = false }: { isSpectacle?: boo
             '!rounded-br-none rounded-bl-2xl mobile-large:rounded-bl-4xl tablet:rounded-bl-6xl laptop:rounded-bl-8xl'
         )}
       >
+        {!isSpectacle && (
+          <div className="absolute left-0 top-0 z-10 h-full w-full bg-black opacity-50"></div>
+        )}
         <video
           autoPlay
           muted

@@ -137,7 +137,7 @@ export default function Flag({
           inverted && 'flex-row-reverse',
           className,
           'max-laptop:px-0 max-mobile-large:w-fit max-mobile-large:rounded-sm max-mobile-large:border max-mobile-large:border-default-50 max-mobile-large:bg-white max-mobile-large:shadow-md',
-          'max-laptop:gap-md max-mobile-large:relative max-mobile-large:z-50 max-mobile-large:!pb-sm'
+          'max-laptop:gap-md max-mobile-large:relative max-mobile-large:z-50 max-mobile-large:!pb-md'
         )}
       >
         <div
