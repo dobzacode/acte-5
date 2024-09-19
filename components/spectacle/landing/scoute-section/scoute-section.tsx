@@ -1,7 +1,7 @@
 import {
-  ComingFromBottomVariant,
   ComingFromLeftVariant,
-  ComingFromRightVariant
+  ComingFromRightVariant,
+  FadeInVariant
 } from '@/components/framer-motion/div-variants';
 import DivHoverWrapper from '@/components/framer-motion/hover-wrapper';
 import InviewWrapper from '@/components/framer-motion/inview-wrapper';
@@ -82,10 +82,7 @@ export default function ScouteSection() {
             une énergie contagieuse.
           </p>
         </InviewWrapper>
-        <InviewWrapper
-          className="flex h-fit w-full justify-center"
-          variant={ComingFromBottomVariant}
-        >
+        <InviewWrapper className="flex h-fit w-full justify-center" variant={FadeInVariant}>
           <DivHoverWrapper
             className="group w-fit origin-center duration-medium hover:opacity-90"
             variant={{
