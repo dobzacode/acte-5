@@ -109,10 +109,14 @@ export default function Footer({ className }: { className?: string }) {
         </section>
         <section className="flex flex-col gap-sm max-mobile-large:w-full">
           <p className="sub-heading pb-sm text-md font-medium">Informations légales</p>
-          <Link className="body hover:opacity-hover" href="politique-confidentialite">
+          <Link
+            scroll={false}
+            className="body hover:opacity-hover"
+            href="/politique-confidentialite"
+          >
             Politique de confidentialité
           </Link>
-          <Link className="body hover:opacity-hover" href="mentions-legales">
+          <Link scroll={false} className="body hover:opacity-hover" href="/mentions-legales">
             Mentions légales
           </Link>
         </section>
