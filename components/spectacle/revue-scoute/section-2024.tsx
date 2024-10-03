@@ -45,7 +45,7 @@ export default async function Section2024() {
         <InviewWrapper
           className="heading--sub-extra-large text-primary-400"
           tag="h2"
-          variant={ComingFromLeftVariant}
+          variant={ComingFromRightVariant}
         >
           {revueScouteActuelle[0].titre}
         </InviewWrapper>
