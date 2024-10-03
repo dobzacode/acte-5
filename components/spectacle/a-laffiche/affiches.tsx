@@ -42,7 +42,7 @@ export default async function Affiches() {
   return (
     <ul
       className={cn(
-        'section-px grid w-fit grid-cols-1 flex-wrap gap-md mobile-medium:grid-cols-2 tablet:grid-cols-3 laptop:grid-cols-4 laptop-large:grid-cols-5',
+        'section-px grid w-fit grid-cols-1 flex-wrap justify-items-center gap-md mobile-medium:grid-cols-2 tablet:grid-cols-3 laptop:grid-cols-4 laptop-large:grid-cols-5',
         imageArr.length < 5 && 'laptop-large:!grid-cols-4',
         imageArr.length < 4 && 'laptop:!grid-cols-3',
         imageArr.length < 3 && 'tablet:!grid-cols-2'

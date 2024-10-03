@@ -36,25 +36,23 @@ export default function SpectacleCard({
           }
         }
       }}
-      className="card h-full w-full shrink-0 gap-md px-0 pt-0 duration-medium hover:scale-105 hover:shadow-2xl"
+      className="card my-auto h-fit w-full shrink-0 gap-md overflow-hidden rounded-xs px-0 py-0 duration-medium hover:scale-105 hover:shadow-2xl"
     >
       <Link
         scroll={false}
-        className="flex h-full flex-col gap-md"
+        className="flex h-fit flex-col gap-md"
         href={`/spectacles-strasbourg/a-laffiche/${spectacle.slug.current}`}
       >
-        <div className="relative aspect-square">
-          <Image
-            sizes={'(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw'}
-            alt={spectacle.mainImage.alt ?? ''}
-            src={spectacle.url}
-            blurDataURL={spectacle.blurSrc}
-            fill
-            placeholder="blur"
-            className="rounded-xs rounded-b-none object-cover"
-          ></Image>
-        </div>
-        <p className="sub-heading px-sm text-center font-medium">{spectacle.titre}</p>
+        <Image
+          sizes={'(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw'}
+          alt={spectacle.mainImage.alt ?? ''}
+          src={spectacle.url}
+          blurDataURL={spectacle.blurSrc}
+          width={400}
+          height={400}
+          placeholder="blur"
+          className="object-cover"
+        ></Image>
       </Link>
     </DivWrapper>
   );

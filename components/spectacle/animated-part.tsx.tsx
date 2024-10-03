@@ -9,7 +9,7 @@ import { useEffect, useRef } from 'react';
 export default function AnimatedPart({ isSpectacle }: { isSpectacle?: boolean }) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const divRef = useRef<HTMLDivElement>(null);
-  const controlsButton = useAnimationControls();
+  const controlsButtonRef = useRef<HTMLAnchorElement>(null);
   const controlsDiv = useAnimationControls();
   const observerRef = useRef<IntersectionObserver | null>(null);
   const isMobile = useBetterMediaQuery('(max-width: 500px)');
@@ -18,14 +18,17 @@ export default function AnimatedPart({ isSpectacle }: { isSpectacle?: boolean })
     const video = videoRef.current;
     const div = divRef.current;
     if (!video) return;
-    video.addEventListener('timeupdate', () => {
-      if (video.currentTime >= 1.3) {
-        controlsButton.start('enter');
+
+    const handleTimeUpdate = () => {
+      if (video.currentTime >= 1.6) {
+        controlsButtonRef.current?.classList.add('!grayscale-0');
       }
       if (video.currentTime >= 3) {
         video.pause();
       }
-    });
+    };
+
+    video.addEventListener('timeupdate', handleTimeUpdate);
 
     observerRef.current = new IntersectionObserver(
       (entries) => {
@@ -46,13 +49,12 @@ export default function AnimatedPart({ isSpectacle }: { isSpectacle?: boolean })
     }
 
     return () => {
+      video.removeEventListener('timeupdate', handleTimeUpdate);
       if (observerRef.current && video && div) {
         observerRef.current.unobserve(video);
       }
     };
-  }, [controlsButton, controlsDiv]);
-
-  console.log(isSpectacle, isMobile);
+  }, [controlsButtonRef, controlsDiv]);
 
   return (
     <div className="-mr-2xl flex h-full w-fit items-center max-laptop:-mb-2xl max-tablet:-mb-4xl laptop:-mr-4xl laptop-large:-mr-8xl">
@@ -67,7 +69,7 @@ export default function AnimatedPart({ isSpectacle }: { isSpectacle?: boolean })
             hidden: {
               x: -700,
               opacity: 0,
-              maxHeight: 120
+              maxHeight: 280
             },
             enter: {
               x: 0,
@@ -112,43 +114,22 @@ export default function AnimatedPart({ isSpectacle }: { isSpectacle?: boolean })
               Des questions ?
             </p>
           )}
-          <motion.div
-            animate={controlsButton}
-            initial="hidden"
-            variants={{
-              hidden: {
-                x: 200,
-                y: 100
-              },
-              enter: {
-                x: 0,
-                y: 0,
-                transition: {
-                  type: 'spring',
-                  stiffness: 50
-                }
-              },
-              exit: {
-                x: 200,
-                y: 100
-              }
-            }}
-            className="group flex w-full origin-center justify-center hover:opacity-90"
-          >
+          <div className="group flex w-full origin-center justify-center hover:opacity-90">
             <Link
+              ref={controlsButtonRef}
               href={
                 isSpectacle
                   ? '/spectacles-strasbourg/contact'
                   : '/agence-evenementielle-strasbourg/contact'
               }
-              className="sub-heading shadow-primary-sm 0 mx-auto flex grow items-center gap-xs rounded-sm border-b-2 border-r-2 border-primary-600 bg-primary px-md py-sm text-center text-white laptop:gap-sm laptop:px-lg laptop:py-md"
+              className="sub-heading shadow-primary-sm 0 mx-auto flex grow items-center gap-xs rounded-sm border-b-2 border-r-2 border-primary-600 bg-primary px-md py-sm text-center text-white grayscale duration-medium laptop:gap-sm laptop:px-lg laptop:py-md"
               scroll={false}
             >
               <span className="w-full text-center">
                 {isSpectacle ? 'Communiquons ensemble' : 'Contactez-nous'}
               </span>
             </Link>
-          </motion.div>
+          </div>
         </motion.div>
       </div>
       <motion.div

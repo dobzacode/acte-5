@@ -11,7 +11,7 @@ import {
   CarouselPrevious
 } from '@/components/ui/carousel';
 import ImagePulsing from '@/components/ui/image-pulsing';
-import { cn, decodeAssetId, notEmpty } from '@/lib/utils';
+import { decodeAssetId, notEmpty } from '@/lib/utils';
 import { sanityFetch } from '@/sanity/lib/fetch';
 import { EventWithImgQueryRes } from '@/sanity/lib/queries';
 import { urlForImage } from '@/sanity/lib/utils';
@@ -109,35 +109,29 @@ export default async function LastEvent({
               {imageArr.map((image, index) => (
                 <CarouselItem
                   key={`${image.titre}-${index}`}
-                  className="basis-full duration-medium hover:grayscale mobile-large:basis-1/2 tablet:basis-1/3 laptop:basis-1/3 laptop-large:basis-1/3 laptop-large:pr-sm"
+                  className="group basis-full duration-medium hover:grayscale mobile-large:basis-1/2 tablet:basis-1/3 laptop:basis-1/3 laptop-large:basis-1/3 laptop-large:pr-sm"
                 >
                   <Link
                     scroll={false}
                     href={`/agence-evenementielle-strasbourg/projets/${image.slug.current}`}
-                    className={cn(
-                      'card relative flex h-full flex-col items-center gap-md overflow-hidden rounded-sm border-0 p-0 shadow-xl laptop:gap-lg'
-                    )}
+                    className="group relative z-40 flex aspect-square h-full w-full flex-col-reverse overflow-hidden rounded-sm duration-medium after:absolute after:left-0 after:top-0 after:z-10 after:h-full after:w-full after:bg-gradient-to-t after:from-black/100 after:to-transparent after:to-30%"
                     key={index}
                   >
                     <ImagePulsing
-                      width={400}
-                      height={400}
-                      className={cn(
-                        'aspect-square h-full w-full grow cursor-pointer overflow-hidden rounded-t-sm object-cover object-center',
-                        'name' in image ? null : 'rounded-t-none'
-                      )}
-                      sizes={'(max-width: 640px) 100vw, 50vw'}
-                      src={image.src}
+                      fill
+                      sizes={'(min-width: 1024px) 50vw, 100vw'}
+                      className={`h-full w-full object-cover duration-medium group-hover:scale-[102%]`}
                       placeholder="blur"
+                      src={image.src}
                       blurDataURL={image.blurSrc}
                       alt={`Image ${image.titre}`}
                     ></ImagePulsing>
 
-                    <div className="relative z-20 flex flex-col items-center gap-sm text-pretty rounded-b-sm bg-white px-md pb-md text-center">
-                      <p className="sub-heading line-clamp-1">
-                        <strong>{image.client}</strong>
-                      </p>
-                    </div>
+                    <p
+                      className={`sub-heading before-bg relative z-50 line-clamp-1 text-pretty px-md text-white duration-slow hover:duration-fast`}
+                    >
+                      {image.client}
+                    </p>
                   </Link>
                 </CarouselItem>
               ))}

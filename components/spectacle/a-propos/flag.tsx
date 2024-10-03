@@ -4,7 +4,7 @@ import {
   ComingFromLeftVariant,
   ComingFromRightVariant
 } from '@/components/framer-motion/div-variants';
-import InviewWrapper from '@/components/framer-motion/inview-wrapper';
+import DivWrapper from '@/components/framer-motion/div-wrapper';
 import useBetterMediaQuery from '@/hooks/use-better-media-query';
 import { cn } from '@/lib/utils';
 import Image, { StaticImageData } from 'next/image';
@@ -24,9 +24,6 @@ export default function Flag({
 }) {
   const isLaptop = useBetterMediaQuery('(min-width: 1024px)');
   const isMobile = useBetterMediaQuery('(max-width: 500px)');
-  const viewport = { once: true, margin: `0px 0px -200px 0px` };
-
-  console.log(isLaptop);
 
   if (isLaptop)
     return (
@@ -38,8 +35,7 @@ export default function Flag({
           className
         )}
       >
-        <InviewWrapper
-          viewport={viewport}
+        <DivWrapper
           variant={{
             hidden: {
               opacity: 0,
@@ -64,7 +60,7 @@ export default function Flag({
           )}
         >
           <Image src={src} placeholder="blur" alt="image" fill className="object-cover"></Image>
-        </InviewWrapper>
+        </DivWrapper>
         <div
           className={cn(
             'heading--large relative z-10 flex grow flex-col gap-sm overflow-hidden bg-primary-400',
@@ -72,8 +68,7 @@ export default function Flag({
           )}
         >
           {date && (
-            <InviewWrapper
-              viewport={viewport}
+            <DivWrapper
               variant={{
                 hidden: {
                   opacity: 0,
@@ -95,11 +90,10 @@ export default function Flag({
               tag="p"
             >
               {date}
-            </InviewWrapper>
+            </DivWrapper>
           )}
-          <InviewWrapper
+          <DivWrapper
             className="heading font-light"
-            viewport={viewport}
             variant={{
               hidden: {
                 opacity: 0,
@@ -121,15 +115,14 @@ export default function Flag({
             tag="p"
           >
             {text}
-          </InviewWrapper>
+          </DivWrapper>
         </div>
       </div>
     );
 
   if (isMobile)
     return (
-      <InviewWrapper
-        viewport={viewport}
+      <DivWrapper
         variant={inverted ? ComingFromRightVariant : ComingFromLeftVariant}
         key={`${date}-mobile`}
         className={cn(
@@ -159,7 +152,7 @@ export default function Flag({
           <div>{date}</div>
           <div className="sub-heading">{text}</div>
         </div>
-      </InviewWrapper>
+      </DivWrapper>
     );
 
   return (
@@ -173,8 +166,7 @@ export default function Flag({
         'max-mobile-large:z- max-laptop:gap-md max-mobile-large:relative max-mobile-large:pb-sm'
       )}
     >
-      <InviewWrapper
-        viewport={viewport}
+      <DivWrapper
         variant={
           isLaptop
             ? {
@@ -199,13 +191,13 @@ export default function Flag({
               : ComingFromRightVariant
         }
         className={cn(
-          'relative z-10 aspect-[5/3] w-1/2 shrink-0 overflow-hidden max-mobile-large:w-full laptop:w-1/2',
+          'relative aspect-[5/3] w-1/2 shrink-0 overflow-hidden max-mobile-large:w-full laptop:w-1/2',
           inverted ? 'rounded-r-sm' : 'rounded-l-sm',
           'max-laptop:rounded-sm max-mobile-large:rounded-b-none'
         )}
       >
         <Image src={src} placeholder="blur" alt="image" fill className="object-cover"></Image>
-      </InviewWrapper>
+      </DivWrapper>
       <div
         className={cn(
           'heading relative z-10 flex grow flex-col gap-sm overflow-hidden max-mobile-large:bg-white max-mobile-large:text-black mobile-large:bg-primary-400',
@@ -213,8 +205,7 @@ export default function Flag({
           'max-laptop:z-0 max-laptop:overflow-visible max-laptop:pl-sm max-laptop:pr-0 max-mobile-large:pl-sm max-mobile-large:pr-sm max-mobile-large:text-center'
         )}
       >
-        <InviewWrapper
-          viewport={viewport}
+        <DivWrapper
           variant={
             isLaptop
               ? {
@@ -241,10 +232,9 @@ export default function Flag({
           tag="p"
         >
           {date}
-        </InviewWrapper>
-        <InviewWrapper
+        </DivWrapper>
+        <DivWrapper
           className="sub-heading"
-          viewport={viewport}
           variant={
             isLaptop
               ? {
@@ -271,7 +261,7 @@ export default function Flag({
           tag="p"
         >
           {text}
-        </InviewWrapper>
+        </DivWrapper>
       </div>
     </div>
   );

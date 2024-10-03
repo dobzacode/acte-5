@@ -138,6 +138,17 @@
   box-shadow: 0px 0px 27px 1px rgba(247, 144, 84, 0.57);
 }
 
+.gradient-right-to-left {
+  background-image: linear-gradient(to left, gray, orange);
+  background-size: 100% 100%;
+  background-position: right;
+  transition: background-position 0.5s ease-in-out;
+}
+
+.gradient-right-to-left.active {
+  background-position: left;
+}
+
 .hamburger .line {
   transition:
     y 300ms ease-in 300ms,

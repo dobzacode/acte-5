@@ -95,13 +95,13 @@ export default function CompetenceSection() {
               <h3 className="heading--large max-laptop-large:heading--sub-large relative z-20 w-full whitespace-nowrap font-medium text-white delay-300 duration-medium group-hover:-translate-y-[150%] group-hover:delay-0">
                 {item.name}
               </h3>
-              <p className="heading relative z-10 w-fit translate-x-[104%] !font-[Avenir] !font-light text-white duration-medium group-hover:translate-x-0 group-hover:delay-300">
+              <p className="heading relative z-10 w-[94%] translate-x-1/2 text-pretty !font-[Avenir] !font-light text-white duration-medium group-hover:translate-x-0 group-hover:delay-300">
                 {item.description}
               </p>
               <Image
                 placeholder={'blur'}
                 src={item.src ?? '/placeholder-image.png'}
-                className="object-cen z-10 object-cover duration-medium group-hover:-translate-x-1/2 group-hover:rounded-r-sm group-hover:grayscale group-hover:delay-300"
+                className="z-10 object-cover object-center duration-medium group-hover:-translate-x-1/2 group-hover:rounded-r-sm group-hover:grayscale group-hover:delay-300"
                 fill
                 alt=""
               ></Image>

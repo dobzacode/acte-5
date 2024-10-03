@@ -3,7 +3,7 @@ import {
   ComingFromTopVariant
 } from '@/components/framer-motion/div-variants';
 import InviewWrapper from '@/components/framer-motion/inview-wrapper';
-import { notEmpty } from '@/lib/utils';
+import { decodeAssetId, notEmpty } from '@/lib/utils';
 import { sanityFetch } from '@/sanity/lib/fetch';
 import { SpectaclesQueryResponse } from '@/sanity/lib/queries';
 import { urlForImage } from '@/sanity/lib/utils';
@@ -26,9 +26,10 @@ export default async function SimilaireProject({ actualSpectacle }: { actualSpec
     ? await Promise.all(
         spectacles.map(async (spectacle) => {
           try {
+            const { width, height } = decodeAssetId(spectacle.mainImage?.asset._ref);
             const url = await urlForImage(spectacle.mainImage)
-              .width(1920)
-              .height(1080)
+              .width(width)
+              .height(height)
               .dpr(2)
               .quality(80)
               .url();
