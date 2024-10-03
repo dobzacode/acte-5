@@ -46,7 +46,7 @@ export default async function DistributionSection({
             <InviewWrapper
               key={people._key}
               tag="li"
-              style={{ zIndex: 20 - index }}
+              style={{ zIndex: 30 - index }}
               variant={{
                 hidden: {
                   opacity: 0,
@@ -56,8 +56,8 @@ export default async function DistributionSection({
                   opacity: 1,
                   y: 0,
                   transition: {
-                    y: { delay: 0.5 + index * 0.1, type: 'spring', damping: 20 },
-                    opacity: { duration: 0.2, delay: 0.5 + index * 0.1 }
+                    y: { delay: 0.5 + index * 0.05, type: 'spring', damping: 20 },
+                    opacity: { duration: 0.2, delay: 0.5 + index * 0.05 }
                   }
                 },
                 exit: {
