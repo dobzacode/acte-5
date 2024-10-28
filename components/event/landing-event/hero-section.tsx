@@ -31,7 +31,7 @@ export default function HeroSection({ isSpectacle = false }: { isSpectacle?: boo
             src={
               isSpectacle
                 ? '/assets/spectacle/landing/bg-spectacle.mp4'
-                : '/assets/event/landing/bg-event-light.mp4'
+                : '/assets/event/landing/bg-event-l.mp4'
             }
             type="video/mp4"
           />

@@ -4,6 +4,7 @@ import blockContent from './schemaTypes/blockContent';
 import evenement from './schemaTypes/evenement';
 
 import logo from './schemaTypes/logo';
+import parametres from './schemaTypes/parametres';
 import publication from './schemaTypes/publication';
 import revueScouteActuelle from './schemaTypes/revue-scoute-actuelle';
 import revueScouteAffiche from './schemaTypes/revue-scoute-affiche';
@@ -17,6 +18,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     spectacle,
     revueScouteActuelle,
     revueScouteAffiche,
-    logo
+    logo,
+    parametres
   ]
 };

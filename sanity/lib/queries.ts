@@ -178,6 +178,10 @@ export interface Spectacle {
   _updatedAt: string;
 }
 
+export interface Parametres {
+  lienBilletterie: string;
+}
+
 export const POSTS_QUERY = groq`*[_type == "publication" && defined(slug)]`;
 
 export type PostsQueryResponse =

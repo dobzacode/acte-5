@@ -7,7 +7,7 @@ import { dataset, projectId, studioUrl } from './sanity/lib/api';
 import { schema } from './sanity/schema';
 
 const singletonActions = new Set(['publish', 'discardChanges', 'restore']);
-const singletonTypes = new Set(['revueScouteActuelle', 'revueScouteAffiche']);
+const singletonTypes = new Set(['revueScouteActuelle', 'revueScouteAffiche', 'parametres']);
 
 export default defineConfig({
   basePath: studioUrl,
@@ -32,7 +32,10 @@ export default defineConfig({
               .child(
                 S.document().schemaType('revueScouteAffiche').documentId('revueScouteAffiche')
               ),
-
+            S.listItem()
+              .title('Paramètres')
+              .id('parametres')
+              .child(S.document().schemaType('parametres').documentId('parametres')),
             S.documentTypeListItem('evenement').title('Projets'),
             S.documentTypeListItem('publication').title('Articles (blog)'),
             S.documentTypeListItem('spectacle').title('Spectacle'),
