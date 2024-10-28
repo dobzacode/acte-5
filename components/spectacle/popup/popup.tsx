@@ -4,11 +4,10 @@ import { AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import { FadeInVariant } from '../framer-motion/div-variants';
-import DivWrapper from '../framer-motion/div-wrapper';
-import { Button } from '../ui/button';
+import { FadeInVariant } from '../../framer-motion/div-variants';
+import DivWrapper from '../../framer-motion/div-wrapper';
 
-function MyPage() {
+function Popup({ children }: { children: React.ReactNode }) {
   const [showPopup, setShowPopup] = useState(true);
   const pathname = usePathname();
 
@@ -42,16 +41,11 @@ function MyPage() {
           />
 
           <p className="sub-heading">Vous souhaitez réserver votre place ?</p>
-          <Button
-            variant={'outline'}
-            className="body rounded-xs font-normal duration-medium hover:opacity-80"
-          >
-            Oui je me rends sur la billeterie
-          </Button>
+          {children}
         </DivWrapper>
       )}
     </AnimatePresence>
   );
 }
 
-export default MyPage;
+export default Popup;
