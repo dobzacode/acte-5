@@ -18,7 +18,7 @@ export default function Home() {
         h1Css="laptop-large:w-[10ch]"
         title={'NOUS CONTACTER'}
         element={[
-          { href: '/agence-evenementielle-strasbourg', text: 'Évenement' },
+          { href: '/agence-evenementielle-strasbourg', text: 'Événement' },
           { href: '/agence-evenementielle-strasbourg/services', text: 'Contact' }
         ]}
       ></TitleSection>
@@ -29,7 +29,7 @@ export default function Home() {
       >
         <FormWrapped isSpectacle={true}></FormWrapped>
       </InviewWrapper>
-      <ContactBanner/>
+      <ContactBanner />
     </main>
   );
 }

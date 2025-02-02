@@ -7,7 +7,7 @@ import TitleSection from '@/components/ui/title-section';
 import { Metadata } from 'next';
 import Image from 'next/image';
 import { Suspense } from 'react';
-import image from '/public/assets/event/services/portes/portes.jpg';
+import image from '/public/assets/event/services/voeux/voeux.jpg';
 
 export const metadata: Metadata = {
   title: 'Organisation de Portes Ouvertes à Strasbourg | Acte 5',
@@ -25,7 +25,7 @@ export default function Home() {
           h1Css={'heading--sub-extra-large'}
           title={'CÉRÉMONIE DES VŒUX'}
           element={[
-            { href: '/agence-evenementielle-strasbourg', text: 'Évenement' },
+            { href: '/agence-evenementielle-strasbourg', text: 'Événement' },
             { href: '/agence-evenementielle-strasbourg/services', text: 'Nos services' },
             {
               href: '/agence-evenementielle-strasbourg/services/ceremonie-voeux',
@@ -56,9 +56,8 @@ export default function Home() {
           <div className="flex flex-col gap-md">
             <h3 className="heading text-primary-400">Temps fort du début d&apos;année</h3>
             <p className="body text-pretty">
-              La cérémonie des vœux est cérémonie est l&apos;occasion de dresser le bilan de
-              l&apos;année écoulée, de vos actions passées et de souhaiter{' '}
-              <strong>tous vos meilleurs vœux</strong>
+              La cérémonie des vœux est l&apos;occasion de dresser le bilan de l&apos;année écoulée,
+              de vos actions passées et de souhaiter <strong>vos meilleurs vœux </strong>
               aux personnes qui vous entourent pour cette nouvelle année qui démarre.
               <br />
               <br />

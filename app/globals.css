@@ -31,7 +31,7 @@
   }
 
   .heading {
-    @apply font-[Quasimoda] text-md font-normal leading-md laptop:text-lg laptop:leading-lg;
+    @apply font-[Quasimoda] text-md font-medium leading-md laptop:text-lg laptop:leading-lg;
   }
 
   .sub-heading {

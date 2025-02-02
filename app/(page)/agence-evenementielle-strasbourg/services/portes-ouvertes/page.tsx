@@ -24,7 +24,7 @@ export default function Home() {
           h1Css={'heading--sub-extra-large'}
           title={'PORTES OUVERTES'}
           element={[
-            { href: '/agence-evenementielle-strasbourg', text: 'Évenement' },
+            { href: '/agence-evenementielle-strasbourg', text: 'Événement' },
             { href: '/agence-evenementielle-strasbourg/services', text: 'Nos services' },
             {
               href: '/agence-evenementielle-strasbourg/services/portes-ouvertes',
@@ -40,7 +40,7 @@ export default function Home() {
           <h2 className="sub-heading font-semibold">
             Ouvrir les portes pour permettre la découverte de son activité reste un moment crucial
             dans la vie de l&apos;entreprise. Découvrir, rencontrer, être émerveiller, voici ce
-            qu&apos;on souhaite transmettre à ceux qui vous rendent visite…
+            qu&apos;on souhaite transmettre à ceux qui vous rendent visite.
           </h2>
           <Image
             priority={true}
@@ -54,7 +54,7 @@ export default function Home() {
           ></Image>
           <div className="flex flex-col gap-md">
             <h3 className="heading text-primary-400">
-              Une journée « Portes Ouvertes » est un acte fort de communication
+              Une journée portes ouvertes est un acte fort de communication
             </h3>
             <p className="body text-pretty">
               C&apos;est aussi un vecteur important de l&apos;image que véhicule l&apos;entreprise.
@@ -63,10 +63,10 @@ export default function Home() {
               <br />
               <br /> Cette journée doit être préparée avec minutie, chaque détail compte, on met les
               petits plats dans les grands. Une présentation haute en couleur ou une ambiance plus
-              feutrée selon vos goûts laissera, à vos visiteurs, une impression forte évoluant dans
-              un univers harmonieux, festif, ou encore inattendu. A chaque étape nous sommes
-              présents pour assurer l&apos;ordonnancement optimal de l&apos;événement. Bref, un
-              déroulé sans fausse note.
+              feutrée, selon vos goûts, laissera à vos visiteurs une impression forte, tout en
+              découvrant l'univers de votre entreprise. A chaque étape nous sommes présents pour
+              assurer l&apos;ordonnancement optimal de l&apos;événement. Bref, un déroulé sans
+              fausse note.
             </p>
           </div>
           <div className="flex flex-col gap-md">

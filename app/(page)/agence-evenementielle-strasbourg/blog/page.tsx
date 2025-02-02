@@ -31,7 +31,7 @@ export default async function Home() {
         }
         title={'BLOG'}
         element={[
-          { href: '/agence-evenementielle-strasbourg', text: 'Évenement' },
+          { href: '/agence-evenementielle-strasbourg', text: 'Événement' },
           { href: '/agence-evenementielle-strasbourg/blog', text: 'Blog' }
         ]}
       ></TitleSection>

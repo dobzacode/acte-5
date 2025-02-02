@@ -24,7 +24,7 @@ export default async function Home() {
           h1Css={'heading--sub-extra-large'}
           title={"CONVENTION D'ENTREPRISE"}
           element={[
-            { href: '/agence-evenementielle-strasbourg', text: 'Évenement' },
+            { href: '/agence-evenementielle-strasbourg', text: 'Événement' },
             { href: '/agence-evenementielle-strasbourg/services', text: 'Nos services' },
             {
               href: '/agence-evenementielle-strasbourg/services/convention-entreprise-strasbourg',
@@ -60,12 +60,12 @@ export default async function Home() {
               Vous avez le besoin de{' '}
               <strong>transmettre un message fort à vos collaborateurs</strong>, à vos partenaires.
               Avec vous, nous définissons l&apos;ensemble des priorités de la manifestation. Nous
-              imaginons un projet sur mesure dans un lieu adéquat et nous vous proposons, ainsi, le
+              imaginons un projet sur mesure dans un lieu adéquat et nous vous proposons ainsi le
               format le plus adapté. Votre discours est enrichi par un habillage inventif, une mise
               en scène de vos idées et de vos actions. Par le biais de supports variés (habillage
-              scénique, vidéo, lumière, son, communication visuelle et graphique…) nous vous
+              scénique, vidéo, lumière, son, communication visuelle et graphique…), nous vous
               accompagnons dans l&apos;expression de votre message. <br />
-              <br /> Un rythme est trouvé, une animation mise en place, accompagnée selon vos
+              <br /> Un rythme est trouvé, une tonalité mise en place, accompagnée, selon vos
               souhaits, par une série d&apos;animations ludiques ou artistiques.
             </p>
           </div>
@@ -79,10 +79,10 @@ export default async function Home() {
               <br />
               <br /> L&apos;objectif de la démarche vise, entre autres, à{' '}
               <strong>
-                maintenir la cohésion de toutes les forces vives de l&apos;entreprise.
+                maintenir la cohésion de toutes les forces vives de votre entreprise.
               </strong>{' '}
               Elle permet le lancement de nouvelles stratégies tout en donnant la possibilité aux
-              collaborateurs d&apos;en devenir acteur. C&apos;est l&apos;occasion pour
+              collaborateurs d&apos;en devenir acteurs. C&apos;est l&apos;occasion pour
               l&apos;entreprise et les managers de renouveler la confiance en leurs équipes.
             </p>
           </div>

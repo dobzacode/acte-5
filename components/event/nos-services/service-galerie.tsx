@@ -9,17 +9,22 @@ import { usePathname, useSearchParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import CategoryPicker from './category-picker';
 import anniversairepic from '/public/assets/event/services/anniversaire.jpg';
+import clefpic from '/public/assets/event/services/clef.jpg';
 import conventionpic from '/public/assets/event/services/convention.jpg';
 import designpic from '/public/assets/event/services/design.jpg';
+import digitalepic from '/public/assets/event/services/digitale.jpg';
+import editionpic from '/public/assets/event/services/edition.jpg';
 import galapic from '/public/assets/event/services/gala.jpg';
 import inaugurationpic from '/public/assets/event/services/inauguration.jpg';
+import marquepic from '/public/assets/event/services/marque.jpg';
 import medaillepic from '/public/assets/event/services/medailles.jpg';
+import mesurepic from '/public/assets/event/services/mesure.jpg';
 import portespic from '/public/assets/event/services/portes.jpg';
-import spectaclepic from '/public/assets/event/services/spectacle.jpg';
+import scenographiepic from '/public/assets/event/services/scenographie.jpg';
+import supportpic from '/public/assets/event/services/support.jpg';
 import teambuildingpic from '/public/assets/event/services/teambuilding.jpg';
 import videopic from '/public/assets/event/services/video.jpg';
 import voeuxpic from '/public/assets/event/services/voeux.jpg';
-import placeholder from '/public/placeholder-image.png';
 
 export const SERVICES = [
   {
@@ -30,13 +35,13 @@ export const SERVICES = [
   },
   {
     href: '/agence-evenementielle-strasbourg/services/convention-entreprise-strasbourg',
-    text: 'Convention',
+    text: 'Convention / séminaire',
     src: conventionpic,
     category: 'evenementiel'
   },
   {
     href: '/agence-evenementielle-strasbourg/services/organisateur-anniversaire',
-    text: 'Anniversaire',
+    text: "Anniversaire d'entreprise",
     src: anniversairepic,
     category: 'evenementiel'
   },
@@ -65,21 +70,21 @@ export const SERVICES = [
     category: 'evenementiel'
   },
   {
-    href: '/agence-evenementielle-strasbourg/services/spectacle-entreprise',
-    text: "Spectacle d'entreprise",
-    src: spectaclepic,
-    category: 'spectacle'
+    href: '/agence-evenementielle-strasbourg/services/lancement-de-marque',
+    text: 'Lancement de marque',
+    src: marquepic,
+    category: 'evenementiel'
   },
   {
     href: '/agence-evenementielle-strasbourg/services/spectacle-clef-en-main',
     text: 'Spectacle clé en main',
-    src: placeholder,
+    src: clefpic,
     category: 'spectacle'
   },
   {
     href: '/agence-evenementielle-strasbourg/services/spectacle-sur-mesure',
     text: 'Spectacle sur mesure',
-    src: placeholder,
+    src: mesurepic,
     category: 'spectacle'
   },
   {
@@ -102,14 +107,26 @@ export const SERVICES = [
   },
   {
     href: '/agence-evenementielle-strasbourg/services/support-de-communication',
-    text: 'Support de communication',
-    src: placeholder,
+    text: 'Supports de communication',
+    src: supportpic,
     category: 'graphisme'
   },
   {
     href: '/agence-evenementielle-strasbourg/services/edition',
     text: 'Edition',
-    src: placeholder,
+    src: editionpic,
+    category: 'graphisme'
+  },
+  {
+    href: '/agence-evenementielle-strasbourg/services/scenographie',
+    text: 'Scénographie',
+    src: scenographiepic,
+    category: 'graphisme'
+  },
+  {
+    href: '/agence-evenementielle-strasbourg/services/communication-digitale',
+    text: 'Communication digitale',
+    src: digitalepic,
     category: 'graphisme'
   }
 ];

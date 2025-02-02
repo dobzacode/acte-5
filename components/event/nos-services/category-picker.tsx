@@ -52,7 +52,7 @@ export default function CategoryPicker({ actualParams }: { actualParams: string 
             });
           }}
         >
-          Graphisme
+          Design graphique
         </button>
       </li>
     </ul>

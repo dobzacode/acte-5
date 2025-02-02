@@ -23,7 +23,7 @@ export default async function Page() {
           h1Css={'heading--sub-extra-large'}
           title={'CÉRÉMONIE DES MÉDAILLES'}
           element={[
-            { href: '/agence-evenementielle-strasbourg', text: 'Évenement' },
+            { href: '/agence-evenementielle-strasbourg', text: 'Événement' },
             { href: '/agence-evenementielle-strasbourg/services', text: 'Nos services' },
             {
               href: '/agence-evenementielle-strasbourg/services/ceremonie-remise-medailles',
@@ -77,7 +77,7 @@ export default async function Page() {
               <br />
               <br />{' '}
               <strong>
-                La cérémonie des médailles peut être agrémentée par un cocktail, par une animation
+                La cérémonie des médailles peut être agrémentée par un cocktail, une animation
                 musicale, théâtrale ou encore artistique
               </strong>
               , afin de prolonger la convivialité de ce moment.
@@ -87,7 +87,7 @@ export default async function Page() {
       </section>
       <Suspense fallback={<LastEventSkeleton />}>
         <LastEvent
-          h2="Nos précédentes cérémonies des médailles organisés à Strasbourg en Alsace"
+          h2="Nos précédentes cérémonies des médailles organisées à Strasbourg en Alsace"
           categorie="Cérémonie des médailles"
         ></LastEvent>
       </Suspense>

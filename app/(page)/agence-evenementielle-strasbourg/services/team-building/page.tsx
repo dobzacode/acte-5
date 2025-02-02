@@ -23,7 +23,7 @@ export default function Home() {
           h1Css={'heading--sub-extra-large'}
           title={'TEAM BUILDING'}
           element={[
-            { href: '/agence-evenementielle-strasbourg', text: 'Évenement' },
+            { href: '/agence-evenementielle-strasbourg', text: 'Événement' },
             { href: '/agence-evenementielle-strasbourg/services', text: 'Nos services' },
             {
               href: '/agence-evenementielle-strasbourg/services/team-building',

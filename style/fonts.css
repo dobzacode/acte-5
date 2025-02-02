@@ -263,3 +263,17 @@
   font-style: normal;
   font-display: swap;
 }
+
+@font-face {
+  font-family: 'Quasimoda';
+  src: url('/fonts/Quasimoda-Light.eot');
+  src:
+    url('/fonts/Quasimoda-Light.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/Quasimoda-Light.woff2') format('woff2'),
+    url('/fonts/Quasimoda-Light.woff') format('woff'),
+    url('/fonts/Quasimoda-Light.ttf') format('truetype'),
+    url('/fonts/Quasimoda-Light.svg#Quasimoda-Light') format('svg');
+  font-weight: thin;
+  font-style: normal;
+  font-display: swap;
+}

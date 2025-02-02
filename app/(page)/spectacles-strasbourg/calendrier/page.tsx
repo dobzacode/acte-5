@@ -20,7 +20,7 @@ export default function Home() {
       <TitleSection
         title={'CALENDRIER DES SPECTACLES'}
         element={[
-          { href: '/spectacles-strasbourg', text: 'Évenement' },
+          { href: '/spectacles-strasbourg', text: 'Événement' },
           { href: '/spectacles-strasbourg/calendrier', text: 'Calendrier des spectacles' }
         ]}
       ></TitleSection>

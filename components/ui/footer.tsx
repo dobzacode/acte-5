@@ -10,15 +10,16 @@ export default function Footer({ className }: { className?: string }) {
         className
       )}
     >
-      <div className="flex flex-col items-center gap-xs max-laptop-large:hidden">
-        <Logo width={160} height={160} className="rounded-xs"></Logo>
-        <p className="font-[Quasimoda] text-xl">ACTE 5</p>
+      <div className="flex flex-col items-center gap-0 max-laptop-large:hidden">
+        <Logo width={190} height={190} className=""></Logo>
+        <p className="font-[Quasimoda] text-xl font-thin !tracking-[0.08em]">ACTE 5</p>
       </div>
       <nav className="flex grid-cols-2 flex-wrap justify-center gap-3xl max-laptop:w-full max-tablet:grid max-mobile-large:flex tablet:flex-nowrap tablet:justify-between laptop:justify-normal">
-        <div className="flex flex-col items-center gap-sm max-tablet:hidden laptop-large:hidden">
-          <Logo width={84} height={84} className="rounded-xs"></Logo>
-          <p className="sub-heading whitespace-nowrap !font-extralight">ACTE 5</p>
+        <div className="flex flex-col items-center gap-[4px] max-tablet:hidden laptop-large:hidden">
+          <Logo width={84} height={84} className=""></Logo>
+          <p className="sub-heading whitespace-nowrap font-thin !tracking-[0.08em]">ACTE 5</p>
         </div>
+
         <section className="flex flex-col gap-sm max-mobile-large:mr-auto">
           <Link
             scroll={false}

@@ -16,7 +16,7 @@ export default function Home() {
       <TitleSection
         title={'NOS SERVICES'}
         element={[
-          { href: '/agence-evenementielle-strasbourg', text: 'Évenement' },
+          { href: '/agence-evenementielle-strasbourg', text: 'Événement' },
           { href: '/agence-evenementielle-strasbourg/services', text: 'Nos services' }
         ]}
       ></TitleSection>

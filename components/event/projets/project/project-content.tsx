@@ -1,16 +1,14 @@
+import LastEventSkeleton from '@/components/skeleton/last-event-skeleton';
 import { sanityFetch } from '@/sanity/lib/fetch';
 import { EVENT_QUERY, EventQueryResponse } from '@/sanity/lib/queries';
 import { draftMode } from 'next/headers';
 import { notFound } from 'next/navigation';
+import { Suspense } from 'react';
 import { ComingFromRightVariant } from '../../../framer-motion/div-variants';
 import DivWrapper from '../../../framer-motion/div-wrapper';
 import TitleSection from '../../../ui/title-section';
 import LastEvent from '../../nos-services/last-event-image';
 import Project from './project';
-
-function notEmpty<TValue>(value: TValue | null | undefined): value is TValue {
-  return value !== null && value !== undefined;
-}
 
 export default async function ProjectpageContent({ params }: { params: { projet: string } }) {
   const project = await sanityFetch<EventQueryResponse>({
@@ -47,7 +45,9 @@ export default async function ProjectpageContent({ params }: { params: { projet:
         </DivWrapper>
       </section>
 
-      <LastEvent actualSlug={project.slug.current} h2="Découvrez nos autres projets"></LastEvent>
+      <Suspense fallback={<LastEventSkeleton />}>
+        <LastEvent actualSlug={project.slug.current} h2="Découvrez nos autres projets"></LastEvent>
+      </Suspense>
     </main>
   );
 }

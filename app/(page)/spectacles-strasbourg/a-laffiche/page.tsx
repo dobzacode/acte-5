@@ -21,7 +21,7 @@ export default function Home() {
         <TitleSection
           title={"A L'AFFICHE"}
           element={[
-            { href: '/spectacles-strasbourg', text: 'Évenement' },
+            { href: '/spectacles-strasbourg', text: 'Événement' },
             { href: '/spectacles-strasbourg/a-laffiche', text: "A l'affiche" }
           ]}
         ></TitleSection>

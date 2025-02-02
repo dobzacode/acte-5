@@ -25,7 +25,7 @@ export default async function Home() {
       <TitleSection
         title={'NOS PROJETS'}
         element={[
-          { href: '/agence-evenementielle-strasbourg', text: 'Évenement' },
+          { href: '/agence-evenementielle-strasbourg', text: 'Événement' },
           { href: '/agence-evenementielle-strasbourg/projets', text: 'Nos projets' }
         ]}
       ></TitleSection>

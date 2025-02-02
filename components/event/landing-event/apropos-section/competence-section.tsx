@@ -23,15 +23,14 @@ const COMPETENCE = [
     name: "SPECTACLE D'ENTREPRISE",
     category: 'spectacle',
     src: spectacleimage,
-    description:
-      'La création et la production de spectacles pour le grand public et les entreprises.'
+    description: 'La création de spectacles sur-mesure pour les collectivités et les entreprises.'
   },
   {
     name: 'GRAPHISME',
     category: 'graphisme',
     src: graphismeimage,
     description:
-      "Création de visuels sur mesure pour répondre à vos besoins et maximiser l'impact de vos messages."
+      "La création de supports de communication pour répondre à vos besoins et maximiser l'impact de vos messages."
   }
 ];
 

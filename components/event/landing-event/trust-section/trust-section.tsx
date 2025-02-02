@@ -14,7 +14,7 @@ export default function TrustSection() {
         viewport={{ once: true, margin: '-200px 0px -200px 0px' }}
       >
         <h2 className="heading--large w-fit">
-          Forte de plus de 30 ans d&apos;expertise, Acte 5 allie précision et créativité pour
+          Forte de plus de 30 ans d&apos;expertise, ACTE 5 allie précision et créativité pour
           transformer vos messages en expériences spectaculaires.
         </h2>
       </InviewWrapper>

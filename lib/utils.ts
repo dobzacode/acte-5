@@ -1,4 +1,4 @@
-import { Image } from '@/sanity/lib/queries';
+import { Image, Logo } from '@/sanity/lib/queries';
 import { clsx, type ClassValue } from 'clsx';
 
 import { twMerge } from 'tailwind-merge';
@@ -91,3 +91,51 @@ export const decodeAssetId = (id: string) => {
     height
   };
 };
+
+export function reorganizeArray(
+  array: (Logo & { blurSrc: string; url: string })[]
+): (Logo & { blurSrc: string; url: string })[] {
+  if (!array.length) {
+    return [];
+  }
+
+  const priorityTitles = [
+    'RGDS',
+    'Mars Petcare',
+    'Groupe Roederer',
+    'BPALC',
+    'Constellium',
+    'Ophea'
+  ];
+
+  let validArray = array.filter(
+    (item): item is Logo & { blurSrc: string; url: string } =>
+      item && typeof item === 'object' && 'title' in item && item.title != null
+  );
+
+  // Create a map to store priority items by their titles
+  const priorityItemsMap = new Map<string, Logo & { blurSrc: string; url: string }>();
+  const otherItems: (Logo & { blurSrc: string; url: string })[] = [];
+
+  // Separate items into priority map and other items
+  validArray.forEach((item) => {
+    if (priorityTitles.includes(item.title!)) {
+      priorityItemsMap.set(item.title!, item);
+    } else {
+      otherItems.push(item);
+    }
+  });
+
+  // Shuffle other items
+  for (let i = otherItems.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [otherItems[i], otherItems[j]] = [otherItems[j], otherItems[i]];
+  }
+
+  // Create ordered priority array based on priorityTitles order
+  const orderedPriorityItems = priorityTitles
+    .map((title) => priorityItemsMap.get(title))
+    .filter((item): item is Logo & { blurSrc: string; url: string } => item != null);
+
+  return [...orderedPriorityItems, ...otherItems];
+}

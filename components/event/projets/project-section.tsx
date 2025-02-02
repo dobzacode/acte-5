@@ -161,7 +161,7 @@ export default function ProjectSection({ events }: { events: EventWithImgAndInde
                   {Array.from(new Set(events.flatMap((event) => event.categories))).map(
                     (category) => (
                       <DropdownMenuCheckboxItem
-                        className="body !text-black"
+                        className="body !text-black hover:!text-white"
                         key={category}
                         onCheckedChange={(checked) => {
                           handleFilter([category]);

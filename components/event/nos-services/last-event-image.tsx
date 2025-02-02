@@ -44,11 +44,14 @@ export default async function LastEvent({
     | 'Identité visuelle'
     | "Vidéo d'entreprise"
     | 'Support de communication'
+    | 'Lancement de marque'
+    | 'Communication digitale'
+    | 'Scénographie'
     | 'Edition';
   actualSlug?: string;
 }) {
   const query =
-    !actualSlug && !categorie
+    !actualSlug && categorie
       ? groq`*[_type == "evenement" && defined(imageGallery) && "${categorie}" in categories && defined(slug.current)]`
       : groq`*[_type == "evenement" && defined(slug.current) && slug.current != "${actualSlug}"]`;
 
@@ -58,7 +61,7 @@ export default async function LastEvent({
     stega: false
   });
 
-  if (!events || !events.some((event) => event.imageGallery[0])) return null;
+  if (!events || !events.some((event) => event.imageGallery[0])) return <div></div>;
 
   const eventsWithImg = await Promise.all(
     events.map(async (event) => {
@@ -94,22 +97,24 @@ export default async function LastEvent({
       </InviewWrapper>
       <InviewWrapper
         viewport={{ once: true, margin: '200px 0px 200px 0px' }}
-        className=""
         variant={ComingFromBottomVariant}
       >
         {imageArr && (
-          <Carousel
-            opts={{ loop: true }}
-            className="section-px flex max-w-[100vw] items-center gap-md laptop:mx-auto [&>div]:rounded-sm"
-          >
+          <Carousel className="section-px flex w-full max-w-[100vw] items-center gap-md laptop:mx-auto [&>div]:rounded-sm">
             <>
               <CarouselPrevious className="relative" />
             </>
-            <CarouselContent className="laptop-large:-ml-sm">
+            <CarouselContent className="h-[160px] w-full mobile-large:h-[200px] tablet:h-[300px] laptop:h-[400px] laptop-large:-ml-sm">
               {imageArr.map((image, index) => (
                 <CarouselItem
                   key={`${image.titre}-${index}`}
-                  className="group basis-full duration-medium hover:grayscale mobile-large:basis-1/2 tablet:basis-1/3 laptop:basis-1/3 laptop-large:basis-1/3 laptop-large:pr-sm"
+                  className={`group duration-medium hover:grayscale laptop-large:pr-sm ${
+                    imageArr.length === 1
+                      ? 'ml-2 basis-full'
+                      : imageArr.length === 2
+                        ? 'basis-full mobile-large:basis-1/2'
+                        : 'basis-full mobile-large:basis-1/2 tablet:basis-1/3 laptop:basis-1/3 laptop-large:basis-1/3'
+                  } `}
                 >
                   <Link
                     scroll={false}

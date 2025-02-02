@@ -6,7 +6,7 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import eventimage from '/public/assets/landing/event.jpg';
-import spectacleimage from '/public/assets/landing/spectacle.webp';
+import spectacleimage from '/public/assets/landing/spectacle.jpg';
 
 export const metadata: Metadata = {
   title: 'Acte 5 | Agence de Communication Événementielle à Strasbourg',
@@ -65,7 +65,7 @@ export default function Home() {
               />
 
               <p className="sub-heading relative z-20 mt-auto translate-y-[200%] self-end text-pretty text-start text-white duration-medium group-hover:translate-y-0">
-                Des événements sur mesure pour sublimer vos projets et renformer l&apos;image de
+                Des événements sur mesure pour sublimer vos projets et renforcer l&apos;image de
                 votre entreprise.
               </p>
             </DivWrapper>
@@ -101,7 +101,7 @@ export default function Home() {
               className="relative -z-10"
             >
               <h2 className="heading--sub-large -z-10 translate-y-0 px-sm text-black backdrop-blur-sm duration-medium group-hover:-translate-y-[200%] laptop-large:px-md">
-                EVENEMENTIEL
+                ÉVÉNEMENTIEL
               </h2>
             </DivWrapper>
           </Link>
@@ -143,8 +143,8 @@ export default function Home() {
               />
 
               <p className="sub-heading relative z-20 mt-auto translate-y-[200%] self-end text-pretty text-start text-white duration-medium group-hover:translate-y-0">
-                Retrouvez toutes les infos sur nos spectacles tel que la Revue Scoute : billetterie
-                et date de représentation, c'est par ici !
+                Retrouvez toutes les infos sur nos spectacles et sur la Revue Scoute : billetterie
+                et dates de représentation, c'est par ici !
               </p>
             </DivWrapper>
             <DivWrapper

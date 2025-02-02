@@ -11,7 +11,7 @@ import image from '/public/assets/event/services/gala/gala.jpg';
 export const metadata: Metadata = {
   title: 'Organisation de soirée de Gala à Strasbourg | Acte 5',
   description:
-    "Chaque année, vous envisagez un événement de prestige, à l'adresse de vos collaborateurs, de vos partenaires, de vos clients."
+    "Vous envisagez un événement de prestige, à l'adresse de vos collaborateurs, de vos partenaires, de vos clients."
 };
 
 export default function Home() {
@@ -24,7 +24,7 @@ export default function Home() {
           h1Css={'heading--sub-extra-large'}
           title={'SOIRÉE DE GALA'}
           element={[
-            { href: '/agence-evenementielle-strasbourg', text: 'Évenement' },
+            { href: '/agence-evenementielle-strasbourg', text: 'Événement' },
             { href: '/agence-evenementielle-strasbourg/services', text: 'Nos services' },
             {
               href: '/agence-evenementielle-strasbourg/services/soiree-gala',
@@ -53,8 +53,8 @@ export default function Home() {
           ></Image>
           <div className="flex flex-col gap-md">
             <h3 className="heading text-primary-400">
-              Chaque année, vous envisagez un événement de prestige, à l&apos;adresse de vos
-              collaborateurs, de vos partenaires, de vos clients.
+              Vous envisagez un événement de prestige, à l&apos;adresse de vos collaborateurs, de
+              vos partenaires, de vos clients.
             </h3>
             <p className="body text-pretty">
               Paillettes, tapis rouge, bulles de champagne. Soirée toute en sobriété si cela vous
@@ -63,12 +63,12 @@ export default function Home() {
               <br /> Pour qu&apos;elle soit particulièrement réussie, cette
               <strong> soirée de gala pour entreprise</strong> est minutieusement organisée par une
               équipe de professionnels. Soirée classique ou prestation originale, elle reflète un
-              certain standing et offre une image valorisante pour ses invités. Quoiqu&apos;il en
-              soit, elle doit marquer les esprits. Cette fête officielle, prestigieuse, créée la
-              surprise dans une ambiance particulièrement choisie. Après avoir mis au point, avec
-              vous, sa conception, nous prenons en charge la coordination générale de la soirée, du
-              lieu, de la décoration, de la logistique, de l&apos;équipement, du choix des
-              prestations, des artistes invités et, last but not least, de la sélection du traiteur.
+              certain standing et offre une image valorisante. Quoiqu&apos;il en soit, elle doit
+              marquer les esprits. Cette fête officielle, prestigieuse, crée la surprise dans une
+              ambiance particulièrement choisie. Après avoir mis au point sa concenption avec vous,
+              nous prenons en charge la coordination générale de la soirée, du lieu, de la
+              décoration, de la logistique, de l&apos;équipement, du choix des prestations, des
+              artistes invités et, last but not least, de la sélection du traiteur.
             </p>
           </div>
           <div className="flex flex-col gap-md">
@@ -82,7 +82,8 @@ export default function Home() {
               cadre d&apos;une soirée de gala mémorable. <br />
               <br />
               Mémorable ? Vous voulez en garder la trace ? Graver le souvenir ? Nous nous en
-              occupons. Puisque qu&apos;on peut tout faire….
+              occupons. Puisque qu&apos;on peut tout faire: Photobooth, reportage photo, livre ou
+              encore vidéo souvenir.
             </p>
           </div>
         </DivWrapper>

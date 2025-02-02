@@ -10,7 +10,7 @@ import image from '/public/assets/event/services/anniversaire/anniversaire.jpg';
 export const metadata: Metadata = {
   title: "Organisateur d'Anniversaire pour entreprise à Strasbourg | Acte 5",
   description:
-    "Célébrer un anniversaire permet à l'entreprise d'immerger ses partenaires dans son intimité et ainsi dévoiler son âme."
+    "Célébrer un anniversaire permet à l'entreprise d'immerger ses partenaires dans son intimité et ainsi de dévoiler son âme."
 };
 
 export default function Home() {
@@ -23,7 +23,7 @@ export default function Home() {
           h1Css={'heading--sub-extra-large'}
           title={'ANNIVERSAIRE'}
           element={[
-            { href: '/agence-evenementielle-strasbourg', text: 'Évenement' },
+            { href: '/agence-evenementielle-strasbourg', text: 'Événement' },
             { href: '/agence-evenementielle-strasbourg/services', text: 'Nos services' },
             {
               href: '/agence-evenementielle-strasbourg/services/organisateur-anniversaire',
@@ -37,7 +37,7 @@ export default function Home() {
           tag="section"
         >
           <h2 className="sub-heading font-semibold">
-            Oh, mais elle ne fait pas son âge, l&apos;ancienne. Centenaire vous dîtes ? Oh, celle-là
+            Oh, mais elle ne fait pas son âge, l&apos;ancienne. Centenaire vous dites ? Oh, celle-là
             est bien plus jeune, 10 ans c&apos;est déjà un bel âge. Un peu moins ? Beaucoup plus ?
             Elle jubile de célébrer son anniversaire…
           </h2>
@@ -56,7 +56,7 @@ export default function Home() {
               l’imagination.
             </h3>
             <p className="body text-pretty">
-              Nous prenons en charge, l&apos;ensemble de la communication (avant, pendant, après).
+              Nous prenons en charge l&apos;ensemble de la communication (avant, pendant, après).
               <br /> Que vous ayez 10 ans ou 100 ans, vous souhaitez célébrer votre longévité, vos
               dernières réussites, insuffler un nouvel élan prêt à marquer les esprits, ou encore
               réaffirmer vos valeurs.
@@ -65,7 +65,7 @@ export default function Home() {
               ou chevaleresque, nous trouvons avec vous le style qui vous sied le mieux. Humour,
               magie, réalité virtuelle, spectacle aérien, nous avons forcément ce qu&apos;il vous
               faut pour faire de{' '}
-              <strong>votre anniversaire un moment unique et sur mesure !</strong>
+              <strong>votre anniversaire un moment unique et inoubliable !</strong>
             </p>
           </div>
           <div className="flex flex-col gap-md">
@@ -82,7 +82,7 @@ export default function Home() {
               <br />{' '}
               <strong>
                 Célébrer un anniversaire permet à l&apos;entreprise d&apos;immerger ses partenaires
-                dans son intimité et ainsi dévoiler son âme.
+                dans son intimité et ainsi de dévoiler son âme.
               </strong>
             </p>
           </div>

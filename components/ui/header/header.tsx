@@ -50,10 +50,10 @@ export default function Header({ className }: { className?: string }) {
         isHome && 'relative max-laptop:justify-between'
       )}
     >
-      <div className="relative z-50 flex items-center gap-md">
+      <div className="relative z-50 flex items-center gap-[12px]">
         <Logo
           className={cn(
-            'relative z-50 h-[70px] w-[70px] rounded-xs duration-medium max-mobile-large:h-[50px] max-mobile-large:w-[50px] max-mobile-medium:h-[40px] max-mobile-medium:w-[40px]'
+            'relative z-50 h-[64px] w-[64px] duration-medium max-mobile-large:h-[50px] max-mobile-large:w-[50px] max-mobile-medium:h-[40px] max-mobile-medium:w-[40px]'
           )}
         ></Logo>
         <AnimatePresence mode="wait">
@@ -69,7 +69,9 @@ export default function Header({ className }: { className?: string }) {
                 transition: { ease: 'easeInOut', duration: 0.4 }
               }}
               key={`ACTE5`}
-              className={cn('heading w-fit text-center font-["Quasimoda"] max-laptop:hidden')}
+              className={cn(
+                'heading w-fit text-center font-["Quasimoda"] font-thin tracking-[0.08em] max-laptop:hidden'
+              )}
             >
               ACTE 5
             </motion.p>

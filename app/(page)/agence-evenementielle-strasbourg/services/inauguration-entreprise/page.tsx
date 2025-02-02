@@ -23,7 +23,7 @@ export default function Home() {
           h1Css={'heading--sub-extra-large'}
           title={"INAUGURATION D'ENTREPRISE"}
           element={[
-            { href: '/agence-evenementielle-strasbourg', text: 'Évenement' },
+            { href: '/agence-evenementielle-strasbourg', text: 'Événement' },
             { href: '/agence-evenementielle-strasbourg/services', text: 'Nos services' },
             {
               href: '/agence-evenementielle-strasbourg/services/inauguration-entreprise',
@@ -38,8 +38,8 @@ export default function Home() {
         >
           <h2 className="sub-heading font-semibold">
             Comme des oiseaux de bon augure… Longue vie… Carpe Diem…Bon vent… Bonne route… « Y a
-            plus qu’à !»… C’est parti ! Autant d’expressions/vocabulaire que nous pouvons retrouver
-            dans un discours inaugural pour souhaiter la réussite de ce nouveau projet.
+            plus qu’à !»… C’est parti ! Autant d’expressions de vocabulaire que nous pouvons
+            retrouver dans un discours inaugural pour souhaiter la réussite d'un nouveau projet.
           </h2>
           <Image
             priority={true}
@@ -68,26 +68,28 @@ export default function Home() {
           </div>
           <div className="flex flex-col gap-md">
             <h3 className="heading text-primary-400">
-              Nous vous accompagnons dans le choix de nos prestations pour votre inauguration
+              Nous vous accompagnons dans le choix des prestations pour votre inauguration
             </h3>
             <p className="body text-pretty">
               Concevoir les invitations, créer l&apos;identité visuelle, trouver les animations
               pertinentes, définir le filage, sélectionner le type de restauration et trouver le bon
-              traiteur qui charmera vos invités. Cet événement est orchestré avec attention et soin
-              pour asseoir votre réputation.
+              traiteur qui charmera vos invités. Votre événement est orchestré avec attention et
+              soin pour asseoir votre réputation.
               <br />
               <br /> Du cocktail classique, cérémonieux, inattendu, festif à l&apos;innovation
               personnalisée, de la mise en valeur par un habillage lumière à la création d&apos;une
               vidéo (corporate, retrospective, inaugurale, de lancement), du projet le plus fou à la
               maitrise parfaite de votre budget,{' '}
-              <strong>Acte 5 est le partenaire idéal pour organiser votre inauguration.</strong>
+              <strong>
+                ACTE 5 saura vous proposer une solution sur-mesure, qui correspond à vos besoins.
+              </strong>
             </p>
           </div>
         </DivWrapper>
       </section>
       <Suspense fallback={<LastEventSkeleton />}>
         <LastEvent
-          h2="Nos précédentes inaugurations d'entreprise organisés à Strasbourg en Alsace"
+          h2="Nos précédentes inaugurations d'entreprise organisées à Strasbourg en Alsace"
           categorie="Inauguration"
         ></LastEvent>
       </Suspense>

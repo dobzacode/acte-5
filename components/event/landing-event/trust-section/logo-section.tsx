@@ -3,9 +3,7 @@
 import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
 import { cn } from '@/lib/utils';
 import { Logo } from '@/sanity/lib/queries';
-import Autoplay from 'embla-carousel-autoplay';
 import Image from 'next/image';
-import { v4 } from 'uuid';
 
 export default function LogoSlider({
   logos,
@@ -15,10 +13,10 @@ export default function LogoSlider({
   logos: (Logo & { url: string; blurSrc: string })[];
 }) {
   return (
-    <div className="relative z-20 flex w-full gap-md pt-md mobile-large:gap-md">
+    <div className="relative z-40 flex w-full gap-md pt-md mobile-large:gap-md">
       <Carousel
-        plugins={[Autoplay({ delay: 3000 })]}
-        opts={{ loop: true }}
+        // plugins={[Autoplay({ delay: 2000 })]}
+        opts={{ loop: true, startIndex: 3 }}
         className="flex items-center gap-md laptop:mx-auto [&>div]:rounded-sm"
       >
         {isTrustSection ? (
@@ -36,11 +34,10 @@ export default function LogoSlider({
                     key={index}
                   >
                     <Image
-                      width={0}
-                      height={0}
-                      style={{ width: '100%', height: 'auto' }}
+                      width={204}
+                      height={204}
                       className={cn(
-                        'cursor-pointer rounded-t-sm p-md mobile-large:p-md tablet:p-lg laptop:p-xl'
+                        'shrink-0 cursor-pointer rounded-t-sm p-md mobile-large:p-md tablet:p-lg'
                       )}
                       sizes={'(max-width: 640px) 33vw, 30vw'}
                       src={image.url}
@@ -52,19 +49,18 @@ export default function LogoSlider({
 
                   <div
                     className={cn(
-                      'relative flex h-1/2 items-center justify-center gap-md rounded-sm'
+                      'relative z-20 flex h-1/2 items-center justify-center gap-md rounded-sm'
                     )}
-                    key={v4()}
+                    key={index + 1}
                   >
                     {index + 1 > logos.length - 1 ? null : (
                       <Image
-                        width={0}
-                        height={0}
-                        style={{ width: '100%', height: 'auto' }}
+                        width={204}
+                        height={204}
                         className={cn(
-                          'cursor-pointer rounded-t-sm p-md mobile-large:p-md tablet:p-lg laptop:p-xl'
+                          'shrink-0 cursor-pointer rounded-t-sm p-md mobile-large:p-md tablet:p-lg'
                         )}
-                        sizes={'(max-width: 640px) 100vw, 20vw'}
+                        sizes={'(max-width: 640px) 33vw, 30vw'}
                         src={logos[index + 1].url}
                         placeholder="blur"
                         blurDataURL={logos[index + 1].blurSrc}

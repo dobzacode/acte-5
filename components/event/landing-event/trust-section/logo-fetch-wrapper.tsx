@@ -1,4 +1,4 @@
-import { decodeAssetId, notEmpty } from '@/lib/utils';
+import { decodeAssetId, notEmpty, reorganizeArray } from '@/lib/utils';
 import { sanityFetch } from '@/sanity/lib/fetch';
 import { LOGOS_QUERY, LogosQueryResponse } from '@/sanity/lib/queries';
 import { urlForImage } from '@/sanity/lib/utils';
@@ -21,8 +21,6 @@ export default async function LogoFetchWrapper({
     return notFound();
   }
 
-  console.log(logos);
-
   const withUrl = await Promise.all(
     logos.map(async (logo) => {
       try {
@@ -44,5 +42,7 @@ export default async function LogoFetchWrapper({
 
   const imageArr = withUrl.filter(notEmpty);
 
-  return <LogoSection logos={imageArr} isTrustSection={isTrustSection}></LogoSection>;
+  const organizedLogos = reorganizeArray(imageArr);
+
+  return <LogoSection logos={organizedLogos} isTrustSection={isTrustSection}></LogoSection>;
 }

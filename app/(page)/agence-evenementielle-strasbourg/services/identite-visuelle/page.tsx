@@ -6,7 +6,7 @@ import TitleSection from '@/components/ui/title-section';
 import { Metadata } from 'next';
 import Image from 'next/image';
 import { Suspense } from 'react';
-import image from '/public/assets/event/services/design/design.jpg';
+import image from '/public/assets/event/services/identite/identite.jpg';
 
 export const metadata: Metadata = {
   title: "Création d'identité graphique à Strasbourg | Acte 5",
@@ -24,7 +24,7 @@ export default function Home() {
           h1Css={'heading--sub-extra-large'}
           title={'IDENTITÉ VISUELLE'}
           element={[
-            { href: '/agence-evenementielle-strasbourg', text: 'Évenement' },
+            { href: '/agence-evenementielle-strasbourg', text: 'Événement' },
             { href: '/agence-evenementielle-strasbourg/services', text: 'Nos services' },
             {
               href: '/agence-evenementielle-strasbourg/services/identite-visuelle',
@@ -61,15 +61,12 @@ export default function Home() {
               l'habillage de votre événement aux couleurs de votre marque ou du thème de votre
               choix.
               <br />
-              <br /> Notre directrice artistique prend ensuite en charge le montage et la
-              réalisation de vos supports de communication, et ce jusqu'à la livraison du produit
-              fini.
-              <br />
-              <br />
-              Affiche, kakémono, flyer, dépliant, brochure, banderole, dossier de presse, diaporama,
-              vidéo, goodies, mouton à cinq pattes, menhir personnalisé, voyage dans le temps,
-              rencontre du troisième type, nous saurons concrétiser avec créativité et rigueur vos
-              demandes les plus incongrues !
+              <br /> Tout d'abord, faisons connaisance ! Pour concevoir une image qui vous
+              corresponde à la perfection, notre premier travail est de comprendre en profondeur
+              l'univers de votre entreprise, ses atouts et ses challenges.
+              <br /> Nous vous proposons ensuite des pistes créatives qui sont affinées jusqu'à
+              aboutir à une charte graphique complète et parfaitement déclinable sur tous vos
+              supports de communication.
             </p>
           </div>
         </DivWrapper>
