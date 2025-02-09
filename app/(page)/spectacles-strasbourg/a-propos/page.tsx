@@ -8,6 +8,8 @@ import ContactSection from '@/components/spectacle/contact-section';
 import TitleSection from '@/components/ui/title-section';
 import { Metadata } from 'next';
 import Image from 'next/image';
+import image1 from '/public/assets/spectacle/apropos/apropos_hero_1.jpg';
+import image2 from '/public/assets/spectacle/apropos/apropos_hero_2.jpg';
 
 export const metadata: Metadata = {
   title: 'À Propos de Notre Compagnie de production de Spectacles | Acte 5',
@@ -31,27 +33,53 @@ export default function Home() {
             variant={ComingFromLeftVariant}
             className="max-laptop:inner-section-gap flex items-center justify-between max-laptop:mr-auto max-laptop:flex-col laptop:w-full"
           >
-            <div className="relative aspect-[5/3] w-full overflow-hidden rounded-sm max-mobile-large:container mobile-large:w-[30rem] laptop:shrink-0">
-              <Image src="/placeholder-image.png" alt="image" fill className="object-cover"></Image>
+            <div className="relative aspect-[5/3] w-full overflow-hidden rounded-sm max-mobile-large:container mobile-large:w-[30rem] laptop:shrink-0 laptop-large:w-[36rem]">
+              <Image
+                src={image2}
+                alt="image"
+                placeholder="blur"
+                fill
+                className="object-cover"
+              ></Image>
             </div>
 
-            <p className="heading section-px relative -z-10 max-w-[35ch] text-pretty text-center laptop:mx-auto">
-              Depuis plus de 40 ans, la Revue Scoute est un pilier de la scène satirique. Née de la
-              passion d'artistes souhaitant divertir tout en critiquant la société, elle a façonné
-              l'identité d'Acte 5.
+            <p className="laptop-large:sub-heading body section-px relative -z-10 max-w-[50ch] text-pretty text-center laptop:mx-auto laptop:text-left">
+              Depuis plus de 40 ans, la Revue Scoute est un pilier de la scène satirique alsacienne.
+              Aujourd&apos;ui, la Revue Scoute, c'est : <br />
+              - plus de 35 000 spectateurs
+              <br />
+              - 70 représentations par saison
+              <br />
+              - 10 salles en tournée
+              <br />
+              - 380 bouteilles de crémant pour la création
+              <br />
+              - 160 propositions avant de trouver le titre
+              <br />- des éclats de rire non comptabilisables !
             </p>
           </DivWrapper>
           <DivWrapper
             variant={ComingFromRightVariant}
             className="max-laptop:inner-section-gap flex items-center justify-between max-laptop:ml-auto max-laptop:flex-col-reverse laptop:w-full"
           >
-            <p className="heading section-px max-w-[35ch] text-pretty text-center laptop:mx-auto">
-              Fondée pour soutenir ses aventures, Acte 5 a grandi aux côtés de la Revue Scoute,
-              partageant ses valeurs décalées, engagées et sa passion pour le spectacle vivant.
+            <p className="laptop-large:sub-heading body section-px max-w-[50ch] text-pretty text-center laptop:mx-auto laptop:text-right">
+              Duo inconique de la région, Patricia Weller et Denis Germain sont connus de tous ! Ils
+              ont inventé, au fil de leurs créations, des personnages devenus de véritables icônes
+              de la pensée régionale, et qui démontrent par le rire et l&apos;absurde combien la
+              France, l&apos;Europe et, trêve de modestie, le monde, feraient bien de s&apos;appuyer
+              sur la sagesse alsacienne. Ils remplissent les salles à travers toute l&apos;Alsace
+              avec leurs spectacles, et investissent aussi le monde de l&apos;entreprise avec des
+              interventions sur-mesure.
             </p>
 
-            <div className="relative aspect-[5/3] w-full overflow-hidden rounded-sm max-mobile-large:container mobile-large:w-[30rem] laptop:shrink-0">
-              <Image src="/placeholder-image.png" alt="image" fill className="object-cover"></Image>
+            <div className="relative aspect-[5/3] w-full overflow-hidden rounded-sm max-mobile-large:container mobile-large:w-[30rem] laptop:shrink-0 laptop-large:w-[36rem]">
+              <Image
+                src={image1}
+                alt="image"
+                placeholder="blur"
+                fill
+                className="object-cover"
+              ></Image>
             </div>
           </DivWrapper>
         </div>

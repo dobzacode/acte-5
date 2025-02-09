@@ -66,6 +66,12 @@ export default defineType({
               validation: (Rule) => Rule.required()
             },
             {
+              type: 'string',
+              title: 'Place ID',
+              name: 'placeId',
+              validation: (Rule) => Rule.required()
+            },
+            {
               type: 'url',
               title: 'Lien',
               name: 'lien',

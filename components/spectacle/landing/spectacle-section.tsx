@@ -21,9 +21,9 @@ export default function SpectacleSection() {
           variant={ComingFromRightVariant}
           tag="p"
         >
-          Pour créer l&apos;animation lors de vos fêtes de Noël, de vos soirées comité
-          d&apos;entreprise (CSE) ou encore pour votre association, pensez à nos spectacles
-          d&apos;humour !
+          Pour créer l&apos;animation lors de vos fêtes d&apos;entreprise, de vos soirées comité
+          d&apos;entreprise (CSE) ou encore pour votre association, nous tenons à votre disposition
+          une palette d&apos;artistes : comédien, magicien, musicien, etc.
         </InviewWrapper>
         <div className="inner-section-gap relative z-20 flex w-full items-center justify-around text-pretty text-center">
           <InviewWrapper

@@ -99,13 +99,13 @@ export default function AnimatedPart({ isSpectacle }: { isSpectacle?: boolean })
             }
           }}
           className={cn(
-            'card relative z-20 flex h-fit min-h-fit w-fit shrink-0 flex-col items-center gap-md overflow-hidden opacity-0 laptop:gap-xl',
+            'card relative z-20 flex h-fit min-h-fit w-fit shrink-0 flex-col items-center gap-md overflow-hidden opacity-0 laptop:gap-lg',
             isSpectacle && isMobile ? '!min-h-[180px]' : ''
           )}
         >
           {isSpectacle && (
             <p className="sub-heading w-full min-w-[14ch] max-w-[30ch] text-pretty text-center mobile-large:max-w-[30ch] laptop:leading-[1.75rem]">
-              Avez-vous des questions sur nos événements ou souhaitez-vous réserver pour un groupe ?
+              Vous voulez en savoir plus sur nos spectacles ?
             </p>
           )}
           {!isSpectacle && (

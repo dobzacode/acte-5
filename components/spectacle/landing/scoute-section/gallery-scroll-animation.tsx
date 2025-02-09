@@ -88,7 +88,7 @@ export default function GalleryScrollAnimation({}) {
         >
           <p className="sub-heading max-w-[50ch] text-pretty">
             Le plus grand cabaret satirique d&apos;alsace se moque de tout et de tout le monde
-            depuis 50 ans dans un spectacle unique en Français
+            depuis plus de 40 ans dans un spectacle unique en Français.
           </p>
         </motion.div>
       </div>

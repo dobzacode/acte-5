@@ -15,7 +15,7 @@ export default function HistorySection() {
           paddingBottom: '30.25%',
           overflow: 'hidden'
         }}
-        className="inner-section-gap section-px container relative z-10 -mt-3xl flex h-fit max-laptop:hidden laptop:mx-auto laptop:h-1/2 laptop:w-1/2"
+        className="inner-section-gap section-px container relative z-50 -mt-3xl flex h-fit max-laptop:hidden laptop:mx-auto laptop:h-1/2 laptop:w-1/2"
       >
         <iframe
           width="100%"

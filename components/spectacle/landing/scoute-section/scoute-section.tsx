@@ -22,7 +22,7 @@ export default function ScouteSection() {
           tag="h2"
           className="heading--extra-large text-center"
         >
-          La revue scoute
+          La Revue Scoute
         </InviewWrapper>
       </div>
 
@@ -43,7 +43,7 @@ export default function ScouteSection() {
           ></Image>
           <p className="sub-heading text-pretty text-center mobile-large:w-[40ch]">
             Le plus grand cabaret satirique d&apos;alsace se moque de tout et de tout le monde
-            depuis 50 ans dans un spectacle unique en Français
+            depuis plus de 40 ans dans un spectacle unique en Français.
           </p>
         </InviewWrapper>
         <InviewWrapper
@@ -77,7 +77,7 @@ export default function ScouteSection() {
             className="rounded-sm"
           ></Image>
           <p className="sub-heading text-pretty text-center mobile-large:w-[40ch]">
-            La vingtaine de tableaux satiriques s'enchaine, chacun habillés de divers décors et
+            La vingtaine de tableaux satiriques s'enchaine, chacun habillé de divers décors et
             autres costumes loufoques, tandis que la musique accompagne chaque rebondissement avec
             une énergie contagieuse.
           </p>

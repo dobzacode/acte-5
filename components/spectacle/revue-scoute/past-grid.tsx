@@ -54,6 +54,8 @@ const PastGrid: React.FC<CarouselProjectProps> = ({ imageArr }) => {
     return null;
   }
 
+  console.log(imageArr);
+
   return (
     <>
       <ResponsiveMasonry

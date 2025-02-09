@@ -39,6 +39,8 @@ export default function DateModal({
     }
   }, [isOpen]);
 
+  console.log(selectedDate.placeId);
+
   return (
     <Modal scrollBehavior="inside" placement="center" isOpen={isOpen} onOpenChange={onOpenChange}>
       <ModalContent
