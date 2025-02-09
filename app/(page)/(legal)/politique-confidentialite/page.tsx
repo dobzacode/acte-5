@@ -22,7 +22,7 @@ export default async function HomePage() {
         <ul className="body flex flex-col gap-xs pl-sm">
           {[
             '- Les données personnelles que nous recueillerons',
-            "- L'utilisation des données recueillis",
+            "- L'utilisation des données recueillies",
             '- Qui a accès aux données recueillies',
             '- Les droits des utilisateurs du site'
           ].map((item) => {
@@ -35,7 +35,7 @@ export default async function HomePage() {
         </p>
       </div>
       <div className="flex flex-col gap-md">
-        <h2 className="heading--sub-large">2 .Lois applicables</h2>
+        <h2 className="heading--sub-large">2. Lois applicables</h2>
         <p className="body">
           Conformément à la RGPD, cette politique de confidentialité est conforme aux règlements
           suivants.
@@ -45,10 +45,10 @@ export default async function HomePage() {
         <ul className="body flex flex-col gap-xs pl-sm">
           {[
             '- Traitées de manière licite, loyale et transparente au regard de la personne concerné (licéité, loyauté, transparence)',
-            "- Collectées pour des finalités déterminées, explicites et légitimes, et ne pas être traitées ultérieurement d'une manière incompatible avec ces finalités; le traitement ultérieur à des fins archivistiques dans l'intérêt public, à des fins de recherche scientifique ou historique ou à des fins statistiques n'est pas considéré, conformément à l'article 89, paragraphe 1, comme incompatible avec les finalités initiales (limitation des finalités)",
+            "- Collectées pour des finalités déterminées, explicites et légitimes, et ne pas être traitées ultérieurement d'une manière incompatible avec ces finalités ; le traitement ultérieur à des fins archivistiques dans l'intérêt public, à des fins de recherche scientifique ou historique ou à des fins statistiques n'est pas considéré, conformément à l'article 89, paragraphe 1, comme incompatible avec les finalités initiales (limitation des finalités)",
             '- Adéquates, pertinentes et limitées à ce qui est nécessaire au regard des finalités pour lesquelles elles sont traitées (minimisation des données)',
-            '- Exactes et, si nécessaire, tenues à jour; toutes les mesures raisonnables doivent être prises pour que les données à caractère personnel qui sont inexactes, eu égard aux finalités pour lesquelles elles sont traitées, soient effacées ou rectifiées sans tarder (exactitude)',
-            "- Conservées sous une forme permettant l'identification des personnes concernées pendant une durée n'excédant pas celle nécessaire au regard des finalités pour lesquelles elles sont traitées; les données à caractère personnel peuvent être conservées pour des durées plus longues dans la mesure où elles seront traitées exclusivement à des fins archivistiques dans l'intérêt public, à des fins de recherche scientifique ou historique ou à des fins statistiques conformément à l'article 89, paragraphe 1, pour autant que soient mises en œuvre les mesures techniques et organisationnelles appropriées requises par le règlement afin de garantir les droits et libertés de la personne concernée (limitation de la conservation)",
+            '- Exactes et, si nécessaire, tenues à jour ; toutes les mesures raisonnables doivent être prises pour que les données à caractère personnel qui sont inexactes, eu égard aux finalités pour lesquelles elles sont traitées, soient effacées ou rectifiées sans tarder (exactitude)',
+            "- Conservées sous une forme permettant l'identification des personnes concernées pendant une durée n'excédant pas celle nécessaire au regard des finalités pour lesquelles elles sont traitées ; les données à caractère personnel peuvent être conservées pour des durées plus longues dans la mesure où elles seront traitées exclusivement à des fins archivistiques dans l'intérêt public, à des fins de recherche scientifique ou historique ou à des fins statistiques conformément à l'article 89, paragraphe 1, pour autant que soient mises en œuvre les mesures techniques et organisationnelles appropriées requises par le règlement afin de garantir les droits et libertés de la personne concernée (limitation de la conservation)",
             "- Traitées de façon à garantir une sécurité appropriée des données à caractère personnel, y compris la protection contre le traitement non autorisé ou illicite et contre la perte, la destruction ou les degâts d'origine accidentelle, à l'aide de mesures techniques ou organisationnelles appropriées (intégrité et confidentialité)"
           ].map((item) => {
             return <li key={item}>{item}</li>;
@@ -69,13 +69,6 @@ export default async function HomePage() {
             return <li key={item}>{item}</li>;
           })}
         </ul>
-        <p className="body">
-          Pour les résidents de l&apos;État de Californie, cette politique de confidentialité vise à
-          se conformer à la California Consumer Privacy Act (CCPA). S&apos;il y a des incohérences
-          entre ce document et la CCPA, la législation de l&apos;État s&apos;appliquera. Si nous
-          constatons des incohérences, nous modifierons notre politique pour nous conformer à la loi
-          pertinente.
-        </p>
       </div>
       <div className="flex flex-col gap-md">
         <h2 className="heading--sub-large">3. Consentement</h2>
@@ -93,7 +86,7 @@ export default async function HomePage() {
       </div>
       <div className="flex flex-col gap-md">
         <h2 className="heading--sub-large">4. Données collectées automatiquement</h2>
-        <p className="body">Aucune donnée n&apos;est collectée automatiquement</p>
+        <p className="body">Aucune donnée n&apos;est collectée automatiquement.</p>
       </div>
       <div className="flex flex-col gap-md">
         <h2 className="heading--sub-large">5. Données recueillies de manière non automatique</h2>
@@ -111,11 +104,6 @@ export default async function HomePage() {
           notre site. Veuillez noter que nous ne collectons que les données qui nous aident à
           atteindre l&apos;objectif énoncé dans cette politique de confidentialité. Nous ne
           recueillerons pas de données supplémentaires sans vous en informer au préalable.
-          <br />
-          <br />
-          Veuillez noter que nous ne collectons que les données qui nous aident à atteindre
-          l&apos;objectif énoncé dans cette politique de confidentialité. Nous ne recueillerons pas
-          de données supplémentaires sans vous en informer au préalable.
         </p>
       </div>
       <div className="flex flex-col gap-md">
@@ -173,11 +161,6 @@ export default async function HomePage() {
           9. Dispositif garantissant la sécurité des données personnelles
         </h2>
         <p className="body">
-          Afin d&apos;assurer la protection de votre sécurité, nous utilisons le protocole de
-          sécurité de la couche transport pour transmettre des renseignements personnels dans notre
-          système.
-          <br></br>
-          <br></br>
           Toutes les données stockées dans notre système sont bien sécurisées et ne sont accessibles
           qu&apos;à nos membres. Nos membres sont liés par des accords de confidentialité stricts et
           une violation de cet accord entraînerait la radiation du membre.
@@ -191,7 +174,7 @@ export default async function HomePage() {
         </p>
       </div>
       <div className="flex flex-col gap-md">
-        <h2 className="heading--sub-large">10. Mineurs ?</h2>
+        <h2 className="heading--sub-large">10. Mineurs</h2>
         <p className="body">
           Le RGPD précise que les personnes de moins de 15 ans sont considérées comme des mineurs
           aux fins de la collecte de données. Les mineurs doivent avoir le consentement d&apos;un
@@ -232,7 +215,7 @@ export default async function HomePage() {
           :
         </p>
         <ul className="body flex flex-col gap-xs pl-sm">
-          {['- Brimbelle Chambet', '- bc@acte5.fr', '- 03 88 44 99 40'].map((item) => {
+          {['- Brinbelle Chambet', '- bc@acte5.fr', '- 03 88 44 99 40'].map((item) => {
             return <li key={item}>{item}</li>;
           })}
         </ul>

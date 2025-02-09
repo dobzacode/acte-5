@@ -41,12 +41,12 @@ export default function Home() {
       <div className="flex flex-col gap-md">
         <h2 className="heading--sub-large">2. Présentation et principe :</h2>
         <p className="body">
-          Tout internaute se connectant et utilisant le site internet : acte5.fr est considéré comme
+          Tout internaute se connectant et utilisant le site internet acte5.fr est considéré comme
           utilisateur du site web. Le site suivant acte5.fr regroupe différents services, en
-          l&apos;état, mis à la disposition des utilisateur. Il est ici précisé que ces derniers
+          l&apos;état, mis à la disposition des utilisateurs. Il est ici précisé que ces derniers
           doivent rester honnête et faire preuve de bonne foi tant envers les différents usagés
-          qu&apos;envers le réalisateur du site acte5.fr. Kittel Corentin s&apos;efforce
-          d&apos;indiqué sur le site acte5.fr des informations les plus précises possibles (sous
+          qu&apos;envers le réalisateur du site acte5.fr Kittel Corentin s&apos;efforce
+          d&apos;indiquer sur le site acte5.fr des informations les plus précises possibles (sous
           réserve de modifications apportées depuis leur mise en ligne), mais ne saurait attester
           l&apos;exactitude, la finitude et l&apos;actualité des informations diffusées sur son site
           internet, qu&apos;elles soient ou non de son fait. En répercussion, l&apos;utilisateur
@@ -61,7 +61,7 @@ export default function Home() {
           excepté en cas de maintenance, programmée ou pas, pour les besoins de sa maintenance ou en
           cas de force majeure. En cas d&apos;impossibilité d&apos;accès au service, acte5.fr
           s&apos;engage à faire de son mieux afin de rétablir l&apos;accès au site suivant et
-          tentera alors d&apos;informer au préalable aux utilisateurs Dates & heures de
+          tentera alors d&apos;informer au préalable aux utilisateurs dates & heures de
           l&apos;intervention. N&apos;étant asservi qu&apos;à une servitude de moyen, acte5.fr ne
           saurait être designé comme responsable des dommages, quelle qu&apos;en soit la nature.
         </p>
@@ -92,7 +92,7 @@ export default function Home() {
           (partenariats, sites sources .) mis en ligne suite à la validation de Kittel Corentin.
           Cependant, Kittel Corentin n&apos;a pas la possibilité de controler l&apos;ensemble des
           élements des différents sites visités et décline donc toute responsabilité de ce fait
-          quand aux eventuels risques de contenus illicites.
+          quant aux eventuels risques de contenus illicites.
         </p>
       </div>
       <div className="flex flex-col gap-md">
@@ -108,14 +108,14 @@ export default function Home() {
           personnelles ( suivant l&apos;article 4 loi n°78-17 du 06 janvier 1978) relatives à
           l&apos;usager que pour la nécéssité de certains services offerts par le site suivant
           acte5.fr. L&apos;usager offre les informations en pleine conscience de cause, notamment
-          lorsqu&apos;il procède par lui-même à leur saisie. Il est donc précisé à l&apos;usagé du
+          lorsqu&apos;il procède par lui-même à leur saisie. Il est donc précisé à l&apos;usager du
           site interne acte5.fr le devoir ou non de mentionner ces données. En conformité avec les
           dispositifs des articles 38 et autres de la loi 78-17 du 6 janvier 1978 concernant
           l&apos;informatique, aux fichiers et aux différentes libertés, tout utilisateur possède un
           droit d&apos;accès , de rectification, de suppression et d&apos;opposition aux
           informations personnelles le concernant. Pour l&apos;utiliser, adressez une demande par
-          mail : info@acte5.fr ou alors par lettre manuscrite dûement signée, jointe d&apos;une
-          copie du titre d&apos;identité avec signature du titulaire du document, en précisant
+          mail : info@acte5.fr ou alors par lettre manuscrite dûment signée, jointe d&apos;une copie
+          du titre d&apos;identité avec signature du titulaire du document, en précisant
           l&apos;adresse à laquelle une réponse devra être retournée. <br></br>
           <br /> Aucune information personnelle de l&apos;utilisateur du site web acte5.fr
           n&apos;est publiée à l&apos;insu de l&apos;utilisateur, échangée, transférée, vendue sur
