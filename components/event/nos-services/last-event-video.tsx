@@ -26,6 +26,8 @@ export default async function LastEventVideo({
     stega: false
   });
 
+  if (!events || !events.some((event) => event.video.asset._ref)) return <div></div>;
+
   const withVideo = await Promise.all(
     events.map(async (event) => {
       const video = getFileAsset(event.video.asset._ref, client.config());
