@@ -57,9 +57,8 @@ export default function Home() {
             </h3>
             <p className="body text-pretty">
               Elle fera date et portera votre marque au-delà des murs.{' '}
-              <strong>L&apos;inauguration d&apos;un lieu nouveau</strong>, de locaux ou d&apos;un
-              magasin est un moment particulier pour votre entreprise et son développement.
-              L&apos;occasion de réunir vos clients, vos partenaires et vos prestataires pour saluer
+              <strong>L&apos;inauguration d&apos;un lieu nouveau</strong> est un moment particulier pour votre entreprise et son développement.
+              L&apos;occasion de réunir vos clients, vos partenaires, ou encore vos collaborateurs et vos prestataires pour saluer
               votre réussite. C&apos;est une opération de communication qui présente vos produits,
               vos services, vos savoir-faire, votre identité.{' '}
               <strong>L&apos;inauguration est une mise en valeur de vos activités</strong> et
@@ -72,7 +71,7 @@ export default function Home() {
             </h3>
             <p className="body text-pretty">
               Concevoir les invitations, créer l&apos;identité visuelle, trouver les animations
-              pertinentes, définir le filage, sélectionner le type de restauration et trouver le bon
+              pertinentes, définir le filage et trouver le bon
               traiteur qui charmera vos invités. Votre événement est orchestré avec attention et
               soin pour asseoir votre réputation.
               <br />
@@ -81,7 +80,7 @@ export default function Home() {
               vidéo (corporate, retrospective, inaugurale, de lancement), du projet le plus fou à la
               maitrise parfaite de votre budget,{' '}
               <strong>
-                ACTE 5 saura vous proposer une solution sur-mesure, qui correspond à vos besoins.
+                ACTE 5 vous propose une solution sur-mesure, qui correspond à vos besoins.
               </strong>
             </p>
           </div>

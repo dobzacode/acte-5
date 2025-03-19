@@ -27,7 +27,7 @@ export default function Home() {
             { href: '/agence-evenementielle-strasbourg/services', text: 'Nos services' },
             {
               href: '/agence-evenementielle-strasbourg/services/organisateur-anniversaire',
-              text: 'Anniversaire'
+              text: "Anniversaire d'entreprise"
             }
           ]}
         ></TitleSection>
@@ -68,24 +68,7 @@ export default function Home() {
               <strong>votre anniversaire un moment unique et inoubliable !</strong>
             </p>
           </div>
-          <div className="flex flex-col gap-md">
-            <h3 className="heading text-primary-400">Organisateur d'anniversaire à Strasbourg</h3>
-            <p className="body text-pretty">
-              Une société connait plusieurs phases de développement, de croissance et de péripéties
-              diverses. Elle grandit en cultivant sa mémoire.{' '}
-              <strong>L&apos;anniversaire est l&apos;événement idéal</strong> pour rappeler le
-              positionnement et l&apos;évolution de l&apos;entreprise au sein d&apos;un
-              environnement en mutation. L&apos;historique de ses activités, de son évolution, les
-              moments forts de son existence témoignent d&apos;un savoir-faire capable de rassurer
-              ses partenaires et de fidéliser encore plus ses collaborateurs.
-              <br />
-              <br />{' '}
-              <strong>
-                Célébrer un anniversaire permet à l&apos;entreprise d&apos;immerger ses partenaires
-                dans son intimité et ainsi de dévoiler son âme.
-              </strong>
-            </p>
-          </div>
+          
         </DivWrapper>
       </section>
       <Suspense fallback={<LastEventSkeleton />}>

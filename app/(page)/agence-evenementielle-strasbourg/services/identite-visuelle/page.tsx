@@ -11,7 +11,7 @@ import image from '/public/assets/event/services/identite/identite.jpg';
 export const metadata: Metadata = {
   title: "Création d'identité graphique à Strasbourg | Acte 5",
   description:
-    "L'image, c'est ce qui donne la première impression, qui chatouille les sens et donne envie de pousser la porte pour entrer dans la boutique."
+    "L'image, c'est ce qui donne la première impression, les sens et crée l'envie de pousser la porte pour entrer dans la boutique."
 };
 
 export default function Home() {
@@ -38,9 +38,9 @@ export default function Home() {
           tag="section"
         >
           <h2 className="sub-heading font-semibold">
-            L'image, c'est ce qui donne la première impression, qui chatouille les sens et donne
-            envie de pousser la porte pour entrer dans la boutique. Une création graphique
-            impactante et efficace marque les esprits et reste dans les mémoires
+            L'image, c'est ce qui donne la première impression, les sens et crée l'envie de pousser
+            la porte pour entrer dans la boutique. Une création graphique impactante et efficace
+            marque les esprits et reste dans les mémoires
           </h2>
           <Image
             priority={true}
@@ -52,23 +52,18 @@ export default function Home() {
             height={800}
             alt="Identité visuelle"
           ></Image>
-          <div className="flex flex-col gap-md">
-            <h3 className="heading text-primary-400">
-              Notre studio graphique conçoit et réalise le lifting de votre marque
-            </h3>
-            <p className="body text-pretty">
-              Mais aussi le rafraîchissement de votre logo, la traduction visuelle de votre message,
-              l'habillage de votre événement aux couleurs de votre marque ou du thème de votre
-              choix.
-              <br />
-              <br /> Tout d'abord, faisons connaisance ! Pour concevoir une image qui vous
-              corresponde à la perfection, notre premier travail est de comprendre en profondeur
-              l'univers de votre entreprise, ses atouts et ses challenges.
-              <br /> Nous vous proposons ensuite des pistes créatives qui sont affinées jusqu'à
-              aboutir à une charte graphique complète et parfaitement déclinable sur tous vos
-              supports de communication.
-            </p>
-          </div>
+
+          <p className="body text-pretty">
+            Notre studio graphique réalise le lifting de votre logo, la traduction visuelle de votre
+            message, l'habillage de votre événement aux couleurs de votre marque.
+            <br />
+            <br /> Tout d'abord, faisons connaisance ! Pour concevoir une image qui vous corresponde
+            à la perfection, notre premier travail est de comprendre en profondeur l'univers de
+            votre entreprise, ses atouts et ses challenges.
+            <br /> Nous vous proposons ensuite des pistes créatives qui sont affinées jusqu'à
+            aboutir à une charte graphique complète et parfaitement déclinable sur tous vos supports
+            de communication.
+          </p>
         </DivWrapper>
       </section>
       <Suspense fallback={<LastEventSkeleton />}>

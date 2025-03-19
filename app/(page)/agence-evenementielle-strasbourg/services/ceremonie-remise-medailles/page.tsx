@@ -38,8 +38,8 @@ export default async function Page() {
         >
           <h2 className="sub-heading text-pretty font-semibold">
             Que ce soit une cérémonie des médailles du travail, ou encore une cérémonie pour
-            célébrer l’ancienneté, chaque salarié a droit, au cours de sa carrière à son moment de
-            gloire, de reconnaissance.
+            célébrer l’ancienneté, chaque salarié a droit, au cours de sa carrière, à la
+            reconnaissance et à la mise en valeur de son parcours.
           </h2>
           <Image
             priority={true}
@@ -53,22 +53,14 @@ export default async function Page() {
           ></Image>
           <div className="flex flex-col gap-md">
             <h3 className="heading text-primary-400">
-              Une cérémonie de médailles pour une entreprise en réussite, fière de son succès
+              Une cérémonie de médailles pour une entreprise en réussite, fière de son succès.
             </h3>
             <p className="body text-pretty">
-              Une entreprise en réussite, fière de son succès salue aussi bien ses collaborateurs
-              fidèles que ceux honorés pour une longue carrière professionnelle. Elle tient en haute
-              estime ses partenaires de longue date. <strong>Cette cérémonie de médailles</strong>{' '}
-              est le témoignage de la reconnaissance de l&apos;entreprise envers les acteurs de sa
-              réussite. Réception au déroulé précis… sans anicroche, sans contretemps… car nous
-              aurons pris le temps nécessaire pour en peaufiner les détails.
+              Une entreprise en réussite, fière de son succès salue ses collaborateurs pour leur
+              implication.<strong>Cette cérémonie de médailles</strong> est le témoignage de la
+              reconnaissance de l&apos;entreprise envers les acteurs de sa réussite.
             </p>
-          </div>
-          <div className="flex flex-col gap-md">
-            <h3 className="heading text-primary-400">
-              Nous pouvons donner du sens à ce que beaucoup voient comme une simple cérémonie
-              solennelle et compassée.
-            </h3>
+
             <p className="body text-pretty">
               Nous préparons avec rigueur les moments forts qui vous tiennent à cœur. Pour un
               enchaînement parfait, il est indispensable que cela soit préparé par des

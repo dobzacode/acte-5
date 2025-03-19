@@ -39,12 +39,14 @@ export default async function Project({ project }: { project: EventQueryResponse
 
   return (
     <>
-      <div className="prose prose-base max-w-full">
-        <p className="body text-pretty">{project.description}</p>
-      </div>
+      {project.description && (
+        <div className="prose prose-base max-w-full">
+          <p className="body text-pretty">{project.description}</p>
+        </div>
+      )}
       {imageArr && (
         <CarouselProject
-          className="basis-full bg-primary-50 !pl-0"
+          className="basis-full !pl-0"
           innerClassName="flex h-full w-full grow cursor-pointer items-center justify-center object-contain object-center"
           imageArr={imageArr}
         />

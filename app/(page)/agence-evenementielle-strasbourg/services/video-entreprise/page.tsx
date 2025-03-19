@@ -37,7 +37,7 @@ export default function Home() {
           tag="section"
         >
           <h2 className="sub-heading font-semibold">
-            Nous conceptualisons et réalisons vos vidéos d'entreprise sur mesure
+            Nous conceptualisons et réalisons vos vidéos d'entreprise sur mesure.
           </h2>
           <Image
             priority={true}

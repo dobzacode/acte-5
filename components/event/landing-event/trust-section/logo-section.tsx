@@ -3,7 +3,9 @@
 import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
 import { cn } from '@/lib/utils';
 import { Logo } from '@/sanity/lib/queries';
+import Autoplay from 'embla-carousel-autoplay';
 import Image from 'next/image';
+
 
 export default function LogoSlider({
   logos,
@@ -15,7 +17,7 @@ export default function LogoSlider({
   return (
     <div className="relative z-40 flex w-full gap-md pt-md mobile-large:gap-md">
       <Carousel
-        // plugins={[Autoplay({ delay: 2000 })]}
+        plugins={[Autoplay({ delay: 2000 })]}
         opts={{ loop: true, startIndex: 3 }}
         className="flex items-center gap-md laptop:mx-auto [&>div]:rounded-sm"
       >
@@ -29,15 +31,15 @@ export default function LogoSlider({
                 >
                   <div
                     className={cn(
-                      'relative flex h-1/2 origin-center items-center justify-center gap-md rounded-sm'
+                      'relative flex h-1/2 origin-center items-center justify-center gap-md rounded-sm bg-white aspect-square'
                     )}
                     key={index}
                   >
                     <Image
-                      width={204}
-                      height={204}
+                      width={100}
+                      height={100}
                       className={cn(
-                        'shrink-0 cursor-pointer rounded-t-sm p-md mobile-large:p-md tablet:p-lg'
+                        'w-full h-full object-contain p-md mobile-large:p-md tablet:p-lg'
                       )}
                       sizes={'(max-width: 640px) 33vw, 30vw'}
                       src={image.url}
@@ -49,16 +51,16 @@ export default function LogoSlider({
 
                   <div
                     className={cn(
-                      'relative z-20 flex h-1/2 items-center justify-center gap-md rounded-sm'
+                      'relative z-20 flex h-1/2 items-center justify-center gap-md rounded-sm bg-white aspect-square'
                     )}
                     key={index + 1}
                   >
                     {index + 1 > logos.length - 1 ? null : (
                       <Image
-                        width={204}
-                        height={204}
+                        width={100}
+                        height={100}
                         className={cn(
-                          'shrink-0 cursor-pointer rounded-t-sm p-md mobile-large:p-md tablet:p-lg'
+                          'w-full h-full object-contain p-md mobile-large:p-md tablet:p-lg'
                         )}
                         sizes={'(max-width: 640px) 33vw, 30vw'}
                         src={logos[index + 1].url}
@@ -86,15 +88,14 @@ export default function LogoSlider({
               >
                 <div
                   className={cn(
-                    'relative flex h-full origin-center items-center justify-center gap-md rounded-sm'
+                    'relative flex h-full origin-center items-center justify-center gap-md rounded-sm bg-white aspect-square'
                   )}
                   key={index}
                 >
                   <Image
-                    width={0}
-                    height={0}
-                    style={{ width: '100%', height: 'auto' }}
-                    className={cn('cursor-pointer rounded-t-sm p-md')}
+                    width={100}
+                    height={100}
+                    className={cn('w-full h-full object-contain p-md')}
                     sizes={'(max-width: 640px) 100vw, 30vw'}
                     src={image.url}
                     placeholder="blur"

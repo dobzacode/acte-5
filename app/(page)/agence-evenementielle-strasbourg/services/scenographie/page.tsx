@@ -44,7 +44,7 @@ export default async function Home() {
               Nous concevons et réalisons des structures créatives et parfaitement adaptées au lieu
               et à l'objectif. De la simple flèche signalétique à la mise en place d'une exposition,
               en passant par la réalisation d'un stand, nos équipes mettent en commun leurs
-              savoir-faire pour vous concocter le support idéal.
+              savoir-faire pour vous concocter, créer et aménager les espaces de votre événement.
             </p>
           </div>
           <Image
@@ -60,10 +60,7 @@ export default async function Home() {
         </DivWrapper>
       </section>
       <Suspense fallback={<LastEventSkeleton />}>
-        <LastEvent
-          h2="Nos précédents spectacles organisés à Strasbourg et en Alsace"
-          categorie="Spectacle clef en main"
-        ></LastEvent>
+        <LastEvent h2="Nos précédents projets de scénographie" categorie="Scénographie"></LastEvent>
       </Suspense>
     </main>
   );

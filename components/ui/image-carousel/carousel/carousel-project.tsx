@@ -65,17 +65,23 @@ const CarouselProject: React.FC<CarouselProjectProps> = ({
     <>
       <Carousel
         opts={{ loop: true }}
-        className={(cn('flex max-w-[100vw] items-center gap-md laptop:mx-auto'), outerClassName)}
+        className={
+          (cn('flex max-w-[100vw] items-center gap-md overflow-hidden rounded-xs laptop:mx-auto'),
+          outerClassName)
+        }
       >
         <CarouselContent>
           {imageArr.map((image, index) => (
-            <CarouselItem key={`${image}-${index}`} className={cn(className)}>
+            <CarouselItem
+              key={`${image}-${index}`}
+              className={cn(className, 'aspect-[4/3] overflow-hidden')}
+            >
               <ImagePulsing
                 key={index}
                 skeletoncss="h-full object-cover w-full"
                 width={800}
-                height={800}
-                className={cn(innerClassName, 'cursor-pointer')}
+                height={450}
+                className={cn(innerClassName, 'cursor-pointer object-cover')}
                 sizes={'(max-width: 640px) 100vw, 50vw'}
                 src={image.url}
                 placeholder="blur"
@@ -88,12 +94,12 @@ const CarouselProject: React.FC<CarouselProjectProps> = ({
         </CarouselContent>
         <>
           <CarouselPrevious
-            className={cn('absolute left-sm top-1/2 -translate-y-1/2', previousClassName)}
+            className={cn('absolute left-2 top-1/2 z-10 -translate-y-1/2', previousClassName)}
           />
         </>
         <>
           <CarouselNext
-            className={cn('absolute right-sm top-1/2 -translate-y-1/2', nextClassName)}
+            className={cn('absolute right-2 top-1/2 z-10 -translate-y-1/2', nextClassName)}
           />
         </>
       </Carousel>

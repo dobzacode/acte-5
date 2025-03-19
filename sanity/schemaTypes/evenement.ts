@@ -29,11 +29,11 @@ export default defineType({
           { title: 'Team building', value: 'Team Building' },
           { title: 'Identité visuelle', value: 'Identité visuelle' },
           { title: 'Support de communication', value: 'Support de communication' },
-          { title: 'Lancement de marque', value: 'Lancement de marque' },
+          { title: 'Lancement de produit', value: 'Lancement de produit' },
           { title: 'Communication digitale', value: 'Communication digitale' },
           { title: 'Scénographie', value: 'Scénographie' },
           { title: 'Edition', value: 'Edition' },
-          { title: 'Spectacle clef en main', value: 'Spectacle clef en main' },
+          { title: 'Spectacle clé en main', value: 'Spectacle clef en main' },
           { title: 'Spectacle sur mesure', value: 'Spectacle sur mesure' },
           { title: "Vidéo d'entreprise", value: "Vidéo d'entreprise" }
         ]
@@ -74,9 +74,7 @@ export default defineType({
       type: 'text',
       group: 'contenu',
       validation: (Rule) =>
-        Rule.max(200)
-          .required()
-          .warning(`La description de l'événément ne doit pas dépasser 200 caractères`)
+        Rule.max(200).warning(`La description de l'événément ne doit pas dépasser 200 caractères`)
     }),
     defineField({
       name: 'imageGallery',
@@ -111,7 +109,15 @@ export default defineType({
       title: 'Slug',
       type: 'slug',
       group: 'seo',
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) =>
+        Rule.required().custom((slug) => {
+          if (!slug) return true;
+          if (typeof slug.current !== 'string') return true;
+          if (/[\s\W]/.test(slug.current)) {
+            return "Le slug ne doit pas contenir d'espaces ou de caractères spéciaux";
+          }
+          return true;
+        }),
       options: {
         source: 'titre',
         maxLength: 96

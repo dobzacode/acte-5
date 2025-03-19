@@ -23,7 +23,7 @@ export default function Home() {
           variant={ComingFromTopVariant}
         >
           <h1 className="heading--sub-extra-large text-pretty text-center text-primary-400">
-            agence de communication événementielle spectaculaire
+            Agence de communication événementielle spectaculaire
           </h1>
         </DivWrapper>
         <section className="flex justify-between gap-lg max-tablet:flex-col tablet:gap-md laptop:justify-center">
@@ -100,7 +100,7 @@ export default function Home() {
               inverseOnExit={true}
               className="relative -z-10"
             >
-              <h2 className="heading--sub-large -z-10 translate-y-0 px-sm text-black backdrop-blur-sm duration-medium group-hover:-translate-y-[200%] laptop-large:px-md">
+              <h2 className="heading--sub-large -z-10 translate-y-0 px-sm text-black backdrop-blur-sm duration-medium group-hover:-translate-y-[200%] laptop-large:px-md text-center">
                 ÉVÉNEMENTIEL
               </h2>
             </DivWrapper>
@@ -178,7 +178,7 @@ export default function Home() {
               inverseOnExit={true}
               className="relative -z-10"
             >
-              <h2 className="heading--sub-large -z-10 translate-y-0 px-sm text-black backdrop-blur-sm duration-medium group-hover:-translate-y-[200%] laptop-large:px-md">
+              <h2 className="heading--sub-large text-center -z-10 translate-y-0 px-sm text-black backdrop-blur-sm duration-medium group-hover:-translate-y-[200%] laptop-large:px-md">
                 SPECTACLE
               </h2>
             </DivWrapper>

@@ -9,7 +9,7 @@ import { Suspense } from 'react';
 import image from '/public/assets/event/services/clef/clef.jpg';
 
 export const metadata: Metadata = {
-  title: 'Spectacle clef en main - Acte 5',
+  title: 'Spectacle clé en main - Acte 5',
   description: "Envie d'offrir un moment drôle, émouvant, époustouflant à vos invités ?"
 };
 
@@ -21,13 +21,13 @@ export default async function Home() {
         <TitleSection
           className="px-0"
           h1Css={'heading--sub-extra-large'}
-          title={'SPECTACLE CLEF EN MAIN'}
+          title={'SPECTACLE CLÉ EN MAIN'}
           element={[
             { href: '/agence-evenementielle-strasbourg', text: 'Événement' },
             { href: '/agence-evenementielle-strasbourg/services', text: 'Nos services' },
             {
               href: '/agence-evenementielle-strasbourg/services/spectacle-clef-en-main',
-              text: 'Spectacle clef en main'
+              text: 'Spectacle clé en main'
             }
           ]}
         ></TitleSection>

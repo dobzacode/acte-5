@@ -39,9 +39,7 @@ export default function Home() {
           tag="section"
         >
           <h2 className="sub-heading font-semibold">
-            On ne met pas tous les vœux dans le même panier. Pas un mois de janvier ne se passe sans
-            LA traditionnelle cérémonie des vœux. On en profite aussi pour tirer les rois, avec la
-            célèbre galette !
+            Pas un mois de janvier ne se passe sans LA traditionnelle cérémonie des vœux.
           </h2>
           <Image
             priority={true}
@@ -65,7 +63,7 @@ export default function Home() {
               vœux vous permet de faire des annonces, de dévoiler vos actions prochaines, de fixer
               de nouveaux objectifs, de vous projeter dans l&apos;avenir. La rencontre de vos
               équipes, parfois d&apos;horizons divers, dans un environnement détendu est
-              l&apos;occasion de les fédérer et de les encourager à relever des défis renouvelés.
+              l&apos;occasion de les fédérer et de les encourager à relever de nouveaux défis.
             </p>
           </div>
           <div className="flex flex-col gap-md">
@@ -80,12 +78,6 @@ export default function Home() {
               l&apos;occasion, nous favorisons une présentation élaborée avec soin. Vous avez des
               idées, partagez-les avec nous. Une panne d&apos;inspiration ? Nous proposons, nous
               concevons avec vous, vous validez.
-              <br />
-              <br /> <strong>D&apos;une simple cérémonie à un événement plus spectaculaire</strong>,
-              nous couvrons toute la gamme des souhaits de nos clients, soucieux de répondre à leurs
-              attentes en concordance avec leur image. Une mise en lumière, une animation
-              particulière, créer les invitations, dessiner un logo, nous vous offrons un large
-              choix de prestations selon les tendances et les envies.
             </p>
           </div>
         </DivWrapper>

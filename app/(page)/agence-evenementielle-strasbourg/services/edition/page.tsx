@@ -43,13 +43,11 @@ export default async function Home() {
               sentiment d'appartenance fort.
             </h2>
             <p className="body text-pretty">
-              Un anniversaire est l'occasion idéale de faire le bilan. Pour cela, le livre est
-              l'objet idéal : on aime le conserver et on a du plaisir à s'y plonger pour passer un
-              bon moment à se remémorer les bons souvenirs. Rétrospective de l'histoire de votre
-              entreprise, mise en valeur des belles réalisations et des équipes qui ont contribué à
-              son succès, mais aussi témoignages, anecdotes cocasses, photos qu'on avait oubliées,
-              les possibilités sont mutliples pour rendre hommage au passé et poser les bases du
-              futur
+              Un anniversaire est l'occasion de faire le bilan. Pour cela, le livre est l'objet
+              idéal : on aime le conserver et on a du plaisir à s'y plonger pour passer un bon
+              moment à se remémorer les souvenirs. Rétrospective, mise en valeur des belles
+              réalisations et des équipes , mais aussi témoignages, anecdotes, photos, les
+              possibilités sont mutliples pour rendre hommage au passé et poser les bases du futur.
             </p>
           </div>
           <Image
@@ -65,10 +63,7 @@ export default async function Home() {
         </DivWrapper>
       </section>
       <Suspense fallback={<LastEventSkeleton />}>
-        <LastEvent
-          h2="Nos précédents spectacles organisés à Strasbourg et en Alsace"
-          categorie="Spectacle clef en main"
-        ></LastEvent>
+        <LastEvent h2="Nos précédents projets d'édition" categorie="Edition"></LastEvent>
       </Suspense>
     </main>
   );

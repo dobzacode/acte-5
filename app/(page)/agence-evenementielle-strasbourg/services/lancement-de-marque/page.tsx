@@ -9,7 +9,7 @@ import { Suspense } from 'react';
 import image from '/public/assets/event/services/marque/marque.jpg';
 
 export const metadata: Metadata = {
-  title: 'Lancement de marque - Acte 5',
+  title: 'Lancement de produit - Acte 5',
   description:
     'Votre entreprise a développé un nouveau produit révolutionnaire ? Il faut le faire savoir !'
 };
@@ -22,13 +22,13 @@ export default async function Home() {
         <TitleSection
           className="px-0"
           h1Css={'heading--sub-extra-large'}
-          title={'LANCEMENT DE MARQUE'}
+          title={'LANCEMENT DE PRODUIT'}
           element={[
             { href: '/agence-evenementielle-strasbourg', text: 'Événement' },
             { href: '/agence-evenementielle-strasbourg/services', text: 'Nos services' },
             {
-              href: '/agence-evenementielle-strasbourg/services/lancement-de-marque',
-              text: 'Lancement de marque'
+              href: '/agence-evenementielle-strasbourg/services/lancement-de-produit',
+              text: 'Lancement de produit'
             }
           ]}
         ></TitleSection>
@@ -62,7 +62,7 @@ export default async function Home() {
       <Suspense fallback={<LastEventSkeleton />}>
         <LastEvent
           h2="Nos précédents lancements de marque organisés à Strasbourg et en Alsace"
-          categorie="Lancement de marque"
+          categorie="Lancement de produit"
         ></LastEvent>
       </Suspense>
     </main>

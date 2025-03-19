@@ -44,7 +44,7 @@ export default async function LastEvent({
     | 'Identité visuelle'
     | "Vidéo d'entreprise"
     | 'Support de communication'
-    | 'Lancement de marque'
+    | 'Lancement de produit'
     | 'Communication digitale'
     | 'Scénographie'
     | 'Edition';

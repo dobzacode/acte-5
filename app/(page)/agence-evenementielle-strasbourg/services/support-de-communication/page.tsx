@@ -11,7 +11,7 @@ import image from '/public/assets/event/services/communication/communication.jpg
 export const metadata: Metadata = {
   title: 'Support de communication - Acte 5',
   description:
-    "Quand on est le meilleur, qu'on a un savoir-faire hors du commun et des produits révolutionnaires, il faut le faire savoir ! Bref, communiquer est vital pour toute entreprise."
+    "Quand on est le meilleur, qu'on a un savoir-faire hors du commun et des produits révolutionnaires, il faut le faire savoir !"
 };
 
 export default async function Home() {
@@ -40,16 +40,13 @@ export default async function Home() {
           <div className="flex flex-col gap-md">
             <h2 className="sub-heading text-pretty font-semibold">
               Quand on est le meilleur, qu'on a un savoir-faire hors du commun et des produits
-              révolutionnaires, il faut le faire savoir ! Bref, communiquer est vital pour toute
-              entreprise.
+              révolutionnaires, il faut le faire savoir !
             </h2>
             <p className="body text-pretty">
               Affiche, kakémono, flyer, brochure, banderole, dossier de presse, diaporama, goodie,
-              mouton à cinq pattes, menhir personnalisé, voyage dans le temps, rencontre du
-              troisième type, notre directrice artistique saura vous proposer les supports les plus
-              adaptés et saura concrétiser avec créativité et rigueur vos demandes les plus
-              incongrues. La prestation proposée est complète : à partir du premier brief jusqu'à la
-              livraison du produit fini.
+              notre directrice artistique saura vous proposer les supports les plus adaptés et saura
+              concrétiser avec créativité et rigueur vos demandes les plus incongrues. La prestation
+              proposée est complète : à partir du brief jusqu'à la livraison du produit fini.
             </p>
           </div>
           <Image
@@ -66,8 +63,8 @@ export default async function Home() {
       </section>
       <Suspense fallback={<LastEventSkeleton />}>
         <LastEvent
-          h2="Nos précédents spectacles organisés à Strasbourg et en Alsace"
-          categorie="Spectacle sur mesure"
+          h2="Nos précédents supports de communication"
+          categorie="Support de communication"
         ></LastEvent>
       </Suspense>
     </main>

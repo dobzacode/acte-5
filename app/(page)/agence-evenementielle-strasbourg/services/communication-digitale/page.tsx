@@ -43,7 +43,7 @@ export default async function Home() {
             <p className="body text-pretty">
               Vous avez des infos à communiquer rapidement à vos parties prenantes, des images à
               créer pour votre dernière campagne LinkedIn, envie d'être présent sur les réseaux sans
-              trop savoir comment, l'agence ACTE 5 saura vous conseiller et vous proposer une
+              trop savoir comment? L'agence ACTE 5 saura vous conseiller et vous proposer une
               solution sur-mesure, adaptée à vos besoins.
             </p>
           </div>
@@ -61,8 +61,8 @@ export default async function Home() {
       </section>
       <Suspense fallback={<LastEventSkeleton />}>
         <LastEvent
-          h2="Nos précédents spectacles organisés à Strasbourg et en Alsace"
-          categorie="Spectacle sur mesure"
+          h2="Nos précédents projets de communication digitale"
+          categorie="Communication digitale"
         ></LastEvent>
       </Suspense>
     </main>

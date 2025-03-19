@@ -31,7 +31,7 @@ export interface Event {
   )[];
   date: string;
   titre: string;
-  description: string;
+  description?: string;
   client: string;
   metadescription: string;
   metatitre: string;

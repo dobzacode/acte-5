@@ -38,8 +38,8 @@ export default function Home() {
           tag="section"
         >
           <h2 className="sub-heading font-semibold">
-            Des chaussures de ski sur un tapis rouge, des escarpins vernis sur le sable, pieds nus
-            sur une piste de danse, boire du champagne comme de l&apos;eau…
+            Vous souhaitez convier vos clients à une soirée d&apos;exception ? Nous saurons créer le
+            cadre élégant et raffiné qui les charmera.
           </h2>
           <Image
             priority={true}
@@ -57,21 +57,18 @@ export default function Home() {
               vos partenaires, de vos clients.
             </h3>
             <p className="body text-pretty">
-              Paillettes, tapis rouge, bulles de champagne. Soirée toute en sobriété si cela vous
-              dit (tout est possible !). Une invitation est un privilège.
-              <br />
-              <br /> Pour qu&apos;elle soit particulièrement réussie, cette
-              <strong> soirée de gala pour entreprise</strong> est minutieusement organisée par une
-              équipe de professionnels. Soirée classique ou prestation originale, elle reflète un
-              certain standing et offre une image valorisante. Quoiqu&apos;il en soit, elle doit
-              marquer les esprits. Cette fête officielle, prestigieuse, crée la surprise dans une
-              ambiance particulièrement choisie. Après avoir mis au point sa concenption avec vous,
-              nous prenons en charge la coordination générale de la soirée, du lieu, de la
-              décoration, de la logistique, de l&apos;équipement, du choix des prestations, des
-              artistes invités et, last but not least, de la sélection du traiteur.
+              Pour qu&apos;elle soit particulièrement réussie, cette
+              <strong> soirée de gala </strong> est minutieusement organisée par une équipe de
+              professionnels. Soirée classique ou prestation originale, elle reflète un certain
+              standing et offre une image valorisante. Quoiqu&apos;il en soit, elle doit marquer les
+              esprits. Cette fête officielle, prestigieuse, crée la surprise dans une ambiance
+              particulièrement choisie. Après avoir mis au point sa conception avec vous, nous
+              prenons en charge la coordination générale de la soirée, du lieu, de la décoration, de
+              la logistique, de l&apos;équipement, du choix des prestations, des artistes invités et
+              de la sélection du traiteur.
             </p>
           </div>
-          <div className="flex flex-col gap-md">
+          {/* <div className="flex flex-col gap-md">
             <h3 className="heading text-primary-400">
               Le moment exceptionnel de votre soirée de gala d'entreprise
             </h3>
@@ -85,12 +82,12 @@ export default function Home() {
               occupons. Puisque qu&apos;on peut tout faire: Photobooth, reportage photo, livre ou
               encore vidéo souvenir.
             </p>
-          </div>
+          </div> */}
         </DivWrapper>
       </section>
       <Suspense fallback={<LastEventSkeleton />}>
         <LastEvent
-          h2="Nos précédentes soirées de gala pour entreprises organisées à Strasbourg et en Alsace"
+          h2="Nos précédentes soirées de gala organisées à Strasbourg et en Alsace"
           categorie="Soirée de gala"
         ></LastEvent>
       </Suspense>

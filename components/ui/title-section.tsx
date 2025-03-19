@@ -1,6 +1,4 @@
 import { cn } from '@/lib/utils';
-import { ComingFromLeftVariant } from '../framer-motion/div-variants';
-import DivWrapper from '../framer-motion/div-wrapper';
 import UiBreadcrumbs from './ui-breadcrumbs';
 
 export default function TitleSection({
@@ -22,13 +20,13 @@ export default function TitleSection({
   subtitle?: string;
 }) {
   return (
-    <DivWrapper
+    <div
       className={cn(
         'section-px flex flex-col gap-5 self-start break-words laptop:container laptop:mx-auto',
         className
       )}
-      tag="section"
-      variant={ComingFromLeftVariant}
+      // tag="section"
+      // variant={ComingFromLeftVariant}
     >
       <h1
         className={cn(
@@ -43,6 +41,6 @@ export default function TitleSection({
       )}
       <UiBreadcrumbs className="body break-words" element={element}></UiBreadcrumbs>
       {description && <p className="sub-heading max-w-[60ch] break-words pt-lg">{description}</p>}
-    </DivWrapper>
+    </div>
   );
 }

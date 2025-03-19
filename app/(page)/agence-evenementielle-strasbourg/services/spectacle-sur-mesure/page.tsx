@@ -43,10 +43,12 @@ export default async function Home() {
               vivant et les arts de la scène sont à votre service.
             </h2>
             <p className="body text-pretty">
-              Acte 5, expert de la production de spectacles, tient à votre disposition un florilège
-              de divertissements susceptible d'émerveiller, interpeler ou divertir. Convier les
-              artistes à votre événement, c'est miser sur la vitalité, la convivialité et garantir
-              un moment de plaisir à vos convives. Mesdames, Messieurs, que le spectacle commence !
+              Nos équipes de professionnels du spectacle (auteurs, comédiens, musiciens, danseurs…),
+              s&apos;invitent dans vos événements pour fédérer, surprendre, rythmer et émouvoir.
+              <br />
+              <br /> De quelques sketches écrits selon vos objectifs, à un spectacle complet conçu
+              et réalisé pour vous, Acte 5 apporte son expertise culturelle et artistique pour
+              rendre vos projets spectaculaires ! projets spectaculaires !
             </p>
           </div>
           <Image

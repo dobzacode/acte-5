@@ -38,7 +38,8 @@ export default function Home() {
         >
           <h2 className="sub-heading font-semibold">
             Quitter son bureau, se couper de son téléphone, ne pas lire ses mails, lâcher prise le
-            temps d&apos;un instant pour se retrouver avec soi-même dans le but de servir le groupe.
+            temps d&apos;un instant pour se retrouver entre collègues et renouveler le goût de
+            travailler ensemble.
           </h2>
           <Image
             priority={true}
@@ -55,18 +56,7 @@ export default function Home() {
               Nous imaginons des animations innovantes permettant de resserrer les liens entre vos
               collaborateurs.
             </h3>
-            <p className="body text-pretty">
-              Nous créerons pour vous la jungle urbaine, la lande désolée, la forêt hantée. Vous en
-              avez assez de grimper aux arbres, nous vous offrons le lancer de haches. Les caisses
-              sont vides, vous recherchez la chasse au trésor qui ne mène nulle part ? Vous
-              l&apos;avez trouvée. Un défi culinaire sans intoxication alimentaire ? Les fourneaux
-              vous attendent. Des incentives insensées incendiées ?
-            </p>
-          </div>
-          <div className="flex flex-col gap-md">
-            <h3 className="heading text-primary-400">
-              Pour un jour ou deux, trouvez un rythme de travail différent pour vos collaborateurs.
-            </h3>
+
             <p className="body text-pretty">
               <strong>Brisez le cadre quotidien de leurs activités</strong> et offrez une nouvelle
               perspective au collectif…. Vos équipes s&apos;entraident et s&apos;épanouissent dans
