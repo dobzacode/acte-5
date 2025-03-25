@@ -113,8 +113,8 @@ export default defineType({
         Rule.required().custom((slug) => {
           if (!slug) return true;
           if (typeof slug.current !== 'string') return true;
-          if (/[\s\W]/.test(slug.current)) {
-            return "Le slug ne doit pas contenir d'espaces ou de caractères spéciaux";
+          if (/[^a-z0-9-]/.test(slug.current)) {
+            return "Le slug ne doit contenir que des lettres minuscules, des chiffres et des traits d'union";
           }
           return true;
         }),
