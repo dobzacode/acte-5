@@ -41,11 +41,11 @@ export default async function Home() {
             variant={ComingFromRightVariant}
           >
             La Revue Scoute, c’est un spectacle de cabaret satirique en français qui met en scène
-            une troupe de 8 comédiens et 4 musiciens <br />
+            une troupe de 8 comédiens et de 4 musiciens <br />
             <br />
-            Chaque année, on revisite les petits et grands événements de l’année en nous moquant de
-            tout et de tout le monde : de la politique locale et nationale, des faits de société, de
-            nos travers, de là où ça grince et où ça ne passe que quand le rire s’en mêle !
+            Chaque année, petits et grands événements de l'année sont revisités: de la politique
+            locale et nationale au nouveau désordre mondial, des faits de société à nos petits
+            travers, de là où ça grince et où ça ne passe que quand le rire s'en mêle !
           </InviewWrapper>
 
           <div className="relative">
@@ -100,7 +100,7 @@ export default async function Home() {
               }}
             >
               <Image
-                className="-ml-7xl -mt-4xl rounded-xs max-laptop-large:hidden"
+                className="-ml-[440px] -mt-4xl rounded-xs max-laptop-large:hidden"
                 src={pic2}
                 placeholder="blur"
                 alt="Photo de spectacle"

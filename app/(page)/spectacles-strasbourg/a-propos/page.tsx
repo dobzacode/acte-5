@@ -44,18 +44,19 @@ export default function Home() {
             </div>
 
             <p className="laptop-large:sub-heading body section-px relative -z-10 max-w-[50ch] text-pretty text-center laptop:mx-auto laptop:text-left">
-              Depuis plus de 40 ans, la Revue Scoute est un pilier de la scène satirique alsacienne.
-              Aujourd&apos;ui, la Revue Scoute, c'est : <br />
-              - plus de 35 000 spectateurs
-              <br />
-              - 70 représentations par saison
-              <br />
-              - 10 salles en tournée
-              <br />
-              - 380 bouteilles de crémant pour la création
-              <br />
-              - 160 propositions avant de trouver le titre
-              <br />- des éclats de rire non comptabilisables !
+              Depuis <strong className="font-medium text-primary">plus de 40 ans</strong>, la Revue
+              Scoute est un <strong className="font-medium text-primary">pilier</strong> de la scène
+              satirique alsacienne. Aujourd&apos;ui, la Revue Scoute, c'est : <br />- plus de{' '}
+              <strong className="font-medium text-primary">35 000</strong> spectateurs
+              <br />- <strong className="font-medium text-primary">70</strong> représentations par
+              saison
+              <br />- <strong className="font-medium text-primary">10</strong> salles en tournée
+              <br />- <strong className="font-medium text-primary">380</strong> bouteilles de
+              crémant pour la création
+              <br />- <strong className="font-medium text-primary">160</strong> propositions avant
+              de trouver le titre
+              <br />- des <strong className="font-medium text-primary">éclats de rire</strong> non
+              comptabilisables !
             </p>
           </DivWrapper>
           <DivWrapper
@@ -63,13 +64,18 @@ export default function Home() {
             className="max-laptop:inner-section-gap flex items-center justify-between max-laptop:ml-auto max-laptop:flex-col-reverse laptop:w-full"
           >
             <p className="laptop-large:sub-heading body section-px max-w-[50ch] text-pretty text-center laptop:mx-auto laptop:text-right">
-              Duo inconique de la région, Patricia Weller et Denis Germain sont connus de tous ! Ils
-              ont inventé, au fil de leurs créations, des personnages devenus de véritables icônes
-              de la pensée régionale, et qui démontrent par le rire et l&apos;absurde combien la
-              France, l&apos;Europe et, trêve de modestie, le monde, feraient bien de s&apos;appuyer
-              sur la sagesse alsacienne. Ils remplissent les salles à travers toute l&apos;Alsace
-              avec leurs spectacles, et investissent aussi le monde de l&apos;entreprise avec des
-              interventions sur-mesure.
+              <strong className="font-medium text-primary">Duo iconique</strong> de la région,
+              Patricia Weller et Denis Germain sont connus de tous ! Ils ont inventé, au fil de
+              leurs créations, des personnages devenus de véritables{' '}
+              <strong className="font-medium text-primary">icônes</strong> de la pensée régionale,
+              et qui démontrent par le <strong className="font-medium text-primary">rire</strong> et
+              l&apos;
+              <strong className="font-medium text-primary">absurde</strong> combien la France,
+              l&apos;Europe et, trêve de modestie, le monde, feraient bien de s&apos;appuyer sur la{' '}
+              <strong className="font-medium text-primary">sagesse alsacienne</strong>. Ils
+              remplissent les salles à travers toute l&apos;Alsace avec leurs spectacles, et
+              investissent aussi le monde de l&apos;entreprise avec des interventions{' '}
+              <strong className="font-medium text-primary">sur-mesure</strong>.
             </p>
 
             <div className="relative aspect-[5/3] w-full overflow-hidden rounded-sm max-mobile-large:container mobile-large:w-[30rem] laptop:shrink-0 laptop-large:w-[36rem]">

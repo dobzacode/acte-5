@@ -52,37 +52,36 @@ export default async function SpectacleFetch({ params }: { params: { spectacle: 
           ]}
         ></TitleSection>
         <DivWrapper
-          className="flex flex-col gap-2xl overflow-hidden laptop:container mobile-large:gap-xl laptop:mx-auto"
+          className="flex flex-col gap-2xl laptop:container mobile-large:gap-xl laptop:mx-auto"
           variant={ComingFromRightVariant}
           inverseOnExit={false}
         >
           <SpectacleContent spectacle={spectacle} />
         </DivWrapper>
-        {spectacle?.dates && (
-          <section className="inner-section-gap flex flex-col place-self-start">
-            <InviewWrapper
-              className="heading--large text-primary-400"
-              tag="h3"
-              variant={ComingFromLeftVariant}
-            >
-              Calendrier des dates
-            </InviewWrapper>
 
-            {mainImage && (
-              <SpectacleCalendar
-                dates={spectacle?.dates.map((date) => ({
-                  ...date,
-                  type: 'Spectacle',
-                  titre: spectacle.titre,
-                  picture: {
-                    ...spectacle.mainImage,
-                    url: mainImage
-                  }
-                }))}
-              ></SpectacleCalendar>
-            )}
-          </section>
-        )}
+        <section className="inner-section-gap flex flex-col place-self-start">
+          <InviewWrapper
+            className="heading--large text-primary-400"
+            tag="h3"
+            variant={ComingFromLeftVariant}
+          >
+            Calendrier des dates
+          </InviewWrapper>
+
+          {mainImage && (
+            <SpectacleCalendar
+              dates={spectacle?.dates?.map((date) => ({
+                ...date,
+                type: 'Spectacle',
+                titre: spectacle.titre,
+                picture: {
+                  ...spectacle.mainImage,
+                  url: mainImage
+                }
+              }))}
+            ></SpectacleCalendar>
+          )}
+        </section>
       </section>
     </>
   );

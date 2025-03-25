@@ -10,11 +10,13 @@ import { useState } from 'react';
 import { DateItemCal } from '../calendrier';
 import DateModal from '../date-modal';
 
-export default function SpectacleCalendar({ dates }: { dates: DateItemCal[] }) {
+export default function SpectacleCalendar({ dates = [] }: { dates?: DateItemCal[] }) {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
   const [selectedDate, setSelectedDate] = useState<DateItemCal | null>(null);
 
   const handleDateClick = (date: Date) => {
+    if (dates.length === 0) return;
+
     const selected = dates.find((item) =>
       item.dates.some((d) => new Date(d).toDateString() === date.toDateString())
     );
@@ -22,9 +24,10 @@ export default function SpectacleCalendar({ dates }: { dates: DateItemCal[] }) {
     onOpen();
   };
 
-  const stopDatesArray = dates.map((stop) =>
-    stop.dates.map((date) => new Date(date).toDateString())
-  );
+  const stopDatesArray =
+    dates.length > 0
+      ? dates.map((stop) => stop.dates.map((date) => new Date(date).toDateString()))
+      : [];
 
   const flatStopDates = stopDatesArray.flat();
 
@@ -38,6 +41,7 @@ export default function SpectacleCalendar({ dates }: { dates: DateItemCal[] }) {
     'bg-destructive-400 ',
     'bg-info-400 '
   ];
+
   const modifiers = stopDatesArray.reduce<Record<string, Date[]>>((acc, dates, index) => {
     acc[`modifier_${index}`] = dates.map((date) => new Date(date));
     return acc;
@@ -61,12 +65,15 @@ export default function SpectacleCalendar({ dates }: { dates: DateItemCal[] }) {
           month: 'space-y-4 w-full flex flex-col ',
           table: 'w-full h-fit border-collapse space-y-1',
           head_row: '',
-          row: 'w-full mt-2'
+          row: 'w-full mt-2',
+          day: dates.length === 0 ? 'text-muted-foreground opacity-50' : undefined
         }}
         fromDate={new Date()}
         modifiers={modifiers}
         modifiersClassNames={modifiersClassNames}
-        disabled={(date) => !flatStopDates.includes(date.toDateString())}
+        disabled={
+          dates.length === 0 ? () => true : (date) => !flatStopDates.includes(date.toDateString())
+        }
         onDayClick={handleDateClick}
       ></Calendar>
 

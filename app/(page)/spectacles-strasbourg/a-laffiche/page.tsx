@@ -33,7 +33,8 @@ export default function Home() {
           delay={1}
           className="heading--sub-large section-px h-fit max-w-[35ch] text-pretty text-center laptop:mx-auto"
         >
-          Il n’y a pas que la Revue Scoute dans la vie !
+          L'agence Acte 5 propose aux entreprises, associations et collectivités, des spectacles
+          d'humour clé en main, en français.
         </StaggeredText>
         <Suspense fallback={<AffichesSkeleton />}>
           <Affiches></Affiches>

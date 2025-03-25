@@ -5,16 +5,28 @@ import { Variants, motion } from 'framer-motion';
 export default function DivHoverWrapper({
   variant,
   children,
-  className
+  className,
+  tag = 'div'
 }: {
   variant: Variants;
   children: React.ReactNode;
   inverseOnExit?: boolean;
   className?: string;
+  tag?: keyof JSX.IntrinsicElements;
 }) {
+  //@ts-expect-error tag is a string
+  const MotionComponent = motion[tag];
+
   return (
-    <motion.div exit="exit" className={className} variants={variant} whileHover="hover">
+    <MotionComponent
+      initial="hidden"
+      animate="enter"
+      exit="exit"
+      className={className}
+      variants={variant}
+      whileHover="hover"
+    >
       {children}
-    </motion.div>
+    </MotionComponent>
   );
 }

@@ -6,9 +6,8 @@ import {
 import DivHoverWrapper from '@/components/framer-motion/hover-wrapper';
 import InviewWrapper from '@/components/framer-motion/inview-wrapper';
 import Image from 'next/image';
-import Link from 'next/link';
-import { LuArrowUpRight } from 'react-icons/lu';
 import GalleryScrollAnimation from './gallery-scroll-animation';
+import TourButton from './tour-button';
 import pic1 from '/public/assets/spectacle/landing/scoute_1.jpg';
 import pic2 from '/public/assets/spectacle/landing/scoute_2.jpg';
 import pic3 from '/public/assets/spectacle/landing/scoute_3.jpg';
@@ -42,8 +41,9 @@ export default function ScouteSection() {
             className="rounded-sm"
           ></Image>
           <p className="sub-heading text-pretty text-center mobile-large:w-[40ch]">
-            Le plus grand cabaret satirique d&apos;alsace se moque de tout et de tout le monde
-            depuis plus de 40 ans dans un spectacle unique en Français.
+            Le plus grand cabaret satirique d'Alsace se moque de tout et de tout le monde depuis
+            plus de 40 ans. Chaque année, une nouvelle édition pour un spectacle mémorable, en
+            français.
           </p>
         </InviewWrapper>
         <InviewWrapper
@@ -77,9 +77,8 @@ export default function ScouteSection() {
             className="rounded-sm"
           ></Image>
           <p className="sub-heading text-pretty text-center mobile-large:w-[40ch]">
-            La vingtaine de tableaux satiriques s'enchaine, chacun habillé de divers décors et
-            autres costumes loufoques, tandis que la musique accompagne chaque rebondissement avec
-            une énergie contagieuse.
+            Les sketches s'enchaînent, proposant chacun décors et autres costumes loufoques, la
+            musique accompagne chaque rebondissement avec une énergie contagieuse.
           </p>
         </InviewWrapper>
         <InviewWrapper className="flex h-fit w-full justify-center" variant={FadeInVariant}>
@@ -97,14 +96,7 @@ export default function ScouteSection() {
               }
             }}
           >
-            <Link
-              href="/spectacles-strasbourg/revue-scoute"
-              className="sub-heading group relative flex w-fit items-center gap-xs rounded-sm before:absolute before:-bottom-2 before:z-10 before:h-[1px] before:w-full before:max-w-0 before:bg-black before:duration-medium after:absolute after:-bottom-2 after:z-10 after:h-[1px] after:w-full after:bg-black/20 hover:before:max-w-full laptop:gap-sm"
-              scroll={false}
-            >
-              <span>Découvrir la tournée 2024</span>
-              <LuArrowUpRight className="rotate-0 duration-medium group-hover:rotate-45 group-hover:delay-300" />
-            </Link>
+            <TourButton />
           </DivHoverWrapper>
         </InviewWrapper>
       </div>

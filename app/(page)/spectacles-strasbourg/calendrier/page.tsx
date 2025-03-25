@@ -1,6 +1,4 @@
-import { FromTopStaggerVariant } from '@/components/framer-motion/div-variants';
 import DivWrapper from '@/components/framer-motion/div-wrapper';
-import StaggeredText from '@/components/framer-motion/staggered-text';
 import Calendrier from '@/components/spectacle/a-laffiche/calendrier';
 import ContactSection from '@/components/spectacle/contact-section';
 import { Skeleton } from '@/components/ui/skeleton';
@@ -24,17 +22,6 @@ export default function Home() {
           { href: '/spectacles-strasbourg/calendrier', text: 'Calendrier des spectacles' }
         ]}
       ></TitleSection>
-
-      <StaggeredText
-        margin={'0px 0px -200px 0px'}
-        variant={FromTopStaggerVariant}
-        inview
-        staggerValue={0.05}
-        delay={1}
-        className="heading--sub-large section-px h-fit max-w-[35ch] text-pretty text-center laptop:mx-auto"
-      >
-        Retrouvez ci-dessous le calendrier de nos spectacles
-      </StaggeredText>
 
       <Suspense
         fallback={

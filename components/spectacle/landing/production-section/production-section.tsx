@@ -9,8 +9,8 @@ import image from '/public/assets/spectacle/landing/production_image.jpg';
 export default function ProductionSection() {
   return (
     <section className="section-px section-inner-py last-section-inner-py inner-section-gap relative flex w-full items-center bg-primary-400 text-white laptop:container laptop:mx-auto">
-      <div className="inner-section-gap flex flex-col">
-        <InviewWrapper className="whitespace-nowrap" variant={ComingFromLeftVariant}>
+      <div className="inner-section-gap relative z-10 flex flex-col">
+        <InviewWrapper className="" variant={ComingFromLeftVariant}>
           <h2 className="heading--extra-large text-pretty">Production de spectacle</h2>
         </InviewWrapper>
         <InviewWrapper
@@ -91,7 +91,7 @@ export default function ProductionSection() {
             }}
           >
             <Link
-              href="/spectacles-strasbourg/a-propos"
+              href="/agence-evenementielle-strasbourg/services?categorie=spectacle"
               className="sub-heading shadow-primary-sm 0 flex w-fit items-center gap-xs rounded-sm border-b-2 border-r-2 border-black bg-white px-md py-sm text-black laptop:gap-sm laptop:px-lg laptop:py-md"
               scroll={false}
             >
@@ -101,7 +101,7 @@ export default function ProductionSection() {
         </InviewWrapper>
       </div>
 
-      <ScrollImage className="max-laptop:hidden">
+      <ScrollImage className="absolute right-0 max-laptop:hidden">
         <Image
           src={image}
           sizes={'(max-width: 640px) 70vw, (min-width: 640px) 60vw'}

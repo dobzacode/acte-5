@@ -86,7 +86,7 @@ export default async function SpectacleContent({
           />
         ) : null}
         <div className="bg-primary-400 pl-0.5"></div>
-        <aside className="[&>div]:body flex w-fit flex-wrap gap-md tablet:flex-col [&>div>*:first-child]:laptop:whitespace-nowrap [&>div>*:last-child]:font-medium">
+        <aside className="[&>div]:body flex w-fit shrink-0 flex-wrap gap-md tablet:flex-col [&>div>*:first-child]:laptop:whitespace-nowrap [&>div>*:last-child]:font-medium">
           {duree && (
             <div className="sub-heading flex flex-col">
               <p className="text-black/40">Durée</p>

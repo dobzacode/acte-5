@@ -87,8 +87,9 @@ export default function GalleryScrollAnimation({}) {
           className="absolute -z-10 mx-auto mb-6xl mt-5 text-center text-black"
         >
           <p className="sub-heading max-w-[50ch] text-pretty">
-            Le plus grand cabaret satirique d&apos;alsace se moque de tout et de tout le monde
-            depuis plus de 40 ans dans un spectacle unique en Français.
+            Le plus grand cabaret satirique d'Alsace se moque de tout et de tout le monde depuis
+            plus de 40 ans. Chaque année, une nouvelle édition pour un spectacle mémorable, en
+            français.
           </p>
         </motion.div>
       </div>

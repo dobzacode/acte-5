@@ -125,9 +125,7 @@ export default function AnimatedPart({ isSpectacle }: { isSpectacle?: boolean })
               className="sub-heading shadow-primary-sm 0 mx-auto flex grow items-center gap-xs rounded-sm border-b-2 border-r-2 border-primary-600 bg-primary px-md py-sm text-center text-white grayscale duration-medium laptop:gap-sm laptop:px-lg laptop:py-md"
               scroll={false}
             >
-              <span className="w-full text-center">
-                {isSpectacle ? 'Communiquons ensemble' : 'Contactez-nous'}
-              </span>
+              <span className="w-full text-center">Contactez-nous</span>
             </Link>
           </div>
         </motion.div>

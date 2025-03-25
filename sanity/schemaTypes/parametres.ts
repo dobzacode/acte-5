@@ -13,8 +13,14 @@ export default defineType({
       name: 'lienBilletterie',
       title: 'Lien vers la billetterie',
       type: 'url',
-      group: 'spectacle',
-      validation: (Rule) => Rule.required().warning(`Le lien vers la billetterie est obligatoire`)
+      group: 'spectacle'
+    }),
+    defineField({
+      name: 'tourneeBoutton',
+      title: "Texte du bouton tournée de la page d'accueil spectacle",
+      type: 'string',
+      validation: (Rule) => Rule.required(),
+      group: 'spectacle'
     })
   ],
   preview: {

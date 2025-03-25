@@ -41,7 +41,7 @@ const SimilaireCarousel: React.FC<PropType> = (props) => {
           {props.imageArr.map((image, index) => (
             <CarouselItem
               key={`carousel-item-${index}`}
-              className="my-auto basis-full mobile-large:basis-1/2 tablet:basis-1/3 laptop:basis-1/3 laptop-large:basis-1/3 laptop-large:pr-sm"
+              className="mb-auto basis-full mobile-large:basis-1/2 tablet:basis-1/3 laptop:basis-1/3 laptop-large:basis-1/3 laptop-large:pr-sm"
             >
               <Link
                 scroll={false}

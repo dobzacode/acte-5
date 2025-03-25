@@ -124,7 +124,7 @@ export default function DateModal({
                 Fermer
               </UiButton>
               {selectedDate.lien && (
-                <a href={selectedDate.lien}>
+                <a href={selectedDate.lien} target="_blank" rel="noopener noreferrer">
                   <UiButton color="primary" onPress={onClose} className="body">
                     Je prends mon billet
                   </UiButton>

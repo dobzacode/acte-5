@@ -180,6 +180,7 @@ export interface Spectacle {
 
 export interface Parametres {
   lienBilletterie: string;
+  tourneeBoutton: string;
 }
 
 export const PARAMETRES_QUERY = groq`*[_type == "parametres"]`;

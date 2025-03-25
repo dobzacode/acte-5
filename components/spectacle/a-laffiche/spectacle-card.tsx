@@ -1,4 +1,4 @@
-import DivWrapper from '@/components/framer-motion/div-wrapper';
+import DivHoverWrapper from '@/components/framer-motion/hover-wrapper';
 import { Spectacle } from '@/sanity/lib/queries';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -11,9 +11,16 @@ export default function SpectacleCard({
   index: number;
 }) {
   return (
-    <DivWrapper
+    <DivHoverWrapper
       tag="li"
       variant={{
+        hover: {
+          scale: 1.03,
+          transition: {
+            duration: 0.3,
+            ease: 'easeInOut'
+          }
+        },
         hidden: {
           opacity: 0,
           y: 300,
@@ -36,7 +43,7 @@ export default function SpectacleCard({
           }
         }
       }}
-      className="card my-auto h-fit w-full shrink-0 gap-md overflow-hidden rounded-xs px-0 py-0 duration-medium hover:scale-105 hover:shadow-2xl"
+      className="card mb-auto h-fit w-full shrink-0 gap-md overflow-hidden rounded-xs px-0 py-0"
     >
       <Link
         scroll={false}
@@ -54,6 +61,6 @@ export default function SpectacleCard({
           className="object-cover"
         ></Image>
       </Link>
-    </DivWrapper>
+    </DivHoverWrapper>
   );
 }

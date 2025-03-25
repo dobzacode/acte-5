@@ -11,9 +11,14 @@ export default async function LinkButton() {
     perspective: draftMode().isEnabled ? 'previewDrafts' : 'published'
   });
 
+  if (!parametres?.[0]?.lienBilletterie) return null;
+
   return (
     <a
-      className={cn(buttonVariants({ variant: 'outline' }), 'body rounded-xs font-normal duration-medium hover:opacity-80')}
+      className={cn(
+        buttonVariants({ variant: 'outline' }),
+        'body rounded-xs font-normal duration-medium hover:opacity-80'
+      )}
       href={parametres?.[0]?.lienBilletterie ?? ''}
     >
       Oui je me rends sur la billeterie
