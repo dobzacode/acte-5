@@ -31,7 +31,7 @@ export default function Home() {
         <div className="section-px main-gap flex w-full max-w-[90rem] flex-col items-center">
           <DivWrapper
             variant={ComingFromLeftVariant}
-            className="max-laptop:inner-section-gap flex items-center justify-between max-laptop:mr-auto max-laptop:flex-col laptop:w-full"
+            className="max-laptop:inner-section-gap mx-auto flex items-center max-laptop:mr-auto max-laptop:flex-col max-laptop:justify-between"
           >
             <div className="relative aspect-[5/3] w-full overflow-hidden rounded-sm max-mobile-large:container mobile-large:w-[30rem] laptop:shrink-0 laptop-large:w-[36rem]">
               <Image
@@ -43,7 +43,7 @@ export default function Home() {
               ></Image>
             </div>
 
-            <p className="laptop-large:sub-heading body section-px relative -z-10 max-w-[50ch] text-pretty text-center laptop:mx-auto laptop:text-left">
+            <p className="laptop-large:sub-heading body section-px relative -z-10 mr-auto max-w-[50ch] text-pretty text-center laptop:mx-auto laptop:text-left">
               Depuis <strong className="font-medium text-primary">plus de 40 ans</strong>, la Revue
               Scoute est un <strong className="font-medium text-primary">pilier</strong> de la scène
               satirique alsacienne. Aujourd&apos;ui, la Revue Scoute, c'est : <br />- plus de{' '}
@@ -61,7 +61,7 @@ export default function Home() {
           </DivWrapper>
           <DivWrapper
             variant={ComingFromRightVariant}
-            className="max-laptop:inner-section-gap flex items-center justify-between max-laptop:ml-auto max-laptop:flex-col-reverse laptop:w-full"
+            className="max-laptop:inner-section-gap mx-auto flex items-center justify-between max-laptop:ml-auto max-laptop:flex-col-reverse"
           >
             <p className="laptop-large:sub-heading body section-px max-w-[50ch] text-pretty text-center laptop:mx-auto laptop:text-right">
               <strong className="font-medium text-primary">Duo iconique</strong> de la région,
