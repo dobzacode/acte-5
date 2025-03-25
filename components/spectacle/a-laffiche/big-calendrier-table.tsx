@@ -72,7 +72,7 @@ export default function BigCalendrierTable({
   });
 
   return (
-    <div className="mx-auto laptop:container max-laptop:hidden">
+    <div className="laptop:section-px mx-auto laptop:container max-laptop:hidden laptop:mr-auto">
       <div className="card relative mx-auto flex w-full flex-col items-center justify-center gap-md overflow-hidden rounded-sm bg-white shadow-xl">
         <div className="flex w-full items-center justify-between gap-lg">
           <p className="laptop-large:heading--sub-large tablet:heading grid w-full grid-cols-3 gap-md text-black tablet:font-bold laptop-large:font-semibold">

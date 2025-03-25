@@ -29,7 +29,7 @@ export default function Home() {
         }
       >
         <DivWrapper
-          className="max-laptop:section-px h-fit laptop:px-3xl laptop-large:px-0"
+          className="max-laptop:section-px h-fit"
           variant={{
             hidden: {
               opacity: 0,
