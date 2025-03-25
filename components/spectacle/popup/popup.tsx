@@ -1,5 +1,9 @@
 'use client';
 
+import { buttonVariants } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
+import { client } from '@/sanity/lib/client';
+import { PARAMETRES_QUERY, ParametresQueryResponse } from '@/sanity/lib/queries';
 import { AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
 import { usePathname } from 'next/navigation';
@@ -7,9 +11,24 @@ import { useEffect, useState } from 'react';
 import { FadeInVariant } from '../../framer-motion/div-variants';
 import DivWrapper from '../../framer-motion/div-wrapper';
 
-function Popup({ children }: { children: React.ReactNode }) {
+function Popup() {
   const [showPopup, setShowPopup] = useState(true);
+  const [parametres, setParametres] = useState<ParametresQueryResponse | null>(null);
   const pathname = usePathname();
+
+  useEffect(() => {
+    const fetchParametres = async () => {
+      try {
+        const params = await client.fetch<ParametresQueryResponse>(PARAMETRES_QUERY);
+        setParametres(params);
+        console.log(params);
+      } catch (error) {
+        console.error('Error fetching parameters:', error);
+      }
+    };
+
+    fetchParametres();
+  }, []);
 
   useEffect(() => {
     const hasSeenPopup = localStorage.getItem('hasSeenPopup');
@@ -24,6 +43,11 @@ function Popup({ children }: { children: React.ReactNode }) {
       localStorage.setItem('hasSeenPopup', 'false');
     }
   }, [pathname]);
+
+  // Don't show popup if parameters or lienBilletterie is missing
+  if (!parametres || !parametres[0]?.lienBilletterie) {
+    return null;
+  }
 
   return (
     <AnimatePresence mode="wait">
@@ -41,7 +65,15 @@ function Popup({ children }: { children: React.ReactNode }) {
           />
 
           <p className="sub-heading">Vous souhaitez réserver votre place ?</p>
-          {children}
+          <a
+            className={cn(
+              buttonVariants({ variant: 'outline' }),
+              'body rounded-xs font-normal duration-medium hover:opacity-80'
+            )}
+            href={parametres[0].lienBilletterie}
+          >
+            Oui je me rends sur la billeterie
+          </a>
         </DivWrapper>
       )}
     </AnimatePresence>

@@ -37,8 +37,6 @@ export default async function Affiches() {
 
   const imageArr = withUrl.filter(notEmpty);
 
-  console.log(imageArr[3]);
-
   return (
     <ul
       className={cn(
