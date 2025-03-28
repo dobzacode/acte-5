@@ -15,6 +15,8 @@ export async function verifyCaptchaAction(token: string) {
 
   const data = await res.json();
 
+  console.log(data);
+
   if (data.score > 0.5) {
     return true;
   } else {

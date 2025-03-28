@@ -75,6 +75,9 @@ export default function ContactForm() {
     }
 
     const token = await executeRecaptcha('onSubmit');
+
+    console.log(token);
+
     const verified = await verifyCaptchaAction(token);
 
     if (!verified) {
