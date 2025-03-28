@@ -4,11 +4,12 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
-import { verifyCaptchaAction } from '@/app/_actions';
+import { sendContactEmail, verifyCaptchaAction } from '@/app/_actions';
 import { Form, FormControl, FormField, FormItem, FormMessage } from '@/components/ui/shadcn/form';
 import { Input } from '@/components/ui/shadcn/input';
 import { Textarea } from '@/components/ui/shadcn/textarea';
 import { cn } from '@/lib/utils';
+import { useState } from 'react';
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 import BarLoader from 'react-spinners/BarLoader';
 import UiButton from '../../ui/ui-button';
@@ -45,6 +46,9 @@ const formSchema = z.object({
 
 export default function ContactForm() {
   const { executeRecaptcha } = useGoogleReCaptcha();
+  const [submitStatus, setSubmitStatus] = useState<{ success: boolean; message: string } | null>(
+    null
+  );
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -60,19 +64,42 @@ export default function ContactForm() {
 
   // 2. Define a submit handler.
   async function onSubmit(values: z.infer<typeof formSchema>) {
+    setSubmitStatus(null);
+
     if (!executeRecaptcha) {
-      return console.log("executeRecaptcha n'a pas pû être lancé");
+      setSubmitStatus({
+        success: false,
+        message: "La vérification reCAPTCHA n'a pas pu être lancée"
+      });
+      return;
     }
 
     const token = await executeRecaptcha('onSubmit');
-
     const verified = await verifyCaptchaAction(token);
 
     if (!verified) {
-      return console.log("La vérification via reCaptcha n'a pas pû être effectuée");
+      setSubmitStatus({
+        success: false,
+        message: "La vérification via reCaptcha n'a pas pu être effectuée"
+      });
+      return;
     }
 
-    return console.log('Les données ont été soumises', token);
+    try {
+      // Send the email using the server action
+      const result = await sendContactEmail(values);
+      setSubmitStatus(result);
+
+      if (result.success) {
+        form.reset();
+      }
+    } catch (error) {
+      console.error("Erreur lors de l'envoi du formulaire:", error);
+      setSubmitStatus({
+        success: false,
+        message: "Une erreur s'est produite lors de l'envoi du message"
+      });
+    }
   }
 
   return (
@@ -93,7 +120,7 @@ export default function ContactForm() {
               <FormItem className="col-span-1 flex flex-col gap-0.5">
                 <FormControl>
                   <Input
-                    className="body rounded-xs    shadow-inner ring-primary-400"
+                    className="body rounded-xs shadow-inner ring-primary-400"
                     required
                     color="primary"
                     placeholder="Type de projet *"
@@ -112,7 +139,7 @@ export default function ContactForm() {
               <FormItem className="col-span-1 flex flex-col gap-0.5">
                 <FormControl>
                   <Input
-                    className="body rounded-xs    shadow-inner ring-primary-400"
+                    className="body rounded-xs shadow-inner ring-primary-400"
                     required
                     placeholder="Société *"
                     color="primary"
@@ -131,7 +158,7 @@ export default function ContactForm() {
               <FormItem className="col-span-1 flex flex-col gap-0.5">
                 <FormControl>
                   <Input
-                    className="body rounded-xs    shadow-inner ring-primary-400"
+                    className="body rounded-xs shadow-inner ring-primary-400"
                     required
                     placeholder="Nom *"
                     color="primary"
@@ -151,7 +178,7 @@ export default function ContactForm() {
                 <FormControl>
                   <Input
                     placeholder="Prénom *"
-                    className="body rounded-xs    shadow-inner ring-primary-400"
+                    className="body rounded-xs shadow-inner ring-primary-400"
                     required
                     color="primary"
                     {...field}
@@ -169,7 +196,7 @@ export default function ContactForm() {
               <FormItem className="col-span-1 flex flex-col gap-0.5">
                 <FormControl>
                   <Input
-                    className="body rounded-xs    shadow-inner ring-primary-400"
+                    className="body rounded-xs shadow-inner ring-primary-400"
                     color="primary"
                     placeholder="Email *"
                     required
@@ -188,7 +215,7 @@ export default function ContactForm() {
               <FormItem className="col-span-1 flex flex-col gap-0.5">
                 <FormControl>
                   <Input
-                    className="body rounded-xs    shadow-inner ring-primary-400"
+                    className="body rounded-xs shadow-inner ring-primary-400"
                     type="number"
                     placeholder="Téléphone *"
                     color="primary"
@@ -208,7 +235,7 @@ export default function ContactForm() {
                 <FormControl>
                   <Textarea
                     rows={4}
-                    className="body rounded-xs    shadow-inner ring-primary-400"
+                    className="body rounded-xs shadow-inner ring-primary-400"
                     required
                     placeholder="Message *"
                     color="primary"
@@ -220,25 +247,33 @@ export default function ContactForm() {
             )}
           />
         </div>
-        {form.formState.isSubmitSuccessful ? (
-          <FormMessage className="text-sm text-success-400">
-            Votre demande de contact a bien été envoyée !
+        {submitStatus ? (
+          <FormMessage
+            className={`text-sm ${submitStatus.success ? 'text-success-400' : 'text-danger-400'}`}
+          >
+            {submitStatus.message}
           </FormMessage>
         ) : null}
         <UiButton
           spinner={
             <BarLoader
-              style={{ position: 'absolute', bottom: '0.2rem', width: '100%' }}
+              style={{
+                position: 'absolute',
+                bottom: '0.2rem',
+                width: '100%',
+                backgroundColor: 'white'
+              }}
             ></BarLoader>
           }
-          className="body relative h-unit-2xl rounded-xs"
+          className="body h-unit-2xl relative rounded-xs"
           isLoading={form.formState.isSubmitting}
           type="submit"
           color="primary"
+          disabled={form.formState.isSubmitting}
         >
           Envoyer ma demande
         </UiButton>
-        <p className={`caption text-center  font-normal`}>
+        <p className={`caption text-center font-normal`}>
           Ce site est protégé par reCAPTCHA, les
           <a className="text-primary-500" href="https://policies.google.com/privacy">
             {' '}
