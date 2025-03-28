@@ -46,7 +46,7 @@ export default async function Home() {
               Un anniversaire est l'occasion de faire le bilan. Pour cela, le livre est l'objet
               idéal : on aime le conserver et on a du plaisir à s'y plonger pour passer un bon
               moment à se remémorer les souvenirs. Rétrospective, mise en valeur des belles
-              réalisations et des équipes , mais aussi témoignages, anecdotes, photos, les
+              réalisations et des équipes, mais aussi témoignages, anecdotes, photos, les
               possibilités sont mutliples pour rendre hommage au passé et poser les bases du futur.
             </p>
           </div>

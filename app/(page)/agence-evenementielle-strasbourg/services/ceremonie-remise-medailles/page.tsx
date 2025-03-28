@@ -56,8 +56,8 @@ export default async function Page() {
               Une cérémonie de médailles pour une entreprise en réussite, fière de son succès.
             </h3>
             <p className="body text-pretty">
-              Une entreprise en réussite, fière de son succès salue ses collaborateurs pour leur
-              implication.<strong>Cette cérémonie de médailles</strong> est le témoignage de la
+              Une entreprise en réussite, fière de son succès, salue ses collaborateurs pour leur
+              implication. <strong>Cette cérémonie de médailles</strong> est le témoignage de la
               reconnaissance de l&apos;entreprise envers les acteurs de sa réussite.
             </p>
 

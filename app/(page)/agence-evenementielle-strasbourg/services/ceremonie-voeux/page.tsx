@@ -39,7 +39,8 @@ export default function Home() {
           tag="section"
         >
           <h2 className="sub-heading font-semibold">
-            Pas un mois de janvier ne se passe sans LA traditionnelle cérémonie des vœux.
+            Pas un mois de janvier ne se passe sans LA traditionnelle cérémonie des vœux, temps fort
+            dans la communication des entreprises et des collectivités.
           </h2>
           <Image
             priority={true}

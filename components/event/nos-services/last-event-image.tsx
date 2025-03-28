@@ -117,7 +117,6 @@ export default async function LastEvent({
                   } `}
                 >
                   <Link
-                    scroll={false}
                     href={`/agence-evenementielle-strasbourg/projets/${image.slug.current}`}
                     className="group relative z-40 flex aspect-square h-full w-full flex-col-reverse overflow-hidden rounded-sm duration-medium after:absolute after:left-0 after:top-0 after:z-10 after:h-full after:w-full after:bg-gradient-to-t after:from-black/100 after:to-transparent after:to-30%"
                     key={index}

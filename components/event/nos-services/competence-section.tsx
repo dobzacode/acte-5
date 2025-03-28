@@ -26,8 +26,9 @@ export default function CompetenceSection() {
         <div className="flex flex-col gap-md">
           <h2 className="heading--large text-primary-400">Événementiel</h2>
           <p className="sub-heading max-w-[50ch]">
-            Chaque événement est une œuvre d'art. Nous concevons, planifions et mettons en scène des
-            expériences mémorables qui laissent une empreinte durable dans le cœur de vos cibles.
+            Chaque événement est une aventure unique. Nous concevons, planifions et mettons en scène
+            des expériences mémorables qui laissent une empreinte durable dans le cœur de vos
+            cibles.
           </p>
         </div>
       </ScrollWrapper>

@@ -20,8 +20,8 @@ export default function UiBreadcrumbs({ element, className }: UiBreadcrumbsProps
             className="break-words [&>*>*]:!line-clamp-2 [&>*>*]:!whitespace-break-spaces"
             key={index}
           >
-            <Link className="overflow-ellipsis" scroll={false} href={child.href}>
-              {child.text}
+            <Link className="overflow-ellipsis" href={child.href}>
+              {child.text.charAt(0).toUpperCase() + child.text.slice(1).toLowerCase()}
             </Link>
           </BreadcrumbItem>
         ))

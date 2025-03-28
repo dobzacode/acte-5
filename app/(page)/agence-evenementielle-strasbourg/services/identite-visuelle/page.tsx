@@ -38,9 +38,9 @@ export default function Home() {
           tag="section"
         >
           <h2 className="sub-heading font-semibold">
-            L'image, c'est ce qui donne la première impression, les sens et crée l'envie de pousser
-            la porte pour entrer dans la boutique. Une création graphique impactante et efficace
-            marque les esprits et reste dans les mémoires
+            L'image, c'est ce qui donne la première impression et crée l'envie de pousser la porte
+            pour entrer dans la boutique. Une création graphique impactante et efficace marque les
+            esprits et reste dans les mémoires.
           </h2>
           <Image
             priority={true}

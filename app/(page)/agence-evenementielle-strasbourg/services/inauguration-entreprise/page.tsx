@@ -57,10 +57,11 @@ export default function Home() {
             </h3>
             <p className="body text-pretty">
               Elle fera date et portera votre marque au-delà des murs.{' '}
-              <strong>L&apos;inauguration d&apos;un lieu nouveau</strong> est un moment particulier pour votre entreprise et son développement.
-              L&apos;occasion de réunir vos clients, vos partenaires, ou encore vos collaborateurs et vos prestataires pour saluer
-              votre réussite. C&apos;est une opération de communication qui présente vos produits,
-              vos services, vos savoir-faire, votre identité.{' '}
+              <strong>L&apos;inauguration d&apos;un lieu nouveau</strong> est un moment particulier
+              pour votre entreprise et son développement. L&apos;occasion de réunir vos clients, vos
+              partenaires, ou encore vos collaborateurs et vos prestataires pour saluer votre
+              réussite. C&apos;est une opération de communication qui présente vos produits, vos
+              services, vos savoir-faire, votre identité.{' '}
               <strong>L&apos;inauguration est une mise en valeur de vos activités</strong> et
               l&apos;opportunité d&apos;installer une représentation positive de votre entreprise.
             </p>
@@ -71,9 +72,8 @@ export default function Home() {
             </h3>
             <p className="body text-pretty">
               Concevoir les invitations, créer l&apos;identité visuelle, trouver les animations
-              pertinentes, définir le filage et trouver le bon
-              traiteur qui charmera vos invités. Votre événement est orchestré avec attention et
-              soin pour asseoir votre réputation.
+              pertinentes, définir le filage et trouver le bon traiteur qui charmera vos invités.
+              Votre événement est orchestré avec attention et soin pour asseoir votre réputation.
               <br />
               <br /> Du cocktail classique, cérémonieux, inattendu, festif à l&apos;innovation
               personnalisée, de la mise en valeur par un habillage lumière à la création d&apos;une
@@ -88,7 +88,7 @@ export default function Home() {
       </section>
       <Suspense fallback={<LastEventSkeleton />}>
         <LastEvent
-          h2="Nos précédentes inaugurations d'entreprise organisées à Strasbourg en Alsace"
+          h2="Nos précédentes inaugurations organisées à Strasbourg en Alsace"
           categorie="Inauguration"
         ></LastEvent>
       </Suspense>

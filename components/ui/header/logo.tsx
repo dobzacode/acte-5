@@ -25,7 +25,7 @@ export default function Logo({ className, width, height }: LogoProps) {
   };
 
   return (
-    <Link scroll={false} href={href()}>
+    <Link href={href()}>
       <BrandLogo width={width} height={height} className={className} />
     </Link>
   );

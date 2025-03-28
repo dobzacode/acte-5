@@ -21,13 +21,13 @@ export default function Home() {
         <TitleSection
           className="px-0"
           h1Css={'heading--sub-extra-large'}
-          title={'ANNIVERSAIRE'}
+          title={"ANNIVERSAIRE D'ENTREPRISE"}
           element={[
             { href: '/agence-evenementielle-strasbourg', text: 'Événement' },
             { href: '/agence-evenementielle-strasbourg/services', text: 'Nos services' },
             {
               href: '/agence-evenementielle-strasbourg/services/organisateur-anniversaire',
-              text: "Anniversaire d'entreprise"
+              text: "Organisateur d'anniversaire d'entreprise"
             }
           ]}
         ></TitleSection>
@@ -45,6 +45,7 @@ export default function Home() {
             priority={true}
             className="rounded-sm"
             src={image}
+            placeholder="blur"
             sizes={'(max-width: 640px) 100vw, (min-width: 640px) 80vw'}
             width={800}
             height={800}
@@ -68,7 +69,6 @@ export default function Home() {
               <strong>votre anniversaire un moment unique et inoubliable !</strong>
             </p>
           </div>
-          
         </DivWrapper>
       </section>
       <Suspense fallback={<LastEventSkeleton />}>

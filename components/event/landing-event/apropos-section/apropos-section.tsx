@@ -10,7 +10,6 @@ export default function AproposSection() {
     <section className="flex flex-col items-center gap-2xl laptop:container mobile-large:gap-4xl">
       <CompetenceSection></CompetenceSection>
       <div className="section-px flex flex-col items-center gap-lg text-center mobile-large:gap-xl tablet:gap-2xl">
-      
         <InviewWrapper className="h-fit" variant={FadeInVariant}>
           <DivHoverWrapper
             className="group w-fit origin-center duration-medium hover:opacity-90"
@@ -27,9 +26,8 @@ export default function AproposSection() {
             }}
           >
             <Link
-              href="/agence-evenementielle-strasbourg/a-propos"
+              href="/agence-evenementielle-strasbourg/contact"
               className="sub-heading group relative flex w-fit items-center gap-xs rounded-sm before:absolute before:-bottom-2 before:z-10 before:h-[1px] before:w-full before:max-w-0 before:bg-black before:duration-medium after:absolute after:-bottom-2 after:z-10 after:h-[1px] after:w-full after:bg-black/20 hover:before:max-w-full laptop:gap-sm"
-              scroll={false}
             >
               <span>Je souhaite en savoir plus !</span>
               <LuArrowUpRight className="rotate-0 duration-medium group-hover:rotate-45 group-hover:delay-300" />

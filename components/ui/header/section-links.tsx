@@ -16,9 +16,7 @@ export default function SectionLinks({ pathname }: { pathname: string }) {
             : 'before:duration-medium'
         )}
       >
-        <Link scroll={false} href="/agence-evenementielle-strasbourg">
-          Événementiel
-        </Link>
+        <Link href="/agence-evenementielle-strasbourg">Événementiel</Link>
       </li>
       <li
         className={cn(
@@ -32,9 +30,7 @@ export default function SectionLinks({ pathname }: { pathname: string }) {
             : 'before:duration-medium'
         )}
       >
-        <Link scroll={false} href="/spectacles-strasbourg">
-          Spectacle
-        </Link>
+        <Link href="/spectacles-strasbourg">Spectacle</Link>
       </li>
     </ul>
   );

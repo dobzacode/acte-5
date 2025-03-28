@@ -126,31 +126,32 @@ export default function Flag({
           </DivWrapper>
 
           {button && (
-            <DivWrapper
-              variant={{
-                hidden: {
-                  opacity: 0,
-                  x: !inverted ? -400 : 400
-                },
-                enter: {
-                  opacity: 1,
-                  x: 0,
-                  transition: {
-                    x: { delay: 0.5, type: 'spring', damping: 30 },
-                    opacity: { duration: 0.2, delay: 0.5 }
+            <Link href="/spectacles-strasbourg/revue-scoute">
+              <DivWrapper
+                tag="span"
+                variant={{
+                  hidden: {
+                    opacity: 0,
+                    x: !inverted ? -400 : 400
+                  },
+                  enter: {
+                    opacity: 1,
+                    x: 0,
+                    transition: {
+                      x: { delay: 0.5, type: 'spring', damping: 30 },
+                      opacity: { duration: 0.2, delay: 0.5 }
+                    }
+                  },
+                  exit: {
+                    opacity: 0,
+                    x: !inverted ? -400 : 400
                   }
-                },
-                exit: {
-                  opacity: 0,
-                  x: !inverted ? -400 : 400
-                }
-              }}
-              className="sub-heading shadow-primary-sm 0 mt-sm flex w-fit items-center gap-xs rounded-sm border-b-2 border-r-2 border-black bg-white px-md py-sm text-black laptop:gap-sm laptop:px-lg laptop:py-md"
-            >
-              <Link href="/spectacles-strasbourg/revue-scoute">
-                <span>{button}</span>
-              </Link>
-            </DivWrapper>
+                }}
+                className="sub-heading shadow-primary-sm 0 mt-sm flex w-fit items-center gap-xs rounded-sm border-b-2 border-r-2 border-black bg-white px-md py-sm text-black laptop:gap-sm laptop:px-lg laptop:py-md"
+              >
+                {button}
+              </DivWrapper>
+            </Link>
           )}
         </div>
       </div>
@@ -195,7 +196,6 @@ export default function Flag({
             <Link
               href="/spectacles-strasbourg/revue-scoute"
               className="sub-heading group relative mx-auto mt-sm flex w-fit items-center gap-xs rounded-sm before:absolute before:-bottom-1 before:z-10 before:h-[1px] before:w-full before:max-w-0 before:bg-black before:duration-medium hover:before:max-w-full laptop:gap-sm"
-              scroll={false}
             >
               <span>{button}</span>
               <LuArrowUpRight className="rotate-0 duration-medium group-hover:rotate-45 group-hover:delay-300" />
@@ -264,13 +264,13 @@ export default function Flag({
             isLaptop
               ? {
                   hidden: {
-                    x: !inverted ? -400 : 400
+                    x: !inverted ? -400 : 400,
+                    opacity: 0
                   },
                   enter: {
                     opacity: 1,
                     x: 0,
                     transition: {
-                      x: { delay: 0, type: 'spring', damping: 30 },
                       opacity: { duration: 0.2, delay: 0 }
                     }
                   },
@@ -318,11 +318,37 @@ export default function Flag({
         </DivWrapper>
 
         {button && (
-          <div className="sub-heading shadow-primary-sm 0 mt-sm flex w-fit items-center gap-xs rounded-sm border-b-2 border-r-2 border-black bg-white px-md py-sm text-black laptop:gap-sm laptop:px-lg laptop:py-md">
-            <Link href="/spectacles-strasbourg/revue-scoute">
-              <span>{button}</span>
-            </Link>
-          </div>
+          <Link href="/spectacles-strasbourg/revue-scoute">
+            <DivWrapper
+              tag="span"
+              variant={
+                isLaptop
+                  ? {
+                      hidden: {
+                        x: !inverted ? -400 : 400
+                      },
+                      enter: {
+                        opacity: 1,
+                        x: 0,
+                        transition: {
+                          x: { delay: 0.3, type: 'spring', damping: 30 },
+                          opacity: { duration: 0.2, delay: 0.3 }
+                        }
+                      },
+                      exit: {
+                        opacity: 0,
+                        x: !inverted ? -400 : 400
+                      }
+                    }
+                  : !inverted
+                    ? ComingFromLeftVariant
+                    : ComingFromRightVariant
+              }
+              className="sub-heading shadow-primary-sm 0 relative -z-10 mt-sm flex w-fit items-center gap-xs rounded-sm border-b-2 border-r-2 border-black bg-white px-md py-sm text-black laptop:gap-sm laptop:px-lg laptop:py-md"
+            >
+              {button}
+            </DivWrapper>
+          </Link>
         )}
       </div>
     </div>

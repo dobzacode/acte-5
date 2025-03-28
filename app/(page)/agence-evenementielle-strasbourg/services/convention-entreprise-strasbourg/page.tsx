@@ -42,7 +42,7 @@ export default async function Home() {
             respectant leur raison d&apos;être. Grâce aux conventions, les entreprises fédèrent et
             rassemblent les publics, donnent l&apos;opportunité à leurs parties prenantes de
             partager un bon moment, transmettent les informations et communiquent sur les stratégies
-            à mettre en place. Convivialité et partage d&apos;appartenance sont au rendez-vous !
+            à mettre en place. Convivialité et partage sont au rendez-vous !
           </h2>
           <Image
             priority={true}
@@ -57,14 +57,13 @@ export default async function Home() {
           <div className="flex flex-col gap-md">
             <h3 className="heading text-primary-400">Pourquoi organiser une convention ?</h3>
             <p className="body text-pretty">
-              Vous avez besoin de{' '}
-              <strong>transmettre un message fort à vos collaborateurs</strong>, à vos partenaires.
-              Avec vous, nous définissons l&apos;ensemble des priorités de la manifestation. Nous
-              imaginons un projet sur mesure dans un lieu adéquat et nous vous proposons ainsi le
-              format le plus adapté. Votre discours est enrichi par un habillage inventif et par une mise
-              en scène de vos idées et de vos actions. Par le biais de supports variés (habillage
-              scénique, vidéo, lumière, son, communication visuelle et graphique…), nous vous
-              accompagnons dans l&apos;expression de votre message. <br />
+              Vous avez besoin de <strong>transmettre un message fort à vos collaborateurs</strong>,
+              à vos partenaires. Avec vous, nous définissons l&apos;ensemble des priorités de la
+              manifestation. Nous imaginons un projet sur mesure dans un lieu adéquat et nous vous
+              proposons ainsi le format le plus adapté. Votre discours est enrichi par un habillage
+              inventif et par une mise en scène de vos idées et de vos actions. Par le biais de
+              supports variés (habillage scénique, vidéo, lumière, son, communication visuelle et
+              graphique…), nous vous accompagnons dans l&apos;expression de votre message. <br />
               <br /> Un rythme est trouvé, une tonalité mise en place, accompagnée, selon vos
               souhaits, par une série d&apos;animations ludiques ou artistiques.
             </p>

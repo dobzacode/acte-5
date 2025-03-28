@@ -182,7 +182,6 @@ export default function ServiceGalerie({}) {
               >
                 <div className="h-full w-full duration-medium hover:grayscale">
                   <Link
-                    scroll={false}
                     className="group relative z-40 flex h-full w-full flex-col-reverse duration-medium after:absolute after:left-0 after:top-0 after:z-10 after:h-full after:w-full after:bg-gradient-to-t after:from-black/100 after:to-transparent after:to-30%"
                     href={service.href}
                   >
@@ -202,11 +201,11 @@ export default function ServiceGalerie({}) {
                         paddingBottom: '1rem',
                         maxHeight: 100,
                         transition: {
-                          opacity: { duration: 0.1, delay: index * 0.3 },
-                          maxHeight: { duration: 0.2, delay: index * 0.3 },
-                          paddingTop: { duration: 0.2, delay: index * 0.3 },
-                          paddingBottom: { duration: 0.2, delay: index * 0.3 },
-                          y: { duration: 0.2, delay: index * 0.3 }
+                          opacity: { duration: 0.1, delay: (index / 1.5) * 0.3 },
+                          maxHeight: { duration: 0.2, delay: (index / 1.5) * 0.3 },
+                          paddingTop: { duration: 0.2, delay: (index / 1.5) * 0.3 },
+                          paddingBottom: { duration: 0.2, delay: (index / 1.5) * 0.3 },
+                          y: { duration: 0.2, delay: (index / 1.5) * 0.3 }
                         }
                       }}
                       exit={{ opacity: 0 }}

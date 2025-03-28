@@ -46,13 +46,11 @@ export default function Home() {
             <p className="laptop-large:sub-heading body section-px relative -z-10 mr-auto max-w-[50ch] text-pretty text-center laptop:mx-auto laptop:text-left">
               Depuis <strong className="font-medium text-primary">plus de 40 ans</strong>, la Revue
               Scoute est un <strong className="font-medium text-primary">pilier</strong> de la scène
-              satirique alsacienne. Aujourd&apos;ui, la Revue Scoute, c'est : <br />- plus de{' '}
+              satirique alsacienne. Aujourd&apos;hui, elle représente : <br />- plus de{' '}
               <strong className="font-medium text-primary">35 000</strong> spectateurs
               <br />- <strong className="font-medium text-primary">70</strong> représentations par
               saison
               <br />- <strong className="font-medium text-primary">10</strong> salles en tournée
-              <br />- <strong className="font-medium text-primary">380</strong> bouteilles de
-              crémant pour la création
               <br />- <strong className="font-medium text-primary">160</strong> propositions avant
               de trouver le titre
               <br />- des <strong className="font-medium text-primary">éclats de rire</strong> non

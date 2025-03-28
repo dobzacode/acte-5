@@ -87,7 +87,6 @@ export default function CompetenceSection() {
             variant={index % 2 === 0 ? variantLeft : variantRight}
           >
             <Link
-              scroll={false}
               href={`/agence-evenementielle-strasbourg/services?categorie=${item.category}`}
               className="group relative flex h-[20vh] max-h-[300px] w-full items-start justify-between overflow-hidden rounded-sm p-md delay-300 duration-extra-slow hover:bg-primary-400 hover:delay-0 hover:duration-0 max-laptop-large:gap-3xl"
             >
@@ -118,7 +117,6 @@ export default function CompetenceSection() {
             variant={index % 2 === 0 ? ComingFromLeftVariant : ComingFromRightVariant}
           >
             <Link
-              scroll={false}
               href={`/agence-evenementielle-strasbourg/services?categorie=${item.category}`}
               className="card flex flex-col p-0"
             >

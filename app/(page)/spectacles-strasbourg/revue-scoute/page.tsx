@@ -2,7 +2,6 @@ import {
   ComingFromLeftVariant,
   ComingFromRightVariant
 } from '@/components/framer-motion/div-variants';
-import DivHoverWrapper from '@/components/framer-motion/hover-wrapper';
 import InviewWrapper from '@/components/framer-motion/inview-wrapper';
 import PastSectionSkeleton from '@/components/skeleton/past-section-skeleton';
 import ScouteSkeleton from '@/components/skeleton/scoute-skeleton';
@@ -13,7 +12,6 @@ import TitleSection from '@/components/ui/title-section';
 import { Metadata } from 'next';
 import Image from 'next/image';
 import { Suspense } from 'react';
-import { LuArrowUpRight } from 'react-icons/lu';
 import pic1 from '/public/assets/spectacle/scoute/scoute_1.jpg';
 import pic2 from '/public/assets/spectacle/scoute/scoute_2.jpg';
 
@@ -40,7 +38,7 @@ export default async function Home() {
             className="sub-heading relative tablet:container tablet:mx-auto"
             variant={ComingFromRightVariant}
           >
-            La Revue Scoute, c’est un spectacle de cabaret satirique en français qui met en scène
+            La Revue Scoute, c'est un spectacle de cabaret satirique en français qui met en scène
             une troupe de 8 comédiens et de 4 musiciens <br />
             <br />
             Chaque année, petits et grands événements de l'année sont revisités: de la politique
@@ -142,30 +140,6 @@ export default async function Home() {
               className="rounded-xs"
               style={{ position: 'absolute', top: 0, left: 0, zIndex: 30 }}
             ></iframe>
-          </InviewWrapper>
-          <InviewWrapper className="flex h-fit w-full" variant={ComingFromRightVariant}>
-            <DivHoverWrapper
-              className="group w-fit origin-center duration-medium hover:opacity-90"
-              variant={{
-                hover: {
-                  scale: 1.02,
-                  transition: {
-                    duration: 0.5,
-                    ease: 'easeInOut',
-                    repeat: Infinity,
-                    repeatType: 'mirror'
-                  }
-                }
-              }}
-            >
-              <a
-                href="https://www.france.tv/spectacles-et-culture/theatre-et-danse/5674548-l-eau-regime-du-monde.html"
-                className="sub-heading group relative flex w-fit items-center gap-xs rounded-sm before:absolute before:-bottom-2 before:z-10 before:h-[1px] before:w-full before:max-w-0 before:bg-black before:duration-medium after:absolute after:-bottom-2 after:z-10 after:h-[1px] after:w-full after:bg-black/20 hover:before:max-w-full laptop:gap-sm"
-              >
-                <span>Voir l'intégralité du spectacle</span>
-                <LuArrowUpRight className="rotate-0 duration-medium group-hover:rotate-45 group-hover:delay-300" />
-              </a>
-            </DivHoverWrapper>
           </InviewWrapper>
         </section>
 

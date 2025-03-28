@@ -1,5 +1,3 @@
-import { FromTopStaggerVariant } from '@/components/framer-motion/div-variants';
-import StaggeredText from '@/components/framer-motion/staggered-text';
 import AffichesSkeleton from '@/components/skeleton/affiches-skeleton';
 import Affiches from '@/components/spectacle/a-laffiche/affiches';
 import CalendrierSection from '@/components/spectacle/a-laffiche/calendrier-section';
@@ -26,16 +24,10 @@ export default function Home() {
           ]}
         ></TitleSection>
 
-        <StaggeredText
-          inview
-          variant={FromTopStaggerVariant}
-          staggerValue={0.05}
-          delay={1}
-          className="heading--sub-large section-px h-fit max-w-[35ch] text-pretty text-center laptop:mx-auto"
-        >
+        <p className="heading--sub-large section-px h-fit max-w-[35ch] text-pretty text-center laptop:mx-auto">
           L'agence Acte 5 propose aux entreprises, associations et collectivités, des spectacles
           d'humour clé en main, en français.
-        </StaggeredText>
+        </p>
         <Suspense fallback={<AffichesSkeleton />}>
           <Affiches></Affiches>
         </Suspense>

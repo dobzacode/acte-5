@@ -1,4 +1,3 @@
-import DivWrapper from '@/components/framer-motion/div-wrapper';
 import Calendrier from '@/components/spectacle/a-laffiche/calendrier';
 import ContactSection from '@/components/spectacle/contact-section';
 import { Skeleton } from '@/components/ui/skeleton';
@@ -28,30 +27,9 @@ export default function Home() {
           <Skeleton className="card mx-auto flex h-[20rem] w-full max-w-[40rem] flex-col items-center justify-center gap-md overflow-hidden rounded-sm bg-white shadow-xl laptop:hidden" />
         }
       >
-        <DivWrapper
-          className="max-laptop:section-px h-fit"
-          variant={{
-            hidden: {
-              opacity: 0,
-              x: 100
-            },
-            enter: {
-              opacity: 1,
-              x: 0,
-              transition: {
-                delay: 2,
-
-                type: 'spring'
-              }
-            },
-            exit: {
-              opacity: 0,
-              x: -100
-            }
-          }}
-        >
+        <div className="max-laptop:section-px h-fit">
           <Calendrier isBig={true}></Calendrier>
-        </DivWrapper>
+        </div>
       </Suspense>
       <ContactSection isSpectacle={true}></ContactSection>
     </main>

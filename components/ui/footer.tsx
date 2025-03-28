@@ -22,42 +22,33 @@ export default function Footer({ className }: { className?: string }) {
 
         <section className="flex flex-col gap-sm max-mobile-large:mr-auto">
           <Link
-            scroll={false}
             className="sub-heading pb-sm text-md font-medium hover:opacity-hover"
             href="/agence-evenementielle-strasbourg"
           >
             Événementiel
           </Link>
           <Link
-            scroll={false}
             className="body hover:opacity-hover"
             href="/agence-evenementielle-strasbourg/services"
           >
             Services
           </Link>
           <Link
-            scroll={false}
             className="body hover:opacity-hover"
             href="/agence-evenementielle-strasbourg/projets"
           >
             Projets
           </Link>
           <Link
-            scroll={false}
             className="body hover:opacity-hover"
             href="/agence-evenementielle-strasbourg/a-propos"
           >
             A propos
           </Link>
-          <Link
-            scroll={false}
-            className="body hover:opacity-hover"
-            href="/agence-evenementielle-strasbourg/blog"
-          >
+          <Link className="body hover:opacity-hover" href="/agence-evenementielle-strasbourg/blog">
             Blog
           </Link>
           <Link
-            scroll={false}
             className="body hover:opacity-hover"
             href="/agence-evenementielle-strasbourg/contact"
           >
@@ -66,58 +57,33 @@ export default function Footer({ className }: { className?: string }) {
         </section>
         <section className="flex flex-col gap-sm max-mobile-large:mr-auto">
           <Link
-            scroll={false}
             className="sub-heading pb-sm text-md font-medium hover:opacity-hover"
             href="/spectacles-strasbourg"
           >
             Spectacle
           </Link>
-          <Link
-            scroll={false}
-            className="body hover:opacity-hover"
-            href="/spectacles-strasbourg/revue-scoute"
-          >
+          <Link className="body hover:opacity-hover" href="/spectacles-strasbourg/revue-scoute">
             Revue scoute
           </Link>
-          <Link
-            scroll={false}
-            className="body hover:opacity-hover"
-            href="/spectacles-strasbourg/a-laffiche"
-          >
+          <Link className="body hover:opacity-hover" href="/spectacles-strasbourg/a-laffiche">
             A l'affiche
           </Link>
-          <Link
-            scroll={false}
-            className="body hover:opacity-hover"
-            href="/spectacles-strasbourg/calendrier"
-          >
+          <Link className="body hover:opacity-hover" href="/spectacles-strasbourg/calendrier">
             Calendrier
           </Link>
-          <Link
-            scroll={false}
-            className="body hover:opacity-hover"
-            href="/spectacles-strasbourg/a-propos"
-          >
+          <Link className="body hover:opacity-hover" href="/spectacles-strasbourg/a-propos">
             A propos
           </Link>
-          <Link
-            scroll={false}
-            className="body hover:opacity-hover"
-            href="/spectacles-strasbourg/contact"
-          >
+          <Link className="body hover:opacity-hover" href="/spectacles-strasbourg/contact">
             Contact
           </Link>
         </section>
         <section className="flex flex-col gap-sm max-mobile-large:w-full">
           <p className="sub-heading pb-sm text-md font-medium">Informations légales</p>
-          <Link
-            scroll={false}
-            className="body hover:opacity-hover"
-            href="/politique-confidentialite"
-          >
+          <Link className="body hover:opacity-hover" href="/politique-confidentialite">
             Politique de confidentialité
           </Link>
-          <Link scroll={false} className="body hover:opacity-hover" href="/mentions-legales">
+          <Link className="body hover:opacity-hover" href="/mentions-legales">
             Mentions légales
           </Link>
         </section>

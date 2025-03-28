@@ -31,9 +31,9 @@ export default function SpectacleCard({
           y: 0,
           pointerEvents: 'auto',
           transition: {
-            opacity: { duration: 0.2, delay: 1.5 + index * 0.3 },
-            pointerEvents: { delay: 1.5 + index * 0.3 },
-            y: { duration: 0.3, delay: 1.5 + index * 0.3 }
+            opacity: { duration: 0.2, delay: index * 0.3 },
+            pointerEvents: { delay: index * 0.3 },
+            y: { duration: 0.3, delay: index * 0.3 }
           }
         },
         exit: {
@@ -46,7 +46,6 @@ export default function SpectacleCard({
       className="card mb-auto h-fit w-full shrink-0 gap-md overflow-hidden rounded-xs px-0 py-0"
     >
       <Link
-        scroll={false}
         className="flex h-fit flex-col gap-md"
         href={`/spectacles-strasbourg/a-laffiche/${spectacle.slug.current}`}
       >

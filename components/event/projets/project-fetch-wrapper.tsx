@@ -9,7 +9,7 @@ import ProjectSection from './project-section';
 
 export default async function ProjectFetchWrapper() {
   const events = await sanityFetch<EventWithImgQueryRes[]>({
-    query: groq`*[_type == "evenement" && defined(imageGallery) && defined(slug.current)]`,
+    query: groq`*[_type == "evenement" && defined(imageGallery) && defined(slug.current)] | order(pertinence asc)`,
     perspective: 'published',
     stega: false
   });

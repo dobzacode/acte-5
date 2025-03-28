@@ -36,7 +36,6 @@ export default function MobileNavLinks({
           exit={{ x: -300, transition: { ease: 'easeInOut', duration: 0.9 } }}
         >
           <Link
-            scroll={false}
             className={cn(
               'heading w-fit rounded-xs px-sm py-sm text-black hover:bg-primary-400 hover:text-white',
               `${pathname.includes(link.href) && 'pointer-events-none'}`,

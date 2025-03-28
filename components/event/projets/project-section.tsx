@@ -44,7 +44,7 @@ export default function ProjectSection({ events }: { events: EventWithImgAndInde
             : new Date(b.date).getTime() - new Date(a.date).getTime();
         });
       } else if (sortParam === 'pertinence') {
-        filteredEvents = filteredEvents.sort((a, b) => b.pertinence - a.pertinence);
+        filteredEvents = filteredEvents.sort((a, b) => a.pertinence - b.pertinence);
       }
     }
 
@@ -95,7 +95,7 @@ export default function ProjectSection({ events }: { events: EventWithImgAndInde
             <li
               className={cn(
                 'relative flex origin-center items-center justify-center overflow-hidden whitespace-nowrap border-r',
-                isSortSelected('pertinence') ? 'text-black' : 'text-default-400',
+                !isSortSelected('date') ? 'text-black' : 'text-default-400',
                 'duration-medium'
               )}
             >

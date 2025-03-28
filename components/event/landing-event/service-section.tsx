@@ -81,7 +81,6 @@ export default function ServiceSection() {
           <Link
             href="/agence-evenementielle-strasbourg/services"
             className="sub-heading shadow-primary-sm 0 flex w-fit items-center gap-xs rounded-sm border-b-2 border-r-2 border-white bg-primary-400 px-md py-sm text-white laptop:gap-sm laptop:px-lg laptop:py-md"
-            scroll={false}
           >
             <span>Découvrez nos services</span>
           </Link>
@@ -167,7 +166,6 @@ export default function ServiceSection() {
             <Link
               href="/agence-evenementielle-strasbourg/services"
               className="sub-heading shadow-primary-sm 0 flex w-fit items-center gap-xs rounded-sm border-b-2 border-r-2 border-white bg-primary-400 px-md py-sm text-white laptop:gap-sm laptop:px-lg laptop:py-md"
-              scroll={false}
             >
               <span>Découvrez nos services</span>
             </Link>

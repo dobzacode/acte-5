@@ -59,7 +59,7 @@ export default function Home() {
               Une journée portes ouvertes est un acte fort de communication
             </h3>
             <p className="body text-pretty">
-              C&apos;est aussi un vecteur important de l&apos;image que véhicule l&apos;entreprise
+              C&apos;est aussi un vecteur important de l&apos;image que véhicule l&apos;entreprise,
               qui éprouve le besoin de mieux se faire connaître de ses partenaires, de la presse, du
               grand public, de tous ceux intéressés par ses activités ou ses produits.
               <br />

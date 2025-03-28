@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <main className="section-px mx-auto flex h-full w-full flex-col items-center justify-between gap-xl pb-3xl pt-4xl mobile-large:pt-5xl tablet:gap-xl tablet:py-6xl laptop:gap-3xl laptop:py-6xl laptop-large:py-7xl [&>section:last-child]:pb-0">
+      <main className="section-px mx-auto flex h-full w-full flex-col items-center justify-between gap-xl pb-3xl pt-4xl mobile-large:pt-5xl tablet:gap-xl tablet:py-6xl laptop:gap-3xl laptop:py-5xl laptop-large:py-6xl [&>section:last-child]:pb-0">
         <DivWrapper
           className="inner-section-gap flex flex-col items-center"
           variant={ComingFromTopVariant}
@@ -26,10 +26,9 @@ export default function Home() {
             Agence de communication événementielle spectaculaire
           </h1>
         </DivWrapper>
-        <section className="flex justify-between gap-lg max-tablet:flex-col tablet:gap-md laptop:justify-center">
+        <section className="flex justify-between gap-lg max-tablet:flex-col tablet:gap-md laptop:justify-center laptop:gap-xl laptop-large:gap-2xl">
           <Link
-            scroll={false}
-            className="group flex h-fit w-fit flex-col gap-xs tablet:w-1/2"
+            className="group flex h-fit w-fit flex-col gap-xs tablet:w-1/2 tablet:gap-md laptop:gap-lg"
             href="agence-evenementielle-strasbourg"
           >
             <DivWrapper
@@ -60,7 +59,7 @@ export default function Home() {
                 fill
                 placeholder="blur"
                 quality={100}
-                sizes={'(max-width: 640px) 100vw, (max-width: 768px) 50vw'}
+                sizes={'(max-width: 640px) 100vw, (max-width: 768px) 100vw'}
                 src={eventimage}
               />
 
@@ -100,14 +99,13 @@ export default function Home() {
               inverseOnExit={true}
               className="relative -z-10"
             >
-              <h2 className="heading--sub-large -z-10 translate-y-0 px-sm text-black backdrop-blur-sm duration-medium group-hover:-translate-y-[200%] laptop-large:px-md text-center">
+              <h2 className="heading--sub-large -z-10 translate-y-0 px-sm text-center text-black backdrop-blur-sm duration-medium group-hover:-translate-y-[200%] laptop-large:px-md">
                 ÉVÉNEMENTIEL
               </h2>
             </DivWrapper>
           </Link>
           <Link
-            scroll={false}
-            className="group flex h-fit w-fit flex-col gap-xs tablet:w-1/2"
+            className="group flex h-fit w-fit flex-col gap-xs tablet:w-1/2 tablet:gap-md laptop:gap-lg"
             href="spectacles-strasbourg"
           >
             <DivWrapper
@@ -138,7 +136,7 @@ export default function Home() {
                 fill
                 placeholder="blur"
                 quality={100}
-                sizes={'(max-width: 640px) 100vw, (max-width: 768px) 50vw'}
+                sizes={'(min-width: 768px) 50vw, (max-width: 768px) 100vw'}
                 src={spectacleimage}
               />
 
@@ -178,7 +176,7 @@ export default function Home() {
               inverseOnExit={true}
               className="relative -z-10"
             >
-              <h2 className="heading--sub-large text-center -z-10 translate-y-0 px-sm text-black backdrop-blur-sm duration-medium group-hover:-translate-y-[200%] laptop-large:px-md">
+              <h2 className="heading--sub-large -z-10 translate-y-0 px-sm text-center text-black backdrop-blur-sm duration-medium group-hover:-translate-y-[200%] laptop-large:px-md">
                 SPECTACLE
               </h2>
             </DivWrapper>
